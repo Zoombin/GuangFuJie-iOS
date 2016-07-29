@@ -1,0 +1,6 @@
+[submodule "GuangFuJie/GuangFuJie/Submodules/Alamofire"]
+	path = GuangFuJie/GuangFuJie/Submodules/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/MJExtension"]
+	path = GuangFuJie/GuangFuJie/Submodules/MJExtension
+	url = https://github.com/CoderMJLee/MJExtension.git
