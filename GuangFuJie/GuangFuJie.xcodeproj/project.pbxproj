@@ -120,7 +120,6 @@
 		1891D9DB1D3F54BE0042E72D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		1891D9F91D3F57B90042E72D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1891D9FA1D3F57B90042E72D /* PhoneUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneUtils.swift; sourceTree = "<group>"; };
-		1891DA761D3F671D0042E72D /* GuangFuJie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GuangFuJie-Bridging-Header.h"; path = "Submodules/MJExtension/GuangFuJie-Bridging-Header.h"; sourceTree = "<group>"; };
 		1891DA771D3F671D0042E72D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MJExtension/Info.plist; sourceTree = "<group>"; };
 		1891DA781D3F671D0042E72D /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJExtension.h; path = MJExtension/MJExtension.h; sourceTree = "<group>"; };
 		1891DA791D3F671D0042E72D /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJExtensionConst.h; path = MJExtension/MJExtensionConst.h; sourceTree = "<group>"; };
@@ -154,6 +153,7 @@
 		18A7FF621CD9902B00BF5926 /* GuangFuJieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuangFuJieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangFuJieUITests.swift; sourceTree = "<group>"; };
 		18A7FF681CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE79F94F1D4B8D580032D461 /* GuangFuJie-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GuangFuJie-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,9 +257,9 @@
 				18B8FA611D3CE8A400B334E4 /* Utils */,
 				18B8FA621D3CE8A400B334E4 /* View */,
 				18A7FF461CD9902B00BF5926 /* AppDelegate.swift */,
+				DE79F94F1D4B8D580032D461 /* GuangFuJie-Bridging-Header.h */,
 				18A7FF4D1CD9902B00BF5926 /* Assets.xcassets */,
 				18A7FF4F1CD9902B00BF5926 /* LaunchScreen.storyboard */,
-				1891DA761D3F671D0042E72D /* GuangFuJie-Bridging-Header.h */,
 				18A7FF521CD9902B00BF5926 /* Info.plist */,
 			);
 			path = GuangFuJie;
