@@ -14,5 +14,8 @@ class Constants: NSObject {
 
     //本地
 //    static let kHttpHost = "http://localhost:3000/api"
+    
+    //aes-256key
+    static let aeskey = "e41cd1f755f211e6b56b00ff8821fdcf"
 
 }

@@ -27,6 +27,15 @@
 		18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FF4F1CD9902B00BF5926 /* LaunchScreen.storyboard */; };
 		18A7FF5C1CD9902B00BF5926 /* GuangFuJieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF5B1CD9902B00BF5926 /* GuangFuJieTests.swift */; };
 		18A7FF671CD9902B00BF5926 /* GuangFuJieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */; };
+		DE79F9521D4C1C100032D461 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9501D4C1C100032D461 /* MainViewController.swift */; };
+		DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE79F9511D4C1C100032D461 /* MainViewController.xib */; };
+		DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9551D4C1C270032D461 /* BaseViewController.swift */; };
+		DE79F9581D4C1FD30032D461 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9571D4C1FD30032D461 /* Colors.swift */; };
+		DE79F95B1D4C32F30032D461 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F95A1D4C32F30032D461 /* Dimens.swift */; };
+		DE79F95E1D4C39700032D461 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F95C1D4C39700032D461 /* RegisterViewController.swift */; };
+		DE79F95F1D4C39700032D461 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE79F95D1D4C39700032D461 /* RegisterViewController.xib */; };
+		DE79F9611D4C3B410032D461 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9601D4C3B410032D461 /* LoginView.swift */; };
+		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +163,15 @@
 		18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangFuJieUITests.swift; sourceTree = "<group>"; };
 		18A7FF681CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE79F94F1D4B8D580032D461 /* GuangFuJie-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GuangFuJie-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE79F9501D4C1C100032D461 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DE79F9511D4C1C100032D461 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		DE79F9551D4C1C270032D461 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DE79F9571D4C1FD30032D461 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DE79F95A1D4C32F30032D461 /* Dimens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
+		DE79F95C1D4C39700032D461 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		DE79F95D1D4C39700032D461 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		DE79F9601D4C3B410032D461 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +311,11 @@
 		18B8FA5C1D3CE8A400B334E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE79F9501D4C1C100032D461 /* MainViewController.swift */,
+				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
+				DE79F9551D4C1C270032D461 /* BaseViewController.swift */,
+				DE79F95C1D4C39700032D461 /* RegisterViewController.swift */,
+				DE79F95D1D4C39700032D461 /* RegisterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,8 +353,10 @@
 		18B8FA611D3CE8A400B334E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE79F95A1D4C32F30032D461 /* Dimens.swift */,
 				1891D9F91D3F57B90042E72D /* Constants.swift */,
 				1891D9FA1D3F57B90042E72D /* PhoneUtils.swift */,
+				DE79F9571D4C1FD30032D461 /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -339,6 +364,8 @@
 		18B8FA621D3CE8A400B334E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE79F9601D4C3B410032D461 /* LoginView.swift */,
+				DE79F9621D4C458E0032D461 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,8 +536,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
+				DE79F95F1D4C39700032D461 /* RegisterViewController.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				1891DA8D1D3F671D0042E72D /* Info.plist in Resources */,
+				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,16 +565,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1891DA931D3F671D0042E72D /* NSObject+MJClass.m in Sources */,
+				DE79F95B1D4C32F30032D461 /* Dimens.swift in Sources */,
 				1891DA8E1D3F671D0042E72D /* MJExtensionConst.m in Sources */,
 				1891DA921D3F671D0042E72D /* MJPropertyType.m in Sources */,
+				DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */,
 				1891DA911D3F671D0042E72D /* MJPropertyKey.m in Sources */,
 				1891DA951D3F671D0042E72D /* NSObject+MJKeyValue.m in Sources */,
+				DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */,
 				1891DA941D3F671D0042E72D /* NSObject+MJCoding.m in Sources */,
 				1891DA971D3F671D0042E72D /* NSString+MJExtension.m in Sources */,
+				DE79F95E1D4C39700032D461 /* RegisterViewController.swift in Sources */,
+				DE79F9521D4C1C100032D461 /* MainViewController.swift in Sources */,
+				DE79F9581D4C1FD30032D461 /* Colors.swift in Sources */,
 				1891DA901D3F671D0042E72D /* MJProperty.m in Sources */,
 				1891DA961D3F671D0042E72D /* NSObject+MJProperty.m in Sources */,
 				1891D9FC1D3F57B90042E72D /* PhoneUtils.swift in Sources */,
 				18A7FF471CD9902B00BF5926 /* AppDelegate.swift in Sources */,
+				DE79F9611D4C3B410032D461 /* LoginView.swift in Sources */,
 				1891DA8F1D3F671D0042E72D /* MJFoundation.m in Sources */,
 				1891D9FB1D3F57B90042E72D /* Constants.swift in Sources */,
 			);
@@ -694,7 +730,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.GuangFuJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/Submodules/MJExtension/GuangFuJie-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -711,7 +747,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.GuangFuJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/Submodules/MJExtension/GuangFuJie-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
 			};
 			name = Release;
 		};
