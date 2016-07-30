@@ -9,8 +9,7 @@
 import UIKit
 
 protocol LoginViewDelegate : NSObjectProtocol {
-    func registerButtonClicked()
-    func forgetPasswordButtonClicked()
+    func getCodeButtonClicked()
 }
 
 class LoginView: UIView {
@@ -60,23 +59,16 @@ class LoginView: UIView {
         pwdTextField.secureTextEntry = true
         bkgView.addSubview(pwdTextField)
         
-        let registerButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(pwdTextField.frame), 60, height))
-        registerButton.setTitle("自助注册", forState: UIControlState.Normal)
-        registerButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        registerButton.setTitleColor(Colors.lightBule, forState: UIControlState.Normal)
-        registerButton.addTarget(self, action: #selector(self.registClick), forControlEvents: UIControlEvents.TouchUpInside)
-        bkgView.addSubview(registerButton)
-        
         let getCodeButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(pwdTextField.frame) - 80, CGRectGetMaxY(pwdTextField.frame), 80, height))
         getCodeButton.setTitle("获取验证码", forState: UIControlState.Normal)
         getCodeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         getCodeButton.setTitleColor(Colors.lightBule, forState: UIControlState.Normal)
-        getCodeButton.addTarget(self, action: #selector(self.forgetClick), forControlEvents: UIControlEvents.TouchUpInside)
+        getCodeButton.addTarget(self, action: #selector(self.getCode), forControlEvents: UIControlEvents.TouchUpInside)
         bkgView.addSubview(getCodeButton)
         
         let loginButtonHeight = height * 1.2
         let startY = ((height * 2) - loginButtonHeight) / 2
-        let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(registerButton.frame) + startY, pwdTextField.frame.size.width, loginButtonHeight))
+        let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(getCodeButton.frame) + startY, pwdTextField.frame.size.width, loginButtonHeight))
         loginButton.setTitle("确认", forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         loginButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
@@ -86,15 +78,9 @@ class LoginView: UIView {
         bkgView.addSubview(loginButton)
     }
     
-    func registClick() {
+    func getCode() {
         if (delegate != nil) {
-            self.delegate?.registerButtonClicked()
-        }
-    }
-    
-    func forgetClick() {
-        if (delegate != nil) {
-            self.delegate?.forgetPasswordButtonClicked()
+            self.delegate?.getCodeButtonClicked()
         }
     }
     

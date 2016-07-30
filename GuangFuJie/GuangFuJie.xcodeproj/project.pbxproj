@@ -64,8 +64,6 @@
 		DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9551D4C1C270032D461 /* BaseViewController.swift */; };
 		DE79F9581D4C1FD30032D461 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9571D4C1FD30032D461 /* Colors.swift */; };
 		DE79F95B1D4C32F30032D461 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F95A1D4C32F30032D461 /* Dimens.swift */; };
-		DE79F95E1D4C39700032D461 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F95C1D4C39700032D461 /* RegisterViewController.swift */; };
-		DE79F95F1D4C39700032D461 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE79F95D1D4C39700032D461 /* RegisterViewController.xib */; };
 		DE79F9611D4C3B410032D461 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9601D4C3B410032D461 /* LoginView.swift */; };
 		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
@@ -283,8 +281,6 @@
 		DE79F9551D4C1C270032D461 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DE79F9571D4C1FD30032D461 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DE79F95A1D4C32F30032D461 /* Dimens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
-		DE79F95C1D4C39700032D461 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		DE79F95D1D4C39700032D461 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		DE79F9601D4C3B410032D461 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -410,8 +406,6 @@
 				DE79F9501D4C1C100032D461 /* MainViewController.swift */,
 				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
 				DE79F9551D4C1C270032D461 /* BaseViewController.swift */,
-				DE79F95C1D4C39700032D461 /* RegisterViewController.swift */,
-				DE79F95D1D4C39700032D461 /* RegisterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -829,7 +823,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
-				DE79F95F1D4C39700032D461 /* RegisterViewController.xib in Resources */,
 				DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
@@ -888,7 +881,6 @@
 				DE7900601D4C57A60032D461 /* AFHTTPRequestOperationManager.m in Sources */,
 				DE7900521D4C57450032D461 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE79004B1D4C57450032D461 /* AFNetworkReachabilityManager.m in Sources */,
-				DE79F95E1D4C39700032D461 /* RegisterViewController.swift in Sources */,
 				DE7900531D4C57450032D461 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DE7900581D4C57450032D461 /* UIWebView+AFNetworking.m in Sources */,
 				DE79F9521D4C1C100032D461 /* MainViewController.swift in Sources */,

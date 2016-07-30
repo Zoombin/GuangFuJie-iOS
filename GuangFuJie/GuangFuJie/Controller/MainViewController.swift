@@ -37,22 +37,6 @@ class MainViewController: BaseViewController, LoginViewDelegate {
     }
     
     /**
-     登录页面代理方法--注册
-     */
-    func registerButtonClicked() {
-        loginView.hidden = true
-        let registerVC = RegisterViewController.init(nibName: "RegisterViewController", bundle: nil)
-        self.pushViewController(registerVC)
-    }
-    
-    /**
-     登录页面代理方法--忘记密码
-     */
-    func forgetPasswordButtonClicked() {
-        loginView.hidden = true
-    }
-    
-    /**
      登录页面代理方法--获取验证码
      */
     func getCodeButtonClicked() {
