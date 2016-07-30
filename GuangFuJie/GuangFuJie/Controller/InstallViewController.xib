@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InstallViewController" customModule="GuangFuJie" customModuleProvider="target">
+            <connections>
+                <outlet property="codeTextField" destination="faJ-0u-WQD" id="VCE-EW-9XN"/>
+                <outlet property="installCityTextField" destination="IiT-cV-bja" id="a5a-MP-wNg"/>
+                <outlet property="phoneTextField" destination="sIr-8w-48v" id="PrI-RW-W58"/>
+                <outlet property="roomTextField" destination="EHs-mA-GtK" id="JFP-bn-qhA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号 (必填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sIr-8w-48v">
+                    <rect key="frame" x="0.0" y="76" width="320" height="40"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="jaX-DY-nCB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-0u-WQD">
+                    <rect key="frame" x="0.0" y="117" width="320" height="40"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ynO-Wv-uAd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="安装城市" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IiT-cV-bja">
+                    <rect key="frame" x="0.0" y="188" width="320" height="40"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6A3-Ig-eKh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="房屋面积" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EHs-mA-GtK">
+                    <rect key="frame" x="0.0" y="229" width="320" height="40"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Ehh-rC-hf0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9m-wz-k2Z">
+                    <rect key="frame" x="244" y="122" width="70" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="发送验证码">
+                        <color key="titleColor" red="0.28627450980000002" green="0.63529411759999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNu-6w-vpL">
+                    <rect key="frame" x="190" y="284" width="121" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="是否需要银行贷款" image="checkbox">
+                        <color key="titleColor" red="0.28627450980000002" green="0.63529411759999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="checkbox_hl"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnl-lt-EHv">
+                    <rect key="frame" x="10" y="342" width="300" height="40"/>
+                    <color key="backgroundColor" red="0.15686274509803921" green="0.65098039215686276" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="WRn-nL-4yB"/>
+                    </constraints>
+                    <state key="normal" title="预约安装">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请填写安装地址和房屋面积预测您的收益" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-Td-iQa">
+                    <rect key="frame" x="30" y="508" width="260" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="B2B-F0-x8W"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXl-yQ-bJv">
+                    <rect key="frame" x="120" y="535" width="80" height="20"/>
+                    <color key="backgroundColor" red="0.15686274510000001" green="0.65098039220000004" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="3TY-RI-woS"/>
+                        <constraint firstAttribute="width" constant="80" id="gVc-mI-nGy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="收益预计" image="earn_hope"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="faJ-0u-WQD" firstAttribute="leading" secondItem="IiT-cV-bja" secondAttribute="leading" id="547-Ve-MW6"/>
+                <constraint firstItem="T3E-Td-iQa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="5ll-se-Xtr"/>
+                <constraint firstItem="IiT-cV-bja" firstAttribute="top" secondItem="faJ-0u-WQD" secondAttribute="bottom" constant="31" id="63O-gh-055"/>
+                <constraint firstItem="sIr-8w-48v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="6SF-gv-ThU"/>
+                <constraint firstItem="Z9m-wz-k2Z" firstAttribute="top" secondItem="sIr-8w-48v" secondAttribute="bottom" constant="6" id="7BN-Ec-zDs"/>
+                <constraint firstAttribute="bottom" secondItem="CXl-yQ-bJv" secondAttribute="bottom" constant="13" id="8GN-vK-0UG"/>
+                <constraint firstAttribute="trailing" secondItem="faJ-0u-WQD" secondAttribute="trailing" id="94h-SM-xR2"/>
+                <constraint firstItem="T3E-Td-iQa" firstAttribute="centerX" secondItem="Wnl-lt-EHv" secondAttribute="centerX" id="CP7-Xr-HDw"/>
+                <constraint firstItem="Wnl-lt-EHv" firstAttribute="centerX" secondItem="EHs-mA-GtK" secondAttribute="centerX" id="CUc-j4-z6W"/>
+                <constraint firstAttribute="trailing" secondItem="sIr-8w-48v" secondAttribute="trailing" id="K9X-Ni-I0J"/>
+                <constraint firstItem="faJ-0u-WQD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mp7-8p-7eA"/>
+                <constraint firstItem="CXl-yQ-bJv" firstAttribute="top" secondItem="T3E-Td-iQa" secondAttribute="bottom" constant="6" id="QVW-Y4-Sb7"/>
+                <constraint firstItem="BNu-6w-vpL" firstAttribute="top" secondItem="EHs-mA-GtK" secondAttribute="bottom" constant="15" id="QiL-0m-QC3"/>
+                <constraint firstItem="Wnl-lt-EHv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="SPX-zX-Qlv"/>
+                <constraint firstItem="sIr-8w-48v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YSS-r7-e6A"/>
+                <constraint firstItem="IiT-cV-bja" firstAttribute="trailing" secondItem="EHs-mA-GtK" secondAttribute="trailing" id="ZnE-b4-HMI"/>
+                <constraint firstItem="T3E-Td-iQa" firstAttribute="centerX" secondItem="CXl-yQ-bJv" secondAttribute="centerX" id="abW-6w-Oem"/>
+                <constraint firstItem="faJ-0u-WQD" firstAttribute="top" secondItem="sIr-8w-48v" secondAttribute="bottom" constant="1" id="dEP-VF-qTv"/>
+                <constraint firstItem="IiT-cV-bja" firstAttribute="leading" secondItem="EHs-mA-GtK" secondAttribute="leading" id="m5z-IM-hBs"/>
+                <constraint firstItem="EHs-mA-GtK" firstAttribute="top" secondItem="IiT-cV-bja" secondAttribute="bottom" constant="1" id="p0e-Zx-Mi9"/>
+                <constraint firstAttribute="trailing" secondItem="Z9m-wz-k2Z" secondAttribute="trailing" constant="6" id="qra-AP-TkF"/>
+                <constraint firstItem="faJ-0u-WQD" firstAttribute="trailing" secondItem="IiT-cV-bja" secondAttribute="trailing" id="rjd-pb-x27"/>
+                <constraint firstItem="Wnl-lt-EHv" firstAttribute="top" secondItem="BNu-6w-vpL" secondAttribute="bottom" constant="33" id="tWl-Qk-NU1"/>
+                <constraint firstItem="faJ-0u-WQD" firstAttribute="top" secondItem="sIr-8w-48v" secondAttribute="bottom" constant="1" id="tdc-K2-otT"/>
+                <constraint firstAttribute="trailing" secondItem="BNu-6w-vpL" secondAttribute="trailing" constant="9" id="xst-Mv-XfO"/>
+                <constraint firstItem="IiT-cV-bja" firstAttribute="top" secondItem="Z9m-wz-k2Z" secondAttribute="bottom" constant="36" id="zq0-BO-EqP"/>
+            </constraints>
+            <point key="canvasLocation" x="322" y="272"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checkbox" width="25" height="25"/>
+        <image name="checkbox_hl" width="25" height="25"/>
+        <image name="earn_hope" width="12" height="10"/>
+    </resources>
+</document>

@@ -13,7 +13,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.bkgColor
-        // Do any additional setup after loading the view.
+        //设置标题的字的颜色
+        self.navigationController!.navigationBar.titleTextAttributes = NSDictionary(object: UIColor.lightGrayColor(),forKey: NSForegroundColorAttributeName) as? [String : AnyObject]
     }
 
     override func didReceiveMemoryWarning() {

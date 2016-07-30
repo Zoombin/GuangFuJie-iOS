@@ -40,7 +40,9 @@ class MainViewController: BaseViewController, LoginViewDelegate {
      登录页面代理方法--获取验证码
      */
     func getCodeButtonClicked() {
-        
+        loginView.hidden = true
+        let vc = InstallViewController.init(nibName: "InstallViewController", bundle: nil)
+        self.pushViewController(vc)
     }
     
     func initLeftNavButton() {
