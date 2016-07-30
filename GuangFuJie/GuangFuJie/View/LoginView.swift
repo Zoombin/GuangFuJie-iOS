@@ -10,10 +10,13 @@ import UIKit
 
 protocol LoginViewDelegate : NSObjectProtocol {
     func getCodeButtonClicked()
+    func loginButtonClicked(phone : String, code : String)
 }
 
 class LoginView: UIView {
     var delegate : LoginViewDelegate?
+    var phoneTextField : UITextField!
+    var codeTextField : UITextField!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -48,18 +51,17 @@ class LoginView: UIView {
         closeButton.addTarget(self, action: #selector(self.closeButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         bkgView.addSubview(closeButton)
         
-        let phoneTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(titleLabel.frame), viewWidth - offSetX * 2, height))
+        phoneTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(titleLabel.frame), viewWidth - offSetX * 2, height))
         phoneTextField.placeholder = "请输入手机号"
         phoneTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         bkgView.addSubview(phoneTextField)
         
-        let pwdTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(phoneTextField.frame), viewWidth - offSetX * 2, height))
-        pwdTextField.placeholder = "请输入验证码"
-        pwdTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        pwdTextField.secureTextEntry = true
-        bkgView.addSubview(pwdTextField)
+        codeTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(phoneTextField.frame), viewWidth - offSetX * 2, height))
+        codeTextField.placeholder = "请输入验证码"
+        codeTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        bkgView.addSubview(codeTextField)
         
-        let getCodeButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(pwdTextField.frame) - 80, CGRectGetMaxY(pwdTextField.frame), 80, height))
+        let getCodeButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(codeTextField.frame) - 80, CGRectGetMaxY(codeTextField.frame), 80, height))
         getCodeButton.setTitle("获取验证码", forState: UIControlState.Normal)
         getCodeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         getCodeButton.setTitleColor(Colors.lightBule, forState: UIControlState.Normal)
@@ -68,14 +70,26 @@ class LoginView: UIView {
         
         let loginButtonHeight = height * 1.2
         let startY = ((height * 2) - loginButtonHeight) / 2
-        let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(getCodeButton.frame) + startY, pwdTextField.frame.size.width, loginButtonHeight))
+        let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(getCodeButton.frame) + startY, codeTextField.frame.size.width, loginButtonHeight))
         loginButton.setTitle("确认", forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         loginButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
         loginButton.backgroundColor = Colors.lightBule
         loginButton.layer.cornerRadius = 6
         loginButton.layer.masksToBounds = true
+        loginButton.addTarget(self, action: #selector(self.loginButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         bkgView.addSubview(loginButton)
+    }
+    
+    func hiddenAllKeyBoard() {
+        phoneTextField.resignFirstResponder()
+        codeTextField.resignFirstResponder()
+    }
+    
+    func loginButtonClicked() {
+        if (delegate != nil) {
+            self.delegate?.loginButtonClicked(phoneTextField.text!, code: codeTextField.text!)
+        }
     }
     
     func getCode() {
@@ -86,5 +100,6 @@ class LoginView: UIView {
     
     func closeButtonClicked() {
         self.hidden = true
+        hiddenAllKeyBoard()
     }
 }

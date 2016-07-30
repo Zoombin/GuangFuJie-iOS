@@ -40,9 +40,38 @@ class MainViewController: BaseViewController, LoginViewDelegate {
      登录页面代理方法--获取验证码
      */
     func getCodeButtonClicked() {
+        loginView.hiddenAllKeyBoard()
         loginView.hidden = true
         let vc = InstallViewController.init(nibName: "InstallViewController", bundle: nil)
         self.pushViewController(vc)
+    }
+    
+    /**
+     登录页面代理方法--登录按钮
+     
+     - parameter phone
+     - parameter code
+     */
+    func loginButtonClicked(phone: String, code: String) {
+        if (phone.isEmpty) {
+            self.showHint("请输入账号!")
+            return
+        }
+        if (code.isEmpty) {
+            self.showHint("请输入验证码!")
+            return
+        }
+        loginView.hiddenAllKeyBoard()
+        self.showHudInView(self.view, hint: "登录中...")
+        API.sharedInstance.login(phone, captcha: code, success: { (userinfo) in
+                self.hideHud()
+                self.showHint("登录成功!")
+                self.loginView.hidden = true
+                UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+            }) { (msg) in
+                self.hideHud()
+                self.showHint(msg)
+        }
     }
     
     func initLeftNavButton() {
@@ -50,6 +79,11 @@ class MainViewController: BaseViewController, LoginViewDelegate {
     }
     
     func leftButtonClicked() {
+        if (UserDefaultManager.isLogin()) {
+            UserDefaultManager.logOut()
+            self.showHint("登出成功!")
+            return
+        }
         loginView.hidden = false
     }
     

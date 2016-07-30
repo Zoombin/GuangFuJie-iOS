@@ -61,6 +61,7 @@
 		DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */; };
 		DE7900FA1D4C9D7E0032D461 /* InstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */; };
 		DE7900FB1D4C9D7E0032D461 /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7900F91D4C9D7E0032D461 /* InstallViewController.xib */; };
+		DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */; };
 		DE79F9521D4C1C100032D461 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9501D4C1C100032D461 /* MainViewController.swift */; };
 		DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE79F9511D4C1C100032D461 /* MainViewController.xib */; };
 		DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9551D4C1C270032D461 /* BaseViewController.swift */; };
@@ -279,6 +280,7 @@
 		DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABoutUsView.xib; sourceTree = "<group>"; };
 		DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallViewController.swift; sourceTree = "<group>"; };
 		DE7900F91D4C9D7E0032D461 /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
+		DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		DE79F94F1D4B8D580032D461 /* GuangFuJie-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GuangFuJie-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE79F9501D4C1C100032D461 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE79F9511D4C1C100032D461 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 		18B8FA611D3CE8A400B334E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */,
 				DE79F95A1D4C32F30032D461 /* Dimens.swift */,
 				1891D9F91D3F57B90042E72D /* Constants.swift */,
 				1891D9FA1D3F57B90042E72D /* PhoneUtils.swift */,
@@ -880,6 +883,7 @@
 				DE7900221D4C57300032D461 /* IQPreviousNextView.swift in Sources */,
 				DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */,
 				DE7900231D4C57300032D461 /* IQTitleBarButtonItem.swift in Sources */,
+				DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */,
 				DE79001C1D4C57300032D461 /* IQKeyboardManagerConstants.swift in Sources */,
 				DE7900161D4C57300032D461 /* IQNSArray+Sort.swift in Sources */,
 				DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */,

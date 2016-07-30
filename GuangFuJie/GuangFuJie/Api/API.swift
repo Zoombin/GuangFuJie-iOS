@@ -42,7 +42,7 @@ class API: NSObject {
                     NSLog("====> post返回 ===> \(data)")
                     success?(data: data)
                 } else {
-                    failure?(msg: dict?.objectForKey("message") as? String)
+                    failure?(msg: dict?.objectForKey("msg") as? String)
                 }
             }
             }, failure: { (operation, error) in
@@ -71,7 +71,7 @@ class API: NSObject {
                     NSLog("====> get返回 ===> \(data)")
                     success?(data: data)
                 } else {
-                    failure?(msg: dict?.objectForKey("message") as? String)
+                    failure?(msg: dict?.objectForKey("msg") as? String)
                 }
             }
             }, failure: { (operation, error) in
