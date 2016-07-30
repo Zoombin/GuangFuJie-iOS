@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: BaseViewController, LoginViewDelegate {
     var buttons = NSMutableArray()
     var loginView : LoginView!
+    var aboutUsView : ABoutUsView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,18 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         
         initView()
         initLoginView()
+        initAboutUsView()
+    }
+    
+    func initAboutUsView() {
+        let nibs = NSBundle.mainBundle().loadNibNamed("ABoutUsView", owner: nil, options: nil)
+        aboutUsView = nibs.first as! ABoutUsView
+        aboutUsView.frame = UIScreen.mainScreen().bounds
+        aboutUsView.addUnderLine()
+        aboutUsView.hidden = true
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.window!.addSubview(aboutUsView)
     }
     
     /**
@@ -37,6 +50,12 @@ class MainViewController: BaseViewController, LoginViewDelegate {
      */
     func forgetPasswordButtonClicked() {
         loginView.hidden = true
+    }
+    
+    /**
+     登录页面代理方法--获取验证码
+     */
+    func getCodeButtonClicked() {
         
     }
     
@@ -53,7 +72,7 @@ class MainViewController: BaseViewController, LoginViewDelegate {
     }
     
     func rightButtonClicked() {
-        
+        aboutUsView.hidden = false
     }
     
     func initLoginView() {
@@ -79,7 +98,6 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         self.view.addSubview(topView)
         
         for i in 0..<titles.count {
-            print(i)
             let button = UIButton.init(frame: CGRectMake(CGFloat(i) * buttonWidth + (CGFloat(i) + 1) * offSetX, offSetY, buttonWidth, buttonHeigt))
             button.setTitle(titles[i], forState: UIControlState.Normal)
             button.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
@@ -101,7 +119,7 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         
         let bottomButtonWidth = screenWidth / 4
         
-        let earnCalButton = UIButton.init(frame: CGRectMake(0, topView.frame.size.height / 2, bottomButtonWidth, buttonHeigt))
+        let earnCalButton = UIButton.init(frame: CGRectMake(0, offSetY + topView.frame.size.height / 2, bottomButtonWidth, buttonHeigt))
         earnCalButton.setTitle("收益计算", forState: UIControlState.Normal)
         earnCalButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
         earnCalButton.setImage(UIImage(named: "money_cal"), forState: UIControlState.Normal)
@@ -110,7 +128,7 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         earnCalButton.addTarget(self, action: #selector(self.earnCaluateButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         topView.addSubview(earnCalButton)
         
-        let contactUsButton = UIButton.init(frame: CGRectMake(bottomButtonWidth, topView.frame.size.height / 2, bottomButtonWidth, buttonHeigt))
+        let contactUsButton = UIButton.init(frame: CGRectMake(bottomButtonWidth, offSetY + topView.frame.size.height / 2, bottomButtonWidth, buttonHeigt))
         contactUsButton.setTitle("联系我们", forState: UIControlState.Normal)
         contactUsButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
         contactUsButton.setImage(UIImage(named: "contact_us"), forState: UIControlState.Normal)

@@ -58,6 +58,7 @@
 		DE7900EA1D4C860D0032D461 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7900E91D4C86000032D461 /* MJExtension.framework */; };
 		DE7900EB1D4C860D0032D461 /* MJExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE7900E91D4C86000032D461 /* MJExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE7900EF1D4C88C70032D461 /* ABoutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900EE1D4C88C70032D461 /* ABoutUsView.swift */; };
+		DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */; };
 		DE79F9521D4C1C100032D461 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9501D4C1C100032D461 /* MainViewController.swift */; };
 		DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE79F9511D4C1C100032D461 /* MainViewController.xib */; };
 		DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9551D4C1C270032D461 /* BaseViewController.swift */; };
@@ -275,6 +276,7 @@
 		DE7900DB1D4C86000032D461 /* MJExtensionExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MJExtensionExample.xcodeproj; path = MJExtension/MJExtensionExample.xcodeproj; sourceTree = "<group>"; };
 		DE7900EE1D4C88C70032D461 /* ABoutUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABoutUsView.swift; sourceTree = "<group>"; };
 		DE7900F31D4C89A00032D461 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABoutUsView.xib; sourceTree = "<group>"; };
 		DE79F94F1D4B8D580032D461 /* GuangFuJie-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GuangFuJie-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE79F9501D4C1C100032D461 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE79F9511D4C1C100032D461 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				DE79F9601D4C3B410032D461 /* LoginView.swift */,
 				DE79F9621D4C458E0032D461 /* CustomTextField.swift */,
 				DE7900EE1D4C88C70032D461 /* ABoutUsView.swift */,
+				DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 			files = (
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
 				DE79F95F1D4C39700032D461 /* RegisterViewController.xib in Resources */,
+				DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
 				DE7900261D4C57300032D461 /* IQKeyboardManager.bundle in Resources */,

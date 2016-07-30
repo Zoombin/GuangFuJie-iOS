@@ -67,20 +67,12 @@ class LoginView: UIView {
         registerButton.addTarget(self, action: #selector(self.registClick), forControlEvents: UIControlEvents.TouchUpInside)
         bkgView.addSubview(registerButton)
         
-        let forgetButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(pwdTextField.frame) - 60, CGRectGetMaxY(pwdTextField.frame), 60, height))
-        forgetButton.setTitle("忘记密码", forState: UIControlState.Normal)
-        forgetButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        forgetButton.setTitleColor(Colors.lightBule, forState: UIControlState.Normal)
-        forgetButton.addTarget(self, action: #selector(self.forgetClick), forControlEvents: UIControlEvents.TouchUpInside)
-        bkgView.addSubview(forgetButton)
-        
-//        let rememberAccountButton = UIButton.init(frame: CGRectMake(0, CGRectGetMaxY(forgetButton.frame), pwdTextField.frame.size.width / 3, height))
-//        rememberAccountButton.setTitle("记住用户名", forState: UIControlState.Normal)
-//        rememberAccountButton.setImage(UIImage(named: "checkbox"), forState: UIControlState.Normal)
-//        rememberAccountButton.setImage(UIImage(named: "checkbox_hl"), forState: UIControlState.Selected)
-//        rememberAccountButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall2)
-//        rememberAccountButton.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
-//        bkgView.addSubview(rememberAccountButton)
+        let getCodeButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(pwdTextField.frame) - 80, CGRectGetMaxY(pwdTextField.frame), 80, height))
+        getCodeButton.setTitle("获取验证码", forState: UIControlState.Normal)
+        getCodeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        getCodeButton.setTitleColor(Colors.lightBule, forState: UIControlState.Normal)
+        getCodeButton.addTarget(self, action: #selector(self.forgetClick), forControlEvents: UIControlEvents.TouchUpInside)
+        bkgView.addSubview(getCodeButton)
         
         let loginButtonHeight = height * 1.2
         let startY = ((height * 2) - loginButtonHeight) / 2
