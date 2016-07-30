@@ -4,3 +4,12 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/MJExtension"]
 	path = GuangFuJie/GuangFuJie/Submodules/MJExtension
 	url = https://github.com/CoderMJLee/MJExtension.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/IQKeyboardManager"]
+	path = GuangFuJie/GuangFuJie/Submodules/IQKeyboardManager
+	url = https://github.com/hackiftekhar/IQKeyboardManager.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/AFNetworking"]
+	path = GuangFuJie/GuangFuJie/Submodules/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/MBProgressHUD"]
+	path = GuangFuJie/GuangFuJie/Submodules/MBProgressHUD
+	url = https://github.com/jdg/MBProgressHUD.git

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: BaseViewController {
+class MainViewController: BaseViewController, LoginViewDelegate {
     var buttons = NSMutableArray()
     var loginView : LoginView!
 
@@ -21,6 +21,23 @@ class MainViewController: BaseViewController {
         
         initView()
         initLoginView()
+    }
+    
+    /**
+     登录页面代理方法--注册
+     */
+    func registerButtonClicked() {
+        loginView.hidden = true
+        let registerVC = RegisterViewController.init(nibName: "RegisterViewController", bundle: nil)
+        self.pushViewController(registerVC)
+    }
+    
+    /**
+     登录页面代理方法--忘记密码
+     */
+    func forgetPasswordButtonClicked() {
+        loginView.hidden = true
+        
     }
     
     func initLeftNavButton() {
@@ -42,6 +59,7 @@ class MainViewController: BaseViewController {
     func initLoginView() {
         loginView = LoginView(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight))
         loginView.initView()
+        loginView.delegate = self
         loginView.hidden = true
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

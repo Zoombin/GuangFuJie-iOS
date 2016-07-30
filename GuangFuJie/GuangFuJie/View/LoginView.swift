@@ -26,8 +26,8 @@ class LoginView: UIView {
     func initView() {
         self.backgroundColor = Colors.halfColor
         let viewWidth = PhoneUtils.kScreenWidth * 0.8
-        let viewHeight = viewWidth * 0.9
-        let height = viewHeight / 7
+        let viewHeight = viewWidth * 0.7
+        let height = viewHeight / 6
         let offSetX : CGFloat = 10
         
         let bkgView = UIView.init(frame: CGRectMake(0, 0, viewWidth, viewHeight))
@@ -55,7 +55,7 @@ class LoginView: UIView {
         bkgView.addSubview(phoneTextField)
         
         let pwdTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(phoneTextField.frame), viewWidth - offSetX * 2, height))
-        pwdTextField.placeholder = "请输入密码"
+        pwdTextField.placeholder = "请输入验证码"
         pwdTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         pwdTextField.secureTextEntry = true
         bkgView.addSubview(pwdTextField)
@@ -74,21 +74,17 @@ class LoginView: UIView {
         forgetButton.addTarget(self, action: #selector(self.forgetClick), forControlEvents: UIControlEvents.TouchUpInside)
         bkgView.addSubview(forgetButton)
         
-        let line = UILabel.init(frame: CGRectMake(offSetX, CGRectGetMaxY(registerButton.frame) - 0.5, pwdTextField.frame.size.width, 0.2))
-        line.backgroundColor = Colors.lightGray
-        bkgView.addSubview(line)
-        
-        let rememberAccountButton = UIButton.init(frame: CGRectMake(0, CGRectGetMaxY(forgetButton.frame), pwdTextField.frame.size.width / 3, height))
-        rememberAccountButton.setTitle("记住用户名", forState: UIControlState.Normal)
-        rememberAccountButton.setImage(UIImage(named: "checkbox"), forState: UIControlState.Normal)
-        rememberAccountButton.setImage(UIImage(named: "checkbox_hl"), forState: UIControlState.Selected)
-        rememberAccountButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall2)
-        rememberAccountButton.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
-        bkgView.addSubview(rememberAccountButton)
+//        let rememberAccountButton = UIButton.init(frame: CGRectMake(0, CGRectGetMaxY(forgetButton.frame), pwdTextField.frame.size.width / 3, height))
+//        rememberAccountButton.setTitle("记住用户名", forState: UIControlState.Normal)
+//        rememberAccountButton.setImage(UIImage(named: "checkbox"), forState: UIControlState.Normal)
+//        rememberAccountButton.setImage(UIImage(named: "checkbox_hl"), forState: UIControlState.Selected)
+//        rememberAccountButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall2)
+//        rememberAccountButton.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
+//        bkgView.addSubview(rememberAccountButton)
         
         let loginButtonHeight = height * 1.2
         let startY = ((height * 2) - loginButtonHeight) / 2
-        let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(rememberAccountButton.frame) + startY, pwdTextField.frame.size.width, loginButtonHeight))
+        let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(registerButton.frame) + startY, pwdTextField.frame.size.width, loginButtonHeight))
         loginButton.setTitle("确认", forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         loginButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
