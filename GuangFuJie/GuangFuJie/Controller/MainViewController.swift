@@ -158,10 +158,17 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         topView.addSubview(contactUsButton)
     }
     
+    /**
+     收益计算按钮
+     */
     func earnCaluateButtonClicked() {
-
+        let earnCalVC = EarnCalViewController.init(nibName: "EarnCalViewController", bundle: nil)
+        self.pushViewController(earnCalVC)
     }
     
+    /**
+     联系我们按钮
+     */
     func contactUsButtonClicked() {
         
     }

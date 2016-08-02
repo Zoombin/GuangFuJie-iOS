@@ -13,11 +13,11 @@ class API: NSObject {
 
     static let sharedInstance = API()
 
-    private var _manager: AFHTTPRequestOperationManager?
+    private var _manager: AFHTTPSessionManager?
 
     private override init() {
          super.init()
-        _manager = AFHTTPRequestOperationManager()
+        _manager = AFHTTPSessionManager()
         _manager?.responseSerializer = AFHTTPResponseSerializer();
     }
 

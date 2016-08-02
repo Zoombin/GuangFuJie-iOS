@@ -6,3 +6,4 @@
 #import "NSString+AESCrypt.h"
 #import "NSData+AESCrypt.h"
 #import "UIViewController+Hud.h"
+#import "QiniuSDK.h"
