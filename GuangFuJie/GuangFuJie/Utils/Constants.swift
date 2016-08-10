@@ -18,7 +18,11 @@ class Constants: NSObject {
     //本地
 //    static let httpHost = "http://localhost:3000/api"
     
-    //aes-256key
+    static let logEnable:Bool = true
+    static let osType = 1 //ios
+    static let qpAppKey = "208e8090184a329"
+    static let qpSecret = "cbaaf8b45ca148b891144407e7d91f05"
+    static let qpSpaceName = "guangfujie"
     static let aeskey = "e41cd1f755f211e6b56b00ff8821fdcf"
 
 }

@@ -76,6 +76,8 @@
 		DE5E74C11D509CC4003CDAAC /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74B21D509CC4003CDAAC /* UIWebView+AFNetworking.m */; };
 		DE5E74C31D509D0F003CDAAC /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5E74C21D509D0F003CDAAC /* libresolv.tbd */; };
 		DE5E74C51D509D3D003CDAAC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5E74C41D509D3D003CDAAC /* libz.tbd */; };
+		DE5E74C71D509FD9003CDAAC /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74C61D509FD9003CDAAC /* AppModel.swift */; };
+		DE5E74C91D50A296003CDAAC /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74C81D50A296003CDAAC /* CommonModel.swift */; };
 		DE7900161D4C57300032D461 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900001D4C57300032D461 /* IQNSArray+Sort.swift */; };
 		DE7900171D4C57300032D461 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900011D4C57300032D461 /* IQUIScrollView+Additions.swift */; };
 		DE7900181D4C57300032D461 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900021D4C57300032D461 /* IQUITextFieldView+Additions.swift */; };
@@ -381,6 +383,8 @@
 		DE5E74B21D509CC4003CDAAC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		DE5E74C21D509D0F003CDAAC /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		DE5E74C41D509D3D003CDAAC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		DE5E74C61D509FD9003CDAAC /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		DE5E74C81D50A296003CDAAC /* CommonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
 		DE7900001D4C57300032D461 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		DE7900011D4C57300032D461 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		DE7900021D4C57300032D461 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -582,6 +586,8 @@
 				DE5E72C61D508D77003CDAAC /* ProvinceInfo.swift */,
 				DE5E72C81D508D80003CDAAC /* CityInfo.swift */,
 				DE5E72CE1D50970B003CDAAC /* QNInfo.swift */,
+				DE5E74C61D509FD9003CDAAC /* AppModel.swift */,
+				DE5E74C81D50A296003CDAAC /* CommonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1226,6 +1232,7 @@
 				DE5E74811D509BAD003CDAAC /* QNLruCache.m in Sources */,
 				DE7900EF1D4C88C70032D461 /* ABoutUsView.swift in Sources */,
 				DE7900221D4C57300032D461 /* IQPreviousNextView.swift in Sources */,
+				DE5E74C91D50A296003CDAAC /* CommonModel.swift in Sources */,
 				DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */,
 				DE7900231D4C57300032D461 /* IQTitleBarButtonItem.swift in Sources */,
 				DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */,
@@ -1256,6 +1263,7 @@
 				DE5E744E1D509B9F003CDAAC /* QNUploadOption.m in Sources */,
 				DE5E744A1D509B9F003CDAAC /* QNConfiguration.m in Sources */,
 				DE7900191D4C57300032D461 /* IQUIView+Hierarchy.swift in Sources */,
+				DE5E74C71D509FD9003CDAAC /* AppModel.swift in Sources */,
 				DE5E743E1D509B9F003CDAAC /* QNAsyncRun.m in Sources */,
 				DE79F9581D4C1FD30032D461 /* Colors.swift in Sources */,
 				DE79006E1D4C59920032D461 /* NSString+AESCrypt.m in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import MJExtension
 
 extension API {
-    static func getUserId() -> NSNumber{
+    func getUserId() -> NSNumber{
         let user = UserDefaultManager.getUser()
         if(user != nil){
             return (user?.user_id)!
@@ -35,7 +35,7 @@ extension API {
     }
     
     //七牛上传文件
-    static func uploadData(data : NSData, key : String, token : String, result : (info : QNResponseInfo?, key : String?, resp : NSDictionary?) -> Void) {
+    func uploadData(data : NSData, key : String, token : String, result : (info : QNResponseInfo?, key : String?, resp : NSDictionary?) -> Void) {
         let upManager = QNUploadManager()
         upManager.putData(data, key: key, token: token, complete: { (info, key, resp) in
             result(info: info, key: key, resp: resp)
@@ -95,7 +95,7 @@ extension API {
     func refreshUserToken(success: ((userInfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "token/refresh"
         let params = [
-            "user_id" : "1",
+            "user_id" : getUserId(),
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params)
@@ -115,7 +115,7 @@ extension API {
     func provincelist(success: ((provinces: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "region/provincelist"
         let params = [
-            "user_id" : "1",
+            "user_id" : getUserId(),
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params)
@@ -135,7 +135,7 @@ extension API {
     func citylist(success: ((cities: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "region/citylist"
         let params = [
-            "user_id" : "1",
+            "user_id" : getUserId(),
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params)
@@ -146,6 +146,53 @@ extension API {
             }, failure: failure)
     }
     
+    /**
+     app强制升级
+     
+     - parameter success:
+     - parameter failure: 
+     */
+    func appupgrade(success: ((appModel: AppModel) -> Void)?, failure: ((msg: String?) -> Void)?){
+        let url = Constants.httpHost + "app/upgrade";
+        let params = [
+            "device_type" : Constants.osType,
+            "version" : PhoneUtils.getBuildId(),
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let appModel = AppModel.mj_objectWithKeyValues(data)
+            success?(appModel : appModel)
+            }, failure: failure)
+    }
     
+    /**
+     预约安装
+     
+     - parameter province_id:
+     - parameter city_id:
+     - parameter area_size:
+     - parameter is_loan:
+     - parameter success:
+     - parameter failure:
+     */
+    func bookingAdd(province_id : NSNumber, city_id : NSNumber, area_size : NSNumber, is_loan : NSInteger, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "booking/add";
+        let params = [
+            "user_id" : getUserId(), // 用户id
+            "province_id" : province_id, // 预约时的省份id
+            "city_id" : city_id, // 预约时的城市id
+            "area_size" : area_size, // 屋顶面积
+            "is_loan" : is_loan, // 是否需要贷款 int 0:不需要 1需要
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(commonModel : commonModel)
+            }, failure: failure)
+    }
     
 }

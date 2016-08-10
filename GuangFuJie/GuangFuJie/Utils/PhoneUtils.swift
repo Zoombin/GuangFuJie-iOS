@@ -31,6 +31,14 @@ class PhoneUtils: NSObject {
         }
         return "1.0"
     }
+    
+    //获取系统BuildId
+    static func getBuildId() ->Int{
+        let infoDictionary = NSBundle.mainBundle().infoDictionary
+        let minorVersion : AnyObject? = infoDictionary! ["CFBundleVersion"]
+        let buildId = minorVersion!.integerValue
+        return buildId
+    }
 
     /// app编译版本
     static var appBuildVersion: CGFloat {
