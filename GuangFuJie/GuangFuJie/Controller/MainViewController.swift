@@ -42,8 +42,6 @@ class MainViewController: BaseViewController, LoginViewDelegate {
     func getCodeButtonClicked() {
         loginView.hiddenAllKeyBoard()
         loginView.hidden = true
-        let vc = InstallViewController.init(nibName: "InstallViewController", bundle: nil)
-        self.pushViewController(vc)
     }
     
     /**
@@ -170,7 +168,8 @@ class MainViewController: BaseViewController, LoginViewDelegate {
      联系我们按钮
      */
     func contactUsButtonClicked() {
-        
+        let vc = ContactUsViewController()
+        self.pushViewController(vc)
     }
     
     func buttonClicked(sender : UIButton) {
