@@ -71,12 +71,10 @@ class LoginView: UIView {
         let loginButtonHeight = height * 1.2
         let startY = ((height * 2) - loginButtonHeight) / 2
         let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(getCodeButton.frame) + startY, codeTextField.frame.size.width, loginButtonHeight))
-        loginButton.setTitle("确认", forState: UIControlState.Normal)
+        loginButton.setTitle("确认登录", forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         loginButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
         loginButton.backgroundColor = Colors.lightBule
-        loginButton.layer.cornerRadius = 6
-        loginButton.layer.masksToBounds = true
         loginButton.addTarget(self, action: #selector(self.loginButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         bkgView.addSubview(loginButton)
     }

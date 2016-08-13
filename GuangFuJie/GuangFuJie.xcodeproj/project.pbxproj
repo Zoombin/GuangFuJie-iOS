@@ -18,6 +18,10 @@
 		18A7FF671CD9902B00BF5926 /* GuangFuJieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */; };
 		DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */; };
 		DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
+		DE57C9531D5DC906005B9CCE /* SubscribeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */; };
+		DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9581D5ECF79005B9CCE /* BankInfo.swift */; };
+		DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9641D5ED221005B9CCE /* BookingStatus.swift */; };
+		DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */; };
 		DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72B91D507A76003CDAAC /* DeviceInfo.swift */; };
 		DE5E72C71D508D77003CDAAC /* ProvinceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72C61D508D77003CDAAC /* ProvinceInfo.swift */; };
 		DE5E72C91D508D80003CDAAC /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72C81D508D80003CDAAC /* CityInfo.swift */; };
@@ -107,7 +111,6 @@
 		DE7900EF1D4C88C70032D461 /* ABoutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900EE1D4C88C70032D461 /* ABoutUsView.swift */; };
 		DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */; };
 		DE7900FA1D4C9D7E0032D461 /* InstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */; };
-		DE7900FB1D4C9D7E0032D461 /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7900F91D4C9D7E0032D461 /* InstallViewController.xib */; };
 		DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */; };
 		DE7901021D4CAE4C0032D461 /* EarnCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7901001D4CAE4C0032D461 /* EarnCalViewController.swift */; };
 		DE7901031D4CAE4C0032D461 /* EarnCalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7901011D4CAE4C0032D461 /* EarnCalViewController.xib */; };
@@ -262,6 +265,10 @@
 		18A7FF681CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceNoticeViewController.swift; sourceTree = "<group>"; };
 		DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeStatusViewController.swift; sourceTree = "<group>"; };
+		DE57C9581D5ECF79005B9CCE /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
+		DE57C9641D5ED221005B9CCE /* BookingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatus.swift; sourceTree = "<group>"; };
+		DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
 		DE5E72B91D507A76003CDAAC /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		DE5E72C61D508D77003CDAAC /* ProvinceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceInfo.swift; sourceTree = "<group>"; };
 		DE5E72C81D508D80003CDAAC /* CityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
@@ -421,7 +428,6 @@
 		DE7900F31D4C89A00032D461 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABoutUsView.xib; sourceTree = "<group>"; };
 		DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallViewController.swift; sourceTree = "<group>"; };
-		DE7900F91D4C9D7E0032D461 /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
 		DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		DE7901001D4CAE4C0032D461 /* EarnCalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarnCalViewController.swift; sourceTree = "<group>"; };
 		DE7901011D4CAE4C0032D461 /* EarnCalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EarnCalViewController.xib; sourceTree = "<group>"; };
@@ -559,11 +565,12 @@
 				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
 				DE79F9551D4C1C270032D461 /* BaseViewController.swift */,
 				DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */,
-				DE7900F91D4C9D7E0032D461 /* InstallViewController.xib */,
+				DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */,
 				DE7901001D4CAE4C0032D461 /* EarnCalViewController.swift */,
 				DE7901011D4CAE4C0032D461 /* EarnCalViewController.xib */,
 				DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */,
 				DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */,
+				DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -594,6 +601,8 @@
 				DE5E72CE1D50970B003CDAAC /* QNInfo.swift */,
 				DE5E74C61D509FD9003CDAAC /* AppModel.swift */,
 				DE5E74C81D50A296003CDAAC /* CommonModel.swift */,
+				DE57C9581D5ECF79005B9CCE /* BankInfo.swift */,
+				DE57C9641D5ED221005B9CCE /* BookingStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1169,7 +1178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE7900FB1D4C9D7E0032D461 /* InstallViewController.xib in Resources */,
+				DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */,
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
 				DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */,
 				DE7901031D4CAE4C0032D461 /* EarnCalViewController.xib in Resources */,
@@ -1206,6 +1215,7 @@
 				DE5E74441D509B9F003CDAAC /* QNSystem.m in Sources */,
 				DE5E74C11D509CC4003CDAAC /* UIWebView+AFNetworking.m in Sources */,
 				DE5E74BB1D509CC4003CDAAC /* AFNetworkActivityIndicatorManager.m in Sources */,
+				DE57C9531D5DC906005B9CCE /* SubscribeStatusViewController.swift in Sources */,
 				DE5E74451D509B9F003CDAAC /* QNUrlSafeBase64.m in Sources */,
 				DE5E74481D509B9F003CDAAC /* QNUserAgent.m in Sources */,
 				DE5E74471D509B9F003CDAAC /* QNSessionManager.m in Sources */,
@@ -1262,6 +1272,7 @@
 				DE5E748C1D509BAD003CDAAC /* QNDes.m in Sources */,
 				DE5E74BD1D509CC4003CDAAC /* UIButton+AFNetworking.m in Sources */,
 				DE5E748B1D509BAD003CDAAC /* QNRefresher.m in Sources */,
+				DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */,
 				DE5E74411D509B9F003CDAAC /* QNFile.m in Sources */,
 				DE7901021D4CAE4C0032D461 /* EarnCalViewController.swift in Sources */,
 				DE5E743D1D509B9F003CDAAC /* QNALAssetFile.m in Sources */,
@@ -1292,6 +1303,7 @@
 				DE7900171D4C57300032D461 /* IQUIScrollView+Additions.swift in Sources */,
 				DE7900FA1D4C9D7E0032D461 /* InstallViewController.swift in Sources */,
 				DE5E74C01D509CC4003CDAAC /* UIRefreshControl+AFNetworking.m in Sources */,
+				DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */,
 				1891D9FB1D3F57B90042E72D /* Constants.swift in Sources */,
 				DE5E74B91D509CC4003CDAAC /* AFAutoPurgingImageCache.m in Sources */,
 				DE79006D1D4C59920032D461 /* NSData+AESCrypt.m in Sources */,

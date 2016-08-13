@@ -195,4 +195,63 @@ extension API {
             }, failure: failure)
     }
     
+    /**
+     银行列表
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func bankList(success: ((bankInfo: BankInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "bank/list";
+        let params = [
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let bankInfo = BankInfo.mj_objectWithKeyValues(data)
+            success?(bankInfo : bankInfo)
+            }, failure: failure)
+    }
+    
+    /**
+     填写贷款资料
+     
+     - parameter bank_id:
+     - parameter fullname:
+     - parameter phone:
+     - parameter id_no:
+     - parameter id_image1:
+     - parameter id_image2:
+     - parameter province_id:
+     - parameter city_id:
+     - parameter address:
+     - parameter family_images:
+     - parameter success:
+     - parameter failure:
+     */
+    func loanInfoAdd(bank_id : NSNumber,fullname : String, phone : String, id_no : String, id_image1 : String, id_image2 : String, province_id : NSNumber, city_id : NSNumber, address : String, family_images : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "booking/add";
+        let params = [
+            "user_id" : getUserId(),        // 用户id
+            "bank_id" : bank_id,         // 银行id
+            "fullname" : fullname,        // 姓名
+            "phone" : phone,          // 手机号
+            "id_no" : id_no,           // 身份证号
+            "id_image1" : id_image1,       // 身份证正面图片url
+            "id_image2" : id_image2,       // 身份证反面图片url
+            "province_id" : province_id,     // 电站所在的省份id
+            "city_id" : city_id,         // 电站所在的城市id
+            "address" : address,         // 电站所在的详细地址
+            "family_images" : family_images,   // 家庭电站图片, 多个用逗号隔开
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(commonModel : commonModel)
+            }, failure: failure)
+    }
+    
 }

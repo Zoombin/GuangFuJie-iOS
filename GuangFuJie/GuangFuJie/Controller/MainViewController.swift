@@ -12,10 +12,18 @@ class MainViewController: BaseViewController, LoginViewDelegate {
     var buttons = NSMutableArray()
     var loginView : LoginView!
     var aboutUsView : ABoutUsView!
+    
+    var yezhuView : UIView!
+    var loanView : UIView!
+    var safeView : UIView!
+    
+    var topView : UIView!
+    
+    let offSetY : CGFloat = 10
+    let offSetX : CGFloat = 10
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "光伏街"
         // Do any additional setup after loading the view.
         initLeftNavButton()
         initRightNavButton()
@@ -23,6 +31,90 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         initView()
         initLoginView()
         initAboutUsView()
+        
+        initYeZhuView()
+        initLoanView()
+        initSafeView()
+    }
+    
+    func initYeZhuView() {
+        yezhuView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
+        self.view.addSubview(yezhuView)
+        
+        let imgWidth = PhoneUtils.kScreenWidth
+        let imgHeight = (315 * imgWidth) / 640
+        
+        let adView = UIImageView.init(frame: CGRectMake(0, offSetY, imgWidth, imgHeight))
+        adView.image = UIImage(named: "adbkg")
+        yezhuView.addSubview(adView)
+    
+        let yezhuBottomView = UIView.init(frame: CGRectMake(0, yezhuView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
+        yezhuBottomView.backgroundColor = UIColor.whiteColor()
+        yezhuView.addSubview(yezhuBottomView)
+        
+        
+        let buttonWidth = (PhoneUtils.kScreenWidth - 5 * 3) / 2
+        let buttonHeight = yezhuBottomView.frame.size.height - 5 * 2
+        
+        let installButton = UIButton.init(type: UIButtonType.Custom)
+        installButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
+        installButton.setTitle("我要安装", forState: UIControlState.Normal)
+        installButton.backgroundColor = Colors.installColor
+        installButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        installButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        installButton.addTarget(self, action: #selector(self.wantInstallButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        yezhuBottomView.addSubview(installButton)
+    
+        let daikuaiButton = UIButton.init(type: UIButtonType.Custom)
+        daikuaiButton.frame = CGRectMake(5 * 2 + buttonWidth, 5, buttonWidth, buttonHeight)
+        daikuaiButton.setTitle("我要贷款", forState: UIControlState.Normal)
+        daikuaiButton.backgroundColor = UIColor.whiteColor()
+        daikuaiButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        daikuaiButton.layer.borderWidth = 0.5
+        daikuaiButton.layer.borderColor = Colors.installColor.CGColor
+        daikuaiButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        daikuaiButton.addTarget(self, action: #selector(self.wantLoanButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        yezhuBottomView.addSubview(daikuaiButton)
+    }
+    
+    func wantInstallButtonClicked() {
+        let vc = InstallViewController(nibName: "InstallViewController", bundle: nil)
+        self.pushViewController(vc)
+    }
+    
+    func wantLoanButtonClicked() {
+        goToTab(2)
+    }
+    
+    func initLoanView() {
+        loanView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
+        self.view.addSubview(loanView)
+        loanView.hidden = true
+    }
+    
+    func initSafeView() {
+        safeView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
+        self.view.addSubview(safeView)
+        safeView.hidden = true
+        
+        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, safeView.frame.size.width, safeView.frame.size.height))
+        safeView.addSubview(scrollView)
+        
+        let imgViewWidth = PhoneUtils.kScreenWidth
+        let imgViewHeight = (871 * imgViewWidth) / 640
+        
+        let safeImgView = UIImageView.init(frame: CGRectMake(0, offSetY, imgViewWidth, imgViewHeight))
+        safeImgView.image = UIImage(named: "ic_warranty")
+        scrollView.addSubview(safeImgView)
+        
+        let scale : CGFloat = imgViewWidth / 640
+        let nameLabel = UILabel.init(frame: CGRectMake((306 / 999) * imgViewWidth, imgViewHeight * (306 / 999), 100, 22 * scale))
+        nameLabel.text = "颜超"
+        nameLabel.textColor = UIColor.lightGrayColor()
+        nameLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        safeImgView.addSubview(nameLabel)
+        
+        scrollView.contentSize = CGSizeMake(0, safeImgView.frame.size.height + offSetY)
     }
     
     func initAboutUsView() {
@@ -52,7 +144,7 @@ class MainViewController: BaseViewController, LoginViewDelegate {
      */
     func loginButtonClicked(phone: String, code: String) {
         if (phone.isEmpty) {
-            self.showHint("请输入账号!")
+            self.showHint("请输入手机号!")
             return
         }
         if (code.isEmpty) {
@@ -104,14 +196,18 @@ class MainViewController: BaseViewController, LoginViewDelegate {
     }
     
     func initView() {
+        let topImageView = UIImageView.init(frame: CGRectMake(0, 0, 40, 40))
+        topImageView.image = UIImage.init(named: "ic_home_logo")
+        self.navigationItem.titleView = topImageView
+        
         let screenWidth = PhoneUtils.kScreenWidth
         let buttonHeigt : CGFloat = 30
         let offSetX : CGFloat = 10
         let offSetY : CGFloat = 5
         let buttonWidth = (screenWidth - offSetX * 6)  / 5
-        let titles = ["业主", "贷款", "保险", "质保", "售后"]
+        let titles = ["业主", "安装商", "贷款", "保险", "质保", "售后"]
         
-        let topView = UIView.init(frame: CGRectMake(0, 64, screenWidth, 80))
+        topView = UIView.init(frame: CGRectMake(0, 64, screenWidth, 80))
         topView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(topView)
         
@@ -173,13 +269,33 @@ class MainViewController: BaseViewController, LoginViewDelegate {
     }
     
     func buttonClicked(sender : UIButton) {
+        goToTab(sender.tag)
+    }
+    
+    func goToTab(index : NSInteger) {
         for i in 0..<buttons.count {
             let button = buttons[i] as! UIButton
             button.selected = false
             button.layer.borderColor = Colors.clearColor.CGColor
         }
+        let sender = buttons[index] as! UIButton
         sender.selected = true
         sender.layer.borderColor = Colors.borderWithGray.CGColor
+        
+        yezhuView.hidden = true
+        loanView.hidden = true
+        
+        if (index == 0) {
+            yezhuView.hidden = false
+        } else if (index == 1) {
+            
+        } else if (index == 2) {
+            loanView.hidden = false
+        } else if (index == 3) {
+            safeView.hidden = false
+        } else if (index == 4) {
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
