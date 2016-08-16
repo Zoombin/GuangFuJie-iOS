@@ -53,7 +53,7 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         yezhuView.addSubview(yezhuBottomView)
         
         
-        let buttonWidth = (PhoneUtils.kScreenWidth - 5 * 3) / 2
+        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 3
         let buttonHeight = yezhuBottomView.frame.size.height - 5 * 2
         
         let installButton = UIButton.init(type: UIButtonType.Custom)
@@ -64,26 +64,11 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         installButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
         installButton.addTarget(self, action: #selector(self.wantInstallButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         yezhuBottomView.addSubview(installButton)
-    
-        let daikuaiButton = UIButton.init(type: UIButtonType.Custom)
-        daikuaiButton.frame = CGRectMake(5 * 2 + buttonWidth, 5, buttonWidth, buttonHeight)
-        daikuaiButton.setTitle("我要贷款", forState: UIControlState.Normal)
-        daikuaiButton.backgroundColor = UIColor.whiteColor()
-        daikuaiButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
-        daikuaiButton.layer.borderWidth = 0.5
-        daikuaiButton.layer.borderColor = Colors.installColor.CGColor
-        daikuaiButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        daikuaiButton.addTarget(self, action: #selector(self.wantLoanButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
-        yezhuBottomView.addSubview(daikuaiButton)
     }
     
     func wantInstallButtonClicked() {
         let vc = InstallViewController(nibName: "InstallViewController", bundle: nil)
         self.pushViewController(vc)
-    }
-    
-    func wantLoanButtonClicked() {
-        goToTab(2)
     }
     
     func initLoanView() {
@@ -205,7 +190,7 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         let offSetX : CGFloat = 10
         let offSetY : CGFloat = 5
         let buttonWidth = (screenWidth - offSetX * 6)  / 5
-        let titles = ["业主", "安装商", "贷款", "保险", "质保", "售后"]
+        let titles = ["业主", "安装商", "保险", "质保", "售后"]
         
         topView = UIView.init(frame: CGRectMake(0, 64, screenWidth, 80))
         topView.backgroundColor = UIColor.whiteColor()
@@ -284,6 +269,7 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         
         yezhuView.hidden = true
         loanView.hidden = true
+        safeView.hidden = true
         
         if (index == 0) {
             yezhuView.hidden = false
