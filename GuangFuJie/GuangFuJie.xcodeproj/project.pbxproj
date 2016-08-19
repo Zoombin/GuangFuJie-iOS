@@ -16,6 +16,10 @@
 		18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FF4F1CD9902B00BF5926 /* LaunchScreen.storyboard */; };
 		18A7FF5C1CD9902B00BF5926 /* GuangFuJieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF5B1CD9902B00BF5926 /* GuangFuJieTests.swift */; };
 		18A7FF671CD9902B00BF5926 /* GuangFuJieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */; };
+		DE0C77F91D66D30700FED16D /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C77F81D66D30700FED16D /* RoofInfo.swift */; };
+		DE0C78051D66E94300FED16D /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78041D66E94300FED16D /* InstallInfo.swift */; };
+		DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78061D66F14C00FED16D /* ElectricInfo.swift */; };
+		DE0C78091D67052400FED16D /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78081D67052400FED16D /* AfterSaleInfo.swift */; };
 		DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */; };
 		DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
 		DE57C9531D5DC906005B9CCE /* SubscribeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */; };
@@ -263,6 +267,10 @@
 		18A7FF621CD9902B00BF5926 /* GuangFuJieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuangFuJieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangFuJieUITests.swift; sourceTree = "<group>"; };
 		18A7FF681CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0C77F81D66D30700FED16D /* RoofInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofInfo.swift; sourceTree = "<group>"; };
+		DE0C78041D66E94300FED16D /* InstallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallInfo.swift; sourceTree = "<group>"; };
+		DE0C78061D66F14C00FED16D /* ElectricInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricInfo.swift; sourceTree = "<group>"; };
+		DE0C78081D67052400FED16D /* AfterSaleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSaleInfo.swift; sourceTree = "<group>"; };
 		DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceNoticeViewController.swift; sourceTree = "<group>"; };
 		DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeStatusViewController.swift; sourceTree = "<group>"; };
@@ -603,6 +611,10 @@
 				DE5E74C81D50A296003CDAAC /* CommonModel.swift */,
 				DE57C9581D5ECF79005B9CCE /* BankInfo.swift */,
 				DE57C9641D5ED221005B9CCE /* BookingStatus.swift */,
+				DE0C77F81D66D30700FED16D /* RoofInfo.swift */,
+				DE0C78041D66E94300FED16D /* InstallInfo.swift */,
+				DE0C78061D66F14C00FED16D /* ElectricInfo.swift */,
+				DE0C78081D67052400FED16D /* AfterSaleInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1269,10 +1281,13 @@
 				DE5E74B41D509CC4003CDAAC /* AFNetworkReachabilityManager.m in Sources */,
 				DE5E74841D509BAD003CDAAC /* QNDnspodEnterprise.m in Sources */,
 				DE5E744F1D509B9F003CDAAC /* QNUpToken.m in Sources */,
+				DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */,
 				DE5E748C1D509BAD003CDAAC /* QNDes.m in Sources */,
 				DE5E74BD1D509CC4003CDAAC /* UIButton+AFNetworking.m in Sources */,
 				DE5E748B1D509BAD003CDAAC /* QNRefresher.m in Sources */,
+				DE0C77F91D66D30700FED16D /* RoofInfo.swift in Sources */,
 				DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */,
+				DE0C78051D66E94300FED16D /* InstallInfo.swift in Sources */,
 				DE5E74411D509B9F003CDAAC /* QNFile.m in Sources */,
 				DE7901021D4CAE4C0032D461 /* EarnCalViewController.swift in Sources */,
 				DE5E743D1D509B9F003CDAAC /* QNALAssetFile.m in Sources */,
@@ -1284,6 +1299,7 @@
 				DE7900191D4C57300032D461 /* IQUIView+Hierarchy.swift in Sources */,
 				DE5E74C71D509FD9003CDAAC /* AppModel.swift in Sources */,
 				DE5E743E1D509B9F003CDAAC /* QNAsyncRun.m in Sources */,
+				DE0C78091D67052400FED16D /* AfterSaleInfo.swift in Sources */,
 				DE79F9581D4C1FD30032D461 /* Colors.swift in Sources */,
 				DE79006E1D4C59920032D461 /* NSString+AESCrypt.m in Sources */,
 				DE79F9681D4C50310032D461 /* API.swift in Sources */,

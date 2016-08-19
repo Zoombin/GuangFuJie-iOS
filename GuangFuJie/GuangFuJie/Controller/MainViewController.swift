@@ -14,8 +14,6 @@ class MainViewController: BaseViewController, LoginViewDelegate {
     var aboutUsView : ABoutUsView!
     
     var yezhuView : UIView!
-    var loanView : UIView!
-    var safeView : UIView!
     
     var topView : UIView!
     
@@ -33,75 +31,48 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         initAboutUsView()
         
         initYeZhuView()
-        initLoanView()
-        initSafeView()
     }
     
     func initYeZhuView() {
         yezhuView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
         self.view.addSubview(yezhuView)
-        
-        let imgWidth = PhoneUtils.kScreenWidth
-        let imgHeight = (315 * imgWidth) / 640
-        
-        let adView = UIImageView.init(frame: CGRectMake(0, offSetY, imgWidth, imgHeight))
-        adView.image = UIImage(named: "adbkg")
-        yezhuView.addSubview(adView)
     
         let yezhuBottomView = UIView.init(frame: CGRectMake(0, yezhuView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
         yezhuBottomView.backgroundColor = UIColor.whiteColor()
         yezhuView.addSubview(yezhuBottomView)
         
         
-        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 3
+        let buttonWidth = (PhoneUtils.kScreenWidth - 5 * 3) / 2
         let buttonHeight = yezhuBottomView.frame.size.height - 5 * 2
         
-        let installButton = UIButton.init(type: UIButtonType.Custom)
-        installButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
-        installButton.setTitle("我要安装", forState: UIControlState.Normal)
-        installButton.backgroundColor = Colors.installColor
-        installButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        installButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        installButton.addTarget(self, action: #selector(self.wantInstallButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
-        yezhuBottomView.addSubview(installButton)
+        let calRoomButton = UIButton.init(type: UIButtonType.Custom)
+        calRoomButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
+        calRoomButton.setTitle("屋顶评估", forState: UIControlState.Normal)
+        calRoomButton.backgroundColor = Colors.installColor
+        calRoomButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        calRoomButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        calRoomButton.addTarget(self, action: #selector(self.calRoomButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        yezhuBottomView.addSubview(calRoomButton)
+        
+        let soldRoomButton = UIButton.init(type: UIButtonType.Custom)
+        soldRoomButton.frame = CGRectMake(5 * 2 + buttonWidth, 5, buttonWidth, buttonHeight)
+        soldRoomButton.setTitle("屋顶出租", forState: UIControlState.Normal)
+        soldRoomButton.backgroundColor = UIColor.whiteColor()
+        soldRoomButton.addTarget(self, action: #selector(self.soldRoomButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        soldRoomButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        soldRoomButton.layer.borderColor = Colors.installColor.CGColor
+        soldRoomButton.layer.borderWidth = 0.5
+        yezhuBottomView.addSubview(soldRoomButton)
     }
     
-    func wantInstallButtonClicked() {
-        let vc = InstallViewController(nibName: "InstallViewController", bundle: nil)
-        self.pushViewController(vc)
+    func calRoomButtonClicked() {
+        
     }
     
-    func initLoanView() {
-        loanView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
-        self.view.addSubview(loanView)
-        loanView.hidden = true
+    func soldRoomButtonClicked() {
+        
     }
-    
-    func initSafeView() {
-        safeView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
-        self.view.addSubview(safeView)
-        safeView.hidden = true
-        
-        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, safeView.frame.size.width, safeView.frame.size.height))
-        safeView.addSubview(scrollView)
-        
-        let imgViewWidth = PhoneUtils.kScreenWidth
-        let imgViewHeight = (871 * imgViewWidth) / 640
-        
-        let safeImgView = UIImageView.init(frame: CGRectMake(0, offSetY, imgViewWidth, imgViewHeight))
-        safeImgView.image = UIImage(named: "ic_warranty")
-        scrollView.addSubview(safeImgView)
-        
-        let scale : CGFloat = imgViewWidth / 640
-        let nameLabel = UILabel.init(frame: CGRectMake((306 / 999) * imgViewWidth, imgViewHeight * (306 / 999), 100, 22 * scale))
-        nameLabel.text = "颜超"
-        nameLabel.textColor = UIColor.lightGrayColor()
-        nameLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        safeImgView.addSubview(nameLabel)
-        
-        scrollView.contentSize = CGSizeMake(0, safeImgView.frame.size.height + offSetY)
-    }
-    
+
     func initAboutUsView() {
         let nibs = NSBundle.mainBundle().loadNibNamed("ABoutUsView", owner: nil, options: nil)
         aboutUsView = nibs.first as! ABoutUsView
@@ -187,17 +158,18 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         
         let screenWidth = PhoneUtils.kScreenWidth
         let buttonHeigt : CGFloat = 30
-        let offSetX : CGFloat = 10
-        let offSetY : CGFloat = 5
-        let buttonWidth = (screenWidth - offSetX * 6)  / 5
-        let titles = ["业主", "安装商", "保险", "质保", "售后"]
+        let offSetX : CGFloat = 20
+        let offSetY : CGFloat = 15
+        let titles = ["业主", "安装商", "发电量", "保险"]
+        let buttonWidth = (screenWidth - offSetX * CGFloat(titles.count + 1))  / CGFloat(titles.count)
         
-        topView = UIView.init(frame: CGRectMake(0, 64, screenWidth, 80))
+        topView = UIView.init(frame: CGRectMake(0, 64, screenWidth, 60))
         topView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(topView)
         
         for i in 0..<titles.count {
-            let button = UIButton.init(frame: CGRectMake(CGFloat(i) * buttonWidth + (CGFloat(i) + 1) * offSetX, offSetY, buttonWidth, buttonHeigt))
+            let startX : CGFloat = CGFloat(i) * buttonWidth + (CGFloat(i) + 1) * offSetX;
+            let button = UIButton.init(frame: CGRectMake(startX, offSetY, buttonWidth, buttonHeigt))
             button.setTitle(titles[i], forState: UIControlState.Normal)
             button.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
             button.setTitleColor(Colors.lightBule, forState: UIControlState.Selected)
@@ -216,25 +188,25 @@ class MainViewController: BaseViewController, LoginViewDelegate {
             buttons.addObject(button)
         }
         
-        let bottomButtonWidth = screenWidth / 4
-        
-        let earnCalButton = UIButton.init(frame: CGRectMake(0, offSetY + topView.frame.size.height / 2, bottomButtonWidth, buttonHeigt))
-        earnCalButton.setTitle("收益计算", forState: UIControlState.Normal)
-        earnCalButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        earnCalButton.setImage(UIImage(named: "money_cal"), forState: UIControlState.Normal)
-        earnCalButton.titleEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0)
-        earnCalButton.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
-        earnCalButton.addTarget(self, action: #selector(self.earnCaluateButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
-        topView.addSubview(earnCalButton)
-        
-        let contactUsButton = UIButton.init(frame: CGRectMake(bottomButtonWidth, offSetY + topView.frame.size.height / 2, bottomButtonWidth, buttonHeigt))
-        contactUsButton.setTitle("联系我们", forState: UIControlState.Normal)
-        contactUsButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        contactUsButton.setImage(UIImage(named: "contact_us"), forState: UIControlState.Normal)
-        contactUsButton.titleEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0)
-        contactUsButton.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
-        contactUsButton.addTarget(self, action: #selector(self.contactUsButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
-        topView.addSubview(contactUsButton)
+//        let bottomButtonWidth = screenWidth / 4
+//        
+//        let earnCalButton = UIButton.init(frame: CGRectMake(0, offSetY + topView.frame.size.height / 2, bottomButtonWidth, buttonHeigt))
+//        earnCalButton.setTitle("收益计算", forState: UIControlState.Normal)
+//        earnCalButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+//        earnCalButton.setImage(UIImage(named: "money_cal"), forState: UIControlState.Normal)
+//        earnCalButton.titleEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0)
+//        earnCalButton.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
+//        earnCalButton.addTarget(self, action: #selector(self.earnCaluateButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+//        topView.addSubview(earnCalButton)
+//        
+//        let contactUsButton = UIButton.init(frame: CGRectMake(bottomButtonWidth, offSetY + topView.frame.size.height / 2, bottomButtonWidth, buttonHeigt))
+//        contactUsButton.setTitle("联系我们", forState: UIControlState.Normal)
+//        contactUsButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+//        contactUsButton.setImage(UIImage(named: "contact_us"), forState: UIControlState.Normal)
+//        contactUsButton.titleEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0)
+//        contactUsButton.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
+//        contactUsButton.addTarget(self, action: #selector(self.contactUsButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+//        topView.addSubview(contactUsButton)
     }
     
     /**
@@ -268,19 +240,15 @@ class MainViewController: BaseViewController, LoginViewDelegate {
         sender.layer.borderColor = Colors.borderWithGray.CGColor
         
         yezhuView.hidden = true
-        loanView.hidden = true
-        safeView.hidden = true
         
-        if (index == 0) {
+        if (index == 0) { //业主
             yezhuView.hidden = false
-        } else if (index == 1) {
+        } else if (index == 1) { //安装商
             
-        } else if (index == 2) {
-            loanView.hidden = false
-        } else if (index == 3) {
-            safeView.hidden = false
-        } else if (index == 4) {
-            
+        } else if (index == 2) { //发电量
+
+        } else if (index == 3) { //保险
+
         }
     }
     
