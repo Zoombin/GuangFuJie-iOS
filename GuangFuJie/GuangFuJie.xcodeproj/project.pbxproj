@@ -130,6 +130,10 @@
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
 		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
+		DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */; };
+		DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */; };
+		DEEE919A1D782BB40027F4D6 /* ToBeInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */; };
+		DEEE919C1D782E510027F4D6 /* DataViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE919B1D782E510027F4D6 /* DataViewerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -456,6 +460,10 @@
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
 		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
+		DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
+		DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
+		DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToBeInstallerViewController.swift; sourceTree = "<group>"; };
+		DEEE919B1D782E510027F4D6 /* DataViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -586,6 +594,10 @@
 				DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */,
 				DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */,
 				DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */,
+				DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */,
+				DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */,
+				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
+				DEEE919B1D782E510027F4D6 /* DataViewerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1237,6 +1249,7 @@
 				DE5E74B51D509CC4003CDAAC /* AFSecurityPolicy.m in Sources */,
 				DE5E744D1D509B9F003CDAAC /* QNUploadManager.m in Sources */,
 				DE5E74441D509B9F003CDAAC /* QNSystem.m in Sources */,
+				DEEE919C1D782E510027F4D6 /* DataViewerViewController.swift in Sources */,
 				DE5E74C11D509CC4003CDAAC /* UIWebView+AFNetworking.m in Sources */,
 				DE5E74BB1D509CC4003CDAAC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE57C9531D5DC906005B9CCE /* SubscribeStatusViewController.swift in Sources */,
@@ -1251,6 +1264,8 @@
 				DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */,
 				DE5E74851D509BAD003CDAAC /* QNDnspodFree.m in Sources */,
 				DE5E74B61D509CC4003CDAAC /* AFURLRequestSerialization.m in Sources */,
+				DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */,
+				DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */,
 				DE5E74421D509B9F003CDAAC /* QNPHAssetFile.m in Sources */,
 				DE7900B11D4C60360032D461 /* MBProgressHUD.m in Sources */,
 				DE7900181D4C57300032D461 /* IQUITextFieldView+Additions.swift in Sources */,
@@ -1301,6 +1316,7 @@
 				DE5E74BD1D509CC4003CDAAC /* UIButton+AFNetworking.m in Sources */,
 				DE5E748B1D509BAD003CDAAC /* QNRefresher.m in Sources */,
 				DE0C77F91D66D30700FED16D /* RoofInfo.swift in Sources */,
+				DEEE919A1D782BB40027F4D6 /* ToBeInstallerViewController.swift in Sources */,
 				DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */,
 				DE0C78051D66E94300FED16D /* InstallInfo.swift in Sources */,
 				DE5E74411D509B9F003CDAAC /* QNFile.m in Sources */,
