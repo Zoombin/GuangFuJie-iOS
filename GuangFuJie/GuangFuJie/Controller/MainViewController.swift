@@ -76,6 +76,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         soldRoomButton.backgroundColor = UIColor.whiteColor()
         soldRoomButton.addTarget(self, action: #selector(self.soldRoomButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         soldRoomButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        soldRoomButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
         soldRoomButton.layer.borderColor = Colors.installColor.CGColor
         soldRoomButton.layer.borderWidth = 0.5
         yezhuBottomView.addSubview(soldRoomButton)
@@ -150,7 +151,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     func loadUserList() {
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.userlist(1, province_id: nil, city_id: nil, is_suggest: nil, success: { (userInfos) in
+        API.sharedInstance.userlist(2, province_id: nil, city_id: nil, is_suggest: nil, success: { (userInfos) in
             self.hideHud()
             self.yezhuArray.removeAllObjects()
             if (userInfos.count > 0) {
