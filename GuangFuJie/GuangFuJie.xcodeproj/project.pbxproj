@@ -20,6 +20,8 @@
 		DE0C78051D66E94300FED16D /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78041D66E94300FED16D /* InstallInfo.swift */; };
 		DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78061D66F14C00FED16D /* ElectricInfo.swift */; };
 		DE0C78091D67052400FED16D /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78081D67052400FED16D /* AfterSaleInfo.swift */; };
+		DE0C780E1D68534E00FED16D /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C780D1D68534E00FED16D /* YeZhuCell.swift */; };
+		DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C781B1D68585A00FED16D /* TopLeftLabel.m */; };
 		DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */; };
 		DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
 		DE57C9531D5DC906005B9CCE /* SubscribeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */; };
@@ -127,6 +129,7 @@
 		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
+		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +274,9 @@
 		DE0C78041D66E94300FED16D /* InstallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallInfo.swift; sourceTree = "<group>"; };
 		DE0C78061D66F14C00FED16D /* ElectricInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricInfo.swift; sourceTree = "<group>"; };
 		DE0C78081D67052400FED16D /* AfterSaleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSaleInfo.swift; sourceTree = "<group>"; };
+		DE0C780D1D68534E00FED16D /* YeZhuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuCell.swift; sourceTree = "<group>"; };
+		DE0C781A1D68585500FED16D /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
+		DE0C781B1D68585A00FED16D /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
 		DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceNoticeViewController.swift; sourceTree = "<group>"; };
 		DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeStatusViewController.swift; sourceTree = "<group>"; };
@@ -449,6 +455,7 @@
 		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
+		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -636,6 +643,8 @@
 		18B8FA611D3CE8A400B334E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE0C781A1D68585500FED16D /* TopLeftLabel.h */,
+				DE0C781B1D68585A00FED16D /* TopLeftLabel.m */,
 				DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */,
 				DE79F95A1D4C32F30032D461 /* Dimens.swift */,
 				1891D9F91D3F57B90042E72D /* Constants.swift */,
@@ -652,6 +661,8 @@
 				DE79F9621D4C458E0032D461 /* CustomTextField.swift */,
 				DE7900EE1D4C88C70032D461 /* ABoutUsView.swift */,
 				DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */,
+				DE0C780D1D68534E00FED16D /* YeZhuCell.swift */,
+				DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1082,6 +1093,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 18A7FF3A1CD9902B00BF5926;
 			productRefGroup = 18A7FF441CD9902B00BF5926 /* Products */;
@@ -1236,6 +1248,7 @@
 				DE5E74B31D509CC4003CDAAC /* AFHTTPSessionManager.m in Sources */,
 				DE79001F1D4C57300032D461 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				DE5E74831D509BAD003CDAAC /* QNRecord.m in Sources */,
+				DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */,
 				DE5E74851D509BAD003CDAAC /* QNDnspodFree.m in Sources */,
 				DE5E74B61D509CC4003CDAAC /* AFURLRequestSerialization.m in Sources */,
 				DE5E74421D509B9F003CDAAC /* QNPHAssetFile.m in Sources */,
@@ -1244,6 +1257,7 @@
 				DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */,
 				DE5E74BC1D509CC4003CDAAC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DE79F95B1D4C32F30032D461 /* Dimens.swift in Sources */,
+				DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */,
 				DE79001A1D4C57300032D461 /* IQUIViewController+Additions.swift in Sources */,
 				DE7900241D4C57300032D461 /* IQToolbar.swift in Sources */,
 				DE5E743F1D509B9F003CDAAC /* QNCrc32.m in Sources */,
@@ -1272,6 +1286,7 @@
 				DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */,
 				DE79006F1D4C59920032D461 /* UIViewController+HUD.m in Sources */,
 				DE5E72CF1D50970B003CDAAC /* QNInfo.swift in Sources */,
+				DE0C780E1D68534E00FED16D /* YeZhuCell.swift in Sources */,
 				DE5E72C71D508D77003CDAAC /* ProvinceInfo.swift in Sources */,
 				DE5E74431D509B9F003CDAAC /* QNPHAssetResource.m in Sources */,
 				DE5E74821D509BAD003CDAAC /* QNNetworkInfo.m in Sources */,

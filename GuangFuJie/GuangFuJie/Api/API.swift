@@ -52,7 +52,7 @@ class API: NSObject {
 
     func get(url: String, params: AnyObject?, success: ((data: AnyObject?) -> Void)?, failure: ((msg: String?) -> Void)?) {
         NSLog("====> get发送 ===> \n\(url)  \(params)")
-        _manager?.POST(url, parameters: params, success: { (operation, data) in
+        _manager?.GET(url, parameters: params, success: { (operation, data) in
             var dict = try? NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
             if (dict == nil && data != nil) {
                 //解析失败可能是加密过了...

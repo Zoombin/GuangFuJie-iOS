@@ -326,20 +326,29 @@ extension API {
     /**
      用户列表/安装商列表
      
-     - parameter type:
-     - parameter province_id:
-     - parameter city_id:
+     - parameter type:  // 1: 普通用户 2: 安装商 (如果不传,默认为1)
+     - parameter province_id:  // 若有此参数, 则返回当前省份下的安装商
+     - parameter city_id:   // 若有此参数, 则返回当前城市下的安装商
+     - parameter is_suggest: // 若此参数为1 && type为2, 则返回推荐的安装商   1/0
      - parameter success:
      - parameter failure:
      */
-    func userlist(type : NSNumber, province_id : NSNumber, city_id : NSNumber, success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func userlist(type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/list"
-        let params = [
-            "type" : type,         // 1: 普通用户 2: 安装商 (如果不传,默认为1)
-            "province_id" : province_id,  // 若有此参数, 则返回当前省份下的安装商
-            "city_id" : city_id,      // 若有此参数, 则返回当前城市下的安装商
-            "_o" : 1
-        ]
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        if (type != nil) {
+            params["type"] = type
+        }
+        if (province_id != nil) {
+            params["province_id"] = province_id
+        }
+        if (city_id != nil) {
+            params["city_id"] = city_id
+        }
+        if (is_suggest != nil) {
+            params["is_suggest"] = is_suggest
+        }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (data) in
@@ -485,20 +494,25 @@ extension API {
     /**
      屋顶资源列表
      
-     - parameter status:
+     - parameter status: // 若有此参数, 则返回相应状态的列表  1:未处理 2:已接单 3:已完成
      - parameter province_id:
      - parameter city_id:
      - parameter success:
      - parameter failure:
      */
-    func getRoofList(status : NSNumber, province_id : NSNumber, city_id : NSNumber, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getRoofList(status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/list"
-        let params = [
-            "status" : status,
-            "province_id" : province_id,
-            "city_id" : city_id,
-            "_o" : 1
-        ]
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        if (status != nil) {
+            params["status"] = status
+        }
+        if (province_id != nil) {
+            params["province_id"] = province_id
+        }
+        if (city_id != nil) {
+            params["city_id"] = city_id
+        }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (data) in
