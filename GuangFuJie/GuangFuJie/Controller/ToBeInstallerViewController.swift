@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToBeInstallerViewController: UIViewController {
+class ToBeInstallerViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

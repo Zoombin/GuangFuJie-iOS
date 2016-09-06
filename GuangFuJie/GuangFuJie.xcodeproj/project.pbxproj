@@ -24,7 +24,6 @@
 		DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C781B1D68585A00FED16D /* TopLeftLabel.m */; };
 		DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */; };
 		DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
-		DE57C9531D5DC906005B9CCE /* SubscribeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */; };
 		DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9581D5ECF79005B9CCE /* BankInfo.swift */; };
 		DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9641D5ED221005B9CCE /* BookingStatus.swift */; };
 		DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */; };
@@ -129,11 +128,12 @@
 		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
+		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
+		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
 		DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */; };
 		DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */; };
 		DEEE919A1D782BB40027F4D6 /* ToBeInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */; };
-		DEEE919C1D782E510027F4D6 /* DataViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE919B1D782E510027F4D6 /* DataViewerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,7 +283,6 @@
 		DE0C781B1D68585A00FED16D /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
 		DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceNoticeViewController.swift; sourceTree = "<group>"; };
 		DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
-		DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeStatusViewController.swift; sourceTree = "<group>"; };
 		DE57C9581D5ECF79005B9CCE /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
 		DE57C9641D5ED221005B9CCE /* BookingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatus.swift; sourceTree = "<group>"; };
 		DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
@@ -459,11 +458,12 @@
 		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
+		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
+		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
 		DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
 		DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToBeInstallerViewController.swift; sourceTree = "<group>"; };
-		DEEE919B1D782E510027F4D6 /* DataViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -593,11 +593,10 @@
 				DE7901011D4CAE4C0032D461 /* EarnCalViewController.xib */,
 				DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */,
 				DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */,
-				DE57C9521D5DC906005B9CCE /* SubscribeStatusViewController.swift */,
 				DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */,
 				DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */,
 				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
-				DEEE919B1D782E510027F4D6 /* DataViewerViewController.swift */,
+				DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -634,6 +633,7 @@
 				DE0C78041D66E94300FED16D /* InstallInfo.swift */,
 				DE0C78061D66F14C00FED16D /* ElectricInfo.swift */,
 				DE0C78081D67052400FED16D /* AfterSaleInfo.swift */,
+				DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1249,11 +1249,10 @@
 				DE5E74B51D509CC4003CDAAC /* AFSecurityPolicy.m in Sources */,
 				DE5E744D1D509B9F003CDAAC /* QNUploadManager.m in Sources */,
 				DE5E74441D509B9F003CDAAC /* QNSystem.m in Sources */,
-				DEEE919C1D782E510027F4D6 /* DataViewerViewController.swift in Sources */,
 				DE5E74C11D509CC4003CDAAC /* UIWebView+AFNetworking.m in Sources */,
 				DE5E74BB1D509CC4003CDAAC /* AFNetworkActivityIndicatorManager.m in Sources */,
-				DE57C9531D5DC906005B9CCE /* SubscribeStatusViewController.swift in Sources */,
 				DE5E74451D509B9F003CDAAC /* QNUrlSafeBase64.m in Sources */,
+				DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */,
 				DE5E74481D509B9F003CDAAC /* QNUserAgent.m in Sources */,
 				DE5E74471D509B9F003CDAAC /* QNSessionManager.m in Sources */,
 				DE5E747F1D509BAD003CDAAC /* QNDnsManager.m in Sources */,
@@ -1281,6 +1280,7 @@
 				DE7900661D4C58E60032D461 /* UserInfo.swift in Sources */,
 				DE5E744C1D509B9F003CDAAC /* QNResumeUpload.m in Sources */,
 				DE7900251D4C57300032D461 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */,
 				DE5E74801D509BAD003CDAAC /* QNDomain.m in Sources */,
 				DE5E748D1D509BAD003CDAAC /* QNGetAddrInfo.m in Sources */,
 				DE79001E1D4C57300032D461 /* IQKeyboardManager.swift in Sources */,

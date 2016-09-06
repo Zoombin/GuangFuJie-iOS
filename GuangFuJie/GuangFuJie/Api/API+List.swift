@@ -72,7 +72,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func deviceInfo(device_id: String, success: ((deviceInfo: DeviceInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func deviceInfo(device_id: NSNumber, success: ((deviceInfo: DeviceInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "device/info"
         let params = [
             "device_id" : device_id,
@@ -80,7 +80,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (data) in
             let deviceInfo = DeviceInfo.mj_objectWithKeyValues(data)
             success?(deviceInfo : deviceInfo)
             }, failure: failure)
@@ -563,4 +563,27 @@ extension API {
             success?(roofInfo : roofInfo)
             }, failure: failure)
     }
+    
+    /**
+     绑定设备
+     
+     - parameter device_id:
+     - parameter success:
+     - parameter failure:
+     */
+    func bindDevice(device_id : String, success: ((userInfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/binddevice"
+        let params = [
+            "user_id" : getUserId(),
+            "device_id" : device_id,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (data) in
+            let userinfo = UserInfo.mj_objectWithKeyValues(data)
+            success?(userInfo : userinfo)
+            }, failure: failure)
+    }
+
 }

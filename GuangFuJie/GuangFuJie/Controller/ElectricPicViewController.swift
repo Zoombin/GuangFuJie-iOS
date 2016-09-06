@@ -1,18 +1,18 @@
 //
-//  SubscribeStatusViewController.swift
+//  ElectricPicViewController.swift
 //  GuangFuJie
 //
-//  Created by 颜超 on 16/8/12.
+//  Created by 颜超 on 16/9/6.
 //  Copyright © 2016年 颜超. All rights reserved.
 //
 
 import UIKit
 
-class SubscribeStatusViewController: UIViewController {
+class ElectricPicViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "发电走势图"
         // Do any additional setup after loading the view.
     }
 

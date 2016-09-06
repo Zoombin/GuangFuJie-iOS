@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoofPriceViewController: UIViewController {
+class RoofPriceViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

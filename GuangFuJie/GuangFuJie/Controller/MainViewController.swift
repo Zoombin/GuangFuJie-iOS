@@ -16,6 +16,25 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     var yezhuView : UIView!
     var installView : UIView!
     
+    var statusButton : UIButton!
+    var statusLabel : UILabel!
+    var checkMarkButton : UIButton!
+    var gonglvLabel : UILabel!
+    var fadianLabel : UILabel!
+    var todayElectricLabel : UILabel!
+    var totalElectricLabel : UILabel!
+    var todayMoneyLabel : UILabel!
+    var totalMoneyLabel : UILabel!
+    var todayjianpaiLabel : UILabel!
+    var totaljianpaiLabel : UILabel!
+    var todayplantLabel : UILabel!
+    var totalplantLabel : UILabel!
+    
+    var electricView : UIView!
+    
+    
+    var safeView : UIView!
+    
     var topView : UIView!
     
     let offSetY : CGFloat = 10
@@ -45,10 +64,260 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         initYeZhuView()
         initInstallerView()
+        initElectricView()
+        initSafeView()
         
         goToTab(0)
     }
     
+    //MARK: 保险
+    func initSafeView() {
+        safeView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
+        self.view.addSubview(safeView)
+    }
+    
+    //MARK: 发电量
+    func initElectricView() {
+        electricView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
+        electricView.backgroundColor = Colors.bkgGray
+        self.view.addSubview(electricView)
+        
+        let dir : CGFloat = 8
+        
+        let bkgView = UIView.init(frame: CGRectMake(0, dir, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.2))
+        bkgView.backgroundColor = UIColor.whiteColor()
+        electricView.addSubview(bkgView)
+        
+        let height = bkgView.frame.size.height / 2
+        
+        statusButton = UIButton.init(type: UIButtonType.Custom)
+        statusButton.frame = CGRectMake(dir, height * 0.25, height * 0.5, height * 0.5)
+        statusButton.setImage(UIImage(named: "ic_right"), forState: UIControlState.Normal)
+        statusButton.setImage(UIImage(named: "ic_error"), forState: UIControlState.Disabled)
+        bkgView.addSubview(statusButton)
+        
+        statusLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(statusButton.frame) + offSetX, height * 0.25, 140, height * 0.5))
+        statusLabel.text = "运行状态 正常"
+        statusLabel.textColor = Colors.installColor
+        statusLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        bkgView.addSubview(statusLabel)
+        
+        checkMarkButton = UIButton.init(type: UIButtonType.Custom)
+        checkMarkButton.frame = CGRectMake(CGRectGetMaxX(statusLabel.frame) + offSetX, height * 0.25, height * 0.5, height * 0.5)
+        checkMarkButton.setImage(UIImage(named: "ic_ok"), forState: UIControlState.Normal)
+        checkMarkButton.setImage(UIImage(named: "ic_no"), forState: UIControlState.Disabled)
+        bkgView.addSubview(checkMarkButton)
+        
+        //功率
+        let buttonWidth = PhoneUtils.kScreenWidth / 4
+        let gonglvButton = UIButton.init(type: UIButtonType.Custom)
+        gonglvButton.frame = CGRectMake(0,CGRectGetMaxY(checkMarkButton.frame) + height * 0.1, buttonWidth, height * 0.8)
+        gonglvButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        gonglvButton.setTitle("功率:", forState: UIControlState.Normal)
+        gonglvButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        gonglvButton.setImage(UIImage(named: "ic_h_power"), forState: UIControlState.Normal)
+        bkgView.addSubview(gonglvButton)
+        
+        gonglvLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(gonglvButton.frame),CGRectGetMaxY(checkMarkButton.frame) + height * 0.1, buttonWidth, height * 0.8))
+        gonglvLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        gonglvLabel.text = "50天"
+        gonglvLabel.textColor = UIColor.blackColor()
+        bkgView.addSubview(gonglvLabel)
+        
+        //发电
+        let fadianButton = UIButton.init(type: UIButtonType.Custom)
+        fadianButton.frame = CGRectMake(PhoneUtils.kScreenWidth / 2, CGRectGetMaxY(checkMarkButton.frame) + height * 0.1, buttonWidth, height * 0.8)
+        fadianButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        fadianButton.setTitle("发电:", forState: UIControlState.Normal)
+        fadianButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        fadianButton.setImage(UIImage(named: "ic_h_days"), forState: UIControlState.Normal)
+        bkgView.addSubview(fadianButton)
+        
+        fadianLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(fadianButton.frame), CGRectGetMaxY(checkMarkButton.frame) + height * 0.1, buttonWidth, height * 0.8))
+        fadianLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        fadianLabel.text = "50天"
+        fadianLabel.textColor = UIColor.blackColor()
+        bkgView.addSubview(fadianLabel)
+        
+        //今日发电
+        let todayElectricButton = UIButton.init(type: UIButtonType.Custom)
+        todayElectricButton.frame = CGRectMake(0,CGRectGetMaxY(bkgView.frame) + height * 0.1, buttonWidth, height * 0.8)
+        todayElectricButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        todayElectricButton.setTitle("今日发电:", forState: UIControlState.Normal)
+        todayElectricButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        todayElectricButton.setImage(UIImage(named: "ic_h_powerday"), forState: UIControlState.Normal)
+        electricView.addSubview(todayElectricButton)
+        
+        todayElectricLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayElectricButton.frame), CGRectGetMaxY(bkgView.frame) + height * 0.1, buttonWidth, height * 0.8))
+        todayElectricLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        todayElectricLabel.text = "289.00kw"
+        todayElectricLabel.textColor = UIColor.blackColor()
+        electricView.addSubview(todayElectricLabel)
+        
+        //累计发电
+        let totalElectricButton = UIButton.init(type: UIButtonType.Custom)
+        totalElectricButton.frame = CGRectMake(PhoneUtils.kScreenWidth / 2, CGRectGetMaxY(bkgView.frame) + height * 0.1, buttonWidth, height * 0.8)
+        totalElectricButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totalElectricButton.setTitle("累计发电:", forState: UIControlState.Normal)
+        totalElectricButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        electricView.addSubview(totalElectricButton)
+        
+        totalElectricLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalElectricButton.frame), CGRectGetMaxY(bkgView.frame) + height * 0.1, buttonWidth, height * 0.8))
+        totalElectricLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totalElectricLabel.text = "2104.30kw"
+        totalElectricLabel.textColor = UIColor.blackColor()
+        electricView.addSubview(totalElectricLabel)
+        
+        //今日收益
+        let todayMoneyButton = UIButton.init(type: UIButtonType.Custom)
+        todayMoneyButton.frame = CGRectMake(0, CGRectGetMaxY(bkgView.frame) + height * 0.9, buttonWidth, height * 0.8)
+        todayMoneyButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        todayMoneyButton.setTitle("今日收益:", forState: UIControlState.Normal)
+        todayMoneyButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        todayMoneyButton.setImage(UIImage(named: "ic_h_dayincome"), forState: UIControlState.Normal)
+        electricView.addSubview(todayMoneyButton)
+        
+        todayMoneyLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayMoneyButton.frame),CGRectGetMaxY(bkgView.frame) + height * 0.9, buttonWidth, height * 0.8))
+        todayMoneyLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        todayMoneyLabel.text = "867.00元"
+        todayMoneyLabel.textColor = UIColor.blackColor()
+        electricView.addSubview(todayMoneyLabel)
+        
+        //累计收益
+        let totalMoneyButton = UIButton.init(type: UIButtonType.Custom)
+        totalMoneyButton.frame = CGRectMake(PhoneUtils.kScreenWidth / 2, CGRectGetMaxY(bkgView.frame) + height * 0.9, buttonWidth, height * 0.8)
+        totalMoneyButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totalMoneyButton.setTitle("累计收益:", forState: UIControlState.Normal)
+        totalMoneyButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        electricView.addSubview(totalMoneyButton)
+        
+        totalMoneyLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalMoneyButton.frame), CGRectGetMaxY(bkgView.frame) + height * 0.9, buttonWidth, height * 0.8))
+        totalMoneyLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totalMoneyLabel.text = "6312.00元"
+        totalMoneyLabel.textColor = UIColor.blackColor()
+        electricView.addSubview(totalMoneyLabel)
+        
+        //今日减排
+        let todayjianpaiButton = UIButton.init(type: UIButtonType.Custom)
+        todayjianpaiButton.frame = CGRectMake(0, CGRectGetMaxY(bkgView.frame) + height * 1.8, buttonWidth, height * 0.8)
+        todayjianpaiButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        todayjianpaiButton.setTitle("今日减排:", forState: UIControlState.Normal)
+        todayjianpaiButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        todayjianpaiButton.setImage(UIImage(named: "ic_reduce"), forState: UIControlState.Normal)
+        electricView.addSubview(todayjianpaiButton)
+        
+        todayjianpaiLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayjianpaiButton.frame),CGRectGetMaxY(bkgView.frame) + height * 1.8, buttonWidth, height * 0.8))
+        todayjianpaiLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        todayjianpaiLabel.text = "867.00元"
+        todayjianpaiLabel.textColor = UIColor.blackColor()
+        electricView.addSubview(todayjianpaiLabel)
+        
+        //累计减排
+        let totaljianpaiButton = UIButton.init(type: UIButtonType.Custom)
+        totaljianpaiButton.frame = CGRectMake(PhoneUtils.kScreenWidth / 2, CGRectGetMaxY(bkgView.frame) + height * 1.8, buttonWidth, height * 0.8)
+        totaljianpaiButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totaljianpaiButton.setTitle("累计减排:", forState: UIControlState.Normal)
+        totaljianpaiButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        electricView.addSubview(totaljianpaiButton)
+        
+        totaljianpaiLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totaljianpaiButton.frame), CGRectGetMaxY(bkgView.frame) + height * 1.8, buttonWidth, height * 0.8))
+        totaljianpaiLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totaljianpaiLabel.text = "6312.00元"
+        totaljianpaiLabel.textColor = UIColor.blackColor()
+        electricView.addSubview(totaljianpaiLabel)
+        
+        //今日种植
+        let todayPlantButton = UIButton.init(type: UIButtonType.Custom)
+        todayPlantButton.frame = CGRectMake(0, CGRectGetMaxY(bkgView.frame) + height * 2.7, buttonWidth, height * 0.8)
+        todayPlantButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        todayPlantButton.setTitle("今日种植:", forState: UIControlState.Normal)
+        todayPlantButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        todayPlantButton.setImage(UIImage(named: "ic_grow"), forState: UIControlState.Normal)
+        electricView.addSubview(todayPlantButton)
+        
+        todayplantLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayPlantButton.frame),CGRectGetMaxY(bkgView.frame) + height * 2.7, buttonWidth, height * 0.8))
+        todayplantLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        todayplantLabel.text = "867.00元"
+        todayplantLabel.textColor = UIColor.blackColor()
+        electricView.addSubview(todayplantLabel)
+        
+        //累计种植
+        let totalPlantButton = UIButton.init(type: UIButtonType.Custom)
+        totalPlantButton.frame = CGRectMake(PhoneUtils.kScreenWidth / 2, CGRectGetMaxY(bkgView.frame) + height * 2.7, buttonWidth, height * 0.8)
+        totalPlantButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totalPlantButton.setTitle("累计种植:", forState: UIControlState.Normal)
+        totalPlantButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        electricView.addSubview(totalPlantButton)
+        
+        totalplantLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalPlantButton.frame), CGRectGetMaxY(bkgView.frame) + height * 2.7, buttonWidth, height * 0.8))
+        totalplantLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totalplantLabel.text = "6312.00元"
+        totalplantLabel.textColor = UIColor.blackColor()
+        electricView.addSubview(totalplantLabel)
+        
+        let viewDetailButton = UIButton.init(type: UIButtonType.Custom)
+        viewDetailButton.frame = CGRectMake(0, electricView.frame.size.height - PhoneUtils.kScreenHeight * 0.08, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.08)
+        viewDetailButton.setTitle("查看发电曲线图 >>", forState: UIControlState.Normal)
+        viewDetailButton.backgroundColor = UIColor.whiteColor()
+        viewDetailButton.addTarget(self, action: #selector(self.viewDetailButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        viewDetailButton.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
+        viewDetailButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        electricView.addSubview(viewDetailButton)
+    }
+    
+    func getDeviceInfo() {
+        if (UserDefaultManager.isLogin()) {
+            let user = UserDefaultManager.getUser()
+            if (user?.device_id != nil) {
+                self.showHudInView(self.view, hint: "加载中...")
+                API.sharedInstance.deviceInfo(user!.device_id!, success: { (deviceInfo) in
+                    self.hideHud()
+                    self.loadDeviceInfo(deviceInfo)
+                    }, failure: { (msg) in
+                        self.hideHud()
+                        self.showHint(msg)
+                })
+            }
+        }
+    }
+    
+    func loadDeviceInfo(deviceInfo : DeviceInfo) {
+        let errorCode1 = NSString.init(string: deviceInfo.errorcode1!)
+        let errorCode2 = NSString.init(string: deviceInfo.errorcode2!)
+        if (errorCode1.containsString("0000") && errorCode2.containsString("0000")) {
+            statusButton.enabled = true
+            statusLabel.text = "运行状态 正常"
+            statusLabel.textColor = Colors.installColor
+            checkMarkButton.enabled = true
+        } else {
+            statusButton.enabled = false
+            statusLabel.text = "运行状态 异常(报修)"
+            statusLabel.textColor = Colors.installRedColor
+            checkMarkButton.enabled = false
+        }
+        
+        gonglvLabel.text = String(format: "%@kw", deviceInfo.device_power!)
+        fadianLabel.text = String(format: "%@天", deviceInfo.runtime!)
+        if (deviceInfo.energy_day == nil || deviceInfo.energy_all == nil) {
+            return
+        }
+        todayElectricLabel.text = String(format: "%@kw", deviceInfo.energy_day!)
+        totalElectricLabel.text = String(format: "%@kw", deviceInfo.energy_all!)
+        todayMoneyLabel.text = String(format: "%.2f元", deviceInfo.energy_day!.floatValue * 3)
+        totalMoneyLabel.text = String(format: "%.2f元", deviceInfo.energy_all!.floatValue * 3)
+        todayjianpaiLabel.text = String(format: "%.2f吨", deviceInfo.energy_day!.floatValue * 0.272 / 1000)
+        totaljianpaiLabel.text = String(format: "%.2f吨", deviceInfo.energy_all!.floatValue * 0.272 / 1000)
+        todayplantLabel.text = String(format: "%.2f棵", deviceInfo.energy_day!.floatValue * 0.272 / 100)
+        totalplantLabel.text = String(format: "%.2f棵", deviceInfo.energy_all!.floatValue * 0.272 / 100)
+    }
+    
+    //MARK: 查看发电曲线图
+    func viewDetailButtonClicked() {
+        let vc = ElectricPicViewController()
+        self.pushViewController(vc)
+    }
+    
+    //MARK: 业主
     let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initYeZhuView() {
         yezhuView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
@@ -94,13 +363,16 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func calRoomButtonClicked() {
-        
+        let vc = RoofPriceViewController()
+        self.pushViewController(vc)
     }
     
     func soldRoomButtonClicked() {
-        
+        let vc = LeaseViewController()
+        self.pushViewController(vc)
     }
     
+    //MARK: 安装商
     let installerCellReuseIdentifier = "installerCellReuseIdentifier"
     func initInstallerView() {
         installView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
@@ -138,6 +410,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
     }
     
+    
+    //MARK: 关于页面
     func initAboutUsView() {
         let nibs = NSBundle.mainBundle().loadNibNamed("ABoutUsView", owner: nil, options: nil)
         aboutUsView = nibs.first as! ABoutUsView
@@ -149,6 +423,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         appDelegate.window!.addSubview(aboutUsView)
     }
     
+    //MARK: 业主列表
     func loadUserList() {
         self.showHudInView(self.view, hint: "加载中...")
         API.sharedInstance.userlist(2, province_id: nil, city_id: nil, is_suggest: nil, success: { (userInfos) in
@@ -164,6 +439,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         }
     }
     
+    //MARK: 安装商列表
     func loadInstallerList() {
         self.showHudInView(self.view, hint: "加载中...")
         API.sharedInstance.getRoofList(1, province_id: nil, city_id: nil, success: { (userInfos) in
@@ -236,6 +512,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         aboutUsView.hidden = false
     }
     
+    //MARK: 登录页面
     func initLoginView() {
         loginView = LoginView(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight))
         loginView.initView()
@@ -288,6 +565,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         goToTab(sender.tag)
     }
     
+    //MARK: tab跳转
     func goToTab(index : NSInteger) {
         for i in 0..<buttons.count {
             let button = buttons[i] as! UIButton
@@ -300,6 +578,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         yezhuView.hidden = true
         installView.hidden = true
+        electricView.hidden = true
+        safeView.hidden = true
         
         if (index == 0) { //业主
             yezhuView.hidden = false
@@ -308,9 +588,10 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             installView.hidden = false
             loadInstallerList()
         } else if (index == 2) { //发电量
-            
+            electricView.hidden = false
+            getDeviceInfo()
         } else if (index == 3) { //保险
-            
+            safeView.hidden = false
         }
     }
     

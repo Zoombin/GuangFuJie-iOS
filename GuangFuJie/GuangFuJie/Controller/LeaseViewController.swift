@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LeaseViewController: UIViewController {
+class LeaseViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

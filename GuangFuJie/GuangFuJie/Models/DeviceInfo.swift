@@ -16,8 +16,8 @@ class DeviceInfo: NSObject {
     var energy_all : NSNumber?
     var device_power : NSNumber?
     var runtime : NSNumber?
-    var errorcode1 : NSNumber?
-    var errorcode2 : NSNumber?
+    var errorcode1 : String?
+    var errorcode2 : String?
     var createdate : String?
     var updatedate : String?
     
