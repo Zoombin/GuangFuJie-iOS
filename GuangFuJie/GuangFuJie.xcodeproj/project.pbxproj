@@ -28,8 +28,6 @@
 		DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9641D5ED221005B9CCE /* BookingStatus.swift */; };
 		DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */; };
 		DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72B91D507A76003CDAAC /* DeviceInfo.swift */; };
-		DE5E72C71D508D77003CDAAC /* ProvinceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72C61D508D77003CDAAC /* ProvinceInfo.swift */; };
-		DE5E72C91D508D80003CDAAC /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72C81D508D80003CDAAC /* CityInfo.swift */; };
 		DE5E72CF1D50970B003CDAAC /* QNInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72CE1D50970B003CDAAC /* QNInfo.swift */; };
 		DE5E743C1D509B9F003CDAAC /* QN_GTM_Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E740C1D509B9E003CDAAC /* QN_GTM_Base64.m */; };
 		DE5E743D1D509B9F003CDAAC /* QNALAssetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E740E1D509B9E003CDAAC /* QNALAssetFile.m */; };
@@ -130,10 +128,24 @@
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
+		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
+		DEAEB2891D7F843700174C58 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2871D7F843700174C58 /* CityModel.swift */; };
+		DEAEB28A1D7F843700174C58 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2881D7F843700174C58 /* ProvinceModel.swift */; };
+		DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */; };
 		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
 		DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */; };
 		DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */; };
 		DEEE919A1D782BB40027F4D6 /* ToBeInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */; };
+		DEF983FC1D7FF5DC00ED1B40 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983F21D7FF5DC00ED1B40 /* Image.swift */; };
+		DEF983FD1D7FF5DC00ED1B40 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983F31D7FF5DC00ED1B40 /* ImageCache.swift */; };
+		DEF983FE1D7FF5DC00ED1B40 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983F41D7FF5DC00ED1B40 /* ImageDownloader.swift */; };
+		DEF983FF1D7FF5DC00ED1B40 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983F51D7FF5DC00ED1B40 /* ImageFilter.swift */; };
+		DEF984001D7FF5DC00ED1B40 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF983F61D7FF5DC00ED1B40 /* Info-tvOS.plist */; };
+		DEF984011D7FF5DC00ED1B40 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF983F71D7FF5DC00ED1B40 /* Info.plist */; };
+		DEF984021D7FF5DC00ED1B40 /* Request+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983F81D7FF5DC00ED1B40 /* Request+AlamofireImage.swift */; };
+		DEF984031D7FF5DC00ED1B40 /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983F91D7FF5DC00ED1B40 /* UIButton+AlamofireImage.swift */; };
+		DEF984041D7FF5DC00ED1B40 /* UIImage+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983FA1D7FF5DC00ED1B40 /* UIImage+AlamofireImage.swift */; };
+		DEF984051D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983FB1D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,8 +299,6 @@
 		DE57C9641D5ED221005B9CCE /* BookingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatus.swift; sourceTree = "<group>"; };
 		DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
 		DE5E72B91D507A76003CDAAC /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
-		DE5E72C61D508D77003CDAAC /* ProvinceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceInfo.swift; sourceTree = "<group>"; };
-		DE5E72C81D508D80003CDAAC /* CityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
 		DE5E72CE1D50970B003CDAAC /* QNInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QNInfo.swift; sourceTree = "<group>"; };
 		DE5E740B1D509B9E003CDAAC /* QN_GTM_Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QN_GTM_Base64.h; sourceTree = "<group>"; };
 		DE5E740C1D509B9E003CDAAC /* QN_GTM_Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QN_GTM_Base64.m; sourceTree = "<group>"; };
@@ -460,10 +470,25 @@
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
+		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
+		DEAEB2871D7F843700174C58 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		DEAEB2881D7F843700174C58 /* ProvinceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceModel.swift; sourceTree = "<group>"; };
+		DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToBeInstallerViewController.xib; sourceTree = "<group>"; };
 		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
 		DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
 		DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToBeInstallerViewController.swift; sourceTree = "<group>"; };
+		DEF983F11D7FF5DC00ED1B40 /* AlamofireImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlamofireImage.h; path = Source/AlamofireImage.h; sourceTree = "<group>"; };
+		DEF983F21D7FF5DC00ED1B40 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Source/Image.swift; sourceTree = "<group>"; };
+		DEF983F31D7FF5DC00ED1B40 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Source/ImageCache.swift; sourceTree = "<group>"; };
+		DEF983F41D7FF5DC00ED1B40 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Source/ImageDownloader.swift; sourceTree = "<group>"; };
+		DEF983F51D7FF5DC00ED1B40 /* ImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFilter.swift; path = Source/ImageFilter.swift; sourceTree = "<group>"; };
+		DEF983F61D7FF5DC00ED1B40 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "Source/Info-tvOS.plist"; sourceTree = "<group>"; };
+		DEF983F71D7FF5DC00ED1B40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
+		DEF983F81D7FF5DC00ED1B40 /* Request+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+AlamofireImage.swift"; path = "Source/Request+AlamofireImage.swift"; sourceTree = "<group>"; };
+		DEF983F91D7FF5DC00ED1B40 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+AlamofireImage.swift"; path = "Source/UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
+		DEF983FA1D7FF5DC00ED1B40 /* UIImage+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+AlamofireImage.swift"; path = "Source/UIImage+AlamofireImage.swift"; sourceTree = "<group>"; };
+		DEF983FB1D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+AlamofireImage.swift"; path = "Source/UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -584,6 +609,7 @@
 		18B8FA5C1D3CE8A400B334E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */,
 				DE79F9501D4C1C100032D461 /* MainViewController.swift */,
 				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
 				DE79F9551D4C1C270032D461 /* BaseViewController.swift */,
@@ -596,6 +622,7 @@
 				DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */,
 				DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */,
 				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
+				DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */,
 				DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */,
 			);
 			path = Controller;
@@ -620,10 +647,10 @@
 		18B8FA5F1D3CE8A400B334E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DEAEB2871D7F843700174C58 /* CityModel.swift */,
+				DEAEB2881D7F843700174C58 /* ProvinceModel.swift */,
 				DE7900651D4C58E60032D461 /* UserInfo.swift */,
 				DE5E72B91D507A76003CDAAC /* DeviceInfo.swift */,
-				DE5E72C61D508D77003CDAAC /* ProvinceInfo.swift */,
-				DE5E72C81D508D80003CDAAC /* CityInfo.swift */,
 				DE5E72CE1D50970B003CDAAC /* QNInfo.swift */,
 				DE5E74C61D509FD9003CDAAC /* AppModel.swift */,
 				DE5E74C81D50A296003CDAAC /* CommonModel.swift */,
@@ -641,6 +668,7 @@
 		18B8FA601D3CE8A400B334E4 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				DEF981811D7FF5C700ED1B40 /* AlamofireImage */,
 				DE5E73541D509ADE003CDAAC /* QiNiuSDK */,
 				DE5E72D01D509AD9003CDAAC /* HappyDNS */,
 				DE7900DB1D4C86000032D461 /* MJExtensionExample.xcodeproj */,
@@ -1015,6 +1043,24 @@
 			path = IQKeyboardManagerSwift/Categories;
 			sourceTree = "<group>";
 		};
+		DEF981811D7FF5C700ED1B40 /* AlamofireImage */ = {
+			isa = PBXGroup;
+			children = (
+				DEF983F11D7FF5DC00ED1B40 /* AlamofireImage.h */,
+				DEF983F21D7FF5DC00ED1B40 /* Image.swift */,
+				DEF983F31D7FF5DC00ED1B40 /* ImageCache.swift */,
+				DEF983F41D7FF5DC00ED1B40 /* ImageDownloader.swift */,
+				DEF983F51D7FF5DC00ED1B40 /* ImageFilter.swift */,
+				DEF983F61D7FF5DC00ED1B40 /* Info-tvOS.plist */,
+				DEF983F71D7FF5DC00ED1B40 /* Info.plist */,
+				DEF983F81D7FF5DC00ED1B40 /* Request+AlamofireImage.swift */,
+				DEF983F91D7FF5DC00ED1B40 /* UIButton+AlamofireImage.swift */,
+				DEF983FA1D7FF5DC00ED1B40 /* UIImage+AlamofireImage.swift */,
+				DEF983FB1D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift */,
+			);
+			path = AlamofireImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1214,6 +1260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF984001D7FF5DC00ED1B40 /* Info-tvOS.plist in Resources */,
 				DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */,
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
 				DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */,
@@ -1221,6 +1268,8 @@
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
 				DE7900261D4C57300032D461 /* IQKeyboardManager.bundle in Resources */,
+				DEF984011D7FF5DC00ED1B40 /* Info.plist in Resources */,
+				DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1258,17 +1307,22 @@
 				DE5E747F1D509BAD003CDAAC /* QNDnsManager.m in Sources */,
 				DE5E744B1D509B9F003CDAAC /* QNFormUpload.m in Sources */,
 				DE5E74B31D509CC4003CDAAC /* AFHTTPSessionManager.m in Sources */,
+				DEF983FC1D7FF5DC00ED1B40 /* Image.swift in Sources */,
 				DE79001F1D4C57300032D461 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				DEF984051D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift in Sources */,
+				DEF983FD1D7FF5DC00ED1B40 /* ImageCache.swift in Sources */,
 				DE5E74831D509BAD003CDAAC /* QNRecord.m in Sources */,
 				DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */,
 				DE5E74851D509BAD003CDAAC /* QNDnspodFree.m in Sources */,
 				DE5E74B61D509CC4003CDAAC /* AFURLRequestSerialization.m in Sources */,
 				DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */,
 				DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */,
+				DEAEB2891D7F843700174C58 /* CityModel.swift in Sources */,
 				DE5E74421D509B9F003CDAAC /* QNPHAssetFile.m in Sources */,
 				DE7900B11D4C60360032D461 /* MBProgressHUD.m in Sources */,
 				DE7900181D4C57300032D461 /* IQUITextFieldView+Additions.swift in Sources */,
 				DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */,
+				DEF983FF1D7FF5DC00ED1B40 /* ImageFilter.swift in Sources */,
 				DE5E74BC1D509CC4003CDAAC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DE79F95B1D4C32F30032D461 /* Dimens.swift in Sources */,
 				DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */,
@@ -1279,7 +1333,9 @@
 				DE5E747D1D509BAD003CDAAC /* QNAssessment.m in Sources */,
 				DE7900661D4C58E60032D461 /* UserInfo.swift in Sources */,
 				DE5E744C1D509B9F003CDAAC /* QNResumeUpload.m in Sources */,
+				DEF984041D7FF5DC00ED1B40 /* UIImage+AlamofireImage.swift in Sources */,
 				DE7900251D4C57300032D461 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				DEAEB28A1D7F843700174C58 /* ProvinceModel.swift in Sources */,
 				DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */,
 				DE5E74801D509BAD003CDAAC /* QNDomain.m in Sources */,
 				DE5E748D1D509BAD003CDAAC /* QNGetAddrInfo.m in Sources */,
@@ -1288,6 +1344,7 @@
 				DE5E74401D509B9F003CDAAC /* QNEtag.m in Sources */,
 				DE5E74811D509BAD003CDAAC /* QNLruCache.m in Sources */,
 				DE7900EF1D4C88C70032D461 /* ABoutUsView.swift in Sources */,
+				DEF984021D7FF5DC00ED1B40 /* Request+AlamofireImage.swift in Sources */,
 				DE7900221D4C57300032D461 /* IQPreviousNextView.swift in Sources */,
 				DE5E74C91D50A296003CDAAC /* CommonModel.swift in Sources */,
 				DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */,
@@ -1302,7 +1359,6 @@
 				DE79006F1D4C59920032D461 /* UIViewController+HUD.m in Sources */,
 				DE5E72CF1D50970B003CDAAC /* QNInfo.swift in Sources */,
 				DE0C780E1D68534E00FED16D /* YeZhuCell.swift in Sources */,
-				DE5E72C71D508D77003CDAAC /* ProvinceInfo.swift in Sources */,
 				DE5E74431D509B9F003CDAAC /* QNPHAssetResource.m in Sources */,
 				DE5E74821D509BAD003CDAAC /* QNNetworkInfo.m in Sources */,
 				DE5E74461D509B9F003CDAAC /* QNResponseInfo.m in Sources */,
@@ -1322,7 +1378,9 @@
 				DE5E74411D509B9F003CDAAC /* QNFile.m in Sources */,
 				DE7901021D4CAE4C0032D461 /* EarnCalViewController.swift in Sources */,
 				DE5E743D1D509B9F003CDAAC /* QNALAssetFile.m in Sources */,
+				DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */,
 				DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */,
+				DEF983FE1D7FF5DC00ED1B40 /* ImageDownloader.swift in Sources */,
 				DE79F9521D4C1C100032D461 /* MainViewController.swift in Sources */,
 				DE5E748A1D509BAD003CDAAC /* QNTxtResolver.m in Sources */,
 				DE5E744E1D509B9F003CDAAC /* QNUploadOption.m in Sources */,
@@ -1341,7 +1399,6 @@
 				1891D9FC1D3F57B90042E72D /* PhoneUtils.swift in Sources */,
 				DE5E747E1D509BAD003CDAAC /* QNIpModel.m in Sources */,
 				18A7FF471CD9902B00BF5926 /* AppDelegate.swift in Sources */,
-				DE5E72C91D508D80003CDAAC /* CityInfo.swift in Sources */,
 				DE79F9611D4C3B410032D461 /* LoginView.swift in Sources */,
 				DE5E74881D509BAD003CDAAC /* QNResolver.m in Sources */,
 				DE7900211D4C57300032D461 /* IQBarButtonItem.swift in Sources */,
@@ -1357,6 +1414,7 @@
 				DE79001D1D4C57300032D461 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				DE5E74B71D509CC4003CDAAC /* AFURLResponseSerialization.m in Sources */,
 				DE5E748E1D509BAD003CDAAC /* QNHex.m in Sources */,
+				DEF984031D7FF5DC00ED1B40 /* UIButton+AlamofireImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

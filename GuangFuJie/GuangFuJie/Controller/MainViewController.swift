@@ -32,7 +32,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     var electricView : UIView!
     
-    
+    var bindView : UIView!
+    var deviceTextField : UITextField!
     var safeView : UIView!
     
     var topView : UIView!
@@ -66,6 +67,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         initInstallerView()
         initElectricView()
         initSafeView()
+        initBindView()
         
         goToTab(0)
     }
@@ -74,6 +76,60 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     func initSafeView() {
         safeView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
         self.view.addSubview(safeView)
+    }
+    
+    func initBindView() {
+        bindView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
+        self.view.addSubview(bindView)
+        
+        let bindViewBottomView = UIView.init(frame: CGRectMake(0, bindView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
+        bindViewBottomView.backgroundColor = UIColor.whiteColor()
+        bindView.addSubview(bindViewBottomView)
+        
+        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
+        let buttonHeight = bindViewBottomView.frame.size.height - 5 * 2
+        
+        let width = PhoneUtils.kScreenWidth * 0.6
+        let height = (397 * width) / 309
+        let deviceBkgImageView = UIImageView.init(frame: CGRectMake((PhoneUtils.kScreenWidth - width) / 2, 0, width, height))
+        deviceBkgImageView.image = UIImage(named: "ic_device_temp")
+        bindView.addSubview(deviceBkgImageView)
+        
+        deviceTextField = UITextField.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth) / 2, CGRectGetMaxY(deviceBkgImageView.frame) + 8, buttonWidth, buttonHeight))
+        deviceTextField.layer.borderColor = UIColor.lightGrayColor().CGColor
+        deviceTextField.layer.borderWidth = 0.5
+        bindView.addSubview(deviceTextField)
+        
+        let bindButton = UIButton.init(type: UIButtonType.Custom)
+        bindButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
+        bindButton.setTitle("绑定设备", forState: UIControlState.Normal)
+        bindButton.backgroundColor = Colors.installColor
+        bindButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        bindButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        bindButton.addTarget(self, action: #selector(self.bindButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        bindViewBottomView.addSubview(bindButton)
+    }
+    
+    func bindButtonClicked() {
+        deviceTextField.resignFirstResponder()
+        if (!UserDefaultManager.isLogin()) {
+            self.showHint("请登录!")
+            return
+        }
+        let deviceId = deviceTextField.text
+        if (deviceId!.isEmpty) {
+            self.showHint("请输入设备号")
+            return
+        }
+        self.showHudInView(self.view, hint: "绑定中...")
+        API.sharedInstance.bindDevice(deviceTextField.text!, success: { (userInfo) in
+                self.hideHud()
+                self.showHint("绑定成功!")
+                UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userInfo.mj_JSONString())
+            }) { (msg) in
+                self.hideHud()
+                self.showHint(msg)
+        }
     }
     
     //MARK: 发电量
@@ -97,7 +153,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         bkgView.addSubview(statusButton)
         
         statusLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(statusButton.frame) + offSetX, height * 0.25, 140, height * 0.5))
-        statusLabel.text = "运行状态 正常"
+        statusLabel.text = ""
         statusLabel.textColor = Colors.installColor
         statusLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         bkgView.addSubview(statusLabel)
@@ -120,7 +176,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         gonglvLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(gonglvButton.frame),CGRectGetMaxY(checkMarkButton.frame) + height * 0.1, buttonWidth, height * 0.8))
         gonglvLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        gonglvLabel.text = "50天"
+        gonglvLabel.text = ""
         gonglvLabel.textColor = UIColor.blackColor()
         bkgView.addSubview(gonglvLabel)
         
@@ -135,7 +191,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         fadianLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(fadianButton.frame), CGRectGetMaxY(checkMarkButton.frame) + height * 0.1, buttonWidth, height * 0.8))
         fadianLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        fadianLabel.text = "50天"
+        fadianLabel.text = ""
         fadianLabel.textColor = UIColor.blackColor()
         bkgView.addSubview(fadianLabel)
         
@@ -150,7 +206,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         todayElectricLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayElectricButton.frame), CGRectGetMaxY(bkgView.frame) + height * 0.1, buttonWidth, height * 0.8))
         todayElectricLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        todayElectricLabel.text = "289.00kw"
+        todayElectricLabel.text = ""
         todayElectricLabel.textColor = UIColor.blackColor()
         electricView.addSubview(todayElectricLabel)
         
@@ -164,7 +220,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         totalElectricLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalElectricButton.frame), CGRectGetMaxY(bkgView.frame) + height * 0.1, buttonWidth, height * 0.8))
         totalElectricLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        totalElectricLabel.text = "2104.30kw"
+        totalElectricLabel.text = ""
         totalElectricLabel.textColor = UIColor.blackColor()
         electricView.addSubview(totalElectricLabel)
         
@@ -179,7 +235,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         todayMoneyLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayMoneyButton.frame),CGRectGetMaxY(bkgView.frame) + height * 0.9, buttonWidth, height * 0.8))
         todayMoneyLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        todayMoneyLabel.text = "867.00元"
+        todayMoneyLabel.text = ""
         todayMoneyLabel.textColor = UIColor.blackColor()
         electricView.addSubview(todayMoneyLabel)
         
@@ -193,7 +249,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         totalMoneyLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalMoneyButton.frame), CGRectGetMaxY(bkgView.frame) + height * 0.9, buttonWidth, height * 0.8))
         totalMoneyLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        totalMoneyLabel.text = "6312.00元"
+        totalMoneyLabel.text = ""
         totalMoneyLabel.textColor = UIColor.blackColor()
         electricView.addSubview(totalMoneyLabel)
         
@@ -208,7 +264,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         todayjianpaiLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayjianpaiButton.frame),CGRectGetMaxY(bkgView.frame) + height * 1.8, buttonWidth, height * 0.8))
         todayjianpaiLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        todayjianpaiLabel.text = "867.00元"
+        todayjianpaiLabel.text = ""
         todayjianpaiLabel.textColor = UIColor.blackColor()
         electricView.addSubview(todayjianpaiLabel)
         
@@ -222,7 +278,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         totaljianpaiLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totaljianpaiButton.frame), CGRectGetMaxY(bkgView.frame) + height * 1.8, buttonWidth, height * 0.8))
         totaljianpaiLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        totaljianpaiLabel.text = "6312.00元"
+        totaljianpaiLabel.text = ""
         totaljianpaiLabel.textColor = UIColor.blackColor()
         electricView.addSubview(totaljianpaiLabel)
         
@@ -237,7 +293,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         todayplantLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayPlantButton.frame),CGRectGetMaxY(bkgView.frame) + height * 2.7, buttonWidth, height * 0.8))
         todayplantLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        todayplantLabel.text = "867.00元"
+        todayplantLabel.text = ""
         todayplantLabel.textColor = UIColor.blackColor()
         electricView.addSubview(todayplantLabel)
         
@@ -251,7 +307,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         totalplantLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalPlantButton.frame), CGRectGetMaxY(bkgView.frame) + height * 2.7, buttonWidth, height * 0.8))
         totalplantLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        totalplantLabel.text = "6312.00元"
+        totalplantLabel.text = ""
         totalplantLabel.textColor = UIColor.blackColor()
         electricView.addSubview(totalplantLabel)
         
@@ -391,7 +447,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         installerButton.backgroundColor = Colors.installColor
         installerButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         installerButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        installerButton.addTarget(self, action: #selector(self.calRoomButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        installerButton.addTarget(self, action: #selector(self.wantToBeInstaller), forControlEvents: UIControlEvents.TouchUpInside)
         installViewBottomView.addSubview(installerButton)
         
         let tableViewHeight = CGRectGetMinY(installViewBottomView.frame)
@@ -407,9 +463,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func wantToBeInstaller() {
-        
+        let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
+        self.pushViewController(vc)
     }
-    
     
     //MARK: 关于页面
     func initAboutUsView() {
@@ -580,6 +636,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         installView.hidden = true
         electricView.hidden = true
         safeView.hidden = true
+        bindView.hidden = true
         
         if (index == 0) { //业主
             yezhuView.hidden = false
@@ -588,8 +645,16 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             installView.hidden = false
             loadInstallerList()
         } else if (index == 2) { //发电量
-            electricView.hidden = false
-            getDeviceInfo()
+            if (UserDefaultManager.isLogin()) {
+                if (UserDefaultManager.getUser()?.device_id != nil) {
+                    electricView.hidden = false
+                    getDeviceInfo()
+                } else {
+                    bindView.hidden = false
+                }
+            } else {
+                bindView.hidden = false
+            }
         } else if (index == 3) { //保险
             safeView.hidden = false
         }

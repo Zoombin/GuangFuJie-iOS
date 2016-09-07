@@ -19,3 +19,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/QiNiuSDK"]
 	path = GuangFuJie/GuangFuJie/Submodules/QiNiuSDK
 	url = https://github.com/qiniu/objc-sdk.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/AlamofireImage"]
+	path = GuangFuJie/GuangFuJie/Submodules/AlamofireImage
+	url = https://github.com/Alamofire/AlamofireImage.git

@@ -28,7 +28,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (data) in
             let qnInfo = QNInfo.mj_objectWithKeyValues(data)
             success?(qnInfo : qnInfo)
             }, failure: failure)
@@ -120,8 +120,8 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let array = ProvinceInfo.mj_objectArrayWithKeyValuesArray(data)
+        self.get(url, params: newParams, success: { (data) in
+            let array = ProvinceModel.mj_objectArrayWithKeyValuesArray(data)
             success?(provinces: array)
             }, failure: failure)
     }
@@ -129,19 +129,21 @@ extension API {
     /**
      获得某个省份下的城市列表
      
+     - parameter province_id:
      - parameter success:
      - parameter failure:
      */
-    func citylist(success: ((cities: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func citylist(province_id : NSNumber, success: ((cities: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "region/citylist"
         let params = [
             "user_id" : getUserId(),
+            "province_id" : province_id,
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let array = CityInfo.mj_objectArrayWithKeyValuesArray(data)
+        self.get(url, params: newParams, success: { (data) in
+            let array = CityModel.mj_objectArrayWithKeyValuesArray(data)
             success?(cities: array)
             }, failure: failure)
     }
@@ -580,7 +582,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.post(url, params: newParams, success: { (data) in
             let userinfo = UserInfo.mj_objectWithKeyValues(data)
             success?(userInfo : userinfo)
             }, failure: failure)
