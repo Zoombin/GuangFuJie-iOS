@@ -132,6 +132,9 @@
 		DEAEB2891D7F843700174C58 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2871D7F843700174C58 /* CityModel.swift */; };
 		DEAEB28A1D7F843700174C58 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2881D7F843700174C58 /* ProvinceModel.swift */; };
 		DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */; };
+		DEC64FD21D80009300AF96AC /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */; };
+		DEC64FDE1D8000A000AF96AC /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */; };
+		DEC64FE01D8000AB00AF96AC /* MoreYezhuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */; };
 		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
 		DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */; };
 		DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */; };
@@ -474,6 +477,9 @@
 		DEAEB2871D7F843700174C58 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		DEAEB2881D7F843700174C58 /* ProvinceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceModel.swift; sourceTree = "<group>"; };
 		DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToBeInstallerViewController.xib; sourceTree = "<group>"; };
+		DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterViewController.swift; sourceTree = "<group>"; };
+		DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
+		DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreYezhuViewController.swift; sourceTree = "<group>"; };
 		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
 		DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -624,6 +630,9 @@
 				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
 				DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */,
 				DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */,
+				DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */,
+				DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */,
+				DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1358,6 +1367,7 @@
 				DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */,
 				DE79006F1D4C59920032D461 /* UIViewController+HUD.m in Sources */,
 				DE5E72CF1D50970B003CDAAC /* QNInfo.swift in Sources */,
+				DEC64FD21D80009300AF96AC /* UserCenterViewController.swift in Sources */,
 				DE0C780E1D68534E00FED16D /* YeZhuCell.swift in Sources */,
 				DE5E74431D509B9F003CDAAC /* QNPHAssetResource.m in Sources */,
 				DE5E74821D509BAD003CDAAC /* QNNetworkInfo.m in Sources */,
@@ -1369,6 +1379,7 @@
 				DE5E744F1D509B9F003CDAAC /* QNUpToken.m in Sources */,
 				DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */,
 				DE5E748C1D509BAD003CDAAC /* QNDes.m in Sources */,
+				DEC64FDE1D8000A000AF96AC /* MoreInstallerViewController.swift in Sources */,
 				DE5E74BD1D509CC4003CDAAC /* UIButton+AFNetworking.m in Sources */,
 				DE5E748B1D509BAD003CDAAC /* QNRefresher.m in Sources */,
 				DE0C77F91D66D30700FED16D /* RoofInfo.swift in Sources */,
@@ -1395,6 +1406,7 @@
 				DE7900201D4C57300032D461 /* IQTextView.swift in Sources */,
 				DE5E74BF1D509CC4003CDAAC /* UIProgressView+AFNetworking.m in Sources */,
 				DE5E74861D509BAD003CDAAC /* QNHijackingDetectWrapper.m in Sources */,
+				DEC64FE01D8000AB00AF96AC /* MoreYezhuViewController.swift in Sources */,
 				DE5E74891D509BAD003CDAAC /* QNResolvUtil.m in Sources */,
 				1891D9FC1D3F57B90042E72D /* PhoneUtils.swift in Sources */,
 				DE5E747E1D509BAD003CDAAC /* QNIpModel.m in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     var buttons = NSMutableArray()
     var loginView : LoginView!
     var aboutUsView : ABoutUsView!
@@ -43,6 +43,11 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     let YEZHU_TABLEVIEW_TAG = 10001
     let INSTALLER_TABLEVIEW_TAG = 10002
+    
+    let YEZHU_SCROLLVIEW_TAG = 1001
+    let INSTALLER_SCROLLVIEW_TAG = 1002
+    var yezhuPageControl : UIPageControl!
+    var installerPageControl : UIPageControl!
     
     var yezhuTableView : UITableView!
     var installTableView : UITableView!
@@ -406,6 +411,32 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         soldRoomButton.layer.borderWidth = 0.5
         yezhuBottomView.addSubview(soldRoomButton)
         
+        let offSetY : CGFloat = 8
+        let scrollViewWidth = PhoneUtils.kScreenWidth
+        let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
+        
+        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        
+        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
+        
+        scrollView.contentSize = CGSizeMake(scrollViewWidth * CGFloat(images.count), 0)
+        scrollView.pagingEnabled = true
+        scrollView.delegate = self
+        scrollView.tag = YEZHU_SCROLLVIEW_TAG
+        footerView.addSubview(scrollView)
+        
+        for i in 0..<images.count {
+            let imageView = UIImageView.init(frame: CGRectMake(CGFloat(i) * scrollViewWidth, offSetY, scrollViewWidth, scrollViewHeight))
+            imageView.image = UIImage(named: images[i])
+            scrollView.addSubview(imageView)
+        }
+        
+        yezhuPageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20, scrollView.frame.size.width, 20))
+        yezhuPageControl.numberOfPages = images.count
+        footerView.addSubview(yezhuPageControl)
+        
+        
         let tableViewHeight = CGRectGetMinY(yezhuBottomView.frame)
         yezhuTableView = UITableView.init(frame: CGRectMake(0, 0, yezhuView.frame.size.width, tableViewHeight), style: UITableViewStyle.Plain)
         yezhuTableView.delegate = self
@@ -415,7 +446,20 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         yezhuTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         yezhuView.addSubview(yezhuTableView)
         
+        yezhuTableView.tableFooterView = footerView
+        
         yezhuTableView.registerClass(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.size.width
+        let page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
+        if (scrollView.tag == YEZHU_SCROLLVIEW_TAG) {
+            yezhuPageControl.currentPage = Int(page)
+        } else {
+            page
+        }
+        
     }
     
     func calRoomButtonClicked() {
@@ -482,7 +526,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     //MARK: 业主列表
     func loadUserList() {
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.userlist(2, province_id: nil, city_id: nil, is_suggest: nil, success: { (userInfos) in
+        API.sharedInstance.userlist(2, province_id: nil, city_id: nil, is_suggest: 1, success: { (userInfos) in
             self.hideHud()
             self.yezhuArray.removeAllObjects()
             if (userInfos.count > 0) {
@@ -502,7 +546,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             self.hideHud()
             self.installerArray.removeAllObjects()
             if (userInfos.count > 0) {
-                self.installerArray.addObjectsFromArray(userInfos as [AnyObject])
+                self.installerArray.addObject(userInfos.firstObject!)
             }
             self.installTableView.reloadData()
         }) { (msg) in
