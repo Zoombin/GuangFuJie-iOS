@@ -15,6 +15,7 @@
                 <outlet property="locationLabel" destination="NoK-dt-a66" id="grD-Sc-IXH"/>
                 <outlet property="nameTextField" destination="3vy-lb-qEh" id="Nn4-mQ-pSg"/>
                 <outlet property="phoneTextField" destination="1Va-Hr-uYo" id="kPu-zX-jEP"/>
+                <outlet property="scrollView" destination="FgA-4o-Gva" id="0ce-Z6-JeE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Le4-aR-Z35"/>
                 <outlet property="yinyezhizhaoImagView" destination="heP-nz-v7W" id="gzS-dL-y5L"/>
             </connections>

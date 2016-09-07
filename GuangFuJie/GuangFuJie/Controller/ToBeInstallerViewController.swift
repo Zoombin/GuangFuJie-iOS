@@ -19,6 +19,8 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
     @IBOutlet weak var companyDescribeTextField : UITextView!
     @IBOutlet weak var describeHintLabel : UILabel!
     
+    @IBOutlet weak var scrollView : UIScrollView!
+    
     var provinceInfo : ProvinceModel?
     var cityInfo : CityModel?
     var imageUrl : String?
@@ -58,6 +60,12 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
     }
     
     func initView() {
+        var height = PhoneUtils.kScreenHeight
+        if (height < 568) {
+            height = 568
+        }
+        scrollView.contentSize = CGSizeMake(0, height + 1)
+        
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(self.uploadImage))
         yinyezhizhaoImagView.userInteractionEnabled = true
         yinyezhizhaoImagView.addGestureRecognizer(tapGesture)

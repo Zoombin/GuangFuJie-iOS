@@ -457,9 +457,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         if (scrollView.tag == YEZHU_SCROLLVIEW_TAG) {
             yezhuPageControl.currentPage = Int(page)
         } else {
-            page
+            installerPageControl.currentPage = Int(page)
         }
-        
     }
     
     func calRoomButtonClicked() {
@@ -494,6 +493,31 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         installerButton.addTarget(self, action: #selector(self.wantToBeInstaller), forControlEvents: UIControlEvents.TouchUpInside)
         installViewBottomView.addSubview(installerButton)
         
+        let offSetY : CGFloat = 8
+        let scrollViewWidth = PhoneUtils.kScreenWidth
+        let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
+        
+        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        
+        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
+        
+        scrollView.contentSize = CGSizeMake(scrollViewWidth * CGFloat(images.count), 0)
+        scrollView.pagingEnabled = true
+        scrollView.delegate = self
+        scrollView.tag = INSTALLER_SCROLLVIEW_TAG
+        footerView.addSubview(scrollView)
+        
+        for i in 0..<images.count {
+            let imageView = UIImageView.init(frame: CGRectMake(CGFloat(i) * scrollViewWidth, offSetY, scrollViewWidth, scrollViewHeight))
+            imageView.image = UIImage(named: images[i])
+            scrollView.addSubview(imageView)
+        }
+        
+        installerPageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20, scrollView.frame.size.width, 20))
+        installerPageControl.numberOfPages = images.count
+        footerView.addSubview(installerPageControl)
+        
         let tableViewHeight = CGRectGetMinY(installViewBottomView.frame)
         installTableView = UITableView.init(frame: CGRectMake(0, 0, yezhuView.frame.size.width, tableViewHeight), style: UITableViewStyle.Plain)
         installTableView.delegate = self
@@ -502,6 +526,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         installTableView.tag = INSTALLER_TABLEVIEW_TAG
         installTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         installView.addSubview(installTableView)
+        
+        installTableView.tableFooterView = footerView
         
         installTableView.registerClass(InstallerCell.self, forCellReuseIdentifier: installerCellReuseIdentifier)
     }
