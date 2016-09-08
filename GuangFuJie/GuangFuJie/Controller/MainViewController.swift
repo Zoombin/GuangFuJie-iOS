@@ -378,11 +378,32 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         self.pushViewController(vc)
     }
     
+    func moreInstaller() {
+        let vc = MoreInstallerViewController()
+        self.pushViewController(vc)
+    }
+    
+    func moreYezhu() {
+        let vc = MoreYezhuViewController()
+        self.pushViewController(vc)
+    }
+    
     //MARK: 业主
     let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initYeZhuView() {
         yezhuView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
         self.view.addSubview(yezhuView)
+        
+        let viewMoreLabel = UILabel.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, 30))
+        viewMoreLabel.text = "查看更多安装商>>"
+        viewMoreLabel.textAlignment = NSTextAlignment.Right
+        viewMoreLabel.textColor = Colors.lightGray
+        viewMoreLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        yezhuView.addSubview(viewMoreLabel)
+        
+        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.moreInstaller))
+        viewMoreLabel.userInteractionEnabled = true
+        viewMoreLabel.addGestureRecognizer(gesture)
         
         let yezhuBottomView = UIView.init(frame: CGRectMake(0, yezhuView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
         yezhuBottomView.backgroundColor = UIColor.whiteColor()
@@ -446,6 +467,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         yezhuTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         yezhuView.addSubview(yezhuTableView)
         
+        yezhuTableView.tableHeaderView = viewMoreLabel
         yezhuTableView.tableFooterView = footerView
         
         yezhuTableView.registerClass(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
@@ -476,6 +498,17 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     func initInstallerView() {
         installView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
         self.view.addSubview(installView)
+        
+        let viewMoreLabel = UILabel.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, 30))
+        viewMoreLabel.text = "查看更多业主出租>>"
+        viewMoreLabel.textAlignment = NSTextAlignment.Right
+        viewMoreLabel.textColor = Colors.lightGray
+        viewMoreLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        yezhuView.addSubview(viewMoreLabel)
+        
+        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.moreYezhu))
+        viewMoreLabel.userInteractionEnabled = true
+        viewMoreLabel.addGestureRecognizer(gesture)
         
         let installViewBottomView = UIView.init(frame: CGRectMake(0, yezhuView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
         installViewBottomView.backgroundColor = UIColor.whiteColor()
@@ -527,6 +560,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         installTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         installView.addSubview(installTableView)
         
+        installTableView.tableHeaderView = viewMoreLabel
         installTableView.tableFooterView = footerView
         
         installTableView.registerClass(InstallerCell.self, forCellReuseIdentifier: installerCellReuseIdentifier)
@@ -657,11 +691,11 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         let screenWidth = PhoneUtils.kScreenWidth
         let buttonHeigt : CGFloat = 30
         let offSetX : CGFloat = 20
-        let offSetY : CGFloat = 15
+        let offSetY : CGFloat = 5
         let titles = ["业主", "安装商", "发电量", "保险"]
         let buttonWidth = (screenWidth - offSetX * CGFloat(titles.count + 1))  / CGFloat(titles.count)
         
-        topView = UIView.init(frame: CGRectMake(0, 64, screenWidth, 60))
+        topView = UIView.init(frame: CGRectMake(0, 64, screenWidth, buttonHeigt + offSetY * 2))
         topView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(topView)
         
