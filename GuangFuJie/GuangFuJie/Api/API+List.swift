@@ -587,5 +587,63 @@ extension API {
             success?(userInfo : userinfo)
             }, failure: failure)
     }
-
+    
+    /**
+     购买过保险的公司列表
+     - parameter success:
+     - parameter failure: 
+     */
+    func usersHaveInsuranceList(success: ((insuranceList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "insurance/users_have_insurance_list"
+        let params = [
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (data) in
+            let array = InsuranceInfo.mj_objectArrayWithKeyValuesArray(data)
+            success?(insuranceList : array)
+            }, failure: failure)
+    }
+    
+    /**
+     我的保险列表
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func myInsuranceList(success: ((insuranceList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "insurance/insurance_mine"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["user_id"] = getUserId()
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (data) in
+            let array = InstallInfo.mj_objectArrayWithKeyValuesArray(data)
+            success?(insuranceList : array)
+            }, failure: failure)
+    }
+    
+    /**
+     保险详情
+     
+     - parameter id:
+     - parameter success:
+     - parameter failure:
+     */
+    func insuranceDetail(id : NSNumber, success: ((installInfo: InstallInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "insurance/insurance_mine"
+        let params = [
+            "_o" : 1,
+            "user_id" : getUserId(),
+            "id" : id
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (data) in
+            let insuranceInfo = InstallInfo.mj_objectWithKeyValues(data)
+            success?(installInfo : insuranceInfo)
+            }, failure: failure)
+    }
 }

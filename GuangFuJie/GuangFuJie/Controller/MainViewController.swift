@@ -43,20 +43,28 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     let YEZHU_TABLEVIEW_TAG = 10001
     let INSTALLER_TABLEVIEW_TAG = 10002
+    let SAFE_TABLEVIEW_TAG = 10003
     
     let YEZHU_SCROLLVIEW_TAG = 1001
     let INSTALLER_SCROLLVIEW_TAG = 1002
+    let SAFE_SCROLLVIEW_TAG = 1003
+    
     var yezhuPageControl : UIPageControl!
     var installerPageControl : UIPageControl!
+    var safePageControl : UIPageControl!
     
     var yezhuTableView : UITableView!
     var installTableView : UITableView!
+    var safeTableView : UITableView!
     
     //业主列表数组
     var yezhuArray : NSMutableArray = NSMutableArray()
     
     //安装商数组
     var installerArray : NSMutableArray = NSMutableArray()
+    
+    //保险数组
+    var safeArray : NSMutableArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,9 +86,80 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     //MARK: 保险
+    let safeCellReuseIdentifier = "safeCellReuseIdentifier"
     func initSafeView() {
         safeView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
         self.view.addSubview(safeView)
+        
+        let viewMoreLabel = UILabel.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, 30))
+        viewMoreLabel.text = "查看更多保险用户>>"
+        viewMoreLabel.textAlignment = NSTextAlignment.Right
+        viewMoreLabel.textColor = Colors.lightGray
+        viewMoreLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        safeView.addSubview(viewMoreLabel)
+        
+        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.moreSafe))
+        viewMoreLabel.userInteractionEnabled = true
+        viewMoreLabel.addGestureRecognizer(gesture)
+        
+        let safeViewBottomView = UIView.init(frame: CGRectMake(0, yezhuView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
+        safeViewBottomView.backgroundColor = UIColor.whiteColor()
+        safeView.addSubview(safeViewBottomView)
+        
+        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
+        let buttonHeight = safeViewBottomView.frame.size.height - 5 * 2
+        
+        let safeButton = UIButton.init(type: UIButtonType.Custom)
+        safeButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
+        safeButton.setTitle("立即购买", forState: UIControlState.Normal)
+        safeButton.backgroundColor = Colors.installColor
+        safeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        safeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        safeButton.addTarget(self, action: #selector(self.buySafeNow), forControlEvents: UIControlEvents.TouchUpInside)
+        safeViewBottomView.addSubview(safeButton)
+        
+        let offSetY : CGFloat = 8
+        let scrollViewWidth = PhoneUtils.kScreenWidth
+        let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
+        
+        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        
+        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
+        
+        scrollView.contentSize = CGSizeMake(scrollViewWidth * CGFloat(images.count), 0)
+        scrollView.pagingEnabled = true
+        scrollView.delegate = self
+        scrollView.tag = SAFE_SCROLLVIEW_TAG
+        footerView.addSubview(scrollView)
+        
+        for i in 0..<images.count {
+            let imageView = UIImageView.init(frame: CGRectMake(CGFloat(i) * scrollViewWidth, offSetY, scrollViewWidth, scrollViewHeight))
+            imageView.image = UIImage(named: images[i])
+            scrollView.addSubview(imageView)
+        }
+        
+        safePageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20, scrollView.frame.size.width, 20))
+        safePageControl.numberOfPages = images.count
+        footerView.addSubview(safePageControl)
+        
+        let tableViewHeight = CGRectGetMinY(safeViewBottomView.frame)
+        safeTableView = UITableView.init(frame: CGRectMake(0, 0, yezhuView.frame.size.width, tableViewHeight), style: UITableViewStyle.Plain)
+        safeTableView.delegate = self
+        safeTableView.dataSource = self
+        safeTableView.backgroundColor = Colors.bkgColor
+        safeTableView.tag = SAFE_TABLEVIEW_TAG
+        safeTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        safeView.addSubview(safeTableView)
+        
+        safeTableView.tableHeaderView = viewMoreLabel
+        safeTableView.tableFooterView = footerView
+        
+        safeTableView.registerClass(SafeCell.self, forCellReuseIdentifier: safeCellReuseIdentifier)
+    }
+    
+    func buySafeNow() {
+        
     }
     
     func initBindView() {
@@ -388,6 +467,11 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         self.pushViewController(vc)
     }
     
+    func moreSafe() {
+        let vc = MoreSafeViewController()
+        self.pushViewController(vc)
+    }
+    
     //MARK: 业主
     let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initYeZhuView() {
@@ -478,6 +562,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         let page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
         if (scrollView.tag == YEZHU_SCROLLVIEW_TAG) {
             yezhuPageControl.currentPage = Int(page)
+        } else if (scrollView.tag == SAFE_SCROLLVIEW_TAG) {
+            safePageControl.currentPage = Int(page)
         } else {
             installerPageControl.currentPage = Int(page)
         }
@@ -612,6 +698,21 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
+        }
+    }
+    
+    func loadSafeList() {
+        self.showHudInView(self.view, hint: "加载中...")
+        API.sharedInstance.usersHaveInsuranceList({ (insuranceList) in
+            self.hideHud()
+            self.safeArray.removeAllObjects()
+            if (insuranceList.count > 0) {
+                self.safeArray.addObject(insuranceList.firstObject!)
+            }
+            self.safeTableView.reloadData()
+            }) { (msg) in
+                self.hideHud()
+                self.showHint(msg)
         }
     }
     
@@ -761,6 +862,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             }
         } else if (index == 3) { //保险
             safeView.hidden = false
+            loadSafeList()
         }
     }
     
@@ -772,16 +874,20 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView.tag == YEZHU_TABLEVIEW_TAG) {
             return yezhuArray.count
-        } else {
+        } else if (tableView.tag == INSTALLER_TABLEVIEW_TAG) {
             return installerArray.count
+        } else {
+            return safeArray.count
         }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if (tableView.tag == YEZHU_TABLEVIEW_TAG) {
             return YeZhuCell.cellHeight()
-        } else {
+        } else if (tableView.tag == INSTALLER_TABLEVIEW_TAG){
             return InstallerCell.cellHeight()
+        } else {
+            return SafeCell.cellHeight()
         }
     }
     
@@ -818,6 +924,34 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
                 cell.tagLabel.text = "未认证"
                 cell.tagLabel.textColor = Colors.installRedColor
             }
+            return cell
+        } else if (tableView.tag == SAFE_TABLEVIEW_TAG) {
+            let cell = tableView.dequeueReusableCellWithIdentifier(safeCellReuseIdentifier, forIndexPath: indexPath) as! SafeCell
+            cell.initCell()
+            let userInfo = safeArray[indexPath.row] as! InsuranceInfo
+            var name = ""
+            if (userInfo.beneficiary_name != nil) {
+                name = name + userInfo.beneficiary_name!
+            }
+            name = name + "已购买保险"
+            cell.titleLabel.text = name
+            if ((userInfo.insured_from) != nil) {
+                cell.timeLabel.text = userInfo.insured_from!
+            }
+            var type = ""
+            if (userInfo.size != nil) {
+                type = type + "购买类型:" + userInfo.size!
+            }
+            if (userInfo.years != nil) {
+                type = type + "购买年限:" + String(userInfo.years!)
+            }
+            if (userInfo.price != nil) {
+                type = type + "价格:" + String(userInfo.price!)
+            }
+            if (userInfo.insured_price != nil) {
+                type = type + "保额:" + String(userInfo.insured_price!)
+            }
+            cell.describeLabel.text = type
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier(installerCellReuseIdentifier, forIndexPath: indexPath) as! InstallerCell

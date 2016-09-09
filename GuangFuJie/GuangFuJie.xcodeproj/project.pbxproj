@@ -22,6 +22,7 @@
 		DE0C78091D67052400FED16D /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78081D67052400FED16D /* AfterSaleInfo.swift */; };
 		DE0C780E1D68534E00FED16D /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C780D1D68534E00FED16D /* YeZhuCell.swift */; };
 		DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C781B1D68585A00FED16D /* TopLeftLabel.m */; };
+		DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */; };
 		DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */; };
 		DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
 		DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9581D5ECF79005B9CCE /* BankInfo.swift */; };
@@ -126,6 +127,9 @@
 		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
+		DE869EF41D81138F0062E670 /* SafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869EF31D81138F0062E670 /* SafeCell.swift */; };
+		DE869F011D81475B0062E670 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F001D81475B0062E670 /* InsuranceInfo.swift */; };
+		DE869F031D8148340062E670 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F021D8148340062E670 /* InsuranceDetail.swift */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -296,6 +300,7 @@
 		DE0C780D1D68534E00FED16D /* YeZhuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuCell.swift; sourceTree = "<group>"; };
 		DE0C781A1D68585500FED16D /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
 		DE0C781B1D68585A00FED16D /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
+		DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSafeViewController.swift; sourceTree = "<group>"; };
 		DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceNoticeViewController.swift; sourceTree = "<group>"; };
 		DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		DE57C9581D5ECF79005B9CCE /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
@@ -471,6 +476,9 @@
 		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
+		DE869EF31D81138F0062E670 /* SafeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeCell.swift; sourceTree = "<group>"; };
+		DE869F001D81475B0062E670 /* InsuranceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceInfo.swift; sourceTree = "<group>"; };
+		DE869F021D8148340062E670 /* InsuranceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceDetail.swift; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -633,6 +641,7 @@
 				DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */,
 				DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */,
 				DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */,
+				DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -670,6 +679,8 @@
 				DE0C78061D66F14C00FED16D /* ElectricInfo.swift */,
 				DE0C78081D67052400FED16D /* AfterSaleInfo.swift */,
 				DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */,
+				DE869F001D81475B0062E670 /* InsuranceInfo.swift */,
+				DE869F021D8148340062E670 /* InsuranceDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -712,6 +723,7 @@
 				DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */,
 				DE0C780D1D68534E00FED16D /* YeZhuCell.swift */,
 				DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */,
+				DE869EF31D81138F0062E670 /* SafeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1321,6 +1333,7 @@
 				DEF984051D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift in Sources */,
 				DEF983FD1D7FF5DC00ED1B40 /* ImageCache.swift in Sources */,
 				DE5E74831D509BAD003CDAAC /* QNRecord.m in Sources */,
+				DE869F031D8148340062E670 /* InsuranceDetail.swift in Sources */,
 				DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */,
 				DE5E74851D509BAD003CDAAC /* QNDnspodFree.m in Sources */,
 				DE5E74B61D509CC4003CDAAC /* AFURLRequestSerialization.m in Sources */,
@@ -1330,6 +1343,7 @@
 				DE5E74421D509B9F003CDAAC /* QNPHAssetFile.m in Sources */,
 				DE7900B11D4C60360032D461 /* MBProgressHUD.m in Sources */,
 				DE7900181D4C57300032D461 /* IQUITextFieldView+Additions.swift in Sources */,
+				DE869EF41D81138F0062E670 /* SafeCell.swift in Sources */,
 				DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */,
 				DEF983FF1D7FF5DC00ED1B40 /* ImageFilter.swift in Sources */,
 				DE5E74BC1D509CC4003CDAAC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1373,9 +1387,11 @@
 				DE5E74821D509BAD003CDAAC /* QNNetworkInfo.m in Sources */,
 				DE5E74461D509B9F003CDAAC /* QNResponseInfo.m in Sources */,
 				DE5E74871D509BAD003CDAAC /* QNHosts.m in Sources */,
+				DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */,
 				DE5E743C1D509B9F003CDAAC /* QN_GTM_Base64.m in Sources */,
 				DE5E74B41D509CC4003CDAAC /* AFNetworkReachabilityManager.m in Sources */,
 				DE5E74841D509BAD003CDAAC /* QNDnspodEnterprise.m in Sources */,
+				DE869F011D81475B0062E670 /* InsuranceInfo.swift in Sources */,
 				DE5E744F1D509B9F003CDAAC /* QNUpToken.m in Sources */,
 				DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */,
 				DE5E748C1D509BAD003CDAAC /* QNDes.m in Sources */,
