@@ -758,8 +758,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     func leftButtonClicked() {
         if (UserDefaultManager.isLogin()) {
-            UserDefaultManager.logOut()
-            self.showHint("登出成功!")
+            let vc = UserCenterViewController()
+            self.pushViewController(vc)
             return
         }
         loginView.hidden = false

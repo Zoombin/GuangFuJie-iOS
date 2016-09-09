@@ -14,5 +14,5 @@ class UserInfo: NSObject {
     var device_id : NSNumber?
     var token : String?
     var user_id : NSNumber?
-    var user_name : NSNumber?
+    var user_name : String?
 }

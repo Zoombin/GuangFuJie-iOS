@@ -14,7 +14,7 @@ class MoreSafeViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "已购买保险用户"
+        self.title = "购买保险列表"
         // Do any additional setup after loading the view.
         initView()
         loadUserList()
