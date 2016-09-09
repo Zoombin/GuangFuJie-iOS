@@ -940,16 +940,16 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             }
             var type = ""
             if (userInfo.size != nil) {
-                type = type + "购买类型:" + userInfo.size!
+                type = type + "购买类型:" + userInfo.size! + ","
             }
             if (userInfo.years != nil) {
-                type = type + "购买年限:" + String(userInfo.years!)
+                type = type + "购买年限:" + String(userInfo.years!) + "年,"
             }
             if (userInfo.price != nil) {
-                type = type + "价格:" + String(userInfo.price!)
+                type = type + "价格￥:" + String(userInfo.price!) + "元,"
             }
             if (userInfo.insured_price != nil) {
-                type = type + "保额:" + String(userInfo.insured_price!)
+                type = type + "保额:" + String(userInfo.insured_price!) + "元"
             }
             cell.describeLabel.text = type
             return cell

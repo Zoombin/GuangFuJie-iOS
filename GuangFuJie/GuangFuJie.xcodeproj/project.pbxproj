@@ -23,6 +23,7 @@
 		DE0C780E1D68534E00FED16D /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C780D1D68534E00FED16D /* YeZhuCell.swift */; };
 		DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C781B1D68585A00FED16D /* TopLeftLabel.m */; };
 		DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */; };
+		DE23E4501D8298D400293616 /* MySafeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E44F1D8298D400293616 /* MySafeListViewController.swift */; };
 		DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */; };
 		DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
 		DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9581D5ECF79005B9CCE /* BankInfo.swift */; };
@@ -301,6 +302,7 @@
 		DE0C781A1D68585500FED16D /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
 		DE0C781B1D68585A00FED16D /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
 		DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSafeViewController.swift; sourceTree = "<group>"; };
+		DE23E44F1D8298D400293616 /* MySafeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySafeListViewController.swift; sourceTree = "<group>"; };
 		DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceNoticeViewController.swift; sourceTree = "<group>"; };
 		DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		DE57C9581D5ECF79005B9CCE /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
@@ -623,25 +625,26 @@
 		18B8FA5C1D3CE8A400B334E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */,
-				DE79F9501D4C1C100032D461 /* MainViewController.swift */,
-				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
 				DE79F9551D4C1C270032D461 /* BaseViewController.swift */,
-				DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */,
-				DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */,
+				DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */,
 				DE7901001D4CAE4C0032D461 /* EarnCalViewController.swift */,
 				DE7901011D4CAE4C0032D461 /* EarnCalViewController.xib */,
+				DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */,
+				DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */,
+				DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */,
 				DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */,
-				DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */,
 				DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */,
+				DE79F9501D4C1C100032D461 /* MainViewController.swift */,
+				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
+				DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */,
+				DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */,
+				DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */,
+				DE23E44F1D8298D400293616 /* MySafeListViewController.swift */,
+				DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */,
 				DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */,
 				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
 				DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */,
-				DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */,
 				DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */,
-				DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */,
-				DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */,
-				DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1414,6 +1417,7 @@
 				DE5E744A1D509B9F003CDAAC /* QNConfiguration.m in Sources */,
 				DE7900191D4C57300032D461 /* IQUIView+Hierarchy.swift in Sources */,
 				DE5E74C71D509FD9003CDAAC /* AppModel.swift in Sources */,
+				DE23E4501D8298D400293616 /* MySafeListViewController.swift in Sources */,
 				DE5E743E1D509B9F003CDAAC /* QNAsyncRun.m in Sources */,
 				DE0C78091D67052400FED16D /* AfterSaleInfo.swift in Sources */,
 				DE79F9581D4C1FD30032D461 /* Colors.swift in Sources */,

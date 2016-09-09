@@ -14,17 +14,14 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         self.title = "用户主页"
         // Do any additional setup after loading the view.
-        self.edgesForExtendedLayout = UIRectEdge.None
-        self.extendedLayoutIncludesOpaqueBars = false
         initView()
     }
 
     let cellReuseIdentifier = "cellReuseIdentifier"
     func initView() {
-        let tableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 50 - 64), style: UITableViewStyle.Grouped)
+        let tableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 50), style: UITableViewStyle.Grouped)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = Colors.bkgColor
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.view.addSubview(tableView)
         
@@ -39,7 +36,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         
         let logOutButton = UIButton.init(type: UIButtonType.Custom)
         logOutButton.frame = CGRectMake(10, 5, buttonWidth, buttonHeight)
-        logOutButton.setTitle("登出", forState: UIControlState.Normal)
+        logOutButton.setTitle("退出", forState: UIControlState.Normal)
         logOutButton.backgroundColor = UIColor.lightGrayColor()
         logOutButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         logOutButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
@@ -79,7 +76,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         if (indexPath.section == 0) {
            return 80
         } else {
-           return 40
+           return 44
         }
     }
     
@@ -100,6 +97,8 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if (indexPath.section == 1) {
             //TODO: 去我的保险列表页
+            let vc = MySafeListViewController()
+            self.pushViewController(vc)
         }
     }
     

@@ -620,7 +620,7 @@ extension API {
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (data) in
-            let array = InstallInfo.mj_objectArrayWithKeyValuesArray(data)
+            let array = InsuranceDetail.mj_objectArrayWithKeyValuesArray(data)
             success?(insuranceList : array)
             }, failure: failure)
     }
@@ -632,7 +632,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func insuranceDetail(id : NSNumber, success: ((installInfo: InstallInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func insuranceDetail(id : NSNumber, success: ((installInfo: InsuranceDetail) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/insurance_mine"
         let params = [
             "_o" : 1,
@@ -642,7 +642,7 @@ extension API {
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (data) in
-            let insuranceInfo = InstallInfo.mj_objectWithKeyValues(data)
+            let insuranceInfo = InsuranceDetail.mj_objectWithKeyValues(data)
             success?(installInfo : insuranceInfo)
             }, failure: failure)
     }
