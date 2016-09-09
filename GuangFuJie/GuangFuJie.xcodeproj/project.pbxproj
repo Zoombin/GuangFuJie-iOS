@@ -24,6 +24,7 @@
 		DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C781B1D68585A00FED16D /* TopLeftLabel.m */; };
 		DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */; };
 		DE23E4501D8298D400293616 /* MySafeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E44F1D8298D400293616 /* MySafeListViewController.swift */; };
+		DE23E4521D82A47100293616 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4511D82A47100293616 /* SafeDetailViewController.swift */; };
 		DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */; };
 		DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
 		DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9581D5ECF79005B9CCE /* BankInfo.swift */; };
@@ -303,6 +304,7 @@
 		DE0C781B1D68585A00FED16D /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
 		DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSafeViewController.swift; sourceTree = "<group>"; };
 		DE23E44F1D8298D400293616 /* MySafeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySafeListViewController.swift; sourceTree = "<group>"; };
+		DE23E4511D82A47100293616 /* SafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeDetailViewController.swift; sourceTree = "<group>"; };
 		DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceNoticeViewController.swift; sourceTree = "<group>"; };
 		DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		DE57C9581D5ECF79005B9CCE /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
@@ -645,6 +647,7 @@
 				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
 				DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */,
 				DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */,
+				DE23E4511D82A47100293616 /* SafeDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1328,6 +1331,7 @@
 				DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */,
 				DE5E74481D509B9F003CDAAC /* QNUserAgent.m in Sources */,
 				DE5E74471D509B9F003CDAAC /* QNSessionManager.m in Sources */,
+				DE23E4521D82A47100293616 /* SafeDetailViewController.swift in Sources */,
 				DE5E747F1D509BAD003CDAAC /* QNDnsManager.m in Sources */,
 				DE5E744B1D509B9F003CDAAC /* QNFormUpload.m in Sources */,
 				DE5E74B31D509CC4003CDAAC /* AFHTTPSessionManager.m in Sources */,

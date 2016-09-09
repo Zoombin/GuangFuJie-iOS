@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MySafeListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MySafeListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     var safeTableView : UITableView!
     var safeArray : NSMutableArray = NSMutableArray()
     
@@ -87,6 +87,10 @@ class MySafeListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let userInfo = safeArray[indexPath.row] as! InsuranceDetail
+        let vc = SafeDetailViewController()
+        vc.insuranceId = userInfo.id
+        self.pushViewController(vc)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
