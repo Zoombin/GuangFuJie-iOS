@@ -159,7 +159,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func buySafeNow() {
-        
+        let vc = BuySafeViewController()
+        self.pushViewController(vc)
     }
     
     func initBindView() {

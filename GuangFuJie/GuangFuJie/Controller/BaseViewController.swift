@@ -8,13 +8,14 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.bkgColor
         //设置标题的字的颜色
         self.navigationController!.navigationBar.titleTextAttributes = NSDictionary(object: UIColor.darkGrayColor(),forKey: NSForegroundColorAttributeName) as? [String : AnyObject]
+        BeeCloud.setBeeCloudDelegate(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,6 +30,33 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         //注意: 加了这一句，自定义的返回按钮也可以用滑动返回了...
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.pushViewController(to, animated: true)
+    }
+    
+    func aliPay(billno:String,title:String,totalFee:String,type:String) {
+        let billno = billno
+        let payReq = BCPayReq()
+        payReq.channel = PayChannel.AliApp
+        payReq.title = title
+        payReq.totalFee = totalFee //单位是分
+        payReq.billNo = billno
+        payReq.scheme = "GuangFuJieApp"
+        payReq.billTimeOut = 300
+        payReq.viewController = self
+        payReq.optional = ["type" : type]
+        BeeCloud.sendBCReq(payReq)
+    }
+    
+    //支付回调
+    func onBeeCloudResp(resp: BCBaseResp!) {
+        if (resp.type == BCObjsType.PayResp) {
+            let timeResp : BCPayResp = resp as! BCPayResp
+            if (timeResp.resultCode == 0) {
+                self.showHint("购买成功")
+                self.navigationController?.popViewControllerAnimated(true)
+            } else {
+                self.showHint(timeResp.resultMsg)
+            }
+        }
     }
     
     //外部调用这个方法

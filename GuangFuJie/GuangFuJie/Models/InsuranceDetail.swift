@@ -24,7 +24,7 @@ class InsuranceDetail: NSObject {
     var insured_price: NSNumber?        //保额
     var insured_from: String?           //开始日期
     var insured_end: String?            //结束日期
-    var status: NSNumber?               //状态：1-未受理  2-已完成
+    var order_status: NSNumber?         //状态：1-未受理  2-已完成
     var server_contract_img: String?    //后台传的合同图片
     var client_contract_img: String?    //并网合同图片
 }

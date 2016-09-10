@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
+        
+        //支付
+        //线上
+//        BeeCloud.initWithAppID("4d6af0de-2542-433e-a361-73ef59805d35", andAppSecret: "30e71391-4bca-402b-869e-bc7e118bce6", sandbox: false)
+        //QA
+        BeeCloud.initWithAppID("4d6af0de-2542-433e-a361-73ef59805d35", andAppSecret: "3f339c0c-4c11-464b-b8bd-8fad7ab3717c", sandbox: true)
+        
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         initMain()
         return true
@@ -49,6 +56,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    //支付------
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        if(!BeeCloud.handleOpenUrl(url)){
+            //handle其他类型的url
+        }
+        return true
+    }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        if (!BeeCloud.handleOpenUrl(url)) {
+            //handle其他类型的url
+        }
+        return true
     }
 
 

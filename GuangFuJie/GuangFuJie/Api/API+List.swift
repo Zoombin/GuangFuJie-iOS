@@ -646,4 +646,63 @@ extension API {
             success?(insuranceInfo : insuranceInfo)
             }, failure: failure)
     }
+    
+    /**
+     保险类型及总购买数
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func insuranceType(success: ((typeList : NSArray, totalCount : NSNumber) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "insurance/insurance_type"
+        let params = [
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (data) in
+            print(data)
+            let array = InsuranceType.mj_objectArrayWithKeyValuesArray(data!["inscure"])
+            let totalCount = data!["totalCount"] as! NSNumber
+            success?(typeList : array, totalCount : totalCount)
+            }, failure: failure)
+    }
+    
+    /**
+     用户提交保险订单
+     
+     - parameter insurance_company_id:
+     - parameter type_id:
+     - parameter years:
+     - parameter price:
+     - parameter beneficiary_name:
+     - parameter beneficiary_phone:
+     - parameter beneficiary_id_no:
+     - parameter station_address:
+     - parameter client_contract_img:
+     - parameter success:
+     - parameter failure:              
+     */
+    func insuranceAdd(insurance_company_id : NSNumber, type_id : NSNumber, years : String, price : NSNumber, beneficiary_name : String, beneficiary_phone : String, beneficiary_id_no : String, station_address : String, client_contract_img : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "insurance/add";
+        let params = [
+            "user_id": getUserId(),                          //用户id
+            "insurance_company_id": insurance_company_id,// 保险公司的id
+            "type_id": type_id,                          //保险类型
+            "years": years,                              //担保年数
+            "price": price,                              //保险的价格
+            "beneficiary_name": beneficiary_name,        //受益人姓名
+            "beneficiary_phone": beneficiary_phone,      //受益人电话
+            "beneficiary_id_no": beneficiary_id_no,      //受益人身份证
+            "station_address": station_address,          //电站地址
+            "client_contract_img": client_contract_img,  //并网合同图片
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(commonModel : commonModel)
+            }, failure: failure)
+    }
 }

@@ -9,6 +9,6 @@
 import UIKit
 
 class CommonModel: NSObject {
-    var insertId : String?
-    var bargain_id : String?
+    var order_sn : String?
+    var type : String?
 }

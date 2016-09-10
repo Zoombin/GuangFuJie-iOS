@@ -56,4 +56,14 @@ class PhoneUtils: NSObject {
         return ""
     }
     
+    //获取明天时间
+    static func getTommorrowDateStr(date : NSDate) -> String{
+        let currentDate = date
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let currentDateStr = currentDate.timeIntervalSince1970
+        let tommorrowDateStr = currentDateStr + 24 * 3600
+        let tommorrowDate = NSDate.init(timeIntervalSince1970: tommorrowDateStr)
+        return dateFormatter.stringFromDate(tommorrowDate)
+    }
 }

@@ -8,3 +8,4 @@
 #import "UIViewController+Hud.h"
 #import "QiniuSDK.h"
 #import "TopLeftLabel.h"
+#import "BeeCloud.h"

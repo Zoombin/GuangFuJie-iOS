@@ -36,8 +36,8 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
         API.sharedInstance.insuranceDetail(insuranceId!, success: { (insuranceInfo) in
             self.hideHud()
             self.info = insuranceInfo
-            if (self.info!.status != nil) {
-                if (self.info!.status! == 2) {
+            if (self.info!.order_status != nil) {
+                if (self.info!.order_status! == 2) {
                     self.footImageView?.af_setImageWithURL(NSURL.init(string: self.info!.server_contract_img!)!)
                 }
             }
@@ -112,11 +112,11 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
                 cell.textLabel?.text = date
             } else if (indexPath.row == 4) {
                 var status = "审核状态:"
-                if (info?.status != nil) {
-                    if (info!.status! == 1) {
+                if (info?.order_status != nil) {
+                    if (info!.order_status! == 1) {
                         status = status + "审核中"
                     }
-                    if (info!.status! == 2) {
+                    if (info!.order_status! == 2) {
                         status = status + "已受理"
                     }
                 }
