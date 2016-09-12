@@ -18,6 +18,7 @@ class CalResultViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "预计收益"
         // Do any additional setup after loading the view.
+        loadData()
     }
     
     func loadData() {
@@ -48,7 +49,7 @@ class CalResultViewController: BaseViewController {
     func initView() {
         let titleStrs = NSMutableArray()
         titleStrs.addObject("节约用煤\n" + String(eInfo.c!) + "吨/年")
-        titleStrs.addObject("减排二氧化硫\n" + String(eInfo.co2!) + "吨/年")
+        titleStrs.addObject("减排二氧化硫\n" + String(eInfo.so2!) + "吨/年")
         titleStrs.addObject("减排粉尘\n" + String(eInfo.dust!) + "吨/年")
         titleStrs.addObject("减排二氧化碳\n" + String(eInfo.co2!) + "吨/年")
         titleStrs.addObject("减排一氧化物\n" + String(eInfo.xo1!) + "吨/年")
