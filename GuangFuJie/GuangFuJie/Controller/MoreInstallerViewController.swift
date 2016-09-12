@@ -9,44 +9,42 @@
 import UIKit
 
 class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
-    var installTableView : UITableView!
-    var installerArray : NSMutableArray = NSMutableArray()
+    var yezhuTableView : UITableView!
+    var yezhuArray : NSMutableArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "安装商列表"
         // Do any additional setup after loading the view.
         initView()
-        loadInstallerList()
+        loadUserList()
     }
     
-    //MARK: 安装商列表
-    func loadInstallerList() {
+    func loadUserList() {
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.getRoofList(1, province_id: nil, city_id: nil, success: { (userInfos) in
+        API.sharedInstance.userlist(2, province_id: nil, city_id: nil, is_suggest: nil, success: { (userInfos) in
             self.hideHud()
-            self.installerArray.removeAllObjects()
+            self.yezhuArray.removeAllObjects()
             if (userInfos.count > 0) {
-                self.installerArray.addObjectsFromArray(userInfos as [AnyObject])
+                self.yezhuArray.addObjectsFromArray(userInfos as [AnyObject])
             }
-            self.installTableView.reloadData()
+            self.yezhuTableView.reloadData()
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
         }
     }
     
-    let installerCellReuseIdentifier = "installerCellReuseIdentifier"
+    let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initView() {
-        installTableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Plain)
-        installTableView.delegate = self
-        installTableView.dataSource = self
-        installTableView.backgroundColor = Colors.bkgColor
-        installTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.view.addSubview(installTableView)
+        yezhuTableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Plain)
+        yezhuTableView.delegate = self
+        yezhuTableView.dataSource = self
+        yezhuTableView.backgroundColor = Colors.bkgColor
+        yezhuTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.view.addSubview(yezhuTableView)
         
-        installTableView.registerClass(InstallerCell.self, forCellReuseIdentifier: installerCellReuseIdentifier)
+        yezhuTableView.registerClass(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,34 +54,19 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return installerArray.count
+        return yezhuArray.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return InstallerCell.cellHeight()
+        return YeZhuCell.cellHeight()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(installerCellReuseIdentifier, forIndexPath: indexPath) as! InstallerCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(yezhuCellReuseIdentifier, forIndexPath: indexPath) as! YeZhuCell
         cell.initCell()
-        let userInfo = installerArray[indexPath.row] as! RoofInfo
-        if ((userInfo.fullname) != nil) {
-            cell.titleLabel.text = userInfo.fullname! + " " + "屋顶出租"
-        }
-        if ((userInfo.created_date) != nil) {
-            cell.timeLabel.text = userInfo.created_date!
-        }
-        var describeInfo = ""
-        if (userInfo.area_size != nil) {
-            describeInfo = describeInfo + "屋顶面积:" + String(userInfo.area_size!) + "㎡"
-        }
-        if (userInfo.type != nil) {
-            describeInfo = describeInfo + "," + (userInfo.type == 2 ? "斜面" : "平面") + ","
-        }
-        if (userInfo.price != nil) {
-            describeInfo = describeInfo + String(userInfo.price!) + "元/㎡"
-        }
-        cell.describeLabel.text = describeInfo
+        let userInfo = yezhuArray[indexPath.row] as! InstallInfo
+        cell.titleLabel.text = userInfo.company_name
+        cell.describeLabel.text = userInfo.company_intro
         var location = ""
         if ((userInfo.province_label) != nil) {
             location = location + userInfo.province_label!
@@ -95,12 +78,25 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
             location = location + userInfo.address!
         }
         cell.addressLabel.text = location
+        var contract = ""
+        if ((userInfo.fullname) != nil) {
+            contract = contract + userInfo.fullname!
+        }
+        if ((userInfo.user_name) != nil) {
+            contract = contract + " " + userInfo.user_name!
+        }
+        cell.contractLabel.text = contract
+        if (userInfo.is_installer == 2) {
+            cell.tagLabel.text = "已认证"
+            cell.tagLabel.textColor = Colors.installColor
+        } else {
+            cell.tagLabel.text = "未认证"
+            cell.tagLabel.textColor = Colors.installRedColor
+        }
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
-
 }

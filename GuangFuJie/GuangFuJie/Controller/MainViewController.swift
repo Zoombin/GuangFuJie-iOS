@@ -576,7 +576,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func soldRoomButtonClicked() {
-        let vc = LeaseViewController()
+        let vc = LeaseViewController(nibName: "LeaseViewController", bundle: nil)
         self.pushViewController(vc)
     }
     
@@ -966,7 +966,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             }
             var describeInfo = ""
             if (userInfo.area_size != nil) {
-                describeInfo = describeInfo + "屋顶面积:" + String(userInfo.area_size!) + "㎡"
+                describeInfo = describeInfo + "屋顶面积:" + String(format: "%.2f", userInfo.area_size!.floatValue) + "㎡"
             }
             if (userInfo.type != nil) {
                 describeInfo = describeInfo + "," + (userInfo.type == 2 ? "斜面" : "平面") + ","

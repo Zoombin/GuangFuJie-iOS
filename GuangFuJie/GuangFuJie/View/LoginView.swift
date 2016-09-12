@@ -74,7 +74,7 @@ class LoginView: UIView {
         loginButton.setTitle("确认登录", forState: UIControlState.Normal)
         loginButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         loginButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        loginButton.backgroundColor = Colors.lightBule
+        loginButton.backgroundColor = Colors.installColor
         loginButton.addTarget(self, action: #selector(self.loginButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         bkgView.addSubview(loginButton)
     }

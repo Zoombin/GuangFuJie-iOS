@@ -186,6 +186,7 @@
 		DE869EF41D81138F0062E670 /* SafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869EF31D81138F0062E670 /* SafeCell.swift */; };
 		DE869F011D81475B0062E670 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F001D81475B0062E670 /* InsuranceInfo.swift */; };
 		DE869F031D8148340062E670 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F021D8148340062E670 /* InsuranceDetail.swift */; };
+		DE8A76541D860FB600C5F268 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A76531D860FB600C5F268 /* LeaseViewController.xib */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -643,6 +644,7 @@
 		DE869EF31D81138F0062E670 /* SafeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeCell.swift; sourceTree = "<group>"; };
 		DE869F001D81475B0062E670 /* InsuranceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceInfo.swift; sourceTree = "<group>"; };
 		DE869F021D8148340062E670 /* InsuranceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceDetail.swift; sourceTree = "<group>"; };
+		DE8A76531D860FB600C5F268 /* LeaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaseViewController.xib; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -804,6 +806,7 @@
 				DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */,
 				DE57C93F1D5D758F005B9CCE /* InsuranceNoticeViewController.swift */,
 				DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */,
+				DE8A76531D860FB600C5F268 /* LeaseViewController.xib */,
 				DE79F9501D4C1C100032D461 /* MainViewController.swift */,
 				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
 				DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */,
@@ -1778,6 +1781,7 @@
 				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
 				DE7900261D4C57300032D461 /* IQKeyboardManager.bundle in Resources */,
 				DEF984011D7FF5DC00ED1B40 /* Info.plist in Resources */,
+				DE8A76541D860FB600C5F268 /* LeaseViewController.xib in Resources */,
 				DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */,
 				DE44CC191D8403DA004690EF /* BeeCloud.bundle in Resources */,
 			);
