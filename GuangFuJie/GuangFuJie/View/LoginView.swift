@@ -28,8 +28,8 @@ class LoginView: UIView {
     func initView() {
         self.backgroundColor = Colors.halfColor
         let viewWidth = PhoneUtils.kScreenWidth * 0.8
-        let viewHeight = viewWidth * 0.7
-        let height = viewHeight / 6
+        let viewHeight = viewWidth * 0.65
+        let height = viewHeight / 4.5
         let offSetX : CGFloat = 10
         
         let bkgView = UIView.init(frame: CGRectMake(0, 0, viewWidth, viewHeight))
@@ -61,14 +61,14 @@ class LoginView: UIView {
         codeTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         bkgView.addSubview(codeTextField)
         
-        let getCodeButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(codeTextField.frame) - 80, CGRectGetMaxY(codeTextField.frame), 80, height))
+        let getCodeButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(codeTextField.frame) - 80, CGRectGetMaxY(phoneTextField.frame), 80, height))
         getCodeButton.setTitle("获取验证码", forState: UIControlState.Normal)
         getCodeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         getCodeButton.setTitleColor(Colors.lightBule, forState: UIControlState.Normal)
         getCodeButton.addTarget(self, action: #selector(self.getCode), forControlEvents: UIControlEvents.TouchUpInside)
         bkgView.addSubview(getCodeButton)
         
-        let loginButtonHeight = height * 1.2
+        let loginButtonHeight = height * 1.1
         let startY = ((height * 2) - loginButtonHeight) / 2
         let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(getCodeButton.frame) + startY, codeTextField.frame.size.width, loginButtonHeight))
         loginButton.setTitle("确认登录", forState: UIControlState.Normal)
