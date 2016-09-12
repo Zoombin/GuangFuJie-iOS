@@ -187,6 +187,9 @@
 		DE869F011D81475B0062E670 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F001D81475B0062E670 /* InsuranceInfo.swift */; };
 		DE869F031D8148340062E670 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F021D8148340062E670 /* InsuranceDetail.swift */; };
 		DE8A76541D860FB600C5F268 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A76531D860FB600C5F268 /* LeaseViewController.xib */; };
+		DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A76601D86518300C5F268 /* RoofPriceViewController.xib */; };
+		DE8A76631D865A1900C5F268 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A76621D865A1800C5F268 /* CalcModel.swift */; };
+		DE8A76651D865CCA00C5F268 /* CalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -645,6 +648,9 @@
 		DE869F001D81475B0062E670 /* InsuranceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceInfo.swift; sourceTree = "<group>"; };
 		DE869F021D8148340062E670 /* InsuranceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceDetail.swift; sourceTree = "<group>"; };
 		DE8A76531D860FB600C5F268 /* LeaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaseViewController.xib; sourceTree = "<group>"; };
+		DE8A76601D86518300C5F268 /* RoofPriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoofPriceViewController.xib; sourceTree = "<group>"; };
+		DE8A76621D865A1800C5F268 /* CalcModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcModel.swift; sourceTree = "<group>"; };
+		DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultViewController.swift; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -815,6 +821,7 @@
 				DE23E44F1D8298D400293616 /* MySafeListViewController.swift */,
 				DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */,
 				DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */,
+				DE8A76601D86518300C5F268 /* RoofPriceViewController.xib */,
 				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
 				DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */,
 				DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */,
@@ -822,6 +829,7 @@
 				DE23E4531D83951500293616 /* InstallBuyViewController.swift */,
 				DE23E4561D83A9C500293616 /* BuySafeViewController.swift */,
 				DE44CC2B1D840597004690EF /* ApplyForOrderViewController.swift */,
+				DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -868,6 +876,7 @@
 				DE869F001D81475B0062E670 /* InsuranceInfo.swift */,
 				DE869F021D8148340062E670 /* InsuranceDetail.swift */,
 				DE44CB6B1D83E8A4004690EF /* InsuranceType.swift */,
+				DE8A76621D865A1800C5F268 /* CalcModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1776,6 +1785,7 @@
 				DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */,
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
 				DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */,
+				DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */,
 				DE7901031D4CAE4C0032D461 /* EarnCalViewController.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
@@ -1882,6 +1892,7 @@
 				DE5E74C91D50A296003CDAAC /* CommonModel.swift in Sources */,
 				DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */,
 				DE7900231D4C57300032D461 /* IQTitleBarButtonItem.swift in Sources */,
+				DE8A76651D865CCA00C5F268 /* CalResultViewController.swift in Sources */,
 				DE23E4541D83951500293616 /* InstallBuyViewController.swift in Sources */,
 				DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */,
 				DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */,
@@ -1902,6 +1913,7 @@
 				DE5E74821D509BAD003CDAAC /* QNNetworkInfo.m in Sources */,
 				DE5E74461D509B9F003CDAAC /* QNResponseInfo.m in Sources */,
 				DE5E74871D509BAD003CDAAC /* QNHosts.m in Sources */,
+				DE8A76631D865A1900C5F268 /* CalcModel.swift in Sources */,
 				DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */,
 				DE5E743C1D509B9F003CDAAC /* QN_GTM_Base64.m in Sources */,
 				DE5E74B41D509CC4003CDAAC /* AFNetworkReachabilityManager.m in Sources */,
