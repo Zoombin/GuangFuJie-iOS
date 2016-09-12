@@ -19,7 +19,10 @@ class ApplyForOrderViewController: BaseViewController {
     var idTextField : UITextField!
     var addressTextField : UITextField!
     
-    var imgUrls : String!
+//    var imgUrls : String!
+    var img1 = ""
+    var img2 = ""
+    var img3 = ""
     var imgView1 : UIImageView!
     var imgView2 : UIImageView!
     var imgView3 : UIImageView!
@@ -29,7 +32,6 @@ class ApplyForOrderViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "申请购买"
         // Do any additional setup after loading the view.
-        imgUrls = ""
         initView()
     }
 
@@ -126,7 +128,15 @@ class ApplyForOrderViewController: BaseViewController {
         imgView1.image = UIImage(named: "ic_p001")
         scrollView.addSubview(imgView1)
         
-        let tapGesture1 = UITapGestureRecognizer.init(target: self, action: #selector(self.submitImage1))
+        let uploadButton1 = UIButton.init(type: UIButtonType.Custom)
+        uploadButton1.frame = CGRectMake(imgView1.frame.origin.x, CGRectGetMaxY(imgView1.frame) + 5, imgView1.frame.size.width, imgView1.frame.size.height * 0.12)
+        uploadButton1.setTitle("点击上传", forState: UIControlState.Normal)
+        uploadButton1.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        uploadButton1.backgroundColor = Colors.installColor
+        uploadButton1.addTarget(self, action: #selector(self.submitImage1), forControlEvents: UIControlEvents.TouchUpInside)
+        scrollView.addSubview(uploadButton1)
+        
+        let tapGesture1 = UITapGestureRecognizer.init(target: self, action: #selector(self.viewImage1))
         imgView1.userInteractionEnabled = true
         imgView1.addGestureRecognizer(tapGesture1)
         
@@ -134,7 +144,15 @@ class ApplyForOrderViewController: BaseViewController {
         imgView2.image = UIImage(named: "ic_p002")
         scrollView.addSubview(imgView2)
         
-        let tapGesture2 = UITapGestureRecognizer.init(target: self, action: #selector(self.submitImage2))
+        let uploadButton2 = UIButton.init(type: UIButtonType.Custom)
+        uploadButton2.frame = CGRectMake(imgView2.frame.origin.x, CGRectGetMaxY(imgView2.frame) + 5, imgView2.frame.size.width, imgView2.frame.size.height * 0.12)
+        uploadButton2.setTitle("点击上传", forState: UIControlState.Normal)
+        uploadButton2.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        uploadButton2.backgroundColor = Colors.installColor
+        uploadButton2.addTarget(self, action: #selector(self.submitImage2), forControlEvents: UIControlEvents.TouchUpInside)
+        scrollView.addSubview(uploadButton2)
+        
+        let tapGesture2 = UITapGestureRecognizer.init(target: self, action: #selector(self.viewImage2))
         imgView2.userInteractionEnabled = true
         imgView2.addGestureRecognizer(tapGesture2)
         
@@ -142,9 +160,41 @@ class ApplyForOrderViewController: BaseViewController {
         imgView3.image = UIImage(named: "ic_p003")
         scrollView.addSubview(imgView3)
         
-        let tapGesture3 = UITapGestureRecognizer.init(target: self, action: #selector(self.submitImage3))
+        let uploadButton3 = UIButton.init(type: UIButtonType.Custom)
+        uploadButton3.frame = CGRectMake(imgView3.frame.origin.x, CGRectGetMaxY(imgView3.frame) + 5, imgView3.frame.size.width, imgView3.frame.size.height * 0.12)
+        uploadButton3.setTitle("点击上传", forState: UIControlState.Normal)
+        uploadButton3.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        uploadButton3.backgroundColor = Colors.installColor
+        uploadButton3.addTarget(self, action: #selector(self.submitImage3), forControlEvents: UIControlEvents.TouchUpInside)
+        scrollView.addSubview(uploadButton3)
+        
+        let tapGesture3 = UITapGestureRecognizer.init(target: self, action: #selector(self.viewImage3))
         imgView3.userInteractionEnabled = true
         imgView3.addGestureRecognizer(tapGesture3)
+    }
+    
+    func viewImage1() {
+        if (img1.isEmpty) {
+            self.showPhotos(["ic_p001"], index: 0, isLocal: true)
+        } else {
+            self.showPhotos([img1], index: 0, isLocal: false)
+        }
+    }
+    
+    func viewImage2() {
+        if (img2.isEmpty) {
+            self.showPhotos(["ic_p002"], index: 0, isLocal: true)
+        } else {
+            self.showPhotos([img2], index: 0, isLocal: false)
+        }
+    }
+    
+    func viewImage3() {
+        if (img3.isEmpty) {
+            self.showPhotos(["ic_p003"], index: 0, isLocal: true)
+        } else {
+            self.showPhotos([img3], index: 0, isLocal: false)
+        }
     }
     
     func submitImage1() {
@@ -179,16 +229,14 @@ class ApplyForOrderViewController: BaseViewController {
                 } else {
                     self.showHint("上传成功!")
                     let url = "http://ob4e8ww8r.bkt.clouddn.com/" + key!
-                    if (self.imgUrls.isEmpty) {
-                        self.imgUrls = url
-                    } else {
-                        self.imgUrls = self.imgUrls + "," + url
-                    }
                     if (self.currentIndex == 0) {
+                        self.img1 = url
                         self.imgView1.af_setImageWithURL(NSURL.init(string: url)!)
                     } else if (self.currentIndex == 1) {
+                        self.img2 = url
                         self.imgView2.af_setImageWithURL(NSURL.init(string: url)!)
                     } else if (self.currentIndex == 2) {
+                        self.img3 = url
                         self.imgView3.af_setImageWithURL(NSURL.init(string: url)!)
                     }
                 }
@@ -216,11 +264,20 @@ class ApplyForOrderViewController: BaseViewController {
             self.showHint("请输入电站地址")
             return
         }
-        if (imgUrls.isEmpty) {
+        if (img1.isEmpty && img2.isEmpty && img3.isEmpty) {
             self.showHint("请上传合同")
             return
         }
-        
+        var imgUrls = ""
+        if (!img1.isEmpty) {
+            imgUrls = imgUrls + img1
+        }
+        if (!img2.isEmpty) {
+            imgUrls = (imgUrls.isEmpty ? "" : ",") + img2
+        }
+        if (!img3.isEmpty) {
+            imgUrls = (imgUrls.isEmpty ? "" : ",") + img3
+        }
         self.showHudInView(self.view, hint: "提交中...")
         API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: insuranceType.price!, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, success: { (commonModel) in
                 self.hideHud()
