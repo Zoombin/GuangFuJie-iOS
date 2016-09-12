@@ -35,7 +35,8 @@ class BuySafeViewController: BaseViewController {
         self.showHudInView(self.view, hint: "加载中...")
         API.sharedInstance.insuranceType({ (typeList, totalCount) in
                 self.hideHud()
-                self.totalLabel.text = "累计投保:" + String(totalCount) + "份"
+//                self.totalLabel.text = "累计投保:" + String(totalCount) + "份"
+                self.totalLabel.text = "累计投保:3000+"
                 self.types.addObjectsFromArray(typeList as [AnyObject])
                 self.addTypeView()
             }) { (msg) in
