@@ -398,7 +398,7 @@ extension API {
      - parameter success:
      - parameter failure:     
      */
-    func caluateSave(phone : String, fullname : String, type : NSNumber, province_id : NSNumber, city_id : String, area_size : String,  success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func caluateSave(phone : String, fullname : String, type : NSNumber, province_id : NSNumber, city_id : NSNumber, area_size : String,  success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "calc/add"
         let params = [
             "phone" : phone,          // 手机号
