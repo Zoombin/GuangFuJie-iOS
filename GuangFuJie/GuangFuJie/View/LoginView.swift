@@ -29,7 +29,7 @@ class LoginView: UIView {
         self.backgroundColor = Colors.halfColor
         let viewWidth = PhoneUtils.kScreenWidth * 0.8
         let viewHeight = viewWidth * 0.65
-        let height = viewHeight / 4.5
+        let height = viewHeight / 5
         let offSetX : CGFloat = 10
         
         let bkgView = UIView.init(frame: CGRectMake(0, 0, viewWidth, viewHeight))

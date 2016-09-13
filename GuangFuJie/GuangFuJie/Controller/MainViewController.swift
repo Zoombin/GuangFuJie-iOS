@@ -992,6 +992,13 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if (tableView.tag == INSTALLER_TABLEVIEW_TAG) {
+            print("接单")
+            let userInfo = installerArray[indexPath.row] as! RoofInfo
+            let vc = InstallBuyViewController()
+            vc.roofId = userInfo.id!
+            self.pushViewController(vc)
+        }
     }
     
     
