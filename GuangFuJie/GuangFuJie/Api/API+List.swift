@@ -705,4 +705,27 @@ extension API {
             success?(commonModel : commonModel)
             }, failure: failure)
     }
+    
+    /**
+     年发电量
+     
+     - parameter device_id:
+     - parameter year:
+     - parameter success:
+     - parameter failure:
+     */
+    func getEnergyStatistic(device_id : NSNumber, year : String, success: ((powerGraphInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "device/energy_statistic"
+        let params = [
+            "_o" : 1,
+            "device_id" : device_id,
+            "year" : year
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (data) in
+            let array = PowerGraphInfo.mj_objectArrayWithKeyValuesArray(data)
+            success?(powerGraphInfos : array)
+            }, failure: failure)
+    }
 }

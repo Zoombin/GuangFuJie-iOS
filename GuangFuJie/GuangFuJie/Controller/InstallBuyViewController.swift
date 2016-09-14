@@ -40,7 +40,7 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
         let headerView = UIView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.35))
         
         let titleLabel = UILabel.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, headerView.frame.size.height * 0.15))
-        titleLabel.text = "\t\t屋顶类似图片"
+        titleLabel.text = " 屋顶类似图片"
         titleLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         titleLabel.textColor = UIColor.lightGrayColor()
         headerView.addSubview(titleLabel)

@@ -9,3 +9,5 @@
 #import "QiniuSDK.h"
 #import "TopLeftLabel.h"
 #import "BeeCloud.h"
+#import "ChartUtils.h"
+#import "PNChart.h"

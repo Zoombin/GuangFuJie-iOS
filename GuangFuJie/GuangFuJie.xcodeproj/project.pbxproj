@@ -273,6 +273,25 @@
 		DE8A79051D869BD000C5F268 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A78B31D869BD000C5F268 /* ItemCell.xib */; };
 		DE8A79061D869BD000C5F268 /* ShowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A78B41D869BD000C5F268 /* ShowImageView.swift */; };
 		DE8A79081D869C1D00C5F268 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79071D869C1D00C5F268 /* DisplayView.swift */; };
+		DE8A79E81D87DE8900C5F268 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79D91D87DE8900C5F268 /* UICountingLabel.m */; };
+		DE8A7A111D87E17500C5F268 /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79F11D87E17500C5F268 /* PNBarChart.m */; };
+		DE8A7A121D87E17500C5F268 /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79F51D87E17500C5F268 /* PNChartLabel.m */; };
+		DE8A7A131D87E17500C5F268 /* PNCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79F71D87E17500C5F268 /* PNCircleChart.m */; };
+		DE8A7A141D87E17500C5F268 /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79F91D87E17500C5F268 /* PNColor.m */; };
+		DE8A7A151D87E17500C5F268 /* PNGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79FB1D87E17500C5F268 /* PNGenericChart.m */; };
+		DE8A7A161D87E17500C5F268 /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79FD1D87E17500C5F268 /* PNLineChart.m */; };
+		DE8A7A171D87E17500C5F268 /* PNLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79FF1D87E17500C5F268 /* PNLineChartData.m */; };
+		DE8A7A181D87E17500C5F268 /* PNLineChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A011D87E17500C5F268 /* PNLineChartDataItem.m */; };
+		DE8A7A191D87E17500C5F268 /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A031D87E17500C5F268 /* PNPieChart.m */; };
+		DE8A7A1A1D87E17500C5F268 /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A051D87E17500C5F268 /* PNPieChartDataItem.m */; };
+		DE8A7A1B1D87E17500C5F268 /* PNRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A071D87E17500C5F268 /* PNRadarChart.m */; };
+		DE8A7A1D1D87E17500C5F268 /* PNScatterChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A0B1D87E17500C5F268 /* PNScatterChart.m */; };
+		DE8A7A1E1D87E17500C5F268 /* PNScatterChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A0D1D87E17500C5F268 /* PNScatterChartData.m */; };
+		DE8A7A1F1D87E17500C5F268 /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A0F1D87E17500C5F268 /* PNScatterChartDataItem.m */; };
+		DE8A7A231D87E21200C5F268 /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A201D87E21200C5F268 /* PNBar.m */; };
+		DE8A7A241D87E21200C5F268 /* PNRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A221D87E21200C5F268 /* PNRadarChartDataItem.m */; };
+		DE8A7A261D88028400C5F268 /* PowerGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A251D88028400C5F268 /* PowerGraphInfo.swift */; };
+		DE8A7A291D88DA2300C5F268 /* ChartUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A281D88DA2300C5F268 /* ChartUtils.m */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -820,6 +839,45 @@
 		DE8A78B31D869BD000C5F268 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		DE8A78B41D869BD000C5F268 /* ShowImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowImageView.swift; sourceTree = "<group>"; };
 		DE8A79071D869C1D00C5F268 /* DisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
+		DE8A79D81D87DE8900C5F268 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		DE8A79D91D87DE8900C5F268 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		DE8A79EE1D87E17500C5F268 /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
+		DE8A79F01D87E17500C5F268 /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
+		DE8A79F11D87E17500C5F268 /* PNBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBarChart.m; sourceTree = "<group>"; };
+		DE8A79F21D87E17500C5F268 /* PNChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNChart.h; sourceTree = "<group>"; };
+		DE8A79F31D87E17500C5F268 /* PNChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNChartDelegate.h; sourceTree = "<group>"; };
+		DE8A79F41D87E17500C5F268 /* PNChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNChartLabel.h; sourceTree = "<group>"; };
+		DE8A79F51D87E17500C5F268 /* PNChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNChartLabel.m; sourceTree = "<group>"; };
+		DE8A79F61D87E17500C5F268 /* PNCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNCircleChart.h; sourceTree = "<group>"; };
+		DE8A79F71D87E17500C5F268 /* PNCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNCircleChart.m; sourceTree = "<group>"; };
+		DE8A79F81D87E17500C5F268 /* PNColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNColor.h; sourceTree = "<group>"; };
+		DE8A79F91D87E17500C5F268 /* PNColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNColor.m; sourceTree = "<group>"; };
+		DE8A79FA1D87E17500C5F268 /* PNGenericChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGenericChart.h; sourceTree = "<group>"; };
+		DE8A79FB1D87E17500C5F268 /* PNGenericChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNGenericChart.m; sourceTree = "<group>"; };
+		DE8A79FC1D87E17500C5F268 /* PNLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChart.h; sourceTree = "<group>"; };
+		DE8A79FD1D87E17500C5F268 /* PNLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChart.m; sourceTree = "<group>"; };
+		DE8A79FE1D87E17500C5F268 /* PNLineChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChartData.h; sourceTree = "<group>"; };
+		DE8A79FF1D87E17500C5F268 /* PNLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChartData.m; sourceTree = "<group>"; };
+		DE8A7A001D87E17500C5F268 /* PNLineChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChartDataItem.h; sourceTree = "<group>"; };
+		DE8A7A011D87E17500C5F268 /* PNLineChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChartDataItem.m; sourceTree = "<group>"; };
+		DE8A7A021D87E17500C5F268 /* PNPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPieChart.h; sourceTree = "<group>"; };
+		DE8A7A031D87E17500C5F268 /* PNPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPieChart.m; sourceTree = "<group>"; };
+		DE8A7A041D87E17500C5F268 /* PNPieChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPieChartDataItem.h; sourceTree = "<group>"; };
+		DE8A7A051D87E17500C5F268 /* PNPieChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPieChartDataItem.m; sourceTree = "<group>"; };
+		DE8A7A061D87E17500C5F268 /* PNRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNRadarChart.h; sourceTree = "<group>"; };
+		DE8A7A071D87E17500C5F268 /* PNRadarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNRadarChart.m; sourceTree = "<group>"; };
+		DE8A7A0A1D87E17500C5F268 /* PNScatterChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNScatterChart.h; sourceTree = "<group>"; };
+		DE8A7A0B1D87E17500C5F268 /* PNScatterChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNScatterChart.m; sourceTree = "<group>"; };
+		DE8A7A0C1D87E17500C5F268 /* PNScatterChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNScatterChartData.h; sourceTree = "<group>"; };
+		DE8A7A0D1D87E17500C5F268 /* PNScatterChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNScatterChartData.m; sourceTree = "<group>"; };
+		DE8A7A0E1D87E17500C5F268 /* PNScatterChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNScatterChartDataItem.h; sourceTree = "<group>"; };
+		DE8A7A0F1D87E17500C5F268 /* PNScatterChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNScatterChartDataItem.m; sourceTree = "<group>"; };
+		DE8A7A201D87E21200C5F268 /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
+		DE8A7A211D87E21200C5F268 /* PNRadarChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNRadarChartDataItem.h; sourceTree = "<group>"; };
+		DE8A7A221D87E21200C5F268 /* PNRadarChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNRadarChartDataItem.m; sourceTree = "<group>"; };
+		DE8A7A251D88028400C5F268 /* PowerGraphInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerGraphInfo.swift; sourceTree = "<group>"; };
+		DE8A7A271D88DA2300C5F268 /* ChartUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartUtils.h; sourceTree = "<group>"; };
+		DE8A7A281D88DA2300C5F268 /* ChartUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartUtils.m; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -1020,6 +1078,7 @@
 		18B8FA5E1D3CE8A400B334E4 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DE8A79ED1D87E17500C5F268 /* PNChart */,
 				DE8A78531D869BD000C5F268 /* PhotoBrowser */,
 				DE44CB791D8403DA004690EF /* BCPaySDK */,
 			);
@@ -1047,6 +1106,7 @@
 				DE869F021D8148340062E670 /* InsuranceDetail.swift */,
 				DE44CB6B1D83E8A4004690EF /* InsuranceType.swift */,
 				DE8A76621D865A1800C5F268 /* CalcModel.swift */,
+				DE8A7A251D88028400C5F268 /* PowerGraphInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1054,6 +1114,7 @@
 		18B8FA601D3CE8A400B334E4 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				DE8A79C11D87DE8900C5F268 /* UICountingLabel */,
 				DEF981811D7FF5C700ED1B40 /* AlamofireImage */,
 				DE5E73541D509ADE003CDAAC /* QiNiuSDK */,
 				DE5E72D01D509AD9003CDAAC /* HappyDNS */,
@@ -1077,6 +1138,8 @@
 				1891D9F91D3F57B90042E72D /* Constants.swift */,
 				1891D9FA1D3F57B90042E72D /* PhoneUtils.swift */,
 				DE79F9571D4C1FD30032D461 /* Colors.swift */,
+				DE8A7A271D88DA2300C5F268 /* ChartUtils.h */,
+				DE8A7A281D88DA2300C5F268 /* ChartUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1923,6 +1986,56 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DE8A79C11D87DE8900C5F268 /* UICountingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A79D81D87DE8900C5F268 /* UICountingLabel.h */,
+				DE8A79D91D87DE8900C5F268 /* UICountingLabel.m */,
+			);
+			path = UICountingLabel;
+			sourceTree = "<group>";
+		};
+		DE8A79ED1D87E17500C5F268 /* PNChart */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A7A201D87E21200C5F268 /* PNBar.m */,
+				DE8A7A211D87E21200C5F268 /* PNRadarChartDataItem.h */,
+				DE8A7A221D87E21200C5F268 /* PNRadarChartDataItem.m */,
+				DE8A79EE1D87E17500C5F268 /* PNBar.h */,
+				DE8A79F01D87E17500C5F268 /* PNBarChart.h */,
+				DE8A79F11D87E17500C5F268 /* PNBarChart.m */,
+				DE8A79F21D87E17500C5F268 /* PNChart.h */,
+				DE8A79F31D87E17500C5F268 /* PNChartDelegate.h */,
+				DE8A79F41D87E17500C5F268 /* PNChartLabel.h */,
+				DE8A79F51D87E17500C5F268 /* PNChartLabel.m */,
+				DE8A79F61D87E17500C5F268 /* PNCircleChart.h */,
+				DE8A79F71D87E17500C5F268 /* PNCircleChart.m */,
+				DE8A79F81D87E17500C5F268 /* PNColor.h */,
+				DE8A79F91D87E17500C5F268 /* PNColor.m */,
+				DE8A79FA1D87E17500C5F268 /* PNGenericChart.h */,
+				DE8A79FB1D87E17500C5F268 /* PNGenericChart.m */,
+				DE8A79FC1D87E17500C5F268 /* PNLineChart.h */,
+				DE8A79FD1D87E17500C5F268 /* PNLineChart.m */,
+				DE8A79FE1D87E17500C5F268 /* PNLineChartData.h */,
+				DE8A79FF1D87E17500C5F268 /* PNLineChartData.m */,
+				DE8A7A001D87E17500C5F268 /* PNLineChartDataItem.h */,
+				DE8A7A011D87E17500C5F268 /* PNLineChartDataItem.m */,
+				DE8A7A021D87E17500C5F268 /* PNPieChart.h */,
+				DE8A7A031D87E17500C5F268 /* PNPieChart.m */,
+				DE8A7A041D87E17500C5F268 /* PNPieChartDataItem.h */,
+				DE8A7A051D87E17500C5F268 /* PNPieChartDataItem.m */,
+				DE8A7A061D87E17500C5F268 /* PNRadarChart.h */,
+				DE8A7A071D87E17500C5F268 /* PNRadarChart.m */,
+				DE8A7A0A1D87E17500C5F268 /* PNScatterChart.h */,
+				DE8A7A0B1D87E17500C5F268 /* PNScatterChart.m */,
+				DE8A7A0C1D87E17500C5F268 /* PNScatterChartData.h */,
+				DE8A7A0D1D87E17500C5F268 /* PNScatterChartData.m */,
+				DE8A7A0E1D87E17500C5F268 /* PNScatterChartDataItem.h */,
+				DE8A7A0F1D87E17500C5F268 /* PNScatterChartDataItem.m */,
+			);
+			path = PNChart;
+			sourceTree = "<group>";
+		};
 		DEF981811D7FF5C700ED1B40 /* AlamofireImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2179,6 +2292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8A7A191D87E17500C5F268 /* PNPieChart.m in Sources */,
 				DE8A78B61D869BD000C5F268 /* Constraint.swift in Sources */,
 				DE23E4571D83A9C500293616 /* BuySafeViewController.swift in Sources */,
 				DE5E74B81D509CC4003CDAAC /* AFURLSessionManager.m in Sources */,
@@ -2205,12 +2319,15 @@
 				DE8A78D81D869BD000C5F268 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				DE5E747F1D509BAD003CDAAC /* QNDnsManager.m in Sources */,
 				DE5E744B1D509B9F003CDAAC /* QNFormUpload.m in Sources */,
+				DE8A7A131D87E17500C5F268 /* PNCircleChart.m in Sources */,
 				DE5E74B31D509CC4003CDAAC /* AFHTTPSessionManager.m in Sources */,
 				DE8A78E01D869BD000C5F268 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DEF983FC1D7FF5DC00ED1B40 /* Image.swift in Sources */,
 				DE44CC081D8403DA004690EF /* BCRefundStatusResp.m in Sources */,
 				DE8A78CE1D869BD000C5F268 /* NetworkFetcher.swift in Sources */,
+				DE8A7A1B1D87E17500C5F268 /* PNRadarChart.m in Sources */,
 				DE79001F1D4C57300032D461 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				DE8A7A1E1D87E17500C5F268 /* PNScatterChartData.m in Sources */,
 				DEF984051D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift in Sources */,
 				DEF983FD1D7FF5DC00ED1B40 /* ImageCache.swift in Sources */,
 				DE5E74831D509BAD003CDAAC /* QNRecord.m in Sources */,
@@ -2234,17 +2351,20 @@
 				DE5E74421D509B9F003CDAAC /* QNPHAssetFile.m in Sources */,
 				DE7900B11D4C60360032D461 /* MBProgressHUD.m in Sources */,
 				DE7900181D4C57300032D461 /* IQUITextFieldView+Additions.swift in Sources */,
+				DE8A7A121D87E17500C5F268 /* PNChartLabel.m in Sources */,
 				DE869EF41D81138F0062E670 /* SafeCell.swift in Sources */,
 				DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */,
 				DE44CC111D8403DA004690EF /* BCURLSessionManager.m in Sources */,
 				DEF983FF1D7FF5DC00ED1B40 /* ImageFilter.swift in Sources */,
 				DE5E74BC1D509CC4003CDAAC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DE79F95B1D4C32F30032D461 /* Dimens.swift in Sources */,
+				DE8A7A111D87E17500C5F268 /* PNBarChart.m in Sources */,
 				DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */,
 				DE44CC1D1D8403DA004690EF /* BCUnionPayAdapter.m in Sources */,
 				DE79001A1D4C57300032D461 /* IQUIViewController+Additions.swift in Sources */,
 				DE44CC2C1D840597004690EF /* ApplyForOrderViewController.swift in Sources */,
 				DE8A78F81D869BD000C5F268 /* PhotoBrowser+Common.swift in Sources */,
+				DE8A7A1F1D87E17500C5F268 /* PNScatterChartDataItem.m in Sources */,
 				DE7900241D4C57300032D461 /* IQToolbar.swift in Sources */,
 				DE5E743F1D509B9F003CDAAC /* QNCrc32.m in Sources */,
 				DE79001B1D4C57300032D461 /* IQUIWindow+Hierarchy.swift in Sources */,
@@ -2270,6 +2390,7 @@
 				DE44CC0D1D8403DA004690EF /* BCNetworkReachabilityManager.m in Sources */,
 				DE44CBF61D8403DA004690EF /* BCBaseResp.m in Sources */,
 				DE8A78E31D869BD000C5F268 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				DE8A7A261D88028400C5F268 /* PowerGraphInfo.swift in Sources */,
 				DE79001E1D4C57300032D461 /* IQKeyboardManager.swift in Sources */,
 				DE79F9691D4C50310032D461 /* API+List.swift in Sources */,
 				DE5E74401D509B9F003CDAAC /* QNEtag.m in Sources */,
@@ -2297,8 +2418,10 @@
 				DE5E74BA1D509CC4003CDAAC /* AFImageDownloader.m in Sources */,
 				DE79001C1D4C57300032D461 /* IQKeyboardManagerConstants.swift in Sources */,
 				DE7900161D4C57300032D461 /* IQNSArray+Sort.swift in Sources */,
+				DE8A7A141D87E17500C5F268 /* PNColor.m in Sources */,
 				DE8A78DF1D869BD000C5F268 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */,
+				DE8A7A161D87E17500C5F268 /* PNLineChart.m in Sources */,
 				DE8A79041D869BD000C5F268 /* ItemCell.swift in Sources */,
 				DE79006F1D4C59920032D461 /* UIViewController+HUD.m in Sources */,
 				DE5E72CF1D50970B003CDAAC /* QNInfo.swift in Sources */,
@@ -2308,20 +2431,24 @@
 				DEC64FD21D80009300AF96AC /* UserCenterViewController.swift in Sources */,
 				DE8A78F11D869BD000C5F268 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				DE0C780E1D68534E00FED16D /* YeZhuCell.swift in Sources */,
+				DE8A79E81D87DE8900C5F268 /* UICountingLabel.m in Sources */,
 				DE8A78BC1D869BD000C5F268 /* Debugging.swift in Sources */,
 				DE5E74431D509B9F003CDAAC /* QNPHAssetResource.m in Sources */,
 				DE44CC0F1D8403DA004690EF /* BCURLRequestSerialization.m in Sources */,
 				DE5E74821D509BAD003CDAAC /* QNNetworkInfo.m in Sources */,
 				DE5E74461D509B9F003CDAAC /* QNResponseInfo.m in Sources */,
 				DE8A78E11D869BD000C5F268 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				DE8A7A171D87E17500C5F268 /* PNLineChartData.m in Sources */,
 				DE8A78DE1D869BD000C5F268 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				DE8A78C01D869BD000C5F268 /* SourceLocation.swift in Sources */,
 				DE5E74871D509BAD003CDAAC /* QNHosts.m in Sources */,
 				DE8A76631D865A1900C5F268 /* CalcModel.swift in Sources */,
+				DE8A7A291D88DA2300C5F268 /* ChartUtils.m in Sources */,
 				DE8A78C81D869BD000C5F268 /* DiskFetcher.swift in Sources */,
 				DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */,
 				DE5E743C1D509B9F003CDAAC /* QN_GTM_Base64.m in Sources */,
 				DE5E74B41D509CC4003CDAAC /* AFNetworkReachabilityManager.m in Sources */,
+				DE8A7A1D1D87E17500C5F268 /* PNScatterChart.m in Sources */,
 				DE5E74841D509BAD003CDAAC /* QNDnspodEnterprise.m in Sources */,
 				DE44CC051D8403DA004690EF /* BCQueryRefundsCountReq.m in Sources */,
 				DE8A78DC1D869BD000C5F268 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
@@ -2368,6 +2495,8 @@
 				DE5E748A1D509BAD003CDAAC /* QNTxtResolver.m in Sources */,
 				DE5E744E1D509B9F003CDAAC /* QNUploadOption.m in Sources */,
 				DE5E744A1D509B9F003CDAAC /* QNConfiguration.m in Sources */,
+				DE8A7A1A1D87E17500C5F268 /* PNPieChartDataItem.m in Sources */,
+				DE8A7A181D87E17500C5F268 /* PNLineChartDataItem.m in Sources */,
 				DE44CBFB1D8403DA004690EF /* BCQueryBillByIdReq.m in Sources */,
 				DE7900191D4C57300032D461 /* IQUIView+Hierarchy.swift in Sources */,
 				DE5E74C71D509FD9003CDAAC /* AppModel.swift in Sources */,
@@ -2386,6 +2515,7 @@
 				DE44CC161D8403DA004690EF /* NSString+IsValid.m in Sources */,
 				DE44CC061D8403DA004690EF /* BCQueryRefundsCountResp.m in Sources */,
 				DE79F9681D4C50310032D461 /* API.swift in Sources */,
+				DE8A7A241D87E21200C5F268 /* PNRadarChartDataItem.m in Sources */,
 				DE8A78D11D869BD000C5F268 /* NSURLResponse+Haneke.swift in Sources */,
 				DE7900201D4C57300032D461 /* IQTextView.swift in Sources */,
 				DE5E74BF1D509CC4003CDAAC /* UIProgressView+AFNetworking.m in Sources */,
@@ -2406,6 +2536,7 @@
 				DE8A78C71D869BD000C5F268 /* DiskCache.swift in Sources */,
 				DE44CC0C1D8403DA004690EF /* BCHTTPSessionManager.m in Sources */,
 				DE8A79001D869BD000C5F268 /* Layout.swift in Sources */,
+				DE8A7A231D87E21200C5F268 /* PNBar.m in Sources */,
 				DE79F9611D4C3B410032D461 /* LoginView.swift in Sources */,
 				DE5E74881D509BAD003CDAAC /* QNResolver.m in Sources */,
 				DE8A78F61D869BD000C5F268 /* NVActivityIndicatorShape.swift in Sources */,
@@ -2424,6 +2555,7 @@
 				DE5E74C01D509CC4003CDAAC /* UIRefreshControl+AFNetworking.m in Sources */,
 				DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */,
 				DE8A78EB1D869BD000C5F268 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				DE8A7A151D87E17500C5F268 /* PNGenericChart.m in Sources */,
 				1891D9FB1D3F57B90042E72D /* Constants.swift in Sources */,
 				DE5E74B91D509CC4003CDAAC /* AFAutoPurgingImageCache.m in Sources */,
 				DE79006D1D4C59920032D461 /* NSData+AESCrypt.m in Sources */,

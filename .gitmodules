@@ -22,3 +22,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/AlamofireImage"]
 	path = GuangFuJie/GuangFuJie/Submodules/AlamofireImage
 	url = https://github.com/Alamofire/AlamofireImage.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/UICountingLabel"]
+	path = GuangFuJie/GuangFuJie/Submodules/UICountingLabel
+	url = https://github.com/dataxpress/UICountingLabel.git
