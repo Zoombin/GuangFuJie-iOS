@@ -66,6 +66,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     //保险数组
     var safeArray : NSMutableArray = NSMutableArray()
     
+    var currentIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -82,7 +84,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         initSafeView()
         initBindView()
         
-        goToTab(0)
+        goToTab(currentIndex)
     }
     
     //MARK: 保险
@@ -159,6 +161,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func buySafeNow() {
+        if (shouldShowLogin()) {
+            return
+        }
         let vc = BuySafeViewController()
         self.pushViewController(vc)
     }
@@ -197,8 +202,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     func bindButtonClicked() {
         deviceTextField.resignFirstResponder()
-        if (!UserDefaultManager.isLogin()) {
-            self.showHint("请登录!")
+        if (shouldShowLogin()) {
             return
         }
         let deviceId = deviceTextField.text
@@ -576,6 +580,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func soldRoomButtonClicked() {
+        if (shouldShowLogin()) {
+            return
+        }
         let vc = LeaseViewController(nibName: "LeaseViewController", bundle: nil)
         self.pushViewController(vc)
     }
@@ -654,6 +661,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func wantToBeInstaller() {
+        if (shouldShowLogin()) {
+            return
+        }
         let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
         self.pushViewController(vc)
     }
@@ -747,6 +757,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             self.showHint("登录成功!")
             self.loginView.hidden = true
             UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+            self.goToTab(self.currentIndex)
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
@@ -764,6 +775,15 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             return
         }
         loginView.hidden = false
+    }
+    
+    //MARK:是否需要显示登录页面
+    func shouldShowLogin() -> Bool{
+        if (UserDefaultManager.isLogin()) {
+            return false
+        }
+        loginView.hidden = false
+        return true
     }
     
     func initRightNavButton() {
@@ -829,6 +849,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     //MARK: tab跳转
     func goToTab(index : NSInteger) {
+        currentIndex = index
         for i in 0..<buttons.count {
             let button = buttons[i] as! UIButton
             button.selected = false
@@ -993,7 +1014,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if (tableView.tag == INSTALLER_TABLEVIEW_TAG) {
-            print("接单")
+            if (shouldShowLogin()) {
+                return
+            }
             let userInfo = installerArray[indexPath.row] as! RoofInfo
             let vc = InstallBuyViewController()
             vc.roofId = userInfo.id!
