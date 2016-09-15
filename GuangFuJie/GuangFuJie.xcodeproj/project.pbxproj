@@ -292,6 +292,7 @@
 		DE8A7A241D87E21200C5F268 /* PNRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A221D87E21200C5F268 /* PNRadarChartDataItem.m */; };
 		DE8A7A261D88028400C5F268 /* PowerGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A251D88028400C5F268 /* PowerGraphInfo.swift */; };
 		DE8A7A291D88DA2300C5F268 /* ChartUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A281D88DA2300C5F268 /* ChartUtils.m */; };
+		DE8A7A2C1D8A83FB00C5F268 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A2B1D8A83FB00C5F268 /* GuideViewController.swift */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -878,6 +879,7 @@
 		DE8A7A251D88028400C5F268 /* PowerGraphInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerGraphInfo.swift; sourceTree = "<group>"; };
 		DE8A7A271D88DA2300C5F268 /* ChartUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartUtils.h; sourceTree = "<group>"; };
 		DE8A7A281D88DA2300C5F268 /* ChartUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartUtils.m; sourceTree = "<group>"; };
+		DE8A7A2B1D8A83FB00C5F268 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -1057,6 +1059,7 @@
 				DE23E4561D83A9C500293616 /* BuySafeViewController.swift */,
 				DE44CC2B1D840597004690EF /* ApplyForOrderViewController.swift */,
 				DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */,
+				DE8A7A2B1D8A83FB00C5F268 /* GuideViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2391,6 +2394,7 @@
 				DE44CBF61D8403DA004690EF /* BCBaseResp.m in Sources */,
 				DE8A78E31D869BD000C5F268 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				DE8A7A261D88028400C5F268 /* PowerGraphInfo.swift in Sources */,
+				DE8A7A2C1D8A83FB00C5F268 /* GuideViewController.swift in Sources */,
 				DE79001E1D4C57300032D461 /* IQKeyboardManager.swift in Sources */,
 				DE79F9691D4C50310032D461 /* API+List.swift in Sources */,
 				DE5E74401D509B9F003CDAAC /* QNEtag.m in Sources */,

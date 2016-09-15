@@ -10,6 +10,7 @@ import UIKit
 
 class UserDefaultManager: NSObject {
     static let USER_INFO = "userInfo"
+    static let APP_VERSION = "appVersion"
     
     static let userDefault : NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
@@ -44,6 +45,15 @@ class UserDefaultManager: NSObject {
     
     static func logOut() {
         clearUserData()
+    }
+    
+    static func showGuide() -> Bool{
+        let version = getString(APP_VERSION)
+        if (version != PhoneUtils.appVersion) {
+            saveString(APP_VERSION, value: PhoneUtils.appVersion)
+            return true
+        }
+        return false
     }
     
     static func isLogin() -> Bool {

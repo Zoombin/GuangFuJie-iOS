@@ -25,8 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BeeCloud.initWithAppID("4d6af0de-2542-433e-a361-73ef59805d35", andAppSecret: "3f339c0c-4c11-464b-b8bd-8fad7ab3717c", sandbox: true)
         
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
-        initMain()
+        if (UserDefaultManager.showGuide()) {
+            showGuide()
+        } else {
+            initMain()
+        }
         return true
+    }
+    
+    func showGuide() {
+        let vc = GuideViewController()
+        let nav = UINavigationController.init(rootViewController: vc)
+        self.window?.rootViewController = nav
+        self.window?.makeKeyAndVisible()
     }
     
     func initMain() {
