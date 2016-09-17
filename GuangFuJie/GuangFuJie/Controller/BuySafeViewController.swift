@@ -23,6 +23,11 @@ class BuySafeViewController: BaseViewController {
     let labelHeight = PhoneUtils.kScreenHeight / 9
     var insureModel : InsuranceType?
     
+    var baoe1Label : UILabel!
+    var baoe2Label : UILabel!
+    var baoe3Label : UILabel!
+    var totalBaoeLabel : UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "购买保险"
@@ -90,6 +95,54 @@ class BuySafeViewController: BaseViewController {
         scrollView.addSubview(phoneButton)
         currentY = CGRectGetMaxY(phoneButton.frame)
         
+        let titleLabel3 = UILabel.init(frame: CGRectMake(0, currentY + offSetY, width, height))
+        titleLabel3.text = "保障金额"
+        titleLabel3.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        titleLabel3.textAlignment = NSTextAlignment.Center
+        scrollView.addSubview(titleLabel3)
+        
+        let titleWidth = (width * 3 + offSetX * 2) / 3
+        let titleHeight = height
+        let titles = ["保险标的", "保额", "保额合计", "光伏发电设备", "", "", "设备盗抢", "", "", "第三者责任", "", ""]
+        var tline = 0
+        var tindex = 0
+        for i in 0..<titles.count {
+            if (i != 0 && i%3 == 0) {
+                tline += 1
+                tindex = 0
+            }
+            var tmpHeight = titleHeight
+            if (i == 5) {
+                tmpHeight = titleHeight * 3
+            }
+            if (i == 8 || i == 11) {
+                continue
+            }
+            
+            let label = UILabel.init(frame: CGRectMake(CGRectGetMaxX(titleLabel3.frame) + offSetX + CGFloat(tindex) * titleWidth, titleLabel3.frame.origin.y  + CGFloat(tline) * titleHeight, titleWidth, tmpHeight))
+            label.text = titles[i]
+            label.textAlignment = NSTextAlignment.Center
+            label.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            label.layer.borderColor = UIColor.blackColor().CGColor
+            label.layer.borderWidth = 1.0
+            scrollView.addSubview(label)
+            if (i == 5) {
+                totalBaoeLabel = label
+            }
+            if (i == 4) {
+                baoe1Label = label
+            }
+            if (i == 7) {
+                baoe2Label = label
+            }
+            if (i == 10) {
+                baoe3Label = label
+            }
+            tindex += 1
+            currentY = CGRectGetMaxY(label.frame)
+        }
+        
+        
         let titleLabel2 = UILabel.init(frame: CGRectMake(0, currentY + offSetY, width, height))
         titleLabel2.text = "保障时间"
         titleLabel2.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
@@ -139,6 +192,19 @@ class BuySafeViewController: BaseViewController {
         let insureType = types[sender.tag - BUTTON_TAG] as! InsuranceType
         insureModel = insureType
         priceLabel.text = "￥:" + String(insureType.price!) + "元"
+        
+        let size = NSString.init(string: insureType.size!)
+        size.stringByReplacingOccurrencesOfString("KW", withString: "")
+        let sizeFloat : CGFloat = CGFloat(size.floatValue)
+        
+        let baoe1 : CGFloat = sizeFloat * 0.7
+        let baoe2 : CGFloat = sizeFloat * 0.7
+        let baoe3 : CGFloat = 2.0
+        let total : CGFloat = baoe1 + baoe2 + baoe3
+        baoe1Label.text = String(format: "%.1f万", baoe1)
+        baoe2Label.text = String(format: "%.1f万", baoe2)
+        baoe3Label.text = String(format: "%.1f万", baoe3)
+        totalBaoeLabel.text = String(format: "%.1f万/年", total)
     }
     
     func buyNow() {
