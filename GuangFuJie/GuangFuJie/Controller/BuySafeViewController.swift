@@ -142,7 +142,6 @@ class BuySafeViewController: BaseViewController {
             currentY = CGRectGetMaxY(label.frame)
         }
         
-        
         let titleLabel2 = UILabel.init(frame: CGRectMake(0, currentY + offSetY, width, height))
         titleLabel2.text = "保障时间"
         titleLabel2.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
@@ -171,9 +170,63 @@ class BuySafeViewController: BaseViewController {
         tipsLabel.text = "今日购买生效时间" + PhoneUtils.getTommorrowDateStr(NSDate()) + " 00:00:00"
         scrollView.addSubview(tipsLabel)
         
-        currentY = CGRectGetMaxY(titleLabel2.frame)
+        let titleLabel4 = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(titleLabel2.frame) + offSetY, width, height))
+        titleLabel4.text = "保险条款"
+        titleLabel4.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        titleLabel4.textAlignment = NSTextAlignment.Center
+        scrollView.addSubview(titleLabel4)
+        
+        let viewButton1 = UIButton.init(type: UIButtonType.Custom)
+        viewButton1.frame = CGRectMake(CGRectGetMaxX(titleLabel4.frame) + offSetX,CGRectGetMaxY(titleLabel2.frame) + offSetY, width * 1.5, height)
+        viewButton1.backgroundColor = Colors.installColor
+        viewButton1.setTitle("查看保险条款", forState: UIControlState.Normal)
+        viewButton1.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        viewButton1.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        viewButton1.addTarget(self, action: #selector(self.viewButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewButton1.tag = 1
+        scrollView.addSubview(viewButton1)
+        
+        let titleLabel5 = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(titleLabel4.frame) + offSetY, width, height))
+        titleLabel5.text = "保险范本"
+        titleLabel5.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        titleLabel5.textAlignment = NSTextAlignment.Center
+        scrollView.addSubview(titleLabel5)
+        
+        let viewButton2 = UIButton.init(type: UIButtonType.Custom)
+        viewButton2.frame = CGRectMake(CGRectGetMaxX(titleLabel5.frame) + offSetX,CGRectGetMaxY(titleLabel4.frame) + offSetY, width * 1.5, height)
+        viewButton2.backgroundColor = Colors.installColor
+        viewButton2.setTitle("电子保单范本", forState: UIControlState.Normal)
+        viewButton2.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        viewButton2.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        viewButton2.addTarget(self, action: #selector(self.viewButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewButton2.tag = 2
+        scrollView.addSubview(viewButton2)
+        
+        let viewButton3 = UIButton.init(type: UIButtonType.Custom)
+        viewButton3.frame = CGRectMake(CGRectGetMaxX(viewButton2.frame) + offSetX,CGRectGetMaxY(titleLabel4.frame) + offSetY, width * 1.5, height)
+        viewButton3.backgroundColor = Colors.installColor
+        viewButton3.setTitle("纸质保单范本", forState: UIControlState.Normal)
+        viewButton3.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        viewButton3.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        viewButton3.addTarget(self, action: #selector(self.viewButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewButton3.tag = 3
+        scrollView.addSubview(viewButton3)
+        
+        currentY = CGRectGetMaxY(titleLabel5.frame)
         
         scrollView.contentSize = CGSizeMake(0, currentY + 1)
+    }
+    
+    func viewButtonClicked(sender : UIButton) {
+        let vc = PhotoViewController()
+        if (sender.tag == 1) {
+            vc.type = 1
+        } else if (sender.tag == 2) {
+            vc.type = 2
+        } else {
+            vc.type = 3
+        }
+        self.pushViewController(vc)
     }
     
     func tellPhoneUsButtonClicked() {

@@ -84,6 +84,7 @@
 		DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9581D5ECF79005B9CCE /* BankInfo.swift */; };
 		DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9641D5ED221005B9CCE /* BookingStatus.swift */; };
 		DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */; };
+		DE5923AA1D9117AC00FC6EBE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5923A91D9117AC00FC6EBE /* PhotoViewController.swift */; };
 		DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72B91D507A76003CDAAC /* DeviceInfo.swift */; };
 		DE5E72CF1D50970B003CDAAC /* QNInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72CE1D50970B003CDAAC /* QNInfo.swift */; };
 		DE5E743C1D509B9F003CDAAC /* QN_GTM_Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E740C1D509B9E003CDAAC /* QN_GTM_Base64.m */; };
@@ -577,6 +578,7 @@
 		DE57C9581D5ECF79005B9CCE /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
 		DE57C9641D5ED221005B9CCE /* BookingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatus.swift; sourceTree = "<group>"; };
 		DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
+		DE5923A91D9117AC00FC6EBE /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		DE5E72B91D507A76003CDAAC /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		DE5E72CE1D50970B003CDAAC /* QNInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QNInfo.swift; sourceTree = "<group>"; };
 		DE5E740B1D509B9E003CDAAC /* QN_GTM_Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QN_GTM_Base64.h; sourceTree = "<group>"; };
@@ -1060,6 +1062,7 @@
 				DE44CC2B1D840597004690EF /* ApplyForOrderViewController.swift */,
 				DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */,
 				DE8A7A2B1D8A83FB00C5F268 /* GuideViewController.swift */,
+				DE5923A91D9117AC00FC6EBE /* PhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2323,6 +2326,7 @@
 				DE5E747F1D509BAD003CDAAC /* QNDnsManager.m in Sources */,
 				DE5E744B1D509B9F003CDAAC /* QNFormUpload.m in Sources */,
 				DE8A7A131D87E17500C5F268 /* PNCircleChart.m in Sources */,
+				DE5923AA1D9117AC00FC6EBE /* PhotoViewController.swift in Sources */,
 				DE5E74B31D509CC4003CDAAC /* AFHTTPSessionManager.m in Sources */,
 				DE8A78E01D869BD000C5F268 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DEF983FC1D7FF5DC00ED1B40 /* Image.swift in Sources */,
