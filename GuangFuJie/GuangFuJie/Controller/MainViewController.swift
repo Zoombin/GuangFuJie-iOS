@@ -730,9 +730,20 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     /**
      登录页面代理方法--获取验证码
      */
-    func getCodeButtonClicked() {
+    func getCodeButtonClicked(phone: String) {
         loginView.hiddenAllKeyBoard()
-        loginView.hidden = true
+        if (phone.isEmpty) {
+            self.showHint("请输入手机号!")
+            return
+        }
+        self.showHudInView(self.view, hint: "验证码获取中...")
+        API.sharedInstance.userCaptcha(phone, success: { (commonModel) in
+                self.hideHud()
+                self.showHint("验证码将发送到您的手机!")
+            }) { (msg) in
+                self.hideHud()
+                self.showHint(msg)
+        }
     }
     
     /**
@@ -742,6 +753,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
      - parameter code
      */
     func loginButtonClicked(phone: String, code: String) {
+        loginView.hiddenAllKeyBoard()
         if (phone.isEmpty) {
             self.showHint("请输入手机号!")
             return
@@ -750,7 +762,6 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             self.showHint("请输入验证码!")
             return
         }
-        loginView.hiddenAllKeyBoard()
         self.showHudInView(self.view, hint: "登录中...")
         API.sharedInstance.login(phone, captcha: code, success: { (userinfo) in
             self.hideHud()

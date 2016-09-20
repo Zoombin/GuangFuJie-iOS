@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LoginViewDelegate : NSObjectProtocol {
-    func getCodeButtonClicked()
+    func getCodeButtonClicked(phone : String)
     func loginButtonClicked(phone : String, code : String)
 }
 
@@ -92,7 +92,7 @@ class LoginView: UIView {
     
     func getCode() {
         if (delegate != nil) {
-            self.delegate?.getCodeButtonClicked()
+            self.delegate?.getCodeButtonClicked(phoneTextField.text!)
         }
     }
     

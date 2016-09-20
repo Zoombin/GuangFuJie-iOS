@@ -728,4 +728,25 @@ extension API {
             success?(powerGraphInfos : array)
             }, failure: failure)
     }
+    
+    /**
+     获取验证码
+     
+     - parameter phoneNum:
+     - parameter success:
+     - parameter failure:
+     */
+    func userCaptcha(phoneNum : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/captcha";
+        let params = [
+            "user_name" : phoneNum,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(commonModel : commonModel)
+            }, failure: failure)
+    }
 }
