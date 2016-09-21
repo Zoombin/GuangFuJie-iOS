@@ -122,7 +122,7 @@ class BuySafeViewController: BaseViewController {
             let label = UILabel.init(frame: CGRectMake(CGRectGetMaxX(titleLabel3.frame) + offSetX + CGFloat(tindex) * titleWidth, titleLabel3.frame.origin.y  + CGFloat(tline) * titleHeight, titleWidth, tmpHeight))
             label.text = titles[i]
             label.textAlignment = NSTextAlignment.Center
-            label.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            label.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
             label.layer.borderColor = UIColor.blackColor().CGColor
             label.layer.borderWidth = 1.0
             scrollView.addSubview(label)

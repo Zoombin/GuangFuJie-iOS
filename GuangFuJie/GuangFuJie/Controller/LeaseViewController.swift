@@ -20,6 +20,9 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
     @IBOutlet weak var roofTypeView : UIView!
     @IBOutlet weak var datePicker : UIDatePicker!
     @IBOutlet weak var datePickerView : UIView!
+    @IBOutlet weak var submitButton : UIButton!
+    @IBOutlet weak var scrollView : UIScrollView!
+    @IBOutlet weak var toolBar : UIToolbar!
 
     var imageView1 : UIImageView!
     var imageView2 : UIImageView!
@@ -126,6 +129,10 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         
         contractTextField.leftViewMode = UITextFieldViewMode.Always
         contractTextField.leftView = contractLabel
+        
+        scrollView.contentSize = CGSizeMake(0, PhoneUtils.kScreenHeight < 568 ? 568 : PhoneUtils.kScreenHeight)
+        
+        toolBar.frame = CGRectMake(0, CGRectGetMinY(datePicker.frame) - toolBar.frame.size.height, toolBar.frame.size.width, toolBar.frame.size.height)
     }
     
     @IBAction func locationButtonClicked(sender : UIButton) {

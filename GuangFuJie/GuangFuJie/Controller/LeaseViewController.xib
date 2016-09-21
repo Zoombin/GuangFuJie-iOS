@@ -16,7 +16,10 @@
                 <outlet property="roofSizeField" destination="eaO-Eg-Ihi" id="d2W-Pf-Eg9"/>
                 <outlet property="roofTypeButton" destination="Q7m-Ai-Dse" id="omk-lT-VZe"/>
                 <outlet property="roofTypeView" destination="gif-82-C0j" id="2Ie-qs-Y2E"/>
+                <outlet property="scrollView" destination="5vC-Pi-hOy" id="YUI-hw-LZp"/>
+                <outlet property="submitButton" destination="fQX-W0-VxT" id="cL7-OT-WaY"/>
                 <outlet property="timeButton" destination="FKp-6s-TBa" id="1Fn-Lj-isJ"/>
+                <outlet property="toolBar" destination="MLN-cY-Xd3" id="OL0-5e-oTl"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Cq1-jg-MyQ"/>
             </connections>
         </placeholder>
@@ -171,7 +174,7 @@
                         </datePicker>
                         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MLN-cY-Xd3">
                             <rect key="frame" x="0.0" y="308" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <items>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="F7M-9U-UPX"/>
                                 <barButtonItem title="完成" style="plain" id="IWe-nM-HUb">
