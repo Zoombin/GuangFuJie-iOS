@@ -60,8 +60,8 @@ class CalResultViewController: BaseViewController {
         titleStrs.addObject("减排二氧化硫\n" + String(eInfo.so2!) + "吨/年")
         titleStrs.addObject("减排粉尘\n" + String(eInfo.dust!) + "吨/年")
         titleStrs.addObject("减排二氧化碳\n" + String(eInfo.co2!) + "吨/年")
-        titleStrs.addObject("减排一氧化物\n" + String(eInfo.xo1!) + "吨/年")
-        titleStrs.addObject("减排氮化物\n" + String(eInfo.no!) + "吨/年")
+        titleStrs.addObject("种植植物\n" + String(eInfo.plant!) + "颗")
+        titleStrs.addObject("行驶里程\n" + String(eInfo.mileage!) + "公里")
         
         let earnMoney = "预计收益:" + String(eInfo.year_money!) + "元/年"
         
@@ -90,7 +90,7 @@ class CalResultViewController: BaseViewController {
         scrollView.addSubview(iconView)
         
         let viewWidth = iconView.frame.size.width / 3
-        let icons = ["ic_calc_c", "ic_calc_so2", "ic_calc_dust", "ic_calc_co2", "ic_calc_co", "ic_calc_no"]
+        let icons = ["ic_calc_c", "ic_calc_so2", "ic_calc_dust", "ic_calc_co2", "ic_calc_zhi", "ic_calc_li"]
         
         var line : CGFloat = 0
         var index : CGFloat = 0

@@ -17,4 +17,6 @@ class ElectricInfo: NSObject {
     var so2 : NSNumber?            // 节约的二氧化硫 吨
     var no : NSNumber?             // 节约的氮氧化物 吨
     var xo1 : NSNumber?            // 节约的一氧化物 吨
+    var mileage : NSNumber?        // 行驶里程  公里
+    var plant : NSNumber?          // 种植  棵
 }
