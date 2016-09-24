@@ -154,6 +154,8 @@ class BuySafeViewController: BaseViewController {
         yearsTextField.rightViewMode = UITextFieldViewMode.Always
         yearsTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         yearsTextField.textAlignment = NSTextAlignment.Center
+        yearsTextField.text = "1"
+        yearsTextField.keyboardType = UIKeyboardType.NumberPad
         scrollView.addSubview(yearsTextField)
         
         let yearsLabel = UILabel.init(frame: CGRectMake(0, 0, width / 4, height))

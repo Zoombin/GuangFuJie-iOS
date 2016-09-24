@@ -83,8 +83,6 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         initElectricView()
         initSafeView()
         initBindView()
-        
-        goToTab(currentIndex)
     }
     
     //MARK: 保险
@@ -212,12 +210,13 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         }
         self.showHudInView(self.view, hint: "绑定中...")
         API.sharedInstance.bindDevice(deviceTextField.text!, success: { (userInfo) in
-                self.hideHud()
-                self.showHint("绑定成功!")
-                UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userInfo.mj_JSONString())
-            }) { (msg) in
-                self.hideHud()
-                self.showHint(msg)
+            self.hideHud()
+            self.showHint("绑定成功!")
+            UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userInfo.mj_JSONString())
+            self.goToTab(self.currentIndex)
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
         }
     }
     
@@ -427,23 +426,38 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func loadDeviceInfo(deviceInfo : DeviceInfo) {
-        let errorCode1 = NSString.init(string: deviceInfo.errorcode1!)
-        let errorCode2 = NSString.init(string: deviceInfo.errorcode2!)
-        if (errorCode1.containsString("0000") && errorCode2.containsString("0000")) {
+        if (deviceInfo.errorcode1 == nil || deviceInfo.errorcode2 == nil) {
             statusButton.enabled = true
             statusLabel.text = "运行状态 正常"
             statusLabel.textColor = Colors.installColor
             checkMarkButton.enabled = true
         } else {
-            statusButton.enabled = false
-            statusLabel.text = "运行状态 异常(报修)"
-            statusLabel.textColor = Colors.installRedColor
-            checkMarkButton.enabled = false
+            let errorCode1 = NSString.init(string: deviceInfo.errorcode1!)
+            let errorCode2 = NSString.init(string: deviceInfo.errorcode2!)
+            if (errorCode1.containsString("0000") && errorCode2.containsString("0000")) {
+                statusButton.enabled = true
+                statusLabel.text = "运行状态 正常"
+                statusLabel.textColor = Colors.installColor
+                checkMarkButton.enabled = true
+            } else {
+                statusButton.enabled = false
+                statusLabel.text = "运行状态 异常(报修)"
+                statusLabel.textColor = Colors.installRedColor
+                checkMarkButton.enabled = false
+            }
         }
         
-        gonglvLabel.text = String(format: "%@kw", deviceInfo.device_power!)
-        fadianLabel.text = String(format: "%@天", deviceInfo.runtime!)
+        gonglvLabel.text = String(format: "%@kw", deviceInfo.device_power != nil ? deviceInfo.device_power! : "0")
+        fadianLabel.text = String(format: "%@天", deviceInfo.runtime != nil ? deviceInfo.runtime! : "0")
         if (deviceInfo.energy_day == nil || deviceInfo.energy_all == nil) {
+            todayElectricLabel.text = "0kw"
+            totalElectricLabel.text = "0kw"
+            todayMoneyLabel.text = "0元"
+            totalMoneyLabel.text = "0元"
+            todayjianpaiLabel.text = "0吨"
+            totaljianpaiLabel.text = "0吨"
+            todayplantLabel.text = "0棵"
+            totalplantLabel.text = "0棵"
             return
         }
         todayElectricLabel.text = String(format: "%@kw", deviceInfo.energy_day!)
@@ -560,6 +574,11 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         yezhuTableView.tableFooterView = footerView
         
         yezhuTableView.registerClass(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        goToTab(currentIndex)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -721,9 +740,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
                 self.safeArray.addObject(insuranceList.firstObject!)
             }
             self.safeTableView.reloadData()
-            }) { (msg) in
-                self.hideHud()
-                self.showHint(msg)
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
         }
     }
     
@@ -738,11 +757,11 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         }
         self.showHudInView(self.view, hint: "验证码获取中...")
         API.sharedInstance.userCaptcha(phone, success: { (commonModel) in
-                self.hideHud()
-                self.showHint("验证码将发送到您的手机!")
-            }) { (msg) in
-                self.hideHud()
-                self.showHint(msg)
+            self.hideHud()
+            self.showHint("验证码将发送到您的手机!")
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
         }
     }
     

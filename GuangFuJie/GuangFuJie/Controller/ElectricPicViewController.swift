@@ -42,7 +42,7 @@ class ElectricPicViewController: BaseViewController {
         for i in 0..<infoArray.count {
             let power = infoArray[i] as! PowerGraphInfo
             xLabels.addObject(String(power.month!) + "月")
-            yLabels.addObject(String(power.energy_month!))
+            yLabels.addObject(power.energy_month == nil ? "0" : String(power.energy_month!))
         }
         
         if (xLabels.count == 0 || xLabels == 1) {

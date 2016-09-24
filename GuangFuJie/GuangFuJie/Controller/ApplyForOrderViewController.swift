@@ -80,6 +80,7 @@ class ApplyForOrderViewController: BaseViewController {
         phoneTextField.layer.borderColor = UIColor.blackColor().CGColor
         phoneTextField.layer.borderWidth = 1
         phoneTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        phoneTextField.keyboardType = UIKeyboardType.NumberPad
         scrollView.addSubview(phoneTextField)
         
         let idLabel = UILabel.init(frame: CGRectMake(offSet, offSet + CGRectGetMaxY(phoneLabel.frame), labelWidth - offSet * 2, labelHeight))
@@ -91,6 +92,7 @@ class ApplyForOrderViewController: BaseViewController {
         idTextField.layer.borderColor = UIColor.blackColor().CGColor
         idTextField.layer.borderWidth = 1
         idTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        idTextField.keyboardType = UIKeyboardType.NumberPad
         scrollView.addSubview(idTextField)
         
         let addressLabel = UILabel.init(frame: CGRectMake(offSet, offSet + CGRectGetMaxY(idLabel.frame), labelWidth - offSet * 2, labelHeight))

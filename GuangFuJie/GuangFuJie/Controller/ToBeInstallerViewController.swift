@@ -73,7 +73,7 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
         let companyLeftLabel = UILabel.init(frame: CGRectMake(0, 0, 80, companyTextField.frame.size.height))
         companyLeftLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         companyLeftLabel.textColor = UIColor.darkGrayColor()
-        companyLeftLabel.text = "公司名称:"
+        companyLeftLabel.text = " 公司名称:"
         
         companyTextField.leftViewMode = UITextFieldViewMode.Always
         companyTextField.leftView = companyLeftLabel
@@ -81,7 +81,7 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
         let nameLeftLabel = UILabel.init(frame: CGRectMake(0, 0, 80, nameTextField.frame.size.height))
         nameLeftLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         nameLeftLabel.textColor = UIColor.darkGrayColor()
-        nameLeftLabel.text = "联系人:"
+        nameLeftLabel.text = " 联系人:"
         
         nameTextField.leftViewMode = UITextFieldViewMode.Always
         nameTextField.leftView = nameLeftLabel
@@ -89,7 +89,7 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
         let phoneLeftLabel = UILabel.init(frame: CGRectMake(0, 0, 80, phoneTextField.frame.size.height))
         phoneLeftLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         phoneLeftLabel.textColor = UIColor.darkGrayColor()
-        phoneLeftLabel.text = "联系方式:"
+        phoneLeftLabel.text = " 联系方式:"
         
         phoneTextField.leftViewMode = UITextFieldViewMode.Always
         phoneTextField.leftView = phoneLeftLabel
@@ -97,7 +97,7 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
         let instalerCountLeftLabel = UILabel.init(frame: CGRectMake(0, 0, 80, installerCountTextField.frame.size.height))
         instalerCountLeftLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         instalerCountLeftLabel.textColor = UIColor.darkGrayColor()
-        instalerCountLeftLabel.text = "公司规模:"
+        instalerCountLeftLabel.text = " 公司规模:"
         
         installerCountTextField.leftViewMode = UITextFieldViewMode.Always
         installerCountTextField.leftView = instalerCountLeftLabel

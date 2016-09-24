@@ -98,8 +98,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         let roofSizeLabel = UILabel.init(frame: CGRectMake(0, 0, 80, addressTextField.frame.size.height))
         roofSizeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         roofSizeLabel.textColor = UIColor.darkGrayColor()
-        roofSizeLabel.textAlignment = NSTextAlignment.Center
-        roofSizeLabel.text = "屋顶面积:"
+        roofSizeLabel.text = " 屋顶面积:"
         
         roofSizeField.leftViewMode = UITextFieldViewMode.Always
         roofSizeField.leftView = roofSizeLabel
@@ -107,8 +106,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         let priceLeftLabel = UILabel.init(frame: CGRectMake(0, 0, 80, addressTextField.frame.size.height))
         priceLeftLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         priceLeftLabel.textColor = UIColor.darkGrayColor()
-        priceLeftLabel.textAlignment = NSTextAlignment.Center
-        priceLeftLabel.text = "出租单价:"
+        priceLeftLabel.text = " 出租单价:"
         
         let priceRightLabel = UILabel.init(frame: CGRectMake(0, 0, 40, addressTextField.frame.size.height))
         priceRightLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
@@ -124,8 +122,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         let contractLabel = UILabel.init(frame: CGRectMake(0, 0, 80, addressTextField.frame.size.height))
         contractLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         contractLabel.textColor = UIColor.darkGrayColor()
-        contractLabel.textAlignment = NSTextAlignment.Center
-        contractLabel.text = "联系人:"
+        contractLabel.text = " 联系人:"
         
         contractTextField.leftViewMode = UITextFieldViewMode.Always
         contractTextField.leftView = contractLabel
@@ -194,7 +191,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
     
     func getCurrentDate() {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM月dd日 HH时:mm分"
+        dateFormatter.dateFormat = "MM月dd日 HH时mm分"
         timeStr = dateFormatter.stringFromDate(datePicker.date)
         timeButton.setTitle(timeStr, forState: UIControlState.Normal)
     }

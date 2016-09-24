@@ -54,11 +54,13 @@ class LoginView: UIView {
         phoneTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(titleLabel.frame), viewWidth - offSetX * 2, height))
         phoneTextField.placeholder = "请输入手机号"
         phoneTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        phoneTextField.keyboardType = UIKeyboardType.NumberPad
         bkgView.addSubview(phoneTextField)
         
         codeTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(phoneTextField.frame), viewWidth - offSetX * 2, height))
         codeTextField.placeholder = "请输入验证码"
         codeTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        codeTextField.keyboardType = UIKeyboardType.NumberPad
         bkgView.addSubview(codeTextField)
         
         let getCodeButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(codeTextField.frame) - 80, CGRectGetMaxY(phoneTextField.frame), 80, height))

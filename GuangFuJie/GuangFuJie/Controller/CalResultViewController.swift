@@ -60,7 +60,7 @@ class CalResultViewController: BaseViewController {
         titleStrs.addObject("减排二氧化硫\n" + String(eInfo.so2!) + "吨/年")
         titleStrs.addObject("减排粉尘\n" + String(eInfo.dust!) + "吨/年")
         titleStrs.addObject("减排二氧化碳\n" + String(eInfo.co2!) + "吨/年")
-        titleStrs.addObject("种植植物\n" + String(eInfo.plant!) + "颗")
+        titleStrs.addObject("种植植物\n" + String(eInfo.plant!) + "棵")
         titleStrs.addObject("行驶里程\n" + String(eInfo.mileage!) + "公里")
         
         let earnMoney = "预计收益:" + String(eInfo.year_money!) + "元/年"
@@ -159,6 +159,7 @@ class CalResultViewController: BaseViewController {
         phoneTextField.leftViewMode = UITextFieldViewMode.Always
         phoneTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         phoneTextField.placeholder = "输入手机号"
+        phoneTextField.keyboardType = UIKeyboardType.NumberPad
         scrollView.addSubview(phoneTextField)
         
         let phoneLabel = UILabel.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth / 4, PhoneUtils.kScreenHeight / 15))
