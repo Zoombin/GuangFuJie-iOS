@@ -35,6 +35,14 @@ class CalResultViewController: BaseViewController {
     }
     
     func submitButtonClicked() {
+        if (nameTextField.text!.isEmpty) {
+            self.showHint("请输入姓名")
+            return
+        }
+        if (phoneTextField.text!.isEmpty) {
+            self.showHint("请输入手机号")
+            return
+        }
          self.showHudInView(self.view, hint: "提交中...")
         API.sharedInstance.caluateSave(phoneTextField.text!, fullname: nameTextField.text!, type: calModel.type!, province_id: calModel.province_id!, city_id: calModel.city_id!, area_size: calModel.area!, success: { (commonModel) in
                 self.hideHud()
@@ -105,7 +113,7 @@ class CalResultViewController: BaseViewController {
             imageView.image = UIImage(named: icons[i])
             iconView.addSubview(imageView)
             
-            let label = UILabel.init(frame: CGRectMake(imageView.frame.origin.x - 0.1 * iconWidth, CGRectGetMaxY(imageView.frame), iconWidth * 1.2, iconOffSetY * 0.7))
+            let label = UILabel.init(frame: CGRectMake(imageView.frame.origin.x - 0.5 * iconWidth, CGRectGetMaxY(imageView.frame), iconWidth * 2, iconOffSetY * 0.7))
             label.text = titleStrs[i] as! String
             label.textAlignment = NSTextAlignment.Center
             label.numberOfLines = 0
@@ -159,6 +167,8 @@ class CalResultViewController: BaseViewController {
         phoneLabel.textColor = UIColor.blackColor()
         phoneLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         phoneTextField.leftView = phoneLabel
+        
+        scrollView.contentSize = CGSizeMake(0, scrollView.frame.size.height + 1)
     }
 
     override func didReceiveMemoryWarning() {

@@ -838,7 +838,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             button.setTitle(titles[i], forState: UIControlState.Normal)
             button.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
             button.setTitleColor(Colors.lightBule, forState: UIControlState.Selected)
-            button.layer.cornerRadius = 6
+            button.layer.cornerRadius = 15
             button.layer.borderColor = Colors.clearColor.CGColor
             button.layer.borderWidth = 0.5
             button.layer.masksToBounds = true
