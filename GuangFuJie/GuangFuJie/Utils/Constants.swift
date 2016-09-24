@@ -10,10 +10,10 @@ import UIKit
 
 class Constants: NSObject {
     //QA
-    static let httpHost = "http://112.124.98.9:3002/api/"
+//    static let httpHost = "http://112.124.98.9:3002/api/"
     
     //线上
-//    static let httpHost = "http://112.124.98.9:7000/api"
+    static let httpHost = "http://112.124.98.9:8002/api"
 
     //本地
 //    static let httpHost = "http://localhost:3000/api"
