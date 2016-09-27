@@ -78,13 +78,6 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
             location = location + userInfo.address!
         }
         cell.addressLabel.text = location
-        var contract = ""
-        if ((userInfo.fullname) != nil) {
-            contract = contract + userInfo.fullname!
-        }
-        if ((userInfo.user_name) != nil) {
-            contract = contract + " " + userInfo.user_name!
-        }
         if (userInfo.is_installer == 2) {
             cell.tagLabel.text = "已认证"
             cell.tagLabel.textColor = Colors.installColor
