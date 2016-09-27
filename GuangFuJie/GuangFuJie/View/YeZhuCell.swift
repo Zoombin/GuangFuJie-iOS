@@ -15,7 +15,6 @@ class YeZhuCell: UITableViewCell {
     var tagLabel : UILabel!
     var describeLabel : TopLeftLabel!
     var addressLabel : UILabel!
-    var contractLabel : UILabel!
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -23,7 +22,6 @@ class YeZhuCell: UITableViewCell {
             titleLabel.text = ""
             describeLabel.text = ""
             addressLabel.text = ""
-            contractLabel.text = ""
         }
     }
     
@@ -46,12 +44,12 @@ class YeZhuCell: UITableViewCell {
             height = 568
         }
         
-        let cellViewHeight : CGFloat = height / 6
+        let cellViewHeight : CGFloat = height / 7
         let bkgView = UIView.init(frame: CGRectMake(dir, dir, width, cellViewHeight - dir))
         bkgView.backgroundColor = UIColor.whiteColor()
         self.contentView.addSubview(bkgView)
         
-        let labelHeight = bkgView.frame.size.height / 4
+        let labelHeight = bkgView.frame.size.height / 3
         let labelWidth = bkgView.frame.size.width
         
         let iconWidthHeight = labelHeight - 10
@@ -72,7 +70,7 @@ class YeZhuCell: UITableViewCell {
         descIconImageView.image = UIImage(named: "ic_brief")
         bkgView.addSubview(descIconImageView)
         
-        describeLabel = TopLeftLabel.init(frame: CGRectMake(CGRectGetMaxX(descIconImageView.frame) + 5, CGRectGetMaxY(titleLabel.frame), labelWidth - iconWidthHeight - 5, labelHeight))
+        describeLabel = TopLeftLabel.init(frame: CGRectMake(CGRectGetMaxX(descIconImageView.frame) + 5, CGRectGetMaxY(titleLabel.frame), labelWidth - iconWidthHeight - 5 - dir, labelHeight))
         describeLabel.text = ""
         describeLabel.numberOfLines = 0
         describeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -84,21 +82,11 @@ class YeZhuCell: UITableViewCell {
         addressIconImageView.image = UIImage(named: "ic_address")
         bkgView.addSubview(addressIconImageView)
         
-        addressLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(addressIconImageView.frame) + 5, CGRectGetMaxY(describeLabel.frame), labelWidth - iconWidthHeight - 5, labelHeight))
+        addressLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(addressIconImageView.frame) + 5, CGRectGetMaxY(describeLabel.frame), labelWidth - iconWidthHeight - 5 - dir, labelHeight))
         addressLabel.text = ""
         addressLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
         addressLabel.textColor = UIColor.lightGrayColor()
         bkgView.addSubview(addressLabel)
-        
-        let contractIconImageView = UIImageView.init(frame: CGRectMake(5, CGRectGetMaxY(addressLabel.frame) + 5, iconWidthHeight, iconWidthHeight))
-        contractIconImageView.image = UIImage(named: "ic_call")
-        bkgView.addSubview(contractIconImageView)
-        
-        contractLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(contractIconImageView.frame) + 5, CGRectGetMaxY(addressLabel.frame), labelWidth - iconWidthHeight - 5, labelHeight))
-        contractLabel.text = ""
-        contractLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        contractLabel.textColor = UIColor.lightGrayColor()
-        bkgView.addSubview(contractLabel)
     }
     
     static func cellHeight() -> CGFloat {
@@ -106,7 +94,7 @@ class YeZhuCell: UITableViewCell {
         if (height < 568) {
             height = 568
         }
-        return height / 6
+        return height / 7
     }
 
 }

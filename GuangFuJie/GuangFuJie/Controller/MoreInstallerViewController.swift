@@ -85,7 +85,6 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         if ((userInfo.user_name) != nil) {
             contract = contract + " " + userInfo.user_name!
         }
-        cell.contractLabel.text = contract
         if (userInfo.is_installer == 2) {
             cell.tagLabel.text = "已认证"
             cell.tagLabel.textColor = Colors.installColor
