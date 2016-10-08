@@ -33,7 +33,7 @@ class API: NSObject {
                 dict = try? NSJSONSerialization.JSONObjectWithData(decodeData!, options: NSJSONReadingOptions.AllowFragments)
             }
             if (dict == nil) {
-                failure?(msg: "网络异常")
+                failure?(msg: "请求出错，请检查您的网络！")
                 return
             }
             if let errorCode = dict?.objectForKey("error")?.integerValue {
@@ -46,7 +46,7 @@ class API: NSObject {
                 }
             }
             }, failure: { (operation, error) in
-                failure?(msg: error.description)
+                failure?(msg: "请求出错，请检查您的网络！")
         })
     }
 
@@ -62,7 +62,7 @@ class API: NSObject {
                 dict = try? NSJSONSerialization.JSONObjectWithData(decodeData!, options: NSJSONReadingOptions.AllowFragments)
             }
             if (dict == nil) {
-                failure?(msg: "网络异常")
+                failure?(msg: "请求出错，请检查您的网络！")
                 return
             }
             if let errorCode = dict?.objectForKey("error")?.integerValue {
@@ -75,7 +75,7 @@ class API: NSObject {
                 }
             }
             }, failure: { (operation, error) in
-                failure?(msg: error.description)
+                failure?(msg: "请求出错，请检查您的网络！")
         })
     }
 
