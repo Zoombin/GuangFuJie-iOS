@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, SPullDownMenuViewDelegate {
     var buttons = NSMutableArray()
     var loginView : LoginView!
     var aboutUsView : ABoutUsView!
@@ -33,7 +33,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     var electricView : UIView!
     
     var bindView : UIView!
+    var deviceBkgImageView : UIImageView!
     var deviceTextField : UITextField!
+    var deviceTipsLabel : UILabel!
     var safeView : UIView!
     
     var topView : UIView!
@@ -67,6 +69,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     var safeArray : NSMutableArray = NSMutableArray()
     
     var currentIndex = 0
+    
+    var currentDeviceType = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,6 +170,23 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         self.pushViewController(vc)
     }
     
+    func pullDownMenuView(menu: SPullDownMenuView!, didSelectedIndex indexPath: NSIndexPath!) {
+        print(indexPath.section)
+        if (indexPath.section == 0) {
+            resetDeviceType()
+        } else if (indexPath.section == 1) {
+            currentDeviceType = 1
+            deviceBkgImageView.image = UIImage(named: "device_goodwe")
+            deviceTipsLabel.text = "请输入16位S/N码"
+        }
+    }
+    
+    func resetDeviceType() {
+        currentDeviceType = 0
+        deviceBkgImageView.image = UIImage(named: "device_gsm")
+        deviceTipsLabel.text = "请输入10位S/N码"
+    }
+    
     func initBindView() {
         bindView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
         self.view.addSubview(bindView)
@@ -178,14 +199,31 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         let buttonHeight = bindViewBottomView.frame.size.height - 5 * 2
         
         let width = PhoneUtils.kScreenWidth * 0.6
-        let height = (397 * width) / 309
-        let deviceBkgImageView = UIImageView.init(frame: CGRectMake((PhoneUtils.kScreenWidth - width) / 2, 0, width, height))
-        deviceBkgImageView.image = UIImage(named: "ic_device_temp")
+        let height = (231 * width) / 309
+        
+        let titles = [["易事特", "固德威"]]
+        let images = ["gsm_title", "goodwe_title"]
+        
+        let menu = SPullDownMenuView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, buttonHeight), withTitle: titles, withImages: images, withSelectColor: UIColor.blackColor())
+        menu.delegate = self
+        bindView.addSubview(menu)
+        
+        deviceBkgImageView = UIImageView.init(frame: CGRectMake((PhoneUtils.kScreenWidth - width) / 2, CGRectGetMaxY(menu.frame) + 8, width, height))
+        deviceBkgImageView.image = UIImage(named: "device_gsm")
         bindView.addSubview(deviceBkgImageView)
         
-        deviceTextField = UITextField.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth) / 2, CGRectGetMaxY(deviceBkgImageView.frame) + 8, buttonWidth, buttonHeight))
+        deviceTipsLabel = UILabel.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth) / 2, CGRectGetMaxY(deviceBkgImageView.frame) + 8, buttonWidth, buttonHeight))
+        deviceTipsLabel.text = "请输入10位S/N码"
+        deviceTipsLabel.textAlignment = NSTextAlignment.Center
+        deviceTipsLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        deviceTipsLabel.textColor = UIColor.blackColor()
+        bindView.addSubview(deviceTipsLabel)
+        
+        deviceTextField = UITextField.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth * 0.9) / 2, CGRectGetMaxY(deviceTipsLabel.frame) + 8, buttonWidth * 0.9, buttonHeight))
         deviceTextField.layer.borderColor = UIColor.lightGrayColor().CGColor
         deviceTextField.layer.borderWidth = 0.5
+        deviceTextField.backgroundColor = UIColor.whiteColor()
+        deviceTextField.layer.cornerRadius = 10
         bindView.addSubview(deviceTextField)
         
         let bindButton = UIButton.init(type: UIButtonType.Custom)
@@ -208,6 +246,19 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             self.showHint("请输入设备号")
             return
         }
+        let deviceIdStr = NSString.init(string: deviceId!)
+        if (currentDeviceType == 0) {
+            if (deviceIdStr.length != 10) {
+                self.showHint("请输入10位S/N码")
+                return
+            }
+        } else {
+            if (deviceIdStr.length != 16) {
+                self.showHint("请输入16位S/N码")
+                return
+            }
+        }
+
         self.showHudInView(self.view, hint: "绑定中...")
         API.sharedInstance.bindDevice(deviceTextField.text!, success: { (userInfo) in
             self.hideHud()

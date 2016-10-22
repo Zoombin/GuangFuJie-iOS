@@ -749,4 +749,26 @@ extension API {
             success?(commonModel : commonModel)
             }, failure: failure)
     }
+    
+    /**
+     获取固德威发电量
+     
+     - parameter snNumber:
+     - parameter success:
+     - parameter failure:
+     */
+    func bindGoodwe(snNumber : String, success: ((inventerModel: GetInventerMode) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = "http://www.goodwe-power.com/mobile/GetInventerDetail"
+        let params = [
+            "inventerSN" : snNumber,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (data) in
+            let model = GetInventerMode.mj_objectWithKeyValues(data)
+            success?(inventerModel : model)
+            }, failure: failure)
+    }
+    
 }
