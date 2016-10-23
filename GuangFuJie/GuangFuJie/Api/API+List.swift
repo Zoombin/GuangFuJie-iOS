@@ -579,7 +579,7 @@ extension API {
         let params = [
             "user_id" : getUserId(),
             "device_id" : device_id,
-            "device_type" : device_type,
+            "device_type" : String(device_type),
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params)
