@@ -72,7 +72,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func deviceInfo(device_id: NSNumber, success: ((deviceInfo: DeviceInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func deviceInfo(device_id: String, success: ((deviceInfo: DeviceInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "device/info"
         let params = [
             "device_id" : device_id,
@@ -570,14 +570,16 @@ extension API {
      绑定设备
      
      - parameter device_id:
+     - parameter device_type: 0易事特 1固德威
      - parameter success:
      - parameter failure:
      */
-    func bindDevice(device_id : String, success: ((userInfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func bindDevice(device_id : String,device_type : NSNumber, success: ((userInfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/binddevice"
         let params = [
             "user_id" : getUserId(),
             "device_id" : device_id,
+            "device_type" : device_type,
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params)
@@ -714,7 +716,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getEnergyStatistic(device_id : NSNumber, year : String, success: ((powerGraphInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getEnergyStatistic(device_id : String, year : String, success: ((powerGraphInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "device/energy_statistic"
         let params = [
             "_o" : 1,
@@ -761,11 +763,8 @@ extension API {
         let url = "http://www.goodwe-power.com/mobile/GetInventerDetail"
         let params = [
             "inventerSN" : snNumber,
-            "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.goodWeGet(url, params: params, success: { (data) in
             let model = GetInventerMode.mj_objectWithKeyValues(data)
             success?(inventerModel : model)
             }, failure: failure)

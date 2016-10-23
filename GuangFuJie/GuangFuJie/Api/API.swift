@@ -78,6 +78,20 @@ class API: NSObject {
                 failure?(msg: "请求出错，请检查您的网络！")
         })
     }
+    
+    func goodWeGet(url: String, params: AnyObject?, success: ((data: AnyObject?) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        NSLog("====> get发送 ===> \n\(url)  \(params)")
+        _manager?.GET(url, parameters: params, success: { (operation, data) in
+            var dict = try? NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+            if (dict == nil) {
+                failure?(msg: "请求出错，请检查您的网络！")
+                return
+            }
+            success?(data: dict)
+            }, failure: { (operation, error) in
+                failure?(msg: "请求出错，请检查您的网络！")
+        })
+    }
 
     func dataToJsonString(object : AnyObject) -> String{
         var jsonString = ""

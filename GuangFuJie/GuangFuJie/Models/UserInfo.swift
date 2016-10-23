@@ -11,7 +11,8 @@ import UIKit
 class UserInfo: NSObject {
     var avstart : String?
     var created_date : String?
-    var device_id : NSNumber?
+    var device_id : String?
+    var device_type : NSNumber?
     var token : String?
     var user_id : NSNumber?
     var user_name : String?

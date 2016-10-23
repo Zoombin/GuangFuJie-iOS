@@ -29,6 +29,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     var totaljianpaiLabel : UILabel!
     var todayplantLabel : UILabel!
     var totalplantLabel : UILabel!
+    var viewDetailButton : UIButton!
     
     var electricView : UIView!
     
@@ -258,9 +259,25 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
                 return
             }
         }
-
+        if (currentDeviceType == 0) {
+            bindDevice()
+        } else {
+           API.sharedInstance.bindGoodwe(deviceTextField.text!, success: { (inventerModel) in
+                let number = NSString.init(string: inventerModel.inventerSN!)
+                if (number.length == 0) {
+                    self.showHint("绑定失败")
+                } else {
+                    self.bindDevice()
+                }
+            }, failure: { (msg) in
+                self.showHint("绑定失败")
+           })
+        }
+    }
+    
+    func bindDevice() {
         self.showHudInView(self.view, hint: "绑定中...")
-        API.sharedInstance.bindDevice(deviceTextField.text!, success: { (userInfo) in
+        API.sharedInstance.bindDevice(deviceTextField.text!,device_type: currentDeviceType, success: { (userInfo) in
             self.hideHud()
             self.showHint("绑定成功!")
             UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userInfo.mj_JSONString())
@@ -450,7 +467,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         totalplantLabel.textColor = UIColor.blackColor()
         electricView.addSubview(totalplantLabel)
         
-        let viewDetailButton = UIButton.init(type: UIButtonType.Custom)
+        viewDetailButton = UIButton.init(type: UIButtonType.Custom)
         viewDetailButton.frame = CGRectMake(0, electricView.frame.size.height - PhoneUtils.kScreenHeight * 0.08, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.08)
         viewDetailButton.setTitle("查看发电曲线图 >>", forState: UIControlState.Normal)
         viewDetailButton.backgroundColor = UIColor.whiteColor()
@@ -468,6 +485,12 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
                 API.sharedInstance.deviceInfo(user!.device_id!, success: { (deviceInfo) in
                     self.hideHud()
                     self.loadDeviceInfo(deviceInfo)
+                    if (UserDefaultManager.getUser()?.device_type == 1) {
+                        //固德威
+                        self.viewDetailButton.hidden = true
+                    } else {
+                        self.viewDetailButton.hidden = false
+                    }
                     }, failure: { (msg) in
                         self.hideHud()
                         self.showHint(msg)
