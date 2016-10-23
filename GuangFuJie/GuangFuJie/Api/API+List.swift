@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MJExtension
 
 extension API {
     func getUserId() -> NSNumber{
