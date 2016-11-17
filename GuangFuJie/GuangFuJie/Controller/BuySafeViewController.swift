@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BuySafeViewController: BaseViewController {
+class BuySafeViewController: BaseViewController, UITextFieldDelegate {
     var priceLabel : UILabel!
     var totalLabel : UILabel!
     var scrollView : UIScrollView!
@@ -155,7 +155,9 @@ class BuySafeViewController: BaseViewController {
         yearsTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         yearsTextField.textAlignment = NSTextAlignment.Center
         yearsTextField.text = "1"
+        yearsTextField.addTarget(self, action: #selector(valueChanged), forControlEvents: UIControlEvents.AllEditingEvents)
         yearsTextField.keyboardType = UIKeyboardType.NumberPad
+        yearsTextField.delegate = self
         scrollView.addSubview(yearsTextField)
         
         let yearsLabel = UILabel.init(frame: CGRectMake(0, 0, width / 4, height))
@@ -219,6 +221,22 @@ class BuySafeViewController: BaseViewController {
         scrollView.contentSize = CGSizeMake(0, currentY + 1)
     }
     
+    func valueChanged() {
+        reSizePrice()
+    }
+    
+    func reSizePrice() {
+        if (insureModel == nil) {
+            return
+        }
+        var years = yearsTextField.text
+        if (yearsTextField.text == "") {
+            years = "0"
+        }
+        let currentPrice = NSInteger.init(years!)! * insureModel!.price!.integerValue
+        priceLabel.text = "￥:\(currentPrice)元"
+    }
+    
     func viewButtonClicked(sender : UIButton) {
         let vc = PhotoViewController()
         if (sender.tag == 1) {
@@ -246,7 +264,9 @@ class BuySafeViewController: BaseViewController {
         
         let insureType = types[sender.tag - BUTTON_TAG] as! InsuranceType
         insureModel = insureType
-        priceLabel.text = "￥:" + String(insureType.price!) + "元"
+        
+        reSizePrice()
+//        priceLabel.text = "￥:" + String(insureType.price!) + "元"
         
         let size = NSString.init(string: insureType.size!)
         size.stringByReplacingOccurrencesOfString("KW", withString: "")
@@ -265,6 +285,10 @@ class BuySafeViewController: BaseViewController {
     func buyNow() {
         if (yearsTextField.text!.isEmpty) {
             self.showHint("请输入年限")
+            return
+        }
+        if (NSInteger.init(yearsTextField.text!) == 0) {
+            self.showHint("年限不能为0")
             return
         }
         if (insureModel == nil) {
