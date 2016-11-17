@@ -280,7 +280,8 @@ class ApplyForOrderViewController: BaseViewController {
         if (!img3.isEmpty) {
             imgUrls = (imgUrls.isEmpty ? "" : ",") + img3
         }
-        let title = "光伏街保险,类型:" + self.insuranceType.size! + "购买年限:" + years + "年";
+        let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
+        
         self.showHudInView(self.view, hint: "提交中...")
         API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: insuranceType.price!, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, success: { (commonModel) in
                 self.hideHud()
