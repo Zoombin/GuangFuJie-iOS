@@ -280,10 +280,11 @@ class ApplyForOrderViewController: BaseViewController {
         if (!img3.isEmpty) {
             imgUrls = (imgUrls.isEmpty ? "" : ",") + img3
         }
+        let title = "光伏街保险,类型:" + self.insuranceType.size! + "购买年限:" + years + "年";
         self.showHudInView(self.view, hint: "提交中...")
         API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: insuranceType.price!, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, success: { (commonModel) in
                 self.hideHud()
-                self.aliPay(commonModel.order_sn!, title: self.insuranceType.size!, totalFee: String(self.insuranceType.price!.intValue * 100), type: commonModel.type!)
+                self.aliPay(commonModel.order_sn!, title: title, totalFee: String(self.insuranceType.price!.intValue * 100), type: commonModel.type!)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
