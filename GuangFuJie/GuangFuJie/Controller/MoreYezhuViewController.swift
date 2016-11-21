@@ -100,5 +100,9 @@ class MoreYezhuViewController: BaseViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let userInfo = installerArray[indexPath.row] as! RoofInfo
+        let vc = InstallBuyViewController()
+        vc.roofId = userInfo.id!
+        self.pushViewController(vc)
     }
 }
