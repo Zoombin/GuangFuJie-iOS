@@ -27,7 +27,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let qnInfo = QNInfo.mj_objectWithKeyValues(data)
             success?(qnInfo : qnInfo)
             }, failure: failure)
@@ -79,7 +79,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let deviceInfo = DeviceInfo.mj_objectWithKeyValues(data)
             success?(deviceInfo : deviceInfo)
             }, failure: failure)
@@ -119,7 +119,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let array = ProvinceModel.mj_objectArrayWithKeyValuesArray(data)
             success?(provinces: array)
             }, failure: failure)
@@ -141,7 +141,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let array = CityModel.mj_objectArrayWithKeyValuesArray(data)
             success?(cities: array)
             }, failure: failure)
@@ -297,7 +297,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let array = AfterSaleInfo.mj_objectArrayWithKeyValuesArray(data)
             success?(afterSales : array)
             }, failure: failure)
@@ -352,7 +352,7 @@ extension API {
         }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let array = InstallInfo.mj_objectArrayWithKeyValuesArray(data)
             success?(userInfos: array)
             }, failure: failure)
@@ -379,7 +379,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let electricInfo = ElectricInfo.mj_objectWithKeyValues(data)
             success?(electricInfo : electricInfo)
             }, failure: failure)
@@ -517,7 +517,7 @@ extension API {
         }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let array = RoofInfo.mj_objectArrayWithKeyValuesArray(data)
             success?(roofInfos: array)
             }, failure: failure)
@@ -560,7 +560,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let roofInfo = RoofInfo.mj_objectWithKeyValues(data)
             success?(roofInfo : roofInfo)
             }, failure: failure)
@@ -602,7 +602,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let array = InsuranceInfo.mj_objectArrayWithKeyValuesArray(data)
             success?(insuranceList : array)
             }, failure: failure)
@@ -621,7 +621,7 @@ extension API {
         params["user_id"] = getUserId()
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let array = InsuranceDetail.mj_objectArrayWithKeyValuesArray(data)
             success?(insuranceList : array)
             }, failure: failure)
@@ -643,7 +643,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let insuranceInfo = InsuranceDetail.mj_objectWithKeyValues(data)
             success?(insuranceInfo : insuranceInfo)
             }, failure: failure)
@@ -662,7 +662,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             print(data)
             let array = InsuranceType.mj_objectArrayWithKeyValuesArray(data!["inscure"])
             let totalCount = data!["totalCount"] as! NSNumber
@@ -725,7 +725,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let array = PowerGraphInfo.mj_objectArrayWithKeyValuesArray(data)
             success?(powerGraphInfos : array)
             }, failure: failure)
@@ -746,7 +746,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let commonModel = CommonModel.mj_objectWithKeyValues(data)
             success?(commonModel : commonModel)
             }, failure: failure)
@@ -767,6 +767,26 @@ extension API {
         self.goodWeGet(url, params: params, success: { (data) in
             let model = GetInventerMode.mj_objectWithKeyValues(data)
             success?(inventerModel : model)
+            }, failure: failure)
+    }
+    
+    /**
+     点击申请安装商时判断是否已申请过
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func checkIsInstaller(success: ((msg: String, commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/if_installer";
+        let params = [
+            "user_id" : getUserId(),
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (msg, data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(msg: msg!, commonModel : commonModel)
             }, failure: failure)
     }
     

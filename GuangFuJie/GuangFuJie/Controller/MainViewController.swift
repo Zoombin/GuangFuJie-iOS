@@ -262,16 +262,16 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         if (currentDeviceType == 0) {
             bindDevice()
         } else {
-           API.sharedInstance.bindGoodwe(deviceTextField.text!, success: { (inventerModel) in
+            API.sharedInstance.bindGoodwe(deviceTextField.text!, success: { (inventerModel) in
                 let number = NSString.init(string: inventerModel.inventerSN!)
                 if (number.length == 0) {
                     self.showHint("绑定失败")
                 } else {
                     self.bindDevice()
                 }
-            }, failure: { (msg) in
-                self.showHint("绑定失败")
-           })
+                }, failure: { (msg) in
+                    self.showHint("绑定失败")
+            })
         }
     }
     
@@ -757,8 +757,21 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         if (shouldShowLogin()) {
             return
         }
-        let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
-        self.pushViewController(vc)
+        self.showHudInView(self.view, hint: "加载中...")
+        API.sharedInstance.checkIsInstaller({ (msg, commonModel) in
+            self.hideHud()
+            if (commonModel.is_installer == 0) {
+                let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
+                self.pushViewController(vc)
+            } else if (commonModel.is_installer == 2){
+                self.showHint("您已经成为安装商")
+            } else {
+                self.showHint(msg)
+            }
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
     }
     
     //MARK: 关于页面

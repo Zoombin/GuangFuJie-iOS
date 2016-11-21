@@ -11,4 +11,5 @@ import UIKit
 class CommonModel: NSObject {
     var order_sn : String?
     var type : String?
+    var is_installer : NSNumber?
 }

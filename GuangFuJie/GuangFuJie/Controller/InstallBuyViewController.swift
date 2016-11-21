@@ -136,7 +136,17 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
                     cell.imageView?.image = UIImage(named: "ic_calc_a")
                     cell.textLabel?.text = "业主地址"
                 } else if (indexPath.row == 1) {
-                    cell.textLabel?.text = rInfo!.province_label! + rInfo!.city_label! + rInfo!.address!
+                    var address = ""
+                    if (rInfo!.province_label != nil) {
+                        address = address + rInfo!.province_label!
+                    }
+                    if (rInfo!.city_label != nil) {
+                        address = address + rInfo!.city_label!
+                    }
+                    if (rInfo!.address != nil) {
+                        address = address + rInfo!.address!
+                    }
+                    cell.textLabel?.text = address
                 }
             } else if (indexPath.section == 1) {
                 if (indexPath.row == 0) {
