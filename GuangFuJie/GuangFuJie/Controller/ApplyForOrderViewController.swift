@@ -92,7 +92,6 @@ class ApplyForOrderViewController: BaseViewController {
         idTextField.layer.borderColor = UIColor.blackColor().CGColor
         idTextField.layer.borderWidth = 1
         idTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        idTextField.keyboardType = UIKeyboardType.NumberPad
         scrollView.addSubview(idTextField)
         
         let addressLabel = UILabel.init(frame: CGRectMake(offSet, offSet + CGRectGetMaxY(idLabel.frame), labelWidth - offSet * 2, labelHeight))
@@ -173,6 +172,8 @@ class ApplyForOrderViewController: BaseViewController {
         let tapGesture3 = UITapGestureRecognizer.init(target: self, action: #selector(self.viewImage3))
         imgView3.userInteractionEnabled = true
         imgView3.addGestureRecognizer(tapGesture3)
+        
+        scrollView.contentSize = CGSizeMake(0, CGRectGetMaxY(uploadButton3.frame) + 1)
     }
     
     func viewImage1() {

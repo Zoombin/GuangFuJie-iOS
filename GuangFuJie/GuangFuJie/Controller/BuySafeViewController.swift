@@ -340,7 +340,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate {
         noticeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         scrollView.addSubview(noticeLabel)
         
-        totalLabel = UILabel.init(frame: CGRectMake((PhoneUtils.kScreenWidth * 0.7) - offSetX, CGRectGetMaxY(noticeLabel.frame) + labelHeight * 0.1, PhoneUtils.kScreenWidth * 0.3, labelHeight * 0.5))
+        totalLabel = UILabel.init(frame: CGRectMake((PhoneUtils.kScreenWidth * 0.65) - offSetX, CGRectGetMaxY(noticeLabel.frame) + labelHeight * 0.1, PhoneUtils.kScreenWidth * 0.35, labelHeight * 0.5))
         totalLabel.textAlignment = NSTextAlignment.Center
         totalLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         totalLabel.backgroundColor = Colors.installColor
