@@ -469,7 +469,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func roofAdd(fullname : String, province_id : NSNumber, city_id : NSNumber, address : String, area_size : String, area_image : String, type : NSNumber, contact_time : String, price : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func roofAdd(fullname : String, province_id : NSNumber, city_id : NSNumber, address : String, area_size : String, area_image : String, type : NSNumber, contact_time : String, price : String, phone : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/add";
         let params = [
             "user_id" : getUserId(),         // 用户id
@@ -482,6 +482,7 @@ extension API {
             "type" : type,            // 屋顶类型( 1:平面 2:斜面)
             "contact_time" : contact_time,    // 适合联系的时间
             "price" : price,           // 预计出租的价格 int
+            "phone" : phone,           // 联系电话
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params)

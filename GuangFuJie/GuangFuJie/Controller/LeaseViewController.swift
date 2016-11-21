@@ -16,6 +16,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
     @IBOutlet weak var roofTypeButton : UIButton!
     @IBOutlet weak var priceTextField : UITextField!
     @IBOutlet weak var contractTextField : UITextField!
+    @IBOutlet weak var contractPhoneField : UITextField!
     @IBOutlet weak var timeButton : UIButton!
     @IBOutlet weak var roofTypeView : UIView!
     @IBOutlet weak var datePicker : UIDatePicker!
@@ -127,6 +128,14 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         contractTextField.leftViewMode = UITextFieldViewMode.Always
         contractTextField.leftView = contractLabel
         
+        let contractPhoneLabel = UILabel.init(frame: CGRectMake(0, 0, 80, addressTextField.frame.size.height))
+        contractPhoneLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        contractPhoneLabel.textColor = UIColor.darkGrayColor()
+        contractPhoneLabel.text = " 联系电话:"
+        
+        contractPhoneField.leftViewMode = UITextFieldViewMode.Always
+        contractPhoneField.leftView = contractPhoneLabel
+        
         scrollView.contentSize = CGSizeMake(0, PhoneUtils.kScreenHeight < 568 ? 568 : PhoneUtils.kScreenHeight)
         
         toolBar.frame = CGRectMake(0, CGRectGetMinY(datePicker.frame) - toolBar.frame.size.height, toolBar.frame.size.width, toolBar.frame.size.height)
@@ -230,6 +239,10 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
             self.showHint("请输入出租单价");
             return;
         }
+        if (contractPhoneField.text!.isEmpty) {
+            self.showHint("请输入联系电话")
+            return
+        }
         if (timeStr.isEmpty) {
             self.showHint("请选择预约时间");
             return;
@@ -244,7 +257,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
             roofTypeUrl = "http://ob4e8ww8r.bkt.clouddn.com/ic_wuding_nongc.jpg"
         }
         self.showHudInView(self.view, hint: "提交中...")
-        API.sharedInstance.roofAdd(contractTextField.text!, province_id: provinceInfo!.province_id!, city_id: cityInfo!.city_id!, address: addressTextField.text!, area_size: roofSizeField.text!, area_image: roofTypeUrl, type: type, contact_time: timeStr, price: priceTextField.text!, success: { (commonModel) in
+        API.sharedInstance.roofAdd(contractTextField.text!, province_id: provinceInfo!.province_id!, city_id: cityInfo!.city_id!, address: addressTextField.text!, area_size: roofSizeField.text!, area_image: roofTypeUrl, type: type, contact_time: timeStr, price: priceTextField.text!, phone: contractPhoneField.text!, success: { (commonModel) in
                 self.hideHud()
                 self.showHint("提交成功")
                 self.navigationController?.popViewControllerAnimated(true)
