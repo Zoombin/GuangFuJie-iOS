@@ -71,16 +71,25 @@ class MySafeListViewController: BaseViewController, UITableViewDelegate, UITable
         }
         var type = ""
         if (userInfo.size != nil) {
-            type = type + "购买类型:" + userInfo.size! + ","
+            type = type + "类型:" + userInfo.size! + ","
         }
         if (userInfo.years != nil) {
-            type = type + "购买年限:" + String(userInfo.years!) + "年,"
+            type = type + "年限:" + String(userInfo.years!) + "年,"
         }
         if (userInfo.price != nil) {
             type = type + "价格￥:" + String(userInfo.price!) + "元,"
         }
         if (userInfo.insured_price != nil) {
-            type = type + "保额:" + String(userInfo.insured_price!) + "元"
+            let size = NSString.init(string: userInfo.size!)
+            size.stringByReplacingOccurrencesOfString("KW", withString: "")
+            let sizeFloat : CGFloat = CGFloat(size.floatValue)
+            
+            let baoe1 : CGFloat = sizeFloat * 0.7
+            let baoe2 : CGFloat = sizeFloat * 0.7
+            let baoe3 : CGFloat = 2.0
+            let total : CGFloat = baoe1 + baoe2 + baoe3
+            let baoe = String(format: "%.1f万/年", total)
+            type = type + "保额:" + baoe
         }
         cell.describeLabel.text = type
         return cell
