@@ -68,7 +68,7 @@ class SafeCell: UITableViewCell {
         descIconImageView.image = UIImage(named: "ic_brief")
         bkgView.addSubview(descIconImageView)
         
-        describeLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(descIconImageView.frame) + 5, CGRectGetMaxY(titleLabel.frame), labelWidth - iconWidthHeight, labelHeight))
+        describeLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(descIconImageView.frame) + 5, CGRectGetMaxY(titleLabel.frame), labelWidth - iconWidthHeight - dir * 2, labelHeight))
         describeLabel.text = ""
         describeLabel.numberOfLines = 0
         describeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
