@@ -276,10 +276,10 @@ class ApplyForOrderViewController: BaseViewController {
             imgUrls = imgUrls + img1
         }
         if (!img2.isEmpty) {
-            imgUrls = (imgUrls.isEmpty ? "" : ",") + img2
+            imgUrls = imgUrls + "," + img2
         }
         if (!img3.isEmpty) {
-            imgUrls = (imgUrls.isEmpty ? "" : ",") + img3
+            imgUrls = imgUrls + "," + img3
         }
         let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
         let currentPrice = NSInteger.init(years!)! * self.insuranceType!.price!.integerValue * 100
