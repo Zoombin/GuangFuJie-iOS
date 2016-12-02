@@ -312,6 +312,7 @@
 		DE9135FD1DE85E48001190B7 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */; };
 		DE9135FE1DE85E48001190B7 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */; };
 		DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE9135F71DE85E48001190B7 /* mapapi.bundle */; };
+		DEA1F12A1DF14D370057F30D /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1F1291DF14D370057F30D /* ReportViewController.swift */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -906,6 +907,7 @@
 		DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		DE9135F71DE85E48001190B7 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		DEA1F1291DF14D370057F30D /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -1109,6 +1111,7 @@
 				DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */,
 				DE8A7A2B1D8A83FB00C5F268 /* GuideViewController.swift */,
 				DE5923A91D9117AC00FC6EBE /* PhotoViewController.swift */,
+				DEA1F1291DF14D370057F30D /* ReportViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2432,6 +2435,7 @@
 				DE5E74B61D509CC4003CDAAC /* AFURLRequestSerialization.m in Sources */,
 				DE8A78DA1D869BD000C5F268 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE44CC021D8403DA004690EF /* BCQueryRefundByIdResp.m in Sources */,
+				DEA1F12A1DF14D370057F30D /* ReportViewController.swift in Sources */,
 				DE8A79021D869BD000C5F268 /* PhotoBrowser.swift in Sources */,
 				DE8A78FE1D869BD000C5F268 /* PhotoBrowser+PBType.swift in Sources */,
 				DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */,

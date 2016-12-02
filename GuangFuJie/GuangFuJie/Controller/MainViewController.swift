@@ -314,6 +314,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         statusLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         bkgView.addSubview(statusLabel)
         
+        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.reportPro))
+        statusLabel.addGestureRecognizer(gesture)
+        
         checkMarkButton = UIButton.init(type: UIButtonType.Custom)
         checkMarkButton.frame = CGRectMake(CGRectGetMaxX(statusLabel.frame) + offSetX, height * 0.25, height * 0.5, height * 0.5)
         checkMarkButton.setImage(UIImage(named: "ic_ok"), forState: UIControlState.Normal)
@@ -506,17 +509,25 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         }
     }
     
+    //报修
+    func reportPro() {
+        let vc = ReportViewController()
+        self.pushViewController(vc)
+    }
+    
     func loadGoodWeDeviceInfo(deviceInfo : GetInventerMode) {
         if (deviceInfo.inventerRunningState == "1") {
             statusButton.enabled = true
             statusLabel.text = "运行状态 正常"
             statusLabel.textColor = Colors.installColor
             checkMarkButton.enabled = true
+            statusLabel.userInteractionEnabled = false
         } else {
             statusButton.enabled = false
             statusLabel.text = "运行状态 异常(报修)"
             statusLabel.textColor = Colors.installRedColor
             checkMarkButton.enabled = false
+            statusLabel.userInteractionEnabled = true
         }
         fadianLabel.text = "天"
         gonglvLabel.text = String(format: "%@kw", deviceInfo.inventerkw != nil ? deviceInfo.inventerkw! : "0")
@@ -549,6 +560,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             statusLabel.text = "运行状态 正常"
             statusLabel.textColor = Colors.installColor
             checkMarkButton.enabled = true
+            statusLabel.userInteractionEnabled = false
         } else {
             let errorCode1 = NSString.init(string: deviceInfo.errorcode1!)
             let errorCode2 = NSString.init(string: deviceInfo.errorcode2!)
@@ -557,11 +569,13 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
                 statusLabel.text = "运行状态 正常"
                 statusLabel.textColor = Colors.installColor
                 checkMarkButton.enabled = true
+                statusLabel.userInteractionEnabled = false
             } else {
                 statusButton.enabled = false
                 statusLabel.text = "运行状态 异常(报修)"
                 statusLabel.textColor = Colors.installRedColor
                 checkMarkButton.enabled = false
+                statusLabel.userInteractionEnabled = true
             }
         }
         
