@@ -66,7 +66,7 @@ class API: NSObject {
                 return
             }
             if let errorCode = dict?.objectForKey("error")?.integerValue {
-                if errorCode == 0 {
+                if (errorCode == 0) {
                     let data = dict?.objectForKey("data")
                     var msg = dict?.objectForKey("msg") as? String
                     if (msg == nil) {
@@ -86,7 +86,7 @@ class API: NSObject {
     func goodWeGet(url: String, params: AnyObject?, success: ((data: AnyObject?) -> Void)?, failure: ((msg: String?) -> Void)?) {
         NSLog("====> get发送 ===> \n\(url)  \(params)")
         _manager?.GET(url, parameters: params, success: { (operation, data) in
-            var dict = try? NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+            let dict = try? NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
             if (dict == nil) {
                 failure?(msg: "请求出错，请检查您的网络！")
                 return

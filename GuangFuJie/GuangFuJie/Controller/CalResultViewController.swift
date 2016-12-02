@@ -13,6 +13,7 @@ class CalResultViewController: BaseViewController {
     var nameTextField : UITextField!
     var phoneTextField : UITextField!
     var eInfo : ElectricInfo!
+    var polygon = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class CalResultViewController: BaseViewController {
     
     func loadData() {
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.caluateElectric(String(calModel.type!), area_size: calModel.area!, province_id: calModel.province_id!, city_id: calModel.city_id!, success: { (electricInfo) in
+        API.sharedInstance.caluateElectric(String(calModel.type!), area_size: calModel.area!, province_id: calModel.province_id!, city_id: calModel.city_id!, polygon: polygon, success: { (electricInfo) in
                 self.hideHud()
                 self.eInfo = electricInfo
                 self.initView()

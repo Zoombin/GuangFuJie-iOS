@@ -482,21 +482,65 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             let user = UserDefaultManager.getUser()
             if (user?.device_id != nil) {
                 self.showHudInView(self.view, hint: "加载中...")
-                API.sharedInstance.deviceInfo(user!.device_id!, success: { (deviceInfo) in
-                    self.hideHud()
-                    self.loadDeviceInfo(deviceInfo)
-                    if (UserDefaultManager.getUser()?.device_type == 1) {
-                        //固德威
-                        self.viewDetailButton.hidden = true
-                    } else {
-                        self.viewDetailButton.hidden = false
-                    }
-                    }, failure: { (msg) in
+                if (UserDefaultManager.getUser()?.device_type == 1) {
+                    self.viewDetailButton.hidden = true
+                    API.sharedInstance.bindGoodwe(user!.device_id!, success: { (inventerModel) in
+                            self.hideHud()
+                            self.loadGoodWeDeviceInfo(inventerModel)
+                        }, failure: { (msg) in
+                            self.hideHud()
+                            self.showHint(msg)
+                    })
+                } else if (UserDefaultManager.getUser()?.device_type == 0){
+                    self.viewDetailButton.hidden = false
+                    API.sharedInstance.deviceInfo(user!.device_id!, success: { (deviceInfo) in
                         self.hideHud()
-                        self.showHint(msg)
-                })
+                        self.loadDeviceInfo(deviceInfo)
+                        }, failure: { (msg) in
+                            self.hideHud()
+                            self.showHint(msg)
+                    })
+
+                }
             }
         }
+    }
+    
+    func loadGoodWeDeviceInfo(deviceInfo : GetInventerMode) {
+        if (deviceInfo.inventerRunningState == "1") {
+            statusButton.enabled = true
+            statusLabel.text = "运行状态 正常"
+            statusLabel.textColor = Colors.installColor
+            checkMarkButton.enabled = true
+        } else {
+            statusButton.enabled = false
+            statusLabel.text = "运行状态 异常(报修)"
+            statusLabel.textColor = Colors.installRedColor
+            checkMarkButton.enabled = false
+        }
+        fadianLabel.text = "天"
+        gonglvLabel.text = String(format: "%@kw", deviceInfo.inventerkw != nil ? deviceInfo.inventerkw! : "0")
+        
+        if (deviceInfo.inventerDay == nil || deviceInfo.inventerTotal == nil) {
+            todayElectricLabel.text = "0kw"
+            totalElectricLabel.text = "0kw"
+            todayMoneyLabel.text = "0元"
+            totalMoneyLabel.text = "0元"
+            todayjianpaiLabel.text = "0吨"
+            totaljianpaiLabel.text = "0吨"
+            todayplantLabel.text = "0棵"
+            totalplantLabel.text = "0棵"
+            return
+        }
+        
+        todayElectricLabel.text = String(format: "%@kw", deviceInfo.inventerDay!)
+        totalElectricLabel.text = String(format: "%@kw", deviceInfo.inventerTotal!)
+        todayMoneyLabel.text = String(format: "%.2f元", deviceInfo.inventerDay!.floatValue * 3)
+        totalMoneyLabel.text = String(format: "%.2f元", deviceInfo.inventerTotal!.floatValue * 3)
+        todayjianpaiLabel.text = String(format: "%.2f吨", deviceInfo.inventerDay!.floatValue * 0.272 / 1000)
+        totaljianpaiLabel.text = String(format: "%.2f吨", deviceInfo.inventerTotal!.floatValue * 0.272 / 1000)
+        todayplantLabel.text = String(format: "%.2f棵", deviceInfo.inventerDay!.floatValue * 0.272 / 100)
+        totalplantLabel.text = String(format: "%.2f棵", deviceInfo.inventerTotal!.floatValue * 0.272 / 100)
     }
     
     func loadDeviceInfo(deviceInfo : DeviceInfo) {
@@ -586,7 +630,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         yezhuBottomView.backgroundColor = UIColor.whiteColor()
         yezhuView.addSubview(yezhuBottomView)
         
-        let buttonWidth = (PhoneUtils.kScreenWidth - 5 * 3) / 2
+        let buttonWidth = (PhoneUtils.kScreenWidth - 5 * 4) / 3
         let buttonHeight = yezhuBottomView.frame.size.height - 5 * 2
         
         let calRoomButton = UIButton.init(type: UIButtonType.Custom)
@@ -608,6 +652,17 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         soldRoomButton.layer.borderColor = Colors.installColor.CGColor
         soldRoomButton.layer.borderWidth = 0.5
         yezhuBottomView.addSubview(soldRoomButton)
+        
+        let mapAreaButton = UIButton.init(type: UIButtonType.Custom)
+        mapAreaButton.frame = CGRectMake(5 * 3 + buttonWidth * 2, 5, buttonWidth, buttonHeight)
+        mapAreaButton.setTitle("屋顶地图", forState: UIControlState.Normal)
+        mapAreaButton.backgroundColor = UIColor.whiteColor()
+        mapAreaButton.addTarget(self, action: #selector(self.mapAreaButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        mapAreaButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        mapAreaButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        mapAreaButton.layer.borderColor = Colors.installColor.CGColor
+        mapAreaButton.layer.borderWidth = 0.5
+        yezhuBottomView.addSubview(mapAreaButton)
         
         let offSetY : CGFloat = 8
         let scrollViewWidth = PhoneUtils.kScreenWidth
@@ -669,6 +724,11 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     func calRoomButtonClicked() {
         let vc = RoofPriceViewController()
+        self.pushViewController(vc)
+    }
+    
+    func mapAreaButtonClicked() {
+        let vc = MapViewController()
         self.pushViewController(vc)
     }
     
@@ -805,7 +865,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     //MARK: 安装商列表
     func loadInstallerList() {
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.getRoofList(1, province_id: nil, city_id: nil, success: { (userInfos) in
+        API.sharedInstance.getRoofList(1, province_id: nil, city_id: nil, is_suggest: 1, success: { (userInfos) in
             self.hideHud()
             self.installerArray.removeAllObjects()
             if (userInfos.count > 0) {

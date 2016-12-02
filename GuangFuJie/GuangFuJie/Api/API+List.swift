@@ -368,17 +368,22 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func caluateElectric(type : String, area_size : String, province_id : NSNumber, city_id : NSNumber, success: ((electricInfo: ElectricInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func caluateElectric(type : String, area_size : String, province_id : NSNumber, city_id : NSNumber,polygon : String, success: ((electricInfo: ElectricInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "common/calc"
-        let params = [
+        var params = [
             "type" : type,                 // 1: 屋顶面积  2: 室内面积
             "area_size" : area_size,       // 屋顶面积  m2
             "province_id" : province_id,   // 省份id
             "city_id" : city_id,           // 城市id
             "_o" : 1
         ]
+        if (!polygon.isEmpty) {
+            params["polygon"] = polygon
+            params.removeValueForKey("area_size")
+        }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        print(newParams)
         self.get(url, params: newParams, success: { (msg, data) in
             let electricInfo = ElectricInfo.mj_objectWithKeyValues(data)
             success?(electricInfo : electricInfo)
@@ -502,7 +507,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getRoofList(status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getRoofList(status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -514,6 +519,9 @@ extension API {
         }
         if (city_id != nil) {
             params["city_id"] = city_id
+        }
+        if (is_suggest != nil) {
+            params["is_suggest"] = is_suggest
         }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]

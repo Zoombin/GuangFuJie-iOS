@@ -73,8 +73,12 @@ class ElectricPicViewController: BaseViewController {
     }
     
     func valueChanged(segmentedControl : UISegmentedControl) {
-        pnLineChart.hidden = segmentedControl.selectedSegmentIndex != 0
-        pnBarChart.hidden = segmentedControl.selectedSegmentIndex == 0
+        if (pnLineChart != nil) {
+            pnLineChart.hidden = segmentedControl.selectedSegmentIndex != 0
+        }
+        if (pnBarChart != nil) {
+            pnBarChart.hidden = segmentedControl.selectedSegmentIndex == 0
+        }
     }
 
     override func didReceiveMemoryWarning() {

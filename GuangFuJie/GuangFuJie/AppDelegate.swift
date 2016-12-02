@@ -9,12 +9,16 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
 
     var window: UIWindow?
-
+    var mapManager = BMKMapManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let ret = mapManager.start(Constants.baiduMapKey, generalDelegate: self)
+        if (!ret) {
+            print("manager start failed!")
+        }
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         
@@ -28,6 +32,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             initMain()
         }
         return true
+    }
+    
+    func onGetNetworkState(iError: Int32) {
+        if (0 == iError) {
+            print("联网成功")
+        } else{
+            print(String(format: "onGetNetworkState %d", iError));
+        }
+    }
+    
+    func onGetPermissionState(iError: Int32) {
+        if (0 == iError) {
+            print("授权成功")
+        } else{
+            print(String(format: "onGetPermissionState %d", iError));
+        }
     }
     
     func showGuide() {

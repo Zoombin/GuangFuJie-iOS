@@ -185,8 +185,6 @@
 		DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */; };
 		DE7900FA1D4C9D7E0032D461 /* InstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */; };
 		DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */; };
-		DE7901021D4CAE4C0032D461 /* EarnCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7901001D4CAE4C0032D461 /* EarnCalViewController.swift */; };
-		DE7901031D4CAE4C0032D461 /* EarnCalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7901011D4CAE4C0032D461 /* EarnCalViewController.xib */; };
 		DE79F9521D4C1C100032D461 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9501D4C1C100032D461 /* MainViewController.swift */; };
 		DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE79F9511D4C1C100032D461 /* MainViewController.xib */; };
 		DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9551D4C1C270032D461 /* BaseViewController.swift */; };
@@ -306,6 +304,14 @@
 		DE8A7A261D88028400C5F268 /* PowerGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A251D88028400C5F268 /* PowerGraphInfo.swift */; };
 		DE8A7A291D88DA2300C5F268 /* ChartUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A281D88DA2300C5F268 /* ChartUtils.m */; };
 		DE8A7A2C1D8A83FB00C5F268 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A2B1D8A83FB00C5F268 /* GuideViewController.swift */; };
+		DE9135F81DE85E48001190B7 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135EF1DE85E48001190B7 /* BaiduMapAPI_Base.framework */; };
+		DE9135F91DE85E48001190B7 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F01DE85E48001190B7 /* BaiduMapAPI_Cloud.framework */; };
+		DE9135FA1DE85E48001190B7 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F11DE85E48001190B7 /* BaiduMapAPI_Location.framework */; };
+		DE9135FB1DE85E48001190B7 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F21DE85E48001190B7 /* BaiduMapAPI_Map.framework */; };
+		DE9135FC1DE85E48001190B7 /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F31DE85E48001190B7 /* BaiduMapAPI_Radar.framework */; };
+		DE9135FD1DE85E48001190B7 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */; };
+		DE9135FE1DE85E48001190B7 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */; };
+		DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE9135F71DE85E48001190B7 /* mapapi.bundle */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -315,6 +321,15 @@
 		DEC64FD21D80009300AF96AC /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */; };
 		DEC64FDE1D8000A000AF96AC /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */; };
 		DEC64FE01D8000AB00AF96AC /* MoreYezhuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */; };
+		DED15B691DED26C700B8260B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED15B681DED26C700B8260B /* MapViewController.swift */; };
+		DED15B721DED2E4900B8260B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B711DED2E4900B8260B /* CoreLocation.framework */; };
+		DED15B741DED2E5500B8260B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B731DED2E5500B8260B /* QuartzCore.framework */; };
+		DED15B761DED2E5F00B8260B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B751DED2E5F00B8260B /* OpenGLES.framework */; };
+		DED15B781DED2E6A00B8260B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B771DED2E6900B8260B /* SystemConfiguration.framework */; };
+		DED15B7A1DED2E7300B8260B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B791DED2E7300B8260B /* CoreGraphics.framework */; };
+		DED15B7C1DED2E7B00B8260B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7B1DED2E7B00B8260B /* Security.framework */; };
+		DED15B7E1DED2E8500B8260B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */; };
+		DED15B801DED2E9700B8260B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */; };
 		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
 		DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */; };
 		DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */; };
@@ -740,8 +755,6 @@
 		DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABoutUsView.xib; sourceTree = "<group>"; };
 		DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallViewController.swift; sourceTree = "<group>"; };
 		DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
-		DE7901001D4CAE4C0032D461 /* EarnCalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarnCalViewController.swift; sourceTree = "<group>"; };
-		DE7901011D4CAE4C0032D461 /* EarnCalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EarnCalViewController.xib; sourceTree = "<group>"; };
 		DE79F94F1D4B8D580032D461 /* GuangFuJie-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GuangFuJie-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE79F9501D4C1C100032D461 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE79F9511D4C1C100032D461 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -885,6 +898,14 @@
 		DE8A7A271D88DA2300C5F268 /* ChartUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartUtils.h; sourceTree = "<group>"; };
 		DE8A7A281D88DA2300C5F268 /* ChartUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartUtils.m; sourceTree = "<group>"; };
 		DE8A7A2B1D8A83FB00C5F268 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		DE9135EF1DE85E48001190B7 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		DE9135F01DE85E48001190B7 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
+		DE9135F11DE85E48001190B7 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
+		DE9135F21DE85E48001190B7 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		DE9135F31DE85E48001190B7 /* BaiduMapAPI_Radar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Radar.framework; sourceTree = "<group>"; };
+		DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
+		DE9135F71DE85E48001190B7 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -894,6 +915,15 @@
 		DEC64FD11D80009300AF96AC /* UserCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterViewController.swift; sourceTree = "<group>"; };
 		DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
 		DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreYezhuViewController.swift; sourceTree = "<group>"; };
+		DED15B681DED26C700B8260B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DED15B711DED2E4900B8260B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DED15B731DED2E5500B8260B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DED15B751DED2E5F00B8260B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DED15B771DED2E6900B8260B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DED15B791DED2E7300B8260B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DED15B7B1DED2E7B00B8260B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
 		DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -916,15 +946,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED15B801DED2E9700B8260B /* libstdc++.6.0.9.tbd in Frameworks */,
+				DED15B7E1DED2E8500B8260B /* libsqlite3.0.tbd in Frameworks */,
+				DED15B7C1DED2E7B00B8260B /* Security.framework in Frameworks */,
+				DED15B7A1DED2E7300B8260B /* CoreGraphics.framework in Frameworks */,
+				DED15B781DED2E6A00B8260B /* SystemConfiguration.framework in Frameworks */,
+				DED15B761DED2E5F00B8260B /* OpenGLES.framework in Frameworks */,
+				DED15B741DED2E5500B8260B /* QuartzCore.framework in Frameworks */,
+				DED15B721DED2E4900B8260B /* CoreLocation.framework in Frameworks */,
 				DE44CC2A1D8404A9004690EF /* CoreTelephony.framework in Frameworks */,
 				DE44CC281D840481004690EF /* CoreMotion.framework in Frameworks */,
+				DE9135FE1DE85E48001190B7 /* BaiduMapAPI_Utils.framework in Frameworks */,
 				DE44CC261D840476004690EF /* libsqlite3.tbd in Frameworks */,
 				DE44CC241D840470004690EF /* libc++.tbd in Frameworks */,
 				DE44CC221D840468004690EF /* libz.1.2.5.tbd in Frameworks */,
+				DE9135FA1DE85E48001190B7 /* BaiduMapAPI_Location.framework in Frameworks */,
 				DE44CC201D8403DA004690EF /* libWeChatSDK.a in Frameworks */,
+				DE9135FD1DE85E48001190B7 /* BaiduMapAPI_Search.framework in Frameworks */,
+				DE9135F91DE85E48001190B7 /* BaiduMapAPI_Cloud.framework in Frameworks */,
+				DE9135FB1DE85E48001190B7 /* BaiduMapAPI_Map.framework in Frameworks */,
 				DE5E74C51D509D3D003CDAAC /* libz.tbd in Frameworks */,
 				DE44CC1B1D8403DA004690EF /* AlipaySDK.framework in Frameworks */,
 				DE5E74C31D509D0F003CDAAC /* libresolv.tbd in Frameworks */,
+				DE9135F81DE85E48001190B7 /* BaiduMapAPI_Base.framework in Frameworks */,
+				DE9135FC1DE85E48001190B7 /* BaiduMapAPI_Radar.framework in Frameworks */,
 				1891D9F31D3F54CA0042E72D /* Alamofire.framework in Frameworks */,
 				DE44CC1E1D8403DA004690EF /* libUPPayPlugin.a in Frameworks */,
 			);
@@ -1036,10 +1081,9 @@
 		18B8FA5C1D3CE8A400B334E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DED15B681DED26C700B8260B /* MapViewController.swift */,
 				DE79F9551D4C1C270032D461 /* BaseViewController.swift */,
 				DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */,
-				DE7901001D4CAE4C0032D461 /* EarnCalViewController.swift */,
-				DE7901011D4CAE4C0032D461 /* EarnCalViewController.xib */,
 				DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */,
 				DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */,
 				DE57C96D1D5F1159005B9CCE /* InstallViewController.xib */,
@@ -1072,6 +1116,14 @@
 		18B8FA5D1D3CE8A400B334E4 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */,
+				DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */,
+				DED15B7B1DED2E7B00B8260B /* Security.framework */,
+				DED15B791DED2E7300B8260B /* CoreGraphics.framework */,
+				DED15B771DED2E6900B8260B /* SystemConfiguration.framework */,
+				DED15B751DED2E5F00B8260B /* OpenGLES.framework */,
+				DED15B731DED2E5500B8260B /* QuartzCore.framework */,
+				DED15B711DED2E4900B8260B /* CoreLocation.framework */,
 				DE44CC291D8404A9004690EF /* CoreTelephony.framework */,
 				DE44CC271D840481004690EF /* CoreMotion.framework */,
 				DE44CC251D840476004690EF /* libsqlite3.tbd */,
@@ -1086,6 +1138,7 @@
 		18B8FA5E1D3CE8A400B334E4 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DE9135EE1DE85E48001190B7 /* BaiduMap */,
 				DE3DB2CA1DB4D23000AE0461 /* Menu */,
 				DE8A79ED1D87E17500C5F268 /* PNChart */,
 				DE8A78531D869BD000C5F268 /* PhotoBrowser */,
@@ -2076,6 +2129,29 @@
 			path = PNChart;
 			sourceTree = "<group>";
 		};
+		DE9135EE1DE85E48001190B7 /* BaiduMap */ = {
+			isa = PBXGroup;
+			children = (
+				DE9135EF1DE85E48001190B7 /* BaiduMapAPI_Base.framework */,
+				DE9135F01DE85E48001190B7 /* BaiduMapAPI_Cloud.framework */,
+				DE9135F11DE85E48001190B7 /* BaiduMapAPI_Location.framework */,
+				DE9135F21DE85E48001190B7 /* BaiduMapAPI_Map.framework */,
+				DE9135F31DE85E48001190B7 /* BaiduMapAPI_Radar.framework */,
+				DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */,
+				DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */,
+				DE9135F61DE85E48001190B7 /* Resources */,
+			);
+			path = BaiduMap;
+			sourceTree = "<group>";
+		};
+		DE9135F61DE85E48001190B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE9135F71DE85E48001190B7 /* mapapi.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DEF981811D7FF5C700ED1B40 /* AlamofireImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2267,12 +2343,12 @@
 				DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */,
 				DE8A78F91D869BD000C5F268 /* pic.bundle in Resources */,
 				DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */,
-				DE7901031D4CAE4C0032D461 /* EarnCalViewController.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
 				DE7900261D4C57300032D461 /* IQKeyboardManager.bundle in Resources */,
 				DEF984011D7FF5DC00ED1B40 /* Info.plist in Resources */,
 				DE8A76541D860FB600C5F268 /* LeaseViewController.xib in Resources */,
+				DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */,
 				DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */,
 				DE44CC191D8403DA004690EF /* BeeCloud.bundle in Resources */,
 			);
@@ -2480,6 +2556,7 @@
 				DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */,
 				DE8A79081D869C1D00C5F268 /* DisplayView.swift in Sources */,
 				DE44CC131D8403DA004690EF /* BCPayUtil.m in Sources */,
+				DED15B691DED26C700B8260B /* MapViewController.swift in Sources */,
 				DE8A78F31D869BD000C5F268 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE8A78CC1D869BD000C5F268 /* Haneke.swift in Sources */,
 				DE8A78C51D869BD000C5F268 /* CryptoSwiftMD5.swift in Sources */,
@@ -2504,7 +2581,6 @@
 				DE0C78051D66E94300FED16D /* InstallInfo.swift in Sources */,
 				DE8A78C91D869BD000C5F268 /* Fetch.swift in Sources */,
 				DE5E74411D509B9F003CDAAC /* QNFile.m in Sources */,
-				DE7901021D4CAE4C0032D461 /* EarnCalViewController.swift in Sources */,
 				DE5E743D1D509B9F003CDAAC /* QNALAssetFile.m in Sources */,
 				DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */,
 				DE44CBF51D8403DA004690EF /* BCBaseReq.m in Sources */,
@@ -2738,6 +2814,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GuangFuJie/Library/BCPaySDK/Channel/AliPay",
+					"$(PROJECT_DIR)/GuangFuJie/Library/BaiduMap",
 				);
 				INFOPLIST_FILE = GuangFuJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2765,6 +2842,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GuangFuJie/Library/BCPaySDK/Channel/AliPay",
+					"$(PROJECT_DIR)/GuangFuJie/Library/BaiduMap",
 				);
 				INFOPLIST_FILE = GuangFuJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
