@@ -141,6 +141,10 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
             mapView.removeOverlays(mapView.overlays)
             mapView.removeAnnotations(mapView.annotations)
         } else if (alertView.tag == SURE_ALERT_TAG) {
+            if (mapView.annotations.count < 3) {
+                self.showHint("请选择至少3个点")
+                return
+            }
             let model = CalcModel()
             model.type = 0
             model.area = ""
