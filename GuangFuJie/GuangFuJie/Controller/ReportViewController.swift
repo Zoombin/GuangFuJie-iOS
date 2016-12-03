@@ -49,7 +49,7 @@ class ReportViewController: BaseViewController {
         
         let loginButton = UIButton.init(type: UIButtonType.Custom)
         loginButton.frame = CGRectMake(15, CGRectGetMaxY(reportTimeTextField.frame) + 10, PhoneUtils.kScreenWidth - 15 * 2, textFieldHeight * 0.7)
-        loginButton.setTitle("登录", forState: UIControlState.Normal)
+        loginButton.setTitle("报修", forState: UIControlState.Normal)
         loginButton.backgroundColor = Colors.lightBule
         loginButton.addTarget(self, action: #selector(self.report), forControlEvents: UIControlEvents.TouchUpInside)
         scrollView.addSubview(loginButton)
