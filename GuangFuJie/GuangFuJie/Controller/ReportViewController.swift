@@ -13,6 +13,9 @@ class ReportViewController: BaseViewController {
     var scrollView : UIScrollView!
     var phoneTextField : UITextField!
     var reportTimeTextField : UITextField!
+    var commentTextField : UITextField!
+    
+    var device_id : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +50,20 @@ class ReportViewController: BaseViewController {
         reportTimeTextField.backgroundColor = UIColor.whiteColor()
         scrollView.addSubview(reportTimeTextField)
         
-        let loginButton = UIButton.init(type: UIButtonType.Custom)
-        loginButton.frame = CGRectMake(15, CGRectGetMaxY(reportTimeTextField.frame) + 10, PhoneUtils.kScreenWidth - 15 * 2, textFieldHeight * 0.7)
-        loginButton.setTitle("报修", forState: UIControlState.Normal)
-        loginButton.backgroundColor = Colors.lightBule
-        loginButton.addTarget(self, action: #selector(self.report), forControlEvents: UIControlEvents.TouchUpInside)
-        scrollView.addSubview(loginButton)
+        commentTextField = UITextField.init(frame: CGRectMake(5, CGRectGetMaxY(reportTimeTextField.frame) + 5, PhoneUtils.kScreenWidth - 5 * 2, textFieldHeight))
+        commentTextField.placeholder = "请输入备注"
+        commentTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        commentTextField.layer.borderWidth = 0.5
+        commentTextField.layer.borderColor = UIColor.blackColor().CGColor
+        commentTextField.backgroundColor = UIColor.whiteColor()
+        scrollView.addSubview(commentTextField)
+        
+        let reportButton = UIButton.init(type: UIButtonType.Custom)
+        reportButton.frame = CGRectMake(15, CGRectGetMaxY(commentTextField.frame) + 10, PhoneUtils.kScreenWidth - 15 * 2, textFieldHeight * 0.7)
+        reportButton.setTitle("报修", forState: UIControlState.Normal)
+        reportButton.backgroundColor = Colors.lightBule
+        reportButton.addTarget(self, action: #selector(self.report), forControlEvents: UIControlEvents.TouchUpInside)
+        scrollView.addSubview(reportButton)
     }
     
     func hidenAllKeyboard() {
@@ -70,8 +81,19 @@ class ReportViewController: BaseViewController {
             self.showHint("请输入预约时间")
             return
         }
-        self.showHint("报修成功!")
-        self.navigationController?.popViewControllerAnimated(true)
+        if (commentTextField.text!.isEmpty) {
+            self.showHint("请输入备注")
+            return
+        }
+        self.showHudInView(self.view, hint: "申请中...")
+        API.sharedInstance.bookRepair(reportTimeTextField.text!, phone: phoneTextField.text!, comments: commentTextField.text!, device_id: device_id, success: { (commonModel) in
+            self.hideHud()
+            self.showHint("报修成功!")
+            self.navigationController?.popViewControllerAnimated(true)
+            }) { (msg) in
+                self.hideHud()
+                self.showHint(msg)
+        }
     }
     
     override func didReceiveMemoryWarning() {

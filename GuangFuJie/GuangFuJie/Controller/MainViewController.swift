@@ -72,6 +72,8 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     var currentDeviceType = 0
     
+    var currentDevice = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -509,7 +511,15 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     
     //报修
     func reportPro() {
+        let user = UserDefaultManager.getUser()
+        if (user == nil) {
+            return
+        }
+        if (user?.device_id == nil) {
+            return
+        }
         let vc = ReportViewController()
+        vc.device_id = user!.device_id!
         self.pushViewController(vc)
     }
     

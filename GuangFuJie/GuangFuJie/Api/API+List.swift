@@ -801,6 +801,7 @@ extension API {
     /**
      获取通用属性
      
+     - parameter type:
      - parameter success:
      - parameter failure:
      */
@@ -818,4 +819,31 @@ extension API {
             }, failure: failure)
     }
     
+    /**
+     申请预约查修
+     
+     - parameter book_date: 预约时间
+     - parameter phone:     手机号
+     - parameter comments:  备注
+     - parameter device_id: 设备id
+     - parameter success:
+     - parameter failure:
+     */
+    func bookRepair(book_date: String, phone: String, comments: String, device_id: String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "repair/book_repair"
+        let params = [
+            "book_date" : book_date,
+            "phone" : phone,
+            "comments" : comments,
+            "device_id" : device_id,
+            "user_id" : getUserId(),
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(commonModel : commonModel)
+            }, failure: failure)
+    }
 }
