@@ -11,7 +11,6 @@ import UIKit
 class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, SPullDownMenuViewDelegate {
     var buttons = NSMutableArray()
     var loginView : LoginView!
-    var aboutUsView : ABoutUsView!
     
     var yezhuView : UIView!
     var installView : UIView!
@@ -81,7 +80,6 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
         
         initView()
         initLoginView()
-        initAboutUsView()
         
         initYeZhuView()
         initInstallerView()
@@ -847,19 +845,7 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
             self.showHint(msg)
         }
     }
-    
-    //MARK: 关于页面
-    func initAboutUsView() {
-        let nibs = NSBundle.mainBundle().loadNibNamed("ABoutUsView", owner: nil, options: nil)
-        aboutUsView = nibs.first as! ABoutUsView
-        aboutUsView.frame = UIScreen.mainScreen().bounds
-        aboutUsView.addUnderLine()
-        aboutUsView.hidden = true
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.window!.addSubview(aboutUsView)
-    }
-    
+
     //MARK: 业主列表
     func loadUserList() {
         self.showHudInView(self.view, hint: "加载中...")
@@ -982,7 +968,9 @@ class MainViewController: BaseViewController, LoginViewDelegate, UITableViewDele
     }
     
     func rightButtonClicked() {
-        aboutUsView.hidden = false
+        let vc = GFJWebViewController()
+        vc.urlTag = 0
+        self.pushViewController(vc)
     }
     
     //MARK: 登录页面

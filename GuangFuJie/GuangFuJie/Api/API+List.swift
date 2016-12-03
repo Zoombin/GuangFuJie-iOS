@@ -798,4 +798,24 @@ extension API {
             }, failure: failure)
     }
     
+    /**
+     获取通用属性
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func getContent(type : String, success: ((msg: String, commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "content/get_content"
+        let params = [
+            "type" : type,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (msg, data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(msg: msg!, commonModel : commonModel)
+            }, failure: failure)
+    }
+    
 }

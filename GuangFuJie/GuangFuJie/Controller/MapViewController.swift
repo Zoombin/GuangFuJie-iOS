@@ -177,12 +177,12 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        mapView.viewWillAppear()
+        
         locService.delegate = self
         geocodeSearch.delegate = self
         
         mapView.delegate = self
-        mapView.viewWillAppear()
         
         startLocation()
     }
@@ -276,12 +276,13 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     }
     
     override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+        mapView.viewWillDisappear()
+        
         locService.delegate = nil
         geocodeSearch.delegate = nil
         
         mapView.delegate = nil
-        mapView.viewWillDisappear()
+        
     }
     
     func mapview(mapView: BMKMapView!, onLongClick coordinate: CLLocationCoordinate2D) {
@@ -353,10 +354,6 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     func didUpdateUserHeading(userLocation: BMKUserLocation!) {
         print("heading is \(userLocation.heading)")
         mapView.updateLocationData(userLocation)
-        if (hasLocated == false) {
-            hasLocated = true
-            mapView.centerCoordinate = userLocation.location.coordinate
-        }
     }
     
     /**
