@@ -11,82 +11,84 @@ import UIKit
 class YeZhuCell: UITableViewCell {
 
     var viewCreated = false
-    var titleLabel : UILabel!
-    var tagLabel : UILabel!
-    var describeLabel : TopLeftLabel!
-    var addressLabel : UILabel!
+    var avatarImageView : UIImageView!
+    var nameLabel : UILabel!
+    var statusLabel : UILabel!
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        if (viewCreated) {
-            titleLabel.text = ""
-            describeLabel.text = ""
-            addressLabel.text = ""
-        }
-    }
+    var descriptionLabel : TopLeftLabel!
+    var addressLabel : TopLeftLabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    var tipsLabel : UILabel!
+    var viewMoreButton : UIButton!
     
     func initCell() {
-        if(viewCreated){
+        if (viewCreated) {
             return
         }
         viewCreated = true
-        self.backgroundColor = UIColor.clearColor()
         
-        let dir : CGFloat = 5
-        let width = PhoneUtils.kScreenWidth - 2 * dir
-        var height = PhoneUtils.kScreenHeight
-        if (height < 568) {
-            height = 568
-        }
+        self.contentView.backgroundColor = Colors.bkgColor
         
-        let cellViewHeight : CGFloat = height / 7
-        let bkgView = UIView.init(frame: CGRectMake(dir, dir, width, cellViewHeight - dir))
+        let dir : CGFloat = PhoneUtils.kScreenWidth / 40
+        let bkgViewWidth = PhoneUtils.kScreenWidth - dir * 2
+        let bkgViewHeight = YeZhuCell.cellHeight() - dir
+        let bkgView = UIView.init(frame: CGRectMake(dir, 0, bkgViewWidth, bkgViewHeight))
         bkgView.backgroundColor = UIColor.whiteColor()
+        bkgView.layer.cornerRadius = dir
+        bkgView.layer.masksToBounds = true
         self.contentView.addSubview(bkgView)
         
-        let labelHeight = bkgView.frame.size.height / 3
-        let labelWidth = bkgView.frame.size.width
+        let topView = UIView.init(frame: CGRectMake(0, 0, bkgViewWidth, bkgViewHeight / 3))
+        bkgView.addSubview(topView)
         
-        let iconWidthHeight = labelHeight - 10
+        let dir2 : CGFloat = PhoneUtils.kScreenWidth / 36
+        avatarImageView = UIImageView.init(frame: CGRectMake(dir2, dir2, bkgViewWidth / 4, topView.frame.size.height - dir2 * 2))
+        avatarImageView.image = UIImage(named: "ic_avatar_yezhu")
+        topView.addSubview(avatarImageView)
         
-        titleLabel = UILabel.init(frame: CGRectMake(0, 0, labelWidth * 3 / 4, labelHeight))
-        titleLabel.text = ""
-        titleLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        titleLabel.textColor = UIColor.lightGrayColor()
-        bkgView.addSubview(titleLabel)
+        let labelWidth = bkgViewWidth - avatarImageView.frame.size.width - dir2 * 3
+        nameLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(avatarImageView.frame) + dir2, dir2, labelWidth, avatarImageView.frame.size.height / 2))
+        nameLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        nameLabel.text = "这里是公司名称"
+        topView.addSubview(nameLabel)
         
-        tagLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(titleLabel.frame), 0, labelWidth * 1 / 4, labelHeight))
-        tagLabel.text = "已认证"
-        tagLabel.textAlignment = NSTextAlignment.Right
-        tagLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        bkgView.addSubview(tagLabel)
+        statusLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(avatarImageView.frame) + dir2, CGRectGetMaxY(nameLabel.frame), 100, avatarImageView.frame.size.height / 2))
+        statusLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        statusLabel.text = "已认证"
+        topView.addSubview(statusLabel)
         
-        let descIconImageView = UIImageView.init(frame: CGRectMake(5, CGRectGetMaxY(titleLabel.frame) + 5, iconWidthHeight, iconWidthHeight))
-        descIconImageView.image = UIImage(named: "ic_brief")
-        bkgView.addSubview(descIconImageView)
+        let line1 = UIView.init(frame: CGRectMake(dir2, topView.frame.size.height, bkgViewWidth - dir2 * 2, 0.5))
+        line1.backgroundColor = UIColor.lightGrayColor()
+        bkgView.addSubview(line1)
         
-        describeLabel = TopLeftLabel.init(frame: CGRectMake(CGRectGetMaxX(descIconImageView.frame) + 5, CGRectGetMaxY(titleLabel.frame), labelWidth - iconWidthHeight - 5 - dir, labelHeight))
-        describeLabel.text = ""
-        describeLabel.numberOfLines = 0
-        describeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        describeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        describeLabel.textColor = UIColor.lightGrayColor()
-        bkgView.addSubview(describeLabel)
+        let bottomView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), bkgViewWidth, bkgViewHeight * 2 / 3))
+        bkgView.addSubview(bottomView)
         
-        let addressIconImageView = UIImageView.init(frame: CGRectMake(5, CGRectGetMaxY(describeLabel.frame) + 5, iconWidthHeight, iconWidthHeight))
-        addressIconImageView.image = UIImage(named: "ic_address")
-        bkgView.addSubview(addressIconImageView)
+        let desPoint = UIImageView.init(frame: CGRectMake(dir2, 0, dir2, dir2))
+        desPoint.image = UIImage(named: "ic_yellow_point")
+        bottomView.addSubview(desPoint)
         
-        addressLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(addressIconImageView.frame) + 5, CGRectGetMaxY(describeLabel.frame), labelWidth - iconWidthHeight - 5 - dir, labelHeight))
-        addressLabel.text = ""
-        addressLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        addressLabel.textColor = UIColor.lightGrayColor()
-        bkgView.addSubview(addressLabel)
+        descriptionLabel = TopLeftLabel.init(frame: CGRectMake(dir2 * 2, 0, bkgViewWidth - dir2 * 3, bottomView.frame.size.height * 0.5))
+        descriptionLabel.text = "这里显示的是描述"
+        descriptionLabel.backgroundColor = UIColor.yellowColor()
+        descriptionLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        descriptionLabel.numberOfLines = 3
+        descriptionLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        bottomView.addSubview(descriptionLabel)
+        
+        let addressPoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMaxY(descriptionLabel.frame), dir2, dir2))
+        addressPoint.image = UIImage(named: "ic_green_point")
+        bottomView.addSubview(addressPoint)
+        
+        addressLabel = TopLeftLabel.init(frame: CGRectMake(dir2 * 2, CGRectGetMaxY(descriptionLabel.frame), bkgViewWidth - dir2 * 3, bottomView.frame.size.height * 0.25))
+        addressLabel.text = "这里显示的地址"
+        addressLabel.backgroundColor = UIColor.redColor()
+        addressLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        bottomView.addSubview(addressLabel)
+        
+        let line2 = UIView.init(frame: CGRectMake(dir2, CGRectGetMaxY(addressLabel.frame), bkgViewWidth - dir2 * 2, 0.5))
+        line2.backgroundColor = UIColor.lightGrayColor()
+        bottomView.addSubview(line2)
     }
     
     static func cellHeight() -> CGFloat {
@@ -94,7 +96,7 @@ class YeZhuCell: UITableViewCell {
         if (height < 568) {
             height = 568
         }
-        return height / 7
+        return height / 3
     }
 
 }

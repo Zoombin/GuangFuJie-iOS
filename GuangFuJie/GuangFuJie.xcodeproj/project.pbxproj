@@ -312,6 +312,10 @@
 		DE9135FD1DE85E48001190B7 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */; };
 		DE9135FE1DE85E48001190B7 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */; };
 		DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE9135F71DE85E48001190B7 /* mapapi.bundle */; };
+		DE9F876D1DF2BBC90076F508 /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */; };
+		DE9F876E1DF2BBC90076F508 /* RootInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */; };
+		DE9F876F1DF2BBC90076F508 /* RootSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */; };
+		DE9F87701DF2BBC90076F508 /* RootYeZhuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */; };
 		DEA1F12A1DF14D370057F30D /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1F1291DF14D370057F30D /* ReportViewController.swift */; };
 		DEAEB2751D7EB1A700174C58 /* ElectricPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
@@ -908,6 +912,10 @@
 		DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		DE9135F71DE85E48001190B7 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
+		DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInstallerViewController.swift; sourceTree = "<group>"; };
+		DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSafeViewController.swift; sourceTree = "<group>"; };
+		DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootYeZhuViewController.swift; sourceTree = "<group>"; };
 		DEA1F1291DF14D370057F30D /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DEAEB2741D7EB1A700174C58 /* ElectricPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricPicViewController.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
@@ -1085,6 +1093,7 @@
 		18B8FA5C1D3CE8A400B334E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE9F87681DF2BBAB0076F508 /* Root */,
 				DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */,
 				DED15B681DED26C700B8260B /* MapViewController.swift */,
 				DE79F9551D4C1C270032D461 /* BaseViewController.swift */,
@@ -2158,6 +2167,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DE9F87681DF2BBAB0076F508 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */,
+				DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */,
+				DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */,
+				DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		DEF981811D7FF5C700ED1B40 /* AlamofireImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2432,10 +2452,12 @@
 				DE5E74851D509BAD003CDAAC /* QNDnspodFree.m in Sources */,
 				DE8A78CF1D869BD000C5F268 /* NSFileManager+Haneke.swift in Sources */,
 				DE8A78BF1D869BD000C5F268 /* SnapKit.swift in Sources */,
+				DE9F876D1DF2BBC90076F508 /* RootElectricViewController.swift in Sources */,
 				DE8A78FA1D869BD000C5F268 /* PhotoBrowser+CollectionViewExtend.swift in Sources */,
 				DE8A78CA1D869BD000C5F268 /* Fetcher.swift in Sources */,
 				DE8A78F71D869BD000C5F268 /* NVActivityIndicatorView.swift in Sources */,
 				DE5E74B61D509CC4003CDAAC /* AFURLRequestSerialization.m in Sources */,
+				DE9F87701DF2BBC90076F508 /* RootYeZhuViewController.swift in Sources */,
 				DE8A78DA1D869BD000C5F268 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE44CC021D8403DA004690EF /* BCQueryRefundByIdResp.m in Sources */,
 				DEA1F12A1DF14D370057F30D /* ReportViewController.swift in Sources */,
@@ -2486,6 +2508,7 @@
 				DE44CBFC1D8403DA004690EF /* BCQueryBillByIdResp.m in Sources */,
 				DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */,
 				DE5E74801D509BAD003CDAAC /* QNDomain.m in Sources */,
+				DE9F876E1DF2BBC90076F508 /* RootInstallerViewController.swift in Sources */,
 				DE5E748D1D509BAD003CDAAC /* QNGetAddrInfo.m in Sources */,
 				DE44CC0D1D8403DA004690EF /* BCNetworkReachabilityManager.m in Sources */,
 				DE44CBF61D8403DA004690EF /* BCBaseResp.m in Sources */,
@@ -2658,6 +2681,7 @@
 				DE8A78FC1D869BD000C5F268 /* PhotoBrowser+Indicator.swift in Sources */,
 				DE8A79061D869BD000C5F268 /* ShowImageView.swift in Sources */,
 				DE7900171D4C57300032D461 /* IQUIScrollView+Additions.swift in Sources */,
+				DE9F876F1DF2BBC90076F508 /* RootSafeViewController.swift in Sources */,
 				DE7900FA1D4C9D7E0032D461 /* InstallViewController.swift in Sources */,
 				DE5E74C01D509CC4003CDAAC /* UIRefreshControl+AFNetworking.m in Sources */,
 				DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */,

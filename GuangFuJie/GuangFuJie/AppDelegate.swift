@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
 
     var window: UIWindow?
     var mapManager = BMKMapManager()
+    
+    var tabBarController = UITabBarController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let ret = mapManager.start(Constants.baiduMapKey, generalDelegate: self)
@@ -58,9 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
     }
     
     func initMain() {
-        let mainVC = MainViewController.init(nibName: "MainViewController", bundle: nil)
-        let nav = UINavigationController.init(rootViewController: mainVC)
-        self.window?.rootViewController = nav
+        let nav1 = UINavigationController.init(rootViewController: RootYeZhuViewController())
+        let nav2 = UINavigationController.init(rootViewController: RootInstallerViewController())
+        let nav3 = UINavigationController.init(rootViewController: RootElectricViewController())
+        let nav4 = UINavigationController.init(rootViewController: RootSafeViewController())
+        
+        tabBarController.viewControllers = [nav1, nav2, nav3, nav4]
+        tabBarController.tabBar.hidden = true
+        self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }
     

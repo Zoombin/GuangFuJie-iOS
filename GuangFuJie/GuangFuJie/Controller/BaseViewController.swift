@@ -8,9 +8,12 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate {
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate, LoginViewDelegate {
     
     let displayView = DisplayView()
+    
+    var topMenuView : UIView!
+    var loginView : LoginView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +23,145 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         BeeCloud.setBeeCloudDelegate(self)
     }
     
+    func showTopMenu(index : NSInteger) {
+        let topImageView = UIImageView.init(frame: CGRectMake(0, 0, 40, 40))
+        topImageView.image = UIImage.init(named: "ic_home_logo")
+        self.navigationItem.titleView = topImageView
+        
+        let screenWidth = PhoneUtils.kScreenWidth
+        let buttonHeigt : CGFloat = 30
+        let offSetX : CGFloat = 20
+        let offSetY : CGFloat = 5
+        let titles = ["业主", "安装商", "发电量", "保险"]
+        let buttonWidth = (screenWidth - offSetX * CGFloat(titles.count + 1))  / CGFloat(titles.count)
+        
+        topMenuView = UIView.init(frame: CGRectMake(0, 64, screenWidth, buttonHeigt + offSetY * 2))
+        topMenuView.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(topMenuView)
+        
+        for i in 0..<titles.count {
+            let startX : CGFloat = CGFloat(i) * buttonWidth + (CGFloat(i) + 1) * offSetX;
+            let button = UIButton.init(frame: CGRectMake(startX, offSetY, buttonWidth, buttonHeigt))
+            button.setTitle(titles[i], forState: UIControlState.Normal)
+            button.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
+            button.setTitleColor(Colors.lightBule, forState: UIControlState.Selected)
+            button.layer.cornerRadius = 15
+            button.layer.borderColor = Colors.clearColor.CGColor
+            button.layer.borderWidth = 0.5
+            button.layer.masksToBounds = true
+            button.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            button.tag = i
+            button.addTarget(self, action: #selector(self.topMenuButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            topMenuView.addSubview(button)
+            if (i == index) {
+                button.layer.borderColor = Colors.borderWithGray.CGColor
+                button.selected = true
+            }
+        }
+    }
+    
+    func initLeftNavButton() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "user_icon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.leftButtonClicked))
+    }
+    
+    func leftButtonClicked() {
+        if (UserDefaultManager.isLogin()) {
+            let vc = UserCenterViewController()
+            self.pushViewController(vc)
+            return
+        }
+        loginView.hidden = false
+    }
+    
+    //MARK:是否需要显示登录页面
+    func shouldShowLogin() -> Bool{
+        if (UserDefaultManager.isLogin()) {
+            return false
+        }
+        loginView.hidden = false
+        return true
+    }
+    
+    func initRightNavButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "users_icon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.rightButtonClicked))
+    }
+    
+    func rightButtonClicked() {
+        let vc = GFJWebViewController()
+        vc.urlTag = 0
+        self.pushViewController(vc)
+    }
+    
+    //MARK: 登录页面
+    func initLoginView() {
+        loginView = LoginView(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight))
+        loginView.initView()
+        loginView.delegate = self
+        loginView.hidden = true
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.window!.addSubview(loginView)
+    }
+    
+    /**
+     登录页面代理方法--获取验证码
+     */
+    func getCodeButtonClicked(phone: String) {
+        loginView.hiddenAllKeyBoard()
+        if (phone.isEmpty) {
+            self.showHint("请输入手机号!")
+            return
+        }
+        self.showHudInView(self.view, hint: "验证码获取中...")
+        API.sharedInstance.userCaptcha(phone, success: { (commonModel) in
+            self.hideHud()
+            self.showHint("验证码将发送到您的手机!")
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
+    /**
+     登录页面代理方法--登录按钮
+     
+     - parameter phone
+     - parameter code
+     */
+    func loginButtonClicked(phone: String, code: String) {
+        loginView.hiddenAllKeyBoard()
+        if (phone.isEmpty) {
+            self.showHint("请输入手机号!")
+            return
+        }
+        if (code.isEmpty) {
+            self.showHint("请输入验证码!")
+            return
+        }
+        self.showHudInView(self.view, hint: "登录中...")
+        API.sharedInstance.login(phone, captcha: code, success: { (userinfo) in
+            self.hideHud()
+            self.showHint("登录成功!")
+            self.loginView.hidden = true
+            UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+
+    
+    func topMenuButtonClicked(sender : UIButton) {
+        self.tabBarController?.selectedIndex = sender.tag
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func pushViewController(to : UIViewController) {
-        to.hidesBottomBarWhenPushed = true
+//        to.hidesBottomBarWhenPushed = true
         let image = UIImage(named: "ic_back")
         to.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.backButtonClicked))
         //注意: 加了这一句，自定义的返回按钮也可以用滑动返回了...
