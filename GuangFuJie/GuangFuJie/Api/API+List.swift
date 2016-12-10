@@ -526,7 +526,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getRoofList(status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getRoofList(status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, isSelf : NSNumber? = false, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -541,6 +541,9 @@ extension API {
         }
         if (is_suggest != nil) {
             params["is_suggest"] = is_suggest
+        }
+        if (isSelf != nil) {
+            params["user_id"] = getUserId()
         }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]

@@ -27,7 +27,6 @@
 		DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */; };
 		DE23E4501D8298D400293616 /* MySafeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E44F1D8298D400293616 /* MySafeListViewController.swift */; };
 		DE23E4521D82A47100293616 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4511D82A47100293616 /* SafeDetailViewController.swift */; };
-		DE23E4541D83951500293616 /* InstallBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4531D83951500293616 /* InstallBuyViewController.swift */; };
 		DE23E4571D83A9C500293616 /* BuySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4561D83A9C500293616 /* BuySafeViewController.swift */; };
 		DE3DB2CF1DB4D23000AE0461 /* SMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DB2CC1DB4D23000AE0461 /* SMenuButton.m */; };
 		DE3DB2D01DB4D23000AE0461 /* SPullDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DB2CE1DB4D23000AE0461 /* SPullDownMenuView.m */; };
@@ -337,6 +336,7 @@
 		DE9AAA671DFBD315006B56E9 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA511DFBD315006B56E9 /* UIScrollView+MJExtension.m */; };
 		DE9AAA681DFBD315006B56E9 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA531DFBD315006B56E9 /* UIScrollView+MJRefresh.m */; };
 		DE9AAA691DFBD315006B56E9 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA551DFBD315006B56E9 /* UIView+MJExtension.m */; };
+		DE9AAA6B1DFBED75006B56E9 /* InstallBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */; };
 		DE9F876D1DF2BBC90076F508 /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */; };
 		DE9F876E1DF2BBC90076F508 /* RootInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */; };
 		DE9F876F1DF2BBC90076F508 /* RootSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */; };
@@ -491,7 +491,6 @@
 		DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSafeViewController.swift; sourceTree = "<group>"; };
 		DE23E44F1D8298D400293616 /* MySafeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySafeListViewController.swift; sourceTree = "<group>"; };
 		DE23E4511D82A47100293616 /* SafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeDetailViewController.swift; sourceTree = "<group>"; };
-		DE23E4531D83951500293616 /* InstallBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallBuyViewController.swift; sourceTree = "<group>"; };
 		DE23E4561D83A9C500293616 /* BuySafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuySafeViewController.swift; sourceTree = "<group>"; };
 		DE3DB2CB1DB4D23000AE0461 /* SMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMenuButton.h; sourceTree = "<group>"; };
 		DE3DB2CC1DB4D23000AE0461 /* SMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMenuButton.m; sourceTree = "<group>"; };
@@ -981,6 +980,7 @@
 		DE9AAA531DFBD315006B56E9 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		DE9AAA541DFBD315006B56E9 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
 		DE9AAA551DFBD315006B56E9 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
+		DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallBuyViewController.swift; sourceTree = "<group>"; };
 		DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
 		DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInstallerViewController.swift; sourceTree = "<group>"; };
 		DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSafeViewController.swift; sourceTree = "<group>"; };
@@ -1185,7 +1185,6 @@
 				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
 				DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */,
 				DE23E4511D82A47100293616 /* SafeDetailViewController.swift */,
-				DE23E4531D83951500293616 /* InstallBuyViewController.swift */,
 				DE23E4561D83A9C500293616 /* BuySafeViewController.swift */,
 				DE44CC2B1D840597004690EF /* ApplyForOrderViewController.swift */,
 				DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */,
@@ -2237,6 +2236,7 @@
 		DE9AA95C1DFB6A49006B56E9 /* 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */,
 				DE9AA97A1DFBCA14006B56E9 /* UserCenterViewController.swift */,
 				DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */,
 				DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */,
@@ -2722,7 +2722,6 @@
 				DE7900231D4C57300032D461 /* IQTitleBarButtonItem.swift in Sources */,
 				DE8A76651D865CCA00C5F268 /* CalResultViewController.swift in Sources */,
 				DE8A78E61D869BD000C5F268 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
-				DE23E4541D83951500293616 /* InstallBuyViewController.swift in Sources */,
 				DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */,
 				DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */,
 				DE8A79031D869BD000C5F268 /* CollectionView.swift in Sources */,
@@ -2841,6 +2840,7 @@
 				DE44CC061D8403DA004690EF /* BCQueryRefundsCountResp.m in Sources */,
 				DE79F9681D4C50310032D461 /* API.swift in Sources */,
 				DE8A7A241D87E21200C5F268 /* PNRadarChartDataItem.m in Sources */,
+				DE9AAA6B1DFBED75006B56E9 /* InstallBuyViewController.swift in Sources */,
 				DE8A78D11D869BD000C5F268 /* NSURLResponse+Haneke.swift in Sources */,
 				DE7900201D4C57300032D461 /* IQTextView.swift in Sources */,
 				DE5E74BF1D509CC4003CDAAC /* UIProgressView+AFNetworking.m in Sources */,

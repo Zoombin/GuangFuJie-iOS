@@ -108,7 +108,8 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if (indexPath.section == 1) {
             if (indexPath.row == 0) {
-                
+                let vc = GFJMyRoofsViewController()
+                self.pushViewController(vc)
             } else if (indexPath.row == 1) {
                 let vc = GFJIMInstallerViewController()
                 self.pushViewController(vc)

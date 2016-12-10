@@ -14,6 +14,7 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
     var tableView : UITableView!
     var rInfo : RoofInfo?
     var imageView : UIImageView!
+    var isSelf = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,13 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
         buyNowButton.addTarget(self, action: #selector(self.orderNowButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         buyBottomView.addSubview(buyNowButton)
         
-        tableView = UITableView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - 64), style: UITableViewStyle.Grouped)
+        var offSetY : CGFloat = 0
+        if (isSelf) {
+            buyBottomView.hidden = true
+            offSetY = buyBottomView.frame.size.height
+        }
+        
+        tableView = UITableView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - offSetY - 64), style: UITableViewStyle.Grouped)
         tableView.backgroundColor = UIColor.clearColor()
         tableView.delegate = self
         tableView.dataSource = self
