@@ -24,8 +24,6 @@
 		DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C781B1D68585A00FED16D /* TopLeftLabel.m */; };
 		DE1C74781DB8743300D8F324 /* GetInventerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C74771DB8743300D8F324 /* GetInventerMode.swift */; };
 		DE1FC3DB1DB6135600F7B5EE /* SMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1FC3DA1DB6135600F7B5EE /* SMenuCell.m */; };
-		DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */; };
-		DE23E4501D8298D400293616 /* MySafeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E44F1D8298D400293616 /* MySafeListViewController.swift */; };
 		DE23E4521D82A47100293616 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4511D82A47100293616 /* SafeDetailViewController.swift */; };
 		DE23E4571D83A9C500293616 /* BuySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4561D83A9C500293616 /* BuySafeViewController.swift */; };
 		DE3DB2CF1DB4D23000AE0461 /* SMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DB2CC1DB4D23000AE0461 /* SMenuButton.m */; };
@@ -337,6 +335,11 @@
 		DE9AAA681DFBD315006B56E9 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA531DFBD315006B56E9 /* UIScrollView+MJRefresh.m */; };
 		DE9AAA691DFBD315006B56E9 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA551DFBD315006B56E9 /* UIView+MJExtension.m */; };
 		DE9AAA6B1DFBED75006B56E9 /* InstallBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */; };
+		DE9AAA6D1DFBF3C8006B56E9 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */; };
+		DE9AAA6F1DFBF3D8006B56E9 /* BindDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */; };
+		DE9AAA711DFBF3F8006B56E9 /* MySafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA701DFBF3F8006B56E9 /* MySafeDetailViewController.swift */; };
+		DE9AAA731DFBF6C5006B56E9 /* MySafeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */; };
+		DE9AAA751DFBFE58006B56E9 /* MoreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */; };
 		DE9F876D1DF2BBC90076F508 /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */; };
 		DE9F876E1DF2BBC90076F508 /* RootInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */; };
 		DE9F876F1DF2BBC90076F508 /* RootSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */; };
@@ -488,8 +491,6 @@
 		DE1C74771DB8743300D8F324 /* GetInventerMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInventerMode.swift; sourceTree = "<group>"; };
 		DE1FC3D91DB6135600F7B5EE /* SMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMenuCell.h; sourceTree = "<group>"; };
 		DE1FC3DA1DB6135600F7B5EE /* SMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMenuCell.m; sourceTree = "<group>"; };
-		DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSafeViewController.swift; sourceTree = "<group>"; };
-		DE23E44F1D8298D400293616 /* MySafeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySafeListViewController.swift; sourceTree = "<group>"; };
 		DE23E4511D82A47100293616 /* SafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeDetailViewController.swift; sourceTree = "<group>"; };
 		DE23E4561D83A9C500293616 /* BuySafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuySafeViewController.swift; sourceTree = "<group>"; };
 		DE3DB2CB1DB4D23000AE0461 /* SMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMenuButton.h; sourceTree = "<group>"; };
@@ -981,6 +982,11 @@
 		DE9AAA541DFBD315006B56E9 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
 		DE9AAA551DFBD315006B56E9 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
 		DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallBuyViewController.swift; sourceTree = "<group>"; };
+		DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewController.swift; sourceTree = "<group>"; };
+		DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindDeviceViewController.swift; sourceTree = "<group>"; };
+		DE9AAA701DFBF3F8006B56E9 /* MySafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySafeDetailViewController.swift; sourceTree = "<group>"; };
+		DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySafeListViewController.swift; sourceTree = "<group>"; };
+		DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSafeViewController.swift; sourceTree = "<group>"; };
 		DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
 		DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInstallerViewController.swift; sourceTree = "<group>"; };
 		DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSafeViewController.swift; sourceTree = "<group>"; };
@@ -1176,9 +1182,7 @@
 				DE79F9501D4C1C100032D461 /* MainViewController.swift */,
 				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
 				DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */,
-				DE23E4431D8254CD00293616 /* MoreSafeViewController.swift */,
 				DEC64FDF1D8000AB00AF96AC /* MoreYezhuViewController.swift */,
-				DE23E44F1D8298D400293616 /* MySafeListViewController.swift */,
 				DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */,
 				DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */,
 				DE8A76601D86518300C5F268 /* RoofPriceViewController.xib */,
@@ -2236,6 +2240,8 @@
 		DE9AA95C1DFB6A49006B56E9 /* 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */,
+				DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */,
 				DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */,
 				DE9AA97A1DFBCA14006B56E9 /* UserCenterViewController.swift */,
 				DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */,
@@ -2244,6 +2250,9 @@
 				DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */,
 				DE9AA97C1DFBCCE9006B56E9 /* GFJIMInstallerViewController.swift */,
 				DE9AA97E1DFBCFCA006B56E9 /* GFJMyRoofsViewController.swift */,
+				DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */,
+				DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */,
+				DE9AAA701DFBF3F8006B56E9 /* MySafeDetailViewController.swift */,
 			);
 			path = 2.0;
 			sourceTree = "<group>";
@@ -2601,6 +2610,7 @@
 				DE5E74481D509B9F003CDAAC /* QNUserAgent.m in Sources */,
 				DE8A78E91D869BD000C5F268 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				DE8A78ED1D869BD000C5F268 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				DE9AAA711DFBF3F8006B56E9 /* MySafeDetailViewController.swift in Sources */,
 				DE8A78F21D869BD000C5F268 /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE5E74471D509B9F003CDAAC /* QNSessionManager.m in Sources */,
 				DE8A78E51D869BD000C5F268 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
@@ -2615,6 +2625,7 @@
 				DE5E74B31D509CC4003CDAAC /* AFHTTPSessionManager.m in Sources */,
 				DE8A78E01D869BD000C5F268 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9AA96A1DFB6DD1006B56E9 /* InsterDetailViewController.swift in Sources */,
+				DE9AAA731DFBF6C5006B56E9 /* MySafeListViewController.swift in Sources */,
 				DEF983FC1D7FF5DC00ED1B40 /* Image.swift in Sources */,
 				DE44CC081D8403DA004690EF /* BCRefundStatusResp.m in Sources */,
 				DE5AD27D1DBC8C5400D608A5 /* NSObject+MJProperty.m in Sources */,
@@ -2641,6 +2652,7 @@
 				DE9F87701DF2BBC90076F508 /* RootYeZhuViewController.swift in Sources */,
 				DE8A78DA1D869BD000C5F268 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE44CC021D8403DA004690EF /* BCQueryRefundByIdResp.m in Sources */,
+				DE9AAA6D1DFBF3C8006B56E9 /* DeviceDetailViewController.swift in Sources */,
 				DEA1F12A1DF14D370057F30D /* ReportViewController.swift in Sources */,
 				DE8A79021D869BD000C5F268 /* PhotoBrowser.swift in Sources */,
 				DE8A78FE1D869BD000C5F268 /* PhotoBrowser+PBType.swift in Sources */,
@@ -2722,6 +2734,7 @@
 				DE7900231D4C57300032D461 /* IQTitleBarButtonItem.swift in Sources */,
 				DE8A76651D865CCA00C5F268 /* CalResultViewController.swift in Sources */,
 				DE8A78E61D869BD000C5F268 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				DE9AAA751DFBFE58006B56E9 /* MoreSafeViewController.swift in Sources */,
 				DE57C9401D5D758F005B9CCE /* InsuranceNoticeViewController.swift in Sources */,
 				DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */,
 				DE8A79031D869BD000C5F268 /* CollectionView.swift in Sources */,
@@ -2759,7 +2772,6 @@
 				DE8A76631D865A1900C5F268 /* CalcModel.swift in Sources */,
 				DE8A7A291D88DA2300C5F268 /* ChartUtils.m in Sources */,
 				DE8A78C81D869BD000C5F268 /* DiskFetcher.swift in Sources */,
-				DE23E4441D8254CD00293616 /* MoreSafeViewController.swift in Sources */,
 				DE5E743C1D509B9F003CDAAC /* QN_GTM_Base64.m in Sources */,
 				DE5E74B41D509CC4003CDAAC /* AFNetworkReachabilityManager.m in Sources */,
 				DE8A7A1D1D87E17500C5F268 /* PNScatterChart.m in Sources */,
@@ -2821,7 +2833,6 @@
 				DE44CBFB1D8403DA004690EF /* BCQueryBillByIdReq.m in Sources */,
 				DE7900191D4C57300032D461 /* IQUIView+Hierarchy.swift in Sources */,
 				DE5E74C71D509FD9003CDAAC /* AppModel.swift in Sources */,
-				DE23E4501D8298D400293616 /* MySafeListViewController.swift in Sources */,
 				DE44CC121D8403DA004690EF /* BCPayCache.m in Sources */,
 				DE5E743E1D509B9F003CDAAC /* QNAsyncRun.m in Sources */,
 				DE8A78D51D869BD000C5F268 /* UIImageView+Haneke.swift in Sources */,
@@ -2840,6 +2851,7 @@
 				DE44CC061D8403DA004690EF /* BCQueryRefundsCountResp.m in Sources */,
 				DE79F9681D4C50310032D461 /* API.swift in Sources */,
 				DE8A7A241D87E21200C5F268 /* PNRadarChartDataItem.m in Sources */,
+				DE9AAA6F1DFBF3D8006B56E9 /* BindDeviceViewController.swift in Sources */,
 				DE9AAA6B1DFBED75006B56E9 /* InstallBuyViewController.swift in Sources */,
 				DE8A78D11D869BD000C5F268 /* NSURLResponse+Haneke.swift in Sources */,
 				DE7900201D4C57300032D461 /* IQTextView.swift in Sources */,

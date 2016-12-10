@@ -64,47 +64,49 @@ class InstallerCell: UITableViewCell {
         let bottomView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), bkgViewWidth, bkgViewHeight * 2 / 3))
         bkgView.addSubview(bottomView)
         
-        roofTypeLabel = TopLeftLabel.init(frame: CGRectMake(dir2 * 3, bottomView.frame.size.height * 0.05, bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
+        let pointOffSetY = (bottomView.frame.size.height * 0.15 - dir2) / 2
+        
+        roofTypeLabel = UILabel.init(frame: CGRectMake(dir2 * 3, bottomView.frame.size.height * 0.05, bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
         roofTypeLabel.text = "这里显示的是描述"
         roofTypeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         roofTypeLabel.numberOfLines = 3
         roofTypeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
         bottomView.addSubview(roofTypeLabel)
         
-        let typePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(roofTypeLabel.frame) + 2, dir2, dir2))
+        let typePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(roofTypeLabel.frame) + pointOffSetY, dir2, dir2))
         typePoint.image = UIImage(named: "ic_point_blue")
         bottomView.addSubview(typePoint)
         
-        roofSizeLabel = TopLeftLabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(roofTypeLabel.frame), bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
+        roofSizeLabel = UILabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(roofTypeLabel.frame), bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
         roofSizeLabel.text = "这里显示的是描述"
         roofSizeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         roofSizeLabel.numberOfLines = 3
         roofSizeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
         bottomView.addSubview(roofSizeLabel)
         
-        let sizePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(roofSizeLabel.frame) + 2, dir2, dir2))
+        let sizePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(roofSizeLabel.frame) + pointOffSetY, dir2, dir2))
         sizePoint.image = UIImage(named: "ic_yellow_point")
         bottomView.addSubview(sizePoint)
         
-        roofPriceLabel = TopLeftLabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(roofSizeLabel.frame), bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
+        roofPriceLabel = UILabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(roofSizeLabel.frame), bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
         roofPriceLabel.text = "这里显示的是描述"
         roofPriceLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         roofPriceLabel.numberOfLines = 3
         roofPriceLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
         bottomView.addSubview(roofPriceLabel)
         
-        let pricePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(roofPriceLabel.frame) + 2, dir2, dir2))
+        let pricePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(roofPriceLabel.frame) + pointOffSetY, dir2, dir2))
         pricePoint.image = UIImage(named: "ic_green_point")
         bottomView.addSubview(pricePoint)
         
-        addressLabel = TopLeftLabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(roofPriceLabel.frame), bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
+        addressLabel = UILabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(roofPriceLabel.frame), bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
         addressLabel.text = "这里显示的是描述"
         addressLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         addressLabel.numberOfLines = 3
         addressLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
         bottomView.addSubview(addressLabel)
         
-        let addressPoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(addressLabel.frame) + 2, dir2, dir2))
+        let addressPoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(addressLabel.frame) + pointOffSetY, dir2, dir2))
         addressPoint.image = UIImage(named: "ic_point_red")
         bottomView.addSubview(addressPoint)
         

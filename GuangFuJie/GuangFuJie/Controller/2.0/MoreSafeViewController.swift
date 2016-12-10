@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoreSafeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MoreSafeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     var safeTableView : UITableView!
     var safeArray : NSMutableArray = NSMutableArray()
     
@@ -65,39 +65,18 @@ class MoreSafeViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier(safeCellReuseIdentifier, forIndexPath: indexPath) as! SafeCell
         cell.initCell()
         let userInfo = safeArray[indexPath.row] as! InsuranceInfo
-        var name = ""
-        if (userInfo.beneficiary_name != nil) {
-            name = name + userInfo.beneficiary_name!
-        }
-        name = name + "已购买保险"
-        cell.titleLabel.text = name
-        if ((userInfo.insured_from) != nil) {
-            cell.timeLabel.text = userInfo.insured_from!
-        }
-        var type = ""
-        if (userInfo.size != nil) {
-            type = type + "类型:" + userInfo.size! + ","
-        }
-        if (userInfo.years != nil) {
-            type = type + "年限:" + String(userInfo.years!) + "年,"
-        }
-        if (userInfo.price != nil) {
-            type = type + "价格￥:" + String(userInfo.price!) + "元,"
-        }
-        if (userInfo.insured_price != nil) {
-            let size = NSString.init(string: userInfo.size!)
-            size.stringByReplacingOccurrencesOfString("KW", withString: "")
-            let sizeFloat : CGFloat = CGFloat(size.floatValue)
-            
-            let baoe1 : CGFloat = sizeFloat * 0.7
-            let baoe2 : CGFloat = sizeFloat * 0.7
-            let baoe3 : CGFloat = 2.0
-            let total : CGFloat = baoe1 + baoe2 + baoe3
-            let baoe = String(format: "%.1f万/年", total)
-            type = type + "保额:" + baoe
-        }
-        cell.describeLabel.text = type
+        cell.setData(userInfo, isSelf: false)
+        cell.viewMoreButton.setTitle("我也要投", forState: UIControlState.Normal)
+        cell.viewMoreButton.addTarget(self, action: #selector(self.buySafe), forControlEvents: UIControlEvents.TouchUpInside)
         return cell
+    }
+    
+    func buySafe() {
+        if (shouldShowLogin()) {
+            return
+        }
+        let vc = BuySafeViewController()
+        self.pushViewController(vc)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

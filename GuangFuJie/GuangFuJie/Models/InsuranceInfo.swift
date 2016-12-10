@@ -16,4 +16,9 @@ class InsuranceInfo: NSObject {
     var insured_price: NSNumber?  //保额
     var insured_from: String?   //开始时间
     var insured_end: String?    //结束时间
+    var phone : String?
+    var id_no : String?
+    var station_address : String?
+    
+    var id : NSNumber?
 }

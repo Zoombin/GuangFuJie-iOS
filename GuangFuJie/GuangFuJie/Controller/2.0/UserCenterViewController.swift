@@ -111,6 +111,8 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
                 let vc = GFJMyRoofsViewController()
                 self.pushViewController(vc)
             } else if (indexPath.row == 1) {
+                //TODO: 这版先不做
+                return
                 let vc = GFJIMInstallerViewController()
                 self.pushViewController(vc)
             } else if (indexPath.row == 2) {
