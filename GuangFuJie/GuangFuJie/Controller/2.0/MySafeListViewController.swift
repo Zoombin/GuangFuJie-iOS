@@ -66,6 +66,7 @@ class MySafeListViewController: BaseViewController, UITableViewDelegate, UITable
         cell.initCell()
         let userInfo = safeArray[indexPath.row] as! InsuranceInfo
         cell.setData(userInfo, isSelf: true)
+        cell.viewMoreButton.setTitle("查看详情", forState: UIControlState.Normal)
         cell.viewMoreButton.userInteractionEnabled = false
         return cell
     }

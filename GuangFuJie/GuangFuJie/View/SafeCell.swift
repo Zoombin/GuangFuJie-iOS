@@ -24,6 +24,7 @@ class SafeCell: UITableViewCell {
     
     var buyTimeLabel : UILabel!
     var viewMoreButton : UIButton!
+    var payButton : UIButton!
     
     func initCell() {
         if (viewCreated) {
@@ -173,9 +174,22 @@ class SafeCell: UITableViewCell {
         self.idLabel.text = isSelf ? "" : idCard
         
         var type = ""
+        var baoeValue = "保额："
         if (info.size != nil) {
             type = "光伏街发电系统" + info.size! + "版"
+            
+            let size = NSString.init(string: info.size!)
+            size.stringByReplacingOccurrencesOfString("KW", withString: "")
+            let sizeFloat : CGFloat = CGFloat(size.floatValue)
+            
+            let baoe1 : CGFloat = sizeFloat * 0.7
+            let baoe2 : CGFloat = sizeFloat * 0.7
+            let baoe3 : CGFloat = 2.0
+            let total : CGFloat = baoe1 + baoe2 + baoe3
+            let baoe = String(format: "%.1f万/年", total)
+            baoeValue = baoeValue  + baoe
         }
+        self.baoeLabel.text = baoeValue
         self.safeTypeLabel.text = type
         
         var time = "投保年限："
@@ -191,28 +205,27 @@ class SafeCell: UITableViewCell {
         }
         self.rangeLabel.text = range
         
-        var baoeValue = "保额："
+        var price = ""
         if (info.insured_price != nil) {
-            self.priceLabel.text = "￥" + String(info.insured_price!)
-            
-            let size = NSString.init(string: info.size!)
-            size.stringByReplacingOccurrencesOfString("KW", withString: "")
-            let sizeFloat : CGFloat = CGFloat(size.floatValue)
-            
-            let baoe1 : CGFloat = sizeFloat * 0.7
-            let baoe2 : CGFloat = sizeFloat * 0.7
-            let baoe3 : CGFloat = 2.0
-            let total : CGFloat = baoe1 + baoe2 + baoe3
-            let baoe = String(format: "%.1f万/年", total)
-            baoeValue = baoeValue  + baoe
+            price = "￥" + String(info.insured_price!)
         }
-        self.baoeLabel.text = baoeValue
+        self.priceLabel.text = price
         
         var location = ""
         if (info.station_address != nil) {
             location = info.station_address!
         }
         self.addressLabel.text = location
+        
+        if (isSelf) {
+            if (info.order_status!.integerValue == 2) {
+                self.tipsLabel.text = "已成功投保"
+            } else if (info.order_status!.integerValue == 1){
+                self.tipsLabel.text = "已投保"
+            } else {
+                self.tipsLabel.text = "未付款"
+            }
+        }
     }
     
     static func cellHeight() -> CGFloat {
