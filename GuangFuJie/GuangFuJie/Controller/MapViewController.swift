@@ -285,7 +285,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         
     }
     
-    func mapview(mapView: BMKMapView!, onLongClick coordinate: CLLocationCoordinate2D) {
+    func mapView(mapView: BMKMapView!, onClickedMapBlank coordinate: CLLocationCoordinate2D) {
         if (canDraw == false) {
             return
         }
