@@ -25,13 +25,16 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
     }
     
     func getNearByPoints(loation : CLLocationCoordinate2D) {
+        self.showHudInView(self.view, hint: "获取数据中...")
         API.sharedInstance.getNearRoof(loation.latitude, lng: loation.longitude, success: { (roofList) in
+                self.hideHud()
                 self.points.removeAllObjects()
-            if (roofList.count > 0) {
-                self.points.addObjectsFromArray(roofList as [AnyObject])
-            }
+                if (roofList.count > 0) {
+                    self.points.addObjectsFromArray(roofList as [AnyObject])
+                }
             self.addPoints()
             }) { (msg) in
+                self.hideHud()
                 self.showHint(msg)
         }
     }
@@ -43,11 +46,39 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
         }
         for i in 0..<self.points.count {
             let roofInfo = self.points[i] as! RoofInfo
+            var type = "类型:"
+            var size = "面积:"
+            var price = "租金:"
+            var location = "地址:"
+            var fullName = "屋顶出租"
+            if (roofInfo.fullname != nil) {
+                fullName = roofInfo.fullname! + fullName
+            }
+            if (roofInfo.area_size != nil) {
+                size = size + String(format: "%.2f", roofInfo.area_size!.floatValue) + "㎡"
+            }
+            if (roofInfo.type != nil) {
+                type = type + (roofInfo.type == 2 ? "斜面" : "平面")
+            }
+            if (roofInfo.price != nil) {
+                price = price + String(roofInfo.price!) + "元/㎡"
+            }
+            
+            if ((roofInfo.province_label) != nil) {
+                location = location + roofInfo.province_label!
+            }
+            if ((roofInfo.city_label) != nil) {
+                location = location + roofInfo.city_label!
+            }
+            if ((roofInfo.address) != nil) {
+                location = location + roofInfo.address!
+            }
+            
             let item = BMKPointAnnotation()
             let coordinate = CLLocationCoordinate2D.init(latitude: roofInfo.latitude!.doubleValue, longitude: roofInfo.longitude!.doubleValue)
             item.coordinate = coordinate
-            item.title = roofInfo.fullname!
-            item.subtitle = roofInfo.address!
+            item.title = fullName
+            item.subtitle = String(format: "%@ %@ %@ %@", type, size, price, location)
             mapView.addAnnotation(item)
         }
     }
@@ -112,6 +143,7 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(AnnotationViewID) as! BMKPinAnnotationView?
         if annotationView == nil {
             annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
+            print(annotationView?.subviews)
             // 设置颜色
             annotationView!.pinColor = UInt(BMKPinAnnotationColorRed)
             // 从天上掉下的动画
