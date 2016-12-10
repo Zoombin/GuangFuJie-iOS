@@ -313,6 +313,7 @@
 		DE9AA9681DFB6B51006B56E9 /* GFJInstallerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */; };
 		DE9AA96A1DFB6DD1006B56E9 /* InsterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */; };
 		DE9AA96C1DFB7549006B56E9 /* GFJRoofListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */; };
+		DE9AA9701DFBA853006B56E9 /* NearByRoofViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */; };
 		DE9F876D1DF2BBC90076F508 /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */; };
 		DE9F876E1DF2BBC90076F508 /* RootInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */; };
 		DE9F876F1DF2BBC90076F508 /* RootSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */; };
@@ -914,6 +915,7 @@
 		DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJInstallerListViewController.swift; sourceTree = "<group>"; };
 		DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsterDetailViewController.swift; sourceTree = "<group>"; };
 		DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJRoofListViewController.swift; sourceTree = "<group>"; };
+		DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByRoofViewController.swift; sourceTree = "<group>"; };
 		DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
 		DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInstallerViewController.swift; sourceTree = "<group>"; };
 		DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSafeViewController.swift; sourceTree = "<group>"; };
@@ -2174,6 +2176,7 @@
 				DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */,
 				DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */,
 				DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */,
+				DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */,
 			);
 			path = 2.0;
 			sourceTree = "<group>";
@@ -2588,6 +2591,7 @@
 				DE8A7A1D1D87E17500C5F268 /* PNScatterChart.m in Sources */,
 				DE5E74841D509BAD003CDAAC /* QNDnspodEnterprise.m in Sources */,
 				DE44CC051D8403DA004690EF /* BCQueryRefundsCountReq.m in Sources */,
+				DE9AA9701DFBA853006B56E9 /* NearByRoofViewController.swift in Sources */,
 				DE8A78DC1D869BD000C5F268 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE869F011D81475B0062E670 /* InsuranceInfo.swift in Sources */,
 				DE8A78CB1D869BD000C5F268 /* Format.swift in Sources */,

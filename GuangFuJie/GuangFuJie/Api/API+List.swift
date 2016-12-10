@@ -846,4 +846,27 @@ extension API {
             success?(commonModel : commonModel)
             }, failure: failure)
     }
+    
+    /**
+     附近屋顶
+     
+     - parameter lat:
+     - parameter lng:
+     - parameter success:
+     - parameter failure: 
+     */
+    func getNearRoof(lat : Double, lng : Double, success: ((roofList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "roof/nearby_roofs"
+        let params = [
+            "latitude" : lat,
+            "longitude" : lng,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (msg, data) in
+            let array = RoofInfo.mj_objectArrayWithKeyValuesArray(data)
+            success?(roofList: array)
+            }, failure: failure)
+    }
 }

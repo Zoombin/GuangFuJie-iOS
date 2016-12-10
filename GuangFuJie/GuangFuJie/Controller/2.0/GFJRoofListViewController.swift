@@ -39,6 +39,8 @@ class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITabl
     
     let installerCellReuseIdentifier = "installerCellReuseIdentifier"
     func initView() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "附近屋顶", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.nearByRoof))
+        
         installTableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Plain)
         installTableView.delegate = self
         installTableView.dataSource = self
@@ -47,6 +49,11 @@ class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITabl
         self.view.addSubview(installTableView)
         
         installTableView.registerClass(InstallerCell.self, forCellReuseIdentifier: installerCellReuseIdentifier)
+    }
+    
+    func nearByRoof() {
+        let vc = NearByRoofViewController()
+        self.pushViewController(vc)
     }
     
     override func didReceiveMemoryWarning() {

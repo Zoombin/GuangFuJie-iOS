@@ -25,4 +25,6 @@ class RoofInfo: NSObject {
     var status : NSNumber?         // 1:未处理 2:已接单 3:已完成
     var created_date : String?   // 发布的时间
     var is_expire : NSNumber?      // 是否过期 0:未过期  1:已过期
+    var longitude : NSNumber?
+    var latitude : NSNumber?
 }
