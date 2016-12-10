@@ -83,7 +83,7 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         let scrollViewWidth = PhoneUtils.kScreenWidth
         let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
         
-        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight + 15))
         
         let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
         let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
@@ -99,7 +99,7 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
             scrollView.addSubview(imageView)
         }
         
-        installerPageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20, scrollView.frame.size.width, 20))
+        installerPageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20 - 15, scrollView.frame.size.width, 20))
         installerPageControl.numberOfPages = images.count
         footerView.addSubview(installerPageControl)
         
@@ -204,6 +204,10 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        let userInfo = installerArray[indexPath.row] as! RoofInfo
+        let vc = InstallBuyViewController()
+        vc.roofId = userInfo.id!
+        self.pushViewController(vc)
     }
     
     override func didReceiveMemoryWarning() {
