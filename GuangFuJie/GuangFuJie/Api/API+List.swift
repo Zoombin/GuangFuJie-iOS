@@ -162,7 +162,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (msg, data) in
             let appModel = AppModel.mj_objectWithKeyValues(data)
             success?(appModel : appModel)
             }, failure: failure)
@@ -869,4 +869,5 @@ extension API {
             success?(roofList: array)
             }, failure: failure)
     }
+
 }
