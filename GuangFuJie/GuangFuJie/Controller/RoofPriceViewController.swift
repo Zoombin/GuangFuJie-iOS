@@ -13,11 +13,15 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate {
     @IBOutlet weak var locationLabel : UILabel!
     @IBOutlet weak var typeButton : UIButton!
     
+    @IBOutlet weak var type1View : UIView!
     @IBOutlet weak var type1TextField : UITextField!
     
     @IBOutlet weak var type2TextField : UITextField! //类型2TextField
     @IBOutlet weak var type2View : UIView!     //类型2View
     @IBOutlet weak var type2Button : UIButton! //房屋类型
+    
+    @IBOutlet weak var rightView1 : UILabel!
+    @IBOutlet weak var rightView2 : UILabel!
     
     var currentType = 0
     var houseType = 0
@@ -70,13 +74,13 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate {
                 //粗略计算
                 typeButton.setTitle("粗略计算", forState: UIControlState.Normal)
                 type2View.hidden = true
-                type1TextField.hidden = false
+                type1View.hidden = false
                 currentType = 1
             } else {
                 //精确计算
                 typeButton.setTitle("精确计算", forState: UIControlState.Normal)
                 type2View.hidden = false
-                type1TextField.hidden = true
+                type1View.hidden = true
                 currentType = 2
             }
         } else {
@@ -124,6 +128,12 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate {
         calBottomView.addSubview(calButton)
         
         scrollView.frame = CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - calBottomView.frame.size.height - 64)
+        
+        type1TextField.rightView = rightView1
+        type1TextField.rightViewMode = UITextFieldViewMode.Always
+        
+        type2TextField.rightView = rightView2
+        type2TextField.rightViewMode = UITextFieldViewMode.Always
     }
     
     func calacuteNow() {
