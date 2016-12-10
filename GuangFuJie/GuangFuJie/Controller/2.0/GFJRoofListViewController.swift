@@ -1,14 +1,14 @@
 //
-//  MoreYezhuViewController.swift
+//  GFJRoofListViewController.swift
 //  GuangFuJie
 //
-//  Created by 颜超 on 16/9/7.
+//  Created by 颜超 on 2016/12/10.
 //  Copyright © 2016年 颜超. All rights reserved.
 //
 
 import UIKit
 
-class MoreYezhuViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var installTableView : UITableView!
     var installerArray : NSMutableArray = NSMutableArray()
@@ -73,6 +73,11 @@ class MoreYezhuViewController: BaseViewController, UITableViewDelegate, UITableV
         if ((userInfo.created_date) != nil) {
             cell.timeLabel.text = userInfo.created_date!
         }
+        if (userInfo.area_image != nil) {
+            cell.avatarImageView.setImageWithURL(NSURL.init(string: userInfo.area_image!)!)
+        } else {
+            cell.avatarImageView.image = UIImage(named: "ic_avatar_yezhu")
+        }
         var type = "屋顶类型:"
         var size = "屋顶面积:"
         var price = "屋顶租金:"
@@ -100,6 +105,8 @@ class MoreYezhuViewController: BaseViewController, UITableViewDelegate, UITableV
             location = location + userInfo.address!
         }
         cell.addressLabel.text = location
+        cell.viewMoreButton.setTitle("点我接单", forState: UIControlState.Normal)
+        cell.viewMoreButton.userInteractionEnabled = false
         return cell
     }
     

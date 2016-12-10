@@ -312,6 +312,9 @@
 		DE9135FD1DE85E48001190B7 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */; };
 		DE9135FE1DE85E48001190B7 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */; };
 		DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE9135F71DE85E48001190B7 /* mapapi.bundle */; };
+		DE9AA9681DFB6B51006B56E9 /* GFJInstallerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */; };
+		DE9AA96A1DFB6DD1006B56E9 /* InsterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */; };
+		DE9AA96C1DFB7549006B56E9 /* GFJRoofListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */; };
 		DE9F876D1DF2BBC90076F508 /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */; };
 		DE9F876E1DF2BBC90076F508 /* RootInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */; };
 		DE9F876F1DF2BBC90076F508 /* RootSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */; };
@@ -912,6 +915,9 @@
 		DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		DE9135F71DE85E48001190B7 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJInstallerListViewController.swift; sourceTree = "<group>"; };
+		DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsterDetailViewController.swift; sourceTree = "<group>"; };
+		DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJRoofListViewController.swift; sourceTree = "<group>"; };
 		DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
 		DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInstallerViewController.swift; sourceTree = "<group>"; };
 		DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSafeViewController.swift; sourceTree = "<group>"; };
@@ -1093,6 +1099,7 @@
 		18B8FA5C1D3CE8A400B334E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE9AA95C1DFB6A49006B56E9 /* 2.0 */,
 				DE9F87681DF2BBAB0076F508 /* Root */,
 				DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */,
 				DED15B681DED26C700B8260B /* MapViewController.swift */,
@@ -2167,6 +2174,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DE9AA95C1DFB6A49006B56E9 /* 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */,
+				DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */,
+				DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */,
+			);
+			path = 2.0;
+			sourceTree = "<group>";
+		};
 		DE9F87681DF2BBAB0076F508 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -2434,6 +2451,7 @@
 				DE5923AA1D9117AC00FC6EBE /* PhotoViewController.swift in Sources */,
 				DE5E74B31D509CC4003CDAAC /* AFHTTPSessionManager.m in Sources */,
 				DE8A78E01D869BD000C5F268 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
+				DE9AA96A1DFB6DD1006B56E9 /* InsterDetailViewController.swift in Sources */,
 				DEF983FC1D7FF5DC00ED1B40 /* Image.swift in Sources */,
 				DE44CC081D8403DA004690EF /* BCRefundStatusResp.m in Sources */,
 				DE5AD27D1DBC8C5400D608A5 /* NSObject+MJProperty.m in Sources */,
@@ -2568,6 +2586,7 @@
 				DE8A78DE1D869BD000C5F268 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				DE8A78C01D869BD000C5F268 /* SourceLocation.swift in Sources */,
 				DE5E74871D509BAD003CDAAC /* QNHosts.m in Sources */,
+				DE9AA9681DFB6B51006B56E9 /* GFJInstallerListViewController.swift in Sources */,
 				DE8A76631D865A1900C5F268 /* CalcModel.swift in Sources */,
 				DE8A7A291D88DA2300C5F268 /* ChartUtils.m in Sources */,
 				DE8A78C81D869BD000C5F268 /* DiskFetcher.swift in Sources */,
@@ -2677,6 +2696,7 @@
 				DE7900211D4C57300032D461 /* IQBarButtonItem.swift in Sources */,
 				DE5E74491D509B9F003CDAAC /* QNFileRecorder.m in Sources */,
 				DE44CBFF1D8403DA004690EF /* BCQueryBillsCountReq.m in Sources */,
+				DE9AA96C1DFB7549006B56E9 /* GFJRoofListViewController.swift in Sources */,
 				DE5E748F1D509BAD003CDAAC /* QNIP.m in Sources */,
 				DE8A78FC1D869BD000C5F268 /* PhotoBrowser+Indicator.swift in Sources */,
 				DE8A79061D869BD000C5F268 /* ShowImageView.swift in Sources */,

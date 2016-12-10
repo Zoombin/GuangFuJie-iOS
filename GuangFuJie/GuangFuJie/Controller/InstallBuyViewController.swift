@@ -28,6 +28,7 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
         API.sharedInstance.getRoofInfo(roofId, success: { (roofInfo) in
                 self.hideHud()
                 self.rInfo = roofInfo
+                self.title = roofInfo.fullname!
                 self.addHeaderView()
                 self.tableView.reloadData()
             }) { (msg) in

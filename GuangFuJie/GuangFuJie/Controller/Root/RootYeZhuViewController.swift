@@ -10,7 +10,7 @@ import UIKit
 
 //业主
 class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var yezhuTableView : UITableView!
     var yezhuPageControl : UIPageControl!
     var yezhuView : UIView!
@@ -62,53 +62,49 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         yezhuView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topMenuView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
         self.view.addSubview(yezhuView)
         
-        let buttonWidth = (PhoneUtils.kScreenWidth) / 3
-        let buttonHeight = PhoneUtils.kScreenHeight / 14
-        
-        let yezhuBottomView = UIView.init(frame: CGRectMake(0, yezhuView.frame.size.height - buttonHeight, PhoneUtils.kScreenWidth, buttonHeight))
-        yezhuBottomView.backgroundColor = Colors.installColor
+        let yezhuBottomView = UIView.init(frame: CGRectMake(0, yezhuView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
+        yezhuBottomView.backgroundColor = UIColor.whiteColor()
         yezhuView.addSubview(yezhuBottomView)
         
+        let buttonWidth = (PhoneUtils.kScreenWidth - 5 * 4) / 3
+        let buttonHeight = yezhuBottomView.frame.size.height - 5 * 2
+        
         let calRoomButton = UIButton.init(type: UIButtonType.Custom)
-        calRoomButton.frame = CGRectMake(0, 0, buttonWidth, buttonHeight)
+        calRoomButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
         calRoomButton.setTitle("屋顶评估", forState: UIControlState.Normal)
-        calRoomButton.backgroundColor = UIColor.clearColor()
+        calRoomButton.backgroundColor = Colors.installColor
         calRoomButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        calRoomButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge)
+        calRoomButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
         calRoomButton.addTarget(self, action: #selector(self.calRoomButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         yezhuBottomView.addSubview(calRoomButton)
         
         let soldRoomButton = UIButton.init(type: UIButtonType.Custom)
-        soldRoomButton.frame = CGRectMake(buttonWidth, 0, buttonWidth, buttonHeight)
+        soldRoomButton.frame = CGRectMake(5 * 2 + buttonWidth, 5, buttonWidth, buttonHeight)
         soldRoomButton.setTitle("屋顶出租", forState: UIControlState.Normal)
-        soldRoomButton.backgroundColor = UIColor.clearColor()
+        soldRoomButton.backgroundColor = UIColor.whiteColor()
         soldRoomButton.addTarget(self, action: #selector(self.soldRoomButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
-        soldRoomButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        soldRoomButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge)
+        soldRoomButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        soldRoomButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        soldRoomButton.layer.borderColor = Colors.installColor.CGColor
+        soldRoomButton.layer.borderWidth = 0.5
         yezhuBottomView.addSubview(soldRoomButton)
         
         let mapAreaButton = UIButton.init(type: UIButtonType.Custom)
-        mapAreaButton.frame = CGRectMake(buttonWidth * 2, 0, buttonWidth, buttonHeight)
+        mapAreaButton.frame = CGRectMake(5 * 3 + buttonWidth * 2, 5, buttonWidth, buttonHeight)
         mapAreaButton.setTitle("屋顶地图", forState: UIControlState.Normal)
-        mapAreaButton.backgroundColor = UIColor.clearColor()
+        mapAreaButton.backgroundColor = UIColor.whiteColor()
         mapAreaButton.addTarget(self, action: #selector(self.mapAreaButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
-        mapAreaButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        mapAreaButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge)
+        mapAreaButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        mapAreaButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        mapAreaButton.layer.borderColor = Colors.installColor.CGColor
+        mapAreaButton.layer.borderWidth = 0.5
         yezhuBottomView.addSubview(mapAreaButton)
-        
-        let line1 = UIView.init(frame: CGRectMake(buttonWidth, 0.25 * buttonHeight, 1, buttonHeight * 0.5))
-        line1.backgroundColor = UIColor.whiteColor()
-        yezhuBottomView.addSubview(line1)
-        
-        let line2 = UIView.init(frame: CGRectMake(buttonWidth * 2, 0.25 * buttonHeight, 1, buttonHeight * 0.5))
-        line2.backgroundColor = UIColor.whiteColor()
-        yezhuBottomView.addSubview(line2)
         
         let offSetY : CGFloat = 8
         let scrollViewWidth = PhoneUtils.kScreenWidth
         let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
         
-        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight + 15))
         
         let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
         let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
@@ -124,7 +120,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
             scrollView.addSubview(imageView)
         }
         
-        yezhuPageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20, scrollView.frame.size.width, 20))
+        yezhuPageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20 - 15, scrollView.frame.size.width, 20))
         yezhuPageControl.numberOfPages = images.count
         footerView.addSubview(yezhuPageControl)
         
@@ -196,7 +192,13 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
             cell.statusLabel.text = "未认证"
             cell.statusLabel.textColor = Colors.installRedColor
         }
+        cell.viewMoreButton.addTarget(self, action: #selector(self.viewMoreButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         return cell
+    }
+    
+    func viewMoreButtonClicked() {
+        let vc = GFJInstallerListViewController()
+        self.pushViewController(vc)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -208,21 +210,21 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

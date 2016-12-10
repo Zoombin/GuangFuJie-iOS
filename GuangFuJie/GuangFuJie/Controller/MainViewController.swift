@@ -685,7 +685,7 @@
 //        mapAreaButton.layer.borderColor = Colors.installColor.CGColor
 //        mapAreaButton.layer.borderWidth = 0.5
 //        yezhuBottomView.addSubview(mapAreaButton)
-//        
+//
 //        let offSetY : CGFloat = 8
 //        let scrollViewWidth = PhoneUtils.kScreenWidth
 //        let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
