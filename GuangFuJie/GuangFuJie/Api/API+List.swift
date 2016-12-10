@@ -359,6 +359,25 @@ extension API {
     }
     
     /**
+     我的安装商
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func myInstallerList(success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/my_installer_list"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["user_id"] = getUserId()
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (msg, data) in
+            let array = InstallInfo.mj_objectArrayWithKeyValuesArray(data)
+            success?(userInfos: array)
+            }, failure: failure)
+    }
+    
+    /**
      计算发电量收益
      
      - parameter type:
@@ -603,11 +622,15 @@ extension API {
      - parameter success:
      - parameter failure: 
      */
-    func usersHaveInsuranceList(success: ((insuranceList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func usersHaveInsuranceList(start : NSInteger, pagesize : NSInteger,is_suggest : NSNumber? = nil, success: ((insuranceList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/users_have_insurance_list"
-        let params = [
-            "_o" : 1
-        ]
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["START"] = start
+        params["PAGESIZE"] = pagesize
+        if (is_suggest != nil) {
+            params["is_suggest"] = is_suggest!
+        }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (msg, data) in

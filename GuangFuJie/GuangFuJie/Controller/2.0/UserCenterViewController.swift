@@ -22,7 +22,6 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         let tableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 50), style: UITableViewStyle.Grouped)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.view.addSubview(tableView)
         
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -56,7 +55,10 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if (section == 0) {
+            return 1;
+        }
+        return 3;
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -86,9 +88,18 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
             cell.imageView?.image = UIImage(named: "ic_avstar")
             cell.textLabel?.text = UserDefaultManager.getUser()?.user_name
         } else {
-            cell.textLabel?.text = "我的保险"
             cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            if (indexPath.row == 0) {
+                cell.imageView?.image = UIImage(named: "ic_my_roof")
+                cell.textLabel?.text = "我的屋顶"
+            } else if (indexPath.row == 1) {
+                cell.imageView?.image = UIImage(named: "ic_my_install")
+                cell.textLabel?.text = "我是安装商"
+            } else if (indexPath.row == 2) {
+                cell.imageView?.image = UIImage(named: "ic_my_insure")
+                cell.textLabel?.text = "我的保险"
+            }
         }
         return cell
     }
@@ -96,9 +107,15 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if (indexPath.section == 1) {
-            //TODO: 去我的保险列表页
-            let vc = MySafeListViewController()
-            self.pushViewController(vc)
+            if (indexPath.row == 0) {
+                
+            } else if (indexPath.row == 1) {
+                let vc = GFJIMInstallerViewController()
+                self.pushViewController(vc)
+            } else if (indexPath.row == 2) {
+                let vc = MySafeListViewController()
+                self.pushViewController(vc)
+            }
         }
     }
     

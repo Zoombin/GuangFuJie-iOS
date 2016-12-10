@@ -22,7 +22,7 @@ class MoreSafeViewController: UIViewController, UITableViewDelegate, UITableView
     
     func loadUserList() {
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.usersHaveInsuranceList({ (insuranceList) in
+        API.sharedInstance.usersHaveInsuranceList(0, pagesize: 10, success: { (insuranceList) in
             self.hideHud()
             self.safeArray.removeAllObjects()
             if (insuranceList.count > 0) {
@@ -103,5 +103,5 @@ class MoreSafeViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
+    
 }

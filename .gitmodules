@@ -25,3 +25,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/UICountingLabel"]
 	path = GuangFuJie/GuangFuJie/Submodules/UICountingLabel
 	url = https://github.com/dataxpress/UICountingLabel.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/MJRefresh"]
+	path = GuangFuJie/GuangFuJie/Submodules/MJRefresh
+	url = https://github.com/CoderMJLee/MJRefresh.git

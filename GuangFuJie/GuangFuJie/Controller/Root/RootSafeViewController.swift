@@ -9,8 +9,13 @@
 import UIKit
 
 //保险
-class RootSafeViewController: BaseViewController {
-
+class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    var safeView : UIView!
+    var safeTableView : UITableView!
+    var safePageControl : UIPageControl!
+    
+    var safeArray = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
@@ -18,16 +23,146 @@ class RootSafeViewController: BaseViewController {
     }
     
     func initView() {
-        //MARK: 如果是root的话必须初始化这三个
         showTopMenu(self.tabBarController!.selectedIndex)
         initRightNavButton()
         initLeftNavButton()
         initLoginView()
+        
+        initSafeView()
+        loadSafeList()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        print("保险")
+    //MARK: 保险
+    let safeCellReuseIdentifier = "safeCellReuseIdentifier"
+    func initSafeView() {
+        safeView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topMenuView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
+        self.view.addSubview(safeView)
+        
+        let safeViewBottomView = UIView.init(frame: CGRectMake(0, safeView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
+        safeViewBottomView.backgroundColor = UIColor.whiteColor()
+        safeView.addSubview(safeViewBottomView)
+        
+        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
+        let buttonHeight = safeViewBottomView.frame.size.height - 5 * 2
+        
+        let safeButton = UIButton.init(type: UIButtonType.Custom)
+        safeButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
+        safeButton.setTitle("立即购买", forState: UIControlState.Normal)
+        safeButton.backgroundColor = Colors.installColor
+        safeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        safeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        safeButton.addTarget(self, action: #selector(self.buySafeNow), forControlEvents: UIControlEvents.TouchUpInside)
+        safeViewBottomView.addSubview(safeButton)
+        
+        let offSetY : CGFloat = 8
+        let scrollViewWidth = PhoneUtils.kScreenWidth
+        let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
+        
+        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        
+        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
+        
+        scrollView.contentSize = CGSizeMake(scrollViewWidth * CGFloat(images.count), 0)
+        scrollView.pagingEnabled = true
+        scrollView.delegate = self
+        footerView.addSubview(scrollView)
+        
+        for i in 0..<images.count {
+            let imageView = UIImageView.init(frame: CGRectMake(CGFloat(i) * scrollViewWidth, offSetY, scrollViewWidth, scrollViewHeight))
+            imageView.image = UIImage(named: images[i])
+            scrollView.addSubview(imageView)
+        }
+        
+        safePageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20, scrollView.frame.size.width, 20))
+        safePageControl.numberOfPages = images.count
+        footerView.addSubview(safePageControl)
+        
+        let tableViewHeight = CGRectGetMinY(safeViewBottomView.frame)
+        safeTableView = UITableView.init(frame: CGRectMake(0, 0, safeView.frame.size.width, tableViewHeight), style: UITableViewStyle.Plain)
+        safeTableView.delegate = self
+        safeTableView.dataSource = self
+        safeTableView.backgroundColor = Colors.bkgColor
+        safeTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        safeView.addSubview(safeTableView)
+        
+        safeTableView.tableHeaderView = footerView
+        
+        safeTableView.registerClass(SafeCell.self, forCellReuseIdentifier: safeCellReuseIdentifier)
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return safeArray.count
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return SafeCell.cellHeight()
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier(safeCellReuseIdentifier, forIndexPath: indexPath) as! SafeCell
+            cell.initCell()
+            let userInfo = safeArray[indexPath.row] as! InsuranceInfo
+            var name = ""
+            if (userInfo.beneficiary_name != nil) {
+                name = name + userInfo.beneficiary_name!
+            }
+            name = name + "已购买保险"
+            cell.titleLabel.text = name
+            if ((userInfo.insured_from) != nil) {
+                cell.timeLabel.text = userInfo.insured_from!
+            }
+            var type = ""
+            if (userInfo.size != nil) {
+                type = type + "类型:" + userInfo.size! + ","
+            }
+            if (userInfo.years != nil) {
+                type = type + "年限:" + String(userInfo.years!) + "年,"
+            }
+            if (userInfo.price != nil) {
+                type = type + "价格￥:" + String(userInfo.price!) + "元,"
+            }
+            if (userInfo.insured_price != nil) {
+                let size = NSString.init(string: userInfo.size!)
+                size.stringByReplacingOccurrencesOfString("KW", withString: "")
+                let sizeFloat : CGFloat = CGFloat(size.floatValue)
+                
+                let baoe1 : CGFloat = sizeFloat * 0.7
+                let baoe2 : CGFloat = sizeFloat * 0.7
+                let baoe3 : CGFloat = 2.0
+                let total : CGFloat = baoe1 + baoe2 + baoe3
+                let baoe = String(format: "%.1f万/年", total)
+                type = type + "保额:" + baoe
+            }
+            cell.describeLabel.text = type
+            return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
+    
+    func loadSafeList() {
+        self.showHudInView(self.view, hint: "加载中...")
+        API.sharedInstance.usersHaveInsuranceList(0, pagesize: 10, is_suggest: 1, success: { (insuranceList) in
+            self.hideHud()
+            self.safeArray.removeAllObjects()
+            if (insuranceList.count > 0) {
+                self.safeArray.addObject(insuranceList.firstObject!)
+            }
+            self.safeTableView.reloadData()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
+    func buySafeNow() {
+        if (shouldShowLogin()) {
+            return
+        }
+        let vc = BuySafeViewController()
+        self.pushViewController(vc)
     }
     
     /*
