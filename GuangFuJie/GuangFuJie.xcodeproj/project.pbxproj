@@ -181,8 +181,6 @@
 		DE79006E1D4C59920032D461 /* NSString+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = DE79006A1D4C59920032D461 /* NSString+AESCrypt.m */; };
 		DE79006F1D4C59920032D461 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DE79006C1D4C59920032D461 /* UIViewController+HUD.m */; };
 		DE7900B11D4C60360032D461 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7900961D4C60360032D461 /* MBProgressHUD.m */; };
-		DE7900EF1D4C88C70032D461 /* ABoutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900EE1D4C88C70032D461 /* ABoutUsView.swift */; };
-		DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */; };
 		DE7900FA1D4C9D7E0032D461 /* InstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */; };
 		DE7900FF1D4CA8170032D461 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */; };
 		DE79F9521D4C1C100032D461 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9501D4C1C100032D461 /* MainViewController.swift */; };
@@ -759,9 +757,7 @@
 		DE79006C1D4C59920032D461 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
 		DE7900951D4C60360032D461 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		DE7900961D4C60360032D461 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		DE7900EE1D4C88C70032D461 /* ABoutUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABoutUsView.swift; sourceTree = "<group>"; };
 		DE7900F31D4C89A00032D461 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABoutUsView.xib; sourceTree = "<group>"; };
 		DE7900F81D4C9D7E0032D461 /* InstallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallViewController.swift; sourceTree = "<group>"; };
 		DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		DE79F94F1D4B8D580032D461 /* GuangFuJie-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GuangFuJie-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1234,8 +1230,6 @@
 			children = (
 				DE79F9601D4C3B410032D461 /* LoginView.swift */,
 				DE79F9621D4C458E0032D461 /* CustomTextField.swift */,
-				DE7900EE1D4C88C70032D461 /* ABoutUsView.swift */,
-				DE7900F41D4C8AC20032D461 /* ABoutUsView.xib */,
 				DE0C780D1D68534E00FED16D /* YeZhuCell.swift */,
 				DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */,
 				DE869EF31D81138F0062E670 /* SafeCell.swift */,
@@ -2383,7 +2377,6 @@
 				DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */,
 				DE8A79051D869BD000C5F268 /* ItemCell.xib in Resources */,
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
-				DE7900F51D4C8AC20032D461 /* ABoutUsView.xib in Resources */,
 				DE8A78F91D869BD000C5F268 /* pic.bundle in Resources */,
 				DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
@@ -2540,7 +2533,6 @@
 				DE44CC181D8403DA004690EF /* BCSandBoxAdapter.m in Sources */,
 				DE8A78D21D869BD000C5F268 /* String+Haneke.swift in Sources */,
 				DE5E74811D509BAD003CDAAC /* QNLruCache.m in Sources */,
-				DE7900EF1D4C88C70032D461 /* ABoutUsView.swift in Sources */,
 				DEB010A61DF2915400E929A6 /* GFJWebViewController.swift in Sources */,
 				DE8A78EA1D869BD000C5F268 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				DEF984021D7FF5DC00ED1B40 /* Request+AlamofireImage.swift in Sources */,

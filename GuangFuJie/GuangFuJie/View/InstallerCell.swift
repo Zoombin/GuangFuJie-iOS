@@ -108,7 +108,7 @@ class InstallerCell: UITableViewCell {
         addressPoint.image = UIImage(named: "ic_point_red")
         bottomView.addSubview(addressPoint)
         
-        let line2 = UIView.init(frame: CGRectMake(dir2, CGRectGetMaxY(addressLabel.frame), bkgViewWidth - dir2 * 2, 0.5))
+        let line2 = UIView.init(frame: CGRectMake(dir2, CGRectGetMaxY(addressLabel.frame) + bottomView.frame.size.height * 0.05, bkgViewWidth - dir2 * 2, 0.5))
         line2.backgroundColor = UIColor.lightGrayColor()
         bottomView.addSubview(line2)
         
