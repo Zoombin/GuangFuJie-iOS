@@ -629,10 +629,12 @@ extension API {
         let url = Constants.httpHost + "insurance/users_have_insurance_list"
         let params = NSMutableDictionary()
         params["_o"] = 1
-        params["START"] = start
-        params["PAGESIZE"] = pagesize
+        params["START"] = String(start)
+        params["PAGESIZE"] = String(pagesize)
         if (is_suggest != nil) {
             params["is_suggest"] = is_suggest!
+        } else {
+            params["is_suggest"] = 0
         }
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]

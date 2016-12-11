@@ -189,6 +189,11 @@
 		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
+		DE83816B1DFD2E490021716B /* InstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83816A1DFD2E490021716B /* InstallerDetailViewController.swift */; };
+		DE8381751DFD311E0021716B /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8381731DFD311E0021716B /* DeviceCell.swift */; };
+		DE8381761DFD311E0021716B /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381741DFD311E0021716B /* DeviceCell.xib */; };
+		DE8381781DFD31380021716B /* DeviceCell6.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381771DFD31380021716B /* DeviceCell6.xib */; };
+		DE83817A1DFD31420021716B /* DeviceCellPlus.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381791DFD31420021716B /* DeviceCellPlus.xib */; };
 		DE869EF41D81138F0062E670 /* SafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869EF31D81138F0062E670 /* SafeCell.swift */; };
 		DE869F011D81475B0062E670 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F001D81475B0062E670 /* InsuranceInfo.swift */; };
 		DE869F031D8148340062E670 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F021D8148340062E670 /* InsuranceDetail.swift */; };
@@ -793,6 +798,11 @@
 		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
+		DE83816A1DFD2E490021716B /* InstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailViewController.swift; sourceTree = "<group>"; };
+		DE8381731DFD311E0021716B /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		DE8381741DFD311E0021716B /* DeviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
+		DE8381771DFD31380021716B /* DeviceCell6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCell6.xib; sourceTree = "<group>"; };
+		DE8381791DFD31420021716B /* DeviceCellPlus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCellPlus.xib; sourceTree = "<group>"; };
 		DE869EF31D81138F0062E670 /* SafeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeCell.swift; sourceTree = "<group>"; };
 		DE869F001D81475B0062E670 /* InsuranceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceInfo.swift; sourceTree = "<group>"; };
 		DE869F021D8148340062E670 /* InsuranceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceDetail.swift; sourceTree = "<group>"; };
@@ -1302,6 +1312,10 @@
 				DE0C780D1D68534E00FED16D /* YeZhuCell.swift */,
 				DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */,
 				DE869EF31D81138F0062E670 /* SafeCell.swift */,
+				DE8381731DFD311E0021716B /* DeviceCell.swift */,
+				DE8381741DFD311E0021716B /* DeviceCell.xib */,
+				DE8381771DFD31380021716B /* DeviceCell6.xib */,
+				DE8381791DFD31420021716B /* DeviceCellPlus.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2253,6 +2267,7 @@
 				DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */,
 				DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */,
 				DE9AAA701DFBF3F8006B56E9 /* MySafeDetailViewController.swift */,
+				DE83816A1DFD2E490021716B /* InstallerDetailViewController.swift */,
 			);
 			path = 2.0;
 			sourceTree = "<group>";
@@ -2552,9 +2567,11 @@
 				DEF984001D7FF5DC00ED1B40 /* Info-tvOS.plist in Resources */,
 				DE57C96E1D5F1159005B9CCE /* InstallViewController.xib in Resources */,
 				DE8A79051D869BD000C5F268 /* ItemCell.xib in Resources */,
+				DE8381781DFD31380021716B /* DeviceCell6.xib in Resources */,
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
 				DE8A78F91D869BD000C5F268 /* pic.bundle in Resources */,
 				DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */,
+				DE83817A1DFD31420021716B /* DeviceCellPlus.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
 				DE9AAA641DFBD315006B56E9 /* MJRefresh.bundle in Resources */,
@@ -2564,6 +2581,7 @@
 				DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */,
 				DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */,
 				DE44CC191D8403DA004690EF /* BeeCloud.bundle in Resources */,
+				DE8381761DFD311E0021716B /* DeviceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2615,6 +2633,7 @@
 				DE5E74471D509B9F003CDAAC /* QNSessionManager.m in Sources */,
 				DE8A78E51D869BD000C5F268 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE23E4521D82A47100293616 /* SafeDetailViewController.swift in Sources */,
+				DE83816B1DFD2E490021716B /* InstallerDetailViewController.swift in Sources */,
 				DE8A78FD1D869BD000C5F268 /* PhotoBrowser+Main.swift in Sources */,
 				DE3DB2D01DB4D23000AE0461 /* SPullDownMenuView.m in Sources */,
 				DE8A78D81D869BD000C5F268 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
@@ -2846,6 +2865,7 @@
 				DE44CBF71D8403DA004690EF /* BCPayReq.m in Sources */,
 				DE44CBFD1D8403DA004690EF /* BCQueryBillsReq.m in Sources */,
 				DE44CC161D8403DA004690EF /* NSString+IsValid.m in Sources */,
+				DE8381751DFD311E0021716B /* DeviceCell.swift in Sources */,
 				DE9AAA601DFBD315006B56E9 /* MJRefreshBackStateFooter.m in Sources */,
 				DE5AD2761DBC8C5400D608A5 /* MJFoundation.m in Sources */,
 				DE44CC061D8403DA004690EF /* BCQueryRefundsCountResp.m in Sources */,

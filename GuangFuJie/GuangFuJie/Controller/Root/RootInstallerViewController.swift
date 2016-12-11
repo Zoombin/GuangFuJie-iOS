@@ -126,10 +126,10 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
             if (commonModel.is_installer == 0) {
                 let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
                 self.pushViewController(vc)
-            } else if (commonModel.is_installer == 2){
-                self.showHint("您已经成为安装商")
             } else {
-                self.showHint(msg)
+                //2的时候是安装商了
+                let vc = UserCenterViewController()
+                self.pushViewController(vc)
             }
         }) { (msg) in
             self.hideHud()

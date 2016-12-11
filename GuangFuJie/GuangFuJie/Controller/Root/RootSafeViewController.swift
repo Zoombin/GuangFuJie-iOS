@@ -58,7 +58,7 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
         let scrollViewWidth = PhoneUtils.kScreenWidth
         let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
         
-        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight + 15))
         
         let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
         let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
@@ -74,7 +74,7 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
             scrollView.addSubview(imageView)
         }
         
-        safePageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20, scrollView.frame.size.width, 20))
+        safePageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20 - 15, scrollView.frame.size.width, 20))
         safePageControl.numberOfPages = images.count
         footerView.addSubview(safePageControl)
         

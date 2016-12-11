@@ -58,7 +58,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         if (section == 0) {
             return 1;
         }
-        return 3;
+        return 2;
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -94,9 +94,6 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
                 cell.imageView?.image = UIImage(named: "ic_my_roof")
                 cell.textLabel?.text = "我的屋顶"
             } else if (indexPath.row == 1) {
-                cell.imageView?.image = UIImage(named: "ic_my_install")
-                cell.textLabel?.text = "我是安装商"
-            } else if (indexPath.row == 2) {
                 cell.imageView?.image = UIImage(named: "ic_my_insure")
                 cell.textLabel?.text = "我的保险"
             }
@@ -111,11 +108,6 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
                 let vc = GFJMyRoofsViewController()
                 self.pushViewController(vc)
             } else if (indexPath.row == 1) {
-                //TODO: 这版先不做
-                return
-                let vc = GFJIMInstallerViewController()
-                self.pushViewController(vc)
-            } else if (indexPath.row == 2) {
                 let vc = MySafeListViewController()
                 self.pushViewController(vc)
             }

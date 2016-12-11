@@ -151,6 +151,14 @@ class SafeCell: UITableViewCell {
         viewMoreButton.layer.borderWidth = 0.5
         viewMoreButton.layer.borderColor = UIColor.blackColor().CGColor
         bottomView.addSubview(viewMoreButton)
+        
+        payButton = UIButton.init(type: UIButtonType.Custom)
+        payButton.frame = CGRectMake(CGRectGetMinX(viewMoreButton.frame) - dir2 - bkgViewWidth * 0.2, CGRectGetMaxY(line2.frame) + buyTimeLabel.frame.size.height * 0.2, bkgViewWidth * 0.2, buyTimeLabel.frame.size.height * 0.6)
+        payButton.backgroundColor = Colors.installColor
+        payButton.setTitle("立即付款", forState: UIControlState.Normal)
+        payButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        payButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        bottomView.addSubview(payButton)
     }
     
     func setData(info : InsuranceInfo, isSelf : Bool) {
@@ -217,6 +225,7 @@ class SafeCell: UITableViewCell {
         }
         self.addressLabel.text = location
         
+        self.payButton.hidden = true
         if (isSelf) {
             if (info.order_status!.integerValue == 2) {
                 self.tipsLabel.text = "已成功投保"
@@ -224,6 +233,7 @@ class SafeCell: UITableViewCell {
                 self.tipsLabel.text = "已投保"
             } else {
                 self.tipsLabel.text = "未付款"
+                self.payButton.hidden = false
             }
         }
     }

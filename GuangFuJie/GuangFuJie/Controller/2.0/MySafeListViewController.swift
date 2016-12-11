@@ -17,6 +17,11 @@ class MySafeListViewController: BaseViewController, UITableViewDelegate, UITable
         self.title = "我的保险列表"
         // Do any additional setup after loading the view.
         initView()
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         loadUserList()
     }
     
@@ -68,7 +73,19 @@ class MySafeListViewController: BaseViewController, UITableViewDelegate, UITable
         cell.setData(userInfo, isSelf: true)
         cell.viewMoreButton.setTitle("查看详情", forState: UIControlState.Normal)
         cell.viewMoreButton.userInteractionEnabled = false
+        cell.payButton.tag = indexPath.row
+        cell.payButton.addTarget(self, action: #selector(self.payButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         return cell
+    }
+    
+    func payButtonClicked(button : UIButton) {
+        let index = button.tag
+        let userInfo = safeArray[index] as! InsuranceInfo
+        
+        let title = "保险类型:" + String(userInfo.size!) + " " + String(userInfo.years!) + "年";
+        let currentPrice = NSInteger.init(userInfo.years!) * userInfo.price!.integerValue * 100
+        
+        self.aliPay(userInfo.insured_sn!, title: title, totalFee: String(currentPrice), type: String(userInfo.type!))
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
