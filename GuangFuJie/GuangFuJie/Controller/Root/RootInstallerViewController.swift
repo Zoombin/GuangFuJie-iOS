@@ -14,6 +14,7 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     var installTableView : UITableView!
     var installerPageControl : UIPageControl!
     var installView : UIView!
+    var installerButton : UIButton!
     
     var installerArray = NSMutableArray()
     
@@ -37,13 +38,13 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        print("安装商")
+        refreshButtonStatus()
     }
     
     //MARK: 屋顶列表
     func loadUserList() {
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.getRoofList(1, province_id: nil, city_id: nil, is_suggest: 1, success: { (userInfos) in
+        API.sharedInstance.getRoofList(0, pagesize: 10, province_id: nil, city_id: nil, is_suggest: 1, success: { (userInfos) in
             self.hideHud()
             self.installerArray.removeAllObjects()
             if (userInfos.count > 0) {
@@ -70,7 +71,7 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = installViewBottomView.frame.size.height - 5 * 2
         
-        let installerButton = UIButton.init(type: UIButtonType.Custom)
+        installerButton = UIButton.init(type: UIButtonType.Custom)
         installerButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
         installerButton.setTitle("申请成为安装商", forState: UIControlState.Normal)
         installerButton.backgroundColor = Colors.installColor
@@ -114,6 +115,22 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         installTableView.tableHeaderView = footerView
         
         installTableView.registerClass(InstallerCell.self, forCellReuseIdentifier: installerCellReuseIdentifier)
+    }
+    
+    func refreshButtonStatus() {
+        if (!UserDefaultManager.isLogin()) {
+            installerButton.setTitle("申请成为安装商", forState: UIControlState.Normal)
+            return
+        }
+        API.sharedInstance.checkIsInstaller({ (msg, commonModel) in
+            if (commonModel.is_installer == 0) {
+                self.installerButton.setTitle("申请成为安装商", forState: UIControlState.Normal)
+            } else {
+                self.installerButton.setTitle("查看详情", forState: UIControlState.Normal)
+            }
+        }) { (msg) in
+
+        }
     }
     
     func wantToBeInstaller() {

@@ -146,24 +146,26 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
             self.showHint("登录成功!")
             self.loginView.hidden = true
             UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+            self.userDidLogin()
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
         }
     }
-
+    
+    /**
+     用户登录会调用此方法
+     */
+    func userDidLogin() {
+        
+    }
     
     func topMenuButtonClicked(sender : UIButton) {
         self.tabBarController?.selectedIndex = sender.tag
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func pushViewController(to : UIViewController) {
-//        to.hidesBottomBarWhenPushed = true
+        //        to.hidesBottomBarWhenPushed = true
         let image = UIImage(named: "ic_back")
         to.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.backButtonClicked))
         //注意: 加了这一句，自定义的返回按钮也可以用滑动返回了...
@@ -171,8 +173,12 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         self.navigationController?.pushViewController(to, animated: true)
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     func aliPay(billno:String,title:String,totalFee:String,type:String) {
-        let billno = billno
         let payReq = BCPayReq()
         payReq.channel = PayChannel.AliApp
         payReq.title = title
@@ -189,6 +195,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     func onBeeCloudResp(resp: BCBaseResp!) {
         if (resp.type == BCObjsType.PayResp) {
             let timeResp : BCPayResp = resp as! BCPayResp
+            print(timeResp.resultMsg)
             if (timeResp.resultCode == 0) {
                 self.showHint("购买成功")
                 self.navigationController?.popViewControllerAnimated(true)

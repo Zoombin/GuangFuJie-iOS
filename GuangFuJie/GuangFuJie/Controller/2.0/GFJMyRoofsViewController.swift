@@ -24,7 +24,7 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
     //MARK: 安装商列表
     func loadInstallerList() {
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.getRoofList(1, province_id: nil, city_id: nil, isSelf : 1, success: { (userInfos) in
+        API.sharedInstance.getRoofList(0, pagesize: 10, status: 1, province_id: nil, city_id: nil, isSelf : 1, success: { (userInfos) in
             self.hideHud()
             self.installerArray.removeAllObjects()
             if (userInfos.count > 0) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BindDeviceViewController: UIViewController {
+class BindDeviceViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

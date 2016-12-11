@@ -526,7 +526,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getRoofList(status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, isSelf : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getRoofList(start : NSInteger, pagesize : NSInteger, status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, isSelf : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -545,6 +545,8 @@ extension API {
         if (isSelf != nil) {
             params["user_id"] = getUserId()
         }
+        params["START"] = String(start)
+        params["PAGESIZE"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (msg, data) in
@@ -895,6 +897,49 @@ extension API {
         self.get(url, params: newParams, success: { (msg, data) in
             let array = RoofInfo.mj_objectArrayWithKeyValuesArray(data)
             success?(roofList: array)
+            }, failure: failure)
+    }
+    
+    /**
+     用户绑定的设备列表
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func getUserDeviceList(success: ((deviceList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "device/device_list"
+        let params = [
+            "user_id" : getUserId(),
+//            "device_type" : 0,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (msg, data) in
+            let array = DeviceListInfo.mj_objectArrayWithKeyValuesArray(data)
+            success?(deviceList: array)
+            }, failure: failure)
+    }
+    
+    /**
+     解绑设备
+     
+     - parameter device_id:
+     - parameter success:
+     - parameter failure:
+     */
+    func unBindDevice(device_id: String, success: ((commomModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/unbinddevice"
+        let params = [
+            "user_id" : getUserId(),
+            "device_id" : device_id,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(commomModel : commonModel)
             }, failure: failure)
     }
 

@@ -12,26 +12,55 @@ class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITabl
     
     var installTableView : UITableView!
     var installerArray : NSMutableArray = NSMutableArray()
+    var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "业主出租"
         // Do any additional setup after loading the view.
         initView()
+        
+        installTableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(self.loadInstallerList))
+        installTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
+        
         loadInstallerList()
+    }
+    
+    func loadMore() {
+        currentPage = currentPage + 1
+        API.sharedInstance.getRoofList(currentPage, pagesize: 10, status: 1, province_id: nil, city_id: nil, success: { (userInfos) in
+            self.installTableView.mj_footer.endRefreshing()
+            if (userInfos.count > 0) {
+                self.installerArray.addObjectsFromArray(userInfos as [AnyObject])
+            }
+            if (userInfos.count < 10) {
+                self.installTableView.mj_footer.hidden = true
+            }
+            self.installTableView.reloadData()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
     }
     
     //MARK: 安装商列表
     func loadInstallerList() {
+        currentPage = 0
+        self.installTableView.mj_footer.hidden = false
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.getRoofList(1, province_id: nil, city_id: nil, success: { (userInfos) in
+        API.sharedInstance.getRoofList(currentPage, pagesize: 10, status: 1, province_id: nil, city_id: nil, success: { (userInfos) in
+            self.installTableView.mj_header.endRefreshing()
             self.hideHud()
             self.installerArray.removeAllObjects()
             if (userInfos.count > 0) {
                 self.installerArray.addObjectsFromArray(userInfos as [AnyObject])
             }
+            if (userInfos.count < 10) {
+                self.installTableView.mj_footer.hidden = true
+            }
             self.installTableView.reloadData()
         }) { (msg) in
+            self.installTableView.mj_header.endRefreshing()
             self.hideHud()
             self.showHint(msg)
         }

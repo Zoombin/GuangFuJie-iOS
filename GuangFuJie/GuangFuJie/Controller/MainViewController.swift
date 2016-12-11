@@ -31,7 +31,7 @@
 //    var viewDetailButton : UIButton!
 //    
 //    var electricView : UIView!
-//    
+//
 //    var bindView : UIView!
 //    var deviceBkgImageView : UIImageView!
 //    var deviceTextField : UITextField!
@@ -42,7 +42,7 @@
 //    
 //    let offSetY : CGFloat = 10
 //    let offSetX : CGFloat = 10
-//    
+//
 //    let YEZHU_TABLEVIEW_TAG = 10001
 //    let INSTALLER_TABLEVIEW_TAG = 10002
 //    let SAFE_TABLEVIEW_TAG = 10003
@@ -479,7 +479,7 @@
 //        viewDetailButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
 //        electricView.addSubview(viewDetailButton)
 //    }
-//    
+//
 //    func getDeviceInfo() {
 //        if (UserDefaultManager.isLogin()) {
 //            let user = UserDefaultManager.getUser()
@@ -508,7 +508,7 @@
 //            }
 //        }
 //    }
-//    
+//
 //    //报修
 //    func reportPro() {
 //        let user = UserDefaultManager.getUser()
@@ -522,7 +522,7 @@
 //        vc.device_id = user!.device_id!
 //        self.pushViewController(vc)
 //    }
-//    
+//
 //    func loadGoodWeDeviceInfo(deviceInfo : GetInventerMode) {
 //        if (deviceInfo.inventerRunningState == "1") {
 //            statusButton.enabled = true
@@ -609,7 +609,7 @@
 //        todayplantLabel.text = String(format: "%.2f棵", deviceInfo.energy_day!.floatValue * 0.272 / 100)
 //        totalplantLabel.text = String(format: "%.2f棵", deviceInfo.energy_all!.floatValue * 0.272 / 100)
 //    }
-//    
+//
 //    //MARK: 查看发电曲线图
 //    func viewDetailButtonClicked() {
 //        let vc = ElectricPicViewController()

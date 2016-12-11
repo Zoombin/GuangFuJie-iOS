@@ -29,7 +29,6 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         initRightNavButton()
         initLeftNavButton()
         initLoginView()
-        
         initYeZhuView()
         
         loadUserList()
