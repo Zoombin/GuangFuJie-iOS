@@ -92,27 +92,29 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(yezhuCellReuseIdentifier, forIndexPath: indexPath) as! YeZhuCell
         cell.initCell()
-//        let userInfo = yezhuArray[indexPath.row] as! InstallInfo
-//        cell.titleLabel.text = userInfo.company_name
-//        cell.describeLabel.text = userInfo.company_intro
-//        var location = ""
-//        if ((userInfo.province_label) != nil) {
-//            location = location + userInfo.province_label!
-//        }
-//        if ((userInfo.city_label) != nil) {
-//            location = location + userInfo.city_label!
-//        }
-//        if ((userInfo.address) != nil) {
-//            location = location + userInfo.address!
-//        }
-//        cell.addressLabel.text = location
-//        if (userInfo.is_installer == 2) {
-//            cell.tagLabel.text = "已认证"
-//            cell.tagLabel.textColor = Colors.installColor
-//        } else {
-//            cell.tagLabel.text = "未认证"
-//            cell.tagLabel.textColor = Colors.installRedColor
-//        }
+        let userInfo = yezhuArray[indexPath.row] as! InstallInfo
+        cell.nameLabel.text = userInfo.company_name
+        cell.descriptionLabel.text = userInfo.company_intro
+        var location = ""
+        if ((userInfo.province_label) != nil) {
+            location = location + userInfo.province_label!
+        }
+        if ((userInfo.city_label) != nil) {
+            location = location + userInfo.city_label!
+        }
+        if ((userInfo.address) != nil) {
+            location = location + userInfo.address!
+        }
+        cell.addressLabel.text = location
+        if (userInfo.is_installer == 2) {
+            cell.statusLabel.text = "已认证"
+            cell.statusLabel.textColor = Colors.installColor
+        } else {
+            cell.statusLabel.text = "未认证"
+            cell.statusLabel.textColor = Colors.installRedColor
+        }
+        cell.viewMoreButton.setTitle("点我安装", forState: UIControlState.Normal)
+        cell.viewMoreButton.userInteractionEnabled = false
         return cell
     }
     

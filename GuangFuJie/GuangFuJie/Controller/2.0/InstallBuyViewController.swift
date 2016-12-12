@@ -78,7 +78,7 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
             offSetY = buyBottomView.frame.size.height
         }
         
-        tableView = UITableView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - offSetY - 64), style: UITableViewStyle.Grouped)
+        tableView = UITableView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - offSetY - 64 - 50), style: UITableViewStyle.Grouped)
         tableView.backgroundColor = UIColor.clearColor()
         tableView.delegate = self
         tableView.dataSource = self
