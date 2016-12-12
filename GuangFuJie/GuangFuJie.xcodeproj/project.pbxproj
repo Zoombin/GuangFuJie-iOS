@@ -156,6 +156,7 @@
 		DE5E74C51D509D3D003CDAAC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5E74C41D509D3D003CDAAC /* libz.tbd */; };
 		DE5E74C71D509FD9003CDAAC /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74C61D509FD9003CDAAC /* AppModel.swift */; };
 		DE5E74C91D50A296003CDAAC /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74C81D50A296003CDAAC /* CommonModel.swift */; };
+		DE636E251DFE4AC4008F9F74 /* InstallHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */; };
 		DE7900161D4C57300032D461 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900001D4C57300032D461 /* IQNSArray+Sort.swift */; };
 		DE7900171D4C57300032D461 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900011D4C57300032D461 /* IQUIScrollView+Additions.swift */; };
 		DE7900181D4C57300032D461 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900021D4C57300032D461 /* IQUITextFieldView+Additions.swift */; };
@@ -758,6 +759,7 @@
 		DE5E74C41D509D3D003CDAAC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		DE5E74C61D509FD9003CDAAC /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		DE5E74C81D50A296003CDAAC /* CommonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
+		DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallHeaderCell.swift; sourceTree = "<group>"; };
 		DE7900001D4C57300032D461 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		DE7900011D4C57300032D461 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		DE7900021D4C57300032D461 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -1316,6 +1318,7 @@
 				DE8381741DFD311E0021716B /* DeviceCell.xib */,
 				DE8381771DFD31380021716B /* DeviceCell6.xib */,
 				DE8381791DFD31420021716B /* DeviceCellPlus.xib */,
+				DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2783,6 +2786,7 @@
 				DE9AAA5D1DFBD315006B56E9 /* MJRefreshAutoStateFooter.m in Sources */,
 				DE5E74821D509BAD003CDAAC /* QNNetworkInfo.m in Sources */,
 				DE5E74461D509B9F003CDAAC /* QNResponseInfo.m in Sources */,
+				DE636E251DFE4AC4008F9F74 /* InstallHeaderCell.swift in Sources */,
 				DE8A78E11D869BD000C5F268 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				DE8A7A171D87E17500C5F268 /* PNLineChartData.m in Sources */,
 				DE8A78DE1D869BD000C5F268 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,

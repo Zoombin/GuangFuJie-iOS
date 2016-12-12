@@ -95,7 +95,8 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
                 typeButtpn.setTitle("安装商", forState: UIControlState.Normal)
             }
             
-            typeButtpn.frame = CGRectMake(PhoneUtils.kScreenWidth - 100 - 5, 25, 100, 30)
+            typeButtpn.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            typeButtpn.frame = CGRectMake(PhoneUtils.kScreenWidth - 80 - 5, 28, 80, 24)
             typeButtpn.layer.borderWidth = 0.5
             typeButtpn.layer.borderColor = Colors.installColor.CGColor
             typeButtpn.setTitleColor(Colors.installColor, forState: UIControlState.Normal)

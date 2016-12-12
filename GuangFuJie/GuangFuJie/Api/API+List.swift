@@ -943,4 +943,43 @@ extension API {
             }, failure: failure)
     }
 
+    /**
+     用户信息
+     
+     - parameter success:
+     - parameter failure: 
+     */
+    func getUserInfo(success: ((userinfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/get_userinfo"
+        let params = [
+            "user_id" : getUserId(),
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let userInfo = UserInfo.mj_objectWithKeyValues(data)
+            success?(userinfo : userInfo)
+            }, failure: failure)
+    }
+    
+    /**
+     认证提醒
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func remindAuth(success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/remind_auth"
+        let params = [
+            "user_id" : getUserId(),
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.post(url, params: newParams, success: { (data) in
+            let commonModel = CommonModel.mj_objectWithKeyValues(data)
+            success?(commonModel : commonModel)
+            }, failure: failure)
+    }
 }

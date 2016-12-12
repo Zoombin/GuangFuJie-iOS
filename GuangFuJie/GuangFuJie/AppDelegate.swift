@@ -74,6 +74,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         self.window?.makeKeyAndVisible()
     }
     
+    func refreshUserInfo() {
+        if (!UserDefaultManager.isLogin()) {
+            return
+        }
+        API.sharedInstance.getUserInfo({ (userinfo) in
+              UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+            }) { (msg) in
+                
+        }
+    }
+    
     //检查更新（只做强制升级用）
     func checkAppVersion() {
         API.sharedInstance.appupgrade({ (appModel) in
@@ -127,6 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         checkAppVersion()
+        refreshUserInfo()
     }
     
     func applicationWillTerminate(application: UIApplication) {
