@@ -367,6 +367,8 @@
 		DED15B7C1DED2E7B00B8260B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7B1DED2E7B00B8260B /* Security.framework */; };
 		DED15B7E1DED2E8500B8260B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */; };
 		DED15B801DED2E9700B8260B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */; };
+		DED834CF1DFEAC6500B76DFC /* InstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */; };
+		DED834D11DFEAD8000B76DFC /* InstallerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */; };
 		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
 		DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */; };
 		DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */; };
@@ -1018,6 +1020,8 @@
 		DED15B7B1DED2E7B00B8260B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailViewController.swift; sourceTree = "<group>"; };
+		DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallerDetailViewController.xib; sourceTree = "<group>"; };
 		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
 		DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -2265,6 +2269,8 @@
 				DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */,
 				DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */,
 				DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */,
+				DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */,
+				DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */,
 			);
 			path = 2.0;
 			sourceTree = "<group>";
@@ -2568,6 +2574,7 @@
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
 				DE8A78F91D869BD000C5F268 /* pic.bundle in Resources */,
 				DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */,
+				DED834D11DFEAD8000B76DFC /* InstallerDetailViewController.xib in Resources */,
 				DE83817A1DFD31420021716B /* DeviceCellPlus.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				DE79F9531D4C1C100032D461 /* MainViewController.xib in Resources */,
@@ -2761,6 +2768,7 @@
 				DE5E74BA1D509CC4003CDAAC /* AFImageDownloader.m in Sources */,
 				DE79001C1D4C57300032D461 /* IQKeyboardManagerConstants.swift in Sources */,
 				DE7900161D4C57300032D461 /* IQNSArray+Sort.swift in Sources */,
+				DED834CF1DFEAC6500B76DFC /* InstallerDetailViewController.swift in Sources */,
 				DE8A7A141D87E17500C5F268 /* PNColor.m in Sources */,
 				DE8A78DF1D869BD000C5F268 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */,
