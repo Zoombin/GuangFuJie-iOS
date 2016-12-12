@@ -43,7 +43,7 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     //MARK: 屋顶列表
     func loadUserList() {
-        self.showHudInView(self.view, hint: "加载中...")
+//        self.showHudInView(self.view, hint: "加载中...")
         API.sharedInstance.getRoofList(0, pagesize: 10, province_id: nil, city_id: nil, is_suggest: 1, success: { (userInfos) in
             self.hideHud()
             self.installerArray.removeAllObjects()

@@ -118,7 +118,7 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
     }
     
     func loadSafeList() {
-        self.showHudInView(self.view, hint: "加载中...")
+//        self.showHudInView(self.view, hint: "加载中...")
         API.sharedInstance.usersHaveInsuranceList(0, pagesize: 10, is_suggest: 1, success: { (insuranceList) in
             self.hideHud()
             self.safeArray.removeAllObjects()

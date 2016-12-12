@@ -66,7 +66,7 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
             }
             return
         }
-        self.showHudInView(self.view, hint: "加载中...")
+//        self.showHudInView(self.view, hint: "加载中...")
         API.sharedInstance.getUserDeviceList({ (deviceList) in
             self.hideHud()
             self.devicesArray.removeAllObjects()

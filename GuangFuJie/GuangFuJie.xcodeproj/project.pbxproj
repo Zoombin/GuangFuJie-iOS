@@ -344,7 +344,6 @@
 		DE9AAA6B1DFBED75006B56E9 /* InstallBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */; };
 		DE9AAA6D1DFBF3C8006B56E9 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */; };
 		DE9AAA6F1DFBF3D8006B56E9 /* BindDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */; };
-		DE9AAA711DFBF3F8006B56E9 /* MySafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA701DFBF3F8006B56E9 /* MySafeDetailViewController.swift */; };
 		DE9AAA731DFBF6C5006B56E9 /* MySafeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */; };
 		DE9AAA751DFBFE58006B56E9 /* MoreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */; };
 		DE9F876D1DF2BBC90076F508 /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */; };
@@ -996,7 +995,6 @@
 		DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallBuyViewController.swift; sourceTree = "<group>"; };
 		DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewController.swift; sourceTree = "<group>"; };
 		DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindDeviceViewController.swift; sourceTree = "<group>"; };
-		DE9AAA701DFBF3F8006B56E9 /* MySafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySafeDetailViewController.swift; sourceTree = "<group>"; };
 		DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySafeListViewController.swift; sourceTree = "<group>"; };
 		DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSafeViewController.swift; sourceTree = "<group>"; };
 		DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
@@ -2266,7 +2264,6 @@
 				DE9AA97E1DFBCFCA006B56E9 /* GFJMyRoofsViewController.swift */,
 				DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */,
 				DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */,
-				DE9AAA701DFBF3F8006B56E9 /* MySafeDetailViewController.swift */,
 				DE83816A1DFD2E490021716B /* InstallerDetailViewController.swift */,
 			);
 			path = 2.0;
@@ -2628,7 +2625,6 @@
 				DE5E74481D509B9F003CDAAC /* QNUserAgent.m in Sources */,
 				DE8A78E91D869BD000C5F268 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				DE8A78ED1D869BD000C5F268 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
-				DE9AAA711DFBF3F8006B56E9 /* MySafeDetailViewController.swift in Sources */,
 				DE8A78F21D869BD000C5F268 /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE5E74471D509B9F003CDAAC /* QNSessionManager.m in Sources */,
 				DE8A78E51D869BD000C5F268 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,

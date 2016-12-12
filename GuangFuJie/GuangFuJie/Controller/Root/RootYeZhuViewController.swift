@@ -41,7 +41,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
     
     //MARK: 业主列表
     func loadUserList() {
-        self.showHudInView(self.view, hint: "加载中...")
+//        self.showHudInView(self.view, hint: "加载中...")
         API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: nil, city_id: nil, is_suggest: 1, success: { (userInfos) in
             self.hideHud()
             self.yezhuArray.removeAllObjects()
