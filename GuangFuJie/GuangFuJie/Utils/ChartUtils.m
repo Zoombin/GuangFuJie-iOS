@@ -34,7 +34,9 @@
 
 + (PNBarChart *)addBarChartsWidthFrame:(NSMutableArray *)xDates yDates:(NSMutableArray *)yDates andFrame:(CGRect)frame {
     PNBarChart *barChart = [[PNBarChart alloc] initWithFrame:frame];
-    barChart.yChartLabelWidth = 36;
+    barChart.isShowNumbers = NO;
+    barChart.barWidth = 20;
+    barChart.yChartLabelWidth = 18;
     [barChart setXLabels:xDates];
     [barChart setYValues:yDates];
     return barChart;
