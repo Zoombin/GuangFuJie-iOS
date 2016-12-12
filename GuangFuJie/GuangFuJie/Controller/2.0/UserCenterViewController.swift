@@ -121,7 +121,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
             let alertView = UIAlertView.init(title: "提示", message: "申请成为安装商", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
             alertView.show()
         } else {
-            let vc = InstallerDetailViewController()
+            let vc = MyInstallerDetailViewController()
             self.pushViewController(vc)
         }
     }

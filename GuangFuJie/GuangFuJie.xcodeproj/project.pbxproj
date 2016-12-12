@@ -191,7 +191,7 @@
 		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
-		DE83816B1DFD2E490021716B /* InstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83816A1DFD2E490021716B /* InstallerDetailViewController.swift */; };
+		DE83816B1DFD2E490021716B /* MyInstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */; };
 		DE8381751DFD311E0021716B /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8381731DFD311E0021716B /* DeviceCell.swift */; };
 		DE8381761DFD311E0021716B /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381741DFD311E0021716B /* DeviceCell.xib */; };
 		DE8381781DFD31380021716B /* DeviceCell6.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381771DFD31380021716B /* DeviceCell6.xib */; };
@@ -799,7 +799,7 @@
 		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
-		DE83816A1DFD2E490021716B /* InstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailViewController.swift; sourceTree = "<group>"; };
+		DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInstallerDetailViewController.swift; sourceTree = "<group>"; };
 		DE8381731DFD311E0021716B /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		DE8381741DFD311E0021716B /* DeviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
 		DE8381771DFD31380021716B /* DeviceCell6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCell6.xib; sourceTree = "<group>"; };
@@ -2264,7 +2264,7 @@
 				DE9AA97E1DFBCFCA006B56E9 /* GFJMyRoofsViewController.swift */,
 				DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */,
 				DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */,
-				DE83816A1DFD2E490021716B /* InstallerDetailViewController.swift */,
+				DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */,
 			);
 			path = 2.0;
 			sourceTree = "<group>";
@@ -2629,7 +2629,7 @@
 				DE5E74471D509B9F003CDAAC /* QNSessionManager.m in Sources */,
 				DE8A78E51D869BD000C5F268 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE23E4521D82A47100293616 /* SafeDetailViewController.swift in Sources */,
-				DE83816B1DFD2E490021716B /* InstallerDetailViewController.swift in Sources */,
+				DE83816B1DFD2E490021716B /* MyInstallerDetailViewController.swift in Sources */,
 				DE8A78FD1D869BD000C5F268 /* PhotoBrowser+Main.swift in Sources */,
 				DE3DB2D01DB4D23000AE0461 /* SPullDownMenuView.m in Sources */,
 				DE8A78D81D869BD000C5F268 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,

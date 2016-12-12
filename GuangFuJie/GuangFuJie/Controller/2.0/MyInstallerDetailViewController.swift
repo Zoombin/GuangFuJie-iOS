@@ -1,5 +1,5 @@
 //
-//  InstallerDetailViewController.swift
+//  MyInstallerDetailViewController.swift
 //  GuangFuJie
 //
 //  Created by 颜超 on 2016/12/11.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstallerDetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class MyInstallerDetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()

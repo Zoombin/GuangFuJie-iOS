@@ -353,8 +353,8 @@ extension API {
         if (is_auth != nil) {
             params["is_auth"] = is_auth
         }
-        params["start"] = String(start)
-        params["pagesize"] = String(pagesize)
+        params["START"] = String(start)
+        params["PAGESIZE"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (totalCount, msg, data) in
