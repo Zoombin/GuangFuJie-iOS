@@ -221,6 +221,9 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        if (shouldShowLogin()) {
+            return
+        }
         let userInfo = installerArray[indexPath.row] as! RoofInfo
         let vc = InstallBuyViewController()
         vc.roofId = userInfo.id!

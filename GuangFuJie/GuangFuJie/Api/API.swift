@@ -50,7 +50,7 @@ class API: NSObject {
         })
     }
 
-    func get(url: String, params: AnyObject?, success: ((msg: String?, data: AnyObject?) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func get(url: String, params: AnyObject?, success: ((totalCount : NSNumber?, msg: String?, data: AnyObject?) -> Void)?, failure: ((msg: String?) -> Void)?) {
         NSLog("====> get发送 ===> \n\(url)  \(params)")
         _manager?.GET(url, parameters: params, success: { (operation, data) in
             var dict = try? NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
@@ -72,8 +72,12 @@ class API: NSObject {
                     if (msg == nil) {
                         msg = "请求成功"
                     }
+                    var totalCount = dict?.objectForKey("totalCount") as? NSNumber
+                    if (totalCount == nil) {
+                        totalCount = 0
+                    }
                     NSLog("====> get返回 ===> \(data)")
-                    success?(msg: msg, data: data)
+                    success?(totalCount: totalCount, msg: msg, data: data)
                 } else {
                     failure?(msg: dict?.objectForKey("msg") as? String)
                 }

@@ -88,6 +88,9 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func orderNowButtonClicked() {
+        if (shouldShowLogin()) {
+            return
+        }
         self.showHudInView(self.view, hint: "提交中...")
         API.sharedInstance.orderRoof(roofId, success: { (commonModel) in
                 self.hideHud()

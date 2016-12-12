@@ -18,6 +18,7 @@ class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         self.title = "业主出租"
         // Do any additional setup after loading the view.
+        initLoginView()
         initView()
         
         installTableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(self.loadInstallerList))
@@ -148,6 +149,9 @@ class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if (shouldShowLogin()) {
+            return
+        }
         let userInfo = installerArray[indexPath.row] as! RoofInfo
         let vc = InstallBuyViewController()
         vc.roofId = userInfo.id!
