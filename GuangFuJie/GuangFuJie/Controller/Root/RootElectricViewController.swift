@@ -71,6 +71,7 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
             self.hideHud()
             self.devicesArray.removeAllObjects()
             if (deviceList.count > 0) {
+                self.noDataView.hidden = true
                 self.devicesArray.addObjectsFromArray(deviceList as [AnyObject])
             }
             self.deviceTableView.reloadData()
