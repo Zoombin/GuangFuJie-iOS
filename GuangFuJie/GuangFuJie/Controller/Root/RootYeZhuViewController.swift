@@ -172,6 +172,9 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         cell.selectionStyle = UITableViewCellSelectionStyle.None;
         cell.initCell()
         let userInfo = yezhuArray[indexPath.row] as! InstallInfo
+        if (userInfo.logo != nil) {
+            cell.avatarImageView.setImageWithURL(NSURL.init(string: userInfo.logo!)!, placeholderImage: UIImage(named: "ic_avatar_yezhu"))
+        }
         cell.nameLabel.text = userInfo.company_name
         cell.descriptionLabel.text = userInfo.company_intro
         var location = ""
