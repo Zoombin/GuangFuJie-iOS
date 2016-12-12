@@ -13,6 +13,8 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
     var devicesArray = NSMutableArray()
     var deviceTableView: UITableView!
     
+    var noDataView : UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
@@ -26,6 +28,29 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
         initLeftNavButton()
         initLoginView()
         initDeviceList()
+        addNoDataButton()
+    }
+    
+    func addNoDataButton() {
+        let startX = (PhoneUtils.kScreenWidth - 160) / 2
+        noDataView = UIView.init(frame: CGRectMake(startX, 50, 160, 20))
+        noDataView.backgroundColor = UIColor.clearColor()
+        deviceTableView.addSubview(noDataView)
+        
+        let noDeviceLabel = UILabel.init(frame: CGRectMake(0, 0, 90, 20))
+        noDeviceLabel.text = "暂无绑定设备"
+        noDeviceLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        noDataView.addSubview(noDeviceLabel)
+        
+        let noDeviceButton = UIButton.init(type: UIButtonType.Custom)
+        noDeviceButton.setTitle("点击绑定", forState: UIControlState.Normal)
+        noDeviceButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+        noDeviceButton.frame = CGRectMake(CGRectGetMaxX(noDeviceLabel.frame), 0, 70, 20)
+        noDeviceButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        noDeviceButton.addTarget(self, action: #selector(self.deviceButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        noDataView.addSubview(noDeviceButton)
+        
+        noDataView.hidden = true
     }
     
     override func userDidLogin() {
@@ -36,6 +61,9 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
         if (!UserDefaultManager.isLogin()) {
             self.devicesArray.removeAllObjects()
             self.deviceTableView.reloadData()
+            if (self.devicesArray.count == 0) {
+                self.noDataView.hidden = false
+            }
             return
         }
         self.showHudInView(self.view, hint: "加载中...")
@@ -46,6 +74,9 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
                 self.devicesArray.addObjectsFromArray(deviceList as [AnyObject])
             }
             self.deviceTableView.reloadData()
+            if (self.devicesArray.count == 0) {
+                self.noDataView.hidden = false
+            }
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)

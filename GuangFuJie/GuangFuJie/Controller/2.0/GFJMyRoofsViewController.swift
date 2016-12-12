@@ -111,7 +111,7 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func viewInstallerList() {
-        let vc = GFJInstallerListViewController()
+        let vc = MoreInstallerViewController()
         self.pushViewController(vc)
     }
     

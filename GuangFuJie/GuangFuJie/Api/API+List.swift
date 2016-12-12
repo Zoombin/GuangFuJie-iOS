@@ -334,7 +334,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func userlist(type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func userlist(start : NSInteger, pagesize : NSInteger, type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, is_auth : NSNumber? = nil, success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -350,6 +350,11 @@ extension API {
         if (is_suggest != nil) {
             params["is_suggest"] = is_suggest
         }
+        if (is_auth != nil) {
+            params["is_auth"] = is_auth
+        }
+        params["start"] = String(start)
+        params["pagesize"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (msg, data) in

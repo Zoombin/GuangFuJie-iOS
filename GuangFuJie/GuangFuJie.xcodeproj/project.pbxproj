@@ -157,6 +157,7 @@
 		DE5E74C71D509FD9003CDAAC /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74C61D509FD9003CDAAC /* AppModel.swift */; };
 		DE5E74C91D50A296003CDAAC /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74C81D50A296003CDAAC /* CommonModel.swift */; };
 		DE636E251DFE4AC4008F9F74 /* InstallHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */; };
+		DE636E371DFE7687008F9F74 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE636E361DFE7687008F9F74 /* MoreInstallerViewController.swift */; };
 		DE7900161D4C57300032D461 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900001D4C57300032D461 /* IQNSArray+Sort.swift */; };
 		DE7900171D4C57300032D461 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900011D4C57300032D461 /* IQUIScrollView+Additions.swift */; };
 		DE7900181D4C57300032D461 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900021D4C57300032D461 /* IQUITextFieldView+Additions.swift */; };
@@ -314,7 +315,6 @@
 		DE9135FD1DE85E48001190B7 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */; };
 		DE9135FE1DE85E48001190B7 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */; };
 		DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE9135F71DE85E48001190B7 /* mapapi.bundle */; };
-		DE9AA9681DFB6B51006B56E9 /* GFJInstallerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */; };
 		DE9AA96A1DFB6DD1006B56E9 /* InsterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */; };
 		DE9AA96C1DFB7549006B56E9 /* GFJRoofListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */; };
 		DE9AA9701DFBA853006B56E9 /* NearByRoofViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */; };
@@ -359,7 +359,6 @@
 		DEAEB28A1D7F843700174C58 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2881D7F843700174C58 /* ProvinceModel.swift */; };
 		DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */; };
 		DEB010A61DF2915400E929A6 /* GFJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */; };
-		DEC64FDE1D8000A000AF96AC /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */; };
 		DED15B691DED26C700B8260B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED15B681DED26C700B8260B /* MapViewController.swift */; };
 		DED15B721DED2E4900B8260B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B711DED2E4900B8260B /* CoreLocation.framework */; };
 		DED15B741DED2E5500B8260B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B731DED2E5500B8260B /* QuartzCore.framework */; };
@@ -760,6 +759,7 @@
 		DE5E74C61D509FD9003CDAAC /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		DE5E74C81D50A296003CDAAC /* CommonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
 		DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallHeaderCell.swift; sourceTree = "<group>"; };
+		DE636E361DFE7687008F9F74 /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
 		DE7900001D4C57300032D461 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		DE7900011D4C57300032D461 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		DE7900021D4C57300032D461 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -947,7 +947,6 @@
 		DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		DE9135F71DE85E48001190B7 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
-		DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJInstallerListViewController.swift; sourceTree = "<group>"; };
 		DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsterDetailViewController.swift; sourceTree = "<group>"; };
 		DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJRoofListViewController.swift; sourceTree = "<group>"; };
 		DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByRoofViewController.swift; sourceTree = "<group>"; };
@@ -1012,7 +1011,6 @@
 		DEAEB2881D7F843700174C58 /* ProvinceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceModel.swift; sourceTree = "<group>"; };
 		DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToBeInstallerViewController.xib; sourceTree = "<group>"; };
 		DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJWebViewController.swift; sourceTree = "<group>"; };
-		DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
 		DED15B681DED26C700B8260B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DED15B711DED2E4900B8260B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DED15B731DED2E5500B8260B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1193,7 +1191,6 @@
 				DE8A76531D860FB600C5F268 /* LeaseViewController.xib */,
 				DE79F9501D4C1C100032D461 /* MainViewController.swift */,
 				DE79F9511D4C1C100032D461 /* MainViewController.xib */,
-				DEC64FDD1D8000A000AF96AC /* MoreInstallerViewController.swift */,
 				DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */,
 				DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */,
 				DE8A76601D86518300C5F268 /* RoofPriceViewController.xib */,
@@ -2257,11 +2254,11 @@
 		DE9AA95C1DFB6A49006B56E9 /* 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				DE636E361DFE7687008F9F74 /* MoreInstallerViewController.swift */,
 				DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */,
 				DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */,
 				DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */,
 				DE9AA97A1DFBCA14006B56E9 /* UserCenterViewController.swift */,
-				DE9AA9671DFB6B51006B56E9 /* GFJInstallerListViewController.swift */,
 				DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */,
 				DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */,
 				DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */,
@@ -2685,6 +2682,7 @@
 				DE5E74421D509B9F003CDAAC /* QNPHAssetFile.m in Sources */,
 				DE7900B11D4C60360032D461 /* MBProgressHUD.m in Sources */,
 				DE7900181D4C57300032D461 /* IQUITextFieldView+Additions.swift in Sources */,
+				DE636E371DFE7687008F9F74 /* MoreInstallerViewController.swift in Sources */,
 				DE8A7A121D87E17500C5F268 /* PNChartLabel.m in Sources */,
 				DE869EF41D81138F0062E670 /* SafeCell.swift in Sources */,
 				DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */,
@@ -2792,7 +2790,6 @@
 				DE8A78DE1D869BD000C5F268 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				DE8A78C01D869BD000C5F268 /* SourceLocation.swift in Sources */,
 				DE5E74871D509BAD003CDAAC /* QNHosts.m in Sources */,
-				DE9AA9681DFB6B51006B56E9 /* GFJInstallerListViewController.swift in Sources */,
 				DE8A76631D865A1900C5F268 /* CalcModel.swift in Sources */,
 				DE8A7A291D88DA2300C5F268 /* ChartUtils.m in Sources */,
 				DE8A78C81D869BD000C5F268 /* DiskFetcher.swift in Sources */,
@@ -2818,7 +2815,6 @@
 				DE8A78C51D869BD000C5F268 /* CryptoSwiftMD5.swift in Sources */,
 				DE5E748C1D509BAD003CDAAC /* QNDes.m in Sources */,
 				DE8A78BB1D869BD000C5F268 /* ConstraintRelation.swift in Sources */,
-				DEC64FDE1D8000A000AF96AC /* MoreInstallerViewController.swift in Sources */,
 				DE5E74BD1D509CC4003CDAAC /* UIButton+AFNetworking.m in Sources */,
 				DE9AAA5E1DFBD315006B56E9 /* MJRefreshBackGifFooter.m in Sources */,
 				DE8A78B81D869BD000C5F268 /* ConstraintDescription.swift in Sources */,

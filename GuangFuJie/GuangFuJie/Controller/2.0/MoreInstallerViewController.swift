@@ -11,22 +11,50 @@ import UIKit
 class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     var yezhuTableView : UITableView!
     var yezhuArray : NSMutableArray = NSMutableArray()
+    var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "安装商列表"
         // Do any additional setup after loading the view.
         initView()
+        
+        yezhuTableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(self.loadUserList))
+        yezhuTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
+        
         loadUserList()
     }
     
+    func loadMore() {
+        currentPage = currentPage + 1
+        API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: nil, city_id: nil, is_suggest: nil, is_auth: 2, success: { (userInfos) in
+            self.yezhuTableView.mj_footer.endRefreshing()
+            if (userInfos.count > 0) {
+                self.yezhuArray.addObjectsFromArray(userInfos as [AnyObject])
+            }
+            if (userInfos.count < 10) {
+                self.yezhuTableView.mj_footer.hidden = true
+            }
+            self.yezhuTableView.reloadData()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
     func loadUserList() {
+        currentPage = 0
+        self.yezhuTableView.mj_footer.hidden = false
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.userlist(2, province_id: nil, city_id: nil, is_suggest: nil, success: { (userInfos) in
+        API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: nil, city_id: nil, is_suggest: nil, is_auth: 2, success: { (userInfos) in
+            self.yezhuTableView.mj_header.endRefreshing()
             self.hideHud()
             self.yezhuArray.removeAllObjects()
             if (userInfos.count > 0) {
                 self.yezhuArray.addObjectsFromArray(userInfos as [AnyObject])
+            }
+            if (userInfos.count < 10) {
+                self.yezhuTableView.mj_footer.hidden = true
             }
             self.yezhuTableView.reloadData()
         }) { (msg) in
