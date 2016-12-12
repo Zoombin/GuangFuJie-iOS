@@ -208,7 +208,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         todayElectricButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         electricView.addSubview(todayElectricButton)
         
-        todayElectricLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayElectricButton.frame), CGRectGetMaxY(topView.frame) + 1, buttonWidth, labelHeight))
+        todayElectricLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayElectricButton.frame) - 0.5, CGRectGetMaxY(topView.frame) + 1, buttonWidth + 0.5, labelHeight))
         todayElectricLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         todayElectricLabel.text = ""
         todayElectricLabel.textColor = UIColor.blackColor()
@@ -244,7 +244,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         todayMoneyButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         electricView.addSubview(todayMoneyButton)
         
-        todayMoneyLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayMoneyButton.frame),CGRectGetMaxY(todayElectricButton.frame) + 1, buttonWidth, labelHeight))
+        todayMoneyLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayMoneyButton.frame) - 0.5, CGRectGetMaxY(todayElectricButton.frame) + 1, buttonWidth, labelHeight))
         todayMoneyLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         todayMoneyLabel.text = ""
         todayMoneyLabel.textColor = UIColor.blackColor()
@@ -262,7 +262,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         totalMoneyButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         electricView.addSubview(totalMoneyButton)
         
-        totalMoneyLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalMoneyButton.frame), CGRectGetMaxY(todayElectricLabel.frame) + 1, buttonWidth - 1, labelHeight))
+        totalMoneyLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalMoneyButton.frame) - 0.5, CGRectGetMaxY(todayElectricLabel.frame) + 1, buttonWidth - 1, labelHeight))
         totalMoneyLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         totalMoneyLabel.text = ""
         totalMoneyLabel.textColor = UIColor.blackColor()
@@ -280,7 +280,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         todayjianpaiButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         electricView.addSubview(todayjianpaiButton)
         
-        todayjianpaiLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayjianpaiButton.frame),CGRectGetMaxY(todayMoneyButton.frame) + 1, buttonWidth, labelHeight))
+        todayjianpaiLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayjianpaiButton.frame) - 0.5, CGRectGetMaxY(todayMoneyButton.frame) + 1, buttonWidth, labelHeight))
         todayjianpaiLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         todayjianpaiLabel.text = ""
         todayjianpaiLabel.textColor = UIColor.blackColor()
@@ -298,7 +298,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         totaljianpaiButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         electricView.addSubview(totaljianpaiButton)
         
-        totaljianpaiLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totaljianpaiButton.frame), CGRectGetMaxY(todayMoneyButton.frame) + 1, buttonWidth, labelHeight))
+        totaljianpaiLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totaljianpaiButton.frame) - 0.5, CGRectGetMaxY(todayMoneyButton.frame) + 1, buttonWidth, labelHeight))
         totaljianpaiLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         totaljianpaiLabel.text = ""
         totaljianpaiLabel.textColor = UIColor.blackColor()
@@ -316,7 +316,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         todayPlantButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         electricView.addSubview(todayPlantButton)
         
-        todayplantLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayPlantButton.frame),CGRectGetMaxY(todayjianpaiButton.frame) + 1, buttonWidth, labelHeight))
+        todayplantLabel = UILabel.init(frame:CGRectMake(CGRectGetMaxX(todayPlantButton.frame) - 0.5, CGRectGetMaxY(todayjianpaiButton.frame) + 1, buttonWidth, labelHeight))
         todayplantLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         todayplantLabel.text = ""
         todayplantLabel.textColor = UIColor.blackColor()
@@ -334,7 +334,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         totalPlantButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         electricView.addSubview(totalPlantButton)
         
-        totalplantLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalPlantButton.frame), CGRectGetMaxY(todayjianpaiButton.frame) + 1, buttonWidth - 1, labelHeight))
+        totalplantLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(totalPlantButton.frame) - 0.5, CGRectGetMaxY(todayjianpaiButton.frame) + 1, buttonWidth - 1, labelHeight))
         totalplantLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         totalplantLabel.text = ""
         totalplantLabel.textColor = UIColor.blackColor()
