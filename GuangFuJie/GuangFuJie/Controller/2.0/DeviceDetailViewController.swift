@@ -205,31 +205,31 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         var line = 0
         var index = 0
         for i in 0..<icons.count {
-            var offSetX : CGFloat
-                = 0
             if (i != 0 && i%2 == 0) {
                 line = line + 1
                 index = 0
-                offSetX = 1
             }
+            let view = UIView.init(frame: CGRectMake(CGFloat(index) * buttonWidth * 2, CGRectGetMaxY(topView.frame) + labelHeight * CGFloat(line), buttonWidth * 2, labelHeight))
+            view.backgroundColor = UIColor.whiteColor()
+            view.layer.borderColor = Colors.bkgGray.CGColor
+            view.layer.borderWidth = 0.5
+            electricView.addSubview(view)
             
             //今日发电
             let titleButton = UIButton.init(type: UIButtonType.Custom)
-            titleButton.frame = CGRectMake(-offSetX + CGFloat(index) * buttonWidth * 2, CGRectGetMaxY(topView.frame) + (1 * CGFloat(line + 1)) + labelHeight * CGFloat(line), buttonWidth, labelHeight)
+            titleButton.frame = CGRectMake(0, 0, buttonWidth, labelHeight)
             titleButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
             titleButton.setTitle(titles[i], forState: UIControlState.Normal)
             titleButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
             titleButton.setImage(UIImage(named: icons[i]), forState: UIControlState.Normal)
-            titleButton.backgroundColor = UIColor.whiteColor()
             titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
-            electricView.addSubview(titleButton)
+            view.addSubview(titleButton)
             
-            let label = UILabel.init(frame:CGRectMake(CGRectGetMaxX(titleButton.frame), CGRectGetMinY(titleButton.frame), buttonWidth, labelHeight))
+            let label = UILabel.init(frame:CGRectMake(buttonWidth, 0, buttonWidth, labelHeight))
             label.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
             label.text = ""
             label.textColor = UIColor.blackColor()
-            label.backgroundColor = UIColor.whiteColor()
-            electricView.addSubview(label)
+            view.addSubview(label)
             
             labels.addObject(label)
             index = index + 1
