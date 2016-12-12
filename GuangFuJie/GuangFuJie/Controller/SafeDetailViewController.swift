@@ -66,7 +66,7 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 10
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -83,46 +83,93 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath)
+        let cell = UITableViewCell.init(style: UITableViewCellStyle.Value1, reuseIdentifier: cellReuseIdentifier)
         cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        cell.detailTextLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         if (info != nil) {
+            cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
             if (indexPath.row == 0) {
-                var type = "保险类型:"
-                if (info?.size != nil) {
-                    type = type + info!.size!
+                var orderNo = "保单号："
+                if (info!.insured_sn != nil) {
+                    orderNo = orderNo + info!.insured_sn!
+                }
+                cell.textLabel?.text = orderNo
+                cell.detailTextLabel?.textColor = Colors.installColor
+                
+                if (info!.order_status?.integerValue == 2) {
+                    cell.detailTextLabel?.text = "已成功投保"
+                } else if (info!.order_status?.integerValue == 1){
+                    cell.detailTextLabel?.text = "已投保"
+                } else {
+                    cell.detailTextLabel?.text = "未付款"
+                }
+            } else if (indexPath.row == 1) {
+                var name = "受益人姓名："
+                if (info!.beneficiary_name != nil) {
+                    name = name + info!.beneficiary_name!
+                }
+                cell.textLabel?.text = name
+            } else if (indexPath.row == 2) {
+                var phone = "受益人电话："
+                if (info!.beneficiary_phone != nil) {
+                    phone = phone + info!.beneficiary_phone!
+                }
+                cell.textLabel?.text = phone
+            } else if (indexPath.row == 3) {
+                var idNum = "受益人身份证："
+                if (info!.beneficiary_name != nil) {
+                    idNum = idNum + info!.beneficiary_id_no!
+                }
+                cell.textLabel?.text = idNum
+            } else if (indexPath.row == 4) {
+                var type = "保险类型："
+                if (info!.size != nil) {
+                    type = type + "光伏街发电系统" + info!.size! + "版"
                 }
                 cell.textLabel?.text = type
-            } else if (indexPath.row == 1) {
-                var years = "保险年限:"
-                if (info?.years != nil) {
-                    years = years + String(info!.years!)
-                }
-                cell.textLabel?.text = years
-            } else if (indexPath.row == 2) {
-                var price = "保险金额"
-                if (info?.insured_price != nil) {
-                    price = price + String(info!.insured_price!) + "元"
+            } else if (indexPath.row == 5) {
+                //金额
+                var price = "保险金额："
+                if (info?.price != nil) {
+                    price = price + String(info!.price!)
                 }
                 cell.textLabel?.text = price
-            } else if (indexPath.row == 3) {
-                var date = "有限期:"
-                if (info?.insured_from != nil && info?.insured_end != nil) {
-                    date = date + info!.insured_from! + "至" + info!.insured_end!
+            } else if (indexPath.row == 6) {
+                //保额
+                var baoeValue = "保额："
+                if (info!.size != nil) {
+                    let size = NSString.init(string: info!.size!)
+                    size.stringByReplacingOccurrencesOfString("KW", withString: "")
+                    let sizeFloat : CGFloat = CGFloat(size.floatValue)
+                    
+                    let baoe1 : CGFloat = sizeFloat * 0.7
+                    let baoe2 : CGFloat = sizeFloat * 0.7
+                    let baoe3 : CGFloat = 2.0
+                    let total : CGFloat = baoe1 + baoe2 + baoe3
+                    let baoe = String(format: "%.1f万/年", total)
+                    baoeValue = baoeValue  + baoe
                 }
-                cell.textLabel?.text = date
-            } else if (indexPath.row == 4) {
-                var status = "审核状态:"
-                if (info?.order_status != nil) {
-                    if (info!.order_status! == 1) {
-                        status = status + "审核中"
-                    }
-                    if (info!.order_status! == 2) {
-                        status = status + "已受理"
-                    }
+                cell.textLabel?.text = baoeValue
+            } else if (indexPath.row == 7) {
+                var time = "投保年限："
+                if (info!.years != nil) {
+                    time = time + String(info!.years!) + "年"
                 }
-                cell.textLabel?.text = status
-            } else if (indexPath.row == 5) {
-                cell.textLabel?.text = "合同图片:"
+                cell.textLabel?.text = time
+                
+                var range = ""
+                if (info!.insured_from != nil && info!.insured_end != nil) {
+                    range = info!.insured_from! + "至" + info!.insured_end!
+                    cell.detailTextLabel?.text = range
+                }
+            } else if (indexPath.row == 8) {
+                var address = "电站地址："
+                if (info?.station_address != nil) {
+                    address = address + info!.station_address!
+                }
+                cell.textLabel?.text = address
+            } else if (indexPath.row == 9) {
+                cell.textLabel?.text = "合同图片："
             }
         }
         return cell
