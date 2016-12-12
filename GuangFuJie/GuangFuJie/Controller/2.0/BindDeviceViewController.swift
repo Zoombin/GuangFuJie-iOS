@@ -101,12 +101,14 @@ class BindDeviceViewController: BaseViewController {
         deviceTipsLabel.text = "您当前选择了固德威品牌，请输入设备号查询发电量！"
         deviceTipsLabel.textAlignment = NSTextAlignment.Center
         deviceTipsLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        deviceTipsLabel.adjustsFontSizeToFitWidth = true
         deviceTipsLabel.textColor = UIColor.blackColor()
         deviceView.addSubview(deviceTipsLabel)
         
         deviceTextField = UITextField.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth * 0.9) / 2, CGRectGetMaxY(deviceTipsLabel.frame) + 8, buttonWidth * 0.9, buttonHeight))
         deviceTextField.layer.borderColor = UIColor.lightGrayColor().CGColor
         deviceTextField.backgroundColor = UIColor.whiteColor()
+        deviceTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         deviceTextField.placeholder = "请输入设备号"
         deviceView.addSubview(deviceTextField)
     }
