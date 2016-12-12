@@ -18,7 +18,7 @@ class BindDeviceViewController: BaseViewController {
     var deviceBkgImageView : UIImageView!
     var deviceTipsLabel : UILabel!
     var deviceTextField : UITextField!
-    var currentDeviceType = 0
+    var currentDeviceType = 1  //设备类型(0:易事特  1:固德威  2:古瑞瓦特 3:开合山亿）
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,14 +117,15 @@ class BindDeviceViewController: BaseViewController {
         grwtButton.selected = false
         khsyButton.selected = false
         
+//        设备类型(0:易事特  1:固德威  2:古瑞瓦特 3:开合山亿）
         if (button.tag == 0) {
             gwtButton.selected = true
-            currentDeviceType = 0
+            currentDeviceType = 1
             deviceBkgImageView.image = UIImage(named: "device_goodwe")
             deviceTipsLabel.text = "您当前选择了固德威品牌，请输入设备号查询发电量！"
         } else if (button.tag == 1) {
             ystButton.selected = true
-            currentDeviceType = 1
+            currentDeviceType = 0
             deviceBkgImageView.image = UIImage(named: "device_gsm")
             deviceTipsLabel.text = "您当前选择了易事特品牌，请输入设备号查询发电量！"
         } else if (button.tag == 2){
