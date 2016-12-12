@@ -140,7 +140,7 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath)
         cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        cell.textLabel?.textColor = UIColor.lightGrayColor()
+        cell.textLabel?.textColor = UIColor.blackColor()
         if (rInfo != nil) {
             if (indexPath.section == 0) {
                 if (indexPath.row == 0) {
