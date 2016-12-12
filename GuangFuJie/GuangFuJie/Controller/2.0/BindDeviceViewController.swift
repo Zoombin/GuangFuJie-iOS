@@ -34,21 +34,21 @@ class BindDeviceViewController: BaseViewController {
         let buttonWidth = PhoneUtils.kScreenWidth / 4
         let buttonHeight = PhoneUtils.kScreenHeight / 12
         
-        ystButton = UIButton.init(type: UIButtonType.Custom)
-        ystButton.setImage(UIImage(named: "ic_dev_yst_img0"), forState: UIControlState.Normal)
-        ystButton.setImage(UIImage(named: "ic_dev_yst_img1"), forState: UIControlState.Selected)
-        ystButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        ystButton.tag = 0
-        ystButton.frame = CGRectMake(0, 0, buttonWidth, buttonHeight)
-        topView.addSubview(ystButton)
-        
         gwtButton = UIButton.init(type: UIButtonType.Custom)
         gwtButton.setImage(UIImage(named: "ic_dev_gdw_img0"), forState: UIControlState.Normal)
         gwtButton.setImage(UIImage(named: "ic_dev_gdw_img1"), forState: UIControlState.Selected)
         gwtButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        gwtButton.tag = 1
-        gwtButton.frame = CGRectMake(buttonWidth, 0, buttonWidth, buttonHeight)
+        gwtButton.tag = 0
+        gwtButton.frame = CGRectMake(0, 0, buttonWidth, buttonHeight)
         topView.addSubview(gwtButton)
+        
+        ystButton = UIButton.init(type: UIButtonType.Custom)
+        ystButton.setImage(UIImage(named: "ic_dev_yst_img0"), forState: UIControlState.Normal)
+        ystButton.setImage(UIImage(named: "ic_dev_yst_img1"), forState: UIControlState.Selected)
+        ystButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        ystButton.tag = 1
+        ystButton.frame = CGRectMake(buttonWidth, 0, buttonWidth, buttonHeight)
+        topView.addSubview(ystButton)
         
         grwtButton = UIButton.init(type: UIButtonType.Custom)
         grwtButton.setImage(UIImage(named: "ic_dev_grwt_img0"), forState: UIControlState.Normal)
@@ -94,11 +94,11 @@ class BindDeviceViewController: BaseViewController {
         let height = (231 * width) / 309
         
         deviceBkgImageView = UIImageView.init(frame: CGRectMake((PhoneUtils.kScreenWidth - width) / 2, 8, width, height))
-        deviceBkgImageView.image = UIImage(named: "device_gsm")
+        deviceBkgImageView.image = UIImage(named: "device_goodwe")
         deviceView.addSubview(deviceBkgImageView)
         
         deviceTipsLabel = UILabel.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth) / 2, CGRectGetMaxY(deviceBkgImageView.frame) + 8, buttonWidth, buttonHeight))
-        deviceTipsLabel.text = "请输入10位S/N码"
+        deviceTipsLabel.text = "您当前选择了固德威品牌，请输入设备号查询发电量！"
         deviceTipsLabel.textAlignment = NSTextAlignment.Center
         deviceTipsLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         deviceTipsLabel.textColor = UIColor.blackColor()
@@ -107,6 +107,7 @@ class BindDeviceViewController: BaseViewController {
         deviceTextField = UITextField.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth * 0.9) / 2, CGRectGetMaxY(deviceTipsLabel.frame) + 8, buttonWidth * 0.9, buttonHeight))
         deviceTextField.layer.borderColor = UIColor.lightGrayColor().CGColor
         deviceTextField.backgroundColor = UIColor.whiteColor()
+        deviceTextField.placeholder = "请输入设备号"
         deviceView.addSubview(deviceTextField)
     }
     
@@ -117,22 +118,32 @@ class BindDeviceViewController: BaseViewController {
         khsyButton.selected = false
         
         if (button.tag == 0) {
-            ystButton.selected = true
-            resetDeviceType()
-        } else if (button.tag == 1) {
             gwtButton.selected = true
-            currentDeviceType = 1
+            currentDeviceType = 0
             deviceBkgImageView.image = UIImage(named: "device_goodwe")
-            deviceTipsLabel.text = "请输入16位S/N码"
-        } else {
-            self.showHint("此设备未开通")
+            deviceTipsLabel.text = "您当前选择了固德威品牌，请输入设备号查询发电量！"
+        } else if (button.tag == 1) {
+            ystButton.selected = true
+            currentDeviceType = 1
+            deviceBkgImageView.image = UIImage(named: "device_gsm")
+            deviceTipsLabel.text = "您当前选择了易事特品牌，请输入设备号查询发电量！"
+        } else if (button.tag == 2){
+            grwtButton.selected = true
+            currentDeviceType = 2
+            deviceBkgImageView.image = UIImage(named: "device_grwt")
+            deviceTipsLabel.text = "您当前选择了古瑞瓦特品牌，请输入设备号查询发电量！"
+        } else if (button.tag == 3) {
+            khsyButton.selected = true
+            currentDeviceType = 3
+            deviceBkgImageView.image = UIImage(named: "device_khsy")
+            deviceTipsLabel.text = "您当前选择了开合山亿品牌，请输入设备号查询发电量！"
         }
     }
     
     func resetDeviceType() {
         currentDeviceType = 0
-        deviceBkgImageView.image = UIImage(named: "device_gsm")
-        deviceTipsLabel.text = "请输入10位S/N码"
+        deviceBkgImageView.image = UIImage(named: "device_goodwe")
+        deviceTipsLabel.text = "您当前选择了固德威品牌，请输入设备号查询发电量！"
     }
 
     
@@ -141,22 +152,15 @@ class BindDeviceViewController: BaseViewController {
         if (shouldShowLogin()) {
             return
         }
+        if (currentDeviceType == 2 || currentDeviceType == 3) {
+            self.showHint("设备号无法验证，请核对设备号！")
+            return
+        }
+        
         let deviceId = deviceTextField.text
         if (deviceId!.isEmpty) {
             self.showHint("请输入设备号")
             return
-        }
-        let deviceIdStr = NSString.init(string: deviceId!)
-        if (currentDeviceType == 0) {
-            if (deviceIdStr.length != 10) {
-                self.showHint("请输入10位S/N码")
-                return
-            }
-        } else {
-            if (deviceIdStr.length != 16) {
-                self.showHint("请输入16位S/N码")
-                return
-            }
         }
         if (currentDeviceType == 0) {
             bindDevice()
