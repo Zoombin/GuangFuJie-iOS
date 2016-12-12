@@ -106,9 +106,7 @@ class BindDeviceViewController: BaseViewController {
         
         deviceTextField = UITextField.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth * 0.9) / 2, CGRectGetMaxY(deviceTipsLabel.frame) + 8, buttonWidth * 0.9, buttonHeight))
         deviceTextField.layer.borderColor = UIColor.lightGrayColor().CGColor
-        deviceTextField.layer.borderWidth = 0.5
         deviceTextField.backgroundColor = UIColor.whiteColor()
-        deviceTextField.layer.cornerRadius = 10
         deviceView.addSubview(deviceTextField)
     }
     
