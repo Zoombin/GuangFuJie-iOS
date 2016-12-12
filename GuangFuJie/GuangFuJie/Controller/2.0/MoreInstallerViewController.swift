@@ -91,6 +91,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(yezhuCellReuseIdentifier, forIndexPath: indexPath) as! YeZhuCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None;
         cell.initCell()
         let userInfo = yezhuArray[indexPath.row] as! InstallInfo
         cell.nameLabel.text = userInfo.company_name
