@@ -167,16 +167,18 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         statusButton.setTitle("运行状态 正常", forState: UIControlState.Normal)
         statusButton.setTitle("运行状态 故障（点击报修）", forState: UIControlState.Selected)
         statusButton.setTitle("运行状态 离线", forState: UIControlState.Disabled)
+        
         statusButton.setTitleColor(Colors.statusOK, forState: UIControlState.Normal)
         statusButton.setTitleColor(Colors.statusError, forState: UIControlState.Selected)
         statusButton.setTitleColor(Colors.statusOffLine, forState: UIControlState.Disabled)
+        
         statusButton.setImage(UIImage(named: "ic_devstatus_ok"), forState: UIControlState.Normal)
         statusButton.setImage(UIImage(named: "ic_devstatus_error"), forState: UIControlState.Selected)
         statusButton.setImage(UIImage(named: "ic_devstatus_offline"), forState: UIControlState.Disabled)
         statusButton.userInteractionEnabled = false
         statusButton.addTarget(self, action: #selector(self.reportPro), forControlEvents: UIControlEvents.TouchUpInside)
         statusButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
-        statusButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        statusButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
         statusButton.backgroundColor = UIColor.whiteColor()
         statusButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         topView.addSubview(statusButton)
@@ -405,7 +407,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             self.statusButton.enabled = true
             statusButton.userInteractionEnabled = true
         } else if (deviceInfo.status?.integerValue == 3) {
-            self.statusButton.selected = true
+            self.statusButton.selected = false
             self.statusButton.enabled = false
         }
     
