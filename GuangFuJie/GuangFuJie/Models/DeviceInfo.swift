@@ -20,6 +20,7 @@ class DeviceInfo: NSObject {
     var errorcode2 : String?
     var createdate : String?
     var updatedate : String?
+    var status : NSNumber?
     
 //    id
 //    device_id       // 设备id

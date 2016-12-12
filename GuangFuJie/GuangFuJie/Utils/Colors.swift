@@ -23,5 +23,9 @@ class Colors: NSObject {
     static let installRedColor : UIColor = UIColor(colorLiteralRed: 255/255.0, green: 18/255.0, blue: 18/255.0, alpha: 1.0)
     
     static let topButtonColor : UIColor = UIColor(colorLiteralRed: 210/255.0, green: 210/255.0, blue: 210/255.0, alpha: 1.0)
+    
+    static let statusOK : UIColor = UIColor(colorLiteralRed: 17/255.0, green: 201/255.0, blue: 81/255.0, alpha: 1.0)
+    static let statusError : UIColor = UIColor(colorLiteralRed: 251/255.0, green: 0/255.0, blue: 6/255.0, alpha: 1.0)
+    static let statusOffLine : UIColor = UIColor(colorLiteralRed: 30/255.0, green: 198/255.0, blue: 91/255.0, alpha: 1.0)
 }
   

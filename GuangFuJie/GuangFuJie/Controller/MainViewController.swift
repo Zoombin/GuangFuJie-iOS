@@ -187,7 +187,7 @@
 //        deviceBkgImageView.image = UIImage(named: "device_gsm")
 //        deviceTipsLabel.text = "请输入10位S/N码"
 //    }
-//    
+//
 //    func initBindView() {
 //        bindView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))
 //        self.view.addSubview(bindView)
@@ -198,13 +198,13 @@
 //        
 //        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
 //        let buttonHeight = bindViewBottomView.frame.size.height - 5 * 2
-//        
+//
 //        let width = PhoneUtils.kScreenWidth * 0.6
 //        let height = (231 * width) / 309
 //        
 //        let titles = [["易事特", "固德威"]]
 //        let images = ["gsm_title", "goodwe_title"]
-//        
+//
 //        let menu = SPullDownMenuView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, buttonHeight), withTitle: titles, withImages: images, withSelectColor: UIColor.blackColor())
 //        menu.delegate = self
 //        bindView.addSubview(menu)
@@ -226,7 +226,7 @@
 //        deviceTextField.backgroundColor = UIColor.whiteColor()
 //        deviceTextField.layer.cornerRadius = 10
 //        bindView.addSubview(deviceTextField)
-//        
+//
 //        let bindButton = UIButton.init(type: UIButtonType.Custom)
 //        bindButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
 //        bindButton.setTitle("绑定设备", forState: UIControlState.Normal)
@@ -287,7 +287,7 @@
 //            self.showHint(msg)
 //        }
 //    }
-//    
+//
 //    //MARK: 发电量
 //    func initElectricView() {
 //        electricView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topView.frame.size.height - 64))

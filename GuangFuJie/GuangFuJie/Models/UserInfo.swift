@@ -16,4 +16,10 @@ class UserInfo: NSObject {
     var token : String?
     var user_id : NSNumber?
     var user_name : String?
+    var is_installer : NSNumber?
+    var company_name : String?
+    var company_size : String?
+    var province_label : String?
+    var city_label : String?
+    var address : String?
 }

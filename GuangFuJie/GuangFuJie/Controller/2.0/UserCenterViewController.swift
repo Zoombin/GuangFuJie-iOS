@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserCenterViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class UserCenterViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +87,20 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         if (indexPath.section == 0) {
             cell.imageView?.image = UIImage(named: "ic_avstar")
             cell.textLabel?.text = UserDefaultManager.getUser()?.user_name
+            
+            let typeButtpn = UIButton.init(type: UIButtonType.Custom)
+            if (UserDefaultManager.getUser()!.is_installer?.integerValue == 0) {
+                typeButtpn.setTitle("业主", forState: UIControlState.Normal)
+            } else {
+                typeButtpn.setTitle("安装商", forState: UIControlState.Normal)
+            }
+            
+            typeButtpn.frame = CGRectMake(PhoneUtils.kScreenWidth - 100 - 5, 25, 100, 30)
+            typeButtpn.layer.borderWidth = 0.5
+            typeButtpn.layer.borderColor = Colors.installColor.CGColor
+            typeButtpn.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
+            typeButtpn.addTarget(self, action: #selector(self.typeButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+            cell.contentView.addSubview(typeButtpn)
         } else {
             cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -99,6 +113,24 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
             }
         }
         return cell
+    }
+    
+    func typeButtonClicked() {
+        if (UserDefaultManager.getUser()!.is_installer?.integerValue == 0) {
+            let alertView = UIAlertView.init(title: "提示", message: "申请成为安装商", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+            alertView.show()
+        } else {
+            let vc = InstallerDetailViewController()
+            self.pushViewController(vc)
+        }
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if (alertView.cancelButtonIndex ==  buttonIndex) {
+            return
+        }
+        let vc = ToBeInstallerViewController()
+        self.pushViewController(vc)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
