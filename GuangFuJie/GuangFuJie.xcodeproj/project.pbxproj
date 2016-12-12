@@ -358,6 +358,7 @@
 		DEAEB28A1D7F843700174C58 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2881D7F843700174C58 /* ProvinceModel.swift */; };
 		DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */; };
 		DEB010A61DF2915400E929A6 /* GFJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */; };
+		DEB715C91DFEDE6400CF31D3 /* MSLFrameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */; };
 		DED15B691DED26C700B8260B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED15B681DED26C700B8260B /* MapViewController.swift */; };
 		DED15B721DED2E4900B8260B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B711DED2E4900B8260B /* CoreLocation.framework */; };
 		DED15B741DED2E5500B8260B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B731DED2E5500B8260B /* QuartzCore.framework */; };
@@ -1011,6 +1012,8 @@
 		DEAEB2881D7F843700174C58 /* ProvinceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceModel.swift; sourceTree = "<group>"; };
 		DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToBeInstallerViewController.xib; sourceTree = "<group>"; };
 		DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJWebViewController.swift; sourceTree = "<group>"; };
+		DEB715C71DFEDE6400CF31D3 /* MSLFrameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLFrameUtil.h; sourceTree = "<group>"; };
+		DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLFrameUtil.m; sourceTree = "<group>"; };
 		DED15B681DED26C700B8260B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DED15B711DED2E4900B8260B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DED15B731DED2E5500B8260B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1291,6 +1294,8 @@
 		18B8FA611D3CE8A400B334E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DEB715C71DFEDE6400CF31D3 /* MSLFrameUtil.h */,
+				DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */,
 				DE8A79071D869C1D00C5F268 /* DisplayView.swift */,
 				DE0C781A1D68585500FED16D /* TopLeftLabel.h */,
 				DE0C781B1D68585A00FED16D /* TopLeftLabel.m */,
@@ -2640,6 +2645,7 @@
 				DE8A78FD1D869BD000C5F268 /* PhotoBrowser+Main.swift in Sources */,
 				DE3DB2D01DB4D23000AE0461 /* SPullDownMenuView.m in Sources */,
 				DE8A78D81D869BD000C5F268 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				DEB715C91DFEDE6400CF31D3 /* MSLFrameUtil.m in Sources */,
 				DE5E747F1D509BAD003CDAAC /* QNDnsManager.m in Sources */,
 				DE5E744B1D509B9F003CDAAC /* QNFormUpload.m in Sources */,
 				DE8A7A131D87E17500C5F268 /* PNCircleChart.m in Sources */,

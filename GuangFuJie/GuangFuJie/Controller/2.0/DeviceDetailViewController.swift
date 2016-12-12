@@ -162,7 +162,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         
         //运行状态
         statusButton = UIButton.init(type: UIButtonType.Custom)
-        statusButton.frame = CGRectMake(0, 0, PhoneUtils.kScreenWidth * 2 / 3, labelHeight)
+        statusButton.frame = CGRectMake(0, 0, PhoneUtils.kScreenWidth * 1 / 2, labelHeight)
         statusButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         statusButton.setTitle("运行状态 正常", forState: UIControlState.Normal)
         statusButton.setTitle("运行状态 故障（点击报修）", forState: UIControlState.Selected)
@@ -185,9 +185,9 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         
         //sn
         snButton = UIButton.init(type: UIButtonType.Custom)
-        snButton.frame = CGRectMake(PhoneUtils.kScreenWidth * 2 / 3, 0, PhoneUtils.kScreenWidth * 1 / 3, labelHeight)
+        snButton.frame = CGRectMake(PhoneUtils.kScreenWidth * 1 / 2, 0, PhoneUtils.kScreenWidth * 1 / 2, labelHeight)
         snButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        snButton.setTitle("402415512", forState: UIControlState.Normal)
+        snButton.setTitle(device_id, forState: UIControlState.Normal)
         snButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
         snButton.setImage(UIImage(named: "ic_dev_sn"), forState: UIControlState.Normal)
         snButton.userInteractionEnabled = false

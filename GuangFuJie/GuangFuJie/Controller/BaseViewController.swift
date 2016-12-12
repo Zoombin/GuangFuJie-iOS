@@ -17,6 +17,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initLoginView()
+        
         self.view.backgroundColor = Colors.bkgColor
         self.navigationController!.navigationBar.tintColor = UIColor.blackColor()
         

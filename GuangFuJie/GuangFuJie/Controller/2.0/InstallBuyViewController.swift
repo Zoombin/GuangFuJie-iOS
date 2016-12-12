@@ -75,7 +75,7 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
         var offSetY : CGFloat = 0
         if (isSelf) {
             buyBottomView.hidden = true
-            offSetY = buyBottomView.frame.size.height
+            offSetY = buyBottomView.frame.size.height - 100
         }
         
         tableView = UITableView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - offSetY - 64 - 50), style: UITableViewStyle.Grouped)

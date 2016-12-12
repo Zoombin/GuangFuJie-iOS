@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BuySafeViewController: BaseViewController, UITextFieldDelegate {
+class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertViewDelegate {
     var priceLabel : UILabel!
     var totalLabel : UILabel!
     var scrollView : UIScrollView!
@@ -250,7 +250,14 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func tellPhoneUsButtonClicked() {
-        UIApplication.sharedApplication().openURL(NSURL.init(string: "tel://4006229666")!)
+        let alertView = UIAlertView.init(title: "提示", message: "是否拨打电话给客服？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+        alertView.show()
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if (alertView.cancelButtonIndex != buttonIndex) {
+            UIApplication.sharedApplication().openURL(NSURL.init(string: "tel://4006229666")!)
+        }
     }
     
     func buttonClicked(sender : UIButton) {

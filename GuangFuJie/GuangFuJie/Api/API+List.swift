@@ -334,7 +334,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func userlist(start : NSInteger, pagesize : NSInteger, type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, is_auth : NSNumber? = nil, success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func userlist(start : NSInteger, pagesize : NSInteger, type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, is_auth : NSNumber? = nil, installer_id : NSNumber? = nil, success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -353,6 +353,9 @@ extension API {
         if (is_auth != nil) {
             params["is_auth"] = is_auth
         }
+        if (installer_id != nil) {
+            params["installer_id"] = installer_id
+        }
         params["START"] = String(start)
         params["PAGESIZE"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
@@ -360,6 +363,26 @@ extension API {
         self.get(url, params: newParams, success: { (totalCount, msg, data) in
             let array = InstallInfo.mj_objectArrayWithKeyValuesArray(data)
             success?(userInfos: array)
+            }, failure: failure)
+    }
+    
+    /**
+     安装商详情
+     
+     - parameter installer_id:
+     - parameter success:
+     - parameter failure:      
+     */
+    func installerDetail(installer_id : NSNumber, success: ((installerDetail: InstallInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/list"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["installer_id"] = installer_id
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        self.get(url, params: newParams, success: { (totalCount, msg, data) in
+            let installerDetail = InstallInfo.mj_objectWithKeyValues(data)
+            success?(installerDetail : installerDetail)
             }, failure: failure)
     }
     

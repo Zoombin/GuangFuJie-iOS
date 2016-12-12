@@ -15,6 +15,7 @@
 #import "MJExtension.h"
 #import "UIImageView+AFNetworking.h"
 #import "MJRefresh.h"
+#import "MSLFrameUtil.h"
 
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>

@@ -26,4 +26,6 @@ class InstallInfo: NSObject {
     var company_intro : String?   // 安装商 公司简介
     var created_date  : String?  // 用户创建时间
     var installer_date : String? // 申请成为安装商的时间
+    var logo : String?
+    
 }

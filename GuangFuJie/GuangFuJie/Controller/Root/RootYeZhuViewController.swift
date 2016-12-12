@@ -209,6 +209,13 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        if (shouldShowLogin()) {
+            return
+        }
+        let userInfo = yezhuArray[indexPath.row] as! InstallInfo
+        let vc = InstallerDetailViewController()
+        vc.installer_id = userInfo.user_id!
+        self.pushViewController(vc)
     }
     
     override func didReceiveMemoryWarning() {
