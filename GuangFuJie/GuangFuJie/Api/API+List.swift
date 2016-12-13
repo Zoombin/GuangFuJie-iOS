@@ -334,7 +334,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func userlist(start : NSInteger, pagesize : NSInteger, type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, is_auth : NSNumber? = nil, installer_id : NSNumber? = nil, success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func userlist(start : NSInteger, pagesize : NSInteger, type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, is_auth : NSNumber? = nil, installer_id : NSNumber? = nil, success: ((totalCount : NSNumber, userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -362,7 +362,7 @@ extension API {
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
         self.get(url, params: newParams, success: { (totalCount, msg, data) in
             let array = InstallInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(userInfos: array)
+            success?(totalCount: totalCount!, userInfos: array)
             }, failure: failure)
     }
     

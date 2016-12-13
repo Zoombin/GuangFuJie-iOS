@@ -16,6 +16,7 @@
 		18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FF4F1CD9902B00BF5926 /* LaunchScreen.storyboard */; };
 		18A7FF5C1CD9902B00BF5926 /* GuangFuJieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF5B1CD9902B00BF5926 /* GuangFuJieTests.swift */; };
 		18A7FF671CD9902B00BF5926 /* GuangFuJieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */; };
+		DE0BCE7B1DFF6ECD00912EAD /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */; };
 		DE0C77F91D66D30700FED16D /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C77F81D66D30700FED16D /* RoofInfo.swift */; };
 		DE0C78051D66E94300FED16D /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78041D66E94300FED16D /* InstallInfo.swift */; };
 		DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78061D66F14C00FED16D /* ElectricInfo.swift */; };
@@ -485,6 +486,7 @@
 		18A7FF621CD9902B00BF5926 /* GuangFuJieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuangFuJieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangFuJieUITests.swift; sourceTree = "<group>"; };
 		18A7FF681CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
 		DE0C77F81D66D30700FED16D /* RoofInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofInfo.swift; sourceTree = "<group>"; };
 		DE0C78041D66E94300FED16D /* InstallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallInfo.swift; sourceTree = "<group>"; };
 		DE0C78061D66F14C00FED16D /* ElectricInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricInfo.swift; sourceTree = "<group>"; };
@@ -2253,6 +2255,7 @@
 			isa = PBXGroup;
 			children = (
 				DE636E361DFE7687008F9F74 /* MoreInstallerViewController.swift */,
+				DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */,
 				DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */,
 				DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */,
 				DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */,
@@ -2571,6 +2574,7 @@
 				DE8A78F91D869BD000C5F268 /* pic.bundle in Resources */,
 				DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */,
 				DED834D11DFEAD8000B76DFC /* InstallerDetailViewController.xib in Resources */,
+				DE0BCE7B1DFF6ECD00912EAD /* MoreInstallerViewController.xib in Resources */,
 				DE83817A1DFD31420021716B /* DeviceCellPlus.xib in Resources */,
 				18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */,
 				DE9AAA641DFBD315006B56E9 /* MJRefresh.bundle in Resources */,

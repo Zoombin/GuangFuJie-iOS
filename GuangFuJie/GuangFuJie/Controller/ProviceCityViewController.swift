@@ -23,6 +23,7 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
     
     var currentProvice : ProvinceModel?
     var currentCity : CityModel?
+    var hasAll = false
     
     let cellReuseIdentifier1 = "TableViewCell1"
     let cellReuseIdentifier2 = "TableViewCell2"
@@ -59,6 +60,13 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
     func loadProviceList() {
         API.sharedInstance.provincelist({ (provinces) in
             if (provinces.count > 0) {
+                if (self.hasAll) {
+                    let allProvince = ProvinceModel()
+                    allProvince.province_id = 0
+                    allProvince.province_label = "所有区域"
+                    self.infoArray1.addObject(allProvince)
+                }
+                
                 self.infoArray1.addObjectsFromArray(provinces as [AnyObject])
                 self.tableView1.reloadData()
                 self.currentProvice = self.infoArray1.firstObject as? ProvinceModel
@@ -70,12 +78,21 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
     }
     
     func loadCityWithProvice(province : ProvinceModel) {
+        if (currentProvice?.province_label == "所有区域") {
+            return
+        }
         API.sharedInstance.citylist(province.province_id!, success: { (array) in
             self.infoArray2.removeAllObjects()
             if (array.count == 0) {
                 let city = CityModel()
                 city.city_id = 0
                 city.city_label = province.province_label
+                if (self.hasAll) {
+                    if (self.delegate != nil) {
+                        self.delegate?.proviceAndCity(province, city: city)
+                        self.close()
+                    }
+                }
                 self.infoArray2.addObject(city)
             } else {
                 self.infoArray2.addObjectsFromArray(array as [AnyObject])
@@ -118,9 +135,19 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (tableView == tableView1) {
             currentCity = nil
-            let provice = infoArray1[indexPath.row] as! ProvinceModel
-            currentProvice = provice
-            loadCityWithProvice(provice)
+            let province = infoArray1[indexPath.row] as! ProvinceModel
+            currentProvice = province
+            if (currentProvice?.province_label == "所有区域") {
+                if (self.delegate != nil) {
+                    let city = CityModel()
+                    city.city_id = 0
+                    city.city_label = province.province_label
+                    self.delegate?.proviceAndCity(currentProvice!, city: city)
+                    close()
+                }
+                return
+            }
+            loadCityWithProvice(province)
         } else {
             let city = infoArray2[indexPath.row] as! CityModel
             currentCity = city

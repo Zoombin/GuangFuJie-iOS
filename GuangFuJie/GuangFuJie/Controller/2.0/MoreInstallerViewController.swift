@@ -8,8 +8,15 @@
 
 import UIKit
 
-class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-    var yezhuTableView : UITableView!
+class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, ProviceCityViewDelegate {
+    @IBOutlet weak var yezhuTableView : UITableView!
+    @IBOutlet weak var countLabel : UILabel!
+    @IBOutlet weak var checkmarkButton : UIButton!
+    @IBOutlet weak var locationButton : UIButton!
+    
+    var provinceInfo: ProvinceModel!
+    var cityInfo: CityModel!
+    
     var yezhuArray : NSMutableArray = NSMutableArray()
     var currentPage = 0
     
@@ -25,9 +32,43 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         loadUserList()
     }
     
+    @IBAction func locationButtonClicked(sender : UIButton) {
+        let vc = ProviceCityViewController()
+        vc.delegate = self
+        vc.hasAll = true
+        let nav = UINavigationController.init(rootViewController: vc)
+        self.presentViewController(nav, animated: true, completion: nil)
+    }
+    
+    func proviceAndCity(provice: ProvinceModel, city: CityModel) {
+        provinceInfo = provice
+        cityInfo = city
+        var location = provinceInfo!.province_label! + " " + cityInfo!.city_label!
+        if (provinceInfo!.province_label! == cityInfo!.city_label!) {
+            location = provinceInfo!.province_label!
+        }
+        self.locationButton.setTitle(location, forState: UIControlState.Normal)
+        
+        loadUserList()
+    }
+    
+    @IBAction func checkmarkButtonClicked(sender : UIButton) {
+        sender.selected = !sender.selected
+        loadUserList()
+    }
+    
     func loadMore() {
+        let is_auth = checkmarkButton.selected ? 1 : 2
         currentPage = currentPage + 1
-        API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: nil, city_id: nil, is_suggest: nil, is_auth: 2, success: { (userInfos) in
+        var province_id = NSNumber.init(integer: 0)
+        var city_id = NSNumber.init(integer: 0)
+        if (provinceInfo != nil) {
+            province_id = provinceInfo.province_id!
+        }
+        if (cityInfo != nil) {
+            city_id = cityInfo.city_id!
+        }
+        API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: province_id, city_id: city_id, is_suggest: nil, is_auth: is_auth, success: { (totalCount, userInfos) in
             self.yezhuTableView.mj_footer.endRefreshing()
             if (userInfos.count > 0) {
                 self.yezhuArray.addObjectsFromArray(userInfos as [AnyObject])
@@ -44,9 +85,18 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     func loadUserList() {
         currentPage = 0
+        let is_auth = checkmarkButton.selected ? 1 : 2
         self.yezhuTableView.mj_footer.hidden = false
         self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: nil, city_id: nil, is_suggest: nil, is_auth: 2, success: { (userInfos) in
+        var province_id = NSNumber.init(integer: 0)
+        var city_id = NSNumber.init(integer: 0)
+        if (provinceInfo != nil) {
+            province_id = provinceInfo.province_id!
+        }
+        if (cityInfo != nil) {
+            city_id = cityInfo.city_id!
+        }
+        API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: province_id, city_id: city_id, is_suggest: nil, is_auth: is_auth, success: { (totalCount, userInfos) in
             self.yezhuTableView.mj_header.endRefreshing()
             self.hideHud()
             self.yezhuArray.removeAllObjects()
@@ -56,6 +106,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
             if (userInfos.count < 10) {
                 self.yezhuTableView.mj_footer.hidden = true
             }
+            self.countLabel.text = "\(totalCount)家安装商为您服务"
             self.yezhuTableView.reloadData()
         }) { (msg) in
             self.hideHud()
@@ -65,13 +116,6 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initView() {
-        yezhuTableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Plain)
-        yezhuTableView.delegate = self
-        yezhuTableView.dataSource = self
-        yezhuTableView.backgroundColor = Colors.bkgColor
-        yezhuTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.view.addSubview(yezhuTableView)
-        
         yezhuTableView.registerClass(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
     }
     
