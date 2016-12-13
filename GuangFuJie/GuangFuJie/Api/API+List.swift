@@ -554,10 +554,19 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getRoofList(start : NSInteger, pagesize : NSInteger, status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, isSelf : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getRoofList(start : NSInteger, pagesize : NSInteger, status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, isSelf : NSNumber? = nil, min_area_size : String? = nil, max_area_size : String? = nil, type : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
+        if (min_area_size != nil) {
+            params["min_area_size"] = min_area_size
+        }
+        if (max_area_size != nil) {
+            params["max_area_size"] = max_area_size
+        }
+        if (type != nil && type != 0) {
+            params["type"] = String(type!)
+        }
         if (status != nil) {
             params["status"] = status
         }

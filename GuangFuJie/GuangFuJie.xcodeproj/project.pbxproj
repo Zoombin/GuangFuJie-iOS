@@ -17,6 +17,7 @@
 		18A7FF5C1CD9902B00BF5926 /* GuangFuJieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF5B1CD9902B00BF5926 /* GuangFuJieTests.swift */; };
 		18A7FF671CD9902B00BF5926 /* GuangFuJieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */; };
 		DE0BCE7B1DFF6ECD00912EAD /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */; };
+		DE0BCE841DFF7EEC00912EAD /* GFJRoofListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0BCE831DFF7EEC00912EAD /* GFJRoofListViewController.xib */; };
 		DE0C77F91D66D30700FED16D /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C77F81D66D30700FED16D /* RoofInfo.swift */; };
 		DE0C78051D66E94300FED16D /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78041D66E94300FED16D /* InstallInfo.swift */; };
 		DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78061D66F14C00FED16D /* ElectricInfo.swift */; };
@@ -487,6 +488,7 @@
 		18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangFuJieUITests.swift; sourceTree = "<group>"; };
 		18A7FF681CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
+		DE0BCE831DFF7EEC00912EAD /* GFJRoofListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFJRoofListViewController.xib; sourceTree = "<group>"; };
 		DE0C77F81D66D30700FED16D /* RoofInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofInfo.swift; sourceTree = "<group>"; };
 		DE0C78041D66E94300FED16D /* InstallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallInfo.swift; sourceTree = "<group>"; };
 		DE0C78061D66F14C00FED16D /* ElectricInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricInfo.swift; sourceTree = "<group>"; };
@@ -2262,6 +2264,7 @@
 				DE9AA97A1DFBCA14006B56E9 /* UserCenterViewController.swift */,
 				DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */,
 				DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */,
+				DE0BCE831DFF7EEC00912EAD /* GFJRoofListViewController.xib */,
 				DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */,
 				DE9AA97C1DFBCCE9006B56E9 /* GFJIMInstallerViewController.swift */,
 				DE9AA97E1DFBCFCA006B56E9 /* GFJMyRoofsViewController.swift */,
@@ -2572,6 +2575,7 @@
 				DE8381781DFD31380021716B /* DeviceCell6.xib in Resources */,
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
 				DE8A78F91D869BD000C5F268 /* pic.bundle in Resources */,
+				DE0BCE841DFF7EEC00912EAD /* GFJRoofListViewController.xib in Resources */,
 				DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */,
 				DED834D11DFEAD8000B76DFC /* InstallerDetailViewController.xib in Resources */,
 				DE0BCE7B1DFF6ECD00912EAD /* MoreInstallerViewController.xib in Resources */,
