@@ -34,7 +34,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         
         let screenWidth = PhoneUtils.kScreenWidth
         let buttonHeigt : CGFloat = 30
-        let offSetX : CGFloat = 20
+        let offSetX : CGFloat = 15
         let offSetY : CGFloat = 5
         let titles = ["业主", "安装商", "发电量", "保险"]
         let buttonWidth = (screenWidth - offSetX * CGFloat(titles.count + 1))  / CGFloat(titles.count)
@@ -53,7 +53,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
             button.layer.borderColor = Colors.clearColor.CGColor
             button.layer.borderWidth = 0.5
             button.layer.masksToBounds = true
-            button.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            button.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm2)
             button.tag = i
             button.addTarget(self, action: #selector(self.topMenuButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             topMenuView.addSubview(button)

@@ -13,6 +13,7 @@ class Dimens: NSObject {
     static let fontSizelarge : CGFloat = 18
     static let fontSizelarge2 : CGFloat = 16
     
+    static let fontSizeComm2 : CGFloat = 15
     static let fontSizeComm : CGFloat = 14
     
     static let fontSizeSmall : CGFloat = 12
