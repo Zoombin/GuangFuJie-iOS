@@ -143,13 +143,6 @@ class BindDeviceViewController: BaseViewController {
         }
     }
     
-    func resetDeviceType() {
-        currentDeviceType = 0
-        deviceBkgImageView.image = UIImage(named: "device_goodwe")
-        deviceTipsLabel.text = "您当前选择了固德威品牌，请输入设备号查询发电量！"
-    }
-
-    
     func bindButtonClicked() {
         deviceTextField.resignFirstResponder()
         if (shouldShowLogin()) {
@@ -165,20 +158,7 @@ class BindDeviceViewController: BaseViewController {
             self.showHint("请输入设备号")
             return
         }
-        if (currentDeviceType == 0) {
-            bindDevice()
-        } else {
-            API.sharedInstance.bindGoodwe(deviceTextField.text!, success: { (inventerModel) in
-                let number = NSString.init(string: inventerModel.inventerSN!)
-                if (number.length == 0) {
-                    self.showHint("绑定失败")
-                } else {
-                    self.bindDevice()
-                }
-                }, failure: { (msg) in
-                    self.showHint("绑定失败")
-            })
-        }
+        bindDevice()
     }
     
     func bindDevice() {
