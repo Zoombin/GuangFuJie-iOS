@@ -9,6 +9,7 @@
 import UIKit
 
 class ElectricInfo: NSObject {
+    var area_size : String? //面积
     var year_money : NSNumber?     // 年收益 元
     var year_du : NSNumber?        // 一年发电的度数
     var c : NSNumber?              // 节约的碳 吨

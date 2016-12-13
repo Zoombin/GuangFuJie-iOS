@@ -57,13 +57,15 @@ class CalResultViewController: BaseViewController {
     
     func initView() {
         let titleStrs = NSMutableArray()
-        titleStrs.addObject("节约用煤\n" + String(eInfo.c!) + "吨/年")
-        titleStrs.addObject("减排二氧化硫\n" + String(eInfo.so2!) + "吨/年")
-        titleStrs.addObject("减排粉尘\n" + String(eInfo.dust!) + "吨/年")
-        titleStrs.addObject("减排二氧化碳\n" + String(eInfo.co2!) + "吨/年")
-        titleStrs.addObject("种植植物\n" + String(eInfo.plant!) + "棵")
-        titleStrs.addObject("行驶里程\n" + String(eInfo.mileage!) + "公里")
+        titleStrs.addObject("节约用煤\n" + String(format: "%.1f", eInfo.c!.floatValue) + "吨/年")
+        titleStrs.addObject("减排二氧化硫\n" + String(format: "%.1f", eInfo.so2!.floatValue) + "吨/年")
+        titleStrs.addObject("减排粉尘\n" + String(format: "%.1f", eInfo.dust!.floatValue) + "吨/年")
+        titleStrs.addObject("减排二氧化碳\n" + String(format: "%.1f", eInfo.co2!.floatValue) + "吨/年")
+        titleStrs.addObject("种植植物\n" + String(format: "%.1f", eInfo.plant!.floatValue) + "棵")
+        titleStrs.addObject("行驶里程\n" + String(format: "%.1f", eInfo.mileage!.floatValue) + "公里")
         
+        let areaSize = "屋顶面积:" +  String(format: "%.2f", NSString.init(string: eInfo.area_size!).floatValue) + "㎡"
+        let electricDu = "预计发电:" + String(eInfo.year_du!) + "度/年"
         let earnMoney = "预计收益:" + String(eInfo.year_money!) + "元/年"
         
         let submitBottomView = UIView.init(frame: CGRectMake(0, self.view.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
@@ -126,22 +128,22 @@ class CalResultViewController: BaseViewController {
             index += 1
         }
         
-        let canEarnMoney = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(iconView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.1))
+        let moneyWidth = (PhoneUtils.kScreenWidth / 4 - 15) / 2
+        let moneyLeftView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(iconView.frame) + 1, moneyWidth, PhoneUtils.kScreenHeight * 0.1))
+        moneyLeftView.backgroundColor = UIColor.whiteColor()
+        scrollView.addSubview(moneyLeftView)
+        
+        let canEarnMoney = UILabel.init(frame: CGRectMake(moneyWidth, CGRectGetMaxY(iconView.frame) + 1, PhoneUtils.kScreenWidth - moneyWidth, PhoneUtils.kScreenHeight * 0.1))
         canEarnMoney.textColor = Colors.installRedColor
-        canEarnMoney.font = UIFont.systemFontOfSize(Dimens.fontSizelarge)
-        canEarnMoney.textAlignment = NSTextAlignment.Center
-        canEarnMoney.text = earnMoney
+        canEarnMoney.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        canEarnMoney.numberOfLines = 0
+        canEarnMoney.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        canEarnMoney.textAlignment = NSTextAlignment.Left
+        canEarnMoney.text = areaSize + "\n" + electricDu + "\n" + earnMoney
         canEarnMoney.backgroundColor = UIColor.whiteColor()
         scrollView.addSubview(canEarnMoney)
         
-        let tipsLabel = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(canEarnMoney.frame) + 10, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.12))
-        tipsLabel.text = "您需要客户联系回访吗?\n您需要工作人员上门\n您需要预约安装吗？"
-        tipsLabel.backgroundColor = UIColor.whiteColor()
-        tipsLabel.numberOfLines = 0
-        tipsLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        scrollView.addSubview(tipsLabel)
-        
-        nameTextField = UITextField.init(frame: CGRectMake(0, CGRectGetMaxY(tipsLabel.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight / 15))
+        nameTextField = UITextField.init(frame: CGRectMake(0, CGRectGetMaxY(canEarnMoney.frame) + 1, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight / 15))
         nameTextField.backgroundColor = UIColor.whiteColor()
         nameTextField.leftViewMode = UITextFieldViewMode.Always
         nameTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
@@ -169,6 +171,13 @@ class CalResultViewController: BaseViewController {
         phoneLabel.textColor = UIColor.blackColor()
         phoneLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         phoneTextField.leftView = phoneLabel
+        
+        let tipsLabel = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(phoneTextField.frame) + 5, PhoneUtils.kScreenWidth, 20))
+        tipsLabel.text = "您需要客户联系回访吗? 您需要工作人员上门吗？您需要预约安装吗？"
+        tipsLabel.textAlignment = NSTextAlignment.Center
+        tipsLabel.adjustsFontSizeToFitWidth = true
+        tipsLabel.backgroundColor = UIColor.clearColor()
+        scrollView.addSubview(tipsLabel)
         
         scrollView.contentSize = CGSizeMake(0, scrollView.frame.size.height + 1)
     }
