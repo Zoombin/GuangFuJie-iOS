@@ -31,7 +31,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     var barButton: UIButton!
     var statusButton: UIButton!
     
-    let topButtonHeight = PhoneUtils.kScreenHeight / 14
+    let topButtonHeight = PhoneUtils.kScreenHeight / 18
     
     //发电量
     var pnLineChart : LineChartView!
