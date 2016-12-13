@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     var todayElectricLabel : UILabel!
@@ -33,8 +34,8 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     let topButtonHeight = PhoneUtils.kScreenHeight / 14
     
     //发电量
-    var pnLineChart : PNLineChart!
-    var pnBarChart : PNBarChart!
+    var pnLineChart : LineChartView!
+    var pnBarChart : BarChartView!
     var picView : UIView!
     let infoArray = NSMutableArray()
     var currentIndex = 0
@@ -266,23 +267,69 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         for i in 0..<infoArray.count {
             let power = infoArray[i] as! PowerGraphInfo
             xLabels.addObject(String(power.month!) + "月")
-            yLabels.addObject(power.energy_month == nil ? "0" : String(power.energy_month!))
+            yLabels.addObject(power.energy_month == nil ? NSNumber.init(integer: 0) : power.energy_month!)
         }
         
-        if (xLabels.count == 0 || xLabels == 1) {
-            self.showHint("暂无数据!")
+        initLineChart(xLabels, yLabels: yLabels)
+        initBarChart(xLabels, yLabels: yLabels)
+    }
+    
+    func initLineChart(xLabels : NSArray, yLabels : NSArray) {
+        if (xLabels.count != yLabels.count) {
             return
         }
         
-        pnLineChart = ChartUtils.addLineChartsWidthFrame(xLabels, yDates: yLabels, andFrame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, picView.frame.size.height))
-        picView.addSubview(pnLineChart)
-        pnLineChart.strokeChart()
-        pnLineChart.hidden = currentIndex != 1
+        var entries: [ChartDataEntry] = Array()
+        var xValues: [String] = Array()
         
-        pnBarChart = ChartUtils.addBarChartsWidthFrame(xLabels, yDates: yLabels, andFrame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, picView.frame.size.height))
+        for i in 0..<yLabels.count {
+            let xValue = xLabels[i] as! String
+            let yValue = yLabels[i] as! NSNumber
+            
+            let data = ChartDataEntry.init(value: yValue.doubleValue, xIndex: i)
+            entries.append(data)
+            xValues.append(xValue)
+        }
+        
+        let dataSet: LineChartDataSet = LineChartDataSet(yVals: entries, label: "2016年发电量走势(单位:kw)")
+        
+        let offSetY : CGFloat = 0
+        
+        pnLineChart = LineChartView(frame: CGRectMake(0, offSetY, PhoneUtils.kScreenWidth, picView.frame.size.height - offSetY))
+        pnLineChart.backgroundColor = NSUIColor.clearColor()
+        pnLineChart.leftAxis.axisMinValue = 0.0
+        pnLineChart.rightAxis.axisMinValue = 0.0
+        pnLineChart.data = LineChartData(xVals: xValues, dataSet: dataSet)
+        picView.addSubview(pnLineChart)
+        pnLineChart.hidden = currentIndex != 1
+        pnLineChart.descriptionText = ""
+    }
+    
+    func initBarChart(xLabels : NSArray, yLabels : NSArray) {
+        var entries: [BarChartDataEntry] = Array()
+        var xValues: [String] = Array()
+        
+        for i in 0..<yLabels.count {
+            let xValue = xLabels[i] as! String
+            let yValue = yLabels[i] as! NSNumber
+            
+            let data = BarChartDataEntry.init(value: yValue.doubleValue, xIndex: i)
+            entries.append(data)
+            xValues.append(xValue)
+        }
+        
+        let dataSet: BarChartDataSet = BarChartDataSet(yVals: entries, label: "2016年发电量走势(单位:kw)")
+        
+        let offSetY : CGFloat = 0
+        
+        pnBarChart = BarChartView(frame: CGRectMake(0, offSetY, PhoneUtils.kScreenWidth, picView.frame.size.height - offSetY))
+        pnBarChart.backgroundColor = NSUIColor.clearColor()
+        pnBarChart.leftAxis.axisMinValue = 0.0
+        pnBarChart.rightAxis.axisMinValue = 0.0
+        pnBarChart.data = BarChartData(xVals: xValues, dataSet: dataSet)
         picView.addSubview(pnBarChart)
-        pnBarChart.strokeChart()
         pnBarChart.hidden = currentIndex != 2
+        pnBarChart.descriptionText = ""
     }
     
     func initPicView() {

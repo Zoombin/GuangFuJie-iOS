@@ -383,6 +383,8 @@
 		DEF984031D7FF5DC00ED1B40 /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983F91D7FF5DC00ED1B40 /* UIButton+AlamofireImage.swift */; };
 		DEF984041D7FF5DC00ED1B40 /* UIImage+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983FA1D7FF5DC00ED1B40 /* UIImage+AlamofireImage.swift */; };
 		DEF984051D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF983FB1D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift */; };
+		DEFA2FD41E002DD00046CA89 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFA2FCD1E002DC60046CA89 /* Charts.framework */; };
+		DEFA2FD51E002DD00046CA89 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEFA2FCD1E002DC60046CA89 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -456,6 +458,41 @@
 			remoteGlobalIDString = 18A7FF421CD9902B00BF5926;
 			remoteInfo = GuangFuJie;
 		};
+		DEFA2FCC1E002DC60046CA89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEFA2FC51E002DC60046CA89 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		DEFA2FCE1E002DC60046CA89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEFA2FC51E002DC60046CA89 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		DEFA2FD01E002DC60046CA89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEFA2FC51E002DC60046CA89 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		DEFA2FD21E002DC60046CA89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEFA2FC51E002DC60046CA89 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120FF1D811F1600D14B02;
+			remoteInfo = ChartsRealmTests;
+		};
+		DEFA2FD61E002DD00046CA89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEFA2FC51E002DC60046CA89 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -466,6 +503,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1891D9F41D3F54CA0042E72D /* Alamofire.framework in Embed Frameworks */,
+				DEFA2FD51E002DD00046CA89 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1038,6 +1076,7 @@
 		DEF983F91D7FF5DC00ED1B40 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+AlamofireImage.swift"; path = "Source/UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
 		DEF983FA1D7FF5DC00ED1B40 /* UIImage+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+AlamofireImage.swift"; path = "Source/UIImage+AlamofireImage.swift"; sourceTree = "<group>"; };
 		DEF983FB1D7FF5DC00ED1B40 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+AlamofireImage.swift"; path = "Source/UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
+		DEFA2FC51E002DC60046CA89 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-2.3.0/Charts.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1057,6 +1096,7 @@
 				DE44CC281D840481004690EF /* CoreMotion.framework in Frameworks */,
 				DE9135FE1DE85E48001190B7 /* BaiduMapAPI_Utils.framework in Frameworks */,
 				DE44CC261D840476004690EF /* libsqlite3.tbd in Frameworks */,
+				DEFA2FD41E002DD00046CA89 /* Charts.framework in Frameworks */,
 				DE44CC241D840470004690EF /* libc++.tbd in Frameworks */,
 				DE44CC221D840468004690EF /* libz.1.2.5.tbd in Frameworks */,
 				DE9135FA1DE85E48001190B7 /* BaiduMapAPI_Location.framework in Frameworks */,
@@ -1232,6 +1272,7 @@
 		18B8FA5E1D3CE8A400B334E4 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DEFA2FC51E002DC60046CA89 /* Charts.xcodeproj */,
 				DE9135EE1DE85E48001190B7 /* BaiduMap */,
 				DE3DB2CA1DB4D23000AE0461 /* Menu */,
 				DE8A79ED1D87E17500C5F268 /* PNChart */,
@@ -2403,6 +2444,17 @@
 			path = AlamofireImage;
 			sourceTree = "<group>";
 		};
+		DEFA2FC61E002DC60046CA89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEFA2FCD1E002DC60046CA89 /* Charts.framework */,
+				DEFA2FCF1E002DC60046CA89 /* ChartsTests.xctest */,
+				DEFA2FD11E002DC60046CA89 /* ChartsRealm.framework */,
+				DEFA2FD31E002DC60046CA89 /* ChartsRealmTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2419,6 +2471,7 @@
 			);
 			dependencies = (
 				1891D9F61D3F54CB0042E72D /* PBXTargetDependency */,
+				DEFA2FD71E002DD00046CA89 /* PBXTargetDependency */,
 			);
 			name = GuangFuJie;
 			productName = GuangFuJie;
@@ -2502,6 +2555,10 @@
 					ProductGroup = 1891D9DC1D3F54BE0042E72D /* Products */;
 					ProjectRef = 1891D9DB1D3F54BE0042E72D /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = DEFA2FC61E002DC60046CA89 /* Products */;
+					ProjectRef = DEFA2FC51E002DC60046CA89 /* Charts.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -2560,6 +2617,34 @@
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
 			remoteRef = 1891D9F11D3F54BE0042E72D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DEFA2FCD1E002DC60046CA89 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = DEFA2FCC1E002DC60046CA89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DEFA2FCF1E002DC60046CA89 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = DEFA2FCE1E002DC60046CA89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DEFA2FD11E002DC60046CA89 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = DEFA2FD01E002DC60046CA89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DEFA2FD31E002DC60046CA89 /* ChartsRealmTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsRealmTests.xctest;
+			remoteRef = DEFA2FD21E002DC60046CA89 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2976,6 +3061,11 @@
 			isa = PBXTargetDependency;
 			target = 18A7FF421CD9902B00BF5926 /* GuangFuJie */;
 			targetProxy = 18A7FF631CD9902B00BF5926 /* PBXContainerItemProxy */;
+		};
+		DEFA2FD71E002DD00046CA89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = DEFA2FD61E002DD00046CA89 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
