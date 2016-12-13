@@ -994,7 +994,7 @@ extension API {
         ]
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
+        self.get(url, params: newParams, success: { (totalCount, msg, data) in
             let userInfo = UserInfo.mj_objectWithKeyValues(data)
             success?(userinfo : userInfo)
             }, failure: failure)

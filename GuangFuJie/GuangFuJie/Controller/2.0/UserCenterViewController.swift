@@ -9,7 +9,8 @@
 import UIKit
 
 class UserCenterViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate {
-
+    var tableView: UITableView!
+    var typeButtpn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "用户主页"
@@ -19,7 +20,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
 
     let cellReuseIdentifier = "cellReuseIdentifier"
     func initView() {
-        let tableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 50), style: UITableViewStyle.Grouped)
+        tableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 50), style: UITableViewStyle.Grouped)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
@@ -41,6 +42,23 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         logOutButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
         logOutButton.addTarget(self, action: #selector(self.logOut), forControlEvents: UIControlEvents.TouchUpInside)
         bottomView.addSubview(logOutButton)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        refreshUserInfo()
+    }
+    
+    func refreshUserInfo() {
+        if (!UserDefaultManager.isLogin()) {
+            return
+        }
+        API.sharedInstance.getUserInfo({ (userinfo) in
+            UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+            self.tableView.reloadData()
+        }) { (msg) in
+            print(msg)
+        }
     }
     
     func logOut() {
@@ -88,7 +106,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
             cell.imageView?.image = UIImage(named: "ic_avstar")
             cell.textLabel?.text = UserDefaultManager.getUser()?.user_name
             
-            let typeButtpn = UIButton.init(type: UIButtonType.Custom)
+            typeButtpn = UIButton.init(type: UIButtonType.Custom)
             if (UserDefaultManager.getUser()!.is_installer?.integerValue == 0) {
                 typeButtpn.setTitle("业主", forState: UIControlState.Normal)
             } else {
@@ -99,6 +117,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
             typeButtpn.frame = CGRectMake(PhoneUtils.kScreenWidth - 80 - 5, 28, 80, 24)
             typeButtpn.layer.borderWidth = 0.5
             typeButtpn.layer.borderColor = Colors.installColor.CGColor
+            typeButtpn.backgroundColor = UIColor.whiteColor()
             typeButtpn.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
             typeButtpn.addTarget(self, action: #selector(self.typeButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
             cell.contentView.addSubview(typeButtpn)
