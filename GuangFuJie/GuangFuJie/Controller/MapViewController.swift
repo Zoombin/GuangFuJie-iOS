@@ -39,6 +39,8 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     func initView() {
         mapView = BMKMapView.init(frame: CGRectMake(0, 50,PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 50))
         mapView.zoomLevel = 18
+        mapView.mapType = UInt(BMKMapTypeSatellite)
+
         self.view.addSubview(mapView)
         
         searchBar = UISearchBar.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, 50))
