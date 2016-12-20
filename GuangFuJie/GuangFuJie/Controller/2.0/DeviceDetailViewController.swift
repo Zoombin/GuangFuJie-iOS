@@ -123,6 +123,9 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if (alertView.cancelButtonIndex == buttonIndex) {
+            return
+        }
         self.showHudInView(self.view, hint: "解绑中...")
         if (alertView.cancelButtonIndex != buttonIndex) {
             API.sharedInstance.unBindDevice(device_id, success: { (commomModel) in
