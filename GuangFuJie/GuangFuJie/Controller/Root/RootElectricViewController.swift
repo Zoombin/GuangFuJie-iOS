@@ -133,6 +133,7 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DeviceCell", forIndexPath: indexPath) as! DeviceCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         let device = devicesArray[indexPath.row] as! DeviceListInfo
         cell.setData(device)

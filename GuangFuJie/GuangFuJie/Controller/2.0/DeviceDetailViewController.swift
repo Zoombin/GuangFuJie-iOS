@@ -168,6 +168,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         statusButton = UIButton.init(type: UIButtonType.Custom)
         statusButton.frame = CGRectMake(0, 0, PhoneUtils.kScreenWidth * 1 / 2, labelHeight)
         statusButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        statusButton.titleLabel?.adjustsFontSizeToFitWidth = true
         statusButton.setTitle("运行状态 正常", forState: UIControlState.Normal)
         statusButton.setTitle("运行状态 故障（点击报修）", forState: UIControlState.Selected)
         statusButton.setTitle("运行状态 离线", forState: UIControlState.Disabled)

@@ -55,6 +55,7 @@ class DeviceCell: UITableViewCell {
             deviceid = device.device_id!
         }
         self.snButton.setTitle(deviceid, forState: UIControlState.Normal)
+        self.snButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     static func getNidName() -> String {

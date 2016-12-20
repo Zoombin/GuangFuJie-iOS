@@ -31,7 +31,7 @@ class SafeCell: UITableViewCell {
             return
         }
         viewCreated = true
-        
+        self.selectionStyle = UITableViewCellSelectionStyle.None
         self.contentView.backgroundColor = Colors.bkgColor
         
         let dir : CGFloat = PhoneUtils.kScreenWidth / 40
