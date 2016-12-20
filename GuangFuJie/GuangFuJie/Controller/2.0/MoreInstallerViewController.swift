@@ -58,7 +58,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func loadMore() {
-        let is_auth = checkmarkButton.selected ? 1 : 2
+        let is_auth = checkmarkButton.selected ? 3 : 2
         currentPage = currentPage + 1
         var province_id = NSNumber.init(integer: 0)
         var city_id = NSNumber.init(integer: 0)
@@ -68,7 +68,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         if (cityInfo != nil) {
             city_id = cityInfo.city_id!
         }
-        API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: province_id, city_id: city_id, is_suggest: nil, is_auth: is_auth, success: { (totalCount, userInfos) in
+        API.sharedInstance.userlist(currentPage, pagesize: 10, type: 2, province_id: province_id, city_id: city_id, is_suggest: nil, is_auth: is_auth, success: { (totalCount, userInfos) in
             self.yezhuTableView.mj_footer.endRefreshing()
             if (userInfos.count > 0) {
                 self.yezhuArray.addObjectsFromArray(userInfos as [AnyObject])
@@ -85,7 +85,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     func loadUserList() {
         currentPage = 0
-        let is_auth = checkmarkButton.selected ? 1 : 2
+        let is_auth = checkmarkButton.selected ? 3 : 2
         self.yezhuTableView.mj_footer.hidden = false
         self.showHudInView(self.view, hint: "加载中...")
         var province_id = NSNumber.init(integer: 0)

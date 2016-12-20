@@ -351,7 +351,7 @@ extension API {
             params["is_suggest"] = is_suggest
         }
         if (is_auth != nil) {
-            params["is_auth"] = is_auth
+            params["is_auth"] = String(is_auth!)
         }
         if (installer_id != nil) {
             params["installer_id"] = installer_id
