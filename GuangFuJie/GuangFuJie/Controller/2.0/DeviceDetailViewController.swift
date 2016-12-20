@@ -170,16 +170,16 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         statusButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
         statusButton.titleLabel?.adjustsFontSizeToFitWidth = true
         statusButton.setTitle("运行状态 正常", forState: UIControlState.Normal)
-        statusButton.setTitle("运行状态 故障（点击报修）", forState: UIControlState.Selected)
-        statusButton.setTitle("运行状态 离线", forState: UIControlState.Disabled)
+//        statusButton.setTitle("运行状态 故障（点击报修）", forState: UIControlState.Selected)
+//        statusButton.setTitle("运行状态 离线", forState: UIControlState.Disabled)
         
         statusButton.setTitleColor(Colors.statusOK, forState: UIControlState.Normal)
-        statusButton.setTitleColor(Colors.statusError, forState: UIControlState.Selected)
-        statusButton.setTitleColor(Colors.statusOffLine, forState: UIControlState.Disabled)
+//        statusButton.setTitleColor(Colors.statusError, forState: UIControlState.Selected)
+//        statusButton.setTitleColor(Colors.statusOffLine, forState: UIControlState.Disabled)
         
         statusButton.setImage(UIImage(named: "ic_devstatus_ok"), forState: UIControlState.Normal)
-        statusButton.setImage(UIImage(named: "ic_devstatus_error"), forState: UIControlState.Selected)
-        statusButton.setImage(UIImage(named: "ic_devstatus_offline"), forState: UIControlState.Disabled)
+//        statusButton.setImage(UIImage(named: "ic_devstatus_error"), forState: UIControlState.Selected)
+//        statusButton.setImage(UIImage(named: "ic_devstatus_offline"), forState: UIControlState.Disabled)
         statusButton.userInteractionEnabled = false
         statusButton.addTarget(self, action: #selector(self.reportPro), forControlEvents: UIControlEvents.TouchUpInside)
         statusButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
@@ -248,6 +248,23 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         totaljianpaiLabel = labels[5] as! UILabel
         todayplantLabel = labels[6] as! UILabel
         totalplantLabel = labels[7] as! UILabel
+    }
+    
+    func refreshButtonStatus(deviceInfo: DeviceInfo) {
+        if (deviceInfo.status?.integerValue == 1) {
+            statusButton.setTitle("运行状态 正常", forState: UIControlState.Normal)
+            statusButton.setTitleColor(Colors.statusOK, forState: UIControlState.Normal)
+            statusButton.setImage(UIImage(named: "ic_devstatus_ok"), forState: UIControlState.Normal)
+        } else if (deviceInfo.status?.integerValue == 2) {
+            statusButton.setTitle("运行状态 故障（点击报修）", forState: UIControlState.Normal)
+            statusButton.setTitleColor(Colors.statusError, forState: UIControlState.Normal)
+            statusButton.setImage(UIImage(named: "ic_devstatus_error"), forState: UIControlState.Normal)
+            statusButton.userInteractionEnabled = true
+        } else if (deviceInfo.status?.integerValue == 3) {
+            statusButton.setTitle("运行状态 离线", forState: UIControlState.Normal)
+            statusButton.setTitleColor(Colors.statusOffLine, forState: UIControlState.Normal)
+            statusButton.setImage(UIImage(named: "ic_devstatus_offline"), forState: UIControlState.Normal)
+        }
     }
     
     func loadPicData() {
@@ -353,17 +370,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func loadDeviceInfo(deviceInfo : DeviceInfo) {
-        if (deviceInfo.status?.integerValue == 1) {
-            self.statusButton.selected = false
-            self.statusButton.enabled = true
-        } else if (deviceInfo.status?.integerValue == 2) {
-            self.statusButton.selected = true
-            self.statusButton.enabled = true
-            statusButton.userInteractionEnabled = true
-        } else if (deviceInfo.status?.integerValue == 3) {
-            self.statusButton.selected = false
-            self.statusButton.enabled = false
-        }
+        refreshButtonStatus(deviceInfo)
     
         if (deviceInfo.energy_day == nil || deviceInfo.energy_all == nil) {
             todayElectricLabel.text = "0kw"
