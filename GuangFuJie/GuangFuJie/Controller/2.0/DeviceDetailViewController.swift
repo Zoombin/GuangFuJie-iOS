@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Charts
+import Charts
 
 class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     var todayElectricLabel : UILabel!
@@ -34,8 +34,8 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     let topButtonHeight = PhoneUtils.kScreenHeight / 18
     
     //发电量
-//    var pnLineChart : LineChartView!
-//    var pnBarChart : BarChartView!
+    var pnLineChart : LineChartView!
+    var pnBarChart : BarChartView!
     var picView : UIView!
     let infoArray = NSMutableArray()
     var currentIndex = 0
@@ -59,10 +59,10 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         barButton.backgroundColor = Colors.topButtonColor
         electricView.isHidden = true
         picView.isHidden = true
-//        if (pnBarChart != nil && pnLineChart != nil) {
-//            pnBarChart.hidden = true
-//            pnLineChart.hidden = true
-//        }
+        if (pnBarChart != nil && pnLineChart != nil) {
+            pnBarChart.isHidden = true
+            pnLineChart.isHidden = true
+        }
         
         if (sender.tag == 0) {
             normalInfoButton.backgroundColor = Colors.installColor
@@ -71,16 +71,16 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             lineButton.backgroundColor = Colors.installColor
             picView.isHidden = false
             loadPicData()
-//            if (pnLineChart != nil) {
-//                pnLineChart.hidden = false
-//            }
+            if (pnLineChart != nil) {
+                pnLineChart.isHidden = false
+            }
         } else if (sender.tag == 2) {
             barButton.backgroundColor = Colors.installColor
             picView.isHidden = false
             loadPicData()
-//            if (pnBarChart != nil) {
-//                pnBarChart.hidden = false
-//            }
+            if (pnBarChart != nil) {
+                pnBarChart.isHidden = false
+            }
         }
     }
     
@@ -275,61 +275,61 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func initLineChart(_ xLabels : NSArray, yLabels : NSArray) {
-//        if (xLabels.count != yLabels.count) {
-//            return
-//        }
-//        
-//        var entries: [ChartDataEntry] = Array()
-//        var xValues: [String] = Array()
-//        
-//        for i in 0..<yLabels.count {
-//            let xValue = xLabels[i] as! String
-//            let yValue = yLabels[i] as! NSNumber
-//            
-//            let data = ChartDataEntry.init(value: yValue.doubleValue, xIndex: i)
-//            entries.append(data)
-//            xValues.append(xValue)
-//        }
-//        
-//        let dataSet: LineChartDataSet = LineChartDataSet(yVals: entries, label: "2016年发电量走势(单位:kw)")
-//        
-//        let offSetY : CGFloat = 0
-//        
-//        pnLineChart = LineChartView(frame: CGRect(0, offSetY, PhoneUtils.kScreenWidth, picView.frame.size.height - offSetY))
-//        pnLineChart.backgroundColor = NSUIColor.clearColor()
-//        pnLineChart.leftAxis.axisMinValue = 0.0
-//        pnLineChart.rightAxis.axisMinValue = 0.0
-//        pnLineChart.data = LineChartData(xVals: xValues, dataSet: dataSet)
-//        picView.addSubview(pnLineChart)
-//        pnLineChart.hidden = currentIndex != 1
-//        pnLineChart.descriptionText = ""
+        if (xLabels.count != yLabels.count) {
+            return
+        }
+        
+        var entries: [ChartDataEntry] = Array()
+        var xValues: [String] = Array()
+        
+        for i in 0..<yLabels.count {
+            let xValue = xLabels[i] as! String
+            let yValue = yLabels[i] as! NSNumber
+            
+            let data = ChartDataEntry.init(x: Double(i), y: yValue.doubleValue)
+            entries.append(data)
+            xValues.append(xValue)
+        }
+        
+        let dataSet: LineChartDataSet = LineChartDataSet(values: entries, label: "2016年发电量走势(单位:kw)")
+        
+        let offSetY : CGFloat = 0
+        
+        pnLineChart = LineChartView(frame: CGRect(x: 0, y: offSetY, width: PhoneUtils.kScreenWidth, height: picView.frame.size.height - offSetY))
+        pnLineChart.backgroundColor = NSUIColor.clear
+        pnLineChart.leftAxis.axisMinimum = 0.0
+        pnLineChart.rightAxis.axisMinimum = 0.0
+        pnLineChart.data = LineChartData(dataSet: dataSet)
+        picView.addSubview(pnLineChart)
+        pnLineChart.isHidden = currentIndex != 1
+        pnLineChart.chartDescription?.text = ""
     }
     
     func initBarChart(_ xLabels : NSArray, yLabels : NSArray) {
-//        var entries: [BarChartDataEntry] = Array()
-//        var xValues: [String] = Array()
-//        
-//        for i in 0..<yLabels.count {
-//            let xValue = xLabels[i] as! String
-//            let yValue = yLabels[i] as! NSNumber
-//            
-//            let data = BarChartDataEntry.init(value: yValue.doubleValue, xIndex: i)
-//            entries.append(data)
-//            xValues.append(xValue)
-//        }
-//        
-//        let dataSet: BarChartDataSet = BarChartDataSet(yVals: entries, label: "2016年发电量走势(单位:kw)")
-//        
-//        let offSetY : CGFloat = 0
-//        
-//        pnBarChart = BarChartView(frame: CGRect(0, offSetY, PhoneUtils.kScreenWidth, picView.frame.size.height - offSetY))
-//        pnBarChart.backgroundColor = NSUIColor.clearColor()
-//        pnBarChart.leftAxis.axisMinValue = 0.0
-//        pnBarChart.rightAxis.axisMinValue = 0.0
-//        pnBarChart.data = BarChartData(xVals: xValues, dataSet: dataSet)
-//        picView.addSubview(pnBarChart)
-//        pnBarChart.hidden = currentIndex != 2
-//        pnBarChart.descriptionText = ""
+        var entries: [BarChartDataEntry] = Array()
+        var xValues: [String] = Array()
+        
+        for i in 0..<yLabels.count {
+            let xValue = xLabels[i] as! String
+            let yValue = yLabels[i] as! NSNumber
+            
+            let data = BarChartDataEntry.init(x: Double(i), y: yValue.doubleValue)
+            entries.append(data)
+            xValues.append(xValue)
+        }
+        
+        let dataSet: BarChartDataSet = BarChartDataSet(values: entries, label: "2016年发电量走势(单位:kw)")
+        
+        let offSetY : CGFloat = 0
+        
+        pnBarChart = BarChartView(frame: CGRect(x: 0, y: offSetY, width: PhoneUtils.kScreenWidth, height: picView.frame.size.height - offSetY))
+        pnBarChart.backgroundColor = NSUIColor.clear
+        pnBarChart.leftAxis.axisMinimum = 0.0
+        pnBarChart.rightAxis.axisMinimum = 0.0
+        pnBarChart.data = BarChartData(dataSet: dataSet)
+        picView.addSubview(pnBarChart)
+        pnBarChart.isHidden = currentIndex != 2
+        pnBarChart.chartDescription?.text = ""
     }
     
     func initPicView() {
