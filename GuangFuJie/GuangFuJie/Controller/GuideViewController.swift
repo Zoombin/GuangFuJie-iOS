@@ -12,11 +12,11 @@ class GuideViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
-        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight))
-        scrollView.contentSize = CGSizeMake(PhoneUtils.kScreenWidth * 3, 0)
-        scrollView.pagingEnabled = true
+        let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
+        scrollView.contentSize = CGSize(width: PhoneUtils.kScreenWidth * 3, height: 0)
+        scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         self.view.addSubview(scrollView)
         
@@ -25,18 +25,18 @@ class GuideViewController: BaseViewController {
         
         let imgs = ["guide_01", "guide_02", "guide_03"]
         for i in 0..<imgs.count {
-            let imageView = UIImageView.init(frame: CGRectMake(CGFloat(i) * PhoneUtils.kScreenWidth, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight))
+            let imageView = UIImageView.init(frame: CGRect(x: CGFloat(i) * PhoneUtils.kScreenWidth, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
             imageView.image = UIImage(named: imgs[i])
             scrollView.addSubview(imageView)
         }
     }
     
     func goToMain() {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.initMain()
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 

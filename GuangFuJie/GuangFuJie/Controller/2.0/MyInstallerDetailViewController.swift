@@ -20,18 +20,18 @@ class MyInstallerDetailViewController: BaseViewController, UITableViewDelegate, 
     let cellReuseIdentifier = "cellReuseIdentifier"
     let installerReuseIdentifier = "installerReuseIdentifier"
     func initView() {
-        let tableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Grouped)
+        let tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight), style: UITableViewStyle.grouped)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        tableView.registerClass(InstallHeaderCell.self, forCellReuseIdentifier: installerReuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.register(InstallHeaderCell.self, forCellReuseIdentifier: installerReuseIdentifier)
     }
     
     func logOut() {
         UserDefaultManager.logOut()
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,27 +40,27 @@ class MyInstallerDetailViewController: BaseViewController, UITableViewDelegate, 
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
             return 1;
         }
         return 3;
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, 1))
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 1))
         return view
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 0) {
             return InstallHeaderCell.cellHeight()
         } else {
@@ -76,19 +76,19 @@ class MyInstallerDetailViewController: BaseViewController, UITableViewDelegate, 
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.section == 0) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(installerReuseIdentifier, forIndexPath: indexPath) as! InstallHeaderCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: installerReuseIdentifier, for: indexPath as IndexPath) as! InstallHeaderCell
             cell.initCell()
-            cell.noticeButton.addTarget(self, action: #selector(self.remindButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+            cell.noticeButton.addTarget(self, action: #selector(self.remindButtonClicked), for: UIControlEvents.touchUpInside)
             return cell
         } else {
-            let cell = UITableViewCell.init(style: UITableViewCellStyle.Value1, reuseIdentifier: cellReuseIdentifier)
-            cell.detailTextLabel?.textColor = UIColor.blackColor()
-            cell.detailTextLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+            let cell = UITableViewCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: cellReuseIdentifier)
+            cell.detailTextLabel?.textColor = UIColor.black
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
             
-            cell.textLabel?.textColor = UIColor.lightGrayColor()
-            cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            cell.textLabel?.textColor = UIColor.lightGray
+            cell.textLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
             if (indexPath.row == 0) {
                 var company_name = ""
                 if (UserDefaultManager.getUser()!.company_name != nil) {
@@ -126,8 +126,8 @@ class MyInstallerDetailViewController: BaseViewController, UITableViewDelegate, 
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
 }

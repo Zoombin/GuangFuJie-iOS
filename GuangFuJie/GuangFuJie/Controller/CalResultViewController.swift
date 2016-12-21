@@ -23,15 +23,15 @@ class CalResultViewController: BaseViewController {
     }
     
     func loadData() {
-        self.showHudInView(self.view, hint: "加载中...")
-        API.sharedInstance.caluateElectric(String(calModel.type!), area_size: calModel.area!, province_id: calModel.province_id!, city_id: calModel.city_id!, polygon: polygon, success: { (electricInfo) in
+        self.showHud(in: self.view, hint: "加载中...")
+        API.sharedInstance.caluateElectric(String(describing: calModel.type!), area_size: calModel.area!, province_id: calModel.province_id!, city_id: calModel.city_id!, polygon: polygon, success: { (electricInfo) in
                 self.hideHud()
                 self.eInfo = electricInfo
                 self.initView()
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
-                self.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -44,11 +44,11 @@ class CalResultViewController: BaseViewController {
             self.showHint("请输入手机号")
             return
         }
-         self.showHudInView(self.view, hint: "提交中...")
+         self.showHud(in: self.view, hint: "提交中...")
         API.sharedInstance.caluateSave(phoneTextField.text!, fullname: nameTextField.text!, type: calModel.type!, province_id: calModel.province_id!, city_id: calModel.city_id!, area_size: calModel.area!, success: { (commonModel) in
                 self.hideHud()
                 self.showHint("提交成功!")
-                self.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popViewController(animated: true)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
@@ -57,39 +57,39 @@ class CalResultViewController: BaseViewController {
     
     func initView() {
         let titleStrs = NSMutableArray()
-        titleStrs.addObject("节约用煤\n" + String(format: "%.1f", eInfo.c!.floatValue) + "吨/年")
-        titleStrs.addObject("减排二氧化硫\n" + String(format: "%.1f", eInfo.so2!.floatValue) + "吨/年")
-        titleStrs.addObject("减排粉尘\n" + String(format: "%.1f", eInfo.dust!.floatValue) + "吨/年")
-        titleStrs.addObject("减排二氧化碳\n" + String(format: "%.1f", eInfo.co2!.floatValue) + "吨/年")
-        titleStrs.addObject("种植植物\n" + String(format: "%.1f", eInfo.plant!.floatValue) + "棵")
-        titleStrs.addObject("行驶里程\n" + String(format: "%.1f", eInfo.mileage!.floatValue) + "公里")
+        titleStrs.add("节约用煤\n" + String(format: "%.1f", eInfo.c!.floatValue) + "吨/年")
+        titleStrs.add("减排二氧化硫\n" + String(format: "%.1f", eInfo.so2!.floatValue) + "吨/年")
+        titleStrs.add("减排粉尘\n" + String(format: "%.1f", eInfo.dust!.floatValue) + "吨/年")
+        titleStrs.add("减排二氧化碳\n" + String(format: "%.1f", eInfo.co2!.floatValue) + "吨/年")
+        titleStrs.add("种植植物\n" + String(format: "%.1f", eInfo.plant!.floatValue) + "棵")
+        titleStrs.add("行驶里程\n" + String(format: "%.1f", eInfo.mileage!.floatValue) + "公里")
         
         let areaSize = "屋顶面积:" +  String(format: "%.2f", NSString.init(string: eInfo.area_size!).floatValue) + "㎡"
-        let electricDu = "预计发电:" + String(eInfo.year_du!) + "度/年"
-        let earnMoney = "预计收益:" + String(eInfo.year_money!) + "元/年"
+        let electricDu = "预计发电:" + String(describing: eInfo.year_du!) + "度/年"
+        let earnMoney = "预计收益:" + String(describing: eInfo.year_money!) + "元/年"
         
-        let submitBottomView = UIView.init(frame: CGRectMake(0, self.view.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
-        submitBottomView.backgroundColor = UIColor.whiteColor()
+        let submitBottomView = UIView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        submitBottomView.backgroundColor = UIColor.white
         self.view.addSubview(submitBottomView)
         
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = submitBottomView.frame.size.height - 5 * 2
         
-        let submitButton = UIButton.init(type: UIButtonType.Custom)
-        submitButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
-        submitButton.setTitle("提交", forState: UIControlState.Normal)
+        let submitButton = UIButton.init(type: UIButtonType.custom)
+        submitButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        submitButton.setTitle("提交", for: UIControlState.normal)
         submitButton.backgroundColor = Colors.installColor
-        submitButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        submitButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        submitButton.addTarget(self, action: #selector(self.submitButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        submitButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        submitButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        submitButton.addTarget(self, action: #selector(self.submitButtonClicked), for: UIControlEvents.touchUpInside)
         submitBottomView.addSubview(submitButton)
         
-        let scrollView = UIScrollView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - submitBottomView.frame.size.height - 64))
+        let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - submitBottomView.frame.size.height - 64))
         scrollView.backgroundColor = Colors.bkgGray
         self.view.addSubview(scrollView)
         
-        let iconView = UIView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.4))
-        iconView.backgroundColor = UIColor.whiteColor()
+        let iconView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight * 0.4))
+        iconView.backgroundColor = UIColor.white
         scrollView.addSubview(iconView)
         
         let viewWidth = iconView.frame.size.width / 3
@@ -108,78 +108,78 @@ class CalResultViewController: BaseViewController {
         
         
         for i in 0..<icons.count {
-            if (i != 0 && index%3 == 0) {
+            if (i != 0 && index.truncatingRemainder(dividingBy: 3) == 0) {
                 index = 0
                 line += 1
             }
-            let imageView = UIImageView.init(frame: CGRectMake(iconOffSetX * (index + 1) + index * iconWidth, iconTopOffSetY * (line + 1) + iconOffSetY * line + line * iconHeight, iconWidth, iconHeight))
+            let imageView = UIImageView.init(frame: CGRect(x: iconOffSetX * (index + 1) + index * iconWidth, y: iconTopOffSetY * (line + 1) + iconOffSetY * line + line * iconHeight, width: iconWidth, height: iconHeight))
             imageView.image = UIImage(named: icons[i])
             iconView.addSubview(imageView)
             
-            let label = UILabel.init(frame: CGRectMake(imageView.frame.origin.x - 0.5 * iconWidth, CGRectGetMaxY(imageView.frame), iconWidth * 2, iconOffSetY * 0.7))
+            let label = UILabel.init(frame: CGRect(x: imageView.frame.origin.x - 0.5 * iconWidth, y: imageView.frame.maxY, width: iconWidth * 2, height: iconOffSetY * 0.7))
             label.text = titleStrs[i] as! String
-            label.textAlignment = NSTextAlignment.Center
+            label.textAlignment = NSTextAlignment.center
             label.numberOfLines = 0
-            label.lineBreakMode = NSLineBreakMode.ByWordWrapping
-            label.textColor = UIColor.lightGrayColor()
-            label.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+            label.lineBreakMode = NSLineBreakMode.byWordWrapping
+            label.textColor = UIColor.lightGray
+            label.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
             iconView.addSubview(label)
             
             index += 1
         }
         
         let moneyWidth = (PhoneUtils.kScreenWidth / 4 - 15) / 2
-        let moneyLeftView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(iconView.frame) + 1, moneyWidth, PhoneUtils.kScreenHeight * 0.1))
-        moneyLeftView.backgroundColor = UIColor.whiteColor()
+        let moneyLeftView = UIView.init(frame: CGRect(x: 0, y: (iconView.frame).maxY + 1, width: moneyWidth, height: PhoneUtils.kScreenHeight * 0.1))
+        moneyLeftView.backgroundColor = UIColor.white
         scrollView.addSubview(moneyLeftView)
         
-        let canEarnMoney = UILabel.init(frame: CGRectMake(moneyWidth, CGRectGetMaxY(iconView.frame) + 1, PhoneUtils.kScreenWidth - moneyWidth, PhoneUtils.kScreenHeight * 0.1))
+        let canEarnMoney = UILabel.init(frame: CGRect(x: moneyWidth, y: (iconView.frame).maxY + 1, width: PhoneUtils.kScreenWidth - moneyWidth, height: PhoneUtils.kScreenHeight * 0.1))
         canEarnMoney.textColor = Colors.installRedColor
-        canEarnMoney.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        canEarnMoney.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         canEarnMoney.numberOfLines = 0
-        canEarnMoney.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        canEarnMoney.textAlignment = NSTextAlignment.Left
+        canEarnMoney.lineBreakMode = NSLineBreakMode.byWordWrapping
+        canEarnMoney.textAlignment = NSTextAlignment.left
         canEarnMoney.text = areaSize + "\n" + electricDu + "\n" + earnMoney
-        canEarnMoney.backgroundColor = UIColor.whiteColor()
+        canEarnMoney.backgroundColor = UIColor.white
         scrollView.addSubview(canEarnMoney)
         
-        nameTextField = UITextField.init(frame: CGRectMake(0, CGRectGetMaxY(canEarnMoney.frame) + 1, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight / 15))
-        nameTextField.backgroundColor = UIColor.whiteColor()
-        nameTextField.leftViewMode = UITextFieldViewMode.Always
-        nameTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        nameTextField = UITextField.init(frame: CGRect(x: 0, y: (canEarnMoney.frame).maxY + 1, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight / 15))
+        nameTextField.backgroundColor = UIColor.white
+        nameTextField.leftViewMode = UITextFieldViewMode.always
+        nameTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         nameTextField.placeholder = "输入姓名"
         scrollView.addSubview(nameTextField)
         
-        let nameLabel = UILabel.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth / 4, PhoneUtils.kScreenHeight / 15))
+        let nameLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth / 4, height: PhoneUtils.kScreenHeight / 15))
         nameLabel.text = "姓名"
-        nameLabel.textAlignment = NSTextAlignment.Center
-        nameLabel.textColor = UIColor.blackColor()
-        nameLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        nameLabel.textAlignment = NSTextAlignment.center
+        nameLabel.textColor = UIColor.black
+        nameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         nameTextField.leftView = nameLabel
         
-        phoneTextField = UITextField.init(frame: CGRectMake(0, CGRectGetMaxY(nameTextField.frame) + 1, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight / 15))
-        phoneTextField.backgroundColor = UIColor.whiteColor()
-        phoneTextField.leftViewMode = UITextFieldViewMode.Always
-        phoneTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        phoneTextField = UITextField.init(frame: CGRect(x: 0, y: nameTextField.frame.maxY + 1, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight / 15))
+        phoneTextField.backgroundColor = UIColor.white
+        phoneTextField.leftViewMode = UITextFieldViewMode.always
+        phoneTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         phoneTextField.placeholder = "输入手机号"
-        phoneTextField.keyboardType = UIKeyboardType.NumberPad
+        phoneTextField.keyboardType = UIKeyboardType.numberPad
         scrollView.addSubview(phoneTextField)
         
-        let phoneLabel = UILabel.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth / 4, PhoneUtils.kScreenHeight / 15))
+        let phoneLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth / 4, height: PhoneUtils.kScreenHeight / 15))
         phoneLabel.text = "手机号"
-        phoneLabel.textAlignment = NSTextAlignment.Center
-        phoneLabel.textColor = UIColor.blackColor()
-        phoneLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        phoneLabel.textAlignment = NSTextAlignment.center
+        phoneLabel.textColor = UIColor.black
+        phoneLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         phoneTextField.leftView = phoneLabel
         
-        let tipsLabel = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(phoneTextField.frame) + 5, PhoneUtils.kScreenWidth, 20))
+        let tipsLabel = UILabel.init(frame: CGRect(x: 0, y: phoneTextField.frame.maxY + 5, width: PhoneUtils.kScreenWidth, height: 20))
         tipsLabel.text = "您需要客户联系回访吗? 您需要工作人员上门吗？您需要预约安装吗？"
-        tipsLabel.textAlignment = NSTextAlignment.Center
+        tipsLabel.textAlignment = NSTextAlignment.center
         tipsLabel.adjustsFontSizeToFitWidth = true
-        tipsLabel.backgroundColor = UIColor.clearColor()
+        tipsLabel.backgroundColor = UIColor.clear
         scrollView.addSubview(tipsLabel)
         
-        scrollView.contentSize = CGSizeMake(0, scrollView.frame.size.height + 1)
+        scrollView.contentSize = CGSize(width: 0, height: scrollView.frame.size.height + 1)
     }
 
     override func didReceiveMemoryWarning() {

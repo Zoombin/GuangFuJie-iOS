@@ -48,113 +48,113 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         let imageWidth = (PhoneUtils.kScreenWidth - offSet * 4) / 3
         let imageHeight = roofTypeView.frame.size.height - offSet * 2 - 20
         
-        imageView1 = UIImageView.init(frame: CGRectMake(offSet, offSet, imageWidth, imageHeight))
+        imageView1 = UIImageView.init(frame: CGRect(x: offSet, y: offSet, width: imageWidth, height: imageHeight))
         imageView1.image = UIImage(named: "ic_wuding_bies")
         imageView1.tag = 0
-        imageView1.layer.borderColor = Colors.installColor.CGColor
+        imageView1.layer.borderColor = Colors.installColor.cgColor
         roofTypeView.addSubview(imageView1)
         
-        let label1 = UILabel.init(frame: CGRectMake(imageView1.frame.origin.x, CGRectGetMaxY(imageView1.frame), imageWidth, 20))
+        let label1 = UILabel.init(frame: CGRect(x: imageView1.frame.origin.x, y: imageView1.frame.maxY, width: imageWidth, height: 20))
         label1.text = "别墅"
-        label1.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        label1.textAlignment = NSTextAlignment.Center
+        label1.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        label1.textAlignment = NSTextAlignment.center
         roofTypeView.addSubview(label1)
         
-        imageView2 = UIImageView.init(frame: CGRectMake(offSet * 2 + imageWidth, offSet, imageWidth, imageHeight))
+        imageView2 = UIImageView.init(frame: CGRect(x: offSet * 2 + imageWidth, y: offSet, width: imageWidth, height: imageHeight))
         imageView2.image = UIImage(named: "ic_wuding_changf")
         imageView2.tag = 1
-        imageView2.layer.borderColor = Colors.installColor.CGColor
+        imageView2.layer.borderColor = Colors.installColor.cgColor
         roofTypeView.addSubview(imageView2)
         
-        let label2 = UILabel.init(frame: CGRectMake(imageView2.frame.origin.x, CGRectGetMaxY(imageView2.frame), imageWidth, 20))
+        let label2 = UILabel.init(frame: CGRect(x: imageView2.frame.origin.x, y: imageView2.frame.maxY, width: imageWidth, height: 20))
         label2.text = "厂房"
-        label2.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        label2.textAlignment = NSTextAlignment.Center
+        label2.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        label2.textAlignment = NSTextAlignment.center
         roofTypeView.addSubview(label2)
         
-        imageView3 = UIImageView.init(frame: CGRectMake(offSet * 3 + imageWidth * 2, offSet, imageWidth, imageHeight))
+        imageView3 = UIImageView.init(frame: CGRect(x: offSet * 3 + imageWidth * 2, y: offSet, width: imageWidth, height: imageHeight))
         imageView3.image = UIImage(named: "ic_wuding_nongc")
         imageView3.tag = 2
-        imageView3.layer.borderColor = Colors.installColor.CGColor
+        imageView3.layer.borderColor = Colors.installColor.cgColor
         roofTypeView.addSubview(imageView3)
         
-        let label3 = UILabel.init(frame: CGRectMake(imageView3.frame.origin.x, CGRectGetMaxY(imageView1.frame), imageWidth, 20))
+        let label3 = UILabel.init(frame: CGRect(x: imageView3.frame.origin.x, y: imageView1.frame.maxY, width: imageWidth, height: 20))
         label3.text = "民房"
-        label3.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        label3.textAlignment = NSTextAlignment.Center
+        label3.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        label3.textAlignment = NSTextAlignment.center
         roofTypeView.addSubview(label3)
         
         let tapGesture1 = UITapGestureRecognizer.init(target: self, action: #selector(self.imageSelected(_:)))
         let tapGesture2 = UITapGestureRecognizer.init(target: self, action: #selector(self.imageSelected(_:)))
         let tapGesture3 = UITapGestureRecognizer.init(target: self, action: #selector(self.imageSelected(_:)))
         
-        imageView1.userInteractionEnabled = true
-        imageView2.userInteractionEnabled = true
-        imageView3.userInteractionEnabled = true
+        imageView1.isUserInteractionEnabled = true
+        imageView2.isUserInteractionEnabled = true
+        imageView3.isUserInteractionEnabled = true
     
         imageView1.addGestureRecognizer(tapGesture1)
         imageView2.addGestureRecognizer(tapGesture2)
         imageView3.addGestureRecognizer(tapGesture3)
         
-        let roofSizeLabel = UILabel.init(frame: CGRectMake(0, 0, 80, addressTextField.frame.size.height))
-        roofSizeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        roofSizeLabel.textColor = UIColor.darkGrayColor()
+        let roofSizeLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
+        roofSizeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        roofSizeLabel.textColor = UIColor.darkGray
         roofSizeLabel.text = " 屋顶面积:"
         
-        roofSizeField.leftViewMode = UITextFieldViewMode.Always
+        roofSizeField.leftViewMode = UITextFieldViewMode.always
         roofSizeField.leftView = roofSizeLabel
         
-        let priceLeftLabel = UILabel.init(frame: CGRectMake(0, 0, 80, addressTextField.frame.size.height))
-        priceLeftLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        priceLeftLabel.textColor = UIColor.darkGrayColor()
+        let priceLeftLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
+        priceLeftLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        priceLeftLabel.textColor = UIColor.darkGray
         priceLeftLabel.text = " 出租单价:"
         
-        let priceRightLabel = UILabel.init(frame: CGRectMake(0, 0, 40, addressTextField.frame.size.height))
-        priceRightLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        priceRightLabel.textColor = UIColor.darkGrayColor()
-        priceRightLabel.textAlignment = NSTextAlignment.Center
+        let priceRightLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 40, height: addressTextField.frame.size.height))
+        priceRightLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        priceRightLabel.textColor = UIColor.darkGray
+        priceRightLabel.textAlignment = NSTextAlignment.center
         priceRightLabel.text = "元/㎡"
         
-        priceTextField.leftViewMode = UITextFieldViewMode.Always
-        priceTextField.rightViewMode = UITextFieldViewMode.Always
+        priceTextField.leftViewMode = UITextFieldViewMode.always
+        priceTextField.rightViewMode = UITextFieldViewMode.always
         priceTextField.leftView = priceLeftLabel
         priceTextField.rightView = priceRightLabel
         
-        let contractLabel = UILabel.init(frame: CGRectMake(0, 0, 80, addressTextField.frame.size.height))
-        contractLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        contractLabel.textColor = UIColor.darkGrayColor()
+        let contractLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
+        contractLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        contractLabel.textColor = UIColor.darkGray
         contractLabel.text = " 联系人:"
         
-        contractTextField.leftViewMode = UITextFieldViewMode.Always
+        contractTextField.leftViewMode = UITextFieldViewMode.always
         contractTextField.leftView = contractLabel
         
-        let contractPhoneLabel = UILabel.init(frame: CGRectMake(0, 0, 80, addressTextField.frame.size.height))
-        contractPhoneLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        contractPhoneLabel.textColor = UIColor.darkGrayColor()
+        let contractPhoneLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
+        contractPhoneLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        contractPhoneLabel.textColor = UIColor.darkGray
         contractPhoneLabel.text = " 联系电话:"
         
-        contractPhoneField.leftViewMode = UITextFieldViewMode.Always
+        contractPhoneField.leftViewMode = UITextFieldViewMode.always
         contractPhoneField.leftView = contractPhoneLabel
         
-        scrollView.contentSize = CGSizeMake(0, PhoneUtils.kScreenHeight < 568 ? 568 : PhoneUtils.kScreenHeight)
+        scrollView.contentSize = CGSize(width: 0, height: PhoneUtils.kScreenHeight < 568 ? 568 : PhoneUtils.kScreenHeight)
         
-        toolBar.frame = CGRectMake(0, CGRectGetMinY(datePicker.frame) - toolBar.frame.size.height, toolBar.frame.size.width, toolBar.frame.size.height)
+        toolBar.frame = CGRect(x: 0, y: datePicker.frame.minY - toolBar.frame.size.height, width: toolBar.frame.size.width, height: toolBar.frame.size.height)
     }
     
-    @IBAction func locationButtonClicked(sender : UIButton) {
+    @IBAction func locationButtonClicked(_ sender : UIButton) {
         let vc = ProviceCityViewController()
         vc.delegate = self
         let nav = UINavigationController.init(rootViewController: vc)
-        self.presentViewController(nav, animated: true, completion: nil)
+        self.present(nav, animated: true, completion: nil)
     }
     
-    func proviceAndCity(provice: ProvinceModel, city: CityModel) {
+    func proviceAndCity(_ provice: ProvinceModel, city: CityModel) {
         provinceInfo = provice
         cityInfo = city
         locationLabel.text = provinceInfo!.province_label! + cityInfo!.city_label!
     }
     
-    func imageSelected(gesture : UITapGestureRecognizer) {
+    func imageSelected(_ gesture : UITapGestureRecognizer) {
         let index = gesture.view!.tag
         imageView1.layer.borderWidth = 0
         imageView2.layer.borderWidth = 0
@@ -172,42 +172,42 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
     @IBAction func selectRoofTypeButtonClicked() {
         let actionSheet = UIActionSheet()
         actionSheet.title = "选择房屋类型"
-        actionSheet.addButtonWithTitle("平面")
-        actionSheet.addButtonWithTitle("斜面")
-        actionSheet.addButtonWithTitle("取消")
+        actionSheet.addButton(withTitle: "平面")
+        actionSheet.addButton(withTitle: "斜面")
+        actionSheet.addButton(withTitle: "取消")
         actionSheet.cancelButtonIndex = 2
         actionSheet.delegate = self
-        actionSheet.showInView(actionSheet)
+        actionSheet.show(in: actionSheet)
     }
     
-    override func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    override func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         if (actionSheet.cancelButtonIndex == buttonIndex) {
             return
         }
         if (actionSheet.firstOtherButtonIndex + 1 == buttonIndex) {
-            roofTypeButton.setTitle("平面", forState: UIControlState.Normal)
+            roofTypeButton.setTitle("平面", for: UIControlState.normal)
             type = 1
         } else {
-            roofTypeButton.setTitle("斜面", forState: UIControlState.Normal)
+            roofTypeButton.setTitle("斜面", for: UIControlState.normal)
             type = 2
         }
     }
     
-    @IBAction func datePickerValueChanged(sender : UIDatePicker) {
+    @IBAction func datePickerValueChanged(_ sender : UIDatePicker) {
         print(sender.date)
         getCurrentDate()
     }
     
     func getCurrentDate() {
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM月dd日 HH时mm分"
-        timeStr = dateFormatter.stringFromDate(datePicker.date)
-        timeButton.setTitle(timeStr, forState: UIControlState.Normal)
+        timeStr = dateFormatter.string(from: datePicker.date)
+        timeButton.setTitle(timeStr, for: UIControlState.normal)
     }
     
     @IBAction func datePickerViewHidenOrShow() {
         getCurrentDate()
-        datePickerView.hidden = !datePickerView.hidden
+        datePickerView.isHidden = !datePickerView.isHidden
     }
     
     @IBAction func submitButtonClicked() {
@@ -256,11 +256,11 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         } else if (roofTypeIndex == 2) {
             roofTypeUrl = "http://ob4e8ww8r.bkt.clouddn.com/ic_wuding_nongc.jpg"
         }
-        self.showHudInView(self.view, hint: "提交中...")
-        API.sharedInstance.roofAdd(contractTextField.text!, province_id: provinceInfo!.province_id!, city_id: cityInfo!.city_id!, address: addressTextField.text!, area_size: roofSizeField.text!, area_image: roofTypeUrl, type: type, contact_time: timeStr, price: priceTextField.text!, phone: contractPhoneField.text!, success: { (commonModel) in
+        self.showHud(in: self.view, hint: "提交中...")
+        API.sharedInstance.roofAdd(contractTextField.text!, province_id: provinceInfo!.province_id!, city_id: cityInfo!.city_id!, address: addressTextField.text!, area_size: roofSizeField.text!, area_image: roofTypeUrl, type: NSNumber.init(value: type), contact_time: timeStr, price: priceTextField.text!, phone: contractPhoneField.text!, success: { (commonModel) in
                 self.hideHud()
                 self.showHint("提交成功")
-                self.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popViewController(animated: true)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)

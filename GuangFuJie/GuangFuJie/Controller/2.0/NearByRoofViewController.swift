@@ -24,13 +24,13 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
         locService = BMKLocationService()
     }
     
-    func getNearByPoints(loation : CLLocationCoordinate2D) {
-        self.showHudInView(self.view, hint: "获取数据中...")
+    func getNearByPoints(_ loation : CLLocationCoordinate2D) {
+        self.showHud(in: self.view, hint: "获取数据中...")
         API.sharedInstance.getNearRoof(loation.latitude, lng: loation.longitude, success: { (roofList) in
                 self.hideHud()
                 self.points.removeAllObjects()
                 if (roofList.count > 0) {
-                    self.points.addObjectsFromArray(roofList as [AnyObject])
+                    self.points.addObjects(from: roofList as [AnyObject])
                 }
             self.addPoints()
             }) { (msg) in
@@ -61,7 +61,7 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
                 type = type + (roofInfo.type == 2 ? "斜面" : "平面")
             }
             if (roofInfo.price != nil) {
-                price = price + String(roofInfo.price!) + "元/㎡"
+                price = price + String(describing: roofInfo.price!) + "元/㎡"
             }
             
             if ((roofInfo.province_label) != nil) {
@@ -84,7 +84,7 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
     }
     
     func initView() {
-        mapView = BMKMapView.init(frame: CGRectMake(0, 50,PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 50))
+        mapView = BMKMapView.init(frame: CGRect(x: 0, y: 50,width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50))
         mapView.zoomLevel = 14
         self.view.addSubview(mapView)
     }
@@ -94,20 +94,20 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         mapView.viewWillAppear()
         locService.delegate = self
         mapView.delegate = self
         startLocation()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         mapView.viewWillDisappear()
         locService.delegate = nil
         mapView.delegate = nil
     }
     
-    func mapView(mapView: BMKMapView!, onClickedMapBlank coordinate: CLLocationCoordinate2D) {
+    func mapView(_ mapView: BMKMapView!, onClickedMapBlank coordinate: CLLocationCoordinate2D) {
         if (canDraw == false) {
             return
         }
@@ -138,9 +138,9 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
      *@param annotation 指定的标注
      *@return 生成的标注View
      */
-    func mapView(mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
+    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
         let AnnotationViewID = "renameMark"
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(AnnotationViewID) as! BMKPinAnnotationView?
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
         if annotationView == nil {
             annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
             print(annotationView?.subviews)
@@ -172,7 +172,7 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
      *用户方向更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdateUserHeading(userLocation: BMKUserLocation!) {
+    func didUpdateUserHeading(_ userLocation: BMKUserLocation!) {
         print("heading is \(userLocation.heading)")
         mapView.updateLocationData(userLocation)
     }
@@ -181,7 +181,7 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
      *用户位置更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
+    func didUpdate(_ userLocation: BMKUserLocation!) {
         print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         mapView.updateLocationData(userLocation)
         if (hasLocated == false) {

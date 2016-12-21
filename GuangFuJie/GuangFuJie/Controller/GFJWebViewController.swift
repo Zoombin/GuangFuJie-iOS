@@ -23,7 +23,7 @@ class GFJWebViewController: BaseViewController {
     }
   
     func loadData() {
-        self.showHudInView(self.view, hint: "正在加载")
+        self.showHud(in: self.view, hint: "正在加载")
         if(urlTag == 0){
             API.sharedInstance.getContent("aboutus", success: { (msg, commonModel) in
                     self.hideHud()
@@ -36,9 +36,9 @@ class GFJWebViewController: BaseViewController {
     }
     
     
-    func initWebView(url:String) {
-        webView = UIWebView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight))
-        webView.loadRequest(NSURLRequest.init(URL: NSURL.init(string: url)!))
+    func initWebView(_ url:String) {
+        webView = UIWebView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
+        webView.loadRequest(URLRequest.init(url: URL.init(string: url)! as URL) as URLRequest)
         webView.scalesPageToFit = true
         self.view.addSubview(webView)
     }

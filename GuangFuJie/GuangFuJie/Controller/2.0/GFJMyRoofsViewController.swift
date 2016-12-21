@@ -23,12 +23,12 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
     
     //MARK: 安装商列表
     func loadInstallerList() {
-        self.showHudInView(self.view, hint: "加载中...")
+        self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.getRoofList(0, pagesize: 10, status: 1, province_id: nil, city_id: nil, isSelf : 1, success: { (userInfos) in
             self.hideHud()
             self.installerArray.removeAllObjects()
             if (userInfos.count > 0) {
-                self.installerArray.addObjectsFromArray(userInfos as [AnyObject])
+                self.installerArray.addObjects(from: userInfos as [AnyObject])
             }
             self.installTableView.reloadData()
         }) { (msg) in
@@ -39,14 +39,14 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
     
     let installerCellReuseIdentifier = "installerCellReuseIdentifier"
     func initView() {
-        installTableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Plain)
+        installTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight), style: UITableViewStyle.plain)
         installTableView.delegate = self
         installTableView.dataSource = self
         installTableView.backgroundColor = Colors.bkgColor
-        installTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        installTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.view.addSubview(installTableView)
         
-        installTableView.registerClass(InstallerCell.self, forCellReuseIdentifier: installerCellReuseIdentifier)
+        installTableView.register(InstallerCell.self, forCellReuseIdentifier: installerCellReuseIdentifier)
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,16 +55,16 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return installerArray.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return InstallerCell.cellHeight()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(installerCellReuseIdentifier, forIndexPath: indexPath) as! InstallerCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: installerCellReuseIdentifier, for: indexPath as IndexPath) as! InstallerCell
         cell.initCell()
         let userInfo = installerArray[indexPath.row] as! RoofInfo
         if ((userInfo.fullname) != nil) {
@@ -74,7 +74,7 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
             cell.timeLabel.text = userInfo.created_date!
         }
         if (userInfo.area_image != nil) {
-            cell.avatarImageView.setImageWithURL(NSURL.init(string: userInfo.area_image!)!)
+            cell.avatarImageView.setImageWith(URL.init(string: userInfo.area_image!)! as URL)
         } else {
             cell.avatarImageView.image = UIImage(named: "ic_avatar_yezhu")
         }
@@ -88,7 +88,7 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
             type = type + (userInfo.type == 2 ? "斜面" : "平面")
         }
         if (userInfo.price != nil) {
-            price = price + String(userInfo.price!) + "元/㎡"
+            price = price + String(describing: userInfo.price!) + "元/㎡"
         }
         cell.roofTypeLabel.text = type
         cell.roofSizeLabel.text = size
@@ -105,8 +105,8 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
             location = location + userInfo.address!
         }
         cell.addressLabel.text = location
-        cell.viewMoreButton.setTitle("查找安装商", forState: UIControlState.Normal)
-        cell.viewMoreButton.addTarget(self, action: #selector(self.viewInstallerList), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.viewMoreButton.setTitle("查找安装商", for: UIControlState.normal)
+        cell.viewMoreButton.addTarget(self, action: #selector(self.viewInstallerList), for: UIControlEvents.touchUpInside)
         return cell
     }
     
@@ -115,8 +115,8 @@ class GFJMyRoofsViewController: BaseViewController, UITableViewDelegate, UITable
         self.pushViewController(vc)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         let userInfo = installerArray[indexPath.row] as! RoofInfo
         let vc = InstallBuyViewController()
         vc.isSelf = true

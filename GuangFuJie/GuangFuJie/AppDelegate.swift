@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
     var normalUpdateTag = 1001 //普通更新
     var focusUpdateTag = 1002  //强制更新
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let ret = mapManager.start(Constants.baiduMapKey, generalDelegate: self)
         if (!ret) {
             print("manager start failed!")
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         //支付
         BeeCloud.initWithAppID(Constants.payKey, andAppSecret: Constants.paySecret, sandbox: Constants.isSandBox)
         
-        self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
         if (UserDefaultManager.showGuide()) {
             showGuide()
         } else {
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         return true
     }
     
-    func onGetNetworkState(iError: Int32) {
+    func onGetNetworkState(_ iError: Int32) {
         if (0 == iError) {
             print("联网成功")
         } else{
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         }
     }
     
-    func onGetPermissionState(iError: Int32) {
+    func onGetPermissionState(_ iError: Int32) {
         if (0 == iError) {
             print("授权成功")
         } else{
@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         let nav4 = UINavigationController.init(rootViewController: RootSafeViewController())
         
         tabBarController.viewControllers = [nav1, nav2, nav3, nav4]
-        tabBarController.tabBar.hidden = true
+        tabBarController.tabBar.isHidden = true
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }
@@ -88,13 +88,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
     //检查更新（只做强制升级用）
     func checkAppVersion() {
         API.sharedInstance.appupgrade({ (appModel) in
-            if(appModel.is_upgrade!.integerValue == 2){
+            if(appModel.is_upgrade!.intValue == 2){
                 let urlString = appModel.download_url
                 self.updateUrl = urlString!
                 let alertView = UIAlertView.init(title: "提示", message: "App有更新，是否去更新？", delegate: self, cancelButtonTitle: "确定")
                 alertView.tag = self.focusUpdateTag
                 alertView.show()
-            } else if (appModel.is_upgrade!.integerValue == 1){
+            } else if (appModel.is_upgrade!.intValue == 1){
                 let urlString = appModel.download_url
                 self.updateUrl = urlString!
                 let alertView = UIAlertView.init(title: "提示", message: "App有更新，是否去更新？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
@@ -106,54 +106,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         }
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if (alertView.tag == normalUpdateTag) {
             //普通更新
             if (alertView.cancelButtonIndex != buttonIndex) {
-                let url = NSURL(string: updateUrl)
-                UIApplication.sharedApplication().openURL(url!)
+                let url = URL(string: updateUrl)
+                UIApplication.shared.openURL(url! as URL)
             }
         } else if (alertView.tag == focusUpdateTag) {
             //强制更新
-            let url = NSURL(string: updateUrl)
-            UIApplication.sharedApplication().openURL(url!)
+            let url = URL(string: updateUrl)
+            UIApplication.shared.openURL(url! as URL)
         }
         
     }
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
     
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
     
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         checkAppVersion()
         refreshUserInfo()
     }
     
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
     //支付------
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        if(!BeeCloud.handleOpenUrl(url)){
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        if(!BeeCloud.handleOpen(url as URL!)){
             //handle其他类型的url
         }
         return true
     }
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        if (!BeeCloud.handleOpenUrl(url)) {
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if (!BeeCloud.handleOpen(url as URL!)) {
             //handle其他类型的url
         }
         return true

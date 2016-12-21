@@ -1,6 +1,3 @@
-[submodule "GuangFuJie/GuangFuJie/Submodules/Alamofire"]
-	path = GuangFuJie/GuangFuJie/Submodules/Alamofire
-	url = https://github.com/Alamofire/Alamofire.git
 [submodule "GuangFuJie/GuangFuJie/Submodules/MJExtension"]
 	path = GuangFuJie/GuangFuJie/Submodules/MJExtension
 	url = https://github.com/CoderMJLee/MJExtension.git
@@ -19,9 +16,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/QiNiuSDK"]
 	path = GuangFuJie/GuangFuJie/Submodules/QiNiuSDK
 	url = https://github.com/qiniu/objc-sdk.git
-[submodule "GuangFuJie/GuangFuJie/Submodules/AlamofireImage"]
-	path = GuangFuJie/GuangFuJie/Submodules/AlamofireImage
-	url = https://github.com/Alamofire/AlamofireImage.git
 [submodule "GuangFuJie/GuangFuJie/Submodules/UICountingLabel"]
 	path = GuangFuJie/GuangFuJie/Submodules/UICountingLabel
 	url = https://github.com/dataxpress/UICountingLabel.git

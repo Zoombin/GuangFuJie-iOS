@@ -17,31 +17,31 @@ class DeviceCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.statusButton.userInteractionEnabled = false
-        self.snButton.userInteractionEnabled = false
+        self.statusButton.isUserInteractionEnabled = false
+        self.snButton.isUserInteractionEnabled = false
     }
     
-    func setData(device: DeviceListInfo) {
+    func setData(_ device: DeviceListInfo) {
         var imageName = ""
-        if (device.device_type?.integerValue == 0) {
+        if (device.device_type?.int32Value == 0) {
             imageName = "ic_devitem_yst"
-        } else if (device.device_type?.integerValue == 1) {
+        } else if (device.device_type?.int32Value == 1) {
             imageName = "ic_devitem_gdw"
-        } else if (device.device_type?.integerValue == 2) {
+        } else if (device.device_type?.int32Value == 2) {
             imageName = "ic_devitem_grwt"
-        } else if (device.device_type?.integerValue == 3) {
+        } else if (device.device_type?.int32Value == 3) {
             imageName = "ic_devitem_khkj"
         }
         self.deviceImageView.image = UIImage(named: imageName)
-        if (device.status?.integerValue == 1) {
-            self.statusButton.selected = false
-            self.statusButton.enabled = true
-        } else if (device.status?.integerValue == 2) {
-            self.statusButton.selected = false
-            self.statusButton.enabled = false
-        } else if (device.status?.integerValue == 3) {
-            self.statusButton.selected = true
-            self.statusButton.enabled = true
+        if (device.status?.int32Value == 1) {
+            self.statusButton.isSelected = false
+            self.statusButton.isEnabled = true
+        } else if (device.status?.int32Value == 2) {
+            self.statusButton.isSelected = false
+            self.statusButton.isEnabled = false
+        } else if (device.status?.int32Value == 3) {
+            self.statusButton.isSelected = true
+            self.statusButton.isEnabled = true
         }
         
         var energy_all = "0kw"
@@ -54,7 +54,7 @@ class DeviceCell: UITableViewCell {
         if (device.device_id != nil) {
             deviceid = device.device_id!
         }
-        self.snButton.setTitle(deviceid, forState: UIControlState.Normal)
+        self.snButton.setTitle(deviceid, for: UIControlState.normal)
     }
     
     static func getNidName() -> String {
@@ -77,7 +77,7 @@ class DeviceCell: UITableViewCell {
         }
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

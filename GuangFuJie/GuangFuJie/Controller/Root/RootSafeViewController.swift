@@ -35,76 +35,76 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
     //MARK: 保险
     let safeCellReuseIdentifier = "safeCellReuseIdentifier"
     func initSafeView() {
-        safeView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topMenuView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
+        safeView = UIView.init(frame: CGRect(x: 0, y: topMenuView.frame.maxY, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
         self.view.addSubview(safeView)
         
-        let safeViewBottomView = UIView.init(frame: CGRectMake(0, safeView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
-        safeViewBottomView.backgroundColor = UIColor.whiteColor()
+        let safeViewBottomView = UIView.init(frame: CGRect(x: 0, y: safeView.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        safeViewBottomView.backgroundColor = UIColor.white
         safeView.addSubview(safeViewBottomView)
         
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = safeViewBottomView.frame.size.height - 5 * 2
         
-        let safeButton = UIButton.init(type: UIButtonType.Custom)
-        safeButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
-        safeButton.setTitle("立即购买", forState: UIControlState.Normal)
+        let safeButton = UIButton.init(type: UIButtonType.custom)
+        safeButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        safeButton.setTitle("立即购买", for: UIControlState.normal)
         safeButton.backgroundColor = Colors.installColor
-        safeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        safeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        safeButton.addTarget(self, action: #selector(self.buySafeNow), forControlEvents: UIControlEvents.TouchUpInside)
+        safeButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        safeButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        safeButton.addTarget(self, action: #selector(self.buySafeNow), for: UIControlEvents.touchUpInside)
         safeViewBottomView.addSubview(safeButton)
         
         let offSetY : CGFloat = 8
         let scrollViewWidth = PhoneUtils.kScreenWidth
         let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
         
-        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight + 15))
+        let footerView = UIView.init(frame: CGRect(x: 0, y: 0, width: scrollViewWidth, height: scrollViewHeight + 15))
         
-        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: scrollViewWidth, height: scrollViewHeight))
         let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
         
-        scrollView.contentSize = CGSizeMake(scrollViewWidth * CGFloat(images.count), 0)
-        scrollView.pagingEnabled = true
+        scrollView.contentSize = CGSize(width: scrollViewWidth * CGFloat(images.count), height: 0)
+        scrollView.isPagingEnabled = true
         scrollView.delegate = self
         footerView.addSubview(scrollView)
         
         for i in 0..<images.count {
-            let imageView = UIImageView.init(frame: CGRectMake(CGFloat(i) * scrollViewWidth, offSetY, scrollViewWidth, scrollViewHeight))
+            let imageView = UIImageView.init(frame: CGRect(x: CGFloat(i) * scrollViewWidth, y: offSetY, width: scrollViewWidth, height: scrollViewHeight))
             imageView.image = UIImage(named: images[i])
             scrollView.addSubview(imageView)
         }
         
-        safePageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20 - 15, scrollView.frame.size.width, 20))
+        safePageControl = UIPageControl.init(frame: CGRect(x: 0, y: footerView.frame.size.height - 20 - 15, width: scrollView.frame.size.width, height: 20))
         safePageControl.numberOfPages = images.count
         footerView.addSubview(safePageControl)
         
-        let tableViewHeight = CGRectGetMinY(safeViewBottomView.frame)
-        safeTableView = UITableView.init(frame: CGRectMake(0, 0, safeView.frame.size.width, tableViewHeight), style: UITableViewStyle.Plain)
+        let tableViewHeight = safeViewBottomView.frame.minY
+        safeTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: safeView.frame.size.width, height: tableViewHeight), style: UITableViewStyle.plain)
         safeTableView.delegate = self
         safeTableView.dataSource = self
         safeTableView.backgroundColor = Colors.bkgColor
-        safeTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        safeTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         safeView.addSubview(safeTableView)
         
         safeTableView.tableHeaderView = footerView
         
-        safeTableView.registerClass(SafeCell.self, forCellReuseIdentifier: safeCellReuseIdentifier)
+        safeTableView.register(SafeCell.self, forCellReuseIdentifier: safeCellReuseIdentifier)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return safeArray.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return SafeCell.cellHeight()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(safeCellReuseIdentifier, forIndexPath: indexPath) as! SafeCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: safeCellReuseIdentifier, for: indexPath as IndexPath) as! SafeCell
         cell.initCell()
         let userInfo = safeArray[indexPath.row] as! InsuranceInfo
         cell.setData(userInfo, isSelf: false)
-        cell.viewMoreButton.addTarget(self, action: #selector(self.viewMoreSafeList), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.viewMoreButton.addTarget(self, action: #selector(self.viewMoreSafeList), for: UIControlEvents.touchUpInside)
         return cell
     }
     
@@ -113,8 +113,8 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
         self.pushViewController(vc)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: false)
     }
     
     func loadSafeList() {
@@ -123,7 +123,7 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
             self.hideHud()
             self.safeArray.removeAllObjects()
             if (insuranceList.count > 0) {
-                self.safeArray.addObject(insuranceList.firstObject!)
+                self.safeArray.add(insuranceList.firstObject!)
             }
             self.safeTableView.reloadData()
         }) { (msg) in

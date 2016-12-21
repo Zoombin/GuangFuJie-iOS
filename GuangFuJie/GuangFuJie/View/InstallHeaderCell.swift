@@ -38,45 +38,45 @@ class InstallHeaderCell: UITableViewCell {
         let labelWidth = PhoneUtils.kScreenWidth
         let labelHeight = cellHeight * 0.2
         
-        avatarImageView = UIImageView.init(frame: CGRectMake(startX, startY, avatarWidth, avatarHeight))
+        avatarImageView = UIImageView.init(frame: CGRect(x: startX, y: startY, width: avatarWidth, height: avatarHeight))
         avatarImageView.image = UIImage(named: "ic_avstar")
         self.contentView.addSubview(avatarImageView)
         
-        nickNameLabel = UILabel.init(frame: CGRectMake(0, avatarHeight + startY, labelWidth, labelHeight))
+        nickNameLabel = UILabel.init(frame: CGRect(x: 0, y: avatarHeight + startY, width: labelWidth, height: labelHeight))
         nickNameLabel.text = "用户名"
-        nickNameLabel.textAlignment = NSTextAlignment.Center
-        nickNameLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        nickNameLabel.textAlignment = NSTextAlignment.center
+        nickNameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         self.contentView.addSubview(nickNameLabel)
         
-        noticeButton = UIButton.init(type: UIButtonType.Custom)
-        noticeButton.frame = CGRectMake((startX - 60) / 2, (cellHeight - 20) / 2, 60, 20)
+        noticeButton = UIButton.init(type: UIButtonType.custom)
+        noticeButton.frame = CGRect(x: (startX - 60) / 2, y: (cellHeight - 20) / 2, width: 60, height: 20)
         noticeButton.backgroundColor = Colors.installColor
-        noticeButton.setTitle("通知审核", forState: UIControlState.Normal)
-        noticeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        noticeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        noticeButton.setTitle("通知审核", for: UIControlState.normal)
+        noticeButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        noticeButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         self.contentView.addSubview(noticeButton)
         
-        statusButton = UIButton.init(type: UIButtonType.Custom)
-        statusButton.frame = CGRectMake(PhoneUtils.kScreenWidth - ((startX - 60) / 2) - 60, (cellHeight - 20) / 2, 60, 20)
-        statusButton.setBackgroundImage(UIImage(named: "ic_identity_unauth"), forState: UIControlState.Normal)
-        statusButton.setBackgroundImage(UIImage(named: "ic_identity_auth"), forState: UIControlState.Selected)
+        statusButton = UIButton.init(type: UIButtonType.custom)
+        statusButton.frame = CGRect(x: PhoneUtils.kScreenWidth - ((startX - 60) / 2) - 60, y: (cellHeight - 20) / 2, width: 60, height: 20)
+        statusButton.setBackgroundImage(UIImage(named: "ic_identity_unauth"), for: UIControlState.normal)
+        statusButton.setBackgroundImage(UIImage(named: "ic_identity_auth"), for: UIControlState.selected)
         self.contentView.addSubview(statusButton)
         
-        tipsLabel = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(noticeButton.frame), startX, 20))
+        tipsLabel = UILabel.init(frame: CGRect(x: 0, y: (noticeButton.frame).maxY, width: startX, height: 20))
         tipsLabel.text = "已提交资料，通知客服审核"
-        tipsLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall3)
-        tipsLabel.textAlignment = NSTextAlignment.Center
+        tipsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall3)
+        tipsLabel.textAlignment = NSTextAlignment.center
         self.contentView.addSubview(tipsLabel)
         
         let user = UserDefaultManager.getUser()!
-        if (user.is_installer?.integerValue == 2) {
-            statusButton.selected = true
-            noticeButton.hidden = true
-            tipsLabel.hidden = true
+        if (user.is_installer?.int32Value == 2) {
+            statusButton.isSelected = true
+            noticeButton.isHidden = true
+            tipsLabel.isHidden = true
         } else {
-            statusButton.selected = false
-            noticeButton.hidden = false
-            tipsLabel.hidden = false
+            statusButton.isSelected = false
+            noticeButton.isHidden = false
+            tipsLabel.isHidden = false
         }
         nickNameLabel.text = user.user_name
         
@@ -92,7 +92,7 @@ class InstallHeaderCell: UITableViewCell {
         }
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

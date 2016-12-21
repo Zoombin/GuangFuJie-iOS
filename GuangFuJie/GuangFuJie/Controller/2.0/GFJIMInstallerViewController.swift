@@ -21,12 +21,12 @@ class GFJIMInstallerViewController: BaseViewController, UITableViewDelegate, UIT
     }
     
     func loadUserList() {
-        self.showHudInView(self.view, hint: "加载中...")
+        self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.myInstallerList({ (userInfos) in
             self.hideHud()
             self.yezhuArray.removeAllObjects()
             if (userInfos.count > 0) {
-                self.yezhuArray.addObjectsFromArray(userInfos as [AnyObject])
+                self.yezhuArray.addObjects(from: userInfos as [AnyObject])
             }
             self.yezhuTableView.reloadData()
         }) { (msg) in
@@ -37,14 +37,14 @@ class GFJIMInstallerViewController: BaseViewController, UITableViewDelegate, UIT
     
     let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initView() {
-        yezhuTableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Plain)
+        yezhuTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight), style: UITableViewStyle.plain)
         yezhuTableView.delegate = self
         yezhuTableView.dataSource = self
         yezhuTableView.backgroundColor = Colors.bkgColor
-        yezhuTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        yezhuTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.view.addSubview(yezhuTableView)
         
-        yezhuTableView.registerClass(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
+        yezhuTableView.register(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,20 +53,20 @@ class GFJIMInstallerViewController: BaseViewController, UITableViewDelegate, UIT
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return yezhuArray.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return YeZhuCell.cellHeight()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(yezhuCellReuseIdentifier, forIndexPath: indexPath) as! YeZhuCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: yezhuCellReuseIdentifier, for: indexPath as IndexPath) as! YeZhuCell
         cell.initCell()
         let userInfo = yezhuArray[indexPath.row] as! InstallInfo
         if (userInfo.logo != nil) {
-            cell.avatarImageView.setImageWithURL(NSURL.init(string: userInfo.logo!)!, placeholderImage: UIImage(named: "ic_avatar_yezhu"))
+            cell.avatarImageView.setImageWith(URL.init(string: userInfo.logo!)! as URL, placeholderImage: UIImage(named: "ic_avatar_yezhu"))
         }
         cell.nameLabel.text = userInfo.company_name
         cell.descriptionLabel.text = userInfo.company_intro
@@ -90,8 +90,8 @@ class GFJIMInstallerViewController: BaseViewController, UITableViewDelegate, UIT
             cell.statusLabel.textColor = Colors.installRedColor
         }
         cell.viewMoreButton.tag = indexPath.row
-        cell.viewMoreButton.setTitle("查找屋顶", forState: UIControlState.Normal)
-        cell.viewMoreButton.addTarget(self, action: #selector(self.viewRoofList), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.viewMoreButton.setTitle("查找屋顶", for: UIControlState.normal)
+        cell.viewMoreButton.addTarget(self, action: #selector(self.viewRoofList), for: UIControlEvents.touchUpInside)
         return cell
     }
     
@@ -100,8 +100,8 @@ class GFJIMInstallerViewController: BaseViewController, UITableViewDelegate, UIT
         self.pushViewController(vc)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
 }

@@ -34,7 +34,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         loadUserList()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("业主")
     }
@@ -46,7 +46,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
             self.hideHud()
             self.yezhuArray.removeAllObjects()
             if (userInfos.count > 0) {
-                self.yezhuArray.addObjectsFromArray(userInfos as [AnyObject])
+                self.yezhuArray.addObjects(from: userInfos as [AnyObject])
             }
             self.yezhuTableView.reloadData()
         }) { (msg) in
@@ -58,44 +58,44 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
     //MARK: 业主
     let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initYeZhuView() {
-        yezhuView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topMenuView.frame), PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
+        yezhuView = UIView.init(frame: CGRect(x: 0, y: topMenuView.frame.maxY, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
         self.view.addSubview(yezhuView)
         
-        let yezhuBottomView = UIView.init(frame: CGRectMake(0, yezhuView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
-        yezhuBottomView.backgroundColor = UIColor.whiteColor()
+        let yezhuBottomView = UIView.init(frame: CGRect(x: 0, y: yezhuView.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        yezhuBottomView.backgroundColor = UIColor.white
         yezhuView.addSubview(yezhuBottomView)
         
         let buttonWidth = (PhoneUtils.kScreenWidth - 5 * 4) / 3
         let buttonHeight = yezhuBottomView.frame.size.height - 5 * 2
         
-        let calRoomButton = UIButton.init(type: UIButtonType.Custom)
-        calRoomButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
-        calRoomButton.setTitle("屋顶评估", forState: UIControlState.Normal)
+        let calRoomButton = UIButton.init(type: UIButtonType.custom)
+        calRoomButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        calRoomButton.setTitle("屋顶评估", for: UIControlState.normal)
         calRoomButton.backgroundColor = Colors.installColor
-        calRoomButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        calRoomButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        calRoomButton.addTarget(self, action: #selector(self.calRoomButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        calRoomButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        calRoomButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        calRoomButton.addTarget(self, action: #selector(self.calRoomButtonClicked), for: UIControlEvents.touchUpInside)
         yezhuBottomView.addSubview(calRoomButton)
         
-        let soldRoomButton = UIButton.init(type: UIButtonType.Custom)
-        soldRoomButton.frame = CGRectMake(5 * 2 + buttonWidth, 5, buttonWidth, buttonHeight)
-        soldRoomButton.setTitle("屋顶出租", forState: UIControlState.Normal)
-        soldRoomButton.backgroundColor = UIColor.whiteColor()
-        soldRoomButton.addTarget(self, action: #selector(self.soldRoomButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
-        soldRoomButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
-        soldRoomButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        soldRoomButton.layer.borderColor = Colors.installColor.CGColor
+        let soldRoomButton = UIButton.init(type: UIButtonType.custom)
+        soldRoomButton.frame = CGRect(x: 5 * 2 + buttonWidth, y: 5, width: buttonWidth, height: buttonHeight)
+        soldRoomButton.setTitle("屋顶出租", for: UIControlState.normal)
+        soldRoomButton.backgroundColor = UIColor.white
+        soldRoomButton.addTarget(self, action: #selector(self.soldRoomButtonClicked), for: UIControlEvents.touchUpInside)
+        soldRoomButton.setTitleColor(Colors.installColor, for: UIControlState.normal)
+        soldRoomButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        soldRoomButton.layer.borderColor = Colors.installColor.cgColor
         soldRoomButton.layer.borderWidth = 0.5
         yezhuBottomView.addSubview(soldRoomButton)
         
-        let mapAreaButton = UIButton.init(type: UIButtonType.Custom)
-        mapAreaButton.frame = CGRectMake(5 * 3 + buttonWidth * 2, 5, buttonWidth, buttonHeight)
-        mapAreaButton.setTitle("屋顶地图", forState: UIControlState.Normal)
-        mapAreaButton.backgroundColor = UIColor.whiteColor()
-        mapAreaButton.addTarget(self, action: #selector(self.mapAreaButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
-        mapAreaButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
-        mapAreaButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        mapAreaButton.layer.borderColor = Colors.installColor.CGColor
+        let mapAreaButton = UIButton.init(type: UIButtonType.custom)
+        mapAreaButton.frame = CGRect(x: 5 * 3 + buttonWidth * 2, y: 5, width: buttonWidth, height: buttonHeight)
+        mapAreaButton.setTitle("屋顶地图", for: UIControlState.normal)
+        mapAreaButton.backgroundColor = UIColor.white
+        mapAreaButton.addTarget(self, action: #selector(self.mapAreaButtonClicked), for: UIControlEvents.touchUpInside)
+        mapAreaButton.setTitleColor(Colors.installColor, for: UIControlState.normal)
+        mapAreaButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        mapAreaButton.layer.borderColor = Colors.installColor.cgColor
         mapAreaButton.layer.borderWidth = 0.5
         yezhuBottomView.addSubview(mapAreaButton)
         
@@ -103,37 +103,37 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         let scrollViewWidth = PhoneUtils.kScreenWidth
         let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
         
-        let footerView = UIView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight + 15))
+        let footerView = UIView.init(frame: CGRect(x: 0, y: 0, width: scrollViewWidth, height: scrollViewHeight + 15))
         
-        let scrollView = UIScrollView.init(frame: CGRectMake(0, 0, scrollViewWidth, scrollViewHeight))
+        let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: scrollViewWidth, height: scrollViewHeight))
         let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
         
-        scrollView.contentSize = CGSizeMake(scrollViewWidth * CGFloat(images.count), 0)
-        scrollView.pagingEnabled = true
+        scrollView.contentSize = CGSize(width: scrollViewWidth * CGFloat(images.count), height: 0)
+        scrollView.isPagingEnabled = true
         scrollView.delegate = self
         footerView.addSubview(scrollView)
         
         for i in 0..<images.count {
-            let imageView = UIImageView.init(frame: CGRectMake(CGFloat(i) * scrollViewWidth, offSetY, scrollViewWidth, scrollViewHeight))
+            let imageView = UIImageView.init(frame: CGRect(x: CGFloat(i) * scrollViewWidth, y: offSetY, width: scrollViewWidth, height: scrollViewHeight))
             imageView.image = UIImage(named: images[i])
             scrollView.addSubview(imageView)
         }
         
-        yezhuPageControl = UIPageControl.init(frame: CGRectMake(0, footerView.frame.size.height - 20 - 15, scrollView.frame.size.width, 20))
+        yezhuPageControl = UIPageControl.init(frame: CGRect(x: 0, y: footerView.frame.size.height - 20 - 15, width: scrollView.frame.size.width, height: 20))
         yezhuPageControl.numberOfPages = images.count
         footerView.addSubview(yezhuPageControl)
         
-        let tableViewHeight = CGRectGetMinY(yezhuBottomView.frame)
-        yezhuTableView = UITableView.init(frame: CGRectMake(0, 0, yezhuView.frame.size.width, tableViewHeight), style: UITableViewStyle.Plain)
+        let tableViewHeight = yezhuBottomView.frame.minY
+        yezhuTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: yezhuView.frame.size.width, height: tableViewHeight), style: UITableViewStyle.plain)
         yezhuTableView.delegate = self
         yezhuTableView.dataSource = self
         yezhuTableView.backgroundColor = Colors.bkgColor
-        yezhuTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        yezhuTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         yezhuView.addSubview(yezhuTableView)
         
         yezhuTableView.tableHeaderView = footerView
         
-        yezhuTableView.registerClass(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
+        yezhuTableView.register(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
     }
     
     func calRoomButtonClicked() {
@@ -159,21 +159,21 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         self.pushViewController(vc)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return yezhuArray.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return YeZhuCell.cellHeight()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(yezhuCellReuseIdentifier, forIndexPath: indexPath) as! YeZhuCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None;
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: yezhuCellReuseIdentifier, for: indexPath as IndexPath) as! YeZhuCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.none;
         cell.initCell()
         let userInfo = yezhuArray[indexPath.row] as! InstallInfo
         if (userInfo.logo != nil) {
-            cell.avatarImageView.setImageWithURL(NSURL.init(string: userInfo.logo!)!, placeholderImage: UIImage(named: "ic_avatar_yezhu"))
+            cell.avatarImageView.setImageWith(URL.init(string: userInfo.logo!)! as URL, placeholderImage: UIImage(named: "ic_avatar_yezhu"))
         }
         cell.nameLabel.text = userInfo.company_name
         cell.descriptionLabel.text = userInfo.company_intro
@@ -195,7 +195,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
             cell.statusLabel.text = "未认证"
             cell.statusLabel.textColor = Colors.installRedColor
         }
-        cell.viewMoreButton.addTarget(self, action: #selector(self.viewMoreButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.viewMoreButton.addTarget(self, action: #selector(self.viewMoreButtonClicked), for: UIControlEvents.touchUpInside)
         return cell
     }
     
@@ -204,14 +204,14 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         self.pushViewController(vc)
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.size.width
         let page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
         yezhuPageControl.currentPage = Int(page)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: false)
         if (shouldShowLogin()) {
             return
         }

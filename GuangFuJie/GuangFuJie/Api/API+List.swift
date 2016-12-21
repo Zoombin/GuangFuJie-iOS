@@ -19,26 +19,30 @@ extension API {
     }
     
     //获取七牛Token
-    func qnToken(key : String, success: ((qnInfo: QNInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func qnToken(_ key : String, success: ((_ qnInfo: QNInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "qiniu/uptoken"
         let params = [
             "key" : key,
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let qnInfo = QNInfo.mj_objectWithKeyValues(data)
-            success?(qnInfo : qnInfo)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let qnInfo = QNInfo.mj_object(withKeyValues: data)
+            success?(qnInfo!)
             }, failure: failure)
     }
     
     //七牛上传文件
-    func uploadData(data : NSData, key : String, token : String, result : (info : QNResponseInfo?, key : String?, resp : NSDictionary?) -> Void) {
+    func uploadData(_ data : Data, key : String, token : String, success : @escaping (QNResultInfo) -> Void) {
         let upManager = QNUploadManager()
-        upManager.putData(data, key: key, token: token, complete: { (info, key, resp) in
-            result(info: info, key: key, resp: resp)
-            }, option: nil)
+        upManager?.put(data, key: key, token: token, complete: { (info, key, resp) in
+            let resultInfo = QNResultInfo()
+            resultInfo.info = info
+            resultInfo.key = key
+            resultInfo.resp = resp as NSDictionary?
+            success(resultInfo)
+        }, option: nil)
     }
     
     /**
@@ -49,18 +53,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func login(user_name: String, captcha : String, success: ((userinfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func login(_ user_name: String, captcha : String, success: ((_ userinfo: UserInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/login"
         let params = [
             "user_name" : user_name,
             "captcha" : captcha,
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-                let userInfo = UserInfo.mj_objectWithKeyValues(data)
-                success?(userinfo : userInfo)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+                let userInfo = UserInfo.mj_object(withKeyValues: data)
+                success?(userInfo!)
             }, failure: failure)
     }
 
@@ -71,17 +75,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func deviceInfo(device_id: String, success: ((deviceInfo: DeviceInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func deviceInfo(_ device_id: String, success: ((_ deviceInfo: DeviceInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "device/info"
         let params = [
             "device_id" : device_id,
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let deviceInfo = DeviceInfo.mj_objectWithKeyValues(data)
-            success?(deviceInfo : deviceInfo)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let deviceInfo = DeviceInfo.mj_object(withKeyValues: data)
+            success?(deviceInfo!)
             }, failure: failure)
     }
     
@@ -91,17 +95,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func refreshUserToken(success: ((userInfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func refreshUserToken(_ success: ((_ userInfo: UserInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "token/refresh"
         let params = [
             "user_id" : getUserId(),
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let userInfo = UserInfo.mj_objectWithKeyValues(data)
-            success?(userInfo : userInfo)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let userInfo = UserInfo.mj_object(withKeyValues: data)
+            success?(userInfo!)
             }, failure: failure)
     }
     
@@ -111,17 +115,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func provincelist(success: ((provinces: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func provincelist(_ success: ((_ provinces: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "region/provincelist"
         let params = [
             "user_id" : getUserId(),
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = ProvinceModel.mj_objectArrayWithKeyValuesArray(data)
-            success?(provinces: array)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = ProvinceModel.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -132,18 +136,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func citylist(province_id : NSNumber, success: ((cities: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func citylist(_ province_id : NSNumber, success: ((_ cities: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "region/citylist"
         let params = [
             "user_id" : getUserId(),
             "province_id" : province_id,
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = CityModel.mj_objectArrayWithKeyValuesArray(data)
-            success?(cities: array)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = CityModel.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -153,18 +157,18 @@ extension API {
      - parameter success:
      - parameter failure: 
      */
-    func appupgrade(success: ((appModel: AppModel) -> Void)?, failure: ((msg: String?) -> Void)?){
+    func appupgrade(_ success: ((_ appModel: AppModel) -> Void)?, failure: ((_ msg: String?) -> Void)?){
         let url = Constants.httpHost + "app/upgrade";
         let params = [
             "device_type" : Constants.osType,
             "version" : PhoneUtils.getBuildId(),
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let appModel = AppModel.mj_objectWithKeyValues(data)
-            success?(appModel : appModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let appModel = AppModel.mj_object(withKeyValues: data)
+            success?(appModel!)
             }, failure: failure)
     }
     
@@ -178,7 +182,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func bookingAdd(province_id : NSNumber, city_id : NSNumber, area_size : NSNumber, is_loan : NSInteger, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func bookingAdd(_ province_id : NSNumber, city_id : NSNumber, area_size : NSNumber, is_loan : NSInteger, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "booking/add";
         let params = [
             "user_id" : getUserId(), // 用户id
@@ -187,12 +191,12 @@ extension API {
             "area_size" : area_size, // 屋顶面积
             "is_loan" : is_loan, // 是否需要贷款 int 0:不需要 1需要
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -202,16 +206,16 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func bankList(success: ((bankInfo: BankInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func bankList(_ success: ((_ bankInfo: BankInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "bank/list";
         let params = [
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let bankInfo = BankInfo.mj_objectWithKeyValues(data)
-            success?(bankInfo : bankInfo)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let bankInfo = BankInfo.mj_object(withKeyValues: data)
+            success?(bankInfo!)
             }, failure: failure)
     }
     
@@ -231,7 +235,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func loanInfoAdd(bank_id : NSNumber,fullname : String, phone : String, id_no : String, id_image1 : String, id_image2 : String, province_id : NSNumber, city_id : NSNumber, address : String, family_images : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func loanInfoAdd(_ bank_id : NSNumber,fullname : String, phone : String, id_no : String, id_image1 : String, id_image2 : String, province_id : NSNumber, city_id : NSNumber, address : String, family_images : String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "booking/add";
         let params = [
             "user_id" : getUserId(),        // 用户id
@@ -246,12 +250,12 @@ extension API {
             "address" : address,         // 电站所在的详细地址
             "family_images" : family_images,   // 家庭电站图片, 多个用逗号隔开
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -268,18 +272,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func aftersaleAdd(requirement : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func aftersaleAdd(_ requirement : String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "aftersale/add";
         let params = [
             "user_id" : getUserId(), // 用户id
             "requirement" : requirement,     // 售后需求
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -289,17 +293,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func aftersaleList(success: ((afterSales: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func aftersaleList(_ success: ((_ afterSales: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "aftersale/list"
         let params = [
             "user_id" : getUserId(),        // 用户id
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = AfterSaleInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(afterSales : array)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = AfterSaleInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -310,17 +314,17 @@ extension API {
      - parameter success:
      - parameter failure: 
      */
-    func userRepair(roof_id : NSNumber, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func userRepair(_ roof_id : NSNumber, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/repair";
         let params = [
             "user_id" : getUserId(), // 用户id
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -334,7 +338,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func userlist(start : NSInteger, pagesize : NSInteger, type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, is_auth : NSNumber? = nil, installer_id : NSNumber? = nil, success: ((totalCount : NSNumber, userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func userlist(_ start : NSInteger, pagesize : NSInteger, type : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, is_auth : NSNumber? = nil, installer_id : NSNumber? = nil, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -359,10 +363,10 @@ extension API {
         params["START"] = String(start)
         params["PAGESIZE"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = InstallInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(totalCount: totalCount!, userInfos: array)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
             }, failure: failure)
     }
     
@@ -373,16 +377,16 @@ extension API {
      - parameter success:
      - parameter failure:      
      */
-    func installerDetail(installer_id : NSNumber, success: ((installerDetail: InstallInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func installerDetail(_ installer_id : NSNumber, success: ((_ installerDetail: InstallInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
         params["installer_id"] = installer_id
         let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let installerDetail = InstallInfo.mj_objectWithKeyValues(data)
-            success?(installerDetail : installerDetail)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let installerDetail = InstallInfo.mj_object(withKeyValues: data)
+            success?(installerDetail!)
             }, failure: failure)
     }
     
@@ -392,16 +396,16 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func myInstallerList(success: ((userInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func myInstallerList(_ success: ((_ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/my_installer_list"
         let params = NSMutableDictionary()
         params["_o"] = 1
         params["user_id"] = getUserId()
         let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = InstallInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(userInfos: array)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -415,7 +419,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func caluateElectric(type : String, area_size : String, province_id : NSNumber, city_id : NSNumber,polygon : String, success: ((electricInfo: ElectricInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func caluateElectric(_ type : String, area_size : String, province_id : NSNumber, city_id : NSNumber,polygon : String, success: ((_ electricInfo: ElectricInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "common/calc"
         var params = [
             "type" : type,                 // 1: 屋顶面积  2: 室内面积
@@ -423,17 +427,17 @@ extension API {
             "province_id" : province_id,   // 省份id
             "city_id" : city_id,           // 城市id
             "_o" : 1
-        ]
+        ] as [String : Any]
         if (!polygon.isEmpty) {
             params["polygon"] = polygon
-            params.removeValueForKey("area_size")
+            params.removeValue(forKey: "area_size")
         }
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         print(newParams)
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let electricInfo = ElectricInfo.mj_objectWithKeyValues(data)
-            success?(electricInfo : electricInfo)
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let electricInfo = ElectricInfo.mj_object(withKeyValues: data)
+            success?(electricInfo!)
             }, failure: failure)
     }
     
@@ -449,7 +453,7 @@ extension API {
      - parameter success:
      - parameter failure:     
      */
-    func caluateSave(phone : String, fullname : String, type : NSNumber, province_id : NSNumber, city_id : NSNumber, area_size : String,  success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func caluateSave(_ phone : String, fullname : String, type : NSNumber, province_id : NSNumber, city_id : NSNumber, area_size : String,  success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "calc/add"
         let params = [
             "phone" : phone,          // 手机号
@@ -459,12 +463,12 @@ extension API {
             "city_id" : city_id,         // 预约时的城市id
             "area_size" : area_size,      // 屋顶面积
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -483,7 +487,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func becomeInstaller(fullname : String, license_url : String, province_id : NSNumber, city_id : NSNumber, address : String, contact_info : String, company_name : String, company_size : String, company_intro : String,  success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func becomeInstaller(_ fullname : String, license_url : String, province_id : NSNumber, city_id : NSNumber, address : String, contact_info : String, company_name : String, company_size : String, company_intro : String,  success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/installer"
         let params = [
             "user_id" : getUserId(),        // 用户id
@@ -497,12 +501,12 @@ extension API {
             "company_size" : company_size,   // 规模(安装工人人数)
             "company_intro" : company_intro,  // 公司简介
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -521,7 +525,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func roofAdd(fullname : String, province_id : NSNumber, city_id : NSNumber, address : String, area_size : String, area_image : String, type : NSNumber, contact_time : String, price : String, phone : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func roofAdd(_ fullname : String, province_id : NSNumber, city_id : NSNumber, address : String, area_size : String, area_image : String, type : NSNumber, contact_time : String, price : String, phone : String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/add";
         let params = [
             "user_id" : getUserId(),         // 用户id
@@ -536,12 +540,12 @@ extension API {
             "price" : price,           // 预计出租的价格 int
             "phone" : phone,           // 联系电话
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -554,7 +558,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getRoofList(start : NSInteger, pagesize : NSInteger, status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, isSelf : NSNumber? = nil, min_area_size : String? = nil, max_area_size : String? = nil, type : NSNumber? = nil, success: ((roofInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getRoofList(_ start : NSInteger, pagesize : NSInteger, status : NSNumber? = nil, province_id : NSNumber? = nil, city_id : NSNumber? = nil, is_suggest : NSNumber? = nil, isSelf : NSNumber? = nil, min_area_size : String? = nil, max_area_size : String? = nil, type : NSNumber? = nil, success: ((_ roofInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -565,7 +569,7 @@ extension API {
             params["max_area_size"] = max_area_size
         }
         if (type != nil && type != 0) {
-            params["type"] = String(type!)
+            params["type"] = String(describing: type!)
         }
         if (status != nil) {
             params["status"] = status
@@ -585,10 +589,10 @@ extension API {
         params["START"] = String(start)
         params["PAGESIZE"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = RoofInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(roofInfos: array)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = RoofInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -599,18 +603,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func orderRoof(roof_id : NSNumber, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func orderRoof(_ roof_id : NSNumber, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/order";
         let params = [
             "user_id" : getUserId(), // 用户id
             "roof_id" : roof_id, // 预约时的省份id
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -621,17 +625,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getRoofInfo(roof_id : NSNumber, success: ((roofInfo: RoofInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getRoofInfo(_ roof_id : NSNumber, success: ((_ roofInfo: RoofInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/info"
         let params = [
             "id" : roof_id,
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let roofInfo = RoofInfo.mj_objectWithKeyValues(data)
-            success?(roofInfo : roofInfo)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let roofInfo = RoofInfo.mj_object(withKeyValues: data)
+            success?(roofInfo!)
             }, failure: failure)
     }
     
@@ -643,19 +647,19 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func bindDevice(device_id : String,device_type : NSNumber, success: ((userInfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func bindDevice(_ device_id : String,device_type : NSNumber, success: ((_ userInfo: UserInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/binddevice"
         let params = [
             "user_id" : getUserId(),
             "device_id" : device_id,
-            "device_type" : String(device_type),
+            "device_type" : String(describing: device_type),
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let userinfo = UserInfo.mj_objectWithKeyValues(data)
-            success?(userInfo : userinfo)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let userinfo = UserInfo.mj_object(withKeyValues: data)
+            success?(userinfo!)
             }, failure: failure)
     }
     
@@ -664,7 +668,7 @@ extension API {
      - parameter success:
      - parameter failure: 
      */
-    func usersHaveInsuranceList(start : NSInteger, pagesize : NSInteger,is_suggest : NSNumber? = nil, success: ((insuranceList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func usersHaveInsuranceList(_ start : NSInteger, pagesize : NSInteger,is_suggest : NSNumber? = nil, success: ((_ insuranceList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/users_have_insurance_list"
         let params = NSMutableDictionary()
         params["_o"] = 1
@@ -676,10 +680,10 @@ extension API {
             params["is_suggest"] = 0
         }
         let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = InsuranceInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(insuranceList : array)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InsuranceInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -689,16 +693,16 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func myInsuranceList(success: ((insuranceList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func myInsuranceList(_ success: ((_ insuranceList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/insurance_mine"
         let params = NSMutableDictionary()
         params["_o"] = 1
         params["user_id"] = getUserId()
         let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = InsuranceInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(insuranceList : array)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InsuranceInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -709,18 +713,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func insuranceDetail(id : NSNumber, success: ((insuranceInfo: InsuranceDetail) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func insuranceDetail(_ id : NSNumber, success: ((_ insuranceInfo: InsuranceDetail) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/insurance_mine"
         let params = [
             "_o" : 1,
             "user_id" : getUserId(),
             "id" : id
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let insuranceInfo = InsuranceDetail.mj_objectWithKeyValues(data)
-            success?(insuranceInfo : insuranceInfo)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let insuranceInfo = InsuranceDetail.mj_object(withKeyValues: data)
+            success?(insuranceInfo!)
             }, failure: failure)
     }
     
@@ -730,18 +734,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func insuranceType(success: ((typeList : NSArray, totalCount : NSNumber) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func insuranceType(_ success: ((_ typeList : NSArray, _ totalCount : NSNumber) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/insurance_type"
         let params = [
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            print(data)
-            let array = InsuranceType.mj_objectArrayWithKeyValuesArray(data!["inscure"])
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InsuranceType.mj_objectArray(withKeyValuesArray: data!["inscure"]!)
+//                .mj_objectArray(datawithKeyValuesArray:data!["inscure"] as! AnyObject)
             let count = data!["totalCount"] as! NSNumber
-            success?(typeList : array, totalCount : count)
+            success?(array!, count)
             }, failure: failure)
     }
     
@@ -760,7 +764,7 @@ extension API {
      - parameter success:
      - parameter failure:              
      */
-    func insuranceAdd(insurance_company_id : NSNumber, type_id : NSNumber, years : String, price : NSNumber, beneficiary_name : String, beneficiary_phone : String, beneficiary_id_no : String, station_address : String, client_contract_img : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func insuranceAdd(_ insurance_company_id : NSNumber, type_id : NSNumber, years : String, price : NSNumber, beneficiary_name : String, beneficiary_phone : String, beneficiary_id_no : String, station_address : String, client_contract_img : String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/add";
         let params = [
             "user_id": getUserId(),                          //用户id
@@ -774,12 +778,12 @@ extension API {
             "station_address": station_address,          //电站地址
             "client_contract_img": client_contract_img,  //并网合同图片
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -791,18 +795,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getEnergyStatistic(device_id : String, year : String, success: ((powerGraphInfos: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getEnergyStatistic(_ device_id : String, year : String, success: ((_ powerGraphInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "device/energy_statistic"
         let params = [
             "_o" : 1,
             "device_id" : device_id,
             "year" : year
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = PowerGraphInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(powerGraphInfos : array)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = PowerGraphInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -813,17 +817,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func userCaptcha(phoneNum : String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func userCaptcha(_ phoneNum : String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/captcha";
         let params = [
             "user_name" : phoneNum,
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -834,14 +838,14 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func bindGoodwe(snNumber : String, success: ((inventerModel: GetInventerMode) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func bindGoodwe(_ snNumber : String, success: ((_ inventerModel: GetInventerMode) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = "http://www.goodwe-power.com/mobile/GetInventerDetail"
         let params = [
             "inventerSN" : snNumber,
         ]
-        self.goodWeGet(url, params: params, success: { (data) in
-            let model = GetInventerMode.mj_objectWithKeyValues(data)
-            success?(inventerModel : model)
+        self.goodWeGet(url, params: params as AnyObject?, success: { (data) in
+            let model = GetInventerMode.mj_object(withKeyValues: data)
+            success?(model!)
             }, failure: failure)
     }
     
@@ -851,17 +855,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func checkIsInstaller(success: ((msg: String, commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func checkIsInstaller(_ success: ((_ msg: String, _ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/if_installer";
         let params = [
             "user_id" : getUserId(),
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(msg: msg!, commonModel : commonModel)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(msg!, commonModel!)
             }, failure: failure)
     }
     
@@ -872,17 +876,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getContent(type : String, success: ((msg: String, commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getContent(_ type : String, success: ((_ msg: String, _ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "content/get_content"
         let params = [
             "type" : type,
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(msg: msg!, commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(msg!, commonModel!)
             }, failure: failure)
     }
     
@@ -896,7 +900,7 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func bookRepair(book_date: String, phone: String, comments: String, device_id: String, success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func bookRepair(_ book_date: String, phone: String, comments: String, device_id: String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "repair/book_repair"
         let params = [
             "book_date" : book_date,
@@ -905,12 +909,12 @@ extension API {
             "device_id" : device_id,
             "user_id" : getUserId(),
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
     
@@ -922,18 +926,18 @@ extension API {
      - parameter success:
      - parameter failure: 
      */
-    func getNearRoof(lat : Double, lng : Double, success: ((roofList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getNearRoof(_ lat : Double, lng : Double, success: ((_ roofList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/nearby_roofs"
         let params = [
             "latitude" : lat,
             "longitude" : lng,
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = RoofInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(roofList: array)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = RoofInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -943,18 +947,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func getUserDeviceList(success: ((deviceList: NSArray) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getUserDeviceList(_ success: ((_ deviceList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "device/device_list"
         let params = [
             "user_id" : getUserId(),
 //            "device_type" : 0,
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let array = DeviceListInfo.mj_objectArrayWithKeyValuesArray(data)
-            success?(deviceList: array)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = DeviceListInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
             }, failure: failure)
     }
     
@@ -965,18 +969,18 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func unBindDevice(device_id: String, success: ((commomModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func unBindDevice(_ device_id: String, success: ((_ commomModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/unbinddevice"
         let params = [
             "user_id" : getUserId(),
             "device_id" : device_id,
             "_o" : 1
-        ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commomModel : commonModel)
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
 
@@ -986,17 +990,17 @@ extension API {
      - parameter success:
      - parameter failure: 
      */
-    func getUserInfo(success: ((userinfo: UserInfo) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func getUserInfo(_ success: ((_ userinfo: UserInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/get_userinfo"
         let params = [
             "user_id" : getUserId(),
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.get(url, params: newParams, success: { (totalCount, msg, data) in
-            let userInfo = UserInfo.mj_objectWithKeyValues(data)
-            success?(userinfo : userInfo)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let userInfo = UserInfo.mj_object(withKeyValues: data)
+            success?(userInfo!)
             }, failure: failure)
     }
     
@@ -1006,17 +1010,17 @@ extension API {
      - parameter success:
      - parameter failure:
      */
-    func remindAuth(success: ((commonModel: CommonModel) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func remindAuth(_ success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "user/remind_auth"
         let params = [
             "user_id" : getUserId(),
             "_o" : 1
         ]
-        let jsonStr = self.dataToJsonString(params)
-        let newParams = ["edata" : jsonStr.AES256EncryptWithKey(Constants.aeskey)]
-        self.post(url, params: newParams, success: { (data) in
-            let commonModel = CommonModel.mj_objectWithKeyValues(data)
-            success?(commonModel : commonModel)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
             }, failure: failure)
     }
 }

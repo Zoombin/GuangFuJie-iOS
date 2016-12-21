@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProviceCityViewDelegate : NSObjectProtocol {
-    func proviceAndCity(provice : ProvinceModel, city : CityModel)
+    func proviceAndCity(_ provice : ProvinceModel, city : CityModel)
 }
 
 class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -31,30 +31,30 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
 //        initTitle("选择城市")
         self.title = "选择城市"
-        tableView1 = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth / 2, PhoneUtils.kScreenHeight), style: UITableViewStyle.Plain)
+        tableView1 = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth / 2, height: PhoneUtils.kScreenHeight), style: UITableViewStyle.plain)
         tableView1.delegate = self
         tableView1.dataSource = self
         tableView1.showsVerticalScrollIndicator = false
         self.view.addSubview(tableView1)
         
-        tableView1.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier1)
+        tableView1.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier1)
         
-        tableView2 = UITableView.init(frame: CGRectMake(PhoneUtils.kScreenWidth / 2, 64, PhoneUtils.kScreenWidth / 2, PhoneUtils.kScreenHeight - 64), style: UITableViewStyle.Plain)
+        tableView2 = UITableView.init(frame: CGRect(x: PhoneUtils.kScreenWidth / 2, y: 64, width: PhoneUtils.kScreenWidth / 2, height: PhoneUtils.kScreenHeight - 64), style: UITableViewStyle.plain)
         tableView2.delegate = self
         tableView2.dataSource = self
         tableView2.showsVerticalScrollIndicator = false
         self.view.addSubview(tableView2)
         
-        tableView2.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier2)
+        tableView2.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier2)
         loadProviceList()
     }
     
     func close() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func initLeftButton() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "关闭", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.close))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "关闭", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.close))
     }
     
     func loadProviceList() {
@@ -64,10 +64,10 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
                     let allProvince = ProvinceModel()
                     allProvince.province_id = 0
                     allProvince.province_label = "所有区域"
-                    self.infoArray1.addObject(allProvince)
+                    self.infoArray1.add(allProvince)
                 }
                 
-                self.infoArray1.addObjectsFromArray(provinces as [AnyObject])
+                self.infoArray1.addObjects(from: provinces as [AnyObject])
                 self.tableView1.reloadData()
                 self.currentProvice = self.infoArray1.firstObject as? ProvinceModel
                 self.loadCityWithProvice(self.infoArray1.firstObject as! ProvinceModel)
@@ -77,7 +77,7 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func loadCityWithProvice(province : ProvinceModel) {
+    func loadCityWithProvice(_ province : ProvinceModel) {
         if (currentProvice?.province_label == "所有区域") {
             return
         }
@@ -93,9 +93,9 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
                         self.close()
                     }
                 }
-                self.infoArray2.addObject(city)
+                self.infoArray2.add(city)
             } else {
-                self.infoArray2.addObjectsFromArray(array as [AnyObject])
+                self.infoArray2.addObjects(from: array as [AnyObject])
             }
             self.tableView2.reloadData()
             }) { (error) in
@@ -108,7 +108,7 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == tableView1) {
             return infoArray1.count
         } else {
@@ -116,23 +116,23 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (tableView == tableView1) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier1, forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier1, for: indexPath as IndexPath)
             let province = infoArray1[indexPath.row] as! ProvinceModel
             cell.textLabel?.text = province.province_label
-            cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            cell.textLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier2, forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier2, for: indexPath as IndexPath)
             let city = infoArray2[indexPath.row] as! CityModel
             cell.textLabel?.text = city.city_label
-            cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            cell.textLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
             return cell
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (tableView == tableView1) {
             currentCity = nil
             let province = infoArray1[indexPath.row] as! ProvinceModel

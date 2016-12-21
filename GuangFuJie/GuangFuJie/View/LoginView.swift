@@ -9,8 +9,8 @@
 import UIKit
 
 protocol LoginViewDelegate : NSObjectProtocol {
-    func getCodeButtonClicked(phone : String)
-    func loginButtonClicked(phone : String, code : String)
+    func getCodeButtonClicked(_ phone : String)
+    func loginButtonClicked(_ phone : String, code : String)
 }
 
 class LoginView: UIView {
@@ -32,52 +32,52 @@ class LoginView: UIView {
         let height = viewHeight / 5
         let offSetX : CGFloat = 10
         
-        let bkgView = UIView.init(frame: CGRectMake(0, 0, viewWidth, viewHeight))
-        bkgView.backgroundColor = UIColor.whiteColor()
+        let bkgView = UIView.init(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight))
+        bkgView.backgroundColor = UIColor.white
         bkgView.layer.cornerRadius = 6
         bkgView.layer.masksToBounds = true
         bkgView.center = self.center
         self.addSubview(bkgView)
         
-        let titleLabel = UILabel.init(frame: CGRectMake(0, 0, viewWidth, height))
+        let titleLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: viewWidth, height: height))
         titleLabel.text = "登录"
         titleLabel.textColor = Colors.lightGray
-        titleLabel.textAlignment = NSTextAlignment.Center
+        titleLabel.textAlignment = NSTextAlignment.center
         bkgView.addSubview(titleLabel)
         
-        let closeButton = UIButton.init(frame: CGRectMake(viewWidth - 50, 0, 50, height))
-        closeButton.setTitleColor(Colors.bkgColor, forState: UIControlState.Normal)
-        closeButton.setTitle("X", forState: UIControlState.Normal)
-        closeButton.addTarget(self, action: #selector(self.closeButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        let closeButton = UIButton.init(frame: CGRect(x: viewWidth - 50, y: 0, width: 50, height: height))
+        closeButton.setTitleColor(Colors.bkgColor, for: UIControlState.normal)
+        closeButton.setTitle("X", for: UIControlState.normal)
+        closeButton.addTarget(self, action: #selector(self.closeButtonClicked), for: UIControlEvents.touchUpInside)
         bkgView.addSubview(closeButton)
         
-        phoneTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(titleLabel.frame), viewWidth - offSetX * 2, height))
+        phoneTextField = CustomTextField.init(frame: CGRect(x: offSetX, y: (titleLabel.frame).maxY, width: viewWidth - offSetX * 2, height: height))
         phoneTextField.placeholder = "请输入手机号"
-        phoneTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        phoneTextField.keyboardType = UIKeyboardType.NumberPad
+        phoneTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        phoneTextField.keyboardType = UIKeyboardType.numberPad
         bkgView.addSubview(phoneTextField)
         
-        codeTextField = CustomTextField.init(frame: CGRectMake(offSetX, CGRectGetMaxY(phoneTextField.frame), viewWidth - offSetX * 2, height))
+        codeTextField = CustomTextField.init(frame: CGRect(x: offSetX, y: (phoneTextField.frame).maxY, width: viewWidth - offSetX * 2, height: height))
         codeTextField.placeholder = "请输入验证码"
-        codeTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        codeTextField.keyboardType = UIKeyboardType.NumberPad
+        codeTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        codeTextField.keyboardType = UIKeyboardType.numberPad
         bkgView.addSubview(codeTextField)
         
-        let getCodeButton = UIButton.init(frame: CGRectMake(CGRectGetMaxX(codeTextField.frame) - 80, CGRectGetMaxY(phoneTextField.frame), 80, height))
-        getCodeButton.setTitle("获取验证码", forState: UIControlState.Normal)
-        getCodeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        getCodeButton.setTitleColor(Colors.lightBule, forState: UIControlState.Normal)
-        getCodeButton.addTarget(self, action: #selector(self.getCode), forControlEvents: UIControlEvents.TouchUpInside)
+        let getCodeButton = UIButton.init(frame: CGRect(x: (codeTextField.frame).maxX - 80, y: (phoneTextField.frame).maxY, width: 80, height: height))
+        getCodeButton.setTitle("获取验证码", for: UIControlState.normal)
+        getCodeButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        getCodeButton.setTitleColor(Colors.lightBule, for: UIControlState.normal)
+        getCodeButton.addTarget(self, action: #selector(self.getCode), for: UIControlEvents.touchUpInside)
         bkgView.addSubview(getCodeButton)
         
         let loginButtonHeight = height * 1.1
         let startY = ((height * 2) - loginButtonHeight) / 2
-        let loginButton = UIButton.init(frame: CGRectMake(offSetX, CGRectGetMaxY(getCodeButton.frame) + startY, codeTextField.frame.size.width, loginButtonHeight))
-        loginButton.setTitle("确认登录", forState: UIControlState.Normal)
-        loginButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        loginButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        let loginButton = UIButton.init(frame: CGRect(x: offSetX, y: (getCodeButton.frame).maxY + startY, width: codeTextField.frame.size.width, height: loginButtonHeight))
+        loginButton.setTitle("确认登录", for: UIControlState.normal)
+        loginButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
         loginButton.backgroundColor = Colors.installColor
-        loginButton.addTarget(self, action: #selector(self.loginButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        loginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: UIControlEvents.touchUpInside)
         bkgView.addSubview(loginButton)
     }
     
@@ -99,7 +99,7 @@ class LoginView: UIView {
     }
     
     func closeButtonClicked() {
-        self.hidden = true
+        self.isHidden = true
         hiddenAllKeyBoard()
     }
 }
