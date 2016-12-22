@@ -122,7 +122,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         alertView.show()
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if (alertView.cancelButtonIndex == buttonIndex) {
             return
         }
