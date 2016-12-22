@@ -143,7 +143,6 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
         if annotationView == nil {
             annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
-            print(annotationView?.subviews)
             // 设置颜色
             annotationView!.pinColor = UInt(BMKPinAnnotationColorRed)
             // 从天上掉下的动画
