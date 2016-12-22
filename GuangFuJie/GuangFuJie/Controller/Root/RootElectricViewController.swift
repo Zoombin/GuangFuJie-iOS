@@ -109,7 +109,7 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = deviceBottomView.frame.size.height - 5 * 2
         
-        let bindButton = UIButton.init(type: UIButtonType.custom)
+        let bindButton = GFJBottomButton.init(type: UIButtonType.custom)
         bindButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
         bindButton.setTitle("绑定设备", for: UIControlState.normal)
         bindButton.backgroundColor = Colors.installColor

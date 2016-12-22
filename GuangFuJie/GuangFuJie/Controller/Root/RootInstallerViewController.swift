@@ -71,7 +71,7 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = installViewBottomView.frame.size.height - 5 * 2
         
-        installerButton = UIButton.init(type: UIButtonType.custom)
+        installerButton = GFJBottomButton.init(type: UIButtonType.custom)
         installerButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
         installerButton.setTitle("申请成为安装商", for: UIControlState.normal)
         installerButton.backgroundColor = Colors.installColor

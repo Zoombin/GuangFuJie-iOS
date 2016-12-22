@@ -18,6 +18,7 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
     @IBOutlet weak var installerCountTextField : UITextField!
     @IBOutlet weak var companyDescribeTextField : UITextView!
     @IBOutlet weak var describeHintLabel : UILabel!
+    @IBOutlet weak var submitButton : UIButton!
     
     @IBOutlet weak var scrollView : UIScrollView!
     
@@ -30,6 +31,8 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
         self.title = "申请成为安装商"
         // Do any additional setup after loading the view.
         initView()
+        submitButton.layer.cornerRadius = 6.0
+        submitButton.layer.masksToBounds = true
     }
     
     func uploadImage() {

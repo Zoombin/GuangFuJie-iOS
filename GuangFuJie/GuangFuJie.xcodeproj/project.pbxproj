@@ -230,6 +230,7 @@
 		DE9F876F1DF2BBC90076F508 /* RootSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */; };
 		DE9F87701DF2BBC90076F508 /* RootYeZhuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */; };
 		DEA1F12A1DF14D370057F30D /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1F1291DF14D370057F30D /* ReportViewController.swift */; };
+		DEA9E6841E0BB54F00D43728 /* GFJBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
 		DEAEB2891D7F843700174C58 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2871D7F843700174C58 /* CityModel.swift */; };
@@ -704,6 +705,7 @@
 		DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSafeViewController.swift; sourceTree = "<group>"; };
 		DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootYeZhuViewController.swift; sourceTree = "<group>"; };
 		DEA1F1291DF14D370057F30D /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJBottomButton.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
 		DEAEB2871D7F843700174C58 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
@@ -987,6 +989,7 @@
 				DE8381771DFD31380021716B /* DeviceCell6.xib */,
 				DE8381791DFD31420021716B /* DeviceCellPlus.xib */,
 				DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */,
+				DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2148,6 +2151,7 @@
 				DE9AAA611DFBD315006B56E9 /* MJRefreshGifHeader.m in Sources */,
 				18A7FF471CD9902B00BF5926 /* AppDelegate.swift in Sources */,
 				DE44CC151D8403DA004690EF /* NSDictionary+Utils.m in Sources */,
+				DEA9E6841E0BB54F00D43728 /* GFJBottomButton.swift in Sources */,
 				DE5AD27B1DBC8C5400D608A5 /* NSObject+MJCoding.m in Sources */,
 				DE44CC0C1D8403DA004690EF /* BCHTTPSessionManager.m in Sources */,
 				DE79F9611D4C3B410032D461 /* LoginView.swift in Sources */,

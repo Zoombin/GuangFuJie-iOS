@@ -147,7 +147,7 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
             // 设置颜色
             annotationView!.pinColor = UInt(BMKPinAnnotationColorRed)
             // 从天上掉下的动画
-            annotationView!.animatesDrop = true
+            annotationView!.animatesDrop = false
             // 设置是否可以拖拽
             //            annotationView!.isDraggable = false
         }

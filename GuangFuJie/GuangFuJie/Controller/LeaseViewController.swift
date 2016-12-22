@@ -40,6 +40,9 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         super.viewDidLoad()
         self.title = "房顶出租"
         initView()
+        
+        submitButton.layer.cornerRadius = 6.0
+        submitButton.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
     

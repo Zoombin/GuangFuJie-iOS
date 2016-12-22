@@ -34,7 +34,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         let buttonWidth = PhoneUtils.kScreenWidth - 10 * 2
         let buttonHeight = bottomView.frame.size.height - 5 * 2
         
-        let logOutButton = UIButton.init(type: UIButtonType.custom)
+        let logOutButton = GFJBottomButton.init(type: UIButtonType.custom)
         logOutButton.frame = CGRect(x: 10, y: 5, width: buttonWidth, height: buttonHeight)
         logOutButton.setTitle("退出", for: UIControlState.normal)
         logOutButton.backgroundColor = UIColor.lightGray

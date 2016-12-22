@@ -118,7 +118,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate {
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = calBottomView.frame.size.height - 5 * 2
         
-        let calButton = UIButton.init(type: UIButtonType.custom)
+        let calButton = GFJBottomButton.init(type: UIButtonType.custom)
         calButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
         calButton.setTitle("立即评估", for: UIControlState.normal)
         calButton.backgroundColor = Colors.installColor

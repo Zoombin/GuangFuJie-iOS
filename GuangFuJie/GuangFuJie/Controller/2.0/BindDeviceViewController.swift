@@ -78,7 +78,7 @@ class BindDeviceViewController: BaseViewController {
         deviceBottomView.backgroundColor = UIColor.white
         deviceView.addSubview(deviceBottomView)
         
-        let bindButton = UIButton.init(type: UIButtonType.custom)
+        let bindButton = GFJBottomButton.init(type: UIButtonType.custom)
         bindButton.frame = CGRect(x: 5, y: 5, width: PhoneUtils.kScreenWidth - 5 * 2, height: deviceBottomView.frame.size.height - 5 * 2)
         bindButton.setTitle("绑定设备", for: UIControlState.normal)
         bindButton.backgroundColor = Colors.installColor

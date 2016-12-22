@@ -45,7 +45,7 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = safeViewBottomView.frame.size.height - 5 * 2
         
-        let safeButton = UIButton.init(type: UIButtonType.custom)
+        let safeButton = GFJBottomButton.init(type: UIButtonType.custom)
         safeButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
         safeButton.setTitle("立即购买", for: UIControlState.normal)
         safeButton.backgroundColor = Colors.installColor

@@ -68,7 +68,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         let buttonWidth = (PhoneUtils.kScreenWidth - 5 * 4) / 3
         let buttonHeight = yezhuBottomView.frame.size.height - 5 * 2
         
-        let calRoomButton = UIButton.init(type: UIButtonType.custom)
+        let calRoomButton = GFJBottomButton.init(type: UIButtonType.custom)
         calRoomButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
         calRoomButton.setTitle("屋顶评估", for: UIControlState.normal)
         calRoomButton.backgroundColor = Colors.installColor
@@ -77,7 +77,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         calRoomButton.addTarget(self, action: #selector(self.calRoomButtonClicked), for: UIControlEvents.touchUpInside)
         yezhuBottomView.addSubview(calRoomButton)
         
-        let soldRoomButton = UIButton.init(type: UIButtonType.custom)
+        let soldRoomButton = GFJBottomButton.init(type: UIButtonType.custom)
         soldRoomButton.frame = CGRect(x: 5 * 2 + buttonWidth, y: 5, width: buttonWidth, height: buttonHeight)
         soldRoomButton.setTitle("屋顶出租", for: UIControlState.normal)
         soldRoomButton.backgroundColor = UIColor.white
@@ -88,7 +88,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         soldRoomButton.layer.borderWidth = 0.5
         yezhuBottomView.addSubview(soldRoomButton)
         
-        let mapAreaButton = UIButton.init(type: UIButtonType.custom)
+        let mapAreaButton = GFJBottomButton.init(type: UIButtonType.custom)
         mapAreaButton.frame = CGRect(x: 5 * 3 + buttonWidth * 2, y: 5, width: buttonWidth, height: buttonHeight)
         mapAreaButton.setTitle("屋顶地图", for: UIControlState.normal)
         mapAreaButton.backgroundColor = UIColor.white

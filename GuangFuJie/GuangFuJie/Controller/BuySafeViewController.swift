@@ -316,7 +316,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = buyBottomView.frame.size.height - 5 * 2
         
-        let buyNowButton = UIButton.init(type: UIButtonType.custom)
+        let buyNowButton = GFJBottomButton.init(type: UIButtonType.custom)
         buyNowButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
         buyNowButton.setTitle("立即购买", for: UIControlState.normal)
         buyNowButton.backgroundColor = Colors.installColor
