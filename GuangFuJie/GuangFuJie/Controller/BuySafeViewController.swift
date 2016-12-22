@@ -37,12 +37,12 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func loadInsuranceInfo() {
-        self.showHudInView(self.view, hint: "加载中...")
+        self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.insuranceType({ (typeList, totalCount) in
                 self.hideHud()
 //                self.totalLabel.text = "累计投保:" + String(totalCount) + "份"
                 self.totalLabel.text = "累计投保:3000+"
-                self.types.addObjectsFromArray(typeList as [AnyObject])
+                self.types.addObjects(from: typeList as [AnyObject])
                 self.addTypeView()
             }) { (msg) in
                 self.hideHud()
@@ -51,13 +51,13 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func addTypeView() {
-        let startY = CGRectGetMaxY(totalLabel.frame) + labelHeight * 0.1
+        let startY = totalLabel.frame.maxY + labelHeight * 0.1
         let width = (PhoneUtils.kScreenWidth - offSetX * 4) / 4
         let height = PhoneUtils.kScreenHeight / 16
-        let titleLabel1 = UILabel.init(frame: CGRectMake(0, startY, width, height))
+        let titleLabel1 = UILabel.init(frame: CGRect(x: 0, y: startY, width: width, height: height))
         titleLabel1.text = "电站大小"
-        titleLabel1.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        titleLabel1.textAlignment = NSTextAlignment.Center
+        titleLabel1.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        titleLabel1.textAlignment = NSTextAlignment.center
         scrollView.addSubview(titleLabel1)
         
         var line : CGFloat = 0
@@ -70,35 +70,35 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
                 line += 1
             }
             let insureType = types[i] as! InsuranceType
-            let button = UIButton.init(type: UIButtonType.Custom)
-            button.frame = CGRectMake(CGRectGetMaxX(titleLabel1.frame) + offSetX + index * offSetX + width * index,startY + line * offSetY + height * line, width, height)
-            button.setTitle(String(insureType.size!), forState: UIControlState.Normal)
-            button.layer.borderColor = UIColor.blackColor().CGColor
+            let button = UIButton.init(type: UIButtonType.custom)
+            button.frame = CGRect(x: titleLabel1.frame.maxX + offSetX + index * offSetX + width * index, y: startY + line * offSetY + height * line, width: width, height: height)
+            button.setTitle(String(insureType.size!), for: UIControlState.normal)
+            button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 1
-            button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-            button.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+            button.setTitleColor(UIColor.black, for: UIControlState.normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
             button.tag = BUTTON_TAG + i
-            button.addTarget(self, action: #selector(self.buttonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: #selector(self.buttonClicked(_:)), for: UIControlEvents.touchUpInside)
             scrollView.addSubview(button)
-            currentY = CGRectGetMaxY(button.frame)
+            currentY = button.frame.maxY
             index += 1
         }
         
-        let phoneButton = UIButton.init(type: UIButtonType.Custom)
-        phoneButton.frame = CGRectMake(CGRectGetMaxX(titleLabel1.frame) + offSetX,currentY + offSetY, width * 3 + offSetX * 2, height)
-        phoneButton.setTitle("特殊电站大小，请联系客户询价", forState: UIControlState.Normal)
-        phoneButton.layer.borderColor = UIColor.blackColor().CGColor
+        let phoneButton = UIButton.init(type: UIButtonType.custom)
+        phoneButton.frame = CGRect(x: titleLabel1.frame.maxX + offSetX, y: currentY + offSetY, width: width * 3 + offSetX * 2, height: height)
+        phoneButton.setTitle("特殊电站大小，请联系客户询价", for: UIControlState.normal)
+        phoneButton.layer.borderColor = UIColor.black.cgColor
         phoneButton.layer.borderWidth = 1
-        phoneButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        phoneButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        phoneButton.addTarget(self, action: #selector(self.tellPhoneUsButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        phoneButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        phoneButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        phoneButton.addTarget(self, action: #selector(self.tellPhoneUsButtonClicked), for: UIControlEvents.touchUpInside)
         scrollView.addSubview(phoneButton)
-        currentY = CGRectGetMaxY(phoneButton.frame)
+        currentY = phoneButton.frame.maxY
         
-        let titleLabel3 = UILabel.init(frame: CGRectMake(0, currentY + offSetY, width, height))
+        let titleLabel3 = UILabel.init(frame: CGRect(x: 0, y: currentY + offSetY, width: width, height: height))
         titleLabel3.text = "保障金额"
-        titleLabel3.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        titleLabel3.textAlignment = NSTextAlignment.Center
+        titleLabel3.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        titleLabel3.textAlignment = NSTextAlignment.center
         scrollView.addSubview(titleLabel3)
         
         let titleWidth = (width * 3 + offSetX * 2) / 3
@@ -119,11 +119,11 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
                 continue
             }
             
-            let label = UILabel.init(frame: CGRectMake(CGRectGetMaxX(titleLabel3.frame) + offSetX + CGFloat(tindex) * titleWidth, titleLabel3.frame.origin.y  + CGFloat(tline) * titleHeight, titleWidth, tmpHeight))
+            let label = UILabel.init(frame: CGRect(x: titleLabel3.frame.maxX + offSetX + CGFloat(tindex) * titleWidth, y: titleLabel3.frame.origin.y  + CGFloat(tline) * titleHeight, width: titleWidth, height: tmpHeight))
             label.text = titles[i]
-            label.textAlignment = NSTextAlignment.Center
-            label.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-            label.layer.borderColor = UIColor.blackColor().CGColor
+            label.textAlignment = NSTextAlignment.center
+            label.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+            label.layer.borderColor = UIColor.black.cgColor
             label.layer.borderWidth = 1.0
             scrollView.addSubview(label)
             if (i == 5) {
@@ -139,86 +139,86 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
                 baoe3Label = label
             }
             tindex += 1
-            currentY = CGRectGetMaxY(label.frame)
+            currentY = label.frame.maxY
         }
         
-        let titleLabel2 = UILabel.init(frame: CGRectMake(0, currentY + offSetY, width, height))
+        let titleLabel2 = UILabel.init(frame: CGRect(x: 0, y: currentY + offSetY, width: width, height: height))
         titleLabel2.text = "保障时间"
-        titleLabel2.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        titleLabel2.textAlignment = NSTextAlignment.Center
+        titleLabel2.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        titleLabel2.textAlignment = NSTextAlignment.center
         scrollView.addSubview(titleLabel2)
         
-        yearsTextField = UITextField.init(frame: CGRectMake(CGRectGetMaxX(titleLabel2.frame) + offSetX, currentY + offSetY, width, height))
-        yearsTextField.layer.borderColor = UIColor.blackColor().CGColor
+        yearsTextField = UITextField.init(frame: CGRect(x: titleLabel2.frame.maxX + offSetX, y: currentY + offSetY, width: width, height: height))
+        yearsTextField.layer.borderColor = UIColor.black.cgColor
         yearsTextField.layer.borderWidth = 1
-        yearsTextField.rightViewMode = UITextFieldViewMode.Always
-        yearsTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        yearsTextField.textAlignment = NSTextAlignment.Center
+        yearsTextField.rightViewMode = UITextFieldViewMode.always
+        yearsTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        yearsTextField.textAlignment = NSTextAlignment.center
         yearsTextField.text = "1"
-        yearsTextField.addTarget(self, action: #selector(valueChanged), forControlEvents: UIControlEvents.AllEditingEvents)
-        yearsTextField.keyboardType = UIKeyboardType.NumberPad
+        yearsTextField.addTarget(self, action: #selector(valueChanged), for: UIControlEvents.allEditingEvents)
+        yearsTextField.keyboardType = UIKeyboardType.numberPad
         yearsTextField.delegate = self
         scrollView.addSubview(yearsTextField)
         
-        let yearsLabel = UILabel.init(frame: CGRectMake(0, 0, width / 4, height))
+        let yearsLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: width / 4, height: height))
         yearsLabel.text = "年"
-        yearsLabel.textColor = UIColor.blackColor()
-        yearsLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        yearsLabel.textColor = UIColor.black
+        yearsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         yearsTextField.rightView = yearsLabel
         
-        tipsLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(yearsTextField.frame), CGRectGetMinY(titleLabel2.frame), PhoneUtils.kScreenWidth - CGRectGetMaxX(yearsTextField.frame), height))
-        tipsLabel.textColor = UIColor.darkGrayColor()
-        tipsLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        tipsLabel = UILabel.init(frame: CGRect(x: yearsTextField.frame.maxX, y: titleLabel2.frame.minY, width: PhoneUtils.kScreenWidth - yearsTextField.frame.maxX, height: height))
+        tipsLabel.textColor = UIColor.darkGray
+        tipsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         tipsLabel.numberOfLines = 0
-        tipsLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        tipsLabel.text = "今日购买生效时间" + PhoneUtils.getTommorrowDateStr(NSDate()) + " 00:00:00"
+        tipsLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        tipsLabel.text = "今日购买生效时间" + PhoneUtils.getTommorrowDateStr(Date()) + " 00:00:00"
         scrollView.addSubview(tipsLabel)
         
-        let titleLabel4 = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(titleLabel2.frame) + offSetY, width, height))
+        let titleLabel4 = UILabel.init(frame: CGRect(x: 0, y: titleLabel2.frame.maxY + offSetY, width: width, height: height))
         titleLabel4.text = "保险条款"
-        titleLabel4.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        titleLabel4.textAlignment = NSTextAlignment.Center
+        titleLabel4.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        titleLabel4.textAlignment = NSTextAlignment.center
         scrollView.addSubview(titleLabel4)
         
-        let viewButton1 = UIButton.init(type: UIButtonType.Custom)
-        viewButton1.frame = CGRectMake(CGRectGetMaxX(titleLabel4.frame) + offSetX,CGRectGetMaxY(titleLabel2.frame) + offSetY, width * 1.5, height)
+        let viewButton1 = UIButton.init(type: UIButtonType.custom)
+        viewButton1.frame = CGRect(x: titleLabel4.frame.maxX + offSetX, y: titleLabel2.frame.maxY + offSetY, width: width * 1.5, height: height)
         viewButton1.backgroundColor = Colors.installColor
-        viewButton1.setTitle("查看保险条款", forState: UIControlState.Normal)
-        viewButton1.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        viewButton1.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        viewButton1.addTarget(self, action: #selector(self.viewButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewButton1.setTitle("查看保险条款", for: UIControlState.normal)
+        viewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
+        viewButton1.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        viewButton1.addTarget(self, action: #selector(self.viewButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         viewButton1.tag = 1
         scrollView.addSubview(viewButton1)
         
-        let titleLabel5 = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(titleLabel4.frame) + offSetY, width, height))
+        let titleLabel5 = UILabel.init(frame: CGRect(x: 0, y: titleLabel4.frame.maxY + offSetY, width: width, height: height))
         titleLabel5.text = "保险范本"
-        titleLabel5.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        titleLabel5.textAlignment = NSTextAlignment.Center
+        titleLabel5.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        titleLabel5.textAlignment = NSTextAlignment.center
         scrollView.addSubview(titleLabel5)
         
-        let viewButton2 = UIButton.init(type: UIButtonType.Custom)
-        viewButton2.frame = CGRectMake(CGRectGetMaxX(titleLabel5.frame) + offSetX,CGRectGetMaxY(titleLabel4.frame) + offSetY, width * 1.5, height)
+        let viewButton2 = UIButton.init(type: UIButtonType.custom)
+        viewButton2.frame = CGRect(x: titleLabel5.frame.maxX + offSetX, y: titleLabel4.frame.maxY + offSetY, width: width * 1.5, height: height)
         viewButton2.backgroundColor = Colors.installColor
-        viewButton2.setTitle("电子保单范本", forState: UIControlState.Normal)
-        viewButton2.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        viewButton2.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        viewButton2.addTarget(self, action: #selector(self.viewButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewButton2.setTitle("电子保单范本", for: UIControlState.normal)
+        viewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
+        viewButton2.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        viewButton2.addTarget(self, action: #selector(self.viewButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         viewButton2.tag = 2
         scrollView.addSubview(viewButton2)
         
-        let viewButton3 = UIButton.init(type: UIButtonType.Custom)
-        viewButton3.frame = CGRectMake(CGRectGetMaxX(viewButton2.frame) + offSetX,CGRectGetMaxY(titleLabel4.frame) + offSetY, width * 1.5, height)
+        let viewButton3 = UIButton.init(type: UIButtonType.custom)
+        viewButton3.frame = CGRect(x: viewButton2.frame.maxX + offSetX, y: titleLabel4.frame.maxY + offSetY, width: width * 1.5, height: height)
         viewButton3.backgroundColor = Colors.installColor
-        viewButton3.setTitle("纸质保单范本", forState: UIControlState.Normal)
-        viewButton3.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        viewButton3.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        viewButton3.addTarget(self, action: #selector(self.viewButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewButton3.setTitle("纸质保单范本", for: UIControlState.normal)
+        viewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
+        viewButton3.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        viewButton3.addTarget(self, action: #selector(self.viewButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         viewButton3.tag = 3
         scrollView.addSubview(viewButton3)
         
-        currentY = CGRectGetMaxY(titleLabel5.frame)
+        currentY = titleLabel5.frame.maxY
         
-        scrollView.contentSize = CGSizeMake(0, currentY + 1)
+        scrollView.contentSize = CGSize(width: 0, height: currentY + 1)
     }
     
     func valueChanged() {
@@ -233,11 +233,11 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         if (yearsTextField.text == "") {
             years = "0"
         }
-        let currentPrice = NSInteger.init(years!)! * insureModel!.price!.integerValue
+        let currentPrice = NSInteger.init(years!)! * insureModel!.price!.intValue
         priceLabel.text = "￥:\(currentPrice)元"
     }
     
-    func viewButtonClicked(sender : UIButton) {
+    func viewButtonClicked(_ sender : UIButton) {
         let vc = PhotoViewController()
         if (sender.tag == 1) {
             vc.type = 1
@@ -254,19 +254,19 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         alertView.show()
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if (alertView.cancelButtonIndex != buttonIndex) {
-            UIApplication.sharedApplication().openURL(NSURL.init(string: "tel://4006229666")!)
+            UIApplication.shared.openURL(URL.init(string: "tel://4006229666")! as URL)
         }
     }
     
-    func buttonClicked(sender : UIButton) {
+    func buttonClicked(_ sender : UIButton) {
         for i in 0..<types.count {
             let button = scrollView.viewWithTag(i + BUTTON_TAG)
-            button!.layer.borderColor = UIColor.blackColor().CGColor
+            button!.layer.borderColor = UIColor.black.cgColor
             button!.layer.borderWidth = 1
         }
-        sender.layer.borderColor = Colors.installColor.CGColor
+        sender.layer.borderColor = Colors.installColor.cgColor
         sender.layer.borderWidth = 1
         
         let insureType = types[sender.tag - BUTTON_TAG] as! InsuranceType
@@ -276,7 +276,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
 //        priceLabel.text = "￥:" + String(insureType.price!) + "元"
         
         let size = NSString.init(string: insureType.size!)
-        size.stringByReplacingOccurrencesOfString("KW", withString: "")
+        size.replacingOccurrences(of: "KW", with: "")
         let sizeFloat : CGFloat = CGFloat(size.floatValue)
         
         let baoe1 : CGFloat = sizeFloat * 0.7
@@ -309,49 +309,49 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func initView() {
-        let buyBottomView = UIView.init(frame: CGRectMake(0, self.view.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
-        buyBottomView.backgroundColor = UIColor.whiteColor()
+        let buyBottomView = UIView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        buyBottomView.backgroundColor = UIColor.white
         self.view.addSubview(buyBottomView)
         
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = buyBottomView.frame.size.height - 5 * 2
         
-        let buyNowButton = UIButton.init(type: UIButtonType.Custom)
-        buyNowButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
-        buyNowButton.setTitle("立即购买", forState: UIControlState.Normal)
+        let buyNowButton = UIButton.init(type: UIButtonType.custom)
+        buyNowButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        buyNowButton.setTitle("立即购买", for: UIControlState.normal)
         buyNowButton.backgroundColor = Colors.installColor
-        buyNowButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        buyNowButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        buyNowButton.addTarget(self, action: #selector(self.buyNow), forControlEvents: UIControlEvents.TouchUpInside)
+        buyNowButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        buyNowButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        buyNowButton.addTarget(self, action: #selector(self.buyNow), for: UIControlEvents.touchUpInside)
         buyBottomView.addSubview(buyNowButton)
         
-        scrollView = UIScrollView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - 64))
+        scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - 64))
         self.view.addSubview(scrollView)
         
-        let topImageView = UIImageView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, (PhoneUtils.kScreenWidth * 447) / 640))
+        let topImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: (PhoneUtils.kScreenWidth * 447) / 640))
         topImageView.image = UIImage(named: "ic_insure")
         scrollView.addSubview(topImageView)
         
         let labelHeight = PhoneUtils.kScreenHeight / 10
-        priceLabel = UILabel.init(frame: CGRectMake(0, CGRectGetMaxY(topImageView.frame), PhoneUtils.kScreenWidth * 0.3, labelHeight))
+        priceLabel = UILabel.init(frame: CGRect(x: 0, y: topImageView.frame.maxY, width: PhoneUtils.kScreenWidth * 0.3, height: labelHeight))
         priceLabel.textColor = Colors.installRedColor
         priceLabel.text = "￥: 0元"
-        priceLabel.textAlignment = NSTextAlignment.Center
+        priceLabel.textAlignment = NSTextAlignment.center
         scrollView.addSubview(priceLabel)
         
-        let noticeLabel = UILabel.init(frame: CGRectMake(PhoneUtils.kScreenWidth * 0.3, CGRectGetMaxY(topImageView.frame), PhoneUtils.kScreenWidth * 0.7, labelHeight))
+        let noticeLabel = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth * 0.3, y: topImageView.frame.maxY, width: PhoneUtils.kScreenWidth * 0.7, height: labelHeight))
         noticeLabel.textColor = Colors.lightGray
         noticeLabel.text = "注:一个屋顶电站只能购买一份保险，不可叠加购买"
         noticeLabel.numberOfLines = 0
-        noticeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        noticeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        noticeLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        noticeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         scrollView.addSubview(noticeLabel)
         
-        totalLabel = UILabel.init(frame: CGRectMake((PhoneUtils.kScreenWidth * 0.65) - offSetX, CGRectGetMaxY(noticeLabel.frame) + labelHeight * 0.1, PhoneUtils.kScreenWidth * 0.35, labelHeight * 0.5))
-        totalLabel.textAlignment = NSTextAlignment.Center
-        totalLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        totalLabel = UILabel.init(frame: CGRect(x: (PhoneUtils.kScreenWidth * 0.65) - offSetX, y: noticeLabel.frame.maxY + labelHeight * 0.1, width: PhoneUtils.kScreenWidth * 0.35, height: labelHeight * 0.5))
+        totalLabel.textAlignment = NSTextAlignment.center
+        totalLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         totalLabel.backgroundColor = Colors.installColor
-        totalLabel.textColor = UIColor.whiteColor()
+        totalLabel.textColor = UIColor.white
         scrollView.addSubview(totalLabel)
     }
 

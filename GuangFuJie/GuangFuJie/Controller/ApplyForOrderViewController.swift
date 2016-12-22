@@ -41,139 +41,139 @@ class ApplyForOrderViewController: BaseViewController {
         let labelHeight = PhoneUtils.kScreenHeight / 14
         let offSet : CGFloat = 5
         
-        let buyBottomView = UIView.init(frame: CGRectMake(0, self.view.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
-        buyBottomView.backgroundColor = UIColor.whiteColor()
+        let buyBottomView = UIView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        buyBottomView.backgroundColor = UIColor.white
         self.view.addSubview(buyBottomView)
         
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = buyBottomView.frame.size.height - 5 * 2
         
-        let buyNowButton = UIButton.init(type: UIButtonType.Custom)
-        buyNowButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
-        buyNowButton.setTitle("提交", forState: UIControlState.Normal)
+        let buyNowButton = UIButton.init(type: UIButtonType.custom)
+        buyNowButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        buyNowButton.setTitle("提交", for: UIControlState.normal)
         buyNowButton.backgroundColor = Colors.installColor
-        buyNowButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        buyNowButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        buyNowButton.addTarget(self, action: #selector(self.submitOrder), forControlEvents: UIControlEvents.TouchUpInside)
+        buyNowButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        buyNowButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        buyNowButton.addTarget(self, action: #selector(self.submitOrder), for: UIControlEvents.touchUpInside)
         buyBottomView.addSubview(buyNowButton)
         
-        scrollView = UIScrollView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - 64))
+        scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - 64))
         self.view.addSubview(scrollView)
         
-        let nameLabel = UILabel.init(frame: CGRectMake(offSet, offSet, labelWidth - offSet * 2, labelHeight))
-        nameLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        let nameLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet, width: labelWidth - offSet * 2, height: labelHeight))
+        nameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         nameLabel.text = "姓名"
         scrollView.addSubview(nameLabel)
         
-        nameTextField = UITextField.init(frame: CGRectMake(labelWidth + offSet, offSet, textFieldWidth - offSet * 2, labelHeight))
-        nameTextField.layer.borderColor = UIColor.blackColor().CGColor
+        nameTextField = UITextField.init(frame: CGRect(x: labelWidth + offSet, y: offSet, width: textFieldWidth - offSet * 2, height: labelHeight))
+        nameTextField.layer.borderColor = UIColor.black.cgColor
         nameTextField.layer.borderWidth = 1
-        nameTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        nameTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         scrollView.addSubview(nameTextField)
         
-        let phoneLabel = UILabel.init(frame: CGRectMake(offSet, offSet + CGRectGetMaxY(nameLabel.frame), labelWidth - offSet * 2, labelHeight))
-        phoneLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        let phoneLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet + nameLabel.frame.maxY, width: labelWidth - offSet * 2, height: labelHeight))
+        phoneLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         phoneLabel.text = "手机号"
         scrollView.addSubview(phoneLabel)
         
-        phoneTextField = UITextField.init(frame: CGRectMake(labelWidth + offSet, offSet + CGRectGetMaxY(nameLabel.frame), textFieldWidth - offSet * 2, labelHeight))
-        phoneTextField.layer.borderColor = UIColor.blackColor().CGColor
+        phoneTextField = UITextField.init(frame: CGRect(x: labelWidth + offSet, y: offSet + nameLabel.frame.maxY, width: textFieldWidth - offSet * 2, height: labelHeight))
+        phoneTextField.layer.borderColor = UIColor.black.cgColor
         phoneTextField.layer.borderWidth = 1
-        phoneTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        phoneTextField.keyboardType = UIKeyboardType.NumberPad
+        phoneTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+        phoneTextField.keyboardType = UIKeyboardType.numberPad
         scrollView.addSubview(phoneTextField)
         
-        let idLabel = UILabel.init(frame: CGRectMake(offSet, offSet + CGRectGetMaxY(phoneLabel.frame), labelWidth - offSet * 2, labelHeight))
-        idLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        let idLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet + phoneLabel.frame.maxY, width: labelWidth - offSet * 2, height: labelHeight))
+        idLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         idLabel.text = "身份证号码"
         scrollView.addSubview(idLabel)
         
-        idTextField = UITextField.init(frame: CGRectMake(labelWidth + offSet, offSet + CGRectGetMaxY(phoneLabel.frame), textFieldWidth - offSet * 2, labelHeight))
-        idTextField.layer.borderColor = UIColor.blackColor().CGColor
+        idTextField = UITextField.init(frame: CGRect(x: labelWidth + offSet, y: offSet + phoneLabel.frame.maxY, width: textFieldWidth - offSet * 2, height: labelHeight))
+        idTextField.layer.borderColor = UIColor.black.cgColor
         idTextField.layer.borderWidth = 1
-        idTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        idTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         scrollView.addSubview(idTextField)
         
-        let addressLabel = UILabel.init(frame: CGRectMake(offSet, offSet + CGRectGetMaxY(idLabel.frame), labelWidth - offSet * 2, labelHeight))
-        addressLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        let addressLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet + idLabel.frame.maxY, width: labelWidth - offSet * 2, height: labelHeight))
+        addressLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         addressLabel.text = "电站地址"
         scrollView.addSubview(addressLabel)
         
-        addressTextField = UITextField.init(frame: CGRectMake(labelWidth + offSet, offSet + CGRectGetMaxY(idLabel.frame), textFieldWidth - offSet * 2, labelHeight))
-        addressTextField.layer.borderColor = UIColor.blackColor().CGColor
+        addressTextField = UITextField.init(frame: CGRect(x: labelWidth + offSet, y: offSet + idLabel.frame.maxY, width: textFieldWidth - offSet * 2, height: labelHeight))
+        addressTextField.layer.borderColor = UIColor.black.cgColor
         addressTextField.layer.borderWidth = 1
-        addressTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        addressTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         scrollView.addSubview(addressTextField)
         
-        let resourseLabel = UILabel.init(frame: CGRectMake(offSet, offSet + CGRectGetMaxY(addressLabel.frame), labelWidth - offSet * 2, labelHeight))
-        resourseLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        let resourseLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet + addressLabel.frame.maxY, width: labelWidth - offSet * 2, height: labelHeight))
+        resourseLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         resourseLabel.text = "合同资料"
         scrollView.addSubview(resourseLabel)
         
-        let resourseNoticeLabel = UILabel.init(frame: CGRectMake(labelWidth + offSet, offSet + CGRectGetMaxY(addressLabel.frame), textFieldWidth - offSet * 2, labelHeight))
+        let resourseNoticeLabel = UILabel.init(frame: CGRect(x: labelWidth + offSet, y: offSet + addressLabel.frame.maxY, width: textFieldWidth - offSet * 2, height: labelHeight))
         resourseNoticeLabel.text = "为了确认电站所属人信息,请您上传发用电合同,若您的电站还未并网,请上传电站接入方案或电站照片。"
         resourseNoticeLabel.numberOfLines = 0
-        resourseNoticeLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        resourseNoticeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        resourseNoticeLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        resourseNoticeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         scrollView.addSubview(resourseNoticeLabel)
         
-        let resourseTitleLabel = UILabel.init(frame: CGRectMake(offSet, offSet + CGRectGetMaxY(resourseLabel.frame), textFieldWidth - offSet * 2, labelHeight))
+        let resourseTitleLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet + resourseLabel.frame.maxY, width: textFieldWidth - offSet * 2, height: labelHeight))
         resourseTitleLabel.text = "点击示例上传合同。"
-        resourseTitleLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        resourseTitleLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         scrollView.addSubview(resourseTitleLabel)
         
         let imgWidth = (PhoneUtils.kScreenWidth - offSet * 4) / 3
         let imgHeight = PhoneUtils.kScreenHeight / 4
         
-        imgView1 = UIImageView.init(frame: CGRectMake(offSet, CGRectGetMaxY(resourseTitleLabel.frame) + offSet, imgWidth, imgHeight))
+        imgView1 = UIImageView.init(frame: CGRect(x: offSet, y: resourseTitleLabel.frame.maxY + offSet, width: imgWidth, height: imgHeight))
         imgView1.image = UIImage(named: "ic_p001")
         scrollView.addSubview(imgView1)
         
-        let uploadButton1 = UIButton.init(type: UIButtonType.Custom)
-        uploadButton1.frame = CGRectMake(imgView1.frame.origin.x, CGRectGetMaxY(imgView1.frame) + 5, imgView1.frame.size.width, imgView1.frame.size.height * 0.12)
-        uploadButton1.setTitle("点击上传", forState: UIControlState.Normal)
-        uploadButton1.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        let uploadButton1 = UIButton.init(type: UIButtonType.custom)
+        uploadButton1.frame = CGRect(x: imgView1.frame.origin.x, y: imgView1.frame.maxY + 5, width: imgView1.frame.size.width, height: imgView1.frame.size.height * 0.12)
+        uploadButton1.setTitle("点击上传", for: UIControlState.normal)
+        uploadButton1.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         uploadButton1.backgroundColor = Colors.installColor
-        uploadButton1.addTarget(self, action: #selector(self.submitImage1), forControlEvents: UIControlEvents.TouchUpInside)
+        uploadButton1.addTarget(self, action: #selector(self.submitImage1), for: UIControlEvents.touchUpInside)
         scrollView.addSubview(uploadButton1)
         
         let tapGesture1 = UITapGestureRecognizer.init(target: self, action: #selector(self.viewImage1))
-        imgView1.userInteractionEnabled = true
+        imgView1.isUserInteractionEnabled = true
         imgView1.addGestureRecognizer(tapGesture1)
         
-        imgView2 = UIImageView.init(frame: CGRectMake(offSet * 2 + imgWidth, CGRectGetMaxY(resourseTitleLabel.frame) + offSet, imgWidth, imgHeight))
+        imgView2 = UIImageView.init(frame: CGRect(x: offSet * 2 + imgWidth, y: resourseTitleLabel.frame.maxY + offSet, width: imgWidth, height: imgHeight))
         imgView2.image = UIImage(named: "ic_p002")
         scrollView.addSubview(imgView2)
         
-        let uploadButton2 = UIButton.init(type: UIButtonType.Custom)
-        uploadButton2.frame = CGRectMake(imgView2.frame.origin.x, CGRectGetMaxY(imgView2.frame) + 5, imgView2.frame.size.width, imgView2.frame.size.height * 0.12)
-        uploadButton2.setTitle("点击上传", forState: UIControlState.Normal)
-        uploadButton2.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        let uploadButton2 = UIButton.init(type: UIButtonType.custom)
+        uploadButton2.frame = CGRect(x: imgView2.frame.origin.x, y: imgView2.frame.maxY + 5, width: imgView2.frame.size.width, height: imgView2.frame.size.height * 0.12)
+        uploadButton2.setTitle("点击上传", for: UIControlState.normal)
+        uploadButton2.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         uploadButton2.backgroundColor = Colors.installColor
-        uploadButton2.addTarget(self, action: #selector(self.submitImage2), forControlEvents: UIControlEvents.TouchUpInside)
+        uploadButton2.addTarget(self, action: #selector(self.submitImage2), for: UIControlEvents.touchUpInside)
         scrollView.addSubview(uploadButton2)
         
         let tapGesture2 = UITapGestureRecognizer.init(target: self, action: #selector(self.viewImage2))
-        imgView2.userInteractionEnabled = true
+        imgView2.isUserInteractionEnabled = true
         imgView2.addGestureRecognizer(tapGesture2)
         
-        imgView3 = UIImageView.init(frame: CGRectMake(offSet * 3 + imgWidth * 2, CGRectGetMaxY(resourseTitleLabel.frame) + offSet, imgWidth, imgHeight))
+        imgView3 = UIImageView.init(frame: CGRect(x: offSet * 3 + imgWidth * 2, y: resourseTitleLabel.frame.maxY + offSet, width: imgWidth, height: imgHeight))
         imgView3.image = UIImage(named: "ic_p003")
         scrollView.addSubview(imgView3)
         
-        let uploadButton3 = UIButton.init(type: UIButtonType.Custom)
-        uploadButton3.frame = CGRectMake(imgView3.frame.origin.x, CGRectGetMaxY(imgView3.frame) + 5, imgView3.frame.size.width, imgView3.frame.size.height * 0.12)
-        uploadButton3.setTitle("点击上传", forState: UIControlState.Normal)
-        uploadButton3.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        let uploadButton3 = UIButton.init(type: UIButtonType.custom)
+        uploadButton3.frame = CGRect(x: imgView3.frame.origin.x, y: imgView3.frame.maxY + 5, width: imgView3.frame.size.width, height: imgView3.frame.size.height * 0.12)
+        uploadButton3.setTitle("点击上传", for: UIControlState.normal)
+        uploadButton3.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         uploadButton3.backgroundColor = Colors.installColor
-        uploadButton3.addTarget(self, action: #selector(self.submitImage3), forControlEvents: UIControlEvents.TouchUpInside)
+        uploadButton3.addTarget(self, action: #selector(self.submitImage3), for: UIControlEvents.touchUpInside)
         scrollView.addSubview(uploadButton3)
         
         let tapGesture3 = UITapGestureRecognizer.init(target: self, action: #selector(self.viewImage3))
-        imgView3.userInteractionEnabled = true
+        imgView3.isUserInteractionEnabled = true
         imgView3.addGestureRecognizer(tapGesture3)
         
-        scrollView.contentSize = CGSizeMake(0, CGRectGetMaxY(uploadButton3.frame) + 1)
+        scrollView.contentSize = CGSize(width: 0, height: uploadButton3.frame.maxY + 1)
     }
     
     func viewImage1() {
@@ -219,28 +219,27 @@ class ApplyForOrderViewController: BaseViewController {
         selectPhotoPicker()
     }
     
-    override func pickerCallback(image: UIImage) {
+    override func pickerCallback(_ image: UIImage) {
         let imgData = UIImagePNGRepresentation(image)
-        let time = NSDate().timeIntervalSince1970
+        let time = Date().timeIntervalSince1970
         let key = "yyzhizhao_\(time).png"
-        self.showHudInView(self.view, hint: "正在上传")
+        self.showHud(in: self.view, hint: "正在上传")
         API.sharedInstance.qnToken(key, success: { (info) in
-            API.sharedInstance.uploadData(imgData!, key: key, token: info.token!, result: { (info, key, resp) in
-                self.hideHud()
-                if (info?.error != nil){
-                    self.showHint(info?.error.description)
+            API.sharedInstance.uploadData(imgData!, key: key, token: info.token!, success: { (result) in
+                if (result.info?.error != nil) {
+                    self.showHint("上传失败")
                 } else {
                     self.showHint("上传成功!")
-                    let url = "http://ob4e8ww8r.bkt.clouddn.com/" + key!
+                    let url = "http://ob4e8ww8r.bkt.clouddn.com/" + result.key!
                     if (self.currentIndex == 0) {
                         self.img1 = url
-                        self.imgView1.af_setImageWithURL(NSURL.init(string: url)!)
+                        self.imgView1.setImageWith(URL.init(string: url)!)
                     } else if (self.currentIndex == 1) {
                         self.img2 = url
-                        self.imgView2.af_setImageWithURL(NSURL.init(string: url)!)
+                        self.imgView2.setImageWith(URL.init(string: url)!)
                     } else if (self.currentIndex == 2) {
                         self.img3 = url
-                        self.imgView3.af_setImageWithURL(NSURL.init(string: url)!)
+                        self.imgView3.setImageWith(URL.init(string: url)!)
                     }
                 }
             })
@@ -282,9 +281,9 @@ class ApplyForOrderViewController: BaseViewController {
             imgUrls = imgUrls + "," + img3
         }
         let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
-        let currentPrice = NSInteger.init(years!)! * self.insuranceType!.price!.integerValue * 100
+        let currentPrice = NSInteger.init(years!)! * self.insuranceType!.price!.intValue * 100
         
-        self.showHudInView(self.view, hint: "提交中...")
+        self.showHud(in: self.view, hint: "提交中...")
         API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: insuranceType.price!, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, success: { (commonModel) in
                 self.hideHud()
                 self.aliPay(commonModel.order_sn!, title: title, totalFee: String(currentPrice), type: commonModel.type!)

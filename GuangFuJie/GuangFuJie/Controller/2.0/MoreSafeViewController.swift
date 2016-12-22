@@ -30,10 +30,10 @@ class MoreSafeViewController: BaseViewController, UITableViewDelegate, UITableVi
         API.sharedInstance.usersHaveInsuranceList(currentPage, pagesize: 10, success: { (insuranceList) in
             self.safeTableView.mj_footer.endRefreshing()
             if (insuranceList.count > 0) {
-                self.safeArray.addObjectsFromArray(insuranceList as [AnyObject])
+                self.safeArray.addObjects(from: insuranceList as [AnyObject])
             }
             if (insuranceList.count < 10) {
-                self.safeTableView.mj_footer.hidden = true
+                self.safeTableView.mj_footer.isHidden = true
             }
             self.safeTableView.reloadData()
         }) { (msg) in
@@ -44,17 +44,17 @@ class MoreSafeViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func loadUserList() {
         currentPage = 0
-        self.safeTableView.mj_footer.hidden = false
-        self.showHudInView(self.view, hint: "加载中...")
+        self.safeTableView.mj_footer.isHidden = false
+        self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.usersHaveInsuranceList(currentPage, pagesize: 10, success: { (insuranceList) in
             self.safeTableView.mj_header.endRefreshing()
             self.hideHud()
             self.safeArray.removeAllObjects()
             if (insuranceList.count > 0) {
-                self.safeArray.addObjectsFromArray(insuranceList as [AnyObject])
+                self.safeArray.addObjects(from: insuranceList as [AnyObject])
             }
             if (insuranceList.count < 10) {
-                self.safeTableView.mj_footer.hidden = true
+                self.safeTableView.mj_footer.isHidden = true
             }
             self.safeTableView.reloadData()
         }) { (msg) in
@@ -66,14 +66,14 @@ class MoreSafeViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     let safeCellReuseIdentifier = "safeCellReuseIdentifier"
     func initView() {
-        safeTableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Plain)
+        safeTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight), style: UITableViewStyle.plain)
         safeTableView.delegate = self
         safeTableView.dataSource = self
         safeTableView.backgroundColor = Colors.bkgColor
-        safeTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        safeTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.view.addSubview(safeTableView)
         
-        safeTableView.registerClass(SafeCell.self, forCellReuseIdentifier: safeCellReuseIdentifier)
+        safeTableView.register(SafeCell.self, forCellReuseIdentifier: safeCellReuseIdentifier)
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,21 +82,21 @@ class MoreSafeViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return safeArray.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return SafeCell.cellHeight()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(safeCellReuseIdentifier, forIndexPath: indexPath) as! SafeCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: safeCellReuseIdentifier, for: indexPath as IndexPath) as! SafeCell
         cell.initCell()
         let userInfo = safeArray[indexPath.row] as! InsuranceInfo
         cell.setData(userInfo, isSelf: false)
-        cell.viewMoreButton.setTitle("我也要投", forState: UIControlState.Normal)
-        cell.viewMoreButton.addTarget(self, action: #selector(self.buySafe), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.viewMoreButton.setTitle("我也要投", for: UIControlState.normal)
+        cell.viewMoreButton.addTarget(self, action: #selector(self.buySafe), for: UIControlEvents.touchUpInside)
         return cell
     }
     
@@ -108,8 +108,8 @@ class MoreSafeViewController: BaseViewController, UITableViewDelegate, UITableVi
         self.pushViewController(vc)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
 }

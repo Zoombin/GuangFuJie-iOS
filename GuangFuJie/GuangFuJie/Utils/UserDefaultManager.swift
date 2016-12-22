@@ -12,18 +12,18 @@ class UserDefaultManager: NSObject {
     static let USER_INFO = "userInfo"
     static let APP_VERSION = "appVersion"
     
-    static let userDefault : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    static let userDefault : UserDefaults = UserDefaults.standard
     
     /**保存String数据*/
-    static func saveString(key :NSString,value :NSString){
-        userDefault.setObject(value, forKey: key as String)
+    static func saveString(_ key :String,value :String){
+        userDefault.set(value, forKey: key as String)
         userDefault.synchronize()
     }
     
     /**获取保存的String数据*/
-    static func getString(key :NSString) -> String{
-        if(userDefault.objectForKey(key as String) != nil) {
-            let value : String = userDefault.objectForKey(key as String) as! String
+    static func getString(_ key :String) -> String{
+        if(userDefault.object(forKey: key as String) != nil) {
+            let value : String = userDefault.object(forKey: key as String) as! String
             return value
         }else{
             return "";
@@ -33,14 +33,14 @@ class UserDefaultManager: NSObject {
     static func getUser() -> UserInfo? {
         if (isLogin()) {
             let userStr = getString(UserDefaultManager.USER_INFO)
-            let user = UserInfo.mj_objectWithKeyValues(userStr)
+            let user = UserInfo.mj_object(withKeyValues: userStr)
             return user
         }
         return nil
     }
     
     static func clearUserData() {
-       userDefault.removeObjectForKey(USER_INFO)
+       userDefault.removeObject(forKey: USER_INFO)
     }
     
     static func logOut() {

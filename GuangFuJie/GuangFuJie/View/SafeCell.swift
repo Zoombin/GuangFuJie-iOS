@@ -31,17 +31,17 @@ class SafeCell: UITableViewCell {
             return
         }
         viewCreated = true
-        self.selectionStyle = UITableViewCellSelectionStyle.None
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         self.contentView.backgroundColor = Colors.bkgColor
         
         let dir : CGFloat = PhoneUtils.kScreenWidth / 40
         let bkgViewWidth = PhoneUtils.kScreenWidth - dir * 2
         let bkgViewHeight = SafeCell.cellHeight() - dir
-        let bkgView = UIView.init(frame: CGRectMake(dir, 0, bkgViewWidth, bkgViewHeight))
-        bkgView.backgroundColor = UIColor.whiteColor()
+        let bkgView = UIView.init(frame: CGRect(x: dir, y: 0, width: bkgViewWidth, height: bkgViewHeight))
+        bkgView.backgroundColor = UIColor.white
         self.contentView.addSubview(bkgView)
         
-        let topView = UIView.init(frame: CGRectMake(0, 0, bkgViewWidth, bkgViewHeight / 3))
+        let topView = UIView.init(frame: CGRect(x: 0, y: 0, width: bkgViewWidth, height: bkgViewHeight / 3))
         bkgView.addSubview(topView)
         
         let dir2 : CGFloat = PhoneUtils.kScreenWidth / 36
@@ -50,118 +50,118 @@ class SafeCell: UITableViewCell {
         let labelWidth1 = topView.frame.size.width * 0.6
         let labelWidth2 = topView.frame.size.width * 0.4
         
-        let line1 = UIView.init(frame: CGRectMake(dir2, topView.frame.size.height, bkgViewWidth - dir2 * 2, 0.5))
-        line1.backgroundColor = UIColor.lightGrayColor()
+        let line1 = UIView.init(frame: CGRect(x: dir2, y: topView.frame.size.height, width: bkgViewWidth - dir2 * 2, height: 0.5))
+        line1.backgroundColor = UIColor.lightGray
         bkgView.addSubview(line1)
         
-        nameLabel = UILabel.init(frame: CGRectMake(dir2, dir2, labelWidth1, labelHeight1))
-        nameLabel.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
+        nameLabel = UILabel.init(frame: CGRect(x: dir2, y: dir2, width: labelWidth1, height: labelHeight1))
+        nameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
         nameLabel.text = "123123123"
         topView.addSubview(nameLabel)
         
-        phoneLabel = UILabel.init(frame: CGRectMake(dir2, CGRectGetMaxY(nameLabel.frame), labelWidth1, labelHeight1))
-        phoneLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        phoneLabel = UILabel.init(frame: CGRect(x: dir2, y: (nameLabel.frame).maxY, width: labelWidth1, height: labelHeight1))
+        phoneLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         phoneLabel.text = "123123123"
-        phoneLabel.textColor = UIColor.lightGrayColor()
+        phoneLabel.textColor = UIColor.lightGray
         topView.addSubview(phoneLabel)
         
-        idLabel = UILabel.init(frame: CGRectMake(dir2, CGRectGetMaxY(phoneLabel.frame), labelWidth1, labelHeight1))
-        idLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        idLabel = UILabel.init(frame: CGRect(x: dir2, y: (phoneLabel.frame).maxY, width: labelWidth1, height: labelHeight1))
+        idLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         idLabel.text = "123123123"
-        idLabel.textColor = UIColor.lightGrayColor()
+        idLabel.textColor = UIColor.lightGray
         topView.addSubview(idLabel)
         
-        priceLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(nameLabel.frame) - dir2, dir2, labelWidth2 - dir2, labelHeight1))
-        priceLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        priceLabel = UILabel.init(frame: CGRect(x: (nameLabel.frame).maxX - dir2, y: dir2, width: labelWidth2 - dir2, height: labelHeight1))
+        priceLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         priceLabel.text = "123123123"
-        priceLabel.textColor = UIColor.blackColor()
-        priceLabel.textAlignment = NSTextAlignment.Right
+        priceLabel.textColor = UIColor.black
+        priceLabel.textAlignment = NSTextAlignment.right
         topView.addSubview(priceLabel)
     
-        tipsLabel = UILabel.init(frame: CGRectMake(CGRectGetMinX(priceLabel.frame), CGRectGetMaxY(priceLabel.frame), labelWidth2 - dir2, labelHeight1))
-        tipsLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        tipsLabel = UILabel.init(frame: CGRect(x: (priceLabel.frame).minX, y: (priceLabel.frame).maxY, width: labelWidth2 - dir2, height: labelHeight1))
+        tipsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         tipsLabel.text = "已投保"
         tipsLabel.textColor = Colors.installColor
-        tipsLabel.textAlignment = NSTextAlignment.Right
+        tipsLabel.textAlignment = NSTextAlignment.right
         topView.addSubview(tipsLabel)
         
-        let bottomView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), bkgViewWidth, bkgViewHeight * 2 / 3))
+        let bottomView = UIView.init(frame: CGRect(x: 0, y: (topView.frame).maxY, width: bkgViewWidth, height: bkgViewHeight * 2 / 3))
         bkgView.addSubview(bottomView)
         
         let pointOffSetY = (bottomView.frame.size.height * 0.15 - dir2) / 2
         
-        safeTypeLabel = UILabel.init(frame: CGRectMake(dir2 * 3, bottomView.frame.size.height * 0.05, bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
+        safeTypeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.15))
         safeTypeLabel.text = "这里显示的是描述"
-        safeTypeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        safeTypeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(safeTypeLabel)
         
-        let typePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(safeTypeLabel.frame) + pointOffSetY, dir2, dir2))
+        let typePoint = UIImageView.init(frame: CGRect(x: dir2, y: (safeTypeLabel.frame).minY + pointOffSetY, width: dir2, height: dir2))
         typePoint.image = UIImage(named: "ic_point_blue")
         bottomView.addSubview(typePoint)
         
-        yearsSizeLabel = UILabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(safeTypeLabel.frame), (bkgViewWidth - dir2 * 5) / 3.5, bottomView.frame.size.height * 0.15))
+        yearsSizeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (safeTypeLabel.frame).maxY, width: (bkgViewWidth - dir2 * 5) / 3.5, height: bottomView.frame.size.height * 0.15))
         yearsSizeLabel.text = "这里显示的是描述"
-        yearsSizeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        yearsSizeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(yearsSizeLabel)
         
-        rangeLabel = UILabel.init(frame: CGRectMake(CGRectGetMaxX(yearsSizeLabel.frame), CGRectGetMaxY(safeTypeLabel.frame), (bkgViewWidth - dir2 * 5) / 2, bottomView.frame.size.height * 0.15))
+        rangeLabel = UILabel.init(frame: CGRect(x: (yearsSizeLabel.frame).maxX, y: (safeTypeLabel.frame).maxY, width: (bkgViewWidth - dir2 * 5) / 2, height: bottomView.frame.size.height * 0.15))
         rangeLabel.text = "这里显示的是描述"
-        rangeLabel.textColor = UIColor.lightGrayColor()
-        rangeLabel.textAlignment = NSTextAlignment.Left
-        rangeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall2)
+        rangeLabel.textColor = UIColor.lightGray
+        rangeLabel.textAlignment = NSTextAlignment.left
+        rangeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall2)
         bottomView.addSubview(rangeLabel)
         
-        let sizePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(yearsSizeLabel.frame) + pointOffSetY, dir2, dir2))
+        let sizePoint = UIImageView.init(frame: CGRect(x: dir2, y: (yearsSizeLabel.frame).minY + pointOffSetY, width: dir2, height: dir2))
         sizePoint.image = UIImage(named: "ic_yellow_point")
         bottomView.addSubview(sizePoint)
         
-        baoeLabel = UILabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(yearsSizeLabel.frame), bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
+        baoeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (yearsSizeLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.15))
         baoeLabel.text = "这里显示的是描述"
-        baoeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        baoeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(baoeLabel)
         
-        let pricePoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(baoeLabel.frame) + pointOffSetY, dir2, dir2))
+        let pricePoint = UIImageView.init(frame: CGRect(x: dir2, y: (baoeLabel.frame).minY + pointOffSetY, width: dir2, height: dir2))
         pricePoint.image = UIImage(named: "ic_green_point")
         bottomView.addSubview(pricePoint)
         
-        addressLabel = UILabel.init(frame: CGRectMake(dir2 * 3, CGRectGetMaxY(baoeLabel.frame), bkgViewWidth - dir2 * 5, bottomView.frame.size.height * 0.15))
+        addressLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (baoeLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.15))
         addressLabel.text = "这里显示的是描述"
-        addressLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        addressLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(addressLabel)
         
-        let addressPoint = UIImageView.init(frame: CGRectMake(dir2, CGRectGetMinY(addressLabel.frame) + pointOffSetY, dir2, dir2))
+        let addressPoint = UIImageView.init(frame: CGRect(x: dir2, y: (addressLabel.frame).minY + pointOffSetY, width: dir2, height: dir2))
         addressPoint.image = UIImage(named: "ic_point_red")
         bottomView.addSubview(addressPoint)
 
-        let line2 = UIView.init(frame: CGRectMake(dir2, CGRectGetMaxY(addressLabel.frame) + bottomView.frame.size.height * 0.05, bkgViewWidth - dir2 * 2, 0.5))
-        line2.backgroundColor = UIColor.lightGrayColor()
+        let line2 = UIView.init(frame: CGRect(x: dir2, y: (addressLabel.frame).maxY + bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 2, height: 0.5))
+        line2.backgroundColor = UIColor.lightGray
         bottomView.addSubview(line2)
 
-        buyTimeLabel = UILabel.init(frame: CGRectMake(dir2, CGRectGetMaxY(line2.frame), bkgViewWidth * 0.5, bottomView.frame.size.height * 0.3))
-        buyTimeLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        buyTimeLabel.textColor = UIColor.blackColor()
+        buyTimeLabel = UILabel.init(frame: CGRect(x: dir2, y: (line2.frame).maxY, width: bkgViewWidth * 0.5, height: bottomView.frame.size.height * 0.3))
+        buyTimeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        buyTimeLabel.textColor = UIColor.black
         buyTimeLabel.text = "投保日期: 2016-1-1"
         bottomView.addSubview(buyTimeLabel)
         
-        viewMoreButton = UIButton.init(type: UIButtonType.Custom)
-        viewMoreButton.frame = CGRectMake(CGRectGetMaxX(line2.frame) - bkgViewWidth * 0.2, CGRectGetMaxY(line2.frame) + buyTimeLabel.frame.size.height * 0.2, bkgViewWidth * 0.2, buyTimeLabel.frame.size.height * 0.6)
-        viewMoreButton.setTitle("查看更多", forState: UIControlState.Normal)
-        viewMoreButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        viewMoreButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        viewMoreButton = UIButton.init(type: UIButtonType.custom)
+        viewMoreButton.frame = CGRect(x: (line2.frame).maxX - bkgViewWidth * 0.2, y: (line2.frame).maxY + buyTimeLabel.frame.size.height * 0.2, width: bkgViewWidth * 0.2, height: buyTimeLabel.frame.size.height * 0.6)
+        viewMoreButton.setTitle("查看更多", for: UIControlState.normal)
+        viewMoreButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        viewMoreButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         viewMoreButton.layer.borderWidth = 0.5
-        viewMoreButton.layer.borderColor = UIColor.blackColor().CGColor
+        viewMoreButton.layer.borderColor = UIColor.black.cgColor
         bottomView.addSubview(viewMoreButton)
         
-        payButton = UIButton.init(type: UIButtonType.Custom)
-        payButton.frame = CGRectMake(CGRectGetMinX(viewMoreButton.frame) - dir2 - bkgViewWidth * 0.2, CGRectGetMaxY(line2.frame) + buyTimeLabel.frame.size.height * 0.2, bkgViewWidth * 0.2, buyTimeLabel.frame.size.height * 0.6)
+        payButton = UIButton.init(type: UIButtonType.custom)
+        payButton.frame = CGRect(x: (viewMoreButton.frame).minX - dir2 - bkgViewWidth * 0.2, y: (line2.frame).maxY + buyTimeLabel.frame.size.height * 0.2, width: bkgViewWidth * 0.2, height: buyTimeLabel.frame.size.height * 0.6)
         payButton.backgroundColor = Colors.installColor
-        payButton.setTitle("立即付款", forState: UIControlState.Normal)
-        payButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        payButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+        payButton.setTitle("立即付款", for: UIControlState.normal)
+        payButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        payButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(payButton)
     }
     
-    func setData(info : InsuranceInfo, isSelf : Bool) {
+    func setData(_ info : InsuranceInfo, isSelf : Bool) {
         var name = ""
         if (info.beneficiary_name != nil) {
             name = name + info.beneficiary_name! + " "
@@ -187,7 +187,7 @@ class SafeCell: UITableViewCell {
             type = "光伏街发电系统" + info.size! + "版"
             
             let size = NSString.init(string: info.size!)
-            size.stringByReplacingOccurrencesOfString("KW", withString: "")
+            size.replacingOccurrences(of: "KW", with: "")
             let sizeFloat : CGFloat = CGFloat(size.floatValue)
             
             let baoe1 : CGFloat = sizeFloat * 0.7
@@ -202,7 +202,7 @@ class SafeCell: UITableViewCell {
         
         var time = "投保年限："
         if (info.years != nil) {
-            time = time + String(info.years!) + "年"
+            time = time + String(describing: info.years!) + "年"
         }
         self.yearsSizeLabel.text = time
         
@@ -215,7 +215,7 @@ class SafeCell: UITableViewCell {
         
         var price = ""
         if (info.insured_price != nil) {
-            price = "￥" + String(info.insured_price!)
+            price = "￥" + String(describing: info.insured_price!)
         }
         self.priceLabel.text = price
         
@@ -225,15 +225,15 @@ class SafeCell: UITableViewCell {
         }
         self.addressLabel.text = location
         
-        self.payButton.hidden = true
+        self.payButton.isHidden = true
         if (isSelf) {
-            if (info.order_status!.integerValue == 2) {
+            if (info.order_status!.int32Value == 2) {
                 self.tipsLabel.text = "已成功投保"
-            } else if (info.order_status!.integerValue == 1){
+            } else if (info.order_status!.int32Value == 1){
                 self.tipsLabel.text = "已投保"
             } else {
                 self.tipsLabel.text = "未付款"
-                self.payButton.hidden = false
+                self.payButton.isHidden = false
             }
         }
     }

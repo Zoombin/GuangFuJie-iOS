@@ -28,45 +28,45 @@ class BindDeviceViewController: BaseViewController {
     }
     
     func initView() {
-        let topView = UIView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight / 12))
+        let topView = UIView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight / 12))
         self.view.addSubview(topView)
         
         let buttonWidth = PhoneUtils.kScreenWidth / 4
         let buttonHeight = PhoneUtils.kScreenHeight / 12
         
-        gwtButton = UIButton.init(type: UIButtonType.Custom)
-        gwtButton.setImage(UIImage(named: "ic_dev_gdw_img0"), forState: UIControlState.Normal)
-        gwtButton.setImage(UIImage(named: "ic_dev_gdw_img1"), forState: UIControlState.Selected)
-        gwtButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        gwtButton = UIButton.init(type: UIButtonType.custom)
+        gwtButton.setImage(UIImage(named: "ic_dev_gdw_img0"), for: UIControlState.normal)
+        gwtButton.setImage(UIImage(named: "ic_dev_gdw_img1"), for: UIControlState.selected)
+        gwtButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         gwtButton.tag = 0
-        gwtButton.frame = CGRectMake(0, 0, buttonWidth, buttonHeight)
+        gwtButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
         topView.addSubview(gwtButton)
         
-        ystButton = UIButton.init(type: UIButtonType.Custom)
-        ystButton.setImage(UIImage(named: "ic_dev_yst_img0"), forState: UIControlState.Normal)
-        ystButton.setImage(UIImage(named: "ic_dev_yst_img1"), forState: UIControlState.Selected)
-        ystButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        ystButton = UIButton.init(type: UIButtonType.custom)
+        ystButton.setImage(UIImage(named: "ic_dev_yst_img0"), for: UIControlState.normal)
+        ystButton.setImage(UIImage(named: "ic_dev_yst_img1"), for: UIControlState.selected)
+        ystButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         ystButton.tag = 1
-        ystButton.frame = CGRectMake(buttonWidth, 0, buttonWidth, buttonHeight)
+        ystButton.frame = CGRect(x: buttonWidth, y: 0, width: buttonWidth, height: buttonHeight)
         topView.addSubview(ystButton)
         
-        grwtButton = UIButton.init(type: UIButtonType.Custom)
-        grwtButton.setImage(UIImage(named: "ic_dev_grwt_img0"), forState: UIControlState.Normal)
-        grwtButton.setImage(UIImage(named: "ic_dev_grwt_img1"), forState: UIControlState.Selected)
-        grwtButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        grwtButton = UIButton.init(type: UIButtonType.custom)
+        grwtButton.setImage(UIImage(named: "ic_dev_grwt_img0"), for: UIControlState.normal)
+        grwtButton.setImage(UIImage(named: "ic_dev_grwt_img1"), for: UIControlState.selected)
+        grwtButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         grwtButton.tag = 2
-        grwtButton.frame = CGRectMake(buttonWidth * 2, 0, buttonWidth, buttonHeight)
+        grwtButton.frame = CGRect(x: buttonWidth * 2, y: 0, width: buttonWidth, height: buttonHeight)
         topView.addSubview(grwtButton)
         
-        khsyButton = UIButton.init(type: UIButtonType.Custom)
-        khsyButton.setImage(UIImage(named: "ic_dev_khkj_img0"), forState: UIControlState.Normal)
-        khsyButton.setImage(UIImage(named: "ic_dev_khkj_img1"), forState: UIControlState.Selected)
-        khsyButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        khsyButton = UIButton.init(type: UIButtonType.custom)
+        khsyButton.setImage(UIImage(named: "ic_dev_khkj_img0"), for: UIControlState.normal)
+        khsyButton.setImage(UIImage(named: "ic_dev_khkj_img1"), for: UIControlState.selected)
+        khsyButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         khsyButton.tag = 3
-        khsyButton.frame = CGRectMake(buttonWidth * 3, 0, buttonWidth, buttonHeight)
+        khsyButton.frame = CGRect(x: buttonWidth * 3, y: 0, width: buttonWidth, height: buttonHeight)
         topView.addSubview(khsyButton)
         
-        deviceView = UIView.init(frame: CGRectMake(0, 64 + topView.frame.size.height, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 64 - topView.frame.size.height))
+        deviceView = UIView.init(frame: CGRect(x: 0, y: 64 + topView.frame.size.height, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topView.frame.size.height))
         deviceView.backgroundColor = Colors.bkgGray
         self.view.addSubview(deviceView)
         
@@ -74,17 +74,17 @@ class BindDeviceViewController: BaseViewController {
     }
     
     func initBindCenterView() {
-        let deviceBottomView = UIView.init(frame: CGRectMake(0, deviceView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
-        deviceBottomView.backgroundColor = UIColor.whiteColor()
+        let deviceBottomView = UIView.init(frame: CGRect(x: 0, y: deviceView.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        deviceBottomView.backgroundColor = UIColor.white
         deviceView.addSubview(deviceBottomView)
         
-        let bindButton = UIButton.init(type: UIButtonType.Custom)
-        bindButton.frame = CGRectMake(5, 5, PhoneUtils.kScreenWidth - 5 * 2, deviceBottomView.frame.size.height - 5 * 2)
-        bindButton.setTitle("绑定设备", forState: UIControlState.Normal)
+        let bindButton = UIButton.init(type: UIButtonType.custom)
+        bindButton.frame = CGRect(x: 5, y: 5, width: PhoneUtils.kScreenWidth - 5 * 2, height: deviceBottomView.frame.size.height - 5 * 2)
+        bindButton.setTitle("绑定设备", for: UIControlState.normal)
         bindButton.backgroundColor = Colors.installColor
-        bindButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        bindButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        bindButton.addTarget(self, action: #selector(self.bindButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        bindButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        bindButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        bindButton.addTarget(self, action: #selector(self.bindButtonClicked), for: UIControlEvents.touchUpInside)
         deviceBottomView.addSubview(bindButton)
         
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
@@ -93,50 +93,50 @@ class BindDeviceViewController: BaseViewController {
         let width = PhoneUtils.kScreenWidth * 0.6
         let height = (231 * width) / 309
         
-        deviceBkgImageView = UIImageView.init(frame: CGRectMake((PhoneUtils.kScreenWidth - width) / 2, 8, width, height))
+        deviceBkgImageView = UIImageView.init(frame: CGRect(x: (PhoneUtils.kScreenWidth - width) / 2, y: 8, width: width, height: height))
         deviceBkgImageView.image = UIImage(named: "device_goodwe")
         deviceView.addSubview(deviceBkgImageView)
         
-        deviceTipsLabel = UILabel.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth) / 2, CGRectGetMaxY(deviceBkgImageView.frame) + 8, buttonWidth, buttonHeight))
+        deviceTipsLabel = UILabel.init(frame: CGRect(x: (PhoneUtils.kScreenWidth - buttonWidth) / 2, y: (deviceBkgImageView.frame).maxY + 8, width: buttonWidth, height: buttonHeight))
         deviceTipsLabel.text = "您当前选择了固德威品牌，请输入设备号查询发电量！"
-        deviceTipsLabel.textAlignment = NSTextAlignment.Center
-        deviceTipsLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        deviceTipsLabel.textAlignment = NSTextAlignment.center
+        deviceTipsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         deviceTipsLabel.adjustsFontSizeToFitWidth = true
-        deviceTipsLabel.textColor = UIColor.blackColor()
+        deviceTipsLabel.textColor = UIColor.black
         deviceView.addSubview(deviceTipsLabel)
         
-        deviceTextField = UITextField.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth * 0.9) / 2, CGRectGetMaxY(deviceTipsLabel.frame) + 8, buttonWidth * 0.9, buttonHeight))
-        deviceTextField.layer.borderColor = UIColor.lightGrayColor().CGColor
-        deviceTextField.backgroundColor = UIColor.whiteColor()
-        deviceTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        deviceTextField = UITextField.init(frame: CGRect(x: (PhoneUtils.kScreenWidth - buttonWidth * 0.9) / 2, y: (deviceTipsLabel.frame).maxY + 8, width: buttonWidth * 0.9, height: buttonHeight))
+        deviceTextField.layer.borderColor = UIColor.lightGray.cgColor
+        deviceTextField.backgroundColor = UIColor.white
+        deviceTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         deviceTextField.placeholder = "请输入设备号"
         deviceView.addSubview(deviceTextField)
     }
     
-    func topButtonClicked(button: UIButton) {
-        ystButton.selected = false
-        gwtButton.selected = false
-        grwtButton.selected = false
-        khsyButton.selected = false
+    func topButtonClicked(_ button: UIButton) {
+        ystButton.isSelected = false
+        gwtButton.isSelected = false
+        grwtButton.isSelected = false
+        khsyButton.isSelected = false
         
 //        设备类型(0:易事特  1:固德威  2:古瑞瓦特 3:开合山亿）
         if (button.tag == 0) {
-            gwtButton.selected = true
+            gwtButton.isSelected = true
             currentDeviceType = 1
             deviceBkgImageView.image = UIImage(named: "device_goodwe")
             deviceTipsLabel.text = "您当前选择了固德威品牌，请输入设备号查询发电量！"
         } else if (button.tag == 1) {
-            ystButton.selected = true
+            ystButton.isSelected = true
             currentDeviceType = 0
             deviceBkgImageView.image = UIImage(named: "device_gsm")
             deviceTipsLabel.text = "您当前选择了易事特品牌，请输入设备号查询发电量！"
         } else if (button.tag == 2){
-            grwtButton.selected = true
+            grwtButton.isSelected = true
             currentDeviceType = 2
             deviceBkgImageView.image = UIImage(named: "device_grwt")
             deviceTipsLabel.text = "您当前选择了古瑞瓦特品牌，请输入设备号查询发电量！"
         } else if (button.tag == 3) {
-            khsyButton.selected = true
+            khsyButton.isSelected = true
             currentDeviceType = 3
             deviceBkgImageView.image = UIImage(named: "device_khsy")
             deviceTipsLabel.text = "您当前选择了开合山亿品牌，请输入设备号查询发电量！"
@@ -162,12 +162,12 @@ class BindDeviceViewController: BaseViewController {
     }
     
     func bindDevice() {
-        self.showHudInView(self.view, hint: "绑定中...")
-        API.sharedInstance.bindDevice(deviceTextField.text!,device_type: currentDeviceType, success: { (userInfo) in
+        self.showHud(in: self.view, hint: "绑定中...")
+        API.sharedInstance.bindDevice(deviceTextField.text!,device_type: NSNumber.init(value: currentDeviceType), success: { (userInfo) in
             self.hideHud()
             self.showHint("绑定成功!")
             UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userInfo.mj_JSONString())
-            self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewController(animated: true)
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)

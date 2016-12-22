@@ -11,38 +11,38 @@ import UIKit
 class PhoneUtils: NSObject {
 
     // 屏幕Rect
-    static let kScreenRect = UIScreen.mainScreen().bounds
+    static let kScreenRect = UIScreen.main.bounds
     // 屏幕大小
-    static let kScreenSize = UIScreen.mainScreen().bounds.size
+    static let kScreenSize = UIScreen.main.bounds.size
     // 屏幕宽度
-    static let kScreenWidth = UIScreen.mainScreen().bounds.width
+    static let kScreenWidth = UIScreen.main.bounds.width
     // 屏幕高度
-    static let kScreenHeight = UIScreen.mainScreen().bounds.height
+    static let kScreenHeight = UIScreen.main.bounds.height
 
     // 状态栏高度
     static var statusBarHeight: CGFloat {
-        return UIApplication.sharedApplication().statusBarFrame.height
+        return UIApplication.shared.statusBarFrame.height
     }
 
     /// app版本
     static var appVersion: String {
-        if let infoDictionary = NSBundle.mainBundle().infoDictionary, ver = infoDictionary["CFBundleShortVersionString"] as? String {
+        if let infoDictionary = Bundle.main.infoDictionary, let ver = infoDictionary["CFBundleShortVersionString"] as? String {
             return ver
         }
         return "1.0"
     }
     
     //获取系统BuildId
-    static func getBuildId() ->Int{
-        let infoDictionary = NSBundle.mainBundle().infoDictionary
-        let minorVersion : AnyObject? = infoDictionary! ["CFBundleVersion"]
-        let buildId = minorVersion!.integerValue
+    static func getBuildId() -> String{
+        let infoDictionary = Bundle.main.infoDictionary
+        let minorVersion : AnyObject? = infoDictionary!["CFBundleVersion"] as AnyObject?
+        let buildId = minorVersion as! String
         return buildId
     }
 
     /// app编译版本
     static var appBuildVersion: CGFloat {
-        if let infoDictionary = NSBundle.mainBundle().infoDictionary, ver = infoDictionary["CFBundleVersion"] as? String {
+        if let infoDictionary = Bundle.main.infoDictionary, let ver = infoDictionary["CFBundleVersion"] as? String {
             return CGFloat((ver as NSString).doubleValue)
         }
         return 1.0
@@ -50,20 +50,20 @@ class PhoneUtils: NSObject {
 
     // 获取当前系统语言
     static var systemLanguage: String {
-        if let infoDictionary = NSBundle.mainBundle().infoDictionary, ver = infoDictionary["AppleLanguages"] as? [String] where ver.count > 0 {
+        if let infoDictionary = Bundle.main.infoDictionary, let ver = infoDictionary["AppleLanguages"] as? [String], ver.count > 0 {
             return ver[0]
         }
         return ""
     }
     
     //获取明天时间
-    static func getTommorrowDateStr(date : NSDate) -> String{
+    static func getTommorrowDateStr(_ date : Date) -> String{
         let currentDate = date
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let currentDateStr = currentDate.timeIntervalSince1970
         let tommorrowDateStr = currentDateStr + 24 * 3600
-        let tommorrowDate = NSDate.init(timeIntervalSince1970: tommorrowDateStr)
-        return dateFormatter.stringFromDate(tommorrowDate)
+        let tommorrowDate = Date.init(timeIntervalSince1970: tommorrowDateStr)
+        return dateFormatter.string(from: tommorrowDate as Date)
     }
 }

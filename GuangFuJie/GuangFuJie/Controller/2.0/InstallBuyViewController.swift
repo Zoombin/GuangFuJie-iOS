@@ -25,7 +25,7 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func loadRoofInfo() {
-        self.showHudInView(self.view, hint: "加载中...")
+        self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.getRoofInfo(roofId, success: { (roofInfo) in
                 self.hideHud()
                 self.rInfo = roofInfo
@@ -39,16 +39,16 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func addHeaderView() {
-        let headerView = UIView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.35))
+        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight * 0.35))
         
-        let titleLabel = UILabel.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, headerView.frame.size.height * 0.15))
+        let titleLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: headerView.frame.size.height * 0.15))
         titleLabel.text = " 屋顶类似图片"
-        titleLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        titleLabel.textColor = UIColor.blackColor()
+        titleLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        titleLabel.textColor = UIColor.black
         headerView.addSubview(titleLabel)
         
-        imageView = UIImageView.init(frame: CGRectMake(0, CGRectGetMaxY(titleLabel.frame), PhoneUtils.kScreenWidth, headerView.frame.size.height * 0.85))
-        imageView.af_setImageWithURL(NSURL.init(string: rInfo!.area_image!)!)
+        imageView = UIImageView.init(frame: CGRect(x: 0, y: titleLabel.frame.maxY, width: PhoneUtils.kScreenWidth, height: headerView.frame.size.height * 0.85))
+        imageView.setImageWith(URL.init(string: rInfo!.area_image!)! as URL)
         headerView.addSubview(imageView)
         
         tableView.tableHeaderView = headerView
@@ -56,46 +56,46 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
     
     let cellReuseIdentifier = "cellReuseIdentifier"
     func initView() {
-        let buyBottomView = UIView.init(frame: CGRectMake(0, self.view.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
-        buyBottomView.backgroundColor = UIColor.whiteColor()
+        let buyBottomView = UIView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        buyBottomView.backgroundColor = UIColor.white
         self.view.addSubview(buyBottomView)
         
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = buyBottomView.frame.size.height - 5 * 2
         
-        let buyNowButton = UIButton.init(type: UIButtonType.Custom)
-        buyNowButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
-        buyNowButton.setTitle("立即接单", forState: UIControlState.Normal)
+        let buyNowButton = UIButton.init(type: UIButtonType.custom)
+        buyNowButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        buyNowButton.setTitle("立即接单", for: UIControlState.normal)
         buyNowButton.backgroundColor = Colors.installColor
-        buyNowButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        buyNowButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        buyNowButton.addTarget(self, action: #selector(self.orderNowButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        buyNowButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        buyNowButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        buyNowButton.addTarget(self, action: #selector(self.orderNowButtonClicked), for: UIControlEvents.touchUpInside)
         buyBottomView.addSubview(buyNowButton)
         
         var offSetY : CGFloat = 0
         if (isSelf) {
-            buyBottomView.hidden = true
+            buyBottomView.isHidden = true
             offSetY = buyBottomView.frame.size.height - 100
         }
         
-        tableView = UITableView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - offSetY - 64 - 50), style: UITableViewStyle.Grouped)
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView = UITableView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - offSetY - 64 - 50), style: UITableViewStyle.grouped)
+        tableView.backgroundColor = UIColor.clear
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
     }
     
     func orderNowButtonClicked() {
         if (shouldShowLogin()) {
             return
         }
-        self.showHudInView(self.view, hint: "提交中...")
+        self.showHud(in: self.view, hint: "提交中...")
         API.sharedInstance.orderRoof(roofId, success: { (commonModel) in
                 self.hideHud()
                 self.showHint("接单成功!")
-                self.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popViewController(animated: true)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
@@ -108,7 +108,7 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
             return 2
         } else if (section == 1) {
@@ -120,27 +120,27 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
         }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 35
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, 1))
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 1))
         return view
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath)
-        cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        cell.textLabel?.textColor = UIColor.blackColor()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath as IndexPath)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        cell.textLabel?.textColor = UIColor.black
         if (rInfo != nil) {
             if (indexPath.section == 0) {
                 if (indexPath.row == 0) {
@@ -163,12 +163,12 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
                 if (indexPath.row == 0) {
                     cell.textLabel?.text = "屋顶信息"
                 } else if (indexPath.row == 1) {
-                    cell.textLabel?.text = "屋顶面积:" + String(rInfo!.area_size!) + "㎡"
+                    cell.textLabel?.text = "屋顶面积:" + String(describing: rInfo!.area_size!) + "㎡"
                 } else {
                     cell.textLabel?.text = "屋顶类型:" + (rInfo!.type! == 2 ? "斜面" : "平面")
                 }
             } else if (indexPath.section == 2) {
-                cell.textLabel?.text = "出租单价:" + String(rInfo!.price!) + "元/㎡"
+                cell.textLabel?.text = "出租单价:" + String(describing: rInfo!.price!) + "元/㎡"
             } else {
                 if (indexPath.row == 0) {
                     cell.textLabel?.text = "联系人信息"
@@ -184,8 +184,8 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
 
     /*

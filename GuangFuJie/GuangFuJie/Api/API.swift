@@ -13,99 +13,99 @@ class API: NSObject {
 
     static let sharedInstance = API()
 
-    private var _manager: AFHTTPSessionManager?
+    fileprivate var _manager: AFHTTPSessionManager?
 
-    private override init() {
+    fileprivate override init() {
          super.init()
         _manager = AFHTTPSessionManager()
         _manager?.responseSerializer = AFHTTPResponseSerializer();
     }
 
-    func post(url: String, params: AnyObject?, success: ((data: AnyObject?) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func post(_ url: String, params: AnyObject?, success: ((_ data: AnyObject?) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         NSLog("====> post发送 ===> \n\(url)  \(params)")
-        _manager?.POST(url, parameters: params, success: { (operation, data) in
-            var dict = try? NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+        _manager?.post(url, parameters: params, success: { (operation, data) in
+            var dict = try? JSONSerialization.jsonObject(with: (data as! NSData) as Data, options: JSONSerialization.ReadingOptions.allowFragments)
             if (dict == nil && data != nil) {
                 //解析失败可能是加密过了...
-                let resultStr = String.init(data: data as! NSData, encoding: NSUTF8StringEncoding)
-                let decodeStr = resultStr!.AES256DecryptWithKey(Constants.aeskey)
-                let decodeData = decodeStr.dataUsingEncoding(NSUTF8StringEncoding)
-                dict = try? NSJSONSerialization.JSONObjectWithData(decodeData!, options: NSJSONReadingOptions.AllowFragments)
+                let resultStr = String.init(data: (data as! NSData) as Data, encoding: String.Encoding.utf8)
+                let decodeStr = resultStr!.aes256Decrypt(withKey: Constants.aeskey)
+                let decodeData = decodeStr?.data(using: String.Encoding.utf8)
+                dict = try? JSONSerialization.jsonObject(with: decodeData!, options: JSONSerialization.ReadingOptions.allowFragments)
             }
             if (dict == nil) {
-                failure?(msg: "请求出错，请检查您的网络！")
+                failure?("请求出错，请检查您的网络！")
                 return
             }
-            if let errorCode = dict?.objectForKey("error")?.integerValue {
+            if let errorCode = ((dict as! NSDictionary)["error"] as? NSNumber)?.intValue {
                 if errorCode == 0 {
-                    let data = dict?.objectForKey("data")
+                    let data = (dict as! NSDictionary)["data"]
                     NSLog("====> post返回 ===> \(data)")
-                    success?(data: data)
+                    success?(data as AnyObject?)
                 } else {
-                    failure?(msg: dict?.objectForKey("msg") as? String)
+                    failure?((dict as! NSDictionary)["msg"] as? String)
                 }
             }
-            }, failure: { (operation, error) in
-                failure?(msg: "请求出错，请检查您的网络！")
+        }, failure: { (operation, error) in
+            failure?("请求出错，请检查您的网络！")
         })
     }
 
-    func get(url: String, params: AnyObject?, success: ((totalCount : NSNumber?, msg: String?, data: AnyObject?) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func get(_ url: String, params: AnyObject?, success: ((_ totalCount : NSNumber?, _ msg: String?, _ data: AnyObject?) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         NSLog("====> get发送 ===> \n\(url)  \(params)")
-        _manager?.GET(url, parameters: params, success: { (operation, data) in
-            var dict = try? NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+        _manager?.get(url, parameters: params, success: { (operation, data) in
+            var dict = try? JSONSerialization.jsonObject(with: (data as! NSData) as Data, options: JSONSerialization.ReadingOptions.allowFragments)
             if (dict == nil && data != nil) {
                 //解析失败可能是加密过了...
-                let resultStr = String.init(data: data as! NSData, encoding: NSUTF8StringEncoding)
-                let decodeStr = resultStr!.AES256DecryptWithKey(Constants.aeskey)
-                let decodeData = decodeStr.dataUsingEncoding(NSUTF8StringEncoding)
-                dict = try? NSJSONSerialization.JSONObjectWithData(decodeData!, options: NSJSONReadingOptions.AllowFragments)
+                let resultStr = String.init(data: (data as! NSData) as Data, encoding: String.Encoding.utf8)
+                let decodeStr = resultStr!.aes256Decrypt(withKey: Constants.aeskey)
+                let decodeData = decodeStr?.data(using: String.Encoding.utf8)
+                dict = try? JSONSerialization.jsonObject(with: decodeData!, options: JSONSerialization.ReadingOptions.allowFragments)
             }
             if (dict == nil) {
-                failure?(msg: "请求出错，请检查您的网络！")
+                failure?("请求出错，请检查您的网络！")
                 return
             }
-            if let errorCode = dict?.objectForKey("error")?.integerValue {
-                if (errorCode == 0) {
-                    let data = dict?.objectForKey("data")
-                    var msg = dict?.objectForKey("msg") as? String
+            if let errorCode = ((dict as! NSDictionary)["error"] as? NSNumber)?.intValue {
+                if errorCode == 0 {
+                    let data = (dict as! NSDictionary)["data"]
+                    var msg = (dict as! NSDictionary)["msg"]
                     if (msg == nil) {
                         msg = "请求成功"
                     }
-                    var totalCount = dict?.objectForKey("totalCount") as? NSNumber
+                    var totalCount = (dict as! NSDictionary)["totalCount"] as? NSNumber
                     if (totalCount == nil) {
                         totalCount = 0
                     }
-                    NSLog("====> get返回 ===> \(data)")
-                    success?(totalCount: totalCount, msg: msg, data: data)
+                    NSLog("====> post返回 ===> \(data)")
+                    success?(totalCount, msg as! String?, data as AnyObject?)
                 } else {
-                    failure?(msg: dict?.objectForKey("msg") as? String)
+                    failure?((dict as! NSDictionary)["msg"] as? String)
                 }
             }
-            }, failure: { (operation, error) in
-                failure?(msg: "请求出错，请检查您的网络！")
+        }, failure: { (operation, error) in
+            failure?("请求出错，请检查您的网络！")
         })
     }
     
-    func goodWeGet(url: String, params: AnyObject?, success: ((data: AnyObject?) -> Void)?, failure: ((msg: String?) -> Void)?) {
+    func goodWeGet(_ url: String, params: AnyObject?, success: ((_ data: AnyObject?) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         NSLog("====> get发送 ===> \n\(url)  \(params)")
-        _manager?.GET(url, parameters: params, success: { (operation, data) in
-            let dict = try? NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+        _manager?.get(url, parameters: params, success: { (operation, data) in
+            let dict = try? JSONSerialization.jsonObject(with: (data as! NSData) as Data, options: JSONSerialization.ReadingOptions.allowFragments)
             if (dict == nil) {
-                failure?(msg: "请求出错，请检查您的网络！")
+                failure?("请求出错，请检查您的网络！")
                 return
             }
-            success?(data: dict)
+            success?(dict as AnyObject?)
             }, failure: { (operation, error) in
-                failure?(msg: "请求出错，请检查您的网络！")
+                failure?("请求出错，请检查您的网络！")
         })
     }
 
-    func dataToJsonString(object : AnyObject) -> String{
+    func dataToJsonString(_ object : AnyObject) -> String{
         var jsonString = ""
-        let jsonData = try?NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions.PrettyPrinted)
+        let jsonData = try?JSONSerialization.data(withJSONObject: object, options: JSONSerialization.WritingOptions.prettyPrinted)
         if (jsonData != nil) {
-            jsonString = String.init(data: jsonData!, encoding: NSUTF8StringEncoding)!
+            jsonString = String.init(data: jsonData!, encoding: String.Encoding.utf8)!
         }
         return jsonString
     }

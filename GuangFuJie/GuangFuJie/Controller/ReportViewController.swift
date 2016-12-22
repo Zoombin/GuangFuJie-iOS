@@ -28,41 +28,41 @@ class ReportViewController: BaseViewController {
         let textFieldHeight = PhoneUtils.kScreenHeight / 12
         
         scrollView = UIScrollView()
-        scrollView.frame = CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight)
-        scrollView.contentSize = CGSizeMake(PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight)
+        scrollView.frame = CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight)
+        scrollView.contentSize = CGSize(width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight)
         scrollView.showsVerticalScrollIndicator = false
         self.view.addSubview(scrollView)
         
-        phoneTextField = UITextField.init(frame: CGRectMake(5, 5, PhoneUtils.kScreenWidth - 5 * 2, textFieldHeight))
+        phoneTextField = UITextField.init(frame: CGRect(x: 5, y: 5, width: PhoneUtils.kScreenWidth - 5 * 2, height: textFieldHeight))
         phoneTextField.placeholder = "请输入手机号"
-        phoneTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        phoneTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         phoneTextField.layer.borderWidth = 0.5
-        phoneTextField.layer.borderColor = UIColor.blackColor().CGColor
-        phoneTextField.backgroundColor = UIColor.whiteColor()
+        phoneTextField.layer.borderColor = UIColor.black.cgColor
+        phoneTextField.backgroundColor = UIColor.white
         scrollView.addSubview(phoneTextField)
 
         
-        reportTimeTextField = UITextField.init(frame: CGRectMake(5, CGRectGetMaxY(phoneTextField.frame) + 5, PhoneUtils.kScreenWidth - 5 * 2, textFieldHeight))
+        reportTimeTextField = UITextField.init(frame: CGRect(x: 5, y: (phoneTextField.frame).maxY + 5, width: PhoneUtils.kScreenWidth - 5 * 2, height: textFieldHeight))
         reportTimeTextField.placeholder = "请输入预约时间"
-        reportTimeTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        reportTimeTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         reportTimeTextField.layer.borderWidth = 0.5
-        reportTimeTextField.layer.borderColor = UIColor.blackColor().CGColor
-        reportTimeTextField.backgroundColor = UIColor.whiteColor()
+        reportTimeTextField.layer.borderColor = UIColor.black.cgColor
+        reportTimeTextField.backgroundColor = UIColor.white
         scrollView.addSubview(reportTimeTextField)
         
-        commentTextField = UITextField.init(frame: CGRectMake(5, CGRectGetMaxY(reportTimeTextField.frame) + 5, PhoneUtils.kScreenWidth - 5 * 2, textFieldHeight))
+        commentTextField = UITextField.init(frame: CGRect(x: 5, y: (reportTimeTextField.frame).maxY + 5, width: PhoneUtils.kScreenWidth - 5 * 2, height: textFieldHeight))
         commentTextField.placeholder = "请输入备注"
-        commentTextField.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        commentTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         commentTextField.layer.borderWidth = 0.5
-        commentTextField.layer.borderColor = UIColor.blackColor().CGColor
-        commentTextField.backgroundColor = UIColor.whiteColor()
+        commentTextField.layer.borderColor = UIColor.black.cgColor
+        commentTextField.backgroundColor = UIColor.white
         scrollView.addSubview(commentTextField)
         
-        let reportButton = UIButton.init(type: UIButtonType.Custom)
-        reportButton.frame = CGRectMake(15, CGRectGetMaxY(commentTextField.frame) + 10, PhoneUtils.kScreenWidth - 15 * 2, textFieldHeight * 0.7)
-        reportButton.setTitle("报修", forState: UIControlState.Normal)
+        let reportButton = UIButton.init(type: UIButtonType.custom)
+        reportButton.frame = CGRect(x: 15, y: (commentTextField.frame).maxY + 10, width: PhoneUtils.kScreenWidth - 15 * 2, height: textFieldHeight * 0.7)
+        reportButton.setTitle("报修", for: UIControlState.normal)
         reportButton.backgroundColor = Colors.lightBule
-        reportButton.addTarget(self, action: #selector(self.report), forControlEvents: UIControlEvents.TouchUpInside)
+        reportButton.addTarget(self, action: #selector(self.report), for: UIControlEvents.touchUpInside)
         scrollView.addSubview(reportButton)
     }
     
@@ -85,11 +85,11 @@ class ReportViewController: BaseViewController {
             self.showHint("请输入备注")
             return
         }
-        self.showHudInView(self.view, hint: "申请中...")
+        self.showHud(in: self.view, hint: "申请中...")
         API.sharedInstance.bookRepair(reportTimeTextField.text!, phone: phoneTextField.text!, comments: commentTextField.text!, device_id: device_id, success: { (commonModel) in
             self.hideHud()
             self.showHint("报修成功!")
-            self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewController(animated: true)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)

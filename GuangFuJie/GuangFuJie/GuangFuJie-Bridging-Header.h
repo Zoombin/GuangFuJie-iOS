@@ -9,8 +9,6 @@
 #import "QiniuSDK.h"
 #import "TopLeftLabel.h"
 #import "BeeCloud.h"
-#import "ChartUtils.h"
-#import "PNChart.h"
 #import "SPullDownMenuView.h"
 #import "MJExtension.h"
 #import "UIImageView+AFNetworking.h"

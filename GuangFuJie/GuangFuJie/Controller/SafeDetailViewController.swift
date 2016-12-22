@@ -19,26 +19,26 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         self.title = "我的保险"
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         initView()
         initFootView()
         loadDetail()
     }
     
     func initFootView() {
-        footImageView = UIImageView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight * 0.5))
-        footImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        footImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight * 0.5))
+        footImageView?.contentMode = UIViewContentMode.scaleAspectFit
         tableView.tableFooterView = footImageView
     }
     
     func loadDetail() {
-        self.showHudInView(self.view, hint: "加载中...")
+        self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.insuranceDetail(insuranceId!, success: { (insuranceInfo) in
             self.hideHud()
             self.info = insuranceInfo
             if (self.info!.order_status != nil) {
                 if (self.info!.order_status! == 2) {
-                    self.footImageView?.af_setImageWithURL(NSURL.init(string: self.info!.server_contract_img!)!)
+                    self.footImageView?.setImageWith(NSURL.init(string: self.info!.server_contract_img!)! as URL)
                 }
             }
             self.tableView.reloadData()
@@ -50,13 +50,13 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
     
     let cellReuseIdentifier = "cellReuseIdentifier"
     func initView() {
-        tableView = UITableView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight), style: UITableViewStyle.Grouped)
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight), style: UITableViewStyle.grouped)
+        tableView.backgroundColor = UIColor.clear
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,29 +65,29 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, 1))
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 1))
         return view
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: UITableViewCellStyle.Value1, reuseIdentifier: cellReuseIdentifier)
-        cell.textLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        cell.detailTextLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: cellReuseIdentifier)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         if (info != nil) {
-            cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
+            cell.detailTextLabel?.textColor = UIColor.lightGray
             if (indexPath.row == 0) {
                 var orderNo = "保单号："
                 if (info!.insured_sn != nil) {
@@ -96,9 +96,9 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
                 cell.textLabel?.text = orderNo
                 cell.detailTextLabel?.textColor = Colors.installColor
                 
-                if (info!.order_status?.integerValue == 2) {
+                if (info!.order_status?.int32Value == 2) {
                     cell.detailTextLabel?.text = "已成功投保"
-                } else if (info!.order_status?.integerValue == 1){
+                } else if (info!.order_status?.int32Value == 1){
                     cell.detailTextLabel?.text = "已投保"
                 } else {
                     cell.detailTextLabel?.text = "未付款"
@@ -131,7 +131,7 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
                 //金额
                 var price = "保险金额："
                 if (info?.price != nil) {
-                    price = price + String(info!.price!)
+                    price = price + String(describing: info!.price!)
                 }
                 cell.textLabel?.text = price
             } else if (indexPath.row == 6) {
@@ -139,7 +139,7 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
                 var baoeValue = "保额："
                 if (info!.size != nil) {
                     let size = NSString.init(string: info!.size!)
-                    size.stringByReplacingOccurrencesOfString("KW", withString: "")
+                    size.replacingOccurrences(of: "KW", with: "")
                     let sizeFloat : CGFloat = CGFloat(size.floatValue)
                     
                     let baoe1 : CGFloat = sizeFloat * 0.7
@@ -153,7 +153,7 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
             } else if (indexPath.row == 7) {
                 var time = "投保年限："
                 if (info!.years != nil) {
-                    time = time + String(info!.years!) + "年"
+                    time = time + String(describing: info!.years!) + "年"
                 }
                 cell.textLabel?.text = time
                 
@@ -175,8 +175,8 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
     

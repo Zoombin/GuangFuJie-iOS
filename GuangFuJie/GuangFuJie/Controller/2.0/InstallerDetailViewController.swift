@@ -32,7 +32,7 @@ class InstallerDetailViewController: BaseViewController {
     }
     
     func loadData() {
-        self.showHudInView(self.view, hint: "加载中")
+        self.showHud(in: self.view, hint: "加载中")
         API.sharedInstance.installerDetail(installer_id, success: { (installerDetail) in
                 self.hideHud()
                 self.setData(installerDetail)
@@ -42,7 +42,7 @@ class InstallerDetailViewController: BaseViewController {
         }
     }
     
-    func setData(installerDetail : InstallInfo) {
+    func setData(_ installerDetail : InstallInfo) {
         var name = ""
         if (installerDetail.company_name != nil) {
             name = installerDetail.company_name!
@@ -87,10 +87,10 @@ class InstallerDetailViewController: BaseViewController {
         }
         
         if (installerDetail.logo != nil) {
-            logoImageView.setImageWithURL(NSURL.init(string: installerDetail.logo!)!)
+            logoImageView.setImageWith(URL.init(string: installerDetail.logo!)! as URL)
         }
         if (installerDetail.license_url != nil) {
-            zhizhaoImageView.setImageWithURL(NSURL.init(string: installerDetail.license_url!)!)
+            zhizhaoImageView.setImageWith(URL.init(string: installerDetail.license_url!)! as URL)
         }
         
         var intro = ""
@@ -104,11 +104,11 @@ class InstallerDetailViewController: BaseViewController {
             height = originHeight
         }
         
-        introLabel.frame = CGRectMake(introLabel.frame.origin.x, introLabel.frame.origin.y, introLabel.frame.size.width, height)
+        introLabel.frame = CGRect(x: introLabel.frame.origin.x, y: introLabel.frame.origin.y, width: introLabel.frame.size.width, height: height)
         
-        introView.frame = CGRectMake(introView.frame.origin.x, introView.frame.origin.y, introView.frame.size.width, introView.frame.size.height + height - originHeight)
+        introView.frame = CGRect(x: introView.frame.origin.x, y: introView.frame.origin.y, width: introView.frame.size.width, height: introView.frame.size.height + height - originHeight)
         
-        scrollView.contentSize = CGSizeMake(0, CGRectGetMaxY(introView.frame))
+        scrollView.contentSize = CGSize(width: 0, height: introView.frame.maxY)
     }
 
     override func didReceiveMemoryWarning() {

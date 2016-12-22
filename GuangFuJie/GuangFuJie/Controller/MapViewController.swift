@@ -37,13 +37,13 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     }
     
     func initView() {
-        mapView = BMKMapView.init(frame: CGRectMake(0, 50,PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 50))
+        mapView = BMKMapView.init(frame: CGRect(x: 0, y: 50, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50))
         mapView.zoomLevel = 18
         mapView.mapType = UInt(BMKMapTypeSatellite)
 
         self.view.addSubview(mapView)
         
-        searchBar = UISearchBar.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, 50))
+        searchBar = UISearchBar.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: 50))
         searchBar.barTintColor = Colors.bkgColor
         searchBar.delegate = self
         self.view.addSubview(searchBar)
@@ -55,41 +55,41 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         let buttonWidth : CGFloat = 40
         let buttonHeight : CGFloat = 40
         
-        let bottomView = UIView.init(frame: CGRectMake((PhoneUtils.kScreenWidth - buttonWidth * 3) / 2, PhoneUtils.kScreenHeight - buttonHeight - 20, buttonWidth * 3, buttonHeight))
-        bottomView.backgroundColor = UIColor.whiteColor()
+        let bottomView = UIView.init(frame: CGRect(x: (PhoneUtils.kScreenWidth - buttonWidth * 3) / 2, y: PhoneUtils.kScreenHeight - buttonHeight - 20, width: buttonWidth * 3, height: buttonHeight))
+        bottomView.backgroundColor = UIColor.white
         self.view.addSubview(bottomView)
         
-        let cancelButton = UIButton.init(type: UIButtonType.Custom)
-        cancelButton.layer.borderColor = UIColor.lightGrayColor().CGColor
+        let cancelButton = UIButton.init(type: UIButtonType.custom)
+        cancelButton.layer.borderColor = UIColor.lightGray.cgColor
         cancelButton.layer.borderWidth = 0.5
-        cancelButton.frame = CGRectMake(0, 0, buttonWidth, buttonHeight)
-        cancelButton.setImage(UIImage(named: "ic_cancle"), forState: UIControlState.Normal)
-        cancelButton.addTarget(self, action: #selector(self.cancelButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        cancelButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
+        cancelButton.setImage(UIImage(named: "ic_cancle"), for: UIControlState.normal)
+        cancelButton.addTarget(self, action: #selector(self.cancelButtonClicked), for: UIControlEvents.touchUpInside)
         bottomView.addSubview(cancelButton)
         
-        let editButton = UIButton.init(type: UIButtonType.Custom)
-        editButton.layer.borderColor = UIColor.lightGrayColor().CGColor
+        let editButton = UIButton.init(type: UIButtonType.custom)
+        editButton.layer.borderColor = UIColor.lightGray.cgColor
         editButton.layer.borderWidth = 0.5
-        editButton.frame = CGRectMake(buttonWidth, 0, buttonWidth, buttonHeight)
-        editButton.setImage(UIImage(named: "ic_edit"), forState: UIControlState.Normal)
-        editButton.addTarget(self, action: #selector(self.editButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        editButton.frame = CGRect(x: buttonWidth, y: 0, width: buttonWidth, height: buttonHeight)
+        editButton.setImage(UIImage(named: "ic_edit"), for: UIControlState.normal)
+        editButton.addTarget(self, action: #selector(self.editButtonClicked), for: UIControlEvents.touchUpInside)
         bottomView.addSubview(editButton)
         
-        let sureButton = UIButton.init(type: UIButtonType.Custom)
-        sureButton.layer.borderColor = UIColor.lightGrayColor().CGColor
+        let sureButton = UIButton.init(type: UIButtonType.custom)
+        sureButton.layer.borderColor = UIColor.lightGray.cgColor
         sureButton.layer.borderWidth = 0.5
-        sureButton.frame = CGRectMake(buttonWidth * 2, 0, buttonWidth, buttonHeight)
-        sureButton.setImage(UIImage(named: "ic_yes"), forState: UIControlState.Normal)
-        sureButton.addTarget(self, action: #selector(self.sureButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        sureButton.frame = CGRect(x: buttonWidth * 2, y: 0, width: buttonWidth, height: buttonHeight)
+        sureButton.setImage(UIImage(named: "ic_yes"), for: UIControlState.normal)
+        sureButton.addTarget(self, action: #selector(self.sureButtonClicked), for: UIControlEvents.touchUpInside)
         bottomView.addSubview(sureButton)
         
-        let locationButton = UIButton.init(type: UIButtonType.Custom)
-        locationButton.backgroundColor = UIColor.whiteColor()
-        locationButton.layer.borderColor = UIColor.lightGrayColor().CGColor
+        let locationButton = UIButton.init(type: UIButtonType.custom)
+        locationButton.backgroundColor = UIColor.white
+        locationButton.layer.borderColor = UIColor.lightGray.cgColor
         locationButton.layer.borderWidth = 0.5
-        locationButton.frame = CGRectMake(20, PhoneUtils.kScreenHeight - buttonHeight - 20, buttonWidth, buttonHeight)
-        locationButton.setImage(UIImage(named: "ic_location"), forState: UIControlState.Normal)
-        locationButton.addTarget(self, action: #selector(self.startLocation), forControlEvents: UIControlEvents.TouchUpInside)
+        locationButton.frame = CGRect(x: 20, y: PhoneUtils.kScreenHeight - buttonHeight - 20, width: buttonWidth, height: buttonHeight)
+        locationButton.setImage(UIImage(named: "ic_location"), for: UIControlState.normal)
+        locationButton.addTarget(self, action: #selector(self.startLocation), for: UIControlEvents.touchUpInside)
         self.view.addSubview(locationButton)
     }
     
@@ -111,7 +111,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         alertView.show()
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         geoSearch()
     }
     
@@ -128,10 +128,10 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
             coords.append(item.coordinate)
         }
         polygon = BMKPolygon(coordinates: &coords, count: UInt(coords.count))
-        mapView.addOverlay(polygon)
+        mapView.add(polygon)
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if (alertView.cancelButtonIndex == buttonIndex) {
             return
         }
@@ -178,7 +178,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         mapView.viewWillAppear()
         
         locService.delegate = self
@@ -209,36 +209,36 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
      *@param overlay 指定的overlay
      *@return 生成的覆盖物View
      */
-    func mapView(mapView: BMKMapView!, viewForOverlay overlay: BMKOverlay!) -> BMKOverlayView! {
+    internal func mapView(_ mapView: BMKMapView!, viewFor overlay: BMKOverlay!) -> BMKOverlayView! {
         
         if (overlay as? BMKCircle) != nil {
             let circleView = BMKCircleView(overlay: overlay)
-            circleView.fillColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
-            circleView.strokeColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.5)
-            circleView.lineWidth = 5
+            circleView?.fillColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
+            circleView?.strokeColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.5)
+            circleView?.lineWidth = 5
             
             return circleView
         }
         
         if (overlay as? BMKPolygon) != nil {
             let polygonView = BMKPolygonView(overlay: overlay)
-            polygonView.strokeColor = UIColor(red: 0, green: 0, blue: 0.5, alpha: 1)
-            polygonView.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.2)
-            polygonView.lineWidth = 2
-            polygonView.lineDash = true
+            polygonView?.strokeColor = UIColor(red: 0, green: 0, blue: 0.5, alpha: 1)
+            polygonView?.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.2)
+            polygonView?.lineWidth = 2
+            polygonView?.lineDash = true
             return polygonView
         }
         
         if let overlayTemp = overlay as? BMKPolyline {
             let polylineView = BMKPolylineView(overlay: overlay)
             if overlayTemp == polyline {
-                polylineView.strokeColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
-                polylineView.lineWidth = 10
-                polylineView.loadStrokeTextureImage(UIImage(named: "texture_arrow.png"))
+                polylineView?.strokeColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
+                polylineView?.lineWidth = 10
+                polylineView?.loadStrokeTextureImage(UIImage(named: "texture_arrow.png"))
             } else if overlayTemp == colorfulPolyline {
-                polylineView.lineWidth = 5
+                polylineView?.lineWidth = 5
                 /// 使用分段颜色绘制时，必须设置（内容必须为UIColor）
-                polylineView.colors = [UIColor(red: 0, green: 1, blue: 0, alpha: 1),
+                polylineView?.colors = [UIColor(red: 0, green: 1, blue: 0, alpha: 1),
                                        UIColor(red: 1, green: 0, blue: 0, alpha: 1),
                                        UIColor(red: 1, green: 1, blue: 0, alpha: 1)]
             }
@@ -252,9 +252,9 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         
         if (overlay as? BMKArcline) != nil {
             let arclineView = BMKArclineView(overlay: overlay)
-            arclineView.strokeColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
-            arclineView.lineDash = true
-            arclineView.lineWidth = 6
+            arclineView?.strokeColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
+            arclineView?.lineDash = true
+            arclineView?.lineWidth = 6
             
             return arclineView
         }
@@ -269,7 +269,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
      *@param result 搜索结BMKGeoCodeSearch果
      *@param error 错误号，@see BMKSearchErrorCode
      */
-    func onGetGeoCodeResult(searcher: BMKGeoCodeSearch!, result: BMKGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
+    func onGetGeoCodeResult(_ searcher: BMKGeoCodeSearch!, result: BMKGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
         print("onGetGeoCodeResult error: \(error)")
         
         if error == BMK_SEARCH_NO_ERROR {
@@ -277,7 +277,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         mapView.viewWillDisappear()
         
         locService.delegate = nil
@@ -287,7 +287,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         
     }
     
-    func mapView(mapView: BMKMapView!, onClickedMapBlank coordinate: CLLocationCoordinate2D) {
+    func mapView(_ mapView: BMKMapView!, onClickedMapBlank coordinate: CLLocationCoordinate2D) {
         if (canDraw == false) {
             return
         }
@@ -320,15 +320,15 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
      *@param annotation 指定的标注
      *@return 生成的标注View
      */
-    func mapView(mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
+    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
         let AnnotationViewID = "renameMark"
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(AnnotationViewID) as! BMKPinAnnotationView?
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
         if annotationView == nil {
             annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
             // 设置颜色
             annotationView!.pinColor = UInt(BMKPinAnnotationColorRed)
             // 从天上掉下的动画
-            annotationView!.animatesDrop = true
+            annotationView!.animatesDrop = false
             // 设置是否可以拖拽
             //            annotationView!.isDraggable = false
         }
@@ -353,7 +353,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
      *用户方向更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdateUserHeading(userLocation: BMKUserLocation!) {
+    func didUpdateUserHeading(_ userLocation: BMKUserLocation!) {
         print("heading is \(userLocation.heading)")
         mapView.updateLocationData(userLocation)
     }
@@ -362,7 +362,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
      *用户位置更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
+    func didUpdate(_ userLocation: BMKUserLocation!) {
         print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         mapView.updateLocationData(userLocation)
         if (hasLocated == false) {

@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate, LoginViewDelegate {
     
-    let displayView = DisplayView()
+//    let displayView = DisplayView()
     
     var topMenuView : UIView!
     var loginView : LoginView!
@@ -20,15 +20,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         initLoginView()
         
         self.view.backgroundColor = Colors.bkgColor
-        self.navigationController!.navigationBar.tintColor = UIColor.blackColor()
+        self.navigationController!.navigationBar.tintColor = UIColor.black
         
         //设置标题的字的颜色
-        self.navigationController!.navigationBar.titleTextAttributes = NSDictionary(object: UIColor.darkGrayColor(),forKey: NSForegroundColorAttributeName) as? [String : AnyObject]
+        self.navigationController!.navigationBar.titleTextAttributes = NSDictionary(object: UIColor.darkGray,forKey: NSForegroundColorAttributeName as NSCopying) as? [String : AnyObject]
         BeeCloud.setBeeCloudDelegate(self)
     }
     
-    func showTopMenu(index : NSInteger) {
-        let topImageView = UIImageView.init(frame: CGRectMake(0, 0, 40, 40))
+    func showTopMenu(_ index : NSInteger) {
+        let topImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         topImageView.image = UIImage.init(named: "ic_home_logo")
         self.navigationItem.titleView = topImageView
         
@@ -39,33 +39,33 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         let titles = ["业主", "安装商", "发电量", "保险"]
         let buttonWidth = (screenWidth - offSetX * CGFloat(titles.count + 1))  / CGFloat(titles.count)
         
-        topMenuView = UIView.init(frame: CGRectMake(0, 64, screenWidth, buttonHeigt + offSetY * 2))
-        topMenuView.backgroundColor = UIColor.whiteColor()
+        topMenuView = UIView.init(frame: CGRect(x: 0, y: 64, width: screenWidth, height: buttonHeigt + offSetY * 2))
+        topMenuView.backgroundColor = UIColor.white
         self.view.addSubview(topMenuView)
         
         for i in 0..<titles.count {
             let startX : CGFloat = CGFloat(i) * buttonWidth + (CGFloat(i) + 1) * offSetX;
-            let button = UIButton.init(frame: CGRectMake(startX, offSetY, buttonWidth, buttonHeigt))
-            button.setTitle(titles[i], forState: UIControlState.Normal)
-            button.setTitleColor(Colors.lightGray, forState: UIControlState.Normal)
-            button.setTitleColor(Colors.lightBule, forState: UIControlState.Selected)
+            let button = UIButton.init(frame: CGRect(x: startX, y: offSetY, width: buttonWidth, height: buttonHeigt))
+            button.setTitle(titles[i], for: UIControlState.normal)
+            button.setTitleColor(Colors.lightGray, for: UIControlState.normal)
+            button.setTitleColor(Colors.lightBule, for: UIControlState.selected)
             button.layer.cornerRadius = 15
-            button.layer.borderColor = Colors.clearColor.CGColor
+            button.layer.borderColor = Colors.clearColor.cgColor
             button.layer.borderWidth = 0.5
             button.layer.masksToBounds = true
-            button.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm2)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
             button.tag = i
-            button.addTarget(self, action: #selector(self.topMenuButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: #selector(self.topMenuButtonClicked(_:)), for: UIControlEvents.touchUpInside)
             topMenuView.addSubview(button)
             if (i == index) {
-                button.layer.borderColor = Colors.borderWithGray.CGColor
-                button.selected = true
+                button.layer.borderColor = Colors.borderWithGray.cgColor
+                button.isSelected = true
             }
         }
     }
     
     func initLeftNavButton() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "user_icon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.leftButtonClicked))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "user_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.leftButtonClicked))
     }
     
     func leftButtonClicked() {
@@ -74,7 +74,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
             self.pushViewController(vc)
             return
         }
-        loginView.hidden = false
+        loginView.isHidden = false
     }
     
     //MARK:是否需要显示登录页面
@@ -82,12 +82,12 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         if (UserDefaultManager.isLogin()) {
             return false
         }
-        loginView.hidden = false
+        loginView.isHidden = false
         return true
     }
     
     func initRightNavButton() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "users_icon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.rightButtonClicked))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "users_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked))
     }
     
     func rightButtonClicked() {
@@ -98,25 +98,25 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     
     //MARK: 登录页面
     func initLoginView() {
-        loginView = LoginView(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight))
+        loginView = LoginView(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
         loginView.initView()
         loginView.delegate = self
-        loginView.hidden = true
+        loginView.isHidden = true
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window!.addSubview(loginView)
     }
     
     /**
      登录页面代理方法--获取验证码
      */
-    func getCodeButtonClicked(phone: String) {
+    func getCodeButtonClicked(_ phone: String) {
         loginView.hiddenAllKeyBoard()
         if (phone.isEmpty) {
             self.showHint("请输入手机号!")
             return
         }
-        self.showHudInView(self.view, hint: "验证码获取中...")
+        self.showHud(in: self.view, hint: "验证码获取中...")
         API.sharedInstance.userCaptcha(phone, success: { (commonModel) in
             self.hideHud()
             self.showHint("验证码将发送到您的手机!")
@@ -132,7 +132,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
      - parameter phone
      - parameter code
      */
-    func loginButtonClicked(phone: String, code: String) {
+    func loginButtonClicked(_ phone: String, code: String) {
         loginView.hiddenAllKeyBoard()
         if (phone.isEmpty) {
             self.showHint("请输入手机号!")
@@ -142,11 +142,11 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
             self.showHint("请输入验证码!")
             return
         }
-        self.showHudInView(self.view, hint: "登录中...")
+        self.showHud(in: self.view, hint: "登录中...")
         API.sharedInstance.login(phone, captcha: code, success: { (userinfo) in
             self.hideHud()
             self.showHint("登录成功!")
-            self.loginView.hidden = true
+            self.loginView.isHidden = true
             UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
             self.userDidLogin()
         }) { (msg) in
@@ -162,14 +162,14 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         
     }
     
-    func topMenuButtonClicked(sender : UIButton) {
+    func topMenuButtonClicked(_ sender : UIButton) {
         self.tabBarController?.selectedIndex = sender.tag
     }
     
-    func pushViewController(to : UIViewController) {
+    func pushViewController(_ to : UIViewController) {
         //        to.hidesBottomBarWhenPushed = true
         let image = UIImage(named: "ic_back")
-        to.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.backButtonClicked))
+        to.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.backButtonClicked))
         //注意: 加了这一句，自定义的返回按钮也可以用滑动返回了...
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.pushViewController(to, animated: true)
@@ -180,9 +180,9 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         // Dispose of any resources that can be recreated.
     }
     
-    func aliPay(billno:String,title:String,totalFee:String,type:String) {
+    func aliPay(_ billno:String,title:String,totalFee:String,type:String) {
         let payReq = BCPayReq()
-        payReq.channel = PayChannel.AliApp
+        payReq.channel = PayChannel.aliApp
         payReq.title = title
         payReq.totalFee = totalFee //单位是分
         payReq.billNo = billno
@@ -194,13 +194,13 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     //支付回调
-    func onBeeCloudResp(resp: BCBaseResp!) {
-        if (resp.type == BCObjsType.PayResp) {
+    func onBeeCloudResp(_ resp: BCBaseResp!) {
+        if (resp.type == BCObjsType.payResp) {
             let timeResp : BCPayResp = resp as! BCPayResp
             print(timeResp.resultMsg)
             if (timeResp.resultCode == 0) {
                 self.showHint("购买成功")
-                self.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popViewController(animated: true)
             } else {
                 self.showHint(timeResp.resultMsg)
             }
@@ -211,15 +211,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     func selectPhotoPicker() {
         let actionSheet = UIActionSheet.init()
         actionSheet.title = "选择方式"
-        actionSheet.addButtonWithTitle("拍照")
-        actionSheet.addButtonWithTitle("相册")
-        actionSheet.addButtonWithTitle("取消")
+        actionSheet.addButton(withTitle: "拍照")
+        actionSheet.addButton(withTitle: "相册")
+        actionSheet.addButton(withTitle: "取消")
         actionSheet.cancelButtonIndex = 2
         actionSheet.delegate = self
-        actionSheet.showInView(self.view)
+        actionSheet.show(in: self.view)
     }
     
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         if (actionSheet.cancelButtonIndex == buttonIndex) {
             return
         }
@@ -236,12 +236,12 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
-        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(picker, animated: true, completion: nil)
+        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        self.present(picker, animated: true, completion: nil)
     }
     
     func takePhoto() {
-        if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
+        if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
             self.showHint("模拟机不能使用相机")
             return
         }
@@ -249,66 +249,66 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
-        picker.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(picker, animated: true, completion: nil)
+        picker.sourceType = UIImagePickerControllerSourceType.camera
+        self.present(picker, animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo
-        info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo
+        info: [String : Any]) {
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
         pickerCallback(image)
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     //图片回调方法
-    func pickerCallback(image : UIImage) {
+    func pickerCallback(_ image : UIImage) {
     }
     
     func backButtonClicked() {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
-    func showPhotos(urls : NSMutableArray, index : NSInteger, isLocal: Bool) {
-        for view in displayView.subviews {
-            view.removeFromSuperview()
-        }
-        displayView.imgsPrepare(urls as! [String], isLocal: isLocal)
-        
-        let pbVC = PhotoBrowser()
-        
-        /**  set album demonstration style  */
-        pbVC.showType = PhotoBrowser.ShowType.ZoomAndDismissWithSingleTap
-        
-        /**  set album style  */
-        if (isLocal) {
-            pbVC.photoType = PhotoBrowser.PhotoType.Local
-        } else {
-            pbVC.photoType = PhotoBrowser.PhotoType.Host
-        }
-        
-        //forbid showing all info
-        pbVC.hideMsgForZoomAndDismissWithSingleTap = true
-        
-        var models: [PhotoBrowser.PhotoModel] = []
-        
-        for i in 0..<urls.count {
-            let imageUrl = urls[i] as! String
-            if (!isLocal) {
-                let model = PhotoBrowser.PhotoModel(hostHDImgURL: imageUrl, hostThumbnailImg: nil, titleStr: "", descStr:"", sourceView: displayView.subviews[i] )
-                models.append(model)
-            } else {
-                var image = UIImage(named: imageUrl)
-                if (image == nil) {
-                    image = UIImage.init(data: NSData.init(contentsOfURL: NSURL.init(string: imageUrl)!)!)
-                }
-                let model = PhotoBrowser.PhotoModel(localImg:image , titleStr: "", descStr:"", sourceView: displayView.subviews[i] )
-                models.append(model)
-            }
-        }
-        /**  set models   */
-        pbVC.photoModels = models
-        
-        pbVC.show(inVC: self,index: index)
+    func showPhotos(_ urls : NSMutableArray, index : NSInteger, isLocal: Bool) {
+//        for view in displayView.subviews {
+//            view.removeFromSuperview()
+//        }
+//        displayView.imgsPrepare(urls as! [String], isLocal: isLocal)
+//        
+//        let pbVC = PhotoBrowser()
+//        
+//        /**  set album demonstration style  */
+//        pbVC.showType = PhotoBrowser.ShowType.ZoomAndDismissWithSingleTap
+//        
+//        /**  set album style  */
+//        if (isLocal) {
+//            pbVC.photoType = PhotoBrowser.PhotoType.Local
+//        } else {
+//            pbVC.photoType = PhotoBrowser.PhotoType.Host
+//        }
+//        
+//        //forbid showing all info
+//        pbVC.hideMsgForZoomAndDismissWithSingleTap = true
+//        
+//        var models: [PhotoBrowser.PhotoModel] = []
+//        
+//        for i in 0..<urls.count {
+//            let imageUrl = urls[i] as! String
+//            if (!isLocal) {
+//                let model = PhotoBrowser.PhotoModel(hostHDImgURL: imageUrl, hostThumbnailImg: nil, titleStr: "", descStr:"", sourceView: displayView.subviews[i] )
+//                models.append(model)
+//            } else {
+//                var image = UIImage(named: imageUrl)
+//                if (image == nil) {
+//                    image = UIImage.init(data: NSData.init(contentsOfURL: NSURL.init(string: imageUrl)!)!)
+//                }
+//                let model = PhotoBrowser.PhotoModel(localImg:image , titleStr: "", descStr:"", sourceView: displayView.subviews[i] )
+//                models.append(model)
+//            }
+//        }
+//        /**  set models   */
+//        pbVC.photoModels = models
+//        
+//        pbVC.show(inVC: self,index: index)
     }
     
     /*

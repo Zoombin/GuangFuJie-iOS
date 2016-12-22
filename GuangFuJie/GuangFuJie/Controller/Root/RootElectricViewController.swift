@@ -33,24 +33,24 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
     
     func addNoDataButton() {
         let startX = (PhoneUtils.kScreenWidth - 160) / 2
-        noDataView = UIView.init(frame: CGRectMake(startX, 50, 160, 20))
-        noDataView.backgroundColor = UIColor.clearColor()
+        noDataView = UIView.init(frame: CGRect(x: startX, y:50, width: 160, height: 20))
+        noDataView.backgroundColor = UIColor.clear
         deviceTableView.addSubview(noDataView)
         
-        let noDeviceLabel = UILabel.init(frame: CGRectMake(0, 0, 90, 20))
+        let noDeviceLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 90, height: 20))
         noDeviceLabel.text = "暂无绑定设备"
-        noDeviceLabel.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
+        noDeviceLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         noDataView.addSubview(noDeviceLabel)
         
-        let noDeviceButton = UIButton.init(type: UIButtonType.Custom)
-        noDeviceButton.setTitle("点击绑定", forState: UIControlState.Normal)
-        noDeviceButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
-        noDeviceButton.frame = CGRectMake(CGRectGetMaxX(noDeviceLabel.frame), 0, 70, 20)
-        noDeviceButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        noDeviceButton.addTarget(self, action: #selector(self.deviceButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        let noDeviceButton = UIButton.init(type: UIButtonType.custom)
+        noDeviceButton.setTitle("点击绑定", for: UIControlState.normal)
+        noDeviceButton.setTitleColor(Colors.installColor, for: UIControlState.normal)
+        noDeviceButton.frame = CGRect(x: noDeviceLabel.frame.maxX, y: 0, width: 70, height: 20)
+        noDeviceButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        noDeviceButton.addTarget(self, action: #selector(self.deviceButtonClicked), for: UIControlEvents.touchUpInside)
         noDataView.addSubview(noDeviceButton)
         
-        noDataView.hidden = true
+        noDataView.isHidden = true
     }
     
     override func userDidLogin() {
@@ -62,7 +62,7 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
             self.devicesArray.removeAllObjects()
             self.deviceTableView.reloadData()
             if (self.devicesArray.count == 0) {
-                self.noDataView.hidden = false
+                self.noDataView.isHidden = false
             }
             return
         }
@@ -71,12 +71,12 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
             self.hideHud()
             self.devicesArray.removeAllObjects()
             if (deviceList.count > 0) {
-                self.noDataView.hidden = true
-                self.devicesArray.addObjectsFromArray(deviceList as [AnyObject])
+                self.noDataView.isHidden = true
+                self.devicesArray.addObjects(from: deviceList as [AnyObject])
             }
             self.deviceTableView.reloadData()
             if (self.devicesArray.count == 0) {
-                self.noDataView.hidden = false
+                self.noDataView.isHidden = false
             }
         }) { (msg) in
             self.hideHud()
@@ -84,7 +84,7 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("发电量")
         loadData()
@@ -93,29 +93,29 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
     //MARK: 业主
     let deviceCellReuseIdentifier = "deviceCellReuseIdentifier"
     func initDeviceList() {
-        deviceTableView = UITableView.init(frame: CGRectMake(0, 64 + topMenuView.frame.size.height, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 64 - topMenuView.frame.size.height - 50), style: UITableViewStyle.Plain)
+        deviceTableView = UITableView.init(frame: CGRect(x: 0, y: 64 + topMenuView.frame.size.height, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topMenuView.frame.size.height - 50), style: UITableViewStyle.plain)
         deviceTableView.delegate = self
         deviceTableView.dataSource = self
         deviceTableView.backgroundColor = Colors.bkgColor
-        deviceTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        deviceTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.view.addSubview(deviceTableView)
         
-        deviceTableView.registerNib(UINib(nibName: DeviceCell.getNidName(), bundle: nil), forCellReuseIdentifier: "DeviceCell")
+        deviceTableView.register(UINib(nibName: DeviceCell.getNidName(), bundle: nil), forCellReuseIdentifier: "DeviceCell")
     
-        let deviceBottomView = UIView.init(frame: CGRectMake(0, CGRectGetMaxY(deviceTableView.frame), PhoneUtils.kScreenWidth, 50))
-        deviceBottomView.backgroundColor = UIColor.whiteColor()
+        let deviceBottomView = UIView.init(frame: CGRect(x: 0, y: deviceTableView.frame.maxY, width: PhoneUtils.kScreenWidth, height: 50))
+        deviceBottomView.backgroundColor = UIColor.white
         self.view.addSubview(deviceBottomView)
         
         let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
         let buttonHeight = deviceBottomView.frame.size.height - 5 * 2
         
-        let bindButton = UIButton.init(type: UIButtonType.Custom)
-        bindButton.frame = CGRectMake(5, 5, buttonWidth, buttonHeight)
-        bindButton.setTitle("绑定设备", forState: UIControlState.Normal)
+        let bindButton = UIButton.init(type: UIButtonType.custom)
+        bindButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        bindButton.setTitle("绑定设备", for: UIControlState.normal)
         bindButton.backgroundColor = Colors.installColor
-        bindButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        bindButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        bindButton.addTarget(self, action: #selector(self.deviceButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        bindButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        bindButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        bindButton.addTarget(self, action: #selector(self.deviceButtonClicked), for: UIControlEvents.touchUpInside)
         deviceBottomView.addSubview(bindButton)
     }
     
@@ -127,25 +127,23 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
         self.pushViewController(vc)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return devicesArray.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DeviceCell", forIndexPath: indexPath) as! DeviceCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCell", for: indexPath as IndexPath) as! DeviceCell
         let device = devicesArray[indexPath.row] as! DeviceListInfo
         cell.setData(device)
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return DeviceCell.cellHeight()
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         let device = devicesArray[indexPath.row] as! DeviceListInfo
         let vc = DeviceDetailViewController()
         vc.device_id = device.device_id!

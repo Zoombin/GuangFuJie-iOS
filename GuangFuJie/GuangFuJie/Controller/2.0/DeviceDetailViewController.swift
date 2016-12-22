@@ -52,67 +52,67 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         // Do any additional setup after loading the view.
     }
     
-    func topButtonClicked(sender: UIButton) {
+    func topButtonClicked(_ sender: UIButton) {
         currentIndex = sender.tag
         normalInfoButton.backgroundColor = Colors.topButtonColor
         lineButton.backgroundColor = Colors.topButtonColor
         barButton.backgroundColor = Colors.topButtonColor
-        electricView.hidden = true
-        picView.hidden = true
+        electricView.isHidden = true
+        picView.isHidden = true
         if (pnBarChart != nil && pnLineChart != nil) {
-            pnBarChart.hidden = true
-            pnLineChart.hidden = true
+            pnBarChart.isHidden = true
+            pnLineChart.isHidden = true
         }
         
         if (sender.tag == 0) {
             normalInfoButton.backgroundColor = Colors.installColor
-            electricView.hidden = false
+            electricView.isHidden = false
         } else if (sender.tag == 1) {
             lineButton.backgroundColor = Colors.installColor
-            picView.hidden = false
+            picView.isHidden = false
             loadPicData()
             if (pnLineChart != nil) {
-                pnLineChart.hidden = false
+                pnLineChart.isHidden = false
             }
         } else if (sender.tag == 2) {
             barButton.backgroundColor = Colors.installColor
-            picView.hidden = false
+            picView.isHidden = false
             loadPicData()
             if (pnBarChart != nil) {
-                pnBarChart.hidden = false
+                pnBarChart.isHidden = false
             }
         }
     }
     
     func initTopView() {
-        let topView = UIView.init(frame: CGRectMake(0, 64, PhoneUtils.kScreenWidth, topButtonHeight))
-        topView.backgroundColor = UIColor.lightGrayColor()
+        let topView = UIView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: topButtonHeight))
+        topView.backgroundColor = UIColor.lightGray
         self.view.addSubview(topView)
         
-        normalInfoButton = UIButton.init(type: UIButtonType.Custom)
-        normalInfoButton.setTitle("基本信息", forState: UIControlState.Normal)
-        normalInfoButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        normalInfoButton = UIButton.init(type: UIButtonType.custom)
+        normalInfoButton.setTitle("基本信息", for: UIControlState.normal)
+        normalInfoButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         normalInfoButton.backgroundColor = Colors.installColor
-        normalInfoButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        normalInfoButton.frame = CGRectMake(0, 0, (PhoneUtils.kScreenWidth / 3) - 1, topButtonHeight)
+        normalInfoButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), for: UIControlEvents.touchUpInside)
+        normalInfoButton.frame = CGRect(x: 0, y: 0, width: (PhoneUtils.kScreenWidth / 3) - 1, height: topButtonHeight)
         normalInfoButton.tag = 0
         topView.addSubview(normalInfoButton)
         
-        lineButton = UIButton.init(type: UIButtonType.Custom)
-        lineButton.setTitle("曲线图", forState: UIControlState.Normal)
-        lineButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        lineButton = UIButton.init(type: UIButtonType.custom)
+        lineButton.setTitle("曲线图", for: UIControlState.normal)
+        lineButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         lineButton.backgroundColor = Colors.topButtonColor
-        lineButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        lineButton.frame = CGRectMake((PhoneUtils.kScreenWidth / 3) + 1, 0, (PhoneUtils.kScreenWidth / 3) - 1, topButtonHeight)
+        lineButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), for: UIControlEvents.touchUpInside)
+        lineButton.frame = CGRect(x: (PhoneUtils.kScreenWidth / 3) + 1, y: 0, width: (PhoneUtils.kScreenWidth / 3) - 1, height: topButtonHeight)
         lineButton.tag = 1
         topView.addSubview(lineButton)
         
-        barButton = UIButton.init(type: UIButtonType.Custom)
-        barButton.setTitle("柱状图", forState: UIControlState.Normal)
-        barButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        barButton = UIButton.init(type: UIButtonType.custom)
+        barButton.setTitle("柱状图", for: UIControlState.normal)
+        barButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         barButton.backgroundColor = Colors.topButtonColor
-        barButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        barButton.frame = CGRectMake((PhoneUtils.kScreenWidth * 2 / 3) + 1 * 2, 0, (PhoneUtils.kScreenWidth / 3) - 1, topButtonHeight)
+        barButton.addTarget(self, action: #selector(self.topButtonClicked(_:)), for: UIControlEvents.touchUpInside)
+        barButton.frame = CGRect(x: (PhoneUtils.kScreenWidth * 2 / 3) + 1 * 2, y: 0, width: (PhoneUtils.kScreenWidth / 3) - 1, height: topButtonHeight)
         barButton.tag = 2
         topView.addSubview(barButton)
     }
@@ -126,12 +126,12 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         if (alertView.cancelButtonIndex == buttonIndex) {
             return
         }
-        self.showHudInView(self.view, hint: "解绑中...")
+        self.showHud(in: self.view, hint: "解绑中...")
         if (alertView.cancelButtonIndex != buttonIndex) {
             API.sharedInstance.unBindDevice(device_id, success: { (commomModel) in
                     self.hideHud()
                     self.showHint("解绑成功!")
-                    self.navigationController?.popViewControllerAnimated(true)
+                    self.navigationController?.popViewController(animated: true)
                 }, failure: { (msg) in
                     self.hideHud()
                     self.showHint(msg)
@@ -141,64 +141,56 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     
     //MARK: 发电量
     func initElectricView() {
-        electricView = UIView.init(frame: CGRectMake(0, 64 + topButtonHeight, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 64 - topButtonHeight))
+        electricView = UIView.init(frame: CGRect(x: 0, y: 64 + topButtonHeight, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topButtonHeight))
         electricView.backgroundColor = Colors.bkgGray
         self.view.addSubview(electricView)
         
-        let deviceBottomView = UIView.init(frame: CGRectMake(0, electricView.frame.size.height - 50, PhoneUtils.kScreenWidth, 50))
-        deviceBottomView.backgroundColor = UIColor.whiteColor()
+        let deviceBottomView = UIView.init(frame: CGRect(x: 0, y: electricView.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        deviceBottomView.backgroundColor = UIColor.white
         electricView.addSubview(deviceBottomView)
         
-        let removeButton = UIButton.init(type: UIButtonType.Custom)
-        removeButton.frame = CGRectMake(5, 5, PhoneUtils.kScreenWidth - 5 * 2, deviceBottomView.frame.size.height - 5 * 2)
-        removeButton.setTitle("解绑设备", forState: UIControlState.Normal)
+        let removeButton = UIButton.init(type: UIButtonType.custom)
+        removeButton.frame = CGRect(x: 5, y: 5, width: PhoneUtils.kScreenWidth - 5 * 2, height: deviceBottomView.frame.size.height - 5 * 2)
+        removeButton.setTitle("解绑设备", for: UIControlState.normal)
         removeButton.backgroundColor = Colors.installColor
-        removeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        removeButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizelarge2)
-        removeButton.addTarget(self, action: #selector(self.removeDeviceButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        removeButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        removeButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        removeButton.addTarget(self, action: #selector(self.removeDeviceButtonClicked), for: UIControlEvents.touchUpInside)
         deviceBottomView.addSubview(removeButton)
     
         let labelHeight = PhoneUtils.kScreenHeight / 12
         
-        let topView = UIView.init(frame: CGRectMake(0, 0, PhoneUtils.kScreenWidth, labelHeight))
-        topView.backgroundColor = UIColor.whiteColor()
+        let topView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: labelHeight))
+        topView.backgroundColor = UIColor.white
         electricView.addSubview(topView)
         
         //运行状态
-        statusButton = UIButton.init(type: UIButtonType.Custom)
-        statusButton.frame = CGRectMake(0, 0, PhoneUtils.kScreenWidth * 1 / 2, labelHeight)
-        statusButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeComm)
-        statusButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        statusButton.setTitle("运行状态 正常", forState: UIControlState.Normal)
-//        statusButton.setTitle("运行状态 故障（点击报修）", forState: UIControlState.Selected)
-//        statusButton.setTitle("运行状态 离线", forState: UIControlState.Disabled)
+        statusButton = UIButton.init(type: UIButtonType.custom)
+        statusButton.frame = CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth * 1 / 2, height: labelHeight)
+        statusButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        statusButton.setTitle("运行状态 正常", for: UIControlState.normal)
         
-        statusButton.setTitleColor(Colors.statusOK, forState: UIControlState.Normal)
-//        statusButton.setTitleColor(Colors.statusError, forState: UIControlState.Selected)
-//        statusButton.setTitleColor(Colors.statusOffLine, forState: UIControlState.Disabled)
-        
-        statusButton.setImage(UIImage(named: "ic_devstatus_ok"), forState: UIControlState.Normal)
-//        statusButton.setImage(UIImage(named: "ic_devstatus_error"), forState: UIControlState.Selected)
-//        statusButton.setImage(UIImage(named: "ic_devstatus_offline"), forState: UIControlState.Disabled)
-        statusButton.userInteractionEnabled = false
-        statusButton.addTarget(self, action: #selector(self.reportPro), forControlEvents: UIControlEvents.TouchUpInside)
-        statusButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        statusButton.setTitleColor(Colors.statusOK, for: UIControlState.normal)
+        statusButton.setImage(UIImage(named: "ic_devstatus_ok"), for: UIControlState.normal)
+        statusButton.isUserInteractionEnabled = false
+        statusButton.addTarget(self, action: #selector(self.reportPro), for: UIControlEvents.touchUpInside)
+        statusButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         statusButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
-        statusButton.backgroundColor = UIColor.whiteColor()
+        statusButton.backgroundColor = UIColor.white
         statusButton.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         topView.addSubview(statusButton)
         
         //sn
-        snButton = UIButton.init(type: UIButtonType.Custom)
-        snButton.frame = CGRectMake(PhoneUtils.kScreenWidth * 1 / 2, 0, PhoneUtils.kScreenWidth * 1 / 2, labelHeight)
-        snButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-        snButton.setTitle(device_id, forState: UIControlState.Normal)
-        snButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-        snButton.setImage(UIImage(named: "ic_dev_sn"), forState: UIControlState.Normal)
-        snButton.userInteractionEnabled = false
-        snButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        snButton = UIButton.init(type: UIButtonType.custom)
+        snButton.frame = CGRect(x: PhoneUtils.kScreenWidth * 1 / 2, y: 0, width: PhoneUtils.kScreenWidth * 1 / 2, height: labelHeight)
+        snButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+        snButton.setTitle(device_id, for: UIControlState.normal)
+        snButton.setTitleColor(UIColor.lightGray, for: UIControlState.normal)
+        snButton.setImage(UIImage(named: "ic_dev_sn"), for: UIControlState.normal)
+        snButton.isUserInteractionEnabled = false
+        snButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         snButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
-        snButton.backgroundColor = UIColor.whiteColor()
+        snButton.backgroundColor = UIColor.white
         topView.addSubview(snButton)
         
         let buttonWidth = PhoneUtils.kScreenWidth / 4
@@ -214,29 +206,29 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
                 line = line + 1
                 index = 0
             }
-            let view = UIView.init(frame: CGRectMake(CGFloat(index) * buttonWidth * 2, CGRectGetMaxY(topView.frame) + labelHeight * CGFloat(line), buttonWidth * 2, labelHeight))
-            view.backgroundColor = UIColor.whiteColor()
-            view.layer.borderColor = Colors.bkgGray.CGColor
+            let view = UIView.init(frame: CGRect(x: CGFloat(index) * buttonWidth * 2, y: topView.frame.maxY + labelHeight * CGFloat(line), width: buttonWidth * 2, height: labelHeight))
+            view.backgroundColor = UIColor.white
+            view.layer.borderColor = Colors.bkgGray.cgColor
             view.layer.borderWidth = 0.5
             electricView.addSubview(view)
             
             //今日发电
-            let titleButton = UIButton.init(type: UIButtonType.Custom)
-            titleButton.frame = CGRectMake(0, 0, buttonWidth, labelHeight)
-            titleButton.titleLabel?.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
-            titleButton.setTitle(titles[i], forState: UIControlState.Normal)
-            titleButton.setTitleColor(Colors.installColor, forState: UIControlState.Normal)
-            titleButton.setImage(UIImage(named: icons[i]), forState: UIControlState.Normal)
+            let titleButton = UIButton.init(type: UIButtonType.custom)
+            titleButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: labelHeight)
+            titleButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+            titleButton.setTitle(titles[i], for: UIControlState.normal)
+            titleButton.setTitleColor(Colors.installColor, for: UIControlState.normal)
+            titleButton.setImage(UIImage(named: icons[i]), for: UIControlState.normal)
             titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
             view.addSubview(titleButton)
             
-            let label = UILabel.init(frame:CGRectMake(buttonWidth, 0, buttonWidth, labelHeight))
-            label.font = UIFont.systemFontOfSize(Dimens.fontSizeSmall)
+            let label = UILabel.init(frame:CGRect(x: buttonWidth, y: 0, width: buttonWidth, height: labelHeight))
+            label.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
             label.text = ""
-            label.textColor = UIColor.blackColor()
+            label.textColor = UIColor.black
             view.addSubview(label)
             
-            labels.addObject(label)
+            labels.add(label)
             index = index + 1
         }
         
@@ -251,19 +243,19 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func refreshButtonStatus(deviceInfo: DeviceInfo) {
-        if (deviceInfo.status?.integerValue == 1) {
-            statusButton.setTitle("运行状态 正常", forState: UIControlState.Normal)
-            statusButton.setTitleColor(Colors.statusOK, forState: UIControlState.Normal)
-            statusButton.setImage(UIImage(named: "ic_devstatus_ok"), forState: UIControlState.Normal)
-        } else if (deviceInfo.status?.integerValue == 2) {
-            statusButton.setTitle("运行状态 故障（点击报修）", forState: UIControlState.Normal)
-            statusButton.setTitleColor(Colors.statusError, forState: UIControlState.Normal)
-            statusButton.setImage(UIImage(named: "ic_devstatus_error"), forState: UIControlState.Normal)
-            statusButton.userInteractionEnabled = true
-        } else if (deviceInfo.status?.integerValue == 3) {
-            statusButton.setTitle("运行状态 离线", forState: UIControlState.Normal)
-            statusButton.setTitleColor(Colors.statusOffLine, forState: UIControlState.Normal)
-            statusButton.setImage(UIImage(named: "ic_devstatus_offline"), forState: UIControlState.Normal)
+        if (deviceInfo.status?.intValue == 1) {
+            statusButton.setTitle("运行状态 正常", for: UIControlState.normal)
+            statusButton.setTitleColor(Colors.statusOK, for: UIControlState.normal)
+            statusButton.setImage(UIImage(named: "ic_devstatus_ok"), for: UIControlState.normal)
+        } else if (deviceInfo.status?.intValue == 2) {
+            statusButton.setTitle("运行状态 故障（点击报修）", for: UIControlState.normal)
+            statusButton.setTitleColor(Colors.statusError, for: UIControlState.normal)
+            statusButton.setImage(UIImage(named: "ic_devstatus_error"), for: UIControlState.normal)
+            statusButton.isUserInteractionEnabled = true
+        } else if (deviceInfo.status?.intValue == 3) {
+            statusButton.setTitle("运行状态 离线", for: UIControlState.normal)
+            statusButton.setTitleColor(Colors.statusOffLine, for: UIControlState.normal)
+            statusButton.setImage(UIImage(named: "ic_devstatus_offline"), for: UIControlState.normal)
         }
     }
     
@@ -271,10 +263,10 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         if (self.infoArray.count > 0) {
             return
         }
-        self.showHudInView(self.view, hint: "加载中...")
+        self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.getEnergyStatistic(device_id, year: "2016", success: { (powerGraphInfos) in
             self.hideHud()
-            self.infoArray.addObjectsFromArray(powerGraphInfos as [AnyObject])
+            self.infoArray.addObjects(from: powerGraphInfos as [AnyObject])
             self.initLineBarChart()
         }) { (msg) in
             self.hideHud()
@@ -287,15 +279,15 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         let yLabels = NSMutableArray()
         for i in 0..<infoArray.count {
             let power = infoArray[i] as! PowerGraphInfo
-            xLabels.addObject(String(power.month!) + "月")
-            yLabels.addObject(power.energy_month == nil ? NSNumber.init(integer: 0) : power.energy_month!)
+            xLabels.add(String(describing: power.month!) + "月")
+            yLabels.add(power.energy_month == nil ? NSNumber.init(value: 0) : power.energy_month!)
         }
         
         initLineChart(xLabels, yLabels: yLabels)
         initBarChart(xLabels, yLabels: yLabels)
     }
     
-    func initLineChart(xLabels : NSArray, yLabels : NSArray) {
+    func initLineChart(_ xLabels : NSArray, yLabels : NSArray) {
         if (xLabels.count != yLabels.count) {
             return
         }
@@ -307,26 +299,26 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             let xValue = xLabels[i] as! String
             let yValue = yLabels[i] as! NSNumber
             
-            let data = ChartDataEntry.init(value: yValue.doubleValue, xIndex: i)
+            let data = ChartDataEntry.init(x: Double(i), y: yValue.doubleValue)
             entries.append(data)
             xValues.append(xValue)
         }
         
-        let dataSet: LineChartDataSet = LineChartDataSet(yVals: entries, label: "2016年发电量走势(单位:kw)")
+        let dataSet: LineChartDataSet = LineChartDataSet(values: entries, label: "2016年发电量走势(单位:kw)")
         
         let offSetY : CGFloat = 0
         
-        pnLineChart = LineChartView(frame: CGRectMake(0, offSetY, PhoneUtils.kScreenWidth, picView.frame.size.height - offSetY))
-        pnLineChart.backgroundColor = NSUIColor.clearColor()
-        pnLineChart.leftAxis.axisMinValue = 0.0
-        pnLineChart.rightAxis.axisMinValue = 0.0
-        pnLineChart.data = LineChartData(xVals: xValues, dataSet: dataSet)
+        pnLineChart = LineChartView(frame: CGRect(x: 0, y: offSetY, width: PhoneUtils.kScreenWidth, height: picView.frame.size.height - offSetY))
+        pnLineChart.backgroundColor = NSUIColor.clear
+        pnLineChart.leftAxis.axisMinimum = 0.0
+        pnLineChart.rightAxis.axisMinimum = 0.0
+        pnLineChart.data = LineChartData(dataSet: dataSet)
         picView.addSubview(pnLineChart)
-        pnLineChart.hidden = currentIndex != 1
-        pnLineChart.descriptionText = ""
+        pnLineChart.isHidden = currentIndex != 1
+        pnLineChart.chartDescription?.text = ""
     }
     
-    func initBarChart(xLabels : NSArray, yLabels : NSArray) {
+    func initBarChart(_ xLabels : NSArray, yLabels : NSArray) {
         var entries: [BarChartDataEntry] = Array()
         var xValues: [String] = Array()
         
@@ -334,35 +326,35 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             let xValue = xLabels[i] as! String
             let yValue = yLabels[i] as! NSNumber
             
-            let data = BarChartDataEntry.init(value: yValue.doubleValue, xIndex: i)
+            let data = BarChartDataEntry.init(x: Double(i), y: yValue.doubleValue)
             entries.append(data)
             xValues.append(xValue)
         }
         
-        let dataSet: BarChartDataSet = BarChartDataSet(yVals: entries, label: "2016年发电量走势(单位:kw)")
+        let dataSet: BarChartDataSet = BarChartDataSet(values: entries, label: "2016年发电量走势(单位:kw)")
         
         let offSetY : CGFloat = 0
         
-        pnBarChart = BarChartView(frame: CGRectMake(0, offSetY, PhoneUtils.kScreenWidth, picView.frame.size.height - offSetY))
-        pnBarChart.backgroundColor = NSUIColor.clearColor()
-        pnBarChart.leftAxis.axisMinValue = 0.0
-        pnBarChart.rightAxis.axisMinValue = 0.0
-        pnBarChart.data = BarChartData(xVals: xValues, dataSet: dataSet)
+        pnBarChart = BarChartView(frame: CGRect(x: 0, y: offSetY, width: PhoneUtils.kScreenWidth, height: picView.frame.size.height - offSetY))
+        pnBarChart.backgroundColor = NSUIColor.clear
+        pnBarChart.leftAxis.axisMinimum = 0.0
+        pnBarChart.rightAxis.axisMinimum = 0.0
+        pnBarChart.data = BarChartData(dataSet: dataSet)
         picView.addSubview(pnBarChart)
-        pnBarChart.hidden = currentIndex != 2
-        pnBarChart.descriptionText = ""
+        pnBarChart.isHidden = currentIndex != 2
+        pnBarChart.chartDescription?.text = ""
     }
     
     func initPicView() {
-        picView = UIView.init(frame: CGRectMake(0, 64 + topButtonHeight, PhoneUtils.kScreenWidth, PhoneUtils.kScreenHeight - 64 - topButtonHeight))
-        picView.hidden = true
+        picView = UIView.init(frame: CGRect(x: 0, y: 64 + topButtonHeight, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topButtonHeight))
+        picView.isHidden = true
         self.view.addSubview(picView)
     }
     
     func getDeviceInfo() {
         API.sharedInstance.deviceInfo(device_id, success: { (deviceInfo) in
             self.hideHud()
-            self.loadDeviceInfo(deviceInfo)
+            self.loadDeviceInfo(deviceInfo: deviceInfo)
             }, failure: { (msg) in
                 self.hideHud()
                 self.showHint(msg)
@@ -370,8 +362,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func loadDeviceInfo(deviceInfo : DeviceInfo) {
-        refreshButtonStatus(deviceInfo)
-    
+        refreshButtonStatus(deviceInfo: deviceInfo)
         if (deviceInfo.energy_day == nil || deviceInfo.energy_all == nil) {
             todayElectricLabel.text = "0kw"
             totalElectricLabel.text = "0kw"
@@ -392,7 +383,6 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         todayplantLabel.text = String(format: "%.2f棵", deviceInfo.energy_day!.floatValue * 0.272 / 100)
         totalplantLabel.text = String(format: "%.2f棵", deviceInfo.energy_all!.floatValue * 0.272 / 100)
     }
-    
     
     //报修
     func reportPro() {
