@@ -301,6 +301,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     // MARK: - IBAction
     func startLocation() {
         print("进入普通定位态");
+        hasLocated = false
         locService.startUserLocationService()
         mapView.showsUserLocation = false//先关闭显示的定位图层
         mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
