@@ -46,6 +46,7 @@ class ToBeInstallerViewController: BaseViewController, UITextViewDelegate, Provi
         self.showHud(in: self.view, hint: "正在上传")
         API.sharedInstance.qnToken(key, success: { (info) in
             API.sharedInstance.uploadData(imgData!, key: key, token: info.token!, success: { (result) in
+                self.hideHud()
                 if (result.info?.error != nil) {
                     self.showHint("上传失败")
                 } else {
