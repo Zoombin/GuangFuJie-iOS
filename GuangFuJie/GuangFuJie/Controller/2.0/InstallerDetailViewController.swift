@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstallerDetailViewController: BaseViewController {
+class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var addressLabel : UILabel!
     @IBOutlet weak var phoneLabel : UILabel!
@@ -29,6 +29,39 @@ class InstallerDetailViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         loadData()
+        initView()
+    }
+    
+    func initView() {
+        self.view.backgroundColor = UIColor.yellow
+        scrollView.frame = CGRect(x: 0, y: scrollView.frame.origin.y, width: scrollView.frame.size.width, height: scrollView.frame.size.height - 50)
+        
+        let installViewBottomView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        installViewBottomView.backgroundColor = UIColor.white
+        self.view.addSubview(installViewBottomView)
+        
+        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
+        let buttonHeight = installViewBottomView.frame.size.height - 5 * 2
+        
+        let installerButton = GFJBottomButton.init(type: UIButtonType.custom)
+        installerButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        installerButton.setTitle("点我安装", for: UIControlState.normal)
+        installerButton.backgroundColor = Colors.installColor
+        installerButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        installerButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        installerButton.addTarget(self, action: #selector(self.tellPhoneUsButtonClicked), for: UIControlEvents.touchUpInside)
+        installViewBottomView.addSubview(installerButton)
+    }
+    
+    func tellPhoneUsButtonClicked() {
+        let alertView = UIAlertView.init(title: "提示", message: "是否拨打电话给客服？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+        alertView.show()
+    }
+    
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        if (alertView.cancelButtonIndex != buttonIndex) {
+            UIApplication.shared.openURL(URL.init(string: "tel://4006229666")! as URL)
+        }
     }
     
     func loadData() {

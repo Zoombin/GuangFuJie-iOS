@@ -20,7 +20,7 @@ class SafeCell: UITableViewCell {
     var yearsSizeLabel : UILabel!
     var rangeLabel : UILabel!
     var baoeLabel : UILabel!
-    var addressLabel : UILabel!
+//    var addressLabel : UILabel!
     
     var buyTimeLabel : UILabel!
     var viewMoreButton : UIButton!
@@ -88,9 +88,9 @@ class SafeCell: UITableViewCell {
         let bottomView = UIView.init(frame: CGRect(x: 0, y: (topView.frame).maxY, width: bkgViewWidth, height: bkgViewHeight * 2 / 3))
         bkgView.addSubview(bottomView)
         
-        let pointOffSetY = (bottomView.frame.size.height * 0.15 - dir2) / 2
+        let pointOffSetY = (bottomView.frame.size.height * 0.2 - dir2) / 2
         
-        safeTypeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.15))
+        safeTypeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.2))
         safeTypeLabel.text = "这里显示的是描述"
         safeTypeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(safeTypeLabel)
@@ -99,12 +99,12 @@ class SafeCell: UITableViewCell {
         typePoint.image = UIImage(named: "ic_point_blue")
         bottomView.addSubview(typePoint)
         
-        yearsSizeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (safeTypeLabel.frame).maxY, width: (bkgViewWidth - dir2 * 5) / 3.5, height: bottomView.frame.size.height * 0.15))
+        yearsSizeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (safeTypeLabel.frame).maxY, width: (bkgViewWidth - dir2 * 5) / 3.2, height: bottomView.frame.size.height * 0.2))
         yearsSizeLabel.text = "这里显示的是描述"
         yearsSizeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(yearsSizeLabel)
         
-        rangeLabel = UILabel.init(frame: CGRect(x: (yearsSizeLabel.frame).maxX, y: (safeTypeLabel.frame).maxY, width: (bkgViewWidth - dir2 * 5) / 2, height: bottomView.frame.size.height * 0.15))
+        rangeLabel = UILabel.init(frame: CGRect(x: (yearsSizeLabel.frame).maxX, y: (safeTypeLabel.frame).maxY, width: (bkgViewWidth - dir2 * 5) / 2, height: bottomView.frame.size.height * 0.2))
         rangeLabel.text = "这里显示的是描述"
         rangeLabel.textColor = UIColor.lightGray
         rangeLabel.textAlignment = NSTextAlignment.left
@@ -115,7 +115,7 @@ class SafeCell: UITableViewCell {
         sizePoint.image = UIImage(named: "ic_yellow_point")
         bottomView.addSubview(sizePoint)
         
-        baoeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (yearsSizeLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.15))
+        baoeLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (yearsSizeLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.2))
         baoeLabel.text = "这里显示的是描述"
         baoeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(baoeLabel)
@@ -124,16 +124,16 @@ class SafeCell: UITableViewCell {
         pricePoint.image = UIImage(named: "ic_green_point")
         bottomView.addSubview(pricePoint)
         
-        addressLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (baoeLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.15))
-        addressLabel.text = "这里显示的是描述"
-        addressLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-        bottomView.addSubview(addressLabel)
-        
-        let addressPoint = UIImageView.init(frame: CGRect(x: dir2, y: (addressLabel.frame).minY + pointOffSetY, width: dir2, height: dir2))
-        addressPoint.image = UIImage(named: "ic_point_red")
-        bottomView.addSubview(addressPoint)
+//        addressLabel = UILabel.init(frame: CGRect(x: dir2 * 3, y: (baoeLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.15))
+//        addressLabel.text = "这里显示的是描述"
+//        addressLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+//        bottomView.addSubview(addressLabel)
+//        
+//        let addressPoint = UIImageView.init(frame: CGRect(x: dir2, y: (addressLabel.frame).minY + pointOffSetY, width: dir2, height: dir2))
+//        addressPoint.image = UIImage(named: "ic_point_red")
+//        bottomView.addSubview(addressPoint)
 
-        let line2 = UIView.init(frame: CGRect(x: dir2, y: (addressLabel.frame).maxY + bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 2, height: 0.5))
+        let line2 = UIView.init(frame: CGRect(x: dir2, y: (baoeLabel.frame).maxY + bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 2, height: 0.5))
         line2.backgroundColor = UIColor.lightGray
         bottomView.addSubview(line2)
 
@@ -219,11 +219,11 @@ class SafeCell: UITableViewCell {
         }
         self.priceLabel.text = price
         
-        var location = ""
-        if (info.station_address != nil) {
-            location = info.station_address!
-        }
-        self.addressLabel.text = location
+//        var location = ""
+//        if (info.station_address != nil) {
+//            location = info.station_address!
+//        }
+//        self.addressLabel.text = location
         
         self.payButton.isHidden = true
         if (isSelf) {
