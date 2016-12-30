@@ -9,9 +9,6 @@
 import UIKit
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate, LoginViewDelegate {
-    
-//    let displayView = DisplayView()
-    
     var topMenuView : UIView!
     var loginView : LoginView!
     
@@ -269,46 +266,19 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func showPhotos(_ urls : NSMutableArray, index : NSInteger, isLocal: Bool) {
-//        for view in displayView.subviews {
-//            view.removeFromSuperview()
-//        }
-//        displayView.imgsPrepare(urls as! [String], isLocal: isLocal)
-//        
-//        let pbVC = PhotoBrowser()
-//        
-//        /**  set album demonstration style  */
-//        pbVC.showType = PhotoBrowser.ShowType.ZoomAndDismissWithSingleTap
-//        
-//        /**  set album style  */
-//        if (isLocal) {
-//            pbVC.photoType = PhotoBrowser.PhotoType.Local
-//        } else {
-//            pbVC.photoType = PhotoBrowser.PhotoType.Host
-//        }
-//        
-//        //forbid showing all info
-//        pbVC.hideMsgForZoomAndDismissWithSingleTap = true
-//        
-//        var models: [PhotoBrowser.PhotoModel] = []
-//        
-//        for i in 0..<urls.count {
-//            let imageUrl = urls[i] as! String
-//            if (!isLocal) {
-//                let model = PhotoBrowser.PhotoModel(hostHDImgURL: imageUrl, hostThumbnailImg: nil, titleStr: "", descStr:"", sourceView: displayView.subviews[i] )
-//                models.append(model)
-//            } else {
-//                var image = UIImage(named: imageUrl)
-//                if (image == nil) {
-//                    image = UIImage.init(data: NSData.init(contentsOfURL: NSURL.init(string: imageUrl)!)!)
-//                }
-//                let model = PhotoBrowser.PhotoModel(localImg:image , titleStr: "", descStr:"", sourceView: displayView.subviews[i] )
-//                models.append(model)
-//            }
-//        }
-//        /**  set models   */
-//        pbVC.photoModels = models
-//        
-//        pbVC.show(inVC: self,index: index)
+        let vc = ZLPhotoPickerBrowserViewController()
+        var tmpArray = [ZLPhotoPickerBrowserPhoto]()
+        for i in 0..<urls.count {
+            let photo = ZLPhotoPickerBrowserPhoto()
+            if (isLocal) {
+                photo.photoObj = UIImage(named: urls[i] as! String)
+            } else {
+               photo.photoObj = urls[i]
+            }
+            tmpArray.append(photo)
+        }
+        vc.photos = tmpArray
+        vc.showPickerVc(self)
     }
     
     /*

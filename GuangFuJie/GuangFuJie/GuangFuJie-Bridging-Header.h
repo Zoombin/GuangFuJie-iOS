@@ -15,6 +15,10 @@
 #import "MJRefresh.h"
 #import "MSLFrameUtil.h"
 
+#import "ZLPhotoPickerViewController.h"
+#import "ZLPhotoAssets.h"
+#import "ZLPhotoPickerBrowserViewController.h"
+
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
