@@ -19,6 +19,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     var canDraw = true
     
     
+    var currentLocation = CLLocationCoordinate2D()
     var mapView : BMKMapView!
     var points = NSMutableArray()
     var hasLocated = false
@@ -301,6 +302,9 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     // MARK: - IBAction
     func startLocation() {
         print("进入普通定位态");
+        if (hasLocated) {
+            mapView.centerCoordinate = currentLocation
+        }
         hasLocated = false
         locService.startUserLocationService()
         mapView.showsUserLocation = false//先关闭显示的定位图层
@@ -351,15 +355,6 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     }
     
     /**
-     *用户方向更新后，会调用此函数
-     *@param userLocation 新的用户位置
-     */
-    func didUpdateUserHeading(_ userLocation: BMKUserLocation!) {
-        print("heading is \(userLocation.heading)")
-        mapView.updateLocationData(userLocation)
-    }
-    
-    /**
      *用户位置更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
@@ -368,6 +363,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         mapView.updateLocationData(userLocation)
         if (hasLocated == false) {
             hasLocated = true
+            currentLocation = userLocation.location.coordinate
             mapView.centerCoordinate = userLocation.location.coordinate
         }
     }
