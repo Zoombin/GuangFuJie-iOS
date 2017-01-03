@@ -321,6 +321,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         pnLineChart.data = LineChartData(dataSet: dataSet)
         picView.addSubview(pnLineChart)
         pnLineChart.isHidden = currentIndex != 1
+        pnLineChart.doubleTapToZoomEnabled = false
         pnLineChart.chartDescription?.text = ""
     }
     
@@ -354,6 +355,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         pnBarChart.data = BarChartData(dataSet: dataSet)
         picView.addSubview(pnBarChart)
         pnBarChart.isHidden = currentIndex != 2
+        pnBarChart.doubleTapToZoomEnabled = false
         pnBarChart.chartDescription?.text = ""
     }
     
