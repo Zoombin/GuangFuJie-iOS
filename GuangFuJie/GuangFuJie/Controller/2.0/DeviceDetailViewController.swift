@@ -295,9 +295,13 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         var entries: [ChartDataEntry] = Array()
         var xValues: [String] = Array()
         
+        var currentMax : Double = 0.0
         for i in 0..<yLabels.count {
             let xValue = xLabels[i] as! String
             let yValue = yLabels[i] as! NSNumber
+            if (currentMax <= yValue.doubleValue) {
+                currentMax = yValue.doubleValue
+            }
             
             let data = ChartDataEntry.init(x: Double(i), y: yValue.doubleValue)
             entries.append(data)
@@ -312,6 +316,8 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         pnLineChart.backgroundColor = NSUIColor.clear
         pnLineChart.leftAxis.axisMinimum = 0.0
         pnLineChart.rightAxis.axisMinimum = 0.0
+        pnLineChart.rightAxis.axisMaximum = currentMax * 1.5
+        pnLineChart.leftAxis.axisMaximum = currentMax * 1.5
         pnLineChart.data = LineChartData(dataSet: dataSet)
         picView.addSubview(pnLineChart)
         pnLineChart.isHidden = currentIndex != 1
@@ -322,9 +328,13 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         var entries: [BarChartDataEntry] = Array()
         var xValues: [String] = Array()
         
+        var currentMax : Double = 0.0
         for i in 0..<yLabels.count {
             let xValue = xLabels[i] as! String
             let yValue = yLabels[i] as! NSNumber
+            if (currentMax <= yValue.doubleValue) {
+                currentMax = yValue.doubleValue
+            }
             
             let data = BarChartDataEntry.init(x: Double(i), y: yValue.doubleValue)
             entries.append(data)
@@ -339,6 +349,8 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         pnBarChart.backgroundColor = NSUIColor.clear
         pnBarChart.leftAxis.axisMinimum = 0.0
         pnBarChart.rightAxis.axisMinimum = 0.0
+        pnBarChart.rightAxis.axisMaximum = currentMax * 1.5
+        pnBarChart.leftAxis.axisMaximum = currentMax * 1.5
         pnBarChart.data = BarChartData(dataSet: dataSet)
         picView.addSubview(pnBarChart)
         pnBarChart.isHidden = currentIndex != 2
