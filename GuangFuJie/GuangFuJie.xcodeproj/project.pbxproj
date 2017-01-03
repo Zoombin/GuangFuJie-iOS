@@ -220,7 +220,6 @@
 		DE869F011D81475B0062E670 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F001D81475B0062E670 /* InsuranceInfo.swift */; };
 		DE869F031D8148340062E670 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F021D8148340062E670 /* InsuranceDetail.swift */; };
 		DE8A76541D860FB600C5F268 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A76531D860FB600C5F268 /* LeaseViewController.xib */; };
-		DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A76601D86518300C5F268 /* RoofPriceViewController.xib */; };
 		DE8A76631D865A1900C5F268 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A76621D865A1800C5F268 /* CalcModel.swift */; };
 		DE8A76651D865CCA00C5F268 /* CalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */; };
 		DE8A79E81D87DE8900C5F268 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79D91D87DE8900C5F268 /* UICountingLabel.m */; };
@@ -756,7 +755,6 @@
 		DE869F001D81475B0062E670 /* InsuranceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceInfo.swift; sourceTree = "<group>"; };
 		DE869F021D8148340062E670 /* InsuranceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceDetail.swift; sourceTree = "<group>"; };
 		DE8A76531D860FB600C5F268 /* LeaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaseViewController.xib; sourceTree = "<group>"; };
-		DE8A76601D86518300C5F268 /* RoofPriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoofPriceViewController.xib; sourceTree = "<group>"; };
 		DE8A76621D865A1800C5F268 /* CalcModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcModel.swift; sourceTree = "<group>"; };
 		DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultViewController.swift; sourceTree = "<group>"; };
 		DE8A79D81D87DE8900C5F268 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
@@ -991,7 +989,6 @@
 				DE8A76531D860FB600C5F268 /* LeaseViewController.xib */,
 				DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */,
 				DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */,
-				DE8A76601D86518300C5F268 /* RoofPriceViewController.xib */,
 				DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */,
 				DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */,
 				DE23E4511D82A47100293616 /* SafeDetailViewController.swift */,
@@ -2282,7 +2279,6 @@
 				DE8381781DFD31380021716B /* DeviceCell6.xib in Resources */,
 				18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */,
 				DE0BCE841DFF7EEC00912EAD /* GFJRoofListViewController.xib in Resources */,
-				DE8A76611D86518300C5F268 /* RoofPriceViewController.xib in Resources */,
 				DED834D11DFEAD8000B76DFC /* InstallerDetailViewController.xib in Resources */,
 				DEF3B55C1E07C97F0016A359 /* IQKeyboardManager.bundle in Resources */,
 				DE0BCE7B1DFF6ECD00912EAD /* MoreInstallerViewController.xib in Resources */,

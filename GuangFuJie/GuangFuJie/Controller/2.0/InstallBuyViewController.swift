@@ -11,7 +11,7 @@ import UIKit
 class InstallBuyViewController: BaseViewController {
 
     var roofId : NSNumber!
-    var scrollView : UIScrollView!
+    var scrollView : UIScrollView!  
     var rInfo : RoofInfo?
     var imageView : UIImageView!
     var nameLabel : UILabel!
