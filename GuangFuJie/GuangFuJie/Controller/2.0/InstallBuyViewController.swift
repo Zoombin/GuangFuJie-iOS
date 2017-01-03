@@ -8,12 +8,20 @@
 
 import UIKit
 
-class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class InstallBuyViewController: BaseViewController {
 
     var roofId : NSNumber!
-    var tableView : UITableView!
+    var scrollView : UIScrollView!
     var rInfo : RoofInfo?
     var imageView : UIImageView!
+    var nameLabel : UILabel!
+    var phoneLabel : UILabel!
+    var sizeLabel : UILabel!
+    var priceLabel : UILabel!
+    var typeLabel : UILabel!
+    var createTimeLabel : UILabel!
+    var locationButton : UIButton!
+    
     var isSelf = false
     
     override func viewDidLoad() {
@@ -30,28 +38,34 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
                 self.hideHud()
                 self.rInfo = roofInfo
                 self.title = roofInfo.fullname!
-                self.addHeaderView()
-                self.tableView.reloadData()
+                self.loadData()
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
         }
     }
     
-    func addHeaderView() {
-        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight * 0.35))
-        
-        let titleLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: headerView.frame.size.height * 0.15))
-        titleLabel.text = " 屋顶类似图片"
-        titleLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        titleLabel.textColor = UIColor.black
-        headerView.addSubview(titleLabel)
-        
-        imageView = UIImageView.init(frame: CGRect(x: 0, y: titleLabel.frame.maxY, width: PhoneUtils.kScreenWidth, height: headerView.frame.size.height * 0.85))
+    func loadData() {
         imageView.setImageWith(URL.init(string: rInfo!.area_image!)! as URL)
-        headerView.addSubview(imageView)
+        nameLabel.text = rInfo!.fullname!
+        phoneLabel.text = "****"
+        sizeLabel.text = String(describing: rInfo!.area_size!) + "㎡"
+        typeLabel.text = "屋顶类型:" + (rInfo!.type! == 2 ? "斜面" : "平面")
+        priceLabel.text = String(describing: rInfo!.price!) + "元/㎡"
+        createTimeLabel.text = rInfo!.created_date!
         
-        tableView.tableHeaderView = headerView
+        var address = ""
+        if (rInfo!.province_label != nil) {
+            address = address + rInfo!.province_label!
+        }
+        if (rInfo!.city_label != nil) {
+            address = address + rInfo!.city_label!
+        }
+        if (rInfo!.address != nil) {
+            address = address + rInfo!.address!
+        }
+
+        locationButton.setTitle(address, for: UIControlState.normal)
     }
     
     let cellReuseIdentifier = "cellReuseIdentifier"
@@ -78,13 +92,58 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
             offSetY = buyBottomView.frame.size.height - 100
         }
         
-        tableView = UITableView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - offSetY - 64 - 50), style: UITableViewStyle.grouped)
-        tableView.backgroundColor = UIColor.clear
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.view.addSubview(tableView)
+        scrollView = UITableView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - offSetY - 64 - 50), style: UITableViewStyle.grouped)
+        scrollView.backgroundColor = UIColor.clear
+        self.view.addSubview(scrollView)
+
+        let imgOrginWidth : CGFloat = 670
+        let imgOrignHeight : CGFloat = 430
+        let imgWidth = PhoneUtils.kScreenWidth
+        let imgHeight = (imgWidth * imgOrignHeight) / imgOrginWidth
+        imageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: imgWidth, height: imgHeight))
+        scrollView.addSubview(imageView)
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        let titles = ["", "", "屋顶面积", "", "屋顶类型", "", "出租单价", "", "发布时间", ""]
+        
+        let labelWidth = PhoneUtils.kScreenWidth / 2
+        let labelHeight = PhoneUtils.kScreenHeight / 14
+        var index : CGFloat = 0
+        var line : CGFloat = 0
+        var labels = [UILabel]()
+        var maxY = imageView.frame.maxY
+        for i in 0..<titles.count {
+            if (i != 0 && i%2 == 0) {
+                line = line + 1
+                index = 0
+            }
+            let label = UILabel.init(frame: CGRect(x: index * labelWidth ,y: (line * labelHeight) + imageView.frame.maxY, width: labelWidth, height: labelHeight))
+            label.text = titles[i]
+            label.layer.borderColor = UIColor.lightGray.cgColor
+            label.layer.borderWidth = 0.5
+            label.textAlignment = NSTextAlignment.center
+            label.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+            label.backgroundColor = UIColor.white
+            scrollView.addSubview(label)
+            labels.append(label)
+            
+            maxY = label.frame.maxY
+            
+            index = index + 1
+        }
+        nameLabel = labels[0]
+        phoneLabel = labels[1]
+        sizeLabel = labels[3]
+        typeLabel = labels[5]
+        priceLabel = labels[7]
+        createTimeLabel = labels[9]
+        
+        locationButton = UIButton.init(type: UIButtonType.custom)
+        locationButton.frame = CGRect(x:0, y:maxY, width: PhoneUtils.kScreenWidth, height: labelHeight)
+        locationButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        locationButton.backgroundColor = UIColor.white
+        locationButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        locationButton.setImage(UIImage(named: "roof_location"), for: UIControlState.normal)
+        scrollView.addSubview(locationButton)
     }
     
     func orderNowButtonClicked() {
@@ -105,87 +164,6 @@ class InstallBuyViewController: BaseViewController, UITableViewDelegate, UITable
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 0) {
-            return 2
-        } else if (section == 1) {
-            return 3
-        } else if (section == 2) {
-            return 1
-        } else {
-            return 4
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 35
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 1))
-        return view
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath as IndexPath)
-        cell.textLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        cell.textLabel?.textColor = UIColor.black
-        if (rInfo != nil) {
-            if (indexPath.section == 0) {
-                if (indexPath.row == 0) {
-                    cell.imageView?.image = UIImage(named: "ic_calc_a")
-                    cell.textLabel?.text = "业主地址"
-                } else if (indexPath.row == 1) {
-                    var address = ""
-                    if (rInfo!.province_label != nil) {
-                        address = address + rInfo!.province_label!
-                    }
-                    if (rInfo!.city_label != nil) {
-                        address = address + rInfo!.city_label!
-                    }
-                    if (rInfo!.address != nil) {
-                        address = address + rInfo!.address!
-                    }
-                    cell.textLabel?.text = address
-                }
-            } else if (indexPath.section == 1) {
-                if (indexPath.row == 0) {
-                    cell.textLabel?.text = "屋顶信息"
-                } else if (indexPath.row == 1) {
-                    cell.textLabel?.text = "屋顶面积:" + String(describing: rInfo!.area_size!) + "㎡"
-                } else {
-                    cell.textLabel?.text = "屋顶类型:" + (rInfo!.type! == 2 ? "斜面" : "平面")
-                }
-            } else if (indexPath.section == 2) {
-                cell.textLabel?.text = "出租单价:" + String(describing: rInfo!.price!) + "元/㎡"
-            } else {
-                if (indexPath.row == 0) {
-                    cell.textLabel?.text = "联系人信息"
-                } else if (indexPath.row == 1) {
-                    cell.textLabel?.text = "联系人:" + rInfo!.fullname!
-                } else if (indexPath.row == 2) {
-                    cell.textLabel?.text = "联系方式:****"
-                } else {
-                    cell.textLabel?.text = "连续时间:" + rInfo!.contact_time!
-                }
-            }
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
 
     /*

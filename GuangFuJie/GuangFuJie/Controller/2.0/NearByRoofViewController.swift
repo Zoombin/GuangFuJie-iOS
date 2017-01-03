@@ -75,6 +75,9 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
             }
             
             let item = BMKPointAnnotation()
+            if (roofInfo.latitude == nil || roofInfo.longitude == nil) {
+                continue
+            }
             let coordinate = CLLocationCoordinate2D.init(latitude: roofInfo.latitude!.doubleValue, longitude: roofInfo.longitude!.doubleValue)
             item.coordinate = coordinate
             item.title = fullName
