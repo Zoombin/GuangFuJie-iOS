@@ -200,6 +200,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         } else {
             print("geo 检索发送失败")
         }
+        searchBar.resignFirstResponder()
     }
     
     // MARK: - BMKMapViewDelegate

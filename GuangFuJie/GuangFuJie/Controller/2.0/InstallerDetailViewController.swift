@@ -9,17 +9,21 @@
 import UIKit
 
 class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
-    @IBOutlet weak var nameLabel : UILabel!
-    @IBOutlet weak var addressLabel : UILabel!
-    @IBOutlet weak var phoneLabel : UILabel!
-    @IBOutlet weak var sizeLabel : UILabel!
-    @IBOutlet weak var tipsLabel : UILabel!
     
-    @IBOutlet weak var logoImageView : UIImageView!
-    @IBOutlet weak var zhizhaoImageView : UIImageView!
+    var nickNameLabel : UILabel!
+    var phoneLabel : UILabel!
+    var sizeLabel : UILabel!
     
-    @IBOutlet weak var introView : UIView!
-    @IBOutlet weak var introLabel : UILabel!
+    var addressButton : UIButton!
+    
+    var logoImageView : UIImageView!
+    var nameLabel : UILabel!
+    var tipsLabel : UILabel!
+    
+//    @IBOutlet weak var zhizhaoImageView : UIImageView!
+//    
+//    @IBOutlet weak var introView : UIView!
+    var introLabel : UILabel!
     
     @IBOutlet weak var scrollView : UIScrollView!
     
@@ -51,6 +55,79 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         installerButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
         installerButton.addTarget(self, action: #selector(self.tellPhoneUsButtonClicked), for: UIControlEvents.touchUpInside)
         installViewBottomView.addSubview(installerButton)
+        
+        let orignWidth: CGFloat = 70
+        let orignHeight: CGFloat = 45
+        let times: CGFloat = PhoneUtils.kScreenWidth / 320
+        let imgWidth: CGFloat = orignWidth * times
+        let imgHeight: CGFloat = orignHeight * times
+        
+        let dir: CGFloat = 10
+        
+        logoImageView = UIImageView.init(frame: CGRect(x: dir, y: dir, width: imgWidth, height: imgHeight))
+        logoImageView.layer.borderColor = UIColor.lightGray.cgColor
+        logoImageView.layer.borderWidth = 0.5
+        scrollView.addSubview(logoImageView)
+        
+        let topLabelWidth = PhoneUtils.kScreenWidth - dir * 2 - imgWidth
+        
+        nameLabel = UILabel.init(frame: CGRect(x: logoImageView.frame.maxX + dir, y: logoImageView.frame.minY, width: topLabelWidth, height: imgHeight / 2))
+        nameLabel.text = "公司名称"
+        nameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        scrollView.addSubview(nameLabel)
+        
+        tipsLabel = UILabel.init(frame: CGRect(x: logoImageView.frame.maxX + dir, y: nameLabel.frame.maxY, width: 100, height: imgHeight / 2))
+        tipsLabel.text = "已认证"
+        tipsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        scrollView.addSubview(tipsLabel)
+        
+        let labelWidth = PhoneUtils.kScreenWidth / 2
+        let labelHeight = PhoneUtils.kScreenHeight / 14
+        
+        nickNameLabel = UILabel.init(frame: CGRect(x: 0, y: logoImageView.frame.maxY + dir, width: labelWidth, height: labelHeight))
+        nickNameLabel.text = ""
+        nickNameLabel.layer.borderColor = UIColor.lightGray.cgColor
+        nickNameLabel.layer.borderWidth = 0.5
+        nickNameLabel.textAlignment = NSTextAlignment.center
+        nickNameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        scrollView.addSubview(nickNameLabel)
+        
+        phoneLabel = UILabel.init(frame: CGRect(x: labelWidth, y: logoImageView.frame.maxY + dir, width: labelWidth, height: labelHeight))
+        phoneLabel.text = ""
+        phoneLabel.layer.borderColor = UIColor.lightGray.cgColor
+        phoneLabel.layer.borderWidth = 0.5
+        phoneLabel.textAlignment = NSTextAlignment.center
+        phoneLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        scrollView.addSubview(phoneLabel)
+        
+        let titleSizeLabel = UILabel.init(frame: CGRect(x: 0, y: nickNameLabel.frame.maxY, width: labelWidth, height: labelHeight))
+        titleSizeLabel.text = "公司规模"
+        titleSizeLabel.layer.borderColor = UIColor.lightGray.cgColor
+        titleSizeLabel.layer.borderWidth = 0.5
+        titleSizeLabel.textAlignment = NSTextAlignment.center
+        titleSizeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        scrollView.addSubview(titleSizeLabel)
+        
+        sizeLabel = UILabel.init(frame: CGRect(x: labelWidth, y: nickNameLabel.frame.maxY, width: labelWidth, height: labelHeight))
+        sizeLabel.text = ""
+        sizeLabel.layer.borderColor = UIColor.lightGray.cgColor
+        sizeLabel.layer.borderWidth = 0.5
+        sizeLabel.textAlignment = NSTextAlignment.center
+        sizeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        scrollView.addSubview(sizeLabel)
+        
+        addressButton = UIButton.init(type: UIButtonType.custom)
+        addressButton.frame = CGRect(x:0, y:titleSizeLabel.frame.maxY, width: PhoneUtils.kScreenWidth, height: labelHeight)
+        addressButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        addressButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        addressButton.setImage(UIImage(named: "roof_location"), for: UIControlState.normal)
+        scrollView.addSubview(addressButton)
+        
+        introLabel = UILabel.init(frame: CGRect(x: dir, y: addressButton.frame.maxY, width: PhoneUtils.kScreenWidth - dir * 2, height: 0))
+        introLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        introLabel.numberOfLines = 0
+        introLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        scrollView.addSubview(introLabel)
     }
     
     func tellPhoneUsButtonClicked() {
@@ -83,23 +160,29 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         nameLabel.text = name
         self.title = name
         
-        var size = "公司规模："
+        var nickName = ""
+        if (installerDetail.fullname != nil) {
+            nickName = installerDetail.fullname!
+        }
+        nickNameLabel.text = nickName
+
+        var size = ""
         if (installerDetail.company_size != nil) {
             size = size + installerDetail.company_size! + "人"
         } else {
             size = size + "未填写"
         }
         sizeLabel.text = size
-        
-        var phone = "联系方式："
+
+        var phone = ""
         if (installerDetail.contact_info != nil) {
             phone = phone + installerDetail.contact_info!
         } else {
             phone = phone + "未填写"
         }
         phoneLabel.text = phone
-        
-        var location = "公司地址："
+
+        var location = ""
         if ((installerDetail.province_label) != nil) {
             location = location + installerDetail.province_label!
         }
@@ -109,7 +192,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         if ((installerDetail.address) != nil) {
             location = location + installerDetail.address!
         }
-        addressLabel.text = location
+        addressButton.setTitle(location, for: UIControlState.normal)
         
         if (installerDetail.is_installer == 2) {
             tipsLabel.text = "已认证"
@@ -118,12 +201,11 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
             tipsLabel.text = "未认证"
             tipsLabel.textColor = Colors.installRedColor
         }
-        
+
         if (installerDetail.logo != nil) {
             logoImageView.setImageWith(URL.init(string: installerDetail.logo!)! as URL)
-        }
-        if (installerDetail.license_url != nil) {
-            zhizhaoImageView.setImageWith(URL.init(string: installerDetail.license_url!)! as URL)
+        } else {
+            logoImageView.image = UIImage(named: "ic_avatar_yezhu")
         }
         
         var intro = ""
@@ -132,16 +214,14 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         }
         introLabel.text = intro
         let originHeight = introLabel.frame.size.height
-        var height = MSLFrameUtil.getLabHeight(intro, fontSize: 15, width: introLabel.frame.size.width)
+        var height = MSLFrameUtil.getLabHeight(intro, fontSize: Dimens.fontSizeComm, width: introLabel.frame.size.width)
         if (originHeight > height) {
             height = originHeight
         }
-        
+
         introLabel.frame = CGRect(x: introLabel.frame.origin.x, y: introLabel.frame.origin.y, width: introLabel.frame.size.width, height: height)
         
-        introView.frame = CGRect(x: introView.frame.origin.x, y: introView.frame.origin.y, width: introView.frame.size.width, height: introView.frame.size.height + height - originHeight)
-        
-        scrollView.contentSize = CGSize(width: 0, height: introView.frame.maxY)
+        scrollView.contentSize = CGSize(width: 0, height: introLabel.frame.maxY)
     }
 
     override func didReceiveMemoryWarning() {

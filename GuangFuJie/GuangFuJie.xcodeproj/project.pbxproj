@@ -233,7 +233,6 @@
 		DE9135FD1DE85E48001190B7 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */; };
 		DE9135FE1DE85E48001190B7 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */; };
 		DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE9135F71DE85E48001190B7 /* mapapi.bundle */; };
-		DE9AA96A1DFB6DD1006B56E9 /* InsterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */; };
 		DE9AA96C1DFB7549006B56E9 /* GFJRoofListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */; };
 		DE9AA9701DFBA853006B56E9 /* NearByRoofViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */; };
 		DE9AA97B1DFBCA14006B56E9 /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA97A1DFBCA14006B56E9 /* UserCenterViewController.swift */; };
@@ -769,7 +768,6 @@
 		DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		DE9135F71DE85E48001190B7 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
-		DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsterDetailViewController.swift; sourceTree = "<group>"; };
 		DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJRoofListViewController.swift; sourceTree = "<group>"; };
 		DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByRoofViewController.swift; sourceTree = "<group>"; };
 		DE9AA97A1DFBCA14006B56E9 /* UserCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterViewController.swift; sourceTree = "<group>"; };
@@ -2005,7 +2003,6 @@
 				DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */,
 				DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */,
 				DE9AA97A1DFBCA14006B56E9 /* UserCenterViewController.swift */,
-				DE9AA9691DFB6DD1006B56E9 /* InsterDetailViewController.swift */,
 				DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */,
 				DE0BCE831DFF7EEC00912EAD /* GFJRoofListViewController.xib */,
 				DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */,
@@ -2339,7 +2336,6 @@
 				DE51F3591E164EFF00671967 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DE51F34D1E164EFF00671967 /* ZLPhotoRect.m in Sources */,
 				DE5E74B31D509CC4003CDAAC /* AFHTTPSessionManager.m in Sources */,
-				DE9AA96A1DFB6DD1006B56E9 /* InsterDetailViewController.swift in Sources */,
 				DE9AAA731DFBF6C5006B56E9 /* MySafeListViewController.swift in Sources */,
 				DE51F3511E164EFF00671967 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				DE44CC081D8403DA004690EF /* BCRefundStatusResp.m in Sources */,
