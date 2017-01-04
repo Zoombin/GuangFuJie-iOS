@@ -19,10 +19,8 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     var logoImageView : UIImageView!
     var nameLabel : UILabel!
     var tipsLabel : UILabel!
+    var noticeButton : UIButton!
     
-//    @IBOutlet weak var zhizhaoImageView : UIImageView!
-//    
-//    @IBOutlet weak var introView : UIView!
     var introLabel : UILabel!
     
     @IBOutlet weak var scrollView : UIScrollView!
@@ -76,10 +74,20 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         nameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         scrollView.addSubview(nameLabel)
         
-        tipsLabel = UILabel.init(frame: CGRect(x: logoImageView.frame.maxX + dir, y: nameLabel.frame.maxY, width: 100, height: imgHeight / 2))
+        tipsLabel = UILabel.init(frame: CGRect(x: logoImageView.frame.maxX + dir, y: nameLabel.frame.maxY, width: 70, height: imgHeight / 2))
         tipsLabel.text = "已认证"
         tipsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         scrollView.addSubview(tipsLabel)
+        
+        noticeButton = UIButton.init(type: UIButtonType.custom)
+        noticeButton.frame = CGRect(x: logoImageView.frame.maxX + dir, y: nameLabel.frame.maxY + (imgHeight / 2) * 0.1, width: 70, height: (imgHeight / 2) * 0.8)
+        noticeButton.backgroundColor = Colors.installColor
+        noticeButton.setTitle("通知审核", for: UIControlState.normal)
+        noticeButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        noticeButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+        noticeButton.addTarget(self, action: #selector(self.remindButtonClicked), for: UIControlEvents.touchUpInside)
+        noticeButton.isHidden = true
+        scrollView.addSubview(noticeButton)
         
         let labelWidth = PhoneUtils.kScreenWidth / 2
         let labelHeight = PhoneUtils.kScreenHeight / 14
@@ -198,8 +206,13 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
             tipsLabel.text = "已认证"
             tipsLabel.textColor = Colors.installColor
         } else {
-            tipsLabel.text = "未认证"
-            tipsLabel.textColor = Colors.installRedColor
+            if (UserDefaultManager.getUser()!.user_id!.intValue == installerDetail.user_id!.intValue) {
+                noticeButton.isHidden = false
+                tipsLabel.isHidden = true
+            } else {
+                tipsLabel.text = "未认证"
+                tipsLabel.textColor = Colors.installRedColor
+            }
         }
 
         if (installerDetail.logo != nil) {
@@ -222,6 +235,14 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         introLabel.frame = CGRect(x: introLabel.frame.origin.x, y: introLabel.frame.origin.y, width: introLabel.frame.size.width, height: height)
         
         scrollView.contentSize = CGSize(width: 0, height: introLabel.frame.maxY)
+    }
+    
+    func remindButtonClicked() {
+        API.sharedInstance.remindAuth({ (commonModel) in
+            self.showHint("提醒成功")
+        }) { (msg) in
+            self.showHint(msg)
+        }
     }
 
     override func didReceiveMemoryWarning() {
