@@ -116,7 +116,14 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initView() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "附近安装商", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.nearByInstaller))
+        
         yezhuTableView.register(YeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
+    }
+    
+    func nearByInstaller() {
+        let vc = NearByInstallerViewController()
+        self.pushViewController(vc)
     }
     
     override func didReceiveMemoryWarning() {

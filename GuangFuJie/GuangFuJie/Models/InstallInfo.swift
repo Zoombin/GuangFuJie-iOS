@@ -28,4 +28,7 @@ class InstallInfo: NSObject {
     var installer_date : String? // 申请成为安装商的时间
     var logo : String?
     
+    var longitude : NSNumber?   //经度
+    var latitude : NSNumber?    //纬度
+    
 }

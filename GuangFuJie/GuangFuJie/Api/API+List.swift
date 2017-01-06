@@ -942,6 +942,29 @@ extension API {
     }
     
     /**
+     附近安装商
+     
+     - parameter lat:
+     - parameter lng:
+     - parameter success:
+     - parameter failure:
+     */
+    func getNearInstaller(_ lat : Double, lng : Double, success: ((_ roofList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/nearby_installers"
+        let params = [
+            "latitude" : lat,
+            "longitude" : lng,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
+        }, failure: failure)
+    }
+    
+    /**
      用户绑定的设备列表
      
      - parameter success:

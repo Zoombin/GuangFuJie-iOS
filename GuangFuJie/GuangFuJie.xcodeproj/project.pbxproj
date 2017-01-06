@@ -285,6 +285,7 @@
 		DED15B7C1DED2E7B00B8260B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7B1DED2E7B00B8260B /* Security.framework */; };
 		DED15B7E1DED2E8500B8260B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */; };
 		DED15B801DED2E9700B8260B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */; };
+		DED669211E1F6331000F0307 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */; };
 		DED834CF1DFEAC6500B76DFC /* InstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */; };
 		DED834D11DFEAD8000B76DFC /* InstallerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */; };
 		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
@@ -841,6 +842,7 @@
 		DED15B7B1DED2E7B00B8260B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
 		DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailViewController.swift; sourceTree = "<group>"; };
 		DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallerDetailViewController.xib; sourceTree = "<group>"; };
 		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
@@ -2013,6 +2015,7 @@
 				DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */,
 				DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */,
 				DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */,
+				DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */,
 			);
 			path = 2.0;
 			sourceTree = "<group>";
@@ -2354,6 +2357,7 @@
 				DE44CC021D8403DA004690EF /* BCQueryRefundByIdResp.m in Sources */,
 				DE9AAA6D1DFBF3C8006B56E9 /* DeviceDetailViewController.swift in Sources */,
 				DEA1F12A1DF14D370057F30D /* ReportViewController.swift in Sources */,
+				DED669211E1F6331000F0307 /* NearByInstallerViewController.swift in Sources */,
 				DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */,
 				DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */,
 				DE51F34F1E164EFF00671967 /* ZLPhotoPickerBrowserViewController.m in Sources */,
