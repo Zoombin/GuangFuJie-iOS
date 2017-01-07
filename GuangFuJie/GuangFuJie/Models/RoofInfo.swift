@@ -27,4 +27,5 @@ class RoofInfo: NSObject {
     var is_expire : NSNumber?      // 是否过期 0:未过期  1:已过期
     var longitude : NSNumber?
     var latitude : NSNumber?
+    var is_favor : NSNumber?
 }

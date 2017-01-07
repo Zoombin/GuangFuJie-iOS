@@ -149,11 +149,44 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         }
     }
     
+    func addFavButton(isFav : Bool) {
+        if (isFav) {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "取消收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked))
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏屋顶", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked))
+        }
+    }
+    
+    func favButtonClicked() {
+        self.showHud(in: self.view, hint: "加载中")
+        API.sharedInstance.favInstaller(installer_id, { (model) in
+            self.hideHud()
+            self.showHint("收藏成功")
+            self.loadData()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
+    func cancelFavButtonClicked() {
+        self.showHud(in: self.view, hint: "加载中")
+        API.sharedInstance.unFavInstaller(installer_id, { (model) in
+            self.hideHud()
+            self.showHint("取消收藏成功")
+            self.loadData()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
     func loadData() {
         self.showHud(in: self.view, hint: "加载中")
         API.sharedInstance.installerDetail(installer_id, success: { (installerDetail) in
                 self.hideHud()
                 self.setData(installerDetail)
+                self.addFavButton(isFav: installerDetail.is_favor!.boolValue)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)

@@ -32,6 +32,38 @@ class InstallBuyViewController: BaseViewController {
         loadRoofInfo()
     }
     
+    func addFavButton(isFav : Bool) {
+        if (isFav) {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "取消收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked))
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏屋顶", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked))
+        }
+    }
+    
+    func favButtonClicked() {
+        self.showHud(in: self.view, hint: "加载中")
+        API.sharedInstance.favRoof(roofId, { (model) in
+            self.hideHud()
+            self.showHint("收藏成功")
+            self.loadRoofInfo()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
+    func cancelFavButtonClicked() {
+        self.showHud(in: self.view, hint: "加载中")
+        API.sharedInstance.unFavRoof(roofId, { (model) in
+            self.hideHud()
+            self.showHint("取消收藏成功")
+            self.loadRoofInfo()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
     func loadRoofInfo() {
         self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.getRoofInfo(roofId, success: { (roofInfo) in
@@ -39,6 +71,7 @@ class InstallBuyViewController: BaseViewController {
                 self.rInfo = roofInfo
                 self.title = roofInfo.fullname!
                 self.loadData()
+                self.addFavButton(isFav: roofInfo.is_favor!.boolValue)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)

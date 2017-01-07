@@ -382,6 +382,10 @@ extension API {
         let params = NSMutableDictionary()
         params["_o"] = 1
         params["installer_id"] = installer_id
+        if (UserDefaultManager.isLogin()) {
+            params["user_id"] = getUserId()
+        }
+        
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
@@ -627,10 +631,12 @@ extension API {
      */
     func getRoofInfo(_ roof_id : NSNumber, success: ((_ roofInfo: RoofInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/info"
-        let params = [
-            "id" : roof_id,
-            "_o" : 1
-        ]
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["id"] = roof_id
+        if (UserDefaultManager.isLogin()) {
+            params["user_id"] = getUserId()
+        }
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
@@ -1045,5 +1051,128 @@ extension API {
             let commonModel = CommonModel.mj_object(withKeyValues: data)
             success?(commonModel!)
             }, failure: failure)
+    }
+    
+    
+    /**
+     收藏屋顶
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func favRoof(_ roof_id: NSNumber, _ success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "roof/roof_favor"
+        let params = [
+            "user_id" : getUserId(),
+            "roof_id" : roof_id,
+            "_o" : 1
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
+        }, failure: failure)
+    }
+    
+    /**
+     取消收藏屋顶
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func unFavRoof(_ roof_id: NSNumber, _ success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "roof/roof_cancel_favor"
+        let params = [
+            "user_id" : getUserId(),
+            "roof_id" : roof_id,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
+        }, failure: failure)
+    }
+    
+    /**
+     收藏安装商
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func favInstaller(_ installer_id: NSNumber, _ success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/installer_favor"
+        let params = [
+            "user_id" : getUserId(),
+            "installer_id" : installer_id,
+            "_o" : 1
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
+        }, failure: failure)
+    }
+    
+    /**
+     取消收藏安装商
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func unFavInstaller(_ installer_id: NSNumber, _ success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/installer_cancel_favor"
+        let params = [
+            "user_id" : getUserId(),
+            "installer_id" : installer_id,
+            "_o" : 1
+        ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
+        }, failure: failure)
+    }
+    
+    /**
+     我收藏的安装商
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func myFavInstallers(_ success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/favor_installer_list"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["user_id"] = getUserId()
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    /**
+     我收藏的屋顶
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func myFavRoofs(_ success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "roof/favor_roof_list"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["user_id"] = getUserId()
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = RoofInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
     }
 }

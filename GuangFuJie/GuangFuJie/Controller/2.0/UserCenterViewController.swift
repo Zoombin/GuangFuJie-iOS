@@ -76,7 +76,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         if (section == 0) {
             return 1;
         }
-        return 2;
+        return 3;
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -130,6 +130,9 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
             } else if (indexPath.row == 1) {
                 cell.imageView?.image = UIImage(named: "ic_my_insure")
                 cell.textLabel?.text = "我的保险"
+            } else if (indexPath.row == 2) {
+                cell.imageView?.image = UIImage(named: "ic_my_favor")
+                cell.textLabel?.text = "我的收藏"
             }
         }
         return cell
@@ -161,6 +164,9 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
                 self.pushViewController(vc)
             } else if (indexPath.row == 1) {
                 let vc = MySafeListViewController()
+                self.pushViewController(vc)
+            } else if (indexPath.row == 2) {
+                let vc = MyFavViewController()
                 self.pushViewController(vc)
             }
         }
