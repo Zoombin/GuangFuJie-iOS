@@ -207,7 +207,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         sectionView5.addSubview(titleLabel5)
         
         let takeEffectLabel = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth - offSetX - 150, y: titleLabel4.frame.maxY, width: 150, height: 30 * times))
-        takeEffectLabel.text = PhoneUtils.getTommorrowDateStr(Date()) + "00:00:00"
+        takeEffectLabel.text = PhoneUtils.getTommorrowDateStr(Date()) + " 00:00:00"
         takeEffectLabel.textAlignment = NSTextAlignment.right
         takeEffectLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         sectionView5.addSubview(takeEffectLabel)

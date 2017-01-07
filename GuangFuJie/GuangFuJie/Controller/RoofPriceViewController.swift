@@ -75,6 +75,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITa
         alertView.alertViewStyle = UIAlertViewStyle.plainTextInput
         alertView.show()
         
+        alertView.textField(at: 0)?.keyboardType = UIKeyboardType.numberPad
         alertView.textField(at: 0)?.addTarget(self, action: #selector(self.textFieldValueChanged(textField:)), for: UIControlEvents.editingChanged)
     }
     
