@@ -22,3 +22,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/MJRefresh"]
 	path = GuangFuJie/GuangFuJie/Submodules/MJRefresh
 	url = https://github.com/CoderMJLee/MJRefresh.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/ZLPhotoLib"]
+	path = GuangFuJie/GuangFuJie/Submodules/ZLPhotoLib
+	url = https://github.com/MakeZL/ZLPhotoLib.git
