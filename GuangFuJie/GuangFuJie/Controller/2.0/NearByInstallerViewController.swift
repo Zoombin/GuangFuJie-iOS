@@ -122,6 +122,7 @@ class NearByInstallerViewController: BaseViewController, BMKLocationServiceDeleg
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
         if annotationView == nil {
             annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
+            annotationView?.image = UIImage(named: "ic_annview_installer")
             // 设置颜色
             annotationView!.pinColor = UInt(BMKPinAnnotationColorRed)
             // 从天上掉下的动画
