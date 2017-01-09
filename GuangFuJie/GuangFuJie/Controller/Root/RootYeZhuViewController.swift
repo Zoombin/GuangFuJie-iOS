@@ -80,9 +80,9 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         let soldRoomButton = GFJBottomButton.init(type: UIButtonType.custom)
         soldRoomButton.frame = CGRect(x: 5 * 2 + buttonWidth, y: 5, width: buttonWidth, height: buttonHeight)
         soldRoomButton.setTitle("屋顶出租", for: UIControlState.normal)
-        soldRoomButton.backgroundColor = UIColor.white
+        soldRoomButton.backgroundColor = Colors.installColor
         soldRoomButton.addTarget(self, action: #selector(self.soldRoomButtonClicked), for: UIControlEvents.touchUpInside)
-        soldRoomButton.setTitleColor(Colors.installColor, for: UIControlState.normal)
+        soldRoomButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         soldRoomButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
         soldRoomButton.layer.borderColor = Colors.installColor.cgColor
         soldRoomButton.layer.borderWidth = 0.5
@@ -91,9 +91,9 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         let mapAreaButton = GFJBottomButton.init(type: UIButtonType.custom)
         mapAreaButton.frame = CGRect(x: 5 * 3 + buttonWidth * 2, y: 5, width: buttonWidth, height: buttonHeight)
         mapAreaButton.setTitle("屋顶地图", for: UIControlState.normal)
-        mapAreaButton.backgroundColor = UIColor.white
+        mapAreaButton.backgroundColor = Colors.installColor
         mapAreaButton.addTarget(self, action: #selector(self.mapAreaButtonClicked), for: UIControlEvents.touchUpInside)
-        mapAreaButton.setTitleColor(Colors.installColor, for: UIControlState.normal)
+        mapAreaButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         mapAreaButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
         mapAreaButton.layer.borderColor = Colors.installColor.cgColor
         mapAreaButton.layer.borderWidth = 0.5
