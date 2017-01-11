@@ -303,9 +303,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     // MARK: - IBAction
     func startLocation() {
         print("进入普通定位态");
-        if (hasLocated) {
-            mapView.centerCoordinate = currentLocation
-        }
+        mapView.centerCoordinate = currentLocation
         hasLocated = false
         locService.startUserLocationService()
         mapView.showsUserLocation = false//先关闭显示的定位图层
