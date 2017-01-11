@@ -168,6 +168,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         statusButton = UIButton.init(type: UIButtonType.custom)
         statusButton.frame = CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth * 1 / 2, height: labelHeight)
         statusButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        statusButton.titleLabel?.adjustsFontSizeToFitWidth = true
         statusButton.setTitle("运行状态 正常", for: UIControlState.normal)
         
         statusButton.setTitleColor(Colors.statusOK, for: UIControlState.normal)
@@ -248,7 +249,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             statusButton.setTitleColor(Colors.statusOK, for: UIControlState.normal)
             statusButton.setImage(UIImage(named: "ic_devstatus_ok"), for: UIControlState.normal)
         } else if (deviceInfo.status?.intValue == 2) {
-            statusButton.setTitle("运行状态 故障（点击报修）", for: UIControlState.normal)
+            statusButton.setTitle("运行状态 故障(点击报修)", for: UIControlState.normal)
             statusButton.setTitleColor(Colors.statusError, for: UIControlState.normal)
             statusButton.setImage(UIImage(named: "ic_devstatus_error"), for: UIControlState.normal)
             statusButton.isUserInteractionEnabled = true

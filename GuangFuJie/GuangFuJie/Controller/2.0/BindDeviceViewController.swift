@@ -148,7 +148,7 @@ class BindDeviceViewController: BaseViewController {
         if (shouldShowLogin()) {
             return
         }
-        if (currentDeviceType == 2 || currentDeviceType == 3) {
+        if (currentDeviceType == 3) {
             self.showHint("设备号无法验证，请核对设备号！")
             return
         }

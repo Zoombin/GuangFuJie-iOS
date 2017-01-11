@@ -12,7 +12,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     var priceLabel : UILabel!
     var guigeLabel : UILabel!
     var scrollView : UIScrollView!
-    var yearsTextField : UITextField!
+    var yearsLabel : UILabel!
     var sizeLabel : UILabel!
     
     var types = NSMutableArray()
@@ -29,6 +29,9 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     var totalBaoeLabel : UILabel!
     
     var typeView : UIView!
+    var yearsView : UIView!
+    
+    var years = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +66,78 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         scrollView.addSubview(topImageView)
         
         let times = PhoneUtils.kScreenWidth / 320
+        var maxY = topImageView.frame.maxY
         
-        let sectionView1 = UIView.init(frame: CGRect(x: 0, y: topImageView.frame.maxY, width: PhoneUtils.kScreenWidth, height: 60 * times))
+        let sectionView3 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 60 * times))
+        sectionView3.backgroundColor = UIColor.white
+        scrollView.addSubview(sectionView3)
+        
+        let titleLabel2 = UILabel.init(frame: CGRect(x: offSetX, y: 0, width: 100, height: sectionView3.frame.size.height * 0.5))
+        titleLabel2.text = "电站大小"
+        titleLabel2.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        sectionView3.addSubview(titleLabel2)
+        
+        guigeLabel = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX - 105, y: 0, width: 100, height: 30 * times))
+        guigeLabel.text = "请选择电站规格"
+        guigeLabel.textColor = Colors.installColor
+        guigeLabel.textAlignment = NSTextAlignment.right
+        guigeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        sectionView3.addSubview(guigeLabel)
+        
+        let arrowImageButton1 = UIButton.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX, y:7.5 * times, width: 15 * times, height: 15 * times))
+        arrowImageButton1.setImage(UIImage(named: "ic_blue_arrowdown"), for: UIControlState.normal)
+        sectionView3.addSubview(arrowImageButton1)
+        
+        let tips3Label = UILabel.init(frame: CGRect(x: offSetX, y: titleLabel2.frame.maxY, width: PhoneUtils.kScreenWidth - 2 * offSetX, height: sectionView3.frame.size.height / 2))
+        tips3Label.text = "特殊电站大小，请联系客服询价"
+        tips3Label.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+        tips3Label.textAlignment = NSTextAlignment.right
+        sectionView3.addSubview(tips3Label)
+        
+        let button = UIButton.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 30 * times))
+        button.addTarget(self, action: #selector(self.showTypeView), for: UIControlEvents.touchUpInside)
+        sectionView3.addSubview(button)
+        
+        maxY = sectionView3.frame.maxY + offSetY
+        
+        let sectionView5 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 60 * times))
+        sectionView5.backgroundColor = UIColor.white
+        scrollView.addSubview(sectionView5)
+        
+        let titleLabel4 = UILabel.init(frame: CGRect(x: offSetX, y: 0, width: 100, height: 30 * times))
+        titleLabel4.text = "保障时间"
+        titleLabel4.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        sectionView5.addSubview(titleLabel4)
+        
+        yearsLabel = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX - 105, y: 0, width: 100, height: 30 * times))
+        yearsLabel.text = "请选择投保年限"
+        yearsLabel.textColor = Colors.installColor
+        yearsLabel.textAlignment = NSTextAlignment.right
+        yearsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        sectionView5.addSubview(yearsLabel)
+        
+        let arrowImageButton2 = UIButton.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX, y: 7.5 * times, width: 15 * times, height: 15 * times))
+        arrowImageButton2.setImage(UIImage(named: "ic_blue_arrowdown"), for: UIControlState.normal)
+        sectionView5.addSubview(arrowImageButton2)
+        
+        let titleLabel5 = UILabel.init(frame: CGRect(x: offSetX, y: titleLabel4.frame.maxY, width: 120, height: 30 * times))
+        titleLabel5.text = "今日购买生效时间"
+        titleLabel5.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        sectionView5.addSubview(titleLabel5)
+        
+        let takeEffectLabel = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth - offSetX - 150, y: titleLabel4.frame.maxY, width: 150, height: 30 * times))
+        takeEffectLabel.text = PhoneUtils.getTommorrowDateStr(Date()) + " 00:00:00"
+        takeEffectLabel.textAlignment = NSTextAlignment.right
+        takeEffectLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        sectionView5.addSubview(takeEffectLabel)
+        
+        let button5 = UIButton.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 30 * times))
+        button5.addTarget(self, action: #selector(self.showYearsView), for: UIControlEvents.touchUpInside)
+        sectionView5.addSubview(button5)
+        
+        maxY = sectionView5.frame.maxY + offSetY
+        
+        let sectionView1 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 60 * times))
         sectionView1.backgroundColor = UIColor.white
         scrollView.addSubview(sectionView1)
         
@@ -96,37 +169,9 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         tips2Label.textAlignment = NSTextAlignment.right
         sectionView2.addSubview(tips2Label)
         
-        let sectionView3 = UIView.init(frame: CGRect(x: 0, y: sectionView2.frame.maxY + offSetY, width: PhoneUtils.kScreenWidth, height: 60 * times))
-        sectionView3.backgroundColor = UIColor.white
-        scrollView.addSubview(sectionView3)
+        maxY = sectionView1.frame.maxY + offSetY
         
-        let titleLabel2 = UILabel.init(frame: CGRect(x: offSetX, y: 0, width: 100, height: sectionView3.frame.size.height * 0.5))
-        titleLabel2.text = "电站大小"
-        titleLabel2.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        sectionView3.addSubview(titleLabel2)
-        
-        guigeLabel = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX - 80, y: 0, width: 80, height: 30 * times))
-        guigeLabel.text = "请选择规格"
-        guigeLabel.textColor = UIColor.darkGray
-        guigeLabel.textAlignment = NSTextAlignment.center
-        guigeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-        sectionView3.addSubview(guigeLabel)
-        
-        let arrowImageButton1 = UIButton.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX, y:7.5 * times, width: 15 * times, height: 15 * times))
-        arrowImageButton1.setImage(UIImage(named: "arrow_right"), for: UIControlState.normal)
-        sectionView3.addSubview(arrowImageButton1)
-        
-        let tips3Label = UILabel.init(frame: CGRect(x: offSetX, y: titleLabel2.frame.maxY, width: PhoneUtils.kScreenWidth - 2 * offSetX, height: sectionView2.frame.size.height))
-        tips3Label.text = "特殊电站大小，请联系客服询价"
-        tips3Label.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-        tips3Label.textAlignment = NSTextAlignment.right
-        sectionView3.addSubview(tips3Label)
-        
-        let button = UIButton.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 30 * times))
-        button.addTarget(self, action: #selector(self.showTypeView), for: UIControlEvents.touchUpInside)
-        sectionView3.addSubview(button)
-        
-        let sectionView4 = UIView.init(frame: CGRect(x: 0, y: sectionView3.frame.maxY + offSetY, width: PhoneUtils.kScreenWidth, height: 175 * times))
+        let sectionView4 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 175 * times))
         sectionView4.backgroundColor = UIColor.white
         scrollView.addSubview(sectionView4)
         
@@ -180,39 +225,9 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             tindex += 1
         }
         
-        let sectionView5 = UIView.init(frame: CGRect(x: 0, y: sectionView4.frame.maxY + offSetY, width: PhoneUtils.kScreenWidth, height: 60 * times))
-        sectionView5.backgroundColor = UIColor.white
-        scrollView.addSubview(sectionView5)
+        maxY = sectionView4.frame.maxY + offSetY
         
-        let titleLabel4 = UILabel.init(frame: CGRect(x: offSetX, y: 0, width: 100, height: 30 * times))
-        titleLabel4.text = "保障时间"
-        titleLabel4.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        sectionView5.addSubview(titleLabel4)
-        
-        yearsTextField = UITextField.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX - 80, y: 0, width: 80, height: 30 * times))
-        yearsTextField.placeholder = "请输入年份"
-        yearsTextField.textColor = UIColor.darkGray
-        yearsTextField.textAlignment = NSTextAlignment.center
-        yearsTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-        yearsTextField.addTarget(self, action: #selector(self.valueChanged), for: UIControlEvents.editingChanged)
-        sectionView5.addSubview(yearsTextField)
-        
-        let arrowImageButton2 = UIButton.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX, y: 7.5 * times, width: 15 * times, height: 15 * times))
-        arrowImageButton2.setImage(UIImage(named: "arrow_right"), for: UIControlState.normal)
-        sectionView5.addSubview(arrowImageButton2)
-        
-        let titleLabel5 = UILabel.init(frame: CGRect(x: offSetX, y: titleLabel4.frame.maxY, width: 120, height: 30 * times))
-        titleLabel5.text = "今日购买生效时间"
-        titleLabel5.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        sectionView5.addSubview(titleLabel5)
-        
-        let takeEffectLabel = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth - offSetX - 150, y: titleLabel4.frame.maxY, width: 150, height: 30 * times))
-        takeEffectLabel.text = PhoneUtils.getTommorrowDateStr(Date()) + " 00:00:00"
-        takeEffectLabel.textAlignment = NSTextAlignment.right
-        takeEffectLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        sectionView5.addSubview(takeEffectLabel)
-        
-        let sectionView6 = UIView.init(frame: CGRect(x: 0, y: sectionView5.frame.maxY + offSetY, width: PhoneUtils.kScreenWidth, height: 30 * times))
+        let sectionView6 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 30 * times))
         sectionView6.backgroundColor = UIColor.white
         scrollView.addSubview(sectionView6)
         
@@ -236,7 +251,9 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         button2.addTarget(self, action: #selector(self.viewButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         sectionView6.addSubview(button2)
         
-        let sectionView7 = UIView.init(frame: CGRect(x: 0, y: sectionView6.frame.maxY + offSetY, width: PhoneUtils.kScreenWidth, height: 60 * times))
+        maxY = sectionView6.frame.maxY + offSetY
+        
+        let sectionView7 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 60 * times))
         sectionView7.backgroundColor = UIColor.white
         scrollView.addSubview(sectionView7)
         
@@ -285,6 +302,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
 //                self.totalLabel.text = "累计投保:" + String(totalCount) + "份"
                 self.types.addObjects(from: typeList as [AnyObject])
                 self.addTypeView()
+                self.addYearsView()
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
@@ -293,10 +311,93 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
 
     deinit {
         typeView.removeFromSuperview()
+        yearsView.removeFromSuperview()
+    }
+    
+    func showYearsView() {
+        if (yearsView != nil) {
+            yearsView.isHidden = false
+        }
+    }
+    
+    func addYearsView() {
+        let years = ["一年", "二年", "三年", "四年", "五年", "六年", "七年", "八年", "九年", "十年"]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        yearsView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
+        yearsView.backgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.2)
+        yearsView.isHidden = true
+        appDelegate.window?.addSubview(yearsView)
+        
+        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.closeYearsView))
+        yearsView.isUserInteractionEnabled = true
+        yearsView.addGestureRecognizer(gesture)
+        
+        let totalLine: CGFloat = CGFloat((years.count / 4) + 1)
+        let dir: CGFloat = 5
+        let width = (PhoneUtils.kScreenWidth - dir * 5) / 4
+        let height = PhoneUtils.kScreenHeight / 15
+        let bkgViewHeight = (totalLine * height) + (totalLine + 1) * dir
+        
+        let bkgView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - bkgViewHeight - 50, width: PhoneUtils.kScreenWidth, height: bkgViewHeight))
+        bkgView.backgroundColor = UIColor.white
+        yearsView.addSubview(bkgView)
+        
+        let closeBottomView = UIView.init(frame: CGRect(x: 0, y: bkgView.frame.maxY, width: PhoneUtils.kScreenWidth, height: 50))
+        closeBottomView.backgroundColor = UIColor.white
+        yearsView.addSubview(closeBottomView)
+        
+        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
+        let buttonHeight = closeBottomView.frame.size.height - 5 * 2
+        
+        let cancelButton = GFJBottomButton.init(type: UIButtonType.custom)
+        cancelButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        cancelButton.setTitle("取消", for: UIControlState.normal)
+        cancelButton.backgroundColor = Colors.installColor
+        cancelButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
+        cancelButton.addTarget(self, action: #selector(self.closeYearsView), for: UIControlEvents.touchUpInside)
+        closeBottomView.addSubview(cancelButton)
+        
+        var line : CGFloat = 0
+        var index : CGFloat = 0
+        for i in 0..<years.count {
+            print(i)
+            if (i != 0 && i%4 == 0) {
+                index = 0
+                line += 1
+            }
+            let button = UIButton.init(type: UIButtonType.custom)
+            button.frame = CGRect(x: dir + index * offSetX + width * index, y: (line + 1) * dir + height * line, width: width, height: height)
+            button.setTitle(years[i], for: UIControlState.normal)
+            button.layer.borderColor = UIColor.black.cgColor
+            button.layer.borderWidth = 1
+            button.setTitleColor(UIColor.black, for: UIControlState.normal)
+            button.backgroundColor = UIColor.white
+            button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+            button.tag = i
+            button.addTarget(self, action: #selector(self.yearsButtonClicked(_:)), for: UIControlEvents.touchUpInside)
+            bkgView.addSubview(button)
+            index += 1
+        }
+    }
+    
+    func closeYearsView() {
+        yearsView.isHidden = true
+    }
+    
+    func yearsButtonClicked(_ button: UIButton) {
+        years = button.tag + 1
+        yearsLabel.text = "投保\(years)年"
+        closeYearsView()
+        
+        reSizePrice()
     }
     
     func showTypeView() {
-        typeView.isHidden = false
+        if (typeView != nil) {
+            typeView.isHidden = false
+        }
     }
     
     func addTypeView() {
@@ -375,11 +476,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         if (insureModel == nil) {
             return
         }
-        var years = yearsTextField.text
-        if (yearsTextField.text == "") {
-            years = "0"
-        }
-        let currentPrice = NSInteger.init(years!)! * insureModel!.price!.intValue
+        let currentPrice = years * insureModel!.price!.intValue
         priceLabel.text = "￥:\(currentPrice)元"
     }
 
@@ -438,12 +535,8 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func buyNow() {
-        if (yearsTextField.text!.isEmpty) {
-            self.showHint("请输入年限")
-            return
-        }
-        if (NSInteger.init(yearsTextField.text!) == 0) {
-            self.showHint("年限不能为0")
+        if (years == 0) {
+            self.showHint("请选择年限")
             return
         }
         if (insureModel == nil) {
@@ -452,7 +545,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         }
         let vc = ApplyForOrderViewController()
         vc.insuranceType = insureModel
-        vc.years = yearsTextField.text
+        vc.years = "\(years)"
         self.pushViewController(vc)
     }
 
