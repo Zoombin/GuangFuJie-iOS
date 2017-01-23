@@ -34,9 +34,48 @@ class InstallBuyViewController: BaseViewController {
     
     func addFavButton(isFav : Bool) {
         if (isFav) {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "取消收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked))
+            self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
         } else {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏屋顶", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked))
+            self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
+        }
+    }
+    
+    func shareRoof() {
+        if (rInfo == nil) {
+            return
+        }
+        UMSocialData.default().extConfig.wechatSessionData.title = rInfo!.fullname! + "的屋顶"
+        UMSocialData.default().extConfig.wechatSessionData.url = "http://d.xiumi.us/board/v5/2KnRY/28903497"
+        
+        UMSocialData.default().extConfig.wechatTimelineData.title = rInfo!.fullname! + "的屋顶"
+        UMSocialData.default().extConfig.wechatTimelineData.url = "http://d.xiumi.us/board/v5/2KnRY/28903497"
+
+        let size = "屋顶面积:" + String(describing: rInfo!.area_size!) + "㎡"
+        let roofType = "屋顶类型:" + (rInfo!.type! == 2 ? "斜面" : "平面")
+        let price = "出租单价:" + String(describing: rInfo!.price!) + "元/㎡"
+        var address = ""
+        if (rInfo!.province_label != nil) {
+            address = address + rInfo!.province_label!
+        }
+        if (rInfo!.city_label != nil) {
+            address = address + rInfo!.city_label!
+        }
+        if (rInfo!.address != nil) {
+            address = address + rInfo!.address!
+        }
+
+        let content = size + "," + roofType + "," + price + "," + address
+        let logo = UIImage(named: "icon")
+        
+        let snsNames = [UMShareToWechatSession, UMShareToWechatTimeline]
+        UMSocialSnsService.presentSnsIconSheetView(self, appKey: Constants.umAppKey, shareText: content, shareImage: logo, shareToSnsNames: snsNames, delegate: self)
+    }
+    
+    override func didFinishGetUMSocialData(inViewController response: UMSocialResponseEntity!) {
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            self.showHint("分享成功")
+        } else {
+            self.showHint("分享失败")
         }
     }
     
@@ -83,7 +122,7 @@ class InstallBuyViewController: BaseViewController {
         nameLabel.text = rInfo!.fullname!
         phoneLabel.text = "****"
         sizeLabel.text = String(describing: rInfo!.area_size!) + "㎡"
-        typeLabel.text = "屋顶类型:" + (rInfo!.type! == 2 ? "斜面" : "平面")
+        typeLabel.text = (rInfo!.type! == 2 ? "斜面" : "平面")
         priceLabel.text = String(describing: rInfo!.price!) + "元/㎡"
         createTimeLabel.text = rInfo!.created_date!
         

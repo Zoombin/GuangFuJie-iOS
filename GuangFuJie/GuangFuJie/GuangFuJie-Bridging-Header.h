@@ -14,6 +14,9 @@
 #import "UIImageView+AFNetworking.h"
 #import "MJRefresh.h"
 #import "MSLFrameUtil.h"
+#import "MobClick.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
 
 #import "ZLPhotoPickerViewController.h"
 #import "ZLPhotoAssets.h"

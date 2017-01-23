@@ -27,6 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         
+        if (!Constants.isSandBox) {
+            MobClick.setCrashReportEnabled(true)
+            MobClick.setLogEnabled(true)
+            MobClick.setAppVersion(PhoneUtils.appVersion)
+            MobClick.start(withAppkey: Constants.umAppKey)
+            MobClick.updateOnlineConfig()
+        }
+        
+        UMSocialData.setAppKey(Constants.umAppKey)
+        UMSocialWechatHandler.setWXAppId(Constants.wexinAppKey, appSecret: Constants.wexinAppSecret, url: "http://www.umeng.com/social")
+        
         //支付
         BeeCloud.initWithAppID(Constants.payKey, andAppSecret: Constants.paySecret, sandbox: Constants.isSandBox)
         

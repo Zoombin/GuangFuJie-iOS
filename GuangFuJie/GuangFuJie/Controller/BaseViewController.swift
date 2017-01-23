@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate, LoginViewDelegate {
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate, LoginViewDelegate, UMSocialUIDelegate {
     var topMenuView : UIView!
     var loginView : LoginView!
     
@@ -84,7 +84,29 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func initRightNavButton() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "users_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked))
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(image: UIImage(named: "users_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked)), UIBarButtonItem.init(image: UIImage(named: "btn_share")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareButtonClicked))]
+    }
+    
+    func didFinishGetUMSocialData(inViewController response: UMSocialResponseEntity!) {
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            self.showHint("分享成功")
+        } else {
+            self.showHint("分享失败")
+        }
+    }
+    
+    func shareButtonClicked() {
+        UMSocialData.default().extConfig.wechatSessionData.title = "光伏街"
+        UMSocialData.default().extConfig.wechatSessionData.url = "https://itunes.apple.com/app/id1157294691"
+        
+        UMSocialData.default().extConfig.wechatTimelineData.title = "光伏街"
+        UMSocialData.default().extConfig.wechatTimelineData.url = "https://itunes.apple.com/app/id1157294691"
+        
+        let content = "光伏街是一家基于“互联网”的新能源提供商，是太阳能发电行业最优秀的系统集成商之一"
+        let logo = UIImage(named: "icon")
+        
+        let snsNames = [UMShareToWechatSession, UMShareToWechatTimeline]
+        UMSocialSnsService.presentSnsIconSheetView(self, appKey: Constants.umAppKey, shareText: content, shareImage: logo, shareToSnsNames: snsNames, delegate: self)
     }
     
     func rightButtonClicked() {

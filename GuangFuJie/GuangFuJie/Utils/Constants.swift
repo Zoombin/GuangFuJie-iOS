@@ -9,6 +9,10 @@
 import UIKit
 
 class Constants: NSObject {
+    static let umAppKey = "58846b1ecae7e760b400065c"
+    static let wexinAppKey = "wxbcf80af171ceb211"
+    static let wexinAppSecret = "jiangsusurongjspv320583000851610"
+    
     //QA
 //    static let httpHost = "http://112.124.98.9:3002/api/"
 //    static let payKey = "4d6af0de-2542-433e-a361-73ef59805d35"
