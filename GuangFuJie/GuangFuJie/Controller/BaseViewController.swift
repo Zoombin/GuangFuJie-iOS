@@ -199,9 +199,26 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         // Dispose of any resources that can be recreated.
     }
     
-    func aliPay(_ billno:String,title:String,totalFee:String,type:String) {
+    func selectPayType(_ billno:String,title:String,totalFee:String,type:String) {
+        let actionSheet = UIAlertController.init(title: "选择支付方式", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let actionButtonAliPay = UIAlertAction.init(title: "支付宝", style: UIAlertActionStyle.default) { (action) in
+            self.pay(billno, title: title, totalFee: totalFee, type: type, channel: PayChannel.aliApp)
+        }
+        let actionButtonWX = UIAlertAction.init(title: "微信", style: UIAlertActionStyle.default) { (action) in
+            self.pay(billno, title: title, totalFee: totalFee, type: type, channel: PayChannel.wxApp)
+        }
+        let actionButtonCancel = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel) { (action) in
+            //do nothing
+        }
+        actionSheet.addAction(actionButtonAliPay)
+        actionSheet.addAction(actionButtonWX)
+        actionSheet.addAction(actionButtonCancel)
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func pay(_ billno:String,title:String,totalFee:String,type:String, channel: PayChannel) {
         let payReq = BCPayReq()
-        payReq.channel = PayChannel.aliApp
+        payReq.channel = channel
         payReq.title = title
         payReq.totalFee = totalFee //单位是分
         payReq.billNo = billno

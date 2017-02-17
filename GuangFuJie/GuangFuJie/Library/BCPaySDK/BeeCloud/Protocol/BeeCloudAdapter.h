@@ -19,14 +19,19 @@
 + (BOOL)beeCloudWXPay:(NSMutableDictionary *)dic;
 + (BOOL)beeCloudAliPay:(NSMutableDictionary *)dic;
 + (BOOL)beeCloudUnionPay:(NSMutableDictionary *)dic;
++ (BOOL)beeCloudApplePay:(NSMutableDictionary *)dic;
 + (NSString *)beeCloudBaiduPay:(NSMutableDictionary *)dic;
 + (BOOL)beecloudSandboxPay;
++ (BOOL)beecloudCanMakeApplePayments:(NSUInteger)cardType;
 
 + (void)beeCloudPayPal:(NSMutableDictionary *)dic;
 + (void)beeCloudPayPalVerify:(NSMutableDictionary *)dic;
 + (void)beeCloudOfflinePay:(NSMutableDictionary *)dic;
 + (void)beeCloudOfflineStatus:(NSMutableDictionary *)dic;
 + (void)beeCloudOfflineRevert:(NSMutableDictionary *)dic;
+
++ (void)beeCloudInitBCWXPay:(NSString *)wxAppId;
++ (void)beeCloudBCWXPay:(NSMutableDictionary *)dic;
 
 
 @end

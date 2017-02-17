@@ -70,13 +70,19 @@
 }
 
 + (NSString *)getBestHostWithFormat:(NSString *)format {
-    NSString *verHost = [NSString stringWithFormat:@"%@%@", kBCHosts[arc4random()%kBCHostCount], reqApiVersion];
+    NSString *verHost = [NSString stringWithFormat:@"%@%@", kBCHost, reqApiVersion];
     return [NSString stringWithFormat:format, verHost, [BCPayCache sharedInstance].sandbox ? @"/sandbox" : @""];
 }
 
 + (NSString *)getChannelString:(PayChannel)channel {
     NSString *cType = @"";
     switch (channel) {
+        case PayChannelBCApp:
+            cType = @"BC_APP";
+            break;
+        case PayChannelBCWXApp:
+            cType = @"BC_WX_APP";
+            break;
 #pragma mark PayChannel_WX
         case PayChannelWx:
             cType = @"WX";
@@ -124,6 +130,12 @@
             break;
         case PayChannelUnWeb:
             cType = @"UN_WEB";
+            break;
+        case PayChannelApplePay:
+            cType = @"APPLE";
+            break;
+        case PayChannelApplePayTest:
+            cType = @"APPLE_TEST";
             break;
 #pragma mark PayChannel_PayPal
         case PayChannelPayPal:

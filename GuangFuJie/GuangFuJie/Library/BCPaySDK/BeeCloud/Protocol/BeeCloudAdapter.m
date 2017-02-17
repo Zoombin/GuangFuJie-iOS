@@ -67,6 +67,22 @@
     return NO;
 }
 
++ (BOOL)beecloudCanMakeApplePayments:(NSUInteger)cardType {
+    id adapter = [[NSClassFromString(kAdapterApplePay) alloc] init];
+    if (adapter && [adapter respondsToSelector:@selector(canMakeApplePayments:)]) {
+        return [adapter canMakeApplePayments:cardType];
+    }
+    return NO;
+}
+
++ (BOOL)beeCloudApplePay:(NSMutableDictionary *)dic {
+    id adapter = [[NSClassFromString(kAdapterApplePay) alloc] init];
+    if (adapter && [adapter respondsToSelector:@selector(applePay:)]) {
+        return [adapter applePay:dic];
+    }
+    return NO;
+}
+
 + (NSString *)beeCloudBaiduPay:(NSMutableDictionary *)dic {
     id adapter = [[NSClassFromString(kAdapterBaidu) alloc] init];
     if (adapter && [adapter respondsToSelector:@selector(baiduPay:)]) {
@@ -117,5 +133,20 @@
         [adapter offlineRevert:dic];
     }
 }
+
++ (void)beeCloudInitBCWXPay:(NSString *)wxAppId {
+    id adapter = [[NSClassFromString(kAdapterBCWXPay) alloc] init];
+    if (adapter && [adapter respondsToSelector:@selector(initBCWXPay:)]) {
+        [adapter initBCWXPay:wxAppId];
+    }
+}
+
++ (void)beeCloudBCWXPay:(NSMutableDictionary *)dic {
+    id adapter = [[NSClassFromString(kAdapterBCWXPay) alloc] init];
+    if (adapter && [adapter respondsToSelector:@selector(bcWXPay:)]) {
+        [adapter bcWXPay:dic];
+    }
+}
+
 
 @end

@@ -10,19 +10,6 @@
 #import "BCPayObjects.h"
 #import "BCPayConstant.h"
 
-#pragma mark - BeeCloudDelegate
-
-@protocol BeeCloudDelegate <NSObject>
-@required
-/**
- *  不同类型的请求，对应不同的响应
- *
- *  @param resp 响应体
- */
-- (void)onBeeCloudResp:(BCBaseResp *)resp;
-
-@end
-
 #pragma mark - BeeCloud
 @interface BeeCloud : NSObject
 
@@ -114,6 +101,14 @@
 + (BOOL)getCurrentMode;
 
 /**
+ *  判断手机是否支持Apple Pay；商户可以根据此方法返回的值来决定是否显示Apple Pay的支付图标
+ *
+ *  @param cardType  0 表示不区分卡类型；1 表示只支持借记卡；2 表示支持信用卡；
+ *  @return YES表示支持
+ */
++ (BOOL)canMakeApplePayments:(NSUInteger)cardType;
+
+/**
  *  获取API版本号
  *
  *  @return 版本号
@@ -133,6 +128,13 @@
  *  @param time 超时时间, 5.0代表5秒。
  */
 + (void)setNetworkTimeout:(NSTimeInterval)time;
+
+/**
+ *  配置BC_WX_APP支付环境
+ *
+ *  @param wxAppId 微信开放平台创建的应用appid。
+ */
++ (void)initBCWXPay:(NSString *)wxAppId;
 
 #pragma mark - Send BeeCloud Request
 

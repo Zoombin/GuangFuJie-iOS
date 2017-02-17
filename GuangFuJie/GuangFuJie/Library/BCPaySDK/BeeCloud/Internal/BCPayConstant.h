@@ -11,7 +11,7 @@
 #ifndef BCPaySDK_BCPayConstant_h
 #define BCPaySDK_BCPayConstant_h
 
-static NSString * const kApiVersion = @"3.4.2";//api版本号
+static NSString * const kApiVersion = @"3.6.0";//api版本号
 
 static NSString * const kNetWorkError = @"网络请求失败";
 static NSString * const kUnknownError = @"未知错误";
@@ -23,11 +23,7 @@ static NSString * const kKeyResponseCodeUrl = @"code_url";
 static NSString * const KKeyResponsePayResult = @"pay_result";
 static NSString * const kKeyResponseRevertResult = @"revert_status";
 
-static NSUInteger const kBCHostCount = 4;
-static NSString * const kBCHosts[] = {@"https://apisz.beecloud.cn",
-    @"https://apiqd.beecloud.cn",
-    @"https://apibj.beecloud.cn",
-    @"https://apihz.beecloud.cn"};
+static NSString * const kBCHost = @"https://apidynamic.beecloud.cn";
 
 static NSString * const reqApiVersion = @"/2/rest";
 
@@ -55,13 +51,15 @@ static NSString * const kPayPalAccessTokenSandbox = @"https://api.sandbox.paypal
 static NSString * const kRestApiSandboxNotify = @"%@%@/notify/";
 
 //Adapter
-static NSString * const kAdapterWXPay = @"BCWXPayAdapter";
-static NSString * const kAdapterAliPay = @"BCAliPayAdapter";
-static NSString * const kAdapterUnionPay = @"BCUnionPayAdapter";
-static NSString * const kAdapterPayPal = @"BCPayPalAdapter";
-static NSString * const kAdapterOffline = @"BCOfflineAdapter";
-static NSString * const kAdapterBaidu = @"BCBaiduAdapter";
+static NSString * const kAdapterWXPay = @"WXPayAdapter";
+static NSString * const kAdapterAliPay = @"AliPayAdapter";
+static NSString * const kAdapterUnionPay = @"UnionPayAdapter";
+static NSString * const kAdapterApplePay = @"ApplePayAdapter";
+static NSString * const kAdapterPayPal = @"PayPalAdapter";
+static NSString * const kAdapterOffline = @"OfflineAdapter";
+static NSString * const kAdapterBaidu = @"BaiduAdapter";
 static NSString * const kAdapterSandbox = @"BCSandboxAdapter";
+static NSString * const kAdapterBCWXPay = @"BCWXPayAdapter";
 
 /**
  *  BCPay URL type for handling URLs.
@@ -84,6 +82,8 @@ typedef NS_ENUM(NSInteger, BCPayUrlType) {
 
 typedef NS_ENUM(NSInteger, PayChannel) {
     PayChannelNone = 0,
+    PayChannelBCApp,
+    PayChannelBCWXApp,
     
     PayChannelWx = 10, //微信
     PayChannelWxApp,//微信APP
@@ -102,6 +102,8 @@ typedef NS_ENUM(NSInteger, PayChannel) {
     PayChannelUn = 30,//银联
     PayChannelUnApp,//银联APP
     PayChannelUnWeb,//银联网页
+    PayChannelApplePay,
+    PayChannelApplePayTest,
     
     PayChannelPayPal = 40,
     PayChannelPayPalLive,
@@ -134,6 +136,8 @@ typedef NS_ENUM(NSInteger, BCObjsType) {
     BCObjsTypeOfflinePayReq,
     BCObjsTypeOfflineBillStatusReq,
     BCObjsTypeOfflineRevertReq,
+    BCObjsTypePreRefundReq,
+    BCObjsTypeAuthReq,
     
     BCObjsTypeBaseResp = 200,
     BCObjsTypePayResp,
@@ -147,13 +151,15 @@ typedef NS_ENUM(NSInteger, BCObjsType) {
     BCObjsTypeOfflinePayResp,
     BCObjsTypeOfflineBillStatusResp,
     BCObjsTypeOfflineRevertResp,
+    BCObjsTypePreRefundResp,
     
     BCObjsTypeBaseResults = 300,
     BCObjsTypeBillResults,
     BCObjsTypeRefundResults,
     
     BCObjsTypePayPal = 400,
-    BCObjsTypePayPalVerify
+    BCObjsTypePayPalVerify,
+    
 };
 
 typedef NS_ENUM(NSUInteger, BillStatus) {

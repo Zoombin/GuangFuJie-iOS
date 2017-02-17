@@ -91,6 +91,10 @@
     return NO;
 }
 
++ (BOOL)canMakeApplePayments:(NSUInteger)cardType {
+    return [BeeCloudAdapter beecloudCanMakeApplePayments:cardType];
+}
+
 + (NSString *)getBCApiVersion {
     return kApiVersion;
 }
@@ -103,12 +107,20 @@
     [BCPayCache sharedInstance].networkTimeout = time;
 }
 
++ (void)initBCWXPay:(NSString *)wxAppId {
+    [BeeCloudAdapter beeCloudRegisterWeChat:wxAppId];
+    [BeeCloudAdapter beeCloudInitBCWXPay:wxAppId];
+}
+
 + (BOOL)sendBCReq:(BCBaseReq *)req {
     BeeCloud *instance = [BeeCloud sharedInstance];
     BOOL bSend = YES;
     switch (req.type) {
         case BCObjsTypePayReq: //支付(微信、支付宝、银联、百度钱包)
             [instance reqPay:(BCPayReq *)req];
+            break;
+        case BCObjsTypePreRefundReq: //预退款
+            [instance reqPreRefund:(BCPreRefundReq *)req];
             break;
         case BCObjsTypeQueryBillsReq://条件查询支付订单
             [instance reqQueryBills:(BCQueryBillsReq *)req];

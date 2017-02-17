@@ -24,6 +24,7 @@
         self.billNo = @"";
         self.scheme = @"";
         self.viewController = nil;
+        self.cardType = 0;
         self.billTimeOut = 0;
     }
     return self;
@@ -41,9 +42,8 @@
         [BCPayUtil doErrorResponse:@"请检查是否全局初始化"];
         return;
     }
-    
     parameters[@"channel"] = cType;
-    parameters[@"total_fee"] = [NSNumber numberWithInteger:[self.totalFee doubleValue]];
+    parameters[@"total_fee"] = [NSNumber numberWithInteger:[self.totalFee integerValue]];
     parameters[@"bill_no"] = self.billNo;
     parameters[@"title"] = self.title;
     
@@ -87,8 +87,13 @@
                                     (NSDictionary *)response];
         if (self.channel == PayChannelAliApp) {
             [dic setObject:self.scheme forKey:@"scheme"];
-        } else if (self.channel == PayChannelUnApp) {
+        } else if (self.channel == PayChannelUnApp || self.channel == PayChannelApplePay ||
+                   self.channel == PayChannelApplePayTest || self.channel == PayChannelBCApp ||
+                   self.channel == PayChannelBCWXApp) {
             [dic setObject:self.viewController forKey:@"viewController"];
+            if (self.channel == PayChannelApplePayTest || self.channel == PayChannelApplePay) {
+                [dic setObject:@(self.channel) forKey:@"channel"];
+            }
         }
         [BCPayCache sharedInstance].bcResp.bcId = [dic objectForKey:@"id"];
         switch (self.channel) {
@@ -98,11 +103,20 @@
             case PayChannelAliApp:
                 bSendPay = [BeeCloudAdapter beeCloudAliPay:dic];
                 break;
+            case PayChannelBCApp:
             case PayChannelUnApp:
                 bSendPay = [BeeCloudAdapter beeCloudUnionPay:dic];
                 break;
             case PayChannelBaiduApp:
                 bSendPay = [BeeCloudAdapter beeCloudBaiduPay:dic].isValid;
+                break;
+            case PayChannelApplePayTest:
+            case PayChannelApplePay:
+                NSLog(@"applePay %@", dic);
+                bSendPay = [BeeCloudAdapter beeCloudApplePay:dic];
+                break;
+            case PayChannelBCWXApp:
+                [BeeCloudAdapter beeCloudBCWXPay:dic];
                 break;
             default:
                 break;
@@ -136,14 +150,28 @@
     } else if ((self.channel == PayChannelAliApp) && !self.scheme.isValid) {
         [BCPayUtil doErrorResponse:@"scheme 不是合法的字符串，将导致无法从支付宝钱包返回应用"];
         return NO;
-    } else if (self.channel == PayChannelUnApp && (self.viewController == nil)) {
-        [BCPayUtil doErrorResponse:@"viewController 不合法，将导致无法正常执行银联支付"];
+    } else if ((self.channel == PayChannelUnApp || self.channel == PayChannelApplePay ||
+                self.channel == PayChannelBCApp || self.channel == PayChannelBCWXApp) && (self.viewController == nil)) {
+        [BCPayUtil doErrorResponse:@"viewController 不合法，将导致无法正常支付"];
         return NO;
     } else if ([BeeCloud getCurrentMode] && (self.viewController == nil)) {
-        [BCPayUtil doErrorResponse:@"viewController 不合法，将导致无法正常执行银联支付"];
+        [BCPayUtil doErrorResponse:@"viewController 不合法，将导致无法正常支付"];
         return NO;
     } else if ((self.channel == PayChannelWxApp && ![BeeCloudAdapter beeCloudIsWXAppInstalled]) && ![BeeCloud getCurrentMode]) {
         [BCPayUtil doErrorResponse:@"未找到微信客户端，请先下载安装"];
+        return NO;
+    } else if ((self.channel == PayChannelApplePay || self.channel == PayChannelApplePayTest) && ![BeeCloud canMakeApplePayments:self.cardType]) {
+        switch (self.cardType) {
+            case 0:
+                [BCPayUtil doErrorResponse:@"此设备不支持Apple Pay"];
+                break;
+            case 1:
+                [BCPayUtil doErrorResponse:@"不支持借记卡"];
+                break;
+            case 2:
+                [BCPayUtil doErrorResponse:@"不支持信用卡"];
+                break;
+        }
         return NO;
     }
     return YES;
