@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         
         //支付
         BeeCloud.initWithAppID(Constants.payKey, andAppSecret: Constants.paySecret, sandbox: Constants.isSandBox)
+        BeeCloud.initWeChatPay(Constants.wexinAppKey)
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         if (UserDefaultManager.showGuide()) {
