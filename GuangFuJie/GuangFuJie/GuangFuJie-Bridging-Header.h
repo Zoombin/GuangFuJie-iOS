@@ -17,6 +17,7 @@
 #import "MobClick.h"
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
+#import "WXApi.h"
 
 #import "ZLPhotoPickerViewController.h"
 #import "ZLPhotoAssets.h"

@@ -217,6 +217,11 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func pay(_ billno:String,title:String,totalFee:String,type:String, channel: PayChannel) {
+        if (channel == PayChannel.wxApp && !WXApi.isWXAppInstalled()) {
+            self.showHint("请安装微信进行支付")
+            return
+        }
+        
         let payReq = BCPayReq()
         payReq.channel = channel
         payReq.title = title
