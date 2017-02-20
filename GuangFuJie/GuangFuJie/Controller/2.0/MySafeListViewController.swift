@@ -83,9 +83,9 @@ class MySafeListViewController: BaseViewController, UITableViewDelegate, UITable
         let userInfo = safeArray[index] as! InsuranceInfo
         
         let title = "保险类型:" + String(userInfo.size!) + " " + String(describing: userInfo.years!) + "年";
-        let currentPrice = NSInteger.init(userInfo.years!) * userInfo.price!.intValue * 100
+        let currentPrice = Float(userInfo.years!) * userInfo.price!.floatValue * 100
         
-        self.selectPayType(userInfo.insured_sn!, title: title, totalFee: String(currentPrice), type: String(userInfo.type!))
+        self.selectPayType(userInfo.insured_sn!, title: title, totalFee: String(format: "%.0f", currentPrice), type: String(userInfo.type!))
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

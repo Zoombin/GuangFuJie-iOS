@@ -476,8 +476,8 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         if (insureModel == nil) {
             return
         }
-        let currentPrice = years * insureModel!.price!.intValue
-        priceLabel.text = "￥:\(currentPrice)元"
+        let currentPrice = Float(years) * insureModel!.price!.floatValue
+        priceLabel.text = String(format: "￥:%.2f元", currentPrice)
     }
 
     func viewButtonClicked(_ sender : UIButton) {

@@ -282,12 +282,12 @@ class ApplyForOrderViewController: BaseViewController {
             imgUrls = imgUrls + "," + img3
         }
         let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
-        let currentPrice = NSInteger.init(years!)! * self.insuranceType!.price!.intValue * 100
+        let currentPrice = Float(years!)! * self.insuranceType!.price!.floatValue * 100
         
         self.showHud(in: self.view, hint: "提交中...")
         API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: insuranceType.price!, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, success: { (commonModel) in
                 self.hideHud()
-                self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(currentPrice), type: commonModel.type!)
+                self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(format: "%.0f", currentPrice), type: commonModel.type!)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
