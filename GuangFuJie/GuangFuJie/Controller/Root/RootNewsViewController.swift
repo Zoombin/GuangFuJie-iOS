@@ -18,7 +18,8 @@ class RootNewsViewController: BaseViewController {
     }
     
     func initView() {
-        
+        initRightNavButton()
+        initLeftNavButton()
     }
 
     override func didReceiveMemoryWarning() {
