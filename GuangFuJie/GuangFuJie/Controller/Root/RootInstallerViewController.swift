@@ -20,13 +20,13 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Texts.tab1
         initView()
         // Do any additional setup after loading the view.
     }
     
     func initView() {
         //MARK: 如果是root的话必须初始化这三个
-        showTopMenu(self.tabBarController!.selectedIndex)
         initRightNavButton()
         initLeftNavButton()
         initLoginView()
@@ -60,11 +60,11 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     //MARK: 屋顶
     let installerCellReuseIdentifier = "installerCellReuseIdentifier"
     func initInstallerView() {
-        installView = UIView.init(frame: CGRect(x: 0, y: topMenuView.frame.maxY, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
-        installView.backgroundColor = UIColor.yellow
+        installView = UIView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64))
+        installView.backgroundColor = UIColor.white
         self.view.addSubview(installView)
         
-        let installViewBottomView = UIView.init(frame: CGRect(x: 0, y: installView.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        let installViewBottomView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - 50 * 2 - 64, width: PhoneUtils.kScreenWidth, height: 50))
         installViewBottomView.backgroundColor = UIColor.white
         installView.addSubview(installViewBottomView)
         

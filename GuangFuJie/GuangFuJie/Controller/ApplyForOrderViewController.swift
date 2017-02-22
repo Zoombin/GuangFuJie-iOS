@@ -251,6 +251,9 @@ class ApplyForOrderViewController: BaseViewController {
     }
     
     func submitOrder() {
+        if (shouldShowLogin()) {
+            return
+        }
         if (nameTextField.text!.isEmpty) {
             self.showHint("请输入姓名")
             return

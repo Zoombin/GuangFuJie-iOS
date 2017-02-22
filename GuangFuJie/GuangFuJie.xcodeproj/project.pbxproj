@@ -232,6 +232,8 @@
 		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
+		DE832B271E5D3205002CFE1E /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE832B261E5D3205002CFE1E /* Texts.swift */; };
+		DE832B2B1E5D3A77002CFE1E /* RootNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE832B2A1E5D3A77002CFE1E /* RootNewsViewController.swift */; };
 		DE83816B1DFD2E490021716B /* MyInstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */; };
 		DE8381751DFD311E0021716B /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8381731DFD311E0021716B /* DeviceCell.swift */; };
 		DE8381761DFD311E0021716B /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381741DFD311E0021716B /* DeviceCell.xib */; };
@@ -812,6 +814,8 @@
 		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
+		DE832B261E5D3205002CFE1E /* Texts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
+		DE832B2A1E5D3A77002CFE1E /* RootNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNewsViewController.swift; sourceTree = "<group>"; };
 		DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInstallerDetailViewController.swift; sourceTree = "<group>"; };
 		DE8381731DFD311E0021716B /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		DE8381741DFD311E0021716B /* DeviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
@@ -1166,6 +1170,7 @@
 				1891D9F91D3F57B90042E72D /* Constants.swift */,
 				1891D9FA1D3F57B90042E72D /* PhoneUtils.swift */,
 				DE79F9571D4C1FD30032D461 /* Colors.swift */,
+				DE832B261E5D3205002CFE1E /* Texts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2295,6 +2300,7 @@
 				DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */,
 				DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */,
 				DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */,
+				DE832B2A1E5D3A77002CFE1E /* RootNewsViewController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -2712,6 +2718,8 @@
 				DE51F3441E164EFF00671967 /* UIButton+WebCache.m in Sources */,
 				DEF3B5541E07C97F0016A359 /* IQKeyboardManager.swift in Sources */,
 				1891D9FC1D3F57B90042E72D /* PhoneUtils.swift in Sources */,
+				DE832B2B1E5D3A77002CFE1E /* RootNewsViewController.swift in Sources */,
+				DE832B271E5D3205002CFE1E /* Texts.swift in Sources */,
 				DEF3B5591E07C97F0016A359 /* IQTitleBarButtonItem.swift in Sources */,
 				DE5E747E1D509BAD003CDAAC /* QNIpModel.m in Sources */,
 				DE9AAA591DFBD315006B56E9 /* MJRefreshFooter.m in Sources */,

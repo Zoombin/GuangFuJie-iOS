@@ -75,13 +75,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
     }
     
     func initMain() {
-        let nav1 = UINavigationController.init(rootViewController: RootYeZhuViewController())
-        let nav2 = UINavigationController.init(rootViewController: RootInstallerViewController())
-        let nav3 = UINavigationController.init(rootViewController: RootElectricViewController())
-        let nav4 = UINavigationController.init(rootViewController: RootSafeViewController())
+        //找安装商
+        let nav1 = UINavigationController.init(rootViewController: RootInstallerViewController())
+        nav1.tabBarItem.title = Texts.tab1
+        nav1.tabBarItem.image = UIImage.init(named: "ic_tab_installer")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav1.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_installer_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav1.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
         
-        tabBarController.viewControllers = [nav1, nav2, nav3, nav4]
-        tabBarController.tabBar.isHidden = true
+        //找屋顶
+        let nav2 = UINavigationController.init(rootViewController: RootYeZhuViewController())
+        nav2.tabBarItem.title = Texts.tab2
+        nav2.tabBarItem.image = UIImage.init(named: "ic_tab_roof")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav2.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_roof_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav2.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
+        
+        //查发电量
+        let nav3 = UINavigationController.init(rootViewController: RootElectricViewController())
+        nav3.tabBarItem.title = Texts.tab3
+        nav3.tabBarItem.image = UIImage.init(named: "ic_tab_electric")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav3.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_electric_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav3.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
+        
+        //保险
+        let nav4 = UINavigationController.init(rootViewController: RootSafeViewController())
+        nav4.tabBarItem.title = Texts.tab4
+        nav4.tabBarItem.image = UIImage.init(named: "ic_tab_safe")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav4.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_safe_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav4.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
+        
+        //资讯
+        let nav5 = UINavigationController.init(rootViewController: RootNewsViewController())
+        nav5.tabBarItem.title = Texts.tab4
+        nav5.tabBarItem.image = UIImage.init(named: "ic_tab_news")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav5.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_news_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav5.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
+        
+        tabBarController.viewControllers = [nav1, nav2, nav3, nav4, nav5]
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }

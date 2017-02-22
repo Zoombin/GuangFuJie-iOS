@@ -19,13 +19,13 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Texts.tab2
         initView()
         // Do any additional setup after loading the view.
     }
     
     func initView() {
         //MARK: 如果是root的话必须初始化这三个
-        showTopMenu(self.tabBarController!.selectedIndex)
         initRightNavButton()
         initLeftNavButton()
         initLoginView()
@@ -58,10 +58,10 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
     //MARK: 业主
     let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier"
     func initYeZhuView() {
-        yezhuView = UIView.init(frame: CGRect(x: 0, y: topMenuView.frame.maxY, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
+        yezhuView = UIView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64))
         self.view.addSubview(yezhuView)
         
-        let yezhuBottomView = UIView.init(frame: CGRect(x: 0, y: yezhuView.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        let yezhuBottomView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - 50 * 2 - 64, width: PhoneUtils.kScreenWidth, height: 50))
         yezhuBottomView.backgroundColor = UIColor.white
         yezhuView.addSubview(yezhuBottomView)
         

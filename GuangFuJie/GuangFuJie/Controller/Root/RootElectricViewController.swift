@@ -17,13 +17,13 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Texts.tab3
         initView()
         // Do any additional setup after loading the view.
     }
     
     func initView() {
         //MARK: 如果是root的话必须初始化这三个
-        showTopMenu(self.tabBarController!.selectedIndex)
         initRightNavButton()
         initLeftNavButton()
         initLoginView()
@@ -93,7 +93,7 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
     //MARK: 业主
     let deviceCellReuseIdentifier = "deviceCellReuseIdentifier"
     func initDeviceList() {
-        deviceTableView = UITableView.init(frame: CGRect(x: 0, y: 64 + topMenuView.frame.size.height, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topMenuView.frame.size.height - 50), style: UITableViewStyle.plain)
+        deviceTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - 50), style: UITableViewStyle.plain)
         deviceTableView.delegate = self
         deviceTableView.dataSource = self
         deviceTableView.backgroundColor = Colors.bkgColor
@@ -102,7 +102,7 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
         
         deviceTableView.register(UINib(nibName: DeviceCell.getNidName(), bundle: nil), forCellReuseIdentifier: "DeviceCell")
     
-        let deviceBottomView = UIView.init(frame: CGRect(x: 0, y: deviceTableView.frame.maxY, width: PhoneUtils.kScreenWidth, height: 50))
+        let deviceBottomView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - 50 * 2, width: PhoneUtils.kScreenWidth, height: 50))
         deviceBottomView.backgroundColor = UIColor.white
         self.view.addSubview(deviceBottomView)
         

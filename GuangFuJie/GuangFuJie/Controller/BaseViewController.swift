@@ -9,7 +9,6 @@
 import UIKit
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate, LoginViewDelegate, UMSocialUIDelegate {
-    var topMenuView : UIView!
     var loginView : LoginView!
     
     override func viewDidLoad() {
@@ -22,43 +21,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         //设置标题的字的颜色
         self.navigationController!.navigationBar.titleTextAttributes = NSDictionary(object: UIColor.darkGray,forKey: NSForegroundColorAttributeName as NSCopying) as? [String : AnyObject]
         BeeCloud.setBeeCloudDelegate(self)
-    }
-    
-    func showTopMenu(_ index : NSInteger) {
-        let topImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        topImageView.image = UIImage.init(named: "ic_home_logo")
-        self.navigationItem.titleView = topImageView
-        
-        let screenWidth = PhoneUtils.kScreenWidth
-        let buttonHeigt : CGFloat = 30
-        let offSetX : CGFloat = 15
-        let offSetY : CGFloat = 5
-        let titles = ["业主", "安装商", "发电量", "保险"]
-        let buttonWidth = (screenWidth - offSetX * CGFloat(titles.count + 1))  / CGFloat(titles.count)
-        
-        topMenuView = UIView.init(frame: CGRect(x: 0, y: 64, width: screenWidth, height: buttonHeigt + offSetY * 2))
-        topMenuView.backgroundColor = UIColor.white
-        self.view.addSubview(topMenuView)
-        
-        for i in 0..<titles.count {
-            let startX : CGFloat = CGFloat(i) * buttonWidth + (CGFloat(i) + 1) * offSetX;
-            let button = UIButton.init(frame: CGRect(x: startX, y: offSetY, width: buttonWidth, height: buttonHeigt))
-            button.setTitle(titles[i], for: UIControlState.normal)
-            button.setTitleColor(Colors.lightGray, for: UIControlState.normal)
-            button.setTitleColor(Colors.lightBule, for: UIControlState.selected)
-            button.layer.cornerRadius = 15
-            button.layer.borderColor = Colors.clearColor.cgColor
-            button.layer.borderWidth = 0.5
-            button.layer.masksToBounds = true
-            button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
-            button.tag = i
-            button.addTarget(self, action: #selector(self.topMenuButtonClicked(_:)), for: UIControlEvents.touchUpInside)
-            topMenuView.addSubview(button)
-            if (i == index) {
-                button.layer.borderColor = Colors.borderWithGray.cgColor
-                button.isSelected = true
-            }
-        }
     }
     
     func initLeftNavButton() {
@@ -186,7 +148,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func pushViewController(_ to : UIViewController) {
-        //        to.hidesBottomBarWhenPushed = true
+        to.hidesBottomBarWhenPushed = true
         let image = UIImage(named: "ic_back")
         to.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.backButtonClicked))
         //注意: 加了这一句，自定义的返回按钮也可以用滑动返回了...

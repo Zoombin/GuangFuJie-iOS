@@ -18,12 +18,12 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Texts.tab4
         initView()
         // Do any additional setup after loading the view.
     }
     
     func initView() {
-        showTopMenu(self.tabBarController!.selectedIndex)
         initRightNavButton()
         initLeftNavButton()
         initLoginView()
@@ -35,10 +35,10 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
     //MARK: 保险
     let safeCellReuseIdentifier = "safeCellReuseIdentifier"
     func initSafeView() {
-        safeView = UIView.init(frame: CGRect(x: 0, y: topMenuView.frame.maxY, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - topMenuView.frame.size.height - 64))
+        safeView = UIView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64))
         self.view.addSubview(safeView)
         
-        let safeViewBottomView = UIView.init(frame: CGRect(x: 0, y: safeView.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        let safeViewBottomView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - 50 * 2 - 64, width: PhoneUtils.kScreenWidth, height: 50))
         safeViewBottomView.backgroundColor = UIColor.white
         safeView.addSubview(safeViewBottomView)
         
@@ -133,9 +133,6 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
     }
     
     func buySafeNow() {
-        if (shouldShowLogin()) {
-            return
-        }
         let vc = BuySafeViewController()
         self.pushViewController(vc)
     }
