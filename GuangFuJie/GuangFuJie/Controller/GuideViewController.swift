@@ -27,11 +27,12 @@ class GuideViewController: BaseViewController {
         let orignHeight: CGFloat = 87 / 2
         let orignSkipWidth: CGFloat = 107 / 2
         let orignSkipHeight: CGFloat = 57 / 2
-        let times = PhoneUtils.kScreenWidth / 375
-        let btnWidth = orignWidth * times
-        let btnHeight = orignHeight * times
-        let skipWidth = orignSkipWidth * times
-        let skipHeight = orignSkipHeight * times
+        var times = PhoneUtils.kScreenWidth / 375
+       
+        var btnWidth = orignWidth * times
+        var btnHeight = orignHeight * times
+        var skipWidth = orignSkipWidth * times
+        var skipHeight = orignSkipHeight * times
         
         let leftOrignStartX: CGFloat = 37 / 2
         let leftOrignStartY: CGFloat = 1100 / 2
@@ -39,11 +40,25 @@ class GuideViewController: BaseViewController {
         let skipOrignStartX: CGFloat = 595 / 2
         let skipOrignStartY: CGFloat = 41 / 2
         
-        let leftStartX = leftOrignStartX * times
-        let leftStartY = leftOrignStartY * times
-        let rightStartX = rightOrginStartX * times
-        let skipStartX = skipOrignStartX * times
-        let skipStartY = skipOrignStartY * times
+        var leftStartX = leftOrignStartX * times
+        var leftStartY = leftOrignStartY * times
+        var rightStartX = rightOrginStartX * times
+        var skipStartX = skipOrignStartX * times
+        var skipStartY = skipOrignStartY * times
+        
+        //TODO:由于iPhone4的尺寸比例不对，所以只能这样特殊处理了，哎。。。
+        if (PhoneUtils.kScreenHeight < 568) {
+            btnWidth = 248 / 2
+            btnHeight = 64 / 2
+            skipWidth = 97 / 2
+            skipHeight = 41 / 2
+            
+            leftStartX = 33 / 2
+            leftStartY = 786 / 2
+            rightStartX = 360 / 2
+            skipStartX = 504 / 2
+            skipStartY = 28 / 2
+        }
         
         let imgs = ["guide_01", "guide_02", "guide_03"]
         for i in 0..<imgs.count {
