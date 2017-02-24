@@ -46,7 +46,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
             self.hideHud()
             self.yezhuArray.removeAllObjects()
             if (userInfos.count > 0) {
-                self.yezhuArray.addObjects(from: userInfos as [AnyObject])
+                self.yezhuArray.add(userInfos.firstObject!)
             }
             self.yezhuTableView.reloadData()
         }) { (msg) in
