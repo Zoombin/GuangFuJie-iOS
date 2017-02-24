@@ -389,8 +389,8 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             totalplantLabel.text = "0棵"
             return
         }
-        todayElectricLabel.text = String(format: "%@kw", deviceInfo.energy_day!)
-        totalElectricLabel.text = String(format: "%@kw", deviceInfo.energy_all!)
+        todayElectricLabel.text = String(format: "%@.2fkw", deviceInfo.energy_day!.floatValue)
+        totalElectricLabel.text = String(format: "%.2fkw", deviceInfo.energy_all!.floatValue)
         todayMoneyLabel.text = String(format: "%.2f元", deviceInfo.energy_day!.floatValue * 3)
         totalMoneyLabel.text = String(format: "%.2f元", deviceInfo.energy_all!.floatValue * 3)
         todayjianpaiLabel.text = String(format: "%.2f吨", deviceInfo.energy_day!.floatValue * 0.272 / 1000)
