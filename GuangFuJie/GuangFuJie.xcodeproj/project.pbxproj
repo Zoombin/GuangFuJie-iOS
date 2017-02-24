@@ -22,6 +22,7 @@
 		DE0C781C1D68585A00FED16D /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C781B1D68585A00FED16D /* TopLeftLabel.m */; };
 		DE1C74781DB8743300D8F324 /* GetInventerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C74771DB8743300D8F324 /* GetInventerMode.swift */; };
 		DE1FC3DB1DB6135600F7B5EE /* SMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1FC3DA1DB6135600F7B5EE /* SMenuCell.m */; };
+		DE2095481E60723A00E7C27F /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2095471E60723A00E7C27F /* StringUtils.swift */; };
 		DE23E4521D82A47100293616 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4511D82A47100293616 /* SafeDetailViewController.swift */; };
 		DE23E4571D83A9C500293616 /* BuySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4561D83A9C500293616 /* BuySafeViewController.swift */; };
 		DE3DB2CF1DB4D23000AE0461 /* SMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DB2CC1DB4D23000AE0461 /* SMenuButton.m */; };
@@ -405,6 +406,7 @@
 		DE1C74771DB8743300D8F324 /* GetInventerMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInventerMode.swift; sourceTree = "<group>"; };
 		DE1FC3D91DB6135600F7B5EE /* SMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMenuCell.h; sourceTree = "<group>"; };
 		DE1FC3DA1DB6135600F7B5EE /* SMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMenuCell.m; sourceTree = "<group>"; };
+		DE2095471E60723A00E7C27F /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		DE23E4511D82A47100293616 /* SafeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeDetailViewController.swift; sourceTree = "<group>"; };
 		DE23E4561D83A9C500293616 /* BuySafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuySafeViewController.swift; sourceTree = "<group>"; };
 		DE3DB2CB1DB4D23000AE0461 /* SMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMenuButton.h; sourceTree = "<group>"; };
@@ -1161,6 +1163,7 @@
 		18B8FA611D3CE8A400B334E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE2095471E60723A00E7C27F /* StringUtils.swift */,
 				DEB715C71DFEDE6400CF31D3 /* MSLFrameUtil.h */,
 				DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */,
 				DE0C781A1D68585500FED16D /* TopLeftLabel.h */,
@@ -2670,6 +2673,7 @@
 				DE9AAA621DFBD315006B56E9 /* MJRefreshNormalHeader.m in Sources */,
 				DEEE919A1D782BB40027F4D6 /* ToBeInstallerViewController.swift in Sources */,
 				DE5AD27C1DBC8C5400D608A5 /* NSObject+MJKeyValue.m in Sources */,
+				DE2095481E60723A00E7C27F /* StringUtils.swift in Sources */,
 				DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */,
 				DE0C78051D66E94300FED16D /* InstallInfo.swift in Sources */,
 				DEF3B5561E07C97F0016A359 /* IQTextView.swift in Sources */,

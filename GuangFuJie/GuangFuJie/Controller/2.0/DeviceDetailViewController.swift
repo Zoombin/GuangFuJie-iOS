@@ -391,12 +391,12 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
         }
         todayElectricLabel.text = String(format: "%@.2fkw", deviceInfo.energy_day!.floatValue)
         totalElectricLabel.text = String(format: "%.2fkw", deviceInfo.energy_all!.floatValue)
-        todayMoneyLabel.text = String(format: "%.2f元", deviceInfo.energy_day!.floatValue * 3)
-        totalMoneyLabel.text = String(format: "%.2f元", deviceInfo.energy_all!.floatValue * 3)
-        todayjianpaiLabel.text = String(format: "%.2f吨", deviceInfo.energy_day!.floatValue * 0.272 / 1000)
-        totaljianpaiLabel.text = String(format: "%.2f吨", deviceInfo.energy_all!.floatValue * 0.272 / 1000)
-        todayplantLabel.text = String(format: "%.2f棵", deviceInfo.energy_day!.floatValue * 0.272 / 100)
-        totalplantLabel.text = String(format: "%.2f棵", deviceInfo.energy_all!.floatValue * 0.272 / 100)
+        todayMoneyLabel.text = String(format: "%.2f元", StringUtils.getNumber(deviceInfo.money_day).floatValue)
+        totalMoneyLabel.text = String(format: "%.2f元", StringUtils.getNumber(deviceInfo.money_all).floatValue)
+        todayjianpaiLabel.text = String(format: "%.2f吨", StringUtils.getNumber(deviceInfo.coal_day).floatValue)
+        totaljianpaiLabel.text = String(format: "%.2f吨", StringUtils.getNumber(deviceInfo.coal_all).floatValue)
+        todayplantLabel.text = String(format: "%.2f棵", StringUtils.getNumber(deviceInfo.plant_day).floatValue)
+        totalplantLabel.text = String(format: "%.2f棵", StringUtils.getNumber(deviceInfo.plant_all).floatValue)
     }
     
     //报修
