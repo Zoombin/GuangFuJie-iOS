@@ -78,15 +78,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         //找安装商
         let nav1 = UINavigationController.init(rootViewController: RootInstallerViewController())
         nav1.tabBarItem.title = Texts.tab1
-        nav1.tabBarItem.image = UIImage.init(named: "ic_tab_installer")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        nav1.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_installer_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav1.tabBarItem.image = UIImage.init(named: "ic_tab_roof")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav1.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_roof_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         nav1.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
         
         //找屋顶
         let nav2 = UINavigationController.init(rootViewController: RootYeZhuViewController())
         nav2.tabBarItem.title = Texts.tab2
-        nav2.tabBarItem.image = UIImage.init(named: "ic_tab_roof")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        nav2.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_roof_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav2.tabBarItem.image = UIImage.init(named: "ic_tab_installer")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        nav2.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_installer_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         nav2.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
         
         //查发电量
