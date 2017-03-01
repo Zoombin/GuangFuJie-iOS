@@ -47,6 +47,7 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
         
         tableView2.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier2)
         loadProviceList()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.close))
     }
     
     func close() {
