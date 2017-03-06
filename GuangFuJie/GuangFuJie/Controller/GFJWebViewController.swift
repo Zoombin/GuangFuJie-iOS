@@ -18,8 +18,10 @@ class GFJWebViewController: BaseViewController {
         super.viewDidLoad()
         if(urlTag == 0){
             self.title = "关于我们"
+            loadData()
+        } else if (urlTag == -1) {
+            self.initWebView(url!)
         }
-       loadData()
     }
   
     func loadData() {
@@ -37,9 +39,11 @@ class GFJWebViewController: BaseViewController {
     
     
     func initWebView(_ url:String) {
-        webView = UIWebView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
+        webView = UIWebView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
         webView.loadRequest(URLRequest.init(url: URL.init(string: url)! as URL) as URLRequest)
         webView.scalesPageToFit = true
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.clear
         self.view.addSubview(webView)
     }
 

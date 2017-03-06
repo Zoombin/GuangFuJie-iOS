@@ -1175,4 +1175,26 @@ extension API {
             success?(totalCount!, array!)
         }, failure: failure)
     }
+    
+    
+    /// 资讯列表
+    ///
+    /// - Parameters:
+    ///   - start:
+    ///   - pagesize:
+    ///   - success:
+    ///   - failure: 
+    func newsList(_ start : NSInteger, pagesize : NSInteger, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "news/newsList"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["START"] = "\(start)"
+        params["PAGESIZE"] = "\(pagesize)"
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = NewsInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
 }

@@ -301,6 +301,8 @@
 		DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */; };
 		DEB010A61DF2915400E929A6 /* GFJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */; };
 		DEB715C91DFEDE6400CF31D3 /* MSLFrameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */; };
+		DECA9F251E6CFA9800333B6A /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA9F241E6CFA9800333B6A /* NewsInfo.swift */; };
+		DECA9F291E6CFCBB00333B6A /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA9F281E6CFCBB00333B6A /* NewsCell.swift */; };
 		DED15B691DED26C700B8260B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED15B681DED26C700B8260B /* MapViewController.swift */; };
 		DED15B721DED2E4900B8260B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B711DED2E4900B8260B /* CoreLocation.framework */; };
 		DED15B741DED2E5500B8260B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B731DED2E5500B8260B /* QuartzCore.framework */; };
@@ -906,6 +908,8 @@
 		DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJWebViewController.swift; sourceTree = "<group>"; };
 		DEB715C71DFEDE6400CF31D3 /* MSLFrameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLFrameUtil.h; sourceTree = "<group>"; };
 		DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLFrameUtil.m; sourceTree = "<group>"; };
+		DECA9F241E6CFA9800333B6A /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInfo.swift; sourceTree = "<group>"; };
+		DECA9F281E6CFCBB00333B6A /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		DED15B681DED26C700B8260B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DED15B711DED2E4900B8260B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DED15B731DED2E5500B8260B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1140,6 +1144,7 @@
 				DE1C74771DB8743300D8F324 /* GetInventerMode.swift */,
 				DE83817D1DFD65BB0021716B /* DeviceListInfo.swift */,
 				DE50D04D1E0A642A00BBFC17 /* QNResultInfo.swift */,
+				DECA9F241E6CFA9800333B6A /* NewsInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1192,6 +1197,7 @@
 				DE8381791DFD31420021716B /* DeviceCellPlus.xib */,
 				DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */,
 				DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */,
+				DECA9F281E6CFCBB00333B6A /* NewsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2644,6 +2650,7 @@
 				DE636E251DFE4AC4008F9F74 /* InstallHeaderCell.swift in Sources */,
 				DE5E74871D509BAD003CDAAC /* QNHosts.m in Sources */,
 				DE8A76631D865A1900C5F268 /* CalcModel.swift in Sources */,
+				DECA9F251E6CFA9800333B6A /* NewsInfo.swift in Sources */,
 				DE5E743C1D509B9F003CDAAC /* QN_GTM_Base64.m in Sources */,
 				DE5E74B41D509CC4003CDAAC /* AFNetworkReachabilityManager.m in Sources */,
 				DE5E74841D509BAD003CDAAC /* QNDnspodEnterprise.m in Sources */,
@@ -2658,6 +2665,7 @@
 				DE0C78071D66F14C00FED16D /* ElectricInfo.swift in Sources */,
 				DE51F35C1E164EFF00671967 /* ZLPhotoPickerCollectionView.m in Sources */,
 				DED15B691DED26C700B8260B /* MapViewController.swift in Sources */,
+				DECA9F291E6CFCBB00333B6A /* NewsCell.swift in Sources */,
 				DE554C591E568DA100D1AA53 /* BeeCloud.m in Sources */,
 				DE51F3411E164EFF00671967 /* SDWebImageDownloaderOperation.m in Sources */,
 				DE554C741E568DA100D1AA53 /* BCNewSubscription.m in Sources */,
