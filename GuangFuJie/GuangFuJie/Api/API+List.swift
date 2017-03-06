@@ -1188,8 +1188,8 @@ extension API {
         let url = Constants.httpHost + "news/newsList"
         let params = NSMutableDictionary()
         params["_o"] = 1
-        params["START"] = "\(start)"
-        params["PAGESIZE"] = "\(pagesize)"
+        params["start"] = "\(start)"
+        params["pagesize"] = "\(pagesize)"
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
