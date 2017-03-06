@@ -105,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         
         //资讯
         let nav5 = UINavigationController.init(rootViewController: RootNewsViewController())
-        nav5.tabBarItem.title = Texts.tab4
+        nav5.tabBarItem.title = Texts.tab5
         nav5.tabBarItem.image = UIImage.init(named: "ic_tab_news")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         nav5.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_news_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         nav5.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
