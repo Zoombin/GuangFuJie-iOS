@@ -44,16 +44,9 @@ class DeviceCell: UITableViewCell {
             self.statusButton.isEnabled = true
         }
         
-        var energy_all = "0kw"
-        if (device.energy_all != nil) {
-            energy_all = device.energy_all! + "kw"
-        }
-        self.powerLabel.text = energy_all
+        self.powerLabel.text = String(format: "%.2fkw", StringUtils.getNumber(device.energy_all).floatValue)
         
-        var deviceid = ""
-        if (device.device_id != nil) {
-            deviceid = device.device_id!
-        }
+        let deviceid = StringUtils.getString(device.device_id)
         self.snButton.titleLabel?.adjustsFontSizeToFitWidth = true
         self.snButton.setTitle(deviceid, for: UIControlState.normal)
     }
