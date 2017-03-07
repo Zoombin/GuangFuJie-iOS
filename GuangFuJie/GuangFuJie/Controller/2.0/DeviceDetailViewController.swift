@@ -276,6 +276,10 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func initLineBarChart() {
+        if (infoArray.count == 0) {
+            self.showHint("暂无数据")
+            return
+        }
         let xLabels = NSMutableArray()
         let yLabels = NSMutableArray()
         for i in 0..<infoArray.count {
@@ -327,6 +331,9 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func initBarChart(_ xLabels : NSArray, yLabels : NSArray) {
+        if (xLabels.count != yLabels.count) {
+            return
+        }
         var entries: [BarChartDataEntry] = Array()
         var xValues: [String] = Array()
         

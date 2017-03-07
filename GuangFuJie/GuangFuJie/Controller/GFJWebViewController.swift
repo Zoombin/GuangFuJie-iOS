@@ -22,6 +22,8 @@ class GFJWebViewController: BaseViewController {
         } else if (urlTag == -1) {
             self.initWebView(url!)
         }
+        
+        self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
     }
   
     func loadData() {
@@ -39,11 +41,11 @@ class GFJWebViewController: BaseViewController {
     
     
     func initWebView(_ url:String) {
-        webView = UIWebView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
+        webView = UIWebView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64))
+        webView.backgroundColor = UIColor.clear
         webView.loadRequest(URLRequest.init(url: URL.init(string: url)! as URL) as URLRequest)
         webView.scalesPageToFit = true
         webView.isOpaque = false
-        webView.backgroundColor = UIColor.clear
         self.view.addSubview(webView)
     }
 

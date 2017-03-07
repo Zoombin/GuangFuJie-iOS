@@ -60,6 +60,10 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     let cellReuseIdentifier = "deviceCellReuseIdentifier"
     func initView() {
+        initRightNavButton()
+        initLeftNavButton()
+        initLoginView()
+        
         newsTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50), style: UITableViewStyle.plain)
         newsTableView.delegate = self
         newsTableView.dataSource = self

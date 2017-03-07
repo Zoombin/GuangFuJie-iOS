@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         BeeCloud.initWeChatPay(Constants.wexinAppKey)
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.9)
         if (UserDefaultManager.showGuide()) {
             showGuide()
         } else {
