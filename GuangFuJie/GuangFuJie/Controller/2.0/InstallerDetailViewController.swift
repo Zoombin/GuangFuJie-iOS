@@ -151,9 +151,9 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     
     func addFavButton(isFav : Bool) {
         if (isFav) {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "取消收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked))
         } else {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏屋顶", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked))
         }
     }
     

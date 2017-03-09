@@ -36,7 +36,7 @@ class InstallBuyViewController: BaseViewController {
         if (isFav) {
             self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
         } else {
-            self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
+            self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
         }
     }
     
