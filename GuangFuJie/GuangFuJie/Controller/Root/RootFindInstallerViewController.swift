@@ -200,7 +200,7 @@ class RootFindInstallerViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func viewMoreButtonClicked() {
-        let vc = MoreInstallerViewController()
+        let vc = MoreInstallerViewController(nibName: "MoreInstallerViewController", bundle: nil)
         self.pushViewController(vc)
     }
     

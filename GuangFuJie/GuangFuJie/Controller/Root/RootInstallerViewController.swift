@@ -209,7 +209,7 @@ class RootInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func viewMoreButtonClicked() {
-        let vc = GFJRoofListViewController()
+        let vc = GFJRoofListViewController(nibName: "GFJRoofListViewController", bundle: nil)
         self.pushViewController(vc)
     }
     

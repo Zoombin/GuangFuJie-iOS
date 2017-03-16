@@ -155,7 +155,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
     func moreInstaller() {
-        let vc = MoreInstallerViewController()
+        let vc = MoreInstallerViewController(nibName: "MoreInstallerViewController", bundle: nil)
         self.pushViewController(vc)
     }
     
@@ -199,7 +199,7 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
     func viewMoreButtonClicked() {
-        let vc = MoreInstallerViewController()
+        let vc = MoreInstallerViewController(nibName: "MoreInstallerViewController", bundle: nil)
         self.pushViewController(vc)
     }
     

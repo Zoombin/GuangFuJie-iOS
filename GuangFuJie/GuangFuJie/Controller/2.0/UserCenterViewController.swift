@@ -152,7 +152,7 @@ class UserCenterViewController: BaseViewController, UITableViewDataSource, UITab
         if (alertView.cancelButtonIndex ==  buttonIndex) {
             return
         }
-        let vc = ToBeInstallerViewController()
+        let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
         self.pushViewController(vc)
     }
     

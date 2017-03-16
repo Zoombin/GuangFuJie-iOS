@@ -96,7 +96,7 @@ class GFJIMInstallerViewController: BaseViewController, UITableViewDelegate, UIT
     }
     
     func viewRoofList() {
-        let vc = GFJRoofListViewController()
+        let vc = GFJRoofListViewController(nibName: "GFJRoofListViewController", bundle: nil)
         self.pushViewController(vc)
     }
     
