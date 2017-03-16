@@ -1,14 +1,15 @@
 //
-//  NewsCell.swift
+//  InstallerResultCell.swift
 //  GuangFuJie
 //
-//  Created by 颜超 on 2017/3/6.
+//  Created by 颜超 on 2017/3/14.
 //  Copyright © 2017年 颜超. All rights reserved.
 //
 
 import UIKit
 
-class NewsCell: UITableViewCell {
+class InstallerResultCell: UITableViewCell {
+
     var hasInit = false
     var newsImageView = UIImageView()
     var contentLabel = TopLeftLabel()
@@ -18,13 +19,13 @@ class NewsCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
     override func prepareForReuse() {
         if (hasInit) {
             

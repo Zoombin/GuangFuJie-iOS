@@ -1197,4 +1197,28 @@ extension API {
             success?(totalCount!, array!)
         }, failure: failure)
     }
+    
+    
+    /// 搜索安装商
+    ///
+    /// - Parameters:
+    ///   - start:       //开始页数   1 开始
+    ///   - pagesize:    //每页个数
+    ///   - searchValue: //搜索内容
+    ///   - success:
+    ///   - failure:
+    func searchInstaller(_ start : NSInteger, pagesize : NSInteger, searchValue : String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "common/searchInstaller"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["searchValue"] = searchValue
+        params["start"] = String(start)
+        params["pagesize"] = String(pagesize)
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
 }

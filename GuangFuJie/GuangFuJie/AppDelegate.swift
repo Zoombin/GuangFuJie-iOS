@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
         nav1.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: Colors.lightBule], for: UIControlState.selected)
         
         //找屋顶
-        let nav2 = UINavigationController.init(rootViewController: RootYeZhuViewController())
+        let nav2 = UINavigationController.init(rootViewController: RootFindInstallerViewController())
         nav2.tabBarItem.title = Texts.tab2
         nav2.tabBarItem.image = UIImage.init(named: "ic_tab_installer")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         nav2.tabBarItem.selectedImage = UIImage.init(named: "ic_tab_installer_hl")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)

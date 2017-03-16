@@ -12,6 +12,7 @@
 		18A7FF471CD9902B00BF5926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FF461CD9902B00BF5926 /* AppDelegate.swift */; };
 		18A7FF4E1CD9902B00BF5926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FF4D1CD9902B00BF5926 /* Assets.xcassets */; };
 		18A7FF511CD9902B00BF5926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FF4F1CD9902B00BF5926 /* LaunchScreen.storyboard */; };
+		DE05DC521E7A37EC0038F72A /* YCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE05DC511E7A37EC0038F72A /* YCButton.m */; };
 		DE0BCE7B1DFF6ECD00912EAD /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */; };
 		DE0BCE841DFF7EEC00912EAD /* GFJRoofListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0BCE831DFF7EEC00912EAD /* GFJRoofListViewController.xib */; };
 		DE0C77F91D66D30700FED16D /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C77F81D66D30700FED16D /* RoofInfo.swift */; };
@@ -142,6 +143,7 @@
 		DE554C871E568DA100D1AA53 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE554BE21E568DA100D1AA53 /* AlipaySDK.framework */; };
 		DE554CA31E568DA100D1AA53 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE554C531E568DA100D1AA53 /* libWeChatSDK.a */; };
 		DE554CA41E568DA100D1AA53 /* WXPayAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554C581E568DA100D1AA53 /* WXPayAdapter.m */; };
+		DE561DD61E790B15002E88EB /* ShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE561DD51E790B15002E88EB /* ShareInfo.swift */; };
 		DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
 		DE57C9591D5ECF79005B9CCE /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9581D5ECF79005B9CCE /* BankInfo.swift */; };
 		DE57C9651D5ED222005B9CCE /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9641D5ED221005B9CCE /* BookingStatus.swift */; };
@@ -312,6 +314,9 @@
 		DED15B7C1DED2E7B00B8260B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7B1DED2E7B00B8260B /* Security.framework */; };
 		DED15B7E1DED2E8500B8260B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */; };
 		DED15B801DED2E9700B8260B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */; };
+		DED325391E779040000039D3 /* RootFindInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED325381E779040000039D3 /* RootFindInstallerViewController.swift */; };
+		DED3253D1E77920D000039D3 /* InstallerSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3253C1E77920D000039D3 /* InstallerSearchResultViewController.swift */; };
+		DED3253F1E77963C000039D3 /* InstallerResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3253E1E77963C000039D3 /* InstallerResultCell.swift */; };
 		DED669211E1F6331000F0307 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */; };
 		DED6692A1E2097ED000F0307 /* MyFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED669291E2097ED000F0307 /* MyFavViewController.swift */; };
 		DED834CF1DFEAC6500B76DFC /* InstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */; };
@@ -396,6 +401,8 @@
 		18A7FF5D1CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangFuJieUITests.swift; sourceTree = "<group>"; };
 		18A7FF681CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE05DC501E7A37EC0038F72A /* YCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCButton.h; sourceTree = "<group>"; };
+		DE05DC511E7A37EC0038F72A /* YCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCButton.m; sourceTree = "<group>"; };
 		DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
 		DE0BCE831DFF7EEC00912EAD /* GFJRoofListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFJRoofListViewController.xib; sourceTree = "<group>"; };
 		DE0C77F81D66D30700FED16D /* RoofInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofInfo.swift; sourceTree = "<group>"; };
@@ -646,6 +653,7 @@
 		DE554C551E568DA100D1AA53 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		DE554C571E568DA100D1AA53 /* WXPayAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPayAdapter.h; sourceTree = "<group>"; };
 		DE554C581E568DA100D1AA53 /* WXPayAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPayAdapter.m; sourceTree = "<group>"; };
+		DE561DD51E790B15002E88EB /* ShareInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInfo.swift; sourceTree = "<group>"; };
 		DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		DE57C9581D5ECF79005B9CCE /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
 		DE57C9641D5ED221005B9CCE /* BookingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatus.swift; sourceTree = "<group>"; };
@@ -919,6 +927,9 @@
 		DED15B7B1DED2E7B00B8260B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		DED325381E779040000039D3 /* RootFindInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFindInstallerViewController.swift; sourceTree = "<group>"; };
+		DED3253C1E77920D000039D3 /* InstallerSearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerSearchResultViewController.swift; sourceTree = "<group>"; };
+		DED3253E1E77963C000039D3 /* InstallerResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerResultCell.swift; sourceTree = "<group>"; };
 		DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
 		DED669291E2097ED000F0307 /* MyFavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFavViewController.swift; sourceTree = "<group>"; };
 		DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailViewController.swift; sourceTree = "<group>"; };
@@ -1145,6 +1156,7 @@
 				DE83817D1DFD65BB0021716B /* DeviceListInfo.swift */,
 				DE50D04D1E0A642A00BBFC17 /* QNResultInfo.swift */,
 				DECA9F241E6CFA9800333B6A /* NewsInfo.swift */,
+				DE561DD51E790B15002E88EB /* ShareInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1179,6 +1191,8 @@
 				1891D9FA1D3F57B90042E72D /* PhoneUtils.swift */,
 				DE79F9571D4C1FD30032D461 /* Colors.swift */,
 				DE832B261E5D3205002CFE1E /* Texts.swift */,
+				DE05DC501E7A37EC0038F72A /* YCButton.h */,
+				DE05DC511E7A37EC0038F72A /* YCButton.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1198,6 +1212,7 @@
 				DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */,
 				DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */,
 				DECA9F281E6CFCBB00333B6A /* NewsCell.swift */,
+				DED3253E1E77963C000039D3 /* InstallerResultCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2201,6 +2216,7 @@
 				DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */,
 				DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */,
 				DED669291E2097ED000F0307 /* MyFavViewController.swift */,
+				DED3253C1E77920D000039D3 /* InstallerSearchResultViewController.swift */,
 			);
 			path = 2.0;
 			sourceTree = "<group>";
@@ -2310,6 +2326,7 @@
 				DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */,
 				DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */,
 				DE832B2A1E5D3A77002CFE1E /* RootNewsViewController.swift */,
+				DED325381E779040000039D3 /* RootFindInstallerViewController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -2504,6 +2521,7 @@
 				DED6692A1E2097ED000F0307 /* MyFavViewController.swift in Sources */,
 				DE5E74B81D509CC4003CDAAC /* AFURLSessionManager.m in Sources */,
 				DE554C821E568DA100D1AA53 /* BeeCloudAdapter.m in Sources */,
+				DE05DC521E7A37EC0038F72A /* YCButton.m in Sources */,
 				DEF3B55A1E07C97F0016A359 /* IQToolbar.swift in Sources */,
 				DE5E74B51D509CC4003CDAAC /* AFSecurityPolicy.m in Sources */,
 				DE5E744D1D509B9F003CDAAC /* QNUploadManager.m in Sources */,
@@ -2636,6 +2654,7 @@
 				DE554C5A1E568DA100D1AA53 /* BCAuthReq.m in Sources */,
 				DED834CF1DFEAC6500B76DFC /* InstallerDetailViewController.swift in Sources */,
 				DE79F9561D4C1C270032D461 /* BaseViewController.swift in Sources */,
+				DED325391E779040000039D3 /* RootFindInstallerViewController.swift in Sources */,
 				DE79006F1D4C59920032D461 /* UIViewController+HUD.m in Sources */,
 				DE5E72CF1D50970B003CDAAC /* QNInfo.swift in Sources */,
 				DE0C780E1D68534E00FED16D /* YeZhuCell.swift in Sources */,
@@ -2659,6 +2678,7 @@
 				DE554C7E1E568DA100D1AA53 /* BCPayUtil.m in Sources */,
 				DE9AA9701DFBA853006B56E9 /* NearByRoofViewController.swift in Sources */,
 				DE554C7C1E568DA100D1AA53 /* BCURLSessionManager.m in Sources */,
+				DE561DD61E790B15002E88EB /* ShareInfo.swift in Sources */,
 				DE554C6D1E568DA100D1AA53 /* BCQueryRefundsCountReq.m in Sources */,
 				DE869F011D81475B0062E670 /* InsuranceInfo.swift in Sources */,
 				DE5E744F1D509B9F003CDAAC /* QNUpToken.m in Sources */,
@@ -2692,8 +2712,10 @@
 				DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */,
 				DE57C94F1D5DB730005B9CCE /* ContactUsViewController.swift in Sources */,
 				DE51F35E1E164EFF00671967 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
+				DED3253D1E77920D000039D3 /* InstallerSearchResultViewController.swift in Sources */,
 				DE5E748A1D509BAD003CDAAC /* QNTxtResolver.m in Sources */,
 				DE5E744E1D509B9F003CDAAC /* QNUploadOption.m in Sources */,
+				DED3253F1E77963C000039D3 /* InstallerResultCell.swift in Sources */,
 				DE9AAA671DFBD315006B56E9 /* UIScrollView+MJExtension.m in Sources */,
 				DE9AA97B1DFBCA14006B56E9 /* UserCenterViewController.swift in Sources */,
 				DE5E744A1D509B9F003CDAAC /* QNConfiguration.m in Sources */,

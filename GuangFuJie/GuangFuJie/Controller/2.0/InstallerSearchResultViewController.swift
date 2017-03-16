@@ -1,50 +1,51 @@
 //
-//  RootNewsViewController.swift
+//  InstallerSearchResultViewController.swift
 //  GuangFuJie
 //
-//  Created by 颜超 on 2017/2/22.
+//  Created by 颜超 on 2017/3/14.
 //  Copyright © 2017年 颜超. All rights reserved.
 //
 
 import UIKit
 
-class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-    var newsArray = NSMutableArray()
+class InstallerSearchResultViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    var searchArray = NSMutableArray()
     var newsTableView: UITableView!
     
     var pageSize = 10
     var currentPage = 0
+    var searchValue = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = Texts.tab5
+        self.title = Texts.tab2
         initView()
         loadData()
     }
     
     func loadMore() {
         currentPage = currentPage + 1
-        getNewsList()
+        getSearchResult()
     }
     
     func loadData() {
         currentPage = 0
         self.newsTableView.mj_footer.isHidden = false
         self.showHud(in: self.view, hint: "加载中...")
-        getNewsList()
+        getSearchResult()
     }
     
-    func getNewsList() {
-        API.sharedInstance.newsList(currentPage, pagesize: pageSize, success: { (count, array) in
+    func getSearchResult() {
+        API.sharedInstance.searchInstaller(currentPage, pagesize: pageSize, searchValue: searchValue, success: { (count, array) in
             if (self.currentPage == 0) {
                 self.newsTableView.mj_header.endRefreshing()
                 self.hideHud()
-                self.newsArray.removeAllObjects()
+                self.searchArray.removeAllObjects()
             } else {
                 self.newsTableView.mj_footer.endRefreshing()
             }
             if (array.count > 0) {
-                self.newsArray.addObjects(from: array as [AnyObject])
+                self.searchArray.addObjects(from: array as [AnyObject])
             }
             if (array.count < self.pageSize) {
                 self.newsTableView.mj_footer.isHidden = true
@@ -60,10 +61,6 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     let cellReuseIdentifier = "deviceCellReuseIdentifier"
     func initView() {
-        initRightNavButton()
-        initLeftNavButton()
-        initLoginView()
-        
         newsTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50), style: UITableViewStyle.plain)
         newsTableView.delegate = self
         newsTableView.dataSource = self
@@ -82,37 +79,25 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsArray.count
+        return searchArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return NewsCell.cellHeight()
+        return InstallerResultCell.cellHeight()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "cellIdentifier"
-        let data = self.newsArray.object(at: indexPath.row) as! NewsInfo
-        let cell = NewsCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
-        cell.setData(model: data)
+//        let data = self.newsArray.object(at: indexPath.row) as! NewsInfo
+        let cell = InstallerResultCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
+//        cell.setData(model: data)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        let data = self.newsArray.object(at: indexPath.row) as! NewsInfo
-        
-        let shareInfo = ShareInfo()
-        shareInfo.shareImg = StringUtils.getString(data.titleImage)
-        shareInfo.shareTitle = StringUtils.getString("新闻资讯")
-        shareInfo.shareDesc = StringUtils.getString(data.intro)
-        shareInfo.shareLink = StringUtils.getString(data.link)
-        
-        let vc = GFJWebViewController()
-        vc.url = StringUtils.getString(data.link)
-        vc.title = "资讯"
-        vc.addShareInfoButton(info: shareInfo)
-        self.pushViewController(vc)
+        //安装商详情
     }
-    
+
 }

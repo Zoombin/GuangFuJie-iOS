@@ -13,6 +13,7 @@ class GFJWebViewController: BaseViewController {
     var webView : UIWebView!
     var urlTag : Int = -1
     var url : String?
+    var shareInfo: ShareInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,15 @@ class GFJWebViewController: BaseViewController {
         }
         
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
+    }
+    
+    func addShareInfoButton(info : ShareInfo) {
+        shareInfo = info
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareNews))
+    }
+    
+    func shareNews() {
+        self.shareButtonClicked(shareInfo: shareInfo!)
     }
   
     func loadData() {

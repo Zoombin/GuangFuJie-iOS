@@ -10,7 +10,6 @@ import UIKit
 
 class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapViewDelegate {
     var locService : BMKLocationService!
-    var canDraw = true
     
     var mapView : BMKMapView!
     var points = NSMutableArray()
@@ -108,15 +107,6 @@ class NearByRoofViewController: BaseViewController, BMKLocationServiceDelegate, 
         mapView.viewWillDisappear()
         locService.delegate = nil
         mapView.delegate = nil
-    }
-    
-    func mapView(_ mapView: BMKMapView!, onClickedMapBlank coordinate: CLLocationCoordinate2D) {
-        if (canDraw == false) {
-            return
-        }
-        let item = BMKPointAnnotation()
-        item.coordinate = coordinate
-        mapView.addAnnotation(item)
     }
     
     // MARK: - IBAction

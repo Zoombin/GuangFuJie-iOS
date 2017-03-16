@@ -18,7 +18,7 @@ class Colors: NSObject {
     static let bkgColor : UIColor = UIColor(colorLiteralRed: 236/255.0, green: 236/255.0, blue: 236/255.0, alpha: 1.0)
     static let loginColor : UIColor = UIColor(colorLiteralRed: 40/255.0, green: 166/255.0, blue: 219/255.0, alpha: 1.0)
     
-    static let installColor : UIColor = UIColor(colorLiteralRed: 87/255.0, green: 193/255.0, blue: 235/255.0, alpha: 1.0)
+    static let installColor : UIColor = UIColor(colorLiteralRed: 74/255.0, green: 178/255.0, blue: 230/255.0, alpha: 1.0)
     
     static let installRedColor : UIColor = UIColor(colorLiteralRed: 255/255.0, green: 18/255.0, blue: 18/255.0, alpha: 1.0)
     

@@ -46,7 +46,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func initRightNavButton() {
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(image: UIImage(named: "users_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked)), UIBarButtonItem.init(image: UIImage(named: "btn_share")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareButtonClicked))]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(image: UIImage(named: "users_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked)), UIBarButtonItem.init(image: UIImage(named: "btn_share")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareApp))]
     }
     
     func didFinishGetUMSocialData(inViewController response: UMSocialResponseEntity!) {
@@ -57,18 +57,26 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         }
     }
     
-    func shareButtonClicked() {
-        UMSocialData.default().extConfig.wechatSessionData.title = "光伏街"
-        UMSocialData.default().extConfig.wechatSessionData.url = "https://itunes.apple.com/app/id1157294691"
+    func shareApp() {
+        let info = ShareInfo()
+        info.shareTitle = "光伏街"
+        info.shareLink = "https://itunes.apple.com/app/id1157294691"
+        info.shareDesc = "光伏街是一家基于“互联网”的新能源提供商，是太阳能发电行业最优秀的系统集成商之一"
+        info.shareImg = UIImage(named: "icon")
+        shareButtonClicked(shareInfo: info)
+    }
+    
+    func shareButtonClicked(shareInfo: ShareInfo) {
+        UMSocialData.default().extConfig.wechatSessionData.title = shareInfo.shareTitle
+        UMSocialData.default().extConfig.wechatSessionData.url = shareInfo.shareLink
         
-        UMSocialData.default().extConfig.wechatTimelineData.title = "光伏街"
-        UMSocialData.default().extConfig.wechatTimelineData.url = "https://itunes.apple.com/app/id1157294691"
+        UMSocialData.default().extConfig.wechatTimelineData.title = shareInfo.shareTitle
+        UMSocialData.default().extConfig.wechatTimelineData.url = shareInfo.shareLink
         
-        let content = "光伏街是一家基于“互联网”的新能源提供商，是太阳能发电行业最优秀的系统集成商之一"
-        let logo = UIImage(named: "icon")
+        let content = shareInfo.shareDesc
         
         let snsNames = [UMShareToWechatSession, UMShareToWechatTimeline]
-        UMSocialSnsService.presentSnsIconSheetView(self, appKey: Constants.umAppKey, shareText: content, shareImage: logo, shareToSnsNames: snsNames, delegate: self)
+        UMSocialSnsService.presentSnsIconSheetView(self, appKey: Constants.umAppKey, shareText: content, shareImage: shareInfo.shareImg != nil ? NSData.init(contentsOf: URL.init(string: shareInfo.shareImg as! String)!) : nil, shareToSnsNames: snsNames, delegate: self)
     }
     
     func rightButtonClicked() {
