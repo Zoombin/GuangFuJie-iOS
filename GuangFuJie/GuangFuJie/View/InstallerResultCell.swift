@@ -17,8 +17,6 @@ class InstallerResultCell: UITableViewCell {
     var createTimeLabel: TopLeftLabel!
     var addressLabel: TopLeftLabel!
     
-    var statusLabel: UILabel!
-    
     var hasInit = false
     
     override func awakeFromNib() {
@@ -65,19 +63,8 @@ class InstallerResultCell: UITableViewCell {
         createTimeLabel.textAlignment = NSTextAlignment.right
         bkgView.addSubview(createTimeLabel)
         
-        addressLabel = TopLeftLabel.init(frame: CGRect(x: InstallerResultCell.dir, y: contractNameLabel.frame.maxY, width: componyNameLabel.frame.size.width * 0.7, height: labelHeight))
+        addressLabel = TopLeftLabel.init(frame: CGRect(x: InstallerResultCell.dir, y: contractNameLabel.frame.maxY, width: componyNameLabel.frame.size.width * 0.85, height: labelHeight))
         bkgView.addSubview(addressLabel)
-        
-        statusLabel = UILabel.init(frame: CGRect(x: createTimeLabel.frame.maxX - labelHeight * 1.1, y: contractNameLabel.frame.maxY + labelHeight * 0.2, width: labelHeight * 1.1, height: labelHeight * 0.6))
-        statusLabel.layer.cornerRadius = 3
-        statusLabel.layer.masksToBounds = true
-        statusLabel.textAlignment = NSTextAlignment.center
-        statusLabel.layer.borderColor = Colors.installColor.cgColor
-        statusLabel.layer.borderWidth = 1
-        statusLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall2)
-        statusLabel.text = "在业"
-        statusLabel.textColor = Colors.installColor
-        bkgView.addSubview(statusLabel)
         
         let arrowImg = UIImageView.init(frame: CGRect(x: bkgView.frame.size.width - labelHeight, y: labelHeight * 1.1, width: labelHeight * 0.8, height: labelHeight * 0.8))
         arrowImg.image = UIImage(named: "arrow_right_gray")

@@ -13,14 +13,21 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     
     var nameLabel = UILabel()
     
+    var createTimeButton = UIButton()
+    var registerMoneyButton = UIButton()
+    
     var contractLabel = UILabel()
     var mailLabel = UILabel()
     var websiteLabel = UILabel()
     var addressLabel = UILabel()
     
+    var describeLabel = UILabel()
+    
     var secondView = UIView()
     var thirdView = UIView()
     var fourthView = UIView()
+    
+    var installerInfo: InstallInfo?
     
     @IBOutlet weak var scrollView : UIScrollView!
     
@@ -56,6 +63,32 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         secondView = UIView.init(frame: CGRect(x: 0, y: nameLabel.frame.maxY + dir, width: PhoneUtils.kScreenWidth, height: 130 * times))
         secondView.backgroundColor = UIColor.white
         scrollView.addSubview(secondView)
+        
+        createTimeButton.frame = CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth / 2, height: 130 * times)
+        createTimeButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        createTimeButton.setImage(UIImage(named: "ic_installer_createtime"), for: UIControlState.normal)
+        createTimeButton.setTitle("0000-00-00", for: UIControlState.normal)
+        createTimeButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        let imageSize1: CGSize = createTimeButton.imageView!.frame.size
+        let titleSize1: CGSize = createTimeButton.titleLabel!.frame.size
+        createTimeButton.titleEdgeInsets = UIEdgeInsets(top: 0, left:-imageSize1.width, bottom: -imageSize1.height - dir, right: 0)
+        createTimeButton.imageEdgeInsets = UIEdgeInsets(top: -titleSize1.height - dir, left: 0, bottom: 0, right: -titleSize1.width)
+        secondView.addSubview(createTimeButton)
+        
+        registerMoneyButton.frame = CGRect(x: PhoneUtils.kScreenWidth / 2, y: 0, width: PhoneUtils.kScreenWidth / 2, height: 130 * times)
+        registerMoneyButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        registerMoneyButton.setImage(UIImage(named: "ic_installer_money"), for: UIControlState.normal)
+        registerMoneyButton.setTitle("注册资本", for: UIControlState.normal)
+        registerMoneyButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        let imageSize2: CGSize = registerMoneyButton.imageView!.frame.size
+        let titleSize2: CGSize = registerMoneyButton.titleLabel!.frame.size
+        registerMoneyButton.titleEdgeInsets = UIEdgeInsets(top: 0, left:-imageSize2.width, bottom: -imageSize2.height - dir, right: 0)
+        registerMoneyButton.imageEdgeInsets = UIEdgeInsets(top: -titleSize2.height - dir, left: 0, bottom: 0, right: -titleSize2.width)
+        secondView.addSubview(registerMoneyButton)
+        
+        let line1 = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth / 2, y: 130 * times * 0.15, width: 0.5, height: 130 * times * 0.7))
+        line1.backgroundColor = Colors.topButtonColor
+        secondView.addSubview(line1)
     }
     
     func initThirdView() {
@@ -87,7 +120,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         contractNameTitle.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         thirdView.addSubview(contractNameTitle)
         
-        contractLabel.frame = CGRect(x: contractNameTitle.frame.maxX, y: thirdheaderView.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.maxY - 2 * dir, height: labelHeight)
+        contractLabel.frame = CGRect(x: contractNameTitle.frame.maxX, y: thirdheaderView.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.maxX - 2 * dir, height: labelHeight)
         contractLabel.backgroundColor = UIColor.white
         contractLabel.textColor = UIColor.black
         contractLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
@@ -100,7 +133,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         mailTitle.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         thirdView.addSubview(mailTitle)
         
-        mailLabel.frame = CGRect(x: mailTitle.frame.maxX, y: contractNameTitle.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.maxY - 2 * dir, height: labelHeight)
+        mailLabel.frame = CGRect(x: mailTitle.frame.maxX, y: contractNameTitle.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.maxX - 2 * dir, height: labelHeight)
         mailLabel.backgroundColor = UIColor.white
         mailLabel.textColor = UIColor.black
         mailLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
@@ -113,7 +146,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         websiteTitle.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         thirdView.addSubview(websiteTitle)
         
-        websiteLabel.frame = CGRect(x: websiteTitle.frame.maxX, y: mailTitle.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.maxY - 2 * dir, height: labelHeight)
+        websiteLabel.frame = CGRect(x: websiteTitle.frame.maxX, y: mailTitle.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.maxX - 2 * dir, height: labelHeight)
         websiteLabel.backgroundColor = UIColor.white
         websiteLabel.textColor = UIColor.black
         websiteLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
@@ -126,7 +159,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         addressTitle.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         thirdView.addSubview(addressTitle)
         
-        addressLabel.frame = CGRect(x: addressTitle.frame.maxX, y: websiteTitle.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.maxY - 2 * dir, height: labelHeight * 2)
+        addressLabel.frame = CGRect(x: addressTitle.frame.maxX, y: websiteTitle.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.maxX - 2 * dir, height: labelHeight * 2)
         addressLabel.backgroundColor = UIColor.white
         addressLabel.textColor = UIColor.black
         addressLabel.numberOfLines = 0
@@ -156,6 +189,12 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         fourthheaderView.textColor = Colors.installColor
         fourthheaderView.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
         fourthView.addSubview(fourthheaderView)
+        
+        describeLabel.frame = CGRect(x: dir, y: fourthheaderView.frame.maxY, width: PhoneUtils.kScreenWidth - 2 * dir, height: 0)
+        describeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        describeLabel.numberOfLines = 0
+        describeLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        fourthleftView.addSubview(describeLabel)
     }
     
     func tellPhoneUsButtonClicked() {
@@ -169,55 +208,28 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         }
     }
     
-    func addFavButton(isFav : Bool) {
-        if (isFav) {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked))
-        } else {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked))
-        }
-    }
-    
-    func favButtonClicked() {
-        self.showHud(in: self.view, hint: "加载中")
-        API.sharedInstance.favInstaller(installer_id, { (model) in
-            self.hideHud()
-            self.showHint("收藏成功")
-            self.loadData()
-        }) { (msg) in
-            self.hideHud()
-            self.showHint(msg)
-        }
-    }
-    
-    func cancelFavButtonClicked() {
-        self.showHud(in: self.view, hint: "加载中")
-        API.sharedInstance.unFavInstaller(installer_id, { (model) in
-            self.hideHud()
-            self.showHint("取消收藏成功")
-            self.loadData()
-        }) { (msg) in
-            self.hideHud()
-            self.showHint(msg)
-        }
-    }
-    
     func loadData() {
-        self.showHud(in: self.view, hint: "加载中")
-        API.sharedInstance.installerDetail(installer_id, success: { (installerDetail) in
-                self.hideHud()
-                self.setData(installerDetail)
-                self.addFavButton(isFav: installerDetail.is_favor!.boolValue)
-            }) { (msg) in
-                self.hideHud()
-                self.showHint(msg)
+        if (installerInfo != nil) {
+            self.setData(installerInfo!)
         }
     }
     
     func setData(_ model: InstallInfo) {
-        nameLabel.text = StringUtils.getString(model.company_name)
-        contractLabel.text = StringUtils.getString(model.fullname)
+        createTimeButton.setTitle(StringUtils.getString(model.establishDate), for: UIControlState.normal)
+        registerMoneyButton.setTitle("\(StringUtils.getString(model.capital))万元", for: UIControlState.normal)
+        
+        nameLabel.text = StringUtils.getString(model.companyName)
+        contractLabel.text = StringUtils.getString(model.corporation)
         mailLabel.text = StringUtils.getString(model.email)
         websiteLabel.text = StringUtils.getString(model.website)
+        addressLabel.text = StringUtils.getString(model.address)
+        
+        describeLabel.text = StringUtils.getString(model.scope)
+        
+        let labelHeight = MSLFrameUtil.getLabHeight(describeLabel.text, font: describeLabel.font, width: PhoneUtils.kScreenWidth - 2 * dir)
+        
+        describeLabel.frame = CGRect(x: dir, y: describeLabel.frame.origin.y, width: PhoneUtils.kScreenWidth - 2 * dir, height: labelHeight)
+        scrollView.contentSize = CGSize(width: 0, height: describeLabel.frame.maxY)
     }
     
     func remindButtonClicked() {

@@ -156,7 +156,10 @@ class InstallerSearchResultViewController: BaseViewController, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        //安装商详情
+        let data = self.searchArray.object(at: indexPath.row) as! InstallInfo
+        let vc = InstallerDetailViewController()
+        vc.installerInfo = data
+        self.pushViewController(vc)
     }
 
 }
