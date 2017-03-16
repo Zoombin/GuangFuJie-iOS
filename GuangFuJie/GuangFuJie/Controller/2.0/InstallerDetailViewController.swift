@@ -29,7 +29,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     
     var installerInfo: InstallInfo?
     
-    @IBOutlet weak var scrollView : UIScrollView!
+    var bkgScrollView = UIScrollView()
     
     var dir = 10 * (PhoneUtils.kScreenWidth / 750)
     var times = PhoneUtils.kScreenWidth / 750
@@ -43,8 +43,9 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     
     func initView() {
         self.title = "安装商详情"
-        scrollView.frame = CGRect(x: 0, y: scrollView.frame.origin.y, width: scrollView.frame.size.width, height: scrollView.frame.size.height)
-        scrollView.backgroundColor = UIColor.clear
+        bkgScrollView.frame = CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight)
+        bkgScrollView.backgroundColor = UIColor.clear
+        self.view.addSubview(bkgScrollView)
         
         nameLabel.frame = CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 110 * times)
         nameLabel.backgroundColor = Colors.installColor
@@ -52,7 +53,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         nameLabel.textColor = UIColor.white
         nameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
         nameLabel.adjustsFontSizeToFitWidth = true
-        scrollView.addSubview(nameLabel)
+        bkgScrollView.addSubview(nameLabel)
         
         initSecondView()
         initThirdView()
@@ -62,7 +63,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     func initSecondView() {
         secondView = UIView.init(frame: CGRect(x: 0, y: nameLabel.frame.maxY + dir, width: PhoneUtils.kScreenWidth, height: 130 * times))
         secondView.backgroundColor = UIColor.white
-        scrollView.addSubview(secondView)
+        bkgScrollView.addSubview(secondView)
         
         createTimeButton.frame = CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth / 2, height: 130 * times)
         createTimeButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
@@ -94,7 +95,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     func initThirdView() {
         thirdView = UIView.init(frame: CGRect(x: 0, y: secondView.frame.maxY + dir, width: PhoneUtils.kScreenWidth, height: 390 * times))
         thirdView.backgroundColor = UIColor.white
-        scrollView.addSubview(thirdView)
+        bkgScrollView.addSubview(thirdView)
         
         let labelHeight: CGFloat = thirdView.frame.size.height / 6
         
@@ -173,7 +174,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         
         fourthView = UIView.init(frame: CGRect(x: 0, y: thirdView.frame.maxY + dir, width: PhoneUtils.kScreenWidth, height: 568 * times))
         fourthView.backgroundColor = UIColor.white
-        scrollView.addSubview(fourthView)
+        bkgScrollView.addSubview(fourthView)
         
         let fourthleftView = UILabel.init(frame: CGRect(x: 0, y: 0, width: labelHeight * 0.75, height: labelHeight))
         fourthleftView.text = " |"
@@ -229,7 +230,7 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         let labelHeight = MSLFrameUtil.getLabHeight(describeLabel.text, font: describeLabel.font, width: PhoneUtils.kScreenWidth - 2 * dir)
         
         describeLabel.frame = CGRect(x: dir, y: describeLabel.frame.origin.y, width: PhoneUtils.kScreenWidth - 2 * dir, height: labelHeight)
-        scrollView.contentSize = CGSize(width: 0, height: describeLabel.frame.maxY)
+        bkgScrollView.contentSize = CGSize(width: 0, height: describeLabel.frame.maxY)
     }
     
     func remindButtonClicked() {

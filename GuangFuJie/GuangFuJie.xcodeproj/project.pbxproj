@@ -320,7 +320,6 @@
 		DED669211E1F6331000F0307 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */; };
 		DED6692A1E2097ED000F0307 /* MyFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED669291E2097ED000F0307 /* MyFavViewController.swift */; };
 		DED834CF1DFEAC6500B76DFC /* InstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */; };
-		DED834D11DFEAD8000B76DFC /* InstallerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */; };
 		DEEE91921D77DC0A0027F4D6 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
 		DEEE91961D782B4C0027F4D6 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */; };
 		DEEE91981D782B7B0027F4D6 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */; };
@@ -933,7 +932,6 @@
 		DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
 		DED669291E2097ED000F0307 /* MyFavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFavViewController.swift; sourceTree = "<group>"; };
 		DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailViewController.swift; sourceTree = "<group>"; };
-		DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallerDetailViewController.xib; sourceTree = "<group>"; };
 		DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
 		DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -2213,7 +2211,6 @@
 				DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */,
 				DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */,
 				DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */,
-				DED834D01DFEAD8000B76DFC /* InstallerDetailViewController.xib */,
 				DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */,
 				DED669291E2097ED000F0307 /* MyFavViewController.swift */,
 				DED3253C1E77920D000039D3 /* InstallerSearchResultViewController.swift */,
@@ -2488,7 +2485,6 @@
 				DE4D84921E34A344001AB58B /* UMShareEditViewController.xib in Resources */,
 				DE4D849B1E34A344001AB58B /* read_me.txt in Resources */,
 				DE0BCE841DFF7EEC00912EAD /* GFJRoofListViewController.xib in Resources */,
-				DED834D11DFEAD8000B76DFC /* InstallerDetailViewController.xib in Resources */,
 				DE4D84901E34A344001AB58B /* UMSCommentInputController.xib in Resources */,
 				DEF3B55C1E07C97F0016A359 /* IQKeyboardManager.bundle in Resources */,
 				DE0BCE7B1DFF6ECD00912EAD /* MoreInstallerViewController.xib in Resources */,
