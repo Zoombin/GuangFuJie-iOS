@@ -59,25 +59,25 @@ class RootFindInstallerViewController: BaseViewController, UITextFieldDelegate {
         let searchLeft = UIButton.init(frame: CGRect(x: 0, y: 0, width: (80 * times) * 0.8, height: (80 * times) * 0.8))
         searchLeft.setImage(UIImage(named: "ic_installer_search"), for: UIControlState.normal)
         
-        let searchRight = UIButton.init(frame: CGRect(x: 0, y: (80 * times) * 0.1, width: (80 * times) * 1.2, height: (80 * times) * 0.6))
-        searchRight.setTitle("搜索", for: UIControlState.normal)
-        searchRight.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-        searchRight.addTarget(self, action: #selector(self.topSearchButtonClicked), for: UIControlEvents.touchUpInside)
-        searchRight.backgroundColor = Colors.installColor
-        
-        searchTextField.frame = CGRect(x: dir * 4, y: (80 * times) * 0.1, width: (PhoneUtils.kScreenWidth - 6 * dir) , height: (80 * times) * 0.8)
+        searchTextField.frame = CGRect(x: dir * 4, y: (80 * times) * 0.1, width: (PhoneUtils.kScreenWidth - 6 * dir) - (80 * times) * 1.3, height: (80 * times) * 0.8)
         searchTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         searchTextField.leftView = searchLeft
         searchTextField.leftViewMode = UITextFieldViewMode.always
-        searchTextField.rightView = searchRight
-        searchTextField.rightViewMode = UITextFieldViewMode.always
         searchTextField.backgroundColor = UIColor.white
         searchTextField.returnKeyType = UIReturnKeyType.search
         searchTextField.delegate = self
         searchTextField.placeholder = "请输入安装商企业名称"
+        searchTextField.clearButtonMode = UITextFieldViewMode.whileEditing
         searchView.addSubview(searchTextField)
         
-        let line = UILabel.init(frame: CGRect(x: searchTextField.frame.minX, y: searchTextField.frame.maxY, width: searchTextField.frame.size.width - searchRight.frame.size.width - dir, height: 0.5))
+        let searchRight = UIButton.init(frame: CGRect(x: searchTextField.frame.maxX + (80 * times) * 0.1, y: (80 * times) * 0.2, width: (80 * times) * 1.2, height: (80 * times) * 0.6))
+        searchRight.setTitle("搜索", for: UIControlState.normal)
+        searchRight.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+        searchRight.addTarget(self, action: #selector(self.topSearchButtonClicked), for: UIControlEvents.touchUpInside)
+        searchRight.backgroundColor = Colors.installColor
+        searchView.addSubview(searchRight)
+        
+        let line = UILabel.init(frame: CGRect(x: searchTextField.frame.minX, y: searchTextField.frame.maxY, width: searchTextField.frame.size.width - dir, height: 0.5))
         line.backgroundColor = UIColor.lightGray
         searchView.addSubview(line)
     }
@@ -86,7 +86,13 @@ class RootFindInstallerViewController: BaseViewController, UITextFieldDelegate {
         let searchValue = StringUtils.getString(searchTextField.text)
         let vc = InstallerSearchResultViewController()
         vc.searchValue = searchValue
-        self.pushViewController(vc)
+        self.pushViewController(vc, animation: false)
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.topSearchButtonClicked()
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -190,7 +196,7 @@ class RootFindInstallerViewController: BaseViewController, UITextFieldDelegate {
         let hotword = hotwords[sender.tag]
         let vc = InstallerSearchResultViewController()
         vc.searchValue = hotword
-        self.pushViewController(vc)
+        self.pushViewController(vc, animation: false)
     }
     
     func viewMoreButtonClicked() {

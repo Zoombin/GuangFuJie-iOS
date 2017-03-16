@@ -26,4 +26,9 @@ class StringUtils: NSObject {
     static func isEmpty(_ str : String) -> Bool{
         return str.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty
     }
+    
+    static func strLength(_ str : String) -> NSInteger {
+        let newStr = getString(str)
+        return NSString.init(string: newStr).length
+    }
 }

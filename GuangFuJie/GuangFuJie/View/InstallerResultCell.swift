@@ -9,11 +9,17 @@
 import UIKit
 
 class InstallerResultCell: UITableViewCell {
-
+    static var dir = 10 * (PhoneUtils.kScreenWidth / 750)
+    static var times = PhoneUtils.kScreenWidth / 750
+    
+    var componyNameLabel: UILabel!
+    var contractNameLabel: TopLeftLabel!
+    var createTimeLabel: TopLeftLabel!
+    var addressLabel: TopLeftLabel!
+    
+    var statusLabel: UILabel!
+    
     var hasInit = false
-    var newsImageView = UIImageView()
-    var contentLabel = TopLeftLabel()
-    var timeLabel = UILabel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,43 +43,78 @@ class InstallerResultCell: UITableViewCell {
         if (hasInit) {
             return
         }
-        self.contentView.backgroundColor = UIColor.white
-        let dir: CGFloat = 8
-        let width: CGFloat = PhoneUtils.kScreenWidth
-        let height: CGFloat = NewsCell.cellHeight()
+        self.contentView.backgroundColor = Colors.bkgGray
         
-        let imgHeight = height - dir * 2
-        let imgWidth = imgHeight * 1.2
-        newsImageView.frame = CGRect(x: dir,y: dir, width: imgWidth, height: imgHeight)
-        newsImageView.backgroundColor = Colors.bkgColor
-        self.contentView.addSubview(newsImageView)
+        let bkgViewWidth = PhoneUtils.kScreenWidth - 2 * InstallerResultCell.dir
+        let bkgViewHeight = InstallerResultCell.cellHeight() - InstallerResultCell.dir
+        let labelHeight = bkgViewHeight / 3
         
-        contentLabel.frame = CGRect(x: newsImageView.frame.maxX + dir,y: dir, width: width - imgWidth - 3 * dir, height: imgHeight - 15)
-        contentLabel.numberOfLines = 0
-        contentLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        contentLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        self.contentView.addSubview(contentLabel)
+        let bkgView = UIView.init(frame: CGRect(x: InstallerResultCell.dir, y: InstallerResultCell.dir, width: bkgViewWidth, height: bkgViewHeight))
+        bkgView.backgroundColor = UIColor.white
+        self.contentView.addSubview(bkgView)
         
-        timeLabel.frame = CGRect(x: newsImageView.frame.maxX + dir,y: contentLabel.frame.maxY, width: width - imgWidth - 3 * dir, height: 15)
-        timeLabel.textColor = UIColor.lightGray
-        timeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-        self.contentView.addSubview(timeLabel)
+        componyNameLabel = UILabel.init(frame: CGRect(x: InstallerResultCell.dir, y: 0, width: PhoneUtils.kScreenWidth - 2 * InstallerResultCell.dir, height: labelHeight))
+        componyNameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
+        componyNameLabel.textColor = Colors.installColor
+        bkgView.addSubview(componyNameLabel)
         
-        let line = UILabel.init(frame: CGRect(x: 0, y: NewsCell.cellHeight() - 2, width: width, height: 2))
-        line.backgroundColor = Colors.bkgColor
-        self.contentView.addSubview(line)
+        contractNameLabel = TopLeftLabel.init(frame: CGRect(x: InstallerResultCell.dir, y: componyNameLabel.frame.maxY, width: (componyNameLabel.frame.size.width / 2) * 0.7, height: labelHeight))
+        bkgView.addSubview(contractNameLabel)
+        
+        createTimeLabel = TopLeftLabel.init(frame: CGRect(x: contractNameLabel.frame.maxX, y: componyNameLabel.frame.maxY, width: componyNameLabel.frame.size.width / 2, height: labelHeight))
+        createTimeLabel.textAlignment = NSTextAlignment.right
+        bkgView.addSubview(createTimeLabel)
+        
+        addressLabel = TopLeftLabel.init(frame: CGRect(x: InstallerResultCell.dir, y: contractNameLabel.frame.maxY, width: componyNameLabel.frame.size.width * 0.7, height: labelHeight))
+        bkgView.addSubview(addressLabel)
+        
+        statusLabel = UILabel.init(frame: CGRect(x: createTimeLabel.frame.maxX - labelHeight * 1.1, y: contractNameLabel.frame.maxY + labelHeight * 0.2, width: labelHeight * 1.1, height: labelHeight * 0.6))
+        statusLabel.layer.cornerRadius = 3
+        statusLabel.layer.masksToBounds = true
+        statusLabel.textAlignment = NSTextAlignment.center
+        statusLabel.layer.borderColor = Colors.installColor.cgColor
+        statusLabel.layer.borderWidth = 1
+        statusLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall2)
+        statusLabel.text = "在业"
+        statusLabel.textColor = Colors.installColor
+        bkgView.addSubview(statusLabel)
+        
+        let arrowImg = UIImageView.init(frame: CGRect(x: bkgView.frame.size.width - labelHeight, y: labelHeight * 1.1, width: labelHeight * 0.8, height: labelHeight * 0.8))
+        arrowImg.image = UIImage(named: "arrow_right_gray")
+        bkgView.addSubview(arrowImg)
         
         hasInit = true
     }
     
-    func setData(model: NewsInfo) {
-        newsImageView.setImageWith(URL.init(string: StringUtils.getString(model.titleImage))!)
-        timeLabel.text = StringUtils.getString(model.createdDate)
-        contentLabel.text = StringUtils.getString(model.intro)
+    func setData(model: InstallInfo) {
+        let componyName = StringUtils.getString(model.companyName)
+        let contractName = " 联系人：\(StringUtils.getString(model.corporation))"
+        let createTime = " 成立时间：\(StringUtils.getString(model.establishDate))"
+        let address = " 地址：\(StringUtils.getString(model.address))"
+        
+        let contractAttr = NSMutableAttributedString.init(string: "•\(contractName)")
+        contractAttr.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: Dimens.fontSizelarge), range: NSMakeRange(0, 1))
+        contractAttr.addAttribute(NSForegroundColorAttributeName, value: Colors.installColor, range: NSMakeRange(0, 1))
+        contractAttr.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: Dimens.fontSizeSmall), range: NSMakeRange(1, StringUtils.strLength(contractName)))
+        
+        let createTimeAttr = NSMutableAttributedString.init(string: "•\(createTime)")
+        createTimeAttr.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: Dimens.fontSizelarge), range: NSMakeRange(0, 1))
+        createTimeAttr.addAttribute(NSForegroundColorAttributeName, value: Colors.installColor, range: NSMakeRange(0, 1))
+        createTimeAttr.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: Dimens.fontSizeSmall), range: NSMakeRange(1, StringUtils.strLength(createTime)))
+        
+        let addressAttr = NSMutableAttributedString.init(string: "•\(address)")
+        addressAttr.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: Dimens.fontSizelarge), range: NSMakeRange(0, 1))
+        addressAttr.addAttribute(NSForegroundColorAttributeName, value: Colors.installColor, range: NSMakeRange(0, 1))
+        addressAttr.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: Dimens.fontSizeSmall), range: NSMakeRange(1, StringUtils.strLength(address)))
+        
+        componyNameLabel.text = componyName
+        contractNameLabel.attributedText = contractAttr
+        createTimeLabel.attributedText = createTimeAttr
+        addressLabel.attributedText = addressAttr
     }
     
     static func cellHeight() -> CGFloat {
-        return PhoneUtils.kScreenHeight / 8
+        return 170 * times
     }
     
     required init?(coder aDecoder: NSCoder) {

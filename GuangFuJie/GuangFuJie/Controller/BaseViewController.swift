@@ -155,13 +155,13 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         self.tabBarController?.selectedIndex = sender.tag
     }
     
-    func pushViewController(_ to : UIViewController) {
+    func pushViewController(_ to : UIViewController, animation: Bool? = true) {
         to.hidesBottomBarWhenPushed = true
         let image = UIImage(named: "ic_back")
         to.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.backButtonClicked))
         //注意: 加了这一句，自定义的返回按钮也可以用滑动返回了...
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        self.navigationController?.pushViewController(to, animated: true)
+        self.navigationController?.pushViewController(to, animated: animation!)
     }
     
     override func didReceiveMemoryWarning() {
