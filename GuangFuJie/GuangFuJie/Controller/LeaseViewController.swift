@@ -38,7 +38,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "房顶出租"
+        self.title = "屋顶出租"
         initView()
         
         submitButton.layer.cornerRadius = 6.0
