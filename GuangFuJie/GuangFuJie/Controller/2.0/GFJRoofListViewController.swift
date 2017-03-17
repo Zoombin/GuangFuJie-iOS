@@ -38,7 +38,6 @@ class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         self.title = "业主出租"
         // Do any additional setup after loading the view.
-        initLoginView()
         initView()
         initTopMenuButton()
         initSizeView()

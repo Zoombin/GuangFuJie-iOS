@@ -33,7 +33,6 @@ class RootFindInstallerViewController: BaseViewController, UITextFieldDelegate {
     func initView() {
         initRightNavButton()
         initLeftNavButton()
-        initLoginView()
         
         scrollView.frame = CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50 - 64)
         scrollView.backgroundColor = UIColor.clear

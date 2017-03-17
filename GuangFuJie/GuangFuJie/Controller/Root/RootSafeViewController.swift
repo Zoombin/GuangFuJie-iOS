@@ -26,7 +26,6 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
     func initView() {
         initRightNavButton()
         initLeftNavButton()
-        initLoginView()
         
         initSafeView()
         loadSafeList()

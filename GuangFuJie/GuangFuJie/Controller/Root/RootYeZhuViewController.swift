@@ -28,7 +28,6 @@ class RootYeZhuViewController: BaseViewController, UITableViewDelegate, UITableV
         //MARK: 如果是root的话必须初始化这三个
         initRightNavButton()
         initLeftNavButton()
-        initLoginView()
         initYeZhuView()
         
         loadUserList()

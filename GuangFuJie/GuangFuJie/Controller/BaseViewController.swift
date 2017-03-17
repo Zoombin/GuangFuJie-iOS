@@ -10,6 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, BeeCloudDelegate, LoginViewDelegate, UMSocialUIDelegate {
     var loginView : LoginView!
+    var needRefreshLogin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,17 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         BeeCloud.setBeeCloudDelegate(self)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if (needRefreshLogin) {
+            refreshLoginStatus()
+        }
+    }
+    
     func initLeftNavButton() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "user_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.leftButtonClicked))
+        needRefreshLogin = true
+        let imgName = UserDefaultManager.isLogin() ? "ic_login_v2" : "ic_unlogin_v2"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.leftButtonClicked))
     }
     
     func leftButtonClicked() {
@@ -34,6 +44,10 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
             return
         }
         loginView.isHidden = false
+    }
+    
+    func refreshLoginStatus() {
+        initLeftNavButton()
     }
     
     //MARK:是否需要显示登录页面
@@ -46,7 +60,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func initRightNavButton() {
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(image: UIImage(named: "users_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked)), UIBarButtonItem.init(image: UIImage(named: "btn_share")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareApp))]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(image: UIImage(named: "ic_about_v2")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked)), UIBarButtonItem.init(image: UIImage(named: "ic_share_v2")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareApp))]
     }
     
     func didFinishGetUMSocialData(inViewController response: UMSocialResponseEntity!) {
@@ -62,7 +76,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         info.shareTitle = "光伏街"
         info.shareLink = "https://itunes.apple.com/app/id1157294691"
         info.shareDesc = "光伏街是一家基于“互联网”的新能源提供商，是太阳能发电行业最优秀的系统集成商之一"
-        info.shareImg = UIImage(named: "icon")
+        info.shareImg = nil
         shareButtonClicked(shareInfo: info)
     }
     
@@ -76,7 +90,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         let content = shareInfo.shareDesc
         
         let snsNames = [UMShareToWechatSession, UMShareToWechatTimeline]
-        UMSocialSnsService.presentSnsIconSheetView(self, appKey: Constants.umAppKey, shareText: content, shareImage: shareInfo.shareImg != nil ? NSData.init(contentsOf: URL.init(string: shareInfo.shareImg as! String)!) : nil, shareToSnsNames: snsNames, delegate: self)
+        UMSocialSnsService.presentSnsIconSheetView(self, appKey: Constants.umAppKey, shareText: content, shareImage: shareInfo.shareImg != nil ? NSData.init(contentsOf: URL.init(string: shareInfo.shareImg as! String)!) : UIImage(named: "icon"), shareToSnsNames: snsNames, delegate: self)
     }
     
     func rightButtonClicked() {
@@ -137,6 +151,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
             self.showHint("登录成功!")
             self.loginView.isHidden = true
             UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+            self.refreshLoginStatus()
             self.userDidLogin()
         }) { (msg) in
             self.hideHud()

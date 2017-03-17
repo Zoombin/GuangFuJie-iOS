@@ -26,7 +26,6 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
         //MARK: 如果是root的话必须初始化这三个
         initRightNavButton()
         initLeftNavButton()
-        initLoginView()
         initDeviceList()
         addNoDataButton()
     }
