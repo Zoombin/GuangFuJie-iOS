@@ -69,10 +69,6 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         createTimeButton.setImage(UIImage(named: "ic_installer_createtime"), for: UIControlState.normal)
         createTimeButton.setTitle("0000-00-00", for: UIControlState.normal)
         createTimeButton.setTitleColor(UIColor.black, for: UIControlState.normal)
-        let imageSize1: CGSize = createTimeButton.imageView!.frame.size
-        let titleSize1: CGSize = createTimeButton.titleLabel!.frame.size
-        createTimeButton.titleEdgeInsets = UIEdgeInsets(top: 0, left:-imageSize1.width, bottom: -imageSize1.height - dir, right: 0)
-        createTimeButton.imageEdgeInsets = UIEdgeInsets(top: -titleSize1.height - dir, left: 0, bottom: 0, right: -titleSize1.width)
         secondView.addSubview(createTimeButton)
         
         registerMoneyButton.frame = CGRect(x: PhoneUtils.kScreenWidth / 2, y: 0, width: PhoneUtils.kScreenWidth / 2, height: 130 * times)
@@ -80,15 +76,25 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         registerMoneyButton.setImage(UIImage(named: "ic_installer_money"), for: UIControlState.normal)
         registerMoneyButton.setTitle("注册资本", for: UIControlState.normal)
         registerMoneyButton.setTitleColor(UIColor.black, for: UIControlState.normal)
-        let imageSize2: CGSize = registerMoneyButton.imageView!.frame.size
-        let titleSize2: CGSize = registerMoneyButton.titleLabel!.frame.size
-        registerMoneyButton.titleEdgeInsets = UIEdgeInsets(top: 0, left:-imageSize2.width, bottom: -imageSize2.height - dir, right: 0)
-        registerMoneyButton.imageEdgeInsets = UIEdgeInsets(top: -titleSize2.height - dir, left: 0, bottom: 0, right: -titleSize2.width)
         secondView.addSubview(registerMoneyButton)
+        
+        reCalcateButtons()
         
         let line1 = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth / 2, y: 130 * times * 0.15, width: 0.5, height: 130 * times * 0.7))
         line1.backgroundColor = Colors.topButtonColor
         secondView.addSubview(line1)
+    }
+    
+    func reCalcateButtons() {
+        let imageSize1: CGSize = createTimeButton.imageView!.frame.size
+        let titleSize1: CGSize = createTimeButton.titleLabel!.frame.size
+        createTimeButton.titleEdgeInsets = UIEdgeInsets(top: 0, left:-imageSize1.width, bottom: -imageSize1.height - dir, right: 0)
+        createTimeButton.imageEdgeInsets = UIEdgeInsets(top: -titleSize1.height - dir, left: 0, bottom: 0, right: -titleSize1.width)
+        
+        let imageSize2: CGSize = registerMoneyButton.imageView!.frame.size
+        let titleSize2: CGSize = registerMoneyButton.titleLabel!.frame.size
+        registerMoneyButton.titleEdgeInsets = UIEdgeInsets(top: 0, left:-imageSize2.width, bottom: -imageSize2.height - dir, right: 0)
+        registerMoneyButton.imageEdgeInsets = UIEdgeInsets(top: -titleSize2.height - dir, left: 0, bottom: 0, right: -titleSize2.width)
     }
     
     func initThirdView() {
@@ -166,6 +172,14 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         addressTitle.lineBreakMode = NSLineBreakMode.byWordWrapping
         addressLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         thirdView.addSubview(addressLabel)
+        
+        thirdView.addSubview(addLine(frame: CGRect(x: 0, y: thirdheaderView.frame.maxY, width: PhoneUtils.kScreenWidth, height: 0.5)))
+        
+        thirdView.addSubview(addLine(frame: CGRect(x: contractNameTitle.frame.minX, y: contractNameTitle.frame.maxY, width: PhoneUtils.kScreenWidth - contractNameTitle.frame.minX, height: 0.5)))
+        
+        thirdView.addSubview(addLine(frame: CGRect(x: mailTitle.frame.minX, y: mailTitle.frame.maxY, width: PhoneUtils.kScreenWidth - mailTitle.frame.minX, height: 0.5)))
+        
+        thirdView.addSubview(addLine(frame: CGRect(x: websiteTitle.frame.minX, y: websiteTitle.frame.maxY, width: PhoneUtils.kScreenWidth - websiteTitle.frame.minX, height: 0.5)))
     }
     
     func initFourthView() {
@@ -189,12 +203,20 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         fourthheaderView.textColor = Colors.installColor
         fourthheaderView.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
         fourthView.addSubview(fourthheaderView)
-        
+
         describeLabel.frame = CGRect(x: dir, y: fourthheaderView.frame.maxY, width: PhoneUtils.kScreenWidth - 2 * dir, height: 0)
         describeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         describeLabel.numberOfLines = 0
         describeLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         fourthleftView.addSubview(describeLabel)
+        
+        fourthView.addSubview(addLine(frame: CGRect(x: 0, y: fourthheaderView.frame.maxY, width: PhoneUtils.kScreenWidth, height: 0.5)))
+    }
+    
+    func addLine(frame: CGRect) -> UILabel {
+        let line = UILabel.init(frame: frame)
+        line.backgroundColor = Colors.topButtonColor
+        return line
     }
     
     func tellPhoneUsButtonClicked() {
@@ -217,6 +239,8 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     func setData(_ model: InstallInfo) {
         createTimeButton.setTitle(StringUtils.getString(model.establishDate), for: UIControlState.normal)
         registerMoneyButton.setTitle("\(StringUtils.getString(model.capital))万元", for: UIControlState.normal)
+        
+        reCalcateButtons()
         
         nameLabel.text = StringUtils.getString(model.companyName)
         contractLabel.text = StringUtils.getString(model.corporation)
