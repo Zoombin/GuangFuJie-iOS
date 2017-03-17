@@ -10,7 +10,7 @@ import UIKit
 
 class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
 
-    @IBOutlet weak var locationLabel : UILabel!
+    @IBOutlet weak var locationButton : UIButton!
     @IBOutlet weak var addressTextField : UITextField!
     @IBOutlet weak var roofSizeField : UITextField!
     @IBOutlet weak var roofTypeButton : UIButton!
@@ -99,45 +99,14 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         imageView2.addGestureRecognizer(tapGesture2)
         imageView3.addGestureRecognizer(tapGesture3)
         
-        let roofSizeLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
-        roofSizeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        roofSizeLabel.textColor = UIColor.darkGray
-        roofSizeLabel.text = " 屋顶面积:"
-        
-        roofSizeField.leftViewMode = UITextFieldViewMode.always
-        roofSizeField.leftView = roofSizeLabel
-        
-        let priceLeftLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
-        priceLeftLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        priceLeftLabel.textColor = UIColor.darkGray
-        priceLeftLabel.text = " 出租单价:"
-        
-        let priceRightLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 40, height: addressTextField.frame.size.height))
+        let priceRightLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
         priceRightLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         priceRightLabel.textColor = UIColor.darkGray
         priceRightLabel.textAlignment = NSTextAlignment.center
         priceRightLabel.text = "元/㎡"
         
-        priceTextField.leftViewMode = UITextFieldViewMode.always
         priceTextField.rightViewMode = UITextFieldViewMode.always
-        priceTextField.leftView = priceLeftLabel
         priceTextField.rightView = priceRightLabel
-        
-        let contractLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
-        contractLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        contractLabel.textColor = UIColor.darkGray
-        contractLabel.text = " 联系人:"
-        
-        contractTextField.leftViewMode = UITextFieldViewMode.always
-        contractTextField.leftView = contractLabel
-        
-        let contractPhoneLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: addressTextField.frame.size.height))
-        contractPhoneLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        contractPhoneLabel.textColor = UIColor.darkGray
-        contractPhoneLabel.text = " 联系电话:"
-        
-        contractPhoneField.leftViewMode = UITextFieldViewMode.always
-        contractPhoneField.leftView = contractPhoneLabel
         
         scrollView.contentSize = CGSize(width: 0, height: PhoneUtils.kScreenHeight < 568 ? 568 : PhoneUtils.kScreenHeight)
         
@@ -154,7 +123,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
     func proviceAndCity(_ provice: ProvinceModel, city: CityModel) {
         provinceInfo = provice
         cityInfo = city
-        locationLabel.text = provinceInfo!.province_label! + cityInfo!.city_label!
+        locationButton.setTitle(provinceInfo!.province_label! + cityInfo!.city_label!, for: UIControlState.normal)
     }
     
     func imageSelected(_ gesture : UITapGestureRecognizer) {
