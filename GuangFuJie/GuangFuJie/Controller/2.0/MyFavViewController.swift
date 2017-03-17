@@ -222,7 +222,7 @@ class MyFavViewController: BaseViewController, UITableViewDelegate, UITableViewD
         }
         if (currentType == 0) {
             let userInfo = installerArray[indexPath.row] as! InstallInfo
-            let vc = InstallerDetailViewController()
+            let vc = InstallerDetailOldViewController(nibName: "InstallerDetailOldViewController", bundle: nil)
             vc.installer_id = userInfo.user_id!
             self.pushViewController(vc)
         } else {

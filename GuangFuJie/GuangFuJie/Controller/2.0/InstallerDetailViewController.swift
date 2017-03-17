@@ -34,7 +34,6 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
     var dir = 10 * (PhoneUtils.kScreenWidth / 750)
     var times = PhoneUtils.kScreenWidth / 750
     
-    var installer_id : NSNumber!
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()

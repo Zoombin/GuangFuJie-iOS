@@ -179,7 +179,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
             return
         }
         let userInfo = yezhuArray[indexPath.row] as! InstallInfo
-        let vc = InstallerDetailViewController()
+        let vc = InstallerDetailOldViewController(nibName: "InstallerDetailOldViewController", bundle: nil)
         vc.installer_id = userInfo.user_id!
         self.pushViewController(vc)
     }

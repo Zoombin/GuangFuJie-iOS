@@ -235,6 +235,8 @@
 		DE79F9631D4C458E0032D461 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
 		DE79F9681D4C50310032D461 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
 		DE79F9691D4C50310032D461 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
+		DE807E441E7B78E200060A0D /* InstallerDetailOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE807E421E7B78E200060A0D /* InstallerDetailOldViewController.swift */; };
+		DE807E451E7B78E200060A0D /* InstallerDetailOldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE807E431E7B78E200060A0D /* InstallerDetailOldViewController.xib */; };
 		DE832B271E5D3205002CFE1E /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE832B261E5D3205002CFE1E /* Texts.swift */; };
 		DE832B2B1E5D3A77002CFE1E /* RootNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE832B2A1E5D3A77002CFE1E /* RootNewsViewController.swift */; };
 		DE83816B1DFD2E490021716B /* MyInstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */; };
@@ -825,6 +827,8 @@
 		DE79F9621D4C458E0032D461 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DE79F9661D4C50310032D461 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE79F9671D4C50310032D461 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
+		DE807E421E7B78E200060A0D /* InstallerDetailOldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailOldViewController.swift; sourceTree = "<group>"; };
+		DE807E431E7B78E200060A0D /* InstallerDetailOldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallerDetailOldViewController.xib; sourceTree = "<group>"; };
 		DE832B261E5D3205002CFE1E /* Texts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		DE832B2A1E5D3A77002CFE1E /* RootNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNewsViewController.swift; sourceTree = "<group>"; };
 		DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInstallerDetailViewController.swift; sourceTree = "<group>"; };
@@ -2196,6 +2200,8 @@
 		DE9AA95C1DFB6A49006B56E9 /* 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				DE807E421E7B78E200060A0D /* InstallerDetailOldViewController.swift */,
+				DE807E431E7B78E200060A0D /* InstallerDetailOldViewController.xib */,
 				DE636E361DFE7687008F9F74 /* MoreInstallerViewController.swift */,
 				DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */,
 				DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */,
@@ -2497,6 +2503,7 @@
 				DE8A76541D860FB600C5F268 /* LeaseViewController.xib in Resources */,
 				DE9135FF1DE85E48001190B7 /* mapapi.bundle in Resources */,
 				DE554C841E568DA100D1AA53 /* BeeCloud.bundle in Resources */,
+				DE807E451E7B78E200060A0D /* InstallerDetailOldViewController.xib in Resources */,
 				DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */,
 				DE51F3611E164EFF00671967 /* ZLPhotoLib.bundle in Resources */,
 				DE8381761DFD311E0021716B /* DeviceCell.xib in Resources */,
@@ -2752,6 +2759,7 @@
 				DE832B271E5D3205002CFE1E /* Texts.swift in Sources */,
 				DEF3B5591E07C97F0016A359 /* IQTitleBarButtonItem.swift in Sources */,
 				DE5E747E1D509BAD003CDAAC /* QNIpModel.m in Sources */,
+				DE807E441E7B78E200060A0D /* InstallerDetailOldViewController.swift in Sources */,
 				DE9AAA591DFBD315006B56E9 /* MJRefreshFooter.m in Sources */,
 				DE9AAA611DFBD315006B56E9 /* MJRefreshGifHeader.m in Sources */,
 				18A7FF471CD9902B00BF5926 /* AppDelegate.swift in Sources */,
