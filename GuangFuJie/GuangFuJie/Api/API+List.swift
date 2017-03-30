@@ -540,7 +540,7 @@ extension API {
             "area_size" : area_size,       // 屋顶面积
             "area_image" : area_image,      // 屋顶图片url
             "type" : type,            // 屋顶类型( 1:平面 2:斜面)
-            "contact_time" : contact_time,    // 适合联系的时间
+//            "contact_time" : contact_time,    // 适合联系的时间
             "price" : price,           // 预计出租的价格 int
             "phone" : phone,           // 联系电话
             "_o" : 1

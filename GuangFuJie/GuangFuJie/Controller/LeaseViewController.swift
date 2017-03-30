@@ -215,10 +215,10 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
             self.showHint("请输入联系电话")
             return
         }
-        if (timeStr.isEmpty) {
-            self.showHint("请选择预约时间");
-            return;
-        }
+//        if (timeStr.isEmpty) {
+//            self.showHint("请选择预约时间");
+//            return;
+//        }
         
         var roofTypeUrl = ""
         if (roofTypeIndex == 0) {

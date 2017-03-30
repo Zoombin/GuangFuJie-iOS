@@ -118,7 +118,7 @@
                                 <action selector="submitButtonClicked" destination="-1" eventType="touchUpInside" id="f3L-UH-jy4"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FKp-6s-TBa">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FKp-6s-TBa">
                             <rect key="frame" x="141" y="447" width="234" height="40"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -180,7 +180,7 @@
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mkk-7I-aZV">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mkk-7I-aZV">
                             <rect key="frame" x="40" y="447" width="101" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -191,14 +191,14 @@
                             </state>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KDl-ED-xqD">
-                            <rect key="frame" x="0.0" y="160" width="40" height="327"/>
+                            <rect key="frame" x="0.0" y="160" width="40" height="286"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow_right" id="IPL-7X-kiE">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow_right" id="IPL-7X-kiE">
                             <rect key="frame" x="340" y="457" width="20" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -222,51 +222,51 @@
                             <rect key="frame" x="340" y="170" width="20" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" id="ta8-xa-vPb">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sq8-yM-fdd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <connections>
+                                        <action selector="datePickerViewHidenOrShow" destination="-1" eventType="touchUpInside" id="4sm-Fj-CMh"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" id="5qE-UD-qaQ">
+                                    <rect key="frame" x="0.0" y="413" width="375" height="254"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="jQu-wt-BfG">
+                                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <date key="date" timeIntervalSinceReferenceDate="495338111.63906902">
+                                        <!--2016-09-12 01:55:11 +0000-->
+                                    </date>
+                                    <connections>
+                                        <action selector="datePickerValueChanged:" destination="-1" eventType="valueChanged" id="Hfj-kB-h7I"/>
+                                    </connections>
+                                </datePicker>
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MLN-cY-Xd3">
+                                    <rect key="frame" x="0.0" y="366" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="F7M-9U-UPX"/>
+                                        <barButtonItem title="完成" style="plain" id="IWe-nM-HUb">
+                                            <connections>
+                                                <action selector="datePickerViewHidenOrShow" destination="-1" id="Gbk-p3-5A4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </items>
+                                </toolbar>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16307848282442747" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 </scrollView>
-                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" id="ta8-xa-vPb">
-                    <rect key="frame" x="0.0" y="-2" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sq8-yM-fdd">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <connections>
-                                <action selector="datePickerViewHidenOrShow" destination="-1" eventType="touchUpInside" id="4sm-Fj-CMh"/>
-                            </connections>
-                        </button>
-                        <view contentMode="scaleToFill" id="5qE-UD-qaQ">
-                            <rect key="frame" x="0.0" y="413" width="375" height="254"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </view>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="jQu-wt-BfG">
-                            <rect key="frame" x="0.0" y="451" width="375" height="216"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <date key="date" timeIntervalSinceReferenceDate="495338111.63906902">
-                                <!--2016-09-12 01:55:11 +0000-->
-                            </date>
-                            <connections>
-                                <action selector="datePickerValueChanged:" destination="-1" eventType="valueChanged" id="Hfj-kB-h7I"/>
-                            </connections>
-                        </datePicker>
-                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MLN-cY-Xd3">
-                            <rect key="frame" x="0.0" y="366" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="F7M-9U-UPX"/>
-                                <barButtonItem title="完成" style="plain" id="IWe-nM-HUb">
-                                    <connections>
-                                        <action selector="datePickerViewHidenOrShow" destination="-1" id="Gbk-p3-5A4"/>
-                                    </connections>
-                                </barButtonItem>
-                            </items>
-                        </toolbar>
-                    </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16307848282442747" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="315.5" y="271.5"/>
