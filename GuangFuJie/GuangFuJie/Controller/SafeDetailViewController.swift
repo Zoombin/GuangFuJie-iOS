@@ -124,7 +124,7 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
             } else if (indexPath.row == 4) {
                 var type = "保险类型："
                 if (info!.size != nil) {
-                    type = type + "光伏街发电系统" + info!.size! + "版"
+                    type = type + "光伏街发电系统" + StringUtils.getString(info!.label)
                 }
                 cell.textLabel?.text = type
             } else if (indexPath.row == 5) {
