@@ -451,7 +451,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             let insureType = types[i] as! InsuranceType
             let button = UIButton.init(type: UIButtonType.custom)
             button.frame = CGRect(x: dir + index * offSetX + width * index, y: (line + 1) * dir + height * line, width: width, height: height)
-            button.setTitle(String(insureType.size!), for: UIControlState.normal)
+            button.setTitle(StringUtils.getString(insureType.label), for: UIControlState.normal)
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 1
             button.setTitleColor(UIColor.black, for: UIControlState.normal)
@@ -516,9 +516,8 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         let insureType = types[sender.tag - BUTTON_TAG] as! InsuranceType
         insureModel = insureType
         
-        guigeLabel.text = insureModel!.size!
+        guigeLabel.text = StringUtils.getString(insureModel!.label)
         reSizePrice()
-//        priceLabel.text = "￥:" + String(insureType.price!) + "元"
         
         let size = NSString.init(string: insureType.size!)
         size.replacingOccurrences(of: "KW", with: "")

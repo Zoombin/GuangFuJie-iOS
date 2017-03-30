@@ -13,4 +13,5 @@ class InsuranceType: NSObject {
    var company_id: NSNumber?  //所属保险公司id
    var size: String?        //电站大小
    var price: NSNumber?       //价格
+   var label: String?       //电站大小 描述
 }
