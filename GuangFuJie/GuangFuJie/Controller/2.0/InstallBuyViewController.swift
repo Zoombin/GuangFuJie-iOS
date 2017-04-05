@@ -226,11 +226,23 @@ class InstallBuyViewController: BaseViewController {
         API.sharedInstance.orderRoof(roofId, success: { (commonModel) in
                 self.hideHud()
                 self.showHint("接单成功!")
-                self.navigationController?.popViewController(animated: true)
+                self.showTellPhoneAlert()
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
         }
+    }
+    
+    func showTellPhoneAlert() {
+        let alertView = UIAlertController.init(title: "提示", message: "接单成功，是否联系客服？", preferredStyle: UIAlertControllerStyle.alert)
+        alertView.addAction(UIAlertAction.init(title: "确定", style: UIAlertActionStyle.default, handler: { (action) in
+            self.navigationController?.popViewController(animated: true)
+             UIApplication.shared.openURL(URL.init(string: "tel://4006229666")! as URL)
+        }))
+        alertView.addAction(UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alertView, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
