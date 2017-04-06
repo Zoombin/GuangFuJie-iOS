@@ -183,6 +183,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITa
         calModel.type = currentType as NSNumber?
         
         let vc = CalResultViewController()
+        vc.cityName = StringUtils.getString(cityInfo!.city_label)
         vc.calModel = calModel
         self.pushViewController(vc)
     }

@@ -20,4 +20,9 @@ class ElectricInfo: NSObject {
     var xo1 : NSNumber?            // 节约的一氧化物 吨
     var mileage : NSNumber?        // 行驶里程  公里
     var plant : NSNumber?          // 种植  棵
+    
+    var sGovernment : String?
+    var sLocal : String?
+    var costExpect : String?
+    var costReturn : String?
 }

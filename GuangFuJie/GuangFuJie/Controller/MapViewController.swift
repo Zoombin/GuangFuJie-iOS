@@ -17,6 +17,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
     var geocodeSearch: BMKGeoCodeSearch!
     var address = ""
     var canDraw = true
+    var cityName = ""
     
     
     var currentLocation = CLLocationCoordinate2D()
@@ -168,6 +169,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
             value = value + "]"
             
             let vc = CalResultViewController()
+            vc.cityName = cityName
             vc.calModel = model
             vc.polygon = value
             self.pushViewController(vc)
@@ -202,6 +204,18 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         }
         searchBar.resignFirstResponder()
     }
+    
+    func reGeoSearch(location: CLLocationCoordinate2D) {
+        let reverseGeoOption = BMKReverseGeoCodeOption()
+        reverseGeoOption.reverseGeoPoint = location
+        let flag = geocodeSearch.reverseGeoCode(reverseGeoOption)
+        if flag {
+            print("反地理编码成功")
+        } else {
+            print("反地理编码失败")
+        }
+    }
+    
     
     // MARK: - BMKMapViewDelegate
     
@@ -276,6 +290,12 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
         
         if error == BMK_SEARCH_NO_ERROR {
             mapView.centerCoordinate = result.location
+        }
+    }
+    
+    func onGetReverseGeoCodeResult(_ searcher: BMKGeoCodeSearch!, result: BMKReverseGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
+        if error == BMK_SEARCH_NO_ERROR {
+            cityName = result.addressDetail.city
         }
     }
     
@@ -365,6 +385,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
             hasLocated = true
             currentLocation = userLocation.location.coordinate
             mapView.centerCoordinate = userLocation.location.coordinate
+            reGeoSearch(location: userLocation.location.coordinate)
         }
     }
     
