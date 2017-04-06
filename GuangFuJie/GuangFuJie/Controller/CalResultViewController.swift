@@ -93,7 +93,7 @@ class CalResultViewController: BaseViewController {
         
         var line: CGFloat = 0
         let resultBtnWidth = PhoneUtils.kScreenWidth / 2
-        let resultBtnHeight = PhoneUtils.kScreenHeight / 14
+        let resultBtnHeight = CGFloat(NSString(format: "%.0f", PhoneUtils.kScreenHeight / 14).floatValue)
         for i in 0..<icons.count {
             let button = UIButton.init(frame: CGRect(x: 0, y: line * resultBtnHeight, width: resultBtnWidth, height: resultBtnHeight))
             button.setImage(UIImage(named: icons[i]), for: UIControlState.normal)
