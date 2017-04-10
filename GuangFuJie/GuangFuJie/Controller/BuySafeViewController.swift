@@ -61,7 +61,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - 64))
         self.view.addSubview(scrollView)
 
-        let topImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: (PhoneUtils.kScreenWidth * 356) / 640))
+        let topImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: (PhoneUtils.kScreenWidth * 106) / 640))
         topImageView.image = UIImage(named: "ic_insure")
         scrollView.addSubview(topImageView)
         
