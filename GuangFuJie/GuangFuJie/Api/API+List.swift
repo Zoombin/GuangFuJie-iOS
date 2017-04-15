@@ -770,12 +770,13 @@ extension API {
      - parameter success:
      - parameter failure:              
      */
-    func insuranceAdd(_ insurance_company_id : NSNumber, type_id : NSNumber, years : String, price : NSNumber, beneficiary_name : String, beneficiary_phone : String, beneficiary_id_no : String, station_address : String, client_contract_img : String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func insuranceAdd(_ insurance_company_id : NSNumber, type_id : NSNumber, years : String, price : NSNumber, beneficiary_name : String, beneficiary_phone : String, beneficiary_id_no : String, station_address : String, client_contract_img : String, salesType: NSNumber, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/add";
         let params = [
             "user_id": getUserId(),                          //用户id
             "insurance_company_id": insurance_company_id,// 保险公司的id
             "type_id": type_id,                          //保险类型
+            "salesType": salesType,                      //套餐id
             "years": years,                              //担保年数
             "price": price,                              //保险的价格
             "beneficiary_name": beneficiary_name,        //受益人姓名

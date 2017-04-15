@@ -12,6 +12,7 @@ class ApplyForOrderViewController: BaseViewController {
 
     var insuranceType : InsuranceType!
     var years : String!
+    var salesType : NSNumber!
     
     var scrollView : UIScrollView!
     var nameTextField : UITextField!
@@ -288,7 +289,7 @@ class ApplyForOrderViewController: BaseViewController {
         let currentPrice = Float(years!)! * self.insuranceType!.price!.floatValue * 100
         
         self.showHud(in: self.view, hint: "提交中...")
-        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: insuranceType.price!, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, success: { (commonModel) in
+        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: insuranceType.price!, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, salesType: salesType!, success: { (commonModel) in
                 self.hideHud()
                 self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(format: "%.0f", currentPrice), type: commonModel.type!)
             }) { (msg) in

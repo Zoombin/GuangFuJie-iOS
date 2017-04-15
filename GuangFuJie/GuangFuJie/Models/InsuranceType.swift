@@ -14,4 +14,15 @@ class InsuranceType: NSObject {
    var size: String?        //电站大小
    var price: NSNumber?       //价格
    var label: String?       //电站大小 描述
+   var protect_device: String?
+   var price_device: String?
+   var protect_steal: String?
+   var price_steal: String?
+   var price_third_two: String?
+   var price_third_five: String?
+   var price_third_ten: String?
+   var protect_third_two: String?
+   var protect_third_five: String?
+   var protect_third_ten: String?
+   var saleTypes: NSArray?
 }
