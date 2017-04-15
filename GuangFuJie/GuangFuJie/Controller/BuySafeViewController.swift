@@ -19,6 +19,8 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     
     var types = NSMutableArray()
     let BUTTON_TAG = 1000
+    let YEAR_BUTTON_TAG = 2000
+    let SALES_BUTTON_TAG = 3000
     
     let offSetX : CGFloat = 8
     let offSetY : CGFloat = 5
@@ -451,7 +453,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             button.setTitleColor(UIColor.black, for: UIControlState.normal)
             button.backgroundColor = UIColor.white
             button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-            button.tag = i
+            button.tag = i + YEAR_BUTTON_TAG
             button.addTarget(self, action: #selector(self.yearsButtonClicked(_:)), for: UIControlEvents.touchUpInside)
             bkgView.addSubview(button)
             index += 1
@@ -463,7 +465,15 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func yearsButtonClicked(_ button: UIButton) {
-        years = button.tag + 1
+        for i in 0..<5 {
+            let button = yearsView.viewWithTag(i + YEAR_BUTTON_TAG)
+            button!.layer.borderColor = UIColor.black.cgColor
+            button!.layer.borderWidth = 1
+        }
+        button.layer.borderColor = Colors.installColor.cgColor
+        button.layer.borderWidth = 1
+        
+        years = button.tag - YEAR_BUTTON_TAG + 1
         yearsLabel.text = "投保\(years)年"
         closeYearsView()
         
@@ -611,7 +621,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             button.setTitleColor(UIColor.black, for: UIControlState.normal)
             button.backgroundColor = UIColor.white
             button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-            button.tag = i
+            button.tag = i + SALES_BUTTON_TAG
             button.addTarget(self, action: #selector(self.salesButtonClicked(_:)), for: UIControlEvents.touchUpInside)
             bkgView.addSubview(button)
         }
@@ -664,8 +674,16 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func salesButtonClicked(_ sender : UIButton) {
+        for i in 0..<insureModel!.saleTypes!.count {
+            let button = salesTypeView.viewWithTag(i + SALES_BUTTON_TAG)
+            button!.layer.borderColor = UIColor.black.cgColor
+            button!.layer.borderWidth = 1
+        }
+        sender.layer.borderColor = Colors.installColor.cgColor
+        sender.layer.borderWidth = 1
+        
         closeSaleTypeView()        
-        currentSaleTypeIndex = sender.tag
+        currentSaleTypeIndex = sender.tag - SALES_BUTTON_TAG
         
         let salesType = insureModel!.saleTypes![currentSaleTypeIndex] as! NSDictionary
         salesTypeLabel.text = salesType["typeName"] as? String
