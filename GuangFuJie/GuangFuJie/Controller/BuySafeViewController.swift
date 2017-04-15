@@ -622,6 +622,10 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             button.backgroundColor = UIColor.white
             button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
             button.tag = i + SALES_BUTTON_TAG
+            if (i == currentSaleTypeIndex) {
+                button.layer.borderColor = Colors.installColor.cgColor
+                button.layer.borderWidth = 1
+            }
             button.addTarget(self, action: #selector(self.salesButtonClicked(_:)), for: UIControlEvents.touchUpInside)
             bkgView.addSubview(button)
         }
