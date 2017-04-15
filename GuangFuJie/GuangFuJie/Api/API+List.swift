@@ -770,7 +770,7 @@ extension API {
      - parameter success:
      - parameter failure:              
      */
-    func insuranceAdd(_ insurance_company_id : NSNumber, type_id : NSNumber, years : String, price : NSNumber, beneficiary_name : String, beneficiary_phone : String, beneficiary_id_no : String, station_address : String, client_contract_img : String, salesType: NSNumber, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func insuranceAdd(_ insurance_company_id : NSNumber, type_id : NSNumber, years : String, price : NSNumber, beneficiary_name : String, beneficiary_phone : String, beneficiary_id_no : String, station_address : String, client_contract_img : String, salesType: NSNumber, image: String, address: String, longitude: String, latitude: String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "insurance/add";
         let params = [
             "user_id": getUserId(),                          //用户id
@@ -784,6 +784,10 @@ extension API {
             "beneficiary_id_no": beneficiary_id_no,      //受益人身份证
             "station_address": station_address,          //电站地址
             "client_contract_img": client_contract_img,  //并网合同图片
+            "address": address,
+            "longitude": longitude,
+            "latitude": latitude,
+            "image": image,
             "_o" : 1
         ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)

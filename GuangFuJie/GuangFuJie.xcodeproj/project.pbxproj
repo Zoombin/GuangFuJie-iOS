@@ -305,6 +305,7 @@
 		DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */; };
 		DEB010A61DF2915400E929A6 /* GFJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */; };
 		DEB715C91DFEDE6400CF31D3 /* MSLFrameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */; };
+		DEB8CD8A1EA245BD006F7256 /* PublishMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8CD891EA245BD006F7256 /* PublishMediaView.swift */; };
 		DECA9F251E6CFA9800333B6A /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA9F241E6CFA9800333B6A /* NewsInfo.swift */; };
 		DECA9F291E6CFCBB00333B6A /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA9F281E6CFCBB00333B6A /* NewsCell.swift */; };
 		DED15B691DED26C700B8260B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED15B681DED26C700B8260B /* MapViewController.swift */; };
@@ -919,6 +920,7 @@
 		DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJWebViewController.swift; sourceTree = "<group>"; };
 		DEB715C71DFEDE6400CF31D3 /* MSLFrameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLFrameUtil.h; sourceTree = "<group>"; };
 		DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLFrameUtil.m; sourceTree = "<group>"; };
+		DEB8CD891EA245BD006F7256 /* PublishMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMediaView.swift; sourceTree = "<group>"; };
 		DECA9F241E6CFA9800333B6A /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInfo.swift; sourceTree = "<group>"; };
 		DECA9F281E6CFCBB00333B6A /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		DED15B681DED26C700B8260B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -1182,6 +1184,7 @@
 		18B8FA611D3CE8A400B334E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DEB8CD891EA245BD006F7256 /* PublishMediaView.swift */,
 				DE2095471E60723A00E7C27F /* StringUtils.swift */,
 				DEB715C71DFEDE6400CF31D3 /* MSLFrameUtil.h */,
 				DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */,
@@ -2596,6 +2599,7 @@
 				DE636E371DFE7687008F9F74 /* MoreInstallerViewController.swift in Sources */,
 				DE869EF41D81138F0062E670 /* SafeCell.swift in Sources */,
 				DE5E72BA1D507A76003CDAAC /* DeviceInfo.swift in Sources */,
+				DEB8CD8A1EA245BD006F7256 /* PublishMediaView.swift in Sources */,
 				DE5AD2751DBC8C5400D608A5 /* MJExtensionConst.m in Sources */,
 				DE9AAA5F1DFBD315006B56E9 /* MJRefreshBackNormalFooter.m in Sources */,
 				DEF3B54C1E07C97F0016A359 /* IQNSArray+Sort.swift in Sources */,

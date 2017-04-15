@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ApplyForOrderViewController: BaseViewController {
-
+class ApplyForOrderViewController: BaseViewController, BMKLocationServiceDelegate, BMKGeoCodeSearchDelegate {
+    var locService : BMKLocationService!
+    var geocodeSearch: BMKGeoCodeSearch!
+    
     var insuranceType : InsuranceType!
     var years : String!
     var salesType : NSNumber!
@@ -20,20 +22,65 @@ class ApplyForOrderViewController: BaseViewController {
     var idTextField : UITextField!
     var addressTextField : UITextField!
     
-//    var imgUrls : String!
+    var imgUrls = ""
     var img1 = ""
     var img2 = ""
     var img3 = ""
+    
+    var lat = ""
+    var lng = ""
+    var address = ""
+    
+    var selectedImgs = NSMutableArray()
     var imgView1 : UIImageView!
     var imgView2 : UIImageView!
     var imgView3 : UIImageView!
     var currentIndex = 0
+    var totalprice: NSNumber!
+    var price: NSNumber!
+    
+    var hasLocated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "申请购买"
         // Do any additional setup after loading the view.
         initView()
+        
+        locService = BMKLocationService()
+        geocodeSearch = BMKGeoCodeSearch()
+        
+        if (selectedImgs.count > 0) {
+            for i in 0..<selectedImgs.count {
+                let selectedImgUrl = selectedImgs[i] as! String
+                if (selectedImgs.count == 1) {
+                    imgUrls = selectedImgUrl
+                } else {
+                    imgUrls = imgUrls + "," + selectedImgUrl
+                }
+            }
+            print(imgUrls)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        locService.delegate = self
+        geocodeSearch.delegate = self
+        
+        startLocation()
+    }
+    
+    // MARK: - IBAction
+    func startLocation() {
+        print("进入普通定位态");
+        hasLocated = false
+        locService.startUserLocationService()
+    }
+    
+    func stopLocation() {
+        locService.stopUserLocationService()
     }
 
     func initView() {
@@ -286,17 +333,74 @@ class ApplyForOrderViewController: BaseViewController {
             imgUrls = imgUrls + "," + img3
         }
         let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
-        let currentPrice = Float(years!)! * self.insuranceType!.price!.floatValue * 100
         
         self.showHud(in: self.view, hint: "提交中...")
-        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: insuranceType.price!, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, salesType: salesType!, success: { (commonModel) in
+        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: price, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, salesType: salesType!, image: imgUrls, address: address, longitude: lng, latitude: lat, success: { (commonModel) in
                 self.hideHud()
-                self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(format: "%.0f", currentPrice), type: commonModel.type!)
+                self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(format: "%.0f", self.totalprice.floatValue * 100), type: commonModel.type!)
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
         }
         
+    }
+    
+    
+    // MARK: - BMKLocationServiceDelegate
+    
+    /**
+     *在地图View将要启动定位时，会调用此函数
+     *@param mapView 地图View
+     */
+    func willStartLocatingUser() {
+        print("willStartLocatingUser");
+    }
+    
+    /**
+     *用户位置更新后，会调用此函数
+     *@param userLocation 新的用户位置
+     */
+    func didUpdate(_ userLocation: BMKUserLocation!) {
+        print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
+        if (hasLocated == false) {
+            hasLocated = true
+            lat = "\(userLocation.location.coordinate.latitude)"
+            lng = "\(userLocation.location.coordinate.longitude)"
+            
+            reGeoSearch(location: userLocation.location.coordinate)
+        }
+    }
+    
+    func reGeoSearch(location: CLLocationCoordinate2D) {
+        let reverseGeoOption = BMKReverseGeoCodeOption()
+        reverseGeoOption.reverseGeoPoint = location
+        let flag = geocodeSearch.reverseGeoCode(reverseGeoOption)
+        if flag {
+            print("反地理编码成功")
+        } else {
+            print("反地理编码失败")
+        }
+    }
+    
+    func onGetReverseGeoCodeResult(_ searcher: BMKGeoCodeSearch!, result: BMKReverseGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
+        if error == BMK_SEARCH_NO_ERROR {
+            address = result.address
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        locService.delegate = nil
+        geocodeSearch.delegate = nil
+        stopLocation()
+    }
+    
+    /**
+     *在地图View停止定位后，会调用此函数
+     *@param mapView 地图View
+     */
+    func didStopLocatingUser() {
+        print("didStopLocatingUser")
     }
     
     override func didReceiveMemoryWarning() {

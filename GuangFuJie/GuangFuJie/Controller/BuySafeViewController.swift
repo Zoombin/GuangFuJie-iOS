@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertViewDelegate {
+class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertViewDelegate, MediaDelegate {
     var priceLabel : UILabel!
     var guigeLabel : UILabel!
     var scrollView : UIScrollView!
@@ -46,6 +46,10 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     
     var years = 0
     var currentSaleTypeIndex = -1
+    
+    var HScrollView: UIScrollView!
+    
+    var selectorImg = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +111,14 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         photoTipsLabel.textColor = Colors.lightGray
         photoTipsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         sectionView7.addSubview(photoTipsLabel)
+        
+        //HScrollView
+        HScrollView = UIScrollView()
+        HScrollView.frame = CGRect(x: titleLabel7.frame.maxX, y: 2, width: PhoneUtils.kScreenWidth - uploadPhoto.frame.size.width - offSetX - titleLabel7.frame.maxX, height: 35 * times)
+        HScrollView.backgroundColor = UIColor.white
+        sectionView7.addSubview(HScrollView)
+        //添加图片
+        setHScrollView()
         
         maxY = sectionView7.frame.maxY + offSetY
         
@@ -386,10 +398,103 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
                 self.showHint(msg)
         }
     }
+    
+    //MediaDaletege
+    func onBgClick(_ tag : Int){
+        self.showPhotos(selectorImg, index: tag, isLocal: false)
+    }
+    
+    func onDeleteClick(_ type:Int,tag : Int){
+        if(0 == type){
+            selectorImg.removeObject(at: tag)
+        }
+        setHScrollView()
+    }
+    
+    func onPlayClick(_ tag:Int){
+        
+    }
+    
+    func sampleImageClicked() {
+        self.showPhotos(["device_pic_sample"], index: 0, isLocal: true)
+    }
+    
+    func addMediaClick(_ gesture : UITapGestureRecognizer) -> Void {
+        let tag = gesture.view?.tag
+        if (tag == 0 ){
+            if(selectorImg.count >= 9){
+                self.showHint("最多上传9张图片")
+                return
+            }
+            uploadImage()
+        }
+    }
+    
+    //设置水平滚动的布局
+    func setHScrollView() -> Void {
+        //HScrollView
+        if(HScrollView.subviews.count>0){
+            for view in HScrollView.subviews {
+                view.removeFromSuperview()
+            }
+        }
+        
+        let mediaW :CGFloat = HScrollView.frame.size.height
+        let mediaH :CGFloat = HScrollView.frame.size.height
+        let dir :CGFloat = 8
+        
+        let imgCount = selectorImg.count
+        var lastX : CGFloat = dir
+        //先添加可操作按钮
+        if(imgCount < 9){
+            let sampleImage = UIImageView()
+            sampleImage.frame = CGRect(x: lastX, y: 0, width: mediaW, height: mediaH)
+            sampleImage.image = UIImage.init(named: "ic_device_sample")
+            sampleImage.tag = 0
+            sampleImage.isUserInteractionEnabled = true
+            let tagGesture1 : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(sampleImageClicked))
+            sampleImage.addGestureRecognizer(tagGesture1)
+            HScrollView.addSubview(sampleImage)
+            
+            lastX = sampleImage.frame.maxX + dir
+            
+            //Img
+            let add_img = UIImageView()
+            add_img.frame = CGRect(x: lastX, y: 0, width: mediaW, height: mediaH)
+            add_img.image = UIImage.init(named: "btn_addnew")
+            add_img.tag = 0
+            add_img.isUserInteractionEnabled = true
+            let tagGesture2 : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(addMediaClick(_:)))
+            add_img.addGestureRecognizer(tagGesture2)
+            HScrollView.addSubview(add_img)
+            
+            lastX = add_img.frame.maxX+dir
+        }
+        //实际图片数
+        if(imgCount > 0){
+            for index in 0...imgCount-1 {
+                let ImgX = lastX
+                let mediaView = PublishMediaView()
+                mediaView.frame = CGRect(x: ImgX, y: 0, width: mediaW, height: mediaH)
+                mediaView.initView(0, viewW: mediaW, viewH: mediaH)
+                mediaView.tag = index
+                mediaView.isUserInteractionEnabled = true
+                mediaView.delegate = self
+                let url = selectorImg.object(at: index) as! String
+                mediaView.displayImageView(url+"?imageView2/1/w/400/h/400")
+                HScrollView.addSubview(mediaView)
+                
+                lastX = mediaView.frame.maxX+dir
+            }
+        }
+       
+        HScrollView.contentSize = CGSize(width: lastX+10, height: mediaH)
+    }
 
     deinit {
         typeView.removeFromSuperview()
         yearsView.removeFromSuperview()
+        salesTypeView.removeFromSuperview()
     }
     
     func showYearsView() {
@@ -739,13 +844,46 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             return
         }
         let salesType = insureModel!.saleTypes![currentSaleTypeIndex] as! NSDictionary
+        
+        let currentPrice = salesType["typePrice"] as! NSNumber
+        let price = String(format: "%.2f", currentPrice.floatValue * Float(years))
         let vc = ApplyForOrderViewController()
         vc.insuranceType = insureModel
         vc.salesType = salesType["typeId"] as! NSNumber
         vc.years = "\(years)"
+        vc.totalprice = NSNumber(value: NSString(string: price).floatValue)
+        vc.price = currentPrice
+        vc.selectedImgs = selectorImg
         self.pushViewController(vc)
     }
-
+    
+    func uploadImage() {
+        selectPhotoPicker()
+    }
+    
+    override func pickerCallback(_ image: UIImage) {
+        let imgData = UIImagePNGRepresentation(image)
+        let time = Date().timeIntervalSince1970
+        let key = "device_\(time).png"
+        self.showHud(in: self.view, hint: "正在上传")
+        API.sharedInstance.qnToken(key, success: { (info) in
+            API.sharedInstance.uploadData(imgData!, key: key, token: info.token!, success: { (result) in
+                self.hideHud()
+                if (result.info?.error != nil) {
+                    self.showHint("上传失败")
+                } else {
+                    self.showHint("上传成功")
+                    let url = "http://ob4e8ww8r.bkt.clouddn.com/" + result.key!
+                    self.selectorImg.add(url)
+                    self.setHScrollView()
+                }
+            })
+        }) { (error) in
+            self.hideHud()
+            self.showHint(error)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
