@@ -19,7 +19,7 @@ class PhotoViewController: BaseViewController {
         let imageView = UIImageView.init(frame : CGRect(x: 0,y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
         if (type == 1) {
             let width = PhoneUtils.kScreenWidth
-            let height = (1136 * width) / 640
+            let height = (7758 * width) / 640
             self.title = "保险条款"
             imageView.frame = CGRect(x: 0,y: 0, width: width, height: height)
             imageView.image = UIImage(named: "ic_insurance_terms")
@@ -32,7 +32,7 @@ class PhotoViewController: BaseViewController {
         } else {
             self.title = "纸质保单范本"
             let width = PhoneUtils.kScreenWidth
-            let height = (1442 * width) / 640
+            let height = (853 * width) / 640
             imageView.frame = CGRect(x: 0,y: 0, width: width, height: height)
             imageView.image = UIImage(named: "ic_paper_ex")
         }
