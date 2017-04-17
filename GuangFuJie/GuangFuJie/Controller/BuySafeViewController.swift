@@ -81,7 +81,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         
         let times = PhoneUtils.kScreenWidth / 320
         let dir = 5 * times
-        var maxY: CGFloat = 0
+        var maxY: CGFloat = offSetY
         
         //设备照片
         let sectionView7 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 60 * times))
