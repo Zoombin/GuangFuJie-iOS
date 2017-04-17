@@ -170,14 +170,8 @@ class InstallerSearchResultViewController: BaseViewController, UITableViewDelega
         self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.checkIsInstaller({ (msg, commonModel) in
             self.hideHud()
-            if (commonModel.is_installer == 0) {
-                let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
-                self.pushViewController(vc)
-            } else {
-                //2的时候是安装商了
-                let vc = UserCenterViewController()
-                self.pushViewController(vc)
-            }
+            let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
+            self.pushViewController(vc)
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
