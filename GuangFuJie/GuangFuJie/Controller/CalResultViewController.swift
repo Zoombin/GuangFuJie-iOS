@@ -69,7 +69,7 @@ class CalResultViewController: BaseViewController {
         titleStrs.append("\(StringUtils.getString(eInfo.sLocal)) 元")
         titleStrs.append("\(StringUtils.getString(eInfo.costReturn)) %")
         titleStrs.append(String(format: "%.2f 度", StringUtils.getNumber(eInfo.year_du).floatValue))
-        titleStrs.append("\(StringUtils.getNumber(eInfo.year_money)) 元")
+        titleStrs.append("\(String(format: "%.2f", StringUtils.getNumber(eInfo.year_money).floatValue)) 元")
         
         let submitBottomView = UIView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
         submitBottomView.backgroundColor = UIColor.white
