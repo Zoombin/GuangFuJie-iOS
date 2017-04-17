@@ -342,7 +342,20 @@ class ApplyForOrderViewController: BaseViewController, BMKLocationServiceDelegat
                 self.hideHud()
                 self.showHint(msg)
         }
-        
+    }
+    
+    //支付回调
+    override func onBeeCloudResp(_ resp: BCBaseResp!) {
+        if (resp.type == BCObjsType.payResp) {
+            let timeResp : BCPayResp = resp as! BCPayResp
+            print(timeResp.resultMsg)
+            if (timeResp.resultCode == 0) {
+                self.showHint("购买成功")
+                self.navigationController?.popToRootViewController(animated: true)
+            } else {
+                self.showHint(timeResp.resultMsg)
+            }
+        }
     }
     
     
