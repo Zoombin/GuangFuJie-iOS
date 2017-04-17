@@ -172,7 +172,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
             vc.cityName = cityName
             vc.calModel = model
             vc.polygon = value
-            self.pushViewController(vc)
+            self.pushViewController(vc, animation: false)
         }
     }
     
