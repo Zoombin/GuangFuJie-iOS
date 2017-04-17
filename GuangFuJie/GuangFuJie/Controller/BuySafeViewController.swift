@@ -858,7 +858,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func uploadImage() {
-        selectPhotoPicker()
+        takePhoto()
     }
     
     override func pickerCallback(_ image: UIImage) {
