@@ -32,7 +32,7 @@ class CalResultViewController: BaseViewController {
             }) { (msg) in
                 self.hideHud()
                 self.showHint(msg)
-                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popViewController(animated: false)
         }
     }
     

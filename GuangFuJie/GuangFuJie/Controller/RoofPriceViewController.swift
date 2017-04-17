@@ -185,7 +185,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITa
         let vc = CalResultViewController()
         vc.cityName = StringUtils.getString(cityInfo!.city_label)
         vc.calModel = calModel
-        self.pushViewController(vc)
+        self.pushViewController(vc, animation: false)
     }
 
     override func didReceiveMemoryWarning() {
