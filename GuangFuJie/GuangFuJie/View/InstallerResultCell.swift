@@ -12,10 +12,13 @@ class InstallerResultCell: UITableViewCell {
     static var dir = 10 * (PhoneUtils.kScreenWidth / 750)
     static var times = PhoneUtils.kScreenWidth / 750
     
+    
+    static var companyLabelWidth = PhoneUtils.kScreenWidth - 2 * InstallerResultCell.dir
     var componyNameLabel: UILabel!
     var contractNameLabel: TopLeftLabel!
     var createTimeLabel: TopLeftLabel!
     var addressLabel: TopLeftLabel!
+    var rzLabel: UIButton!
     
     var hasInit = false
     
@@ -51,10 +54,22 @@ class InstallerResultCell: UITableViewCell {
         bkgView.backgroundColor = UIColor.white
         self.contentView.addSubview(bkgView)
         
-        componyNameLabel = UILabel.init(frame: CGRect(x: InstallerResultCell.dir, y: 0, width: PhoneUtils.kScreenWidth - 2 * InstallerResultCell.dir, height: labelHeight))
+        componyNameLabel = UILabel.init(frame: CGRect(x: InstallerResultCell.dir, y: 0, width: InstallerResultCell.companyLabelWidth, height: labelHeight))
         componyNameLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
         componyNameLabel.textColor = Colors.installColor
         bkgView.addSubview(componyNameLabel)
+        
+//        我要认证
+        rzLabel = UIButton.init(frame: CGRect(x: componyNameLabel.frame.maxX + InstallerResultCell.dir, y: labelHeight * 0.1, width: 70, height: labelHeight * 0.8))
+        rzLabel.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
+        rzLabel.setTitleColor(Colors.installRedColor, for: UIControlState.normal)
+        rzLabel.layer.borderColor = Colors.installRedColor.cgColor
+        rzLabel.layer.borderWidth = 1
+        rzLabel.layer.cornerRadius = 5
+        rzLabel.layer.masksToBounds = true
+        rzLabel.setTitle("我要认证", for: UIControlState.normal)
+        rzLabel.isHidden = true
+        bkgView.addSubview(rzLabel)
         
         contractNameLabel = TopLeftLabel.init(frame: CGRect(x: InstallerResultCell.dir, y: componyNameLabel.frame.maxY, width: (componyNameLabel.frame.size.width / 2) * 0.7, height: labelHeight))
         bkgView.addSubview(contractNameLabel)
@@ -93,6 +108,14 @@ class InstallerResultCell: UITableViewCell {
         addressAttr.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: Dimens.fontSizelarge), range: NSMakeRange(0, 1))
         addressAttr.addAttribute(NSForegroundColorAttributeName, value: Colors.installColor, range: NSMakeRange(0, 1))
         addressAttr.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: Dimens.fontSizeSmall), range: NSMakeRange(1, StringUtils.strLength(address)))
+        
+        var width = MSLFrameUtil.getLabWidth(componyName, fontSize: Dimens.fontSizeComm2, height: componyNameLabel.frame.size.height) + InstallerResultCell.dir
+        if (width + 70 + InstallerResultCell.dir > InstallerResultCell.companyLabelWidth) {
+            width = InstallerResultCell.companyLabelWidth - 70 - InstallerResultCell.dir * 2
+        }
+        componyNameLabel.frame = CGRect(x: componyNameLabel.frame.origin.x, y: componyNameLabel.frame.origin.y, width: width, height: componyNameLabel.frame.size.height)
+        rzLabel.frame = CGRect(x: componyNameLabel.frame.maxX + InstallerResultCell.dir, y: rzLabel.frame.origin.y, width: 70, height: rzLabel.frame.size.height)
+        rzLabel.isHidden = false
         
         componyNameLabel.text = componyName
         contractNameLabel.attributedText = contractAttr

@@ -150,6 +150,7 @@ class InstallerSearchResultViewController: BaseViewController, UITableViewDelega
         let data = self.searchArray.object(at: indexPath.row) as! InstallInfo
         let cell = InstallerResultCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
         cell.setData(model: data)
+        cell.rzLabel.addTarget(self, action: #selector(self.wantToBeInstaller), for: UIControlEvents.touchUpInside)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
@@ -160,6 +161,27 @@ class InstallerSearchResultViewController: BaseViewController, UITableViewDelega
         let vc = InstallerDetailViewController()
         vc.installerInfo = data
         self.pushViewController(vc)
+    }
+    
+    func wantToBeInstaller() {
+        if (shouldShowLogin()) {
+            return
+        }
+        self.showHud(in: self.view, hint: "加载中...")
+        API.sharedInstance.checkIsInstaller({ (msg, commonModel) in
+            self.hideHud()
+            if (commonModel.is_installer == 0) {
+                let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
+                self.pushViewController(vc)
+            } else {
+                //2的时候是安装商了
+                let vc = UserCenterViewController()
+                self.pushViewController(vc)
+            }
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
     }
 
 }

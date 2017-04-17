@@ -119,6 +119,13 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         thirdheaderView.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
         thirdView.addSubview(thirdheaderView)
         
+        let rzButton = UIButton.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 75 - 5, y: labelHeight * 0.1, width: 75, height: labelHeight * 0.8))
+        rzButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm2)
+        rzButton.setTitleColor(Colors.installRedColor, for: UIControlState.normal)
+        rzButton.setTitle("我要认证 >", for: UIControlState.normal)
+        rzButton.addTarget(self, action: #selector(self.wantToBeInstaller), for: UIControlEvents.touchUpInside)
+        thirdView.addSubview(rzButton)
+        
         let contractNameTitle = UILabel.init(frame: CGRect(x: thirdleftView.frame.maxX - 0.5, y: thirdheaderView.frame.maxY, width: 175 * times, height: labelHeight))
         contractNameTitle.text = "联系人"
         contractNameTitle.backgroundColor = UIColor.white
@@ -180,6 +187,27 @@ class InstallerDetailViewController: BaseViewController, UIAlertViewDelegate {
         thirdView.addSubview(addLine(frame: CGRect(x: mailTitle.frame.minX, y: mailTitle.frame.maxY, width: PhoneUtils.kScreenWidth - mailTitle.frame.minX, height: 0.5)))
         
         thirdView.addSubview(addLine(frame: CGRect(x: websiteTitle.frame.minX, y: websiteTitle.frame.maxY, width: PhoneUtils.kScreenWidth - websiteTitle.frame.minX, height: 0.5)))
+    }
+    
+    func wantToBeInstaller() {
+        if (shouldShowLogin()) {
+            return
+        }
+        self.showHud(in: self.view, hint: "加载中...")
+        API.sharedInstance.checkIsInstaller({ (msg, commonModel) in
+            self.hideHud()
+            if (commonModel.is_installer == 0) {
+                let vc = ToBeInstallerViewController(nibName: "ToBeInstallerViewController", bundle: nil)
+                self.pushViewController(vc)
+            } else {
+                //2的时候是安装商了
+                let vc = UserCenterViewController()
+                self.pushViewController(vc)
+            }
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
     }
     
     func initFourthView() {
