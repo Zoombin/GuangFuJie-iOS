@@ -352,17 +352,15 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         sectionView6.backgroundColor = UIColor.white
         scrollView.addSubview(sectionView6)
         
-        let pagerTitles = ["查看保险条款", "电子保单范本", "纸质保单范本"]
+        let pagerTitles = ["查看保险条款", "纸质保单范本"]
         let pagerOffSetX = 10 * times
         let pagerOffSetY = 10 * times
-        let pagerBtnWidth = (PhoneUtils.kScreenWidth - pagerOffSetX * 4) / 3
+        let pagerBtnWidth = (PhoneUtils.kScreenWidth - pagerOffSetX * 4) / 2
         let pagerBtnHeight = 25 * times
         for i in 0..<pagerTitles.count {
             let btn = UIButton.init(frame: CGRect(x: pagerOffSetX * CGFloat(i + 1) + pagerBtnWidth * CGFloat(i), y: pagerOffSetY, width: pagerBtnWidth, height: pagerBtnHeight))
             if (i == 0) {
                 btn.frame = CGRect(x: offSetX, y: pagerOffSetY, width: pagerBtnWidth, height: pagerBtnHeight)
-            } else if (i == 1) {
-                btn.frame = CGRect(x: (PhoneUtils.kScreenWidth - pagerBtnWidth) / 2, y: pagerOffSetY, width: pagerBtnWidth, height: pagerBtnHeight)
             } else {
                 btn.frame = CGRect(x: PhoneUtils.kScreenWidth - pagerBtnWidth - offSetX, y: pagerOffSetY, width: pagerBtnWidth, height: pagerBtnHeight)
             }
@@ -763,8 +761,6 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         let vc = PhotoViewController()
         if (sender.tag == 1) {
             vc.type = 1
-        } else if (sender.tag == 2) {
-            vc.type = 2
         } else {
             vc.type = 3
         }
