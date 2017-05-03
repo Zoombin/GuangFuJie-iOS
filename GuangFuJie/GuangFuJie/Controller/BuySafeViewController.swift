@@ -51,6 +51,8 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     
     var selectorImg = NSMutableArray()
     
+    var seaSwitch = UISwitch()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "购买保险"
@@ -211,6 +213,17 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         titleLabel8.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         titleLabel8.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         sectionView8.addSubview(titleLabel8)
+        
+        seaSwitch.frame = CGRect(x: PhoneUtils.kScreenWidth - offSetX - 60, y: 2, width: 60, height: (sectionView8.frame.size.height / 2) - 4)
+        seaSwitch.addTarget(self, action: #selector(self.switchValueChanged), for: UIControlEvents.valueChanged)
+        sectionView8.addSubview(seaSwitch)
+        
+        let ifNearSeaLabel = UILabel.init(frame: CGRect(x: seaSwitch.frame.minX - 105, y: 0, width: 100, height: sectionView8.frame.size.height / 2))
+        ifNearSeaLabel.text = "是否沿海"
+        ifNearSeaLabel.textColor = Colors.installColor
+        ifNearSeaLabel.textAlignment = NSTextAlignment.right
+        ifNearSeaLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        sectionView8.addSubview(ifNearSeaLabel)
         
         salesTypeLabel = UILabel.init(frame: CGRect(x: PhoneUtils.kScreenWidth - 15 * times - offSetX - 280, y: 30 * times, width: 275, height: 30 * times))
         salesTypeLabel.text = "请选择套餐类型"
@@ -382,6 +395,18 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         scrollView.contentSize = CGSize(width: 0, height: sectionView6.frame.maxY)
     }
     
+    func switchValueChanged() {
+        if (seaSwitch.isOn) {
+            //打开了
+            let alertView = UIAlertController.init(title: "提示", message: "以下城市是沿海城市:海南省全省浙江省（舟山、台州、温州）福建省（宁德、福清、莆田、泉州、漳州）广东省（潮州、汕头、揭阳、汕尾、惠州、珠海、阳江、江门、茂名、湛江）江苏（盐城）广西（北部湾、钦州、防城港）。保费将根据地区发生变化，请正确选择您的地区，错误地区将导致保单不生效！", preferredStyle: UIAlertControllerStyle.alert)
+            let actionSure = UIAlertAction.init(title: "我知道了", style: UIAlertActionStyle.default, handler: nil)
+            alertView.addAction(actionSure)
+            self.present(alertView, animated: true, completion: nil)
+        } else {
+            //关闭了
+        }
+    }
+    
     func loadInsuranceInfo() {
         self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.insuranceType({ (typeList, totalCount) in
@@ -543,7 +568,6 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         var line : CGFloat = 0
         var index : CGFloat = 0
         for i in 0..<years.count {
-            print(i)
             if (i != 0 && i%4 == 0) {
                 index = 0
                 line += 1
@@ -636,7 +660,6 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         var line : CGFloat = 0
         var index : CGFloat = 0
         for i in 0..<types.count {
-            print(i)
             if (i != 0 && i%4 == 0) {
                 index = 0
                 line += 1
