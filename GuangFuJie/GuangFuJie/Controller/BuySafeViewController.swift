@@ -404,6 +404,9 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             self.present(alertView, animated: true, completion: nil)
         }
         reSizePrice()
+        if (insureModel != nil) {
+            refreshBaoeBaofei()
+        }
     }
     
     func loadInsuranceInfo() {
@@ -777,7 +780,9 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         let salesType = insureModel!.saleTypes![currentSaleTypeIndex] as! NSDictionary
         var currentPrice = salesType["typePrice"] as! NSNumber
         if (seaSwitch.isOn) {
-            currentPrice = salesType["typePriceSea"] as! NSNumber
+            if (salesType["typePriceSea"] != nil) {
+                currentPrice = salesType["typePriceSea"] as! NSNumber
+            }
         }
         priceLabel.text = String(format: "￥:%.2f元", currentPrice.floatValue * Float(years))
     }
@@ -835,20 +840,29 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         insureModel = insureType
         addSalesView()
         
+        refreshBaoeBaofei()
+    }
+    
+    func refreshBaoeBaofei() {
         guigeLabel.text = StringUtils.getString(insureModel!.label)
         reSizePrice()
         
-        baoe1Label.text = String(format: "%@万", StringUtils.getString(insureType.protect_device))
-        baoe2Label.text = String(format: "%@万", StringUtils.getString(insureType.protect_third_two))
-        baoe3Label.text = String(format: "%@万", StringUtils.getString(insureType.protect_third_five))
-        baoe4Label.text = String(format: "%@万", StringUtils.getString(insureType.protect_third_ten))
-        baoe5Label.text = String(format: "%@万", StringUtils.getString(insureType.protect_steal))
+        baoe1Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_device))
+        baoe2Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_third_two))
+        baoe3Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_third_five))
+        baoe4Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_third_ten))
+        baoe5Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_steal))
         
-        baof1Label.text = String(format: "%@元", StringUtils.getString(insureType.price_device))
-        baof2Label.text = String(format: "%@元", StringUtils.getString(insureType.price_third_two))
-        baof3Label.text = String(format: "%@元", StringUtils.getString(insureType.price_third_five))
-        baof4Label.text = String(format: "%@元", StringUtils.getString(insureType.price_third_ten))
-        baof5Label.text = String(format: "%@元", StringUtils.getString(insureType.price_steal))
+        baof1Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_device))
+        baof2Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_two))
+        baof3Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_five))
+        baof4Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_ten))
+        baof5Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_steal))
+        
+        if (seaSwitch.isOn) {
+            baof1Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_device_sea))
+            baof5Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_steal_sea))
+        }
     }
     
     func buyNow() {
@@ -868,7 +882,9 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         
         var currentPrice = salesType["typePrice"] as! NSNumber
         if (seaSwitch.isOn) {
-            currentPrice = salesType["typePriceSea"] as! NSNumber
+            if (salesType["typePriceSea"] != nil) {
+                currentPrice = salesType["typePriceSea"] as! NSNumber
+            }
         }
         let price = String(format: "%.2f", currentPrice.floatValue * Float(years))
         let vc = ApplyForOrderViewController()

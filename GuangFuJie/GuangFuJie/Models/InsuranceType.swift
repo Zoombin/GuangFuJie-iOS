@@ -25,4 +25,7 @@ class InsuranceType: NSObject {
    var protect_third_five: String?
    var protect_third_ten: String?
    var saleTypes: NSArray?
+    
+   var price_device_sea: String?
+   var price_steal_sea: String?
 }
