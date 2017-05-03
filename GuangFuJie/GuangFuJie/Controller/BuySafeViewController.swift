@@ -402,9 +402,8 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             let actionSure = UIAlertAction.init(title: "我知道了", style: UIAlertActionStyle.default, handler: nil)
             alertView.addAction(actionSure)
             self.present(alertView, animated: true, completion: nil)
-        } else {
-            //关闭了
         }
+        reSizePrice()
     }
     
     func loadInsuranceInfo() {
@@ -776,7 +775,10 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             return
         }
         let salesType = insureModel!.saleTypes![currentSaleTypeIndex] as! NSDictionary
-        let currentPrice = salesType["typePrice"] as! NSNumber
+        var currentPrice = salesType["typePrice"] as! NSNumber
+        if (seaSwitch.isOn) {
+            currentPrice = salesType["typePriceSea"] as! NSNumber
+        }
         priceLabel.text = String(format: "￥:%.2f元", currentPrice.floatValue * Float(years))
     }
 
@@ -864,12 +866,16 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         }
         let salesType = insureModel!.saleTypes![currentSaleTypeIndex] as! NSDictionary
         
-        let currentPrice = salesType["typePrice"] as! NSNumber
+        var currentPrice = salesType["typePrice"] as! NSNumber
+        if (seaSwitch.isOn) {
+            currentPrice = salesType["typePriceSea"] as! NSNumber
+        }
         let price = String(format: "%.2f", currentPrice.floatValue * Float(years))
         let vc = ApplyForOrderViewController()
         vc.insuranceType = insureModel
         vc.salesType = salesType["typeId"] as! NSNumber
         vc.years = "\(years)"
+        vc.is_nearsea = seaSwitch.isOn ? "1" : "0"
         vc.totalprice = NSNumber(value: NSString(string: price).floatValue)
         vc.price = currentPrice
         vc.selectedImgs = selectorImg

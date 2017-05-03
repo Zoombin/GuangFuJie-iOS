@@ -40,6 +40,7 @@ class ApplyForOrderViewController: BaseViewController, BMKLocationServiceDelegat
     var price: NSNumber!
     
     var hasLocated = false
+    var is_nearsea = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -335,7 +336,7 @@ class ApplyForOrderViewController: BaseViewController, BMKLocationServiceDelegat
         let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
         
         self.showHud(in: self.view, hint: "提交中...")
-        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: price, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, salesType: salesType!, image: imgUrls, address: address, longitude: lng, latitude: lat, success: { (commonModel) in
+        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: price, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, salesType: salesType!, image: imgUrls, address: address, longitude: lng, latitude: lat, is_nearsea: is_nearsea, success: { (commonModel) in
                 self.hideHud()
                 self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(format: "%.0f", self.totalprice.floatValue * 100), type: commonModel.type!)
             }) { (msg) in
