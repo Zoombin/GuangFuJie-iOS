@@ -529,7 +529,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func addYearsView() {
-        let years = ["一年", "二年", "三年", "四年", "五年"]
+        let years = ["一年", "二年", "三年", "四年", "五年", "六年", "七年", "八年", "九年", "十年"]
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         yearsView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
