@@ -402,7 +402,13 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             let actionSure = UIAlertAction.init(title: "我知道了", style: UIAlertActionStyle.default, handler: nil)
             alertView.addAction(actionSure)
             self.present(alertView, animated: true, completion: nil)
+            if (years > 1) {
+                years = 1
+            }
         }
+        addYearsView()
+        yearsLabel.text = "投保\(years)年"
+    
         reSizePrice()
         if (insureModel != nil) {
             refreshBaoeBaofei()
@@ -529,19 +535,31 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func addYearsView() {
-        let years = ["一年", "二年", "三年", "四年", "五年", "六年", "七年", "八年", "九年", "十年"]
+        var yearsArray = ["一年", "二年", "三年", "四年", "五年", "六年", "七年", "八年", "九年", "十年"]
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        yearsView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
-        yearsView.backgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.2)
-        yearsView.isHidden = true
-        appDelegate.window?.addSubview(yearsView)
+        if (yearsView == nil) {
+            yearsView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
+            yearsView.backgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.2)
+            yearsView.isHidden = true
+            appDelegate.window?.addSubview(yearsView)
         
-        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.closeYearsView))
-        yearsView.isUserInteractionEnabled = true
-        yearsView.addGestureRecognizer(gesture)
+            let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.closeYearsView))
+            yearsView.isUserInteractionEnabled = true
+            yearsView.addGestureRecognizer(gesture)
+        } else {
+            if (seaSwitch.isOn) {
+                yearsArray = ["一年"]
+            }
+            
+            if(yearsView.subviews.count>0){
+                for view in yearsView.subviews {
+                    view.removeFromSuperview()
+                }
+            }
+        }
         
-        let totalLine: CGFloat = CGFloat((years.count / 4) + 1)
+        let totalLine: CGFloat = CGFloat((yearsArray.count / 4) + 1)
         let dir: CGFloat = 5
         let width = (PhoneUtils.kScreenWidth - dir * 5) / 4
         let height = PhoneUtils.kScreenHeight / 15
@@ -569,16 +587,20 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         
         var line : CGFloat = 0
         var index : CGFloat = 0
-        for i in 0..<years.count {
+        for i in 0..<yearsArray.count {
             if (i != 0 && i%4 == 0) {
                 index = 0
                 line += 1
             }
             let button = UIButton.init(type: UIButtonType.custom)
             button.frame = CGRect(x: dir + index * dir + width * index, y: (line + 1) * dir + height * line, width: width, height: height)
-            button.setTitle(years[i], for: UIControlState.normal)
+            button.setTitle(yearsArray[i], for: UIControlState.normal)
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 1
+            if (years > 0 && years - 1 == i) {
+                button.layer.borderColor = Colors.installColor.cgColor
+                button.layer.borderWidth = 1
+            }
             button.setTitleColor(UIColor.black, for: UIControlState.normal)
             button.backgroundColor = UIColor.white
             button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
@@ -594,7 +616,11 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func yearsButtonClicked(_ button: UIButton) {
-        for i in 0..<5 {
+        var count = 10
+        if (seaSwitch.isOn) {
+            count = 1
+        }
+        for i in 0..<count {
             let button = yearsView.viewWithTag(i + YEAR_BUTTON_TAG)
             button!.layer.borderColor = UIColor.black.cgColor
             button!.layer.borderWidth = 1
@@ -862,6 +888,10 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         if (seaSwitch.isOn) {
             baof1Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_device_sea))
             baof5Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_steal_sea))
+            
+            baof2Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_two_sea))
+            baof3Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_five_sea))
+            baof4Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_ten_sea))
         }
     }
     

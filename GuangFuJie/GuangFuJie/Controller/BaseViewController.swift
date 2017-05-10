@@ -47,7 +47,9 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func refreshLoginStatus() {
-        initLeftNavButton()
+        if (self == self.navigationController?.viewControllers[0]) {
+            initLeftNavButton()
+        }
     }
     
     //MARK:是否需要显示登录页面
