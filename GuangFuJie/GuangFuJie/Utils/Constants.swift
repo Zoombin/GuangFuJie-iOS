@@ -12,6 +12,7 @@ class Constants: NSObject {
     static let umAppKey = "58846b1ecae7e760b400065c"
     static let wexinAppKey = "wxbcf80af171ceb211"
     static let wexinAppSecret = "jiangsusurongjspv320583000851610"
+    static let project = "guangfujie"
     
     //QA
 //    static let httpHost = "https://guangfujie.zoombin.com:3002/api/"

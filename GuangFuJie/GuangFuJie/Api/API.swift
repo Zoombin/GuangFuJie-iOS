@@ -101,9 +101,12 @@ class API: NSObject {
         })
     }
 
-    func dataToJsonString(_ object : AnyObject) -> String{
+    func dataToJsonString(_ object : AnyObject) -> String {
+        let dict = NSMutableDictionary.init(dictionary: object as! [String : Any])
+        dict["project"] = Constants.project
+        print(object)
         var jsonString = ""
-        let jsonData = try?JSONSerialization.data(withJSONObject: object, options: JSONSerialization.WritingOptions.prettyPrinted)
+        let jsonData = try?JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
         if (jsonData != nil) {
             jsonString = String.init(data: jsonData!, encoding: String.Encoding.utf8)!
         }

@@ -297,6 +297,341 @@
 		DE9F876F1DF2BBC90076F508 /* RootSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */; };
 		DE9F87701DF2BBC90076F508 /* RootYeZhuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */; };
 		DEA1F12A1DF14D370057F30D /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1F1291DF14D370057F30D /* ReportViewController.swift */; };
+		DEA91E071ED01D9A005555B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA91E061ED01D9A005555B4 /* AppDelegate.swift */; };
+		DEA91E171ED01DD8005555B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA91E161ED01DD8005555B4 /* LaunchScreen.storyboard */; };
+		DEA91E181ED01E11005555B4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9661D4C50310032D461 /* API.swift */; };
+		DEA91E191ED01E11005555B4 /* API+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9671D4C50310032D461 /* API+List.swift */; };
+		DEA91E1A1ED01E16005555B4 /* InstallerDetailOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE807E421E7B78E200060A0D /* InstallerDetailOldViewController.swift */; };
+		DEA91E1B1ED01E16005555B4 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE636E361DFE7687008F9F74 /* MoreInstallerViewController.swift */; };
+		DEA91E1C1ED01E16005555B4 /* MoreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA741DFBFE58006B56E9 /* MoreSafeViewController.swift */; };
+		DEA91E1D1ED01E16005555B4 /* MySafeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA721DFBF6C5006B56E9 /* MySafeListViewController.swift */; };
+		DEA91E1E1ED01E16005555B4 /* InstallBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6A1DFBED75006B56E9 /* InstallBuyViewController.swift */; };
+		DEA91E1F1ED01E16005555B4 /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA97A1DFBCA14006B56E9 /* UserCenterViewController.swift */; };
+		DEA91E201ED01E16005555B4 /* GFJRoofListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96B1DFB7549006B56E9 /* GFJRoofListViewController.swift */; };
+		DEA91E211ED01E16005555B4 /* NearByRoofViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA96F1DFBA853006B56E9 /* NearByRoofViewController.swift */; };
+		DEA91E221ED01E16005555B4 /* GFJIMInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA97C1DFBCCE9006B56E9 /* GFJIMInstallerViewController.swift */; };
+		DEA91E231ED01E16005555B4 /* GFJMyRoofsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AA97E1DFBCFCA006B56E9 /* GFJMyRoofsViewController.swift */; };
+		DEA91E241ED01E16005555B4 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6C1DFBF3C8006B56E9 /* DeviceDetailViewController.swift */; };
+		DEA91E251ED01E16005555B4 /* BindDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA6E1DFBF3D8006B56E9 /* BindDeviceViewController.swift */; };
+		DEA91E261ED01E16005555B4 /* MyInstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83816A1DFD2E490021716B /* MyInstallerDetailViewController.swift */; };
+		DEA91E271ED01E16005555B4 /* InstallerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED834CE1DFEAC6500B76DFC /* InstallerDetailViewController.swift */; };
+		DEA91E281ED01E16005555B4 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED669201E1F6331000F0307 /* NearByInstallerViewController.swift */; };
+		DEA91E291ED01E16005555B4 /* MyFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED669291E2097ED000F0307 /* MyFavViewController.swift */; };
+		DEA91E2A1ED01E16005555B4 /* InstallerSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3253C1E77920D000039D3 /* InstallerSearchResultViewController.swift */; };
+		DEA91E2B1ED01E1B005555B4 /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F87691DF2BBC90076F508 /* RootElectricViewController.swift */; };
+		DEA91E2C1ED01E1B005555B4 /* RootInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876A1DF2BBC90076F508 /* RootInstallerViewController.swift */; };
+		DEA91E2D1ED01E1B005555B4 /* RootSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */; };
+		DEA91E2E1ED01E1B005555B4 /* RootYeZhuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */; };
+		DEA91E2F1ED01E1B005555B4 /* RootNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE832B2A1E5D3A77002CFE1E /* RootNewsViewController.swift */; };
+		DEA91E301ED01E1B005555B4 /* RootFindInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED325381E779040000039D3 /* RootFindInstallerViewController.swift */; };
+		DEA91E311ED01E1B005555B4 /* GFJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB010A51DF2915400E929A6 /* GFJWebViewController.swift */; };
+		DEA91E321ED01E1B005555B4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED15B681DED26C700B8260B /* MapViewController.swift */; };
+		DEA91E341ED01E1B005555B4 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C94D1D5DB730005B9CCE /* ContactUsViewController.swift */; };
+		DEA91E351ED01E1B005555B4 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91951D782B4C0027F4D6 /* LeaseViewController.swift */; };
+		DEA91E361ED01E1B005555B4 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
+		DEA91E371ED01E1B005555B4 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91971D782B7B0027F4D6 /* RoofPriceViewController.swift */; };
+		DEA91E381ED01E1B005555B4 /* ToBeInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91991D782BB40027F4D6 /* ToBeInstallerViewController.swift */; };
+		DEA91E391ED01E1B005555B4 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4511D82A47100293616 /* SafeDetailViewController.swift */; };
+		DEA91E3A1ED01E1B005555B4 /* BuySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23E4561D83A9C500293616 /* BuySafeViewController.swift */; };
+		DEA91E3B1ED01E1B005555B4 /* ApplyForOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44CC2B1D840597004690EF /* ApplyForOrderViewController.swift */; };
+		DEA91E3C1ED01E1B005555B4 /* CalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A76641D865CCA00C5F268 /* CalResultViewController.swift */; };
+		DEA91E3D1ED01E1B005555B4 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A2B1D8A83FB00C5F268 /* GuideViewController.swift */; };
+		DEA91E3E1ED01E1B005555B4 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5923A91D9117AC00FC6EBE /* PhotoViewController.swift */; };
+		DEA91E3F1ED01E1B005555B4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1F1291DF14D370057F30D /* ReportViewController.swift */; };
+		DEA91E401ED01E32005555B4 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2871D7F843700174C58 /* CityModel.swift */; };
+		DEA91E411ED01E32005555B4 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2881D7F843700174C58 /* ProvinceModel.swift */; };
+		DEA91E421ED01E32005555B4 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900651D4C58E60032D461 /* UserInfo.swift */; };
+		DEA91E431ED01E32005555B4 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72B91D507A76003CDAAC /* DeviceInfo.swift */; };
+		DEA91E441ED01E32005555B4 /* QNInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E72CE1D50970B003CDAAC /* QNInfo.swift */; };
+		DEA91E451ED01E32005555B4 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74C61D509FD9003CDAAC /* AppModel.swift */; };
+		DEA91E461ED01E32005555B4 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74C81D50A296003CDAAC /* CommonModel.swift */; };
+		DEA91E471ED01E32005555B4 /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9581D5ECF79005B9CCE /* BankInfo.swift */; };
+		DEA91E481ED01E32005555B4 /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57C9641D5ED221005B9CCE /* BookingStatus.swift */; };
+		DEA91E491ED01E32005555B4 /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C77F81D66D30700FED16D /* RoofInfo.swift */; };
+		DEA91E4A1ED01E32005555B4 /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78041D66E94300FED16D /* InstallInfo.swift */; };
+		DEA91E4B1ED01E32005555B4 /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78061D66F14C00FED16D /* ElectricInfo.swift */; };
+		DEA91E4C1ED01E32005555B4 /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C78081D67052400FED16D /* AfterSaleInfo.swift */; };
+		DEA91E4D1ED01E32005555B4 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
+		DEA91E4E1ED01E32005555B4 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F001D81475B0062E670 /* InsuranceInfo.swift */; };
+		DEA91E4F1ED01E32005555B4 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869F021D8148340062E670 /* InsuranceDetail.swift */; };
+		DEA91E501ED01E32005555B4 /* InsuranceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44CB6B1D83E8A4004690EF /* InsuranceType.swift */; };
+		DEA91E511ED01E32005555B4 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A76621D865A1800C5F268 /* CalcModel.swift */; };
+		DEA91E521ED01E32005555B4 /* PowerGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7A251D88028400C5F268 /* PowerGraphInfo.swift */; };
+		DEA91E531ED01E32005555B4 /* GetInventerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C74771DB8743300D8F324 /* GetInventerMode.swift */; };
+		DEA91E541ED01E32005555B4 /* DeviceListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83817D1DFD65BB0021716B /* DeviceListInfo.swift */; };
+		DEA91E551ED01E32005555B4 /* QNResultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50D04D1E0A642A00BBFC17 /* QNResultInfo.swift */; };
+		DEA91E561ED01E32005555B4 /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA9F241E6CFA9800333B6A /* NewsInfo.swift */; };
+		DEA91E571ED01E32005555B4 /* ShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE561DD51E790B15002E88EB /* ShareInfo.swift */; };
+		DEA91E581ED01E36005555B4 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5361E07C97F0016A359 /* IQNSArray+Sort.swift */; };
+		DEA91E591ED01E36005555B4 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5371E07C97F0016A359 /* IQUIScrollView+Additions.swift */; };
+		DEA91E5A1ED01E36005555B4 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5381E07C97F0016A359 /* IQUITextFieldView+Additions.swift */; };
+		DEA91E5B1ED01E36005555B4 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5391E07C97F0016A359 /* IQUIView+Hierarchy.swift */; };
+		DEA91E5C1ED01E36005555B4 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B53A1E07C97F0016A359 /* IQUIViewController+Additions.swift */; };
+		DEA91E5D1ED01E36005555B4 /* IQUIWindow+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B53B1E07C97F0016A359 /* IQUIWindow+Hierarchy.swift */; };
+		DEA91E5E1ED01E3D005555B4 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B53D1E07C97F0016A359 /* IQKeyboardManagerConstants.swift */; };
+		DEA91E5F1ED01E3D005555B4 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B53E1E07C97F0016A359 /* IQKeyboardManagerConstantsInternal.swift */; };
+		DEA91E601ED01E3D005555B4 /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B53F1E07C97F0016A359 /* IQKeyboardManager.swift */; };
+		DEA91E611ED01E3D005555B4 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5411E07C97F0016A359 /* IQKeyboardReturnKeyHandler.swift */; };
+		DEA91E681ED01E42005555B4 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5431E07C97F0016A359 /* IQTextView.swift */; };
+		DEA91E691ED01E42005555B4 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5451E07C97F0016A359 /* IQBarButtonItem.swift */; };
+		DEA91E6A1ED01E42005555B4 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5461E07C97F0016A359 /* IQPreviousNextView.swift */; };
+		DEA91E6B1ED01E42005555B4 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5471E07C97F0016A359 /* IQTitleBarButtonItem.swift */; };
+		DEA91E6C1ED01E42005555B4 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5481E07C97F0016A359 /* IQToolbar.swift */; };
+		DEA91E6D1ED01E42005555B4 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3B5491E07C97F0016A359 /* IQUIView+IQKeyboardToolbar.swift */; };
+		DEA91E6E1ED01E47005555B4 /* PublishMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8CD891EA245BD006F7256 /* PublishMediaView.swift */; };
+		DEA91E6F1ED01E47005555B4 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2095471E60723A00E7C27F /* StringUtils.swift */; };
+		DEA91E701ED01E47005555B4 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7900FE1D4CA8170032D461 /* UserDefaultManager.swift */; };
+		DEA91E711ED01E47005555B4 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F95A1D4C32F30032D461 /* Dimens.swift */; };
+		DEA91E731ED01E47005555B4 /* PhoneUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1891D9FA1D3F57B90042E72D /* PhoneUtils.swift */; };
+		DEA91E741ED01E47005555B4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9571D4C1FD30032D461 /* Colors.swift */; };
+		DEA91E751ED01E47005555B4 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE832B261E5D3205002CFE1E /* Texts.swift */; };
+		DEA91E761ED01E4B005555B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9601D4C3B410032D461 /* LoginView.swift */; };
+		DEA91E771ED01E4B005555B4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79F9621D4C458E0032D461 /* CustomTextField.swift */; };
+		DEA91E781ED01E4B005555B4 /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C780D1D68534E00FED16D /* YeZhuCell.swift */; };
+		DEA91E791ED01E4B005555B4 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE91911D77DC0A0027F4D6 /* InstallerCell.swift */; };
+		DEA91E7A1ED01E4B005555B4 /* SafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE869EF31D81138F0062E670 /* SafeCell.swift */; };
+		DEA91E7B1ED01E4B005555B4 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8381731DFD311E0021716B /* DeviceCell.swift */; };
+		DEA91E7C1ED01E4B005555B4 /* InstallHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE636E231DFE4AC4008F9F74 /* InstallHeaderCell.swift */; };
+		DEA91E7D1ED01E4B005555B4 /* GFJBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */; };
+		DEA91E7E1ED01E4B005555B4 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA9F281E6CFCBB00333B6A /* NewsCell.swift */; };
+		DEA91E7F1ED01E4B005555B4 /* InstallerResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3253E1E77963C000039D3 /* InstallerResultCell.swift */; };
+		DEA91E801ED01E95005555B4 /* NSData+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7900681D4C59920032D461 /* NSData+AESCrypt.m */; };
+		DEA91E811ED01E95005555B4 /* NSString+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = DE79006A1D4C59920032D461 /* NSString+AESCrypt.m */; };
+		DEA91E821ED01E95005555B4 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DE79006C1D4C59920032D461 /* UIViewController+HUD.m */; };
+		DEA91E831ED01E95005555B4 /* BeeCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B6D1E568DA100D1AA53 /* BeeCloud.m */; };
+		DEA91E841ED01E95005555B4 /* BCAuthReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B711E568DA100D1AA53 /* BCAuthReq.m */; };
+		DEA91E851ED01E95005555B4 /* BCBaseReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B741E568DA100D1AA53 /* BCBaseReq.m */; };
+		DEA91E861ED01E95005555B4 /* BCBaseResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B761E568DA100D1AA53 /* BCBaseResp.m */; };
+		DEA91E871ED01E95005555B4 /* BCPayReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B791E568DA100D1AA53 /* BCPayReq.m */; };
+		DEA91E881ED01E95005555B4 /* BCPayResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B7B1E568DA100D1AA53 /* BCPayResp.m */; };
+		DEA91E891ED01E95005555B4 /* BCPayPalReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B7E1E568DA100D1AA53 /* BCPayPalReq.m */; };
+		DEA91E8A1ED01E95005555B4 /* BCPayPalVerifyReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B801E568DA100D1AA53 /* BCPayPalVerifyReq.m */; };
+		DEA91E8B1ED01E95005555B4 /* BCPreRefundReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B831E568DA100D1AA53 /* BCPreRefundReq.m */; };
+		DEA91E8C1ED01E95005555B4 /* BCPreRefundResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B851E568DA100D1AA53 /* BCPreRefundResp.m */; };
+		DEA91E8D1ED01E95005555B4 /* BCQueryBillByIdReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B881E568DA100D1AA53 /* BCQueryBillByIdReq.m */; };
+		DEA91E8E1ED01E95005555B4 /* BCQueryBillByIdResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B8A1E568DA100D1AA53 /* BCQueryBillByIdResp.m */; };
+		DEA91E8F1ED01E95005555B4 /* BCQueryBillsReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B8D1E568DA100D1AA53 /* BCQueryBillsReq.m */; };
+		DEA91E901ED01E95005555B4 /* BCQueryBillsResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B8F1E568DA100D1AA53 /* BCQueryBillsResp.m */; };
+		DEA91E911ED01E95005555B4 /* BCQueryBillsCountReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B921E568DA100D1AA53 /* BCQueryBillsCountReq.m */; };
+		DEA91E921ED01E95005555B4 /* BCQueryBillsCountResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B941E568DA100D1AA53 /* BCQueryBillsCountResp.m */; };
+		DEA91E931ED01E95005555B4 /* BCQueryRefundByIdReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B971E568DA100D1AA53 /* BCQueryRefundByIdReq.m */; };
+		DEA91E941ED01E95005555B4 /* BCQueryRefundByIdResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B991E568DA100D1AA53 /* BCQueryRefundByIdResp.m */; };
+		DEA91E951ED01E95005555B4 /* BCQueryRefundsReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B9C1E568DA100D1AA53 /* BCQueryRefundsReq.m */; };
+		DEA91E961ED01E95005555B4 /* BCQueryRefundsResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554B9E1E568DA100D1AA53 /* BCQueryRefundsResp.m */; };
+		DEA91E971ED01E95005555B4 /* BCQueryRefundsCountReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BA11E568DA100D1AA53 /* BCQueryRefundsCountReq.m */; };
+		DEA91E981ED01E95005555B4 /* BCQueryRefundsCountResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BA31E568DA100D1AA53 /* BCQueryRefundsCountResp.m */; };
+		DEA91E991ED01E95005555B4 /* BCRefundStatusReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BA61E568DA100D1AA53 /* BCRefundStatusReq.m */; };
+		DEA91E9A1ED01E95005555B4 /* BCRefundStatusResp.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BA81E568DA100D1AA53 /* BCRefundStatusResp.m */; };
+		DEA91E9B1ED01E95005555B4 /* BCBaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BAB1E568DA100D1AA53 /* BCBaseResult.m */; };
+		DEA91E9C1ED01E95005555B4 /* BCQueryBillResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BAD1E568DA100D1AA53 /* BCQueryBillResult.m */; };
+		DEA91E9D1ED01E95005555B4 /* BCQueryRefundResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BAF1E568DA100D1AA53 /* BCQueryRefundResult.m */; };
+		DEA91E9E1ED01E95005555B4 /* BCNewSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BB21E568DA100D1AA53 /* BCNewSubscription.m */; };
+		DEA91E9F1ED01E95005555B4 /* BCSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BB41E568DA100D1AA53 /* BCSubscription.m */; };
+		DEA91EA01ED01E95005555B4 /* BCSubscriptionQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BB61E568DA100D1AA53 /* BCSubscriptionQuery.m */; };
+		DEA91EA11ED01E95005555B4 /* BCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BBB1E568DA100D1AA53 /* BCHTTPSessionManager.m */; };
+		DEA91EA21ED01E95005555B4 /* BCNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BBE1E568DA100D1AA53 /* BCNetworkReachabilityManager.m */; };
+		DEA91EA31ED01E95005555B4 /* BCSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BC01E568DA100D1AA53 /* BCSecurityPolicy.m */; };
+		DEA91EA41ED01E95005555B4 /* BCURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BC21E568DA100D1AA53 /* BCURLRequestSerialization.m */; };
+		DEA91EA51ED01E95005555B4 /* BCURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BC41E568DA100D1AA53 /* BCURLResponseSerialization.m */; };
+		DEA91EA61ED01E95005555B4 /* BCURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BC61E568DA100D1AA53 /* BCURLSessionManager.m */; };
+		DEA91EA71ED01E95005555B4 /* BCPayCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BC81E568DA100D1AA53 /* BCPayCache.m */; };
+		DEA91EA81ED01E95005555B4 /* BCPayUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BCB1E568DA100D1AA53 /* BCPayUtil.m */; };
+		DEA91EA91ED01E95005555B4 /* BeeCloud+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BCD1E568DA100D1AA53 /* BeeCloud+Utils.m */; };
+		DEA91EAA1ED01E95005555B4 /* NSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BCF1E568DA100D1AA53 /* NSDictionary+Utils.m */; };
+		DEA91EAB1ED01E95005555B4 /* NSString+IsValid.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BD11E568DA100D1AA53 /* NSString+IsValid.m */; };
+		DEA91EAC1ED01E95005555B4 /* BeeCloudAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BD41E568DA100D1AA53 /* BeeCloudAdapter.m */; };
+		DEA91EAD1ED01E95005555B4 /* BCSandBoxAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BD91E568DA100D1AA53 /* BCSandBoxAdapter.m */; };
+		DEA91EAE1ED01E95005555B4 /* PaySandBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BDC1E568DA100D1AA53 /* PaySandBoxViewController.m */; };
+		DEA91EAF1ED01E95005555B4 /* AliPayAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554BE11E568DA100D1AA53 /* AliPayAdapter.m */; };
+		DEA91EB01ED01E95005555B4 /* WXPayAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE554C581E568DA100D1AA53 /* WXPayAdapter.m */; };
+		DEA91EB11ED01E95005555B4 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE4D84801E34A344001AB58B /* ApiXml.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DEA91EB21ED01E95005555B4 /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4D84881E34A344001AB58B /* WXApiManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DEA91EB31ED01E95005555B4 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE4D848B1E34A344001AB58B /* WXUtil.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DEA91EB41ED01EA2005555B4 /* SMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DB2CC1DB4D23000AE0461 /* SMenuButton.m */; };
+		DEA91EB51ED01EA2005555B4 /* SPullDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DB2CE1DB4D23000AE0461 /* SPullDownMenuView.m */; };
+		DEA91EB61ED01EA2005555B4 /* SMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1FC3DA1DB6135600F7B5EE /* SMenuCell.m */; };
+		DEA91EB71ED01EA2005555B4 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2B01E164EFF00671967 /* DACircularProgressView.m */; };
+		DEA91EB81ED01EA2005555B4 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2B21E164EFF00671967 /* DALabeledCircularProgressView.m */; };
+		DEA91EB91ED01EA2005555B4 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2B51E164EFF00671967 /* NSData+ImageContentType.m */; };
+		DEA91EBA1ED01EA2005555B4 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2B71E164EFF00671967 /* SDImageCache.m */; };
+		DEA91EBB1ED01EA2005555B4 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2B91E164EFF00671967 /* SDWebImageCompat.m */; };
+		DEA91EBC1ED01EA2005555B4 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2BB1E164EFF00671967 /* SDWebImageDecoder.m */; };
+		DEA91EBD1ED01EA2005555B4 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2BD1E164EFF00671967 /* SDWebImageDownloader.m */; };
+		DEA91EBE1ED01EA2005555B4 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2BF1E164EFF00671967 /* SDWebImageDownloaderOperation.m */; };
+		DEA91EBF1ED01EA2005555B4 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2C11E164EFF00671967 /* SDWebImageManager.m */; };
+		DEA91EC01ED01EA2005555B4 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2C41E164EFF00671967 /* SDWebImagePrefetcher.m */; };
+		DEA91EC11ED01EA2005555B4 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2C61E164EFF00671967 /* UIButton+WebCache.m */; };
+		DEA91EC21ED01EA2005555B4 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2C81E164EFF00671967 /* UIImage+GIF.m */; };
+		DEA91EC31ED01EA2005555B4 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2CA1E164EFF00671967 /* UIImage+MultiFormat.m */; };
+		DEA91EC41ED01EA2005555B4 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2CC1E164EFF00671967 /* UIImageView+HighlightedWebCache.m */; };
+		DEA91EC51ED01EA2005555B4 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2CE1E164EFF00671967 /* UIImageView+WebCache.m */; };
+		DEA91EC61ED01EA2005555B4 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2D01E164EFF00671967 /* UIView+WebCacheOperation.m */; };
+		DEA91EC71ED01EC3005555B4 /* UIImage+ZLPhotoLib.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2D61E164EFF00671967 /* UIImage+ZLPhotoLib.m */; };
+		DEA91EC81ED01EC3005555B4 /* UIView+ZLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2D81E164EFF00671967 /* UIView+ZLExtension.m */; };
+		DEA91EC91ED01EC3005555B4 /* ZLPhotoPickerBrowserPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2DF1E164EFF00671967 /* ZLPhotoPickerBrowserPhoto.m */; };
+		DEA91ECA1ED01EC3005555B4 /* ZLPhotoRect.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2E11E164EFF00671967 /* ZLPhotoRect.m */; };
+		DEA91ECB1ED01EC3005555B4 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2E41E164EFF00671967 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m */; };
+		DEA91ECC1ED01EC3005555B4 /* ZLPhotoPickerBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2E61E164EFF00671967 /* ZLPhotoPickerBrowserViewController.m */; };
+		DEA91ECD1ED01EC3005555B4 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2E91E164EFF00671967 /* ZLPhotoPickerBrowserPhotoImageView.m */; };
+		DEA91ECE1ED01EC3005555B4 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2EB1E164EFF00671967 /* ZLPhotoPickerBrowserPhotoScrollView.m */; };
+		DEA91ECF1ED01EC3005555B4 /* ZLPhotoPickerBrowserPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2ED1E164EFF00671967 /* ZLPhotoPickerBrowserPhotoView.m */; };
+		DEA91ED01ED01EC3005555B4 /* ZLPhotoPickerCustomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2EF1E164EFF00671967 /* ZLPhotoPickerCustomToolBarView.m */; };
+		DEA91ED11ED01EC3005555B4 /* ZLPhotoAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2F31E164EFF00671967 /* ZLPhotoAssets.m */; };
+		DEA91ED21ED01EC3005555B4 /* ZLPhotoPickerDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2F51E164EFF00671967 /* ZLPhotoPickerDatas.m */; };
+		DEA91ED31ED01EC3005555B4 /* ZLPhotoPickerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2F71E164EFF00671967 /* ZLPhotoPickerGroup.m */; };
+		DEA91ED41ED01EC3005555B4 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2FA1E164EFF00671967 /* UIViewController+Alert.m */; };
+		DEA91ED51ED01EC3005555B4 /* ZLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2FC1E164EFF00671967 /* ZLNavigationController.m */; };
+		DEA91ED61ED01EC3005555B4 /* ZLPhotoPickerAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F2FE1E164EFF00671967 /* ZLPhotoPickerAssetsViewController.m */; };
+		DEA91ED71ED01EC3005555B4 /* ZLPhotoPickerGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F3001E164EFF00671967 /* ZLPhotoPickerGroupViewController.m */; };
+		DEA91ED81ED01EC3005555B4 /* ZLPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F3021E164EFF00671967 /* ZLPhotoPickerViewController.m */; };
+		DEA91ED91ED01EC3005555B4 /* ZLPhotoPickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F3051E164EFF00671967 /* ZLPhotoPickerCollectionView.m */; };
+		DEA91EDA1ED01EC3005555B4 /* ZLPhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F3071E164EFF00671967 /* ZLPhotoPickerCollectionViewCell.m */; };
+		DEA91EDB1ED01EC3005555B4 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F3091E164EFF00671967 /* ZLPhotoPickerFooterCollectionReusableView.m */; };
+		DEA91EDC1ED01EC3005555B4 /* ZLPhotoPickerGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F30B1E164EFF00671967 /* ZLPhotoPickerGroupTableViewCell.m */; };
+		DEA91EDD1ED01EC3005555B4 /* ZLPhotoPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51F30D1E164EFF00671967 /* ZLPhotoPickerImageView.m */; };
+		DEA91EDE1ED01EC3005555B4 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA2A1DFBD315006B56E9 /* MJRefreshAutoFooter.m */; };
+		DEA91EDF1ED01EC3005555B4 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA2C1DFBD315006B56E9 /* MJRefreshBackFooter.m */; };
+		DEA91EE01ED01EC3005555B4 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA2E1DFBD315006B56E9 /* MJRefreshComponent.m */; };
+		DEA91EE11ED01EC3005555B4 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA301DFBD315006B56E9 /* MJRefreshFooter.m */; };
+		DEA91EE21ED01EC3005555B4 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA321DFBD315006B56E9 /* MJRefreshHeader.m */; };
+		DEA91EE31ED01EC3005555B4 /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA371DFBD315006B56E9 /* MJRefreshAutoGifFooter.m */; };
+		DEA91EE41ED01EC3005555B4 /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA391DFBD315006B56E9 /* MJRefreshAutoNormalFooter.m */; };
+		DEA91EE51ED01EC3005555B4 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA3B1DFBD315006B56E9 /* MJRefreshAutoStateFooter.m */; };
+		DEA91EE61ED01EC3005555B4 /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA3E1DFBD315006B56E9 /* MJRefreshBackGifFooter.m */; };
+		DEA91EE71ED01EC3005555B4 /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA401DFBD315006B56E9 /* MJRefreshBackNormalFooter.m */; };
+		DEA91EE81ED01EC3005555B4 /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA421DFBD315006B56E9 /* MJRefreshBackStateFooter.m */; };
+		DEA91EE91ED01EC3005555B4 /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA451DFBD315006B56E9 /* MJRefreshGifHeader.m */; };
+		DEA91EEA1ED01EC3005555B4 /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA471DFBD315006B56E9 /* MJRefreshNormalHeader.m */; };
+		DEA91EEB1ED01EC3005555B4 /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA491DFBD315006B56E9 /* MJRefreshStateHeader.m */; };
+		DEA91EEC1ED01EC3005555B4 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA4D1DFBD315006B56E9 /* MJRefreshConst.m */; };
+		DEA91EED1ED01EC3005555B4 /* NSBundle+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA4F1DFBD315006B56E9 /* NSBundle+MJRefresh.m */; };
+		DEA91EEE1ED01EC3005555B4 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA511DFBD315006B56E9 /* UIScrollView+MJExtension.m */; };
+		DEA91EEF1ED01EC3005555B4 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA531DFBD315006B56E9 /* UIScrollView+MJRefresh.m */; };
+		DEA91EF01ED01EC3005555B4 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AAA551DFBD315006B56E9 /* UIView+MJExtension.m */; };
+		DEA91EF11ED01EC3005555B4 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2621DBC8C5400D608A5 /* MJExtensionConst.m */; };
+		DEA91EF21ED01EC3005555B4 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2641DBC8C5400D608A5 /* MJFoundation.m */; };
+		DEA91EF31ED01EC3005555B4 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2661DBC8C5400D608A5 /* MJProperty.m */; };
+		DEA91EF41ED01EC3005555B4 /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2681DBC8C5400D608A5 /* MJPropertyKey.m */; };
+		DEA91EF51ED01EC3005555B4 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD26A1DBC8C5400D608A5 /* MJPropertyType.m */; };
+		DEA91EF61ED01EC3005555B4 /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD26C1DBC8C5400D608A5 /* NSObject+MJClass.m */; };
+		DEA91EF71ED01EC3005555B4 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD26E1DBC8C5400D608A5 /* NSObject+MJCoding.m */; };
+		DEA91EF81ED01EC3005555B4 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2701DBC8C5400D608A5 /* NSObject+MJKeyValue.m */; };
+		DEA91EF91ED01EC3005555B4 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2721DBC8C5400D608A5 /* NSObject+MJProperty.m */; };
+		DEA91EFA1ED01EC3005555B4 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2741DBC8C5400D608A5 /* NSString+MJExtension.m */; };
+		DEA91EFB1ED01EC3005555B4 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A79D91D87DE8900C5F268 /* UICountingLabel.m */; };
+		DEA91EFC1ED01EC8005555B4 /* QN_GTM_Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E740C1D509B9E003CDAAC /* QN_GTM_Base64.m */; };
+		DEA91EFD1ED01EC8005555B4 /* QNALAssetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E740E1D509B9E003CDAAC /* QNALAssetFile.m */; };
+		DEA91EFE1ED01EC8005555B4 /* QNAsyncRun.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74101D509B9E003CDAAC /* QNAsyncRun.m */; };
+		DEA91EFF1ED01EC8005555B4 /* QNCrc32.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74121D509B9E003CDAAC /* QNCrc32.m */; };
+		DEA91F001ED01EC8005555B4 /* QNEtag.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74141D509B9E003CDAAC /* QNEtag.m */; };
+		DEA91F011ED01EC8005555B4 /* QNFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74161D509B9E003CDAAC /* QNFile.m */; };
+		DEA91F021ED01EC8005555B4 /* QNPHAssetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74191D509B9E003CDAAC /* QNPHAssetFile.m */; };
+		DEA91F031ED01EC8005555B4 /* QNPHAssetResource.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E741B1D509B9E003CDAAC /* QNPHAssetResource.m */; };
+		DEA91F041ED01EC8005555B4 /* QNSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E741D1D509B9E003CDAAC /* QNSystem.m */; };
+		DEA91F051ED01EC8005555B4 /* QNUrlSafeBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E741F1D509B9E003CDAAC /* QNUrlSafeBase64.m */; };
+		DEA91F061ED01ED8005555B4 /* QNResponseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74241D509B9E003CDAAC /* QNResponseInfo.m */; };
+		DEA91F071ED01ED8005555B4 /* QNSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74261D509B9E003CDAAC /* QNSessionManager.m */; };
+		DEA91F081ED01ED8005555B4 /* QNUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74281D509B9E003CDAAC /* QNUserAgent.m */; };
+		DEA91F091ED01ED8005555B4 /* QNFileRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E742C1D509B9E003CDAAC /* QNFileRecorder.m */; };
+		DEA91F0A1ED01ED8005555B4 /* QNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74301D509B9E003CDAAC /* QNConfiguration.m */; };
+		DEA91F0B1ED01ED8005555B4 /* QNFormUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74321D509B9E003CDAAC /* QNFormUpload.m */; };
+		DEA91F0C1ED01ED8005555B4 /* QNResumeUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74341D509B9E003CDAAC /* QNResumeUpload.m */; };
+		DEA91F0D1ED01ED8005555B4 /* QNUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74361D509B9E003CDAAC /* QNUploadManager.m */; };
+		DEA91F0E1ED01ED8005555B4 /* QNUploadOption.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74391D509B9F003CDAAC /* QNUploadOption.m */; };
+		DEA91F0F1ED01ED8005555B4 /* QNUpToken.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E743B1D509B9F003CDAAC /* QNUpToken.m */; };
+		DEA91F101ED01ED8005555B4 /* QNAssessment.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74521D509BAD003CDAAC /* QNAssessment.m */; };
+		DEA91F111ED01ED8005555B4 /* QNIpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74541D509BAD003CDAAC /* QNIpModel.m */; };
+		DEA91F121ED01ED8005555B4 /* QNDnsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74571D509BAD003CDAAC /* QNDnsManager.m */; };
+		DEA91F131ED01ED8005555B4 /* QNDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74591D509BAD003CDAAC /* QNDomain.m */; };
+		DEA91F141ED01ED8005555B4 /* QNLruCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E745B1D509BAD003CDAAC /* QNLruCache.m */; };
+		DEA91F151ED01ED8005555B4 /* QNNetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E745D1D509BAD003CDAAC /* QNNetworkInfo.m */; };
+		DEA91F161ED01ED8005555B4 /* QNRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E745F1D509BAD003CDAAC /* QNRecord.m */; };
+		DEA91F171ED01ED8005555B4 /* QNDnspodEnterprise.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74641D509BAD003CDAAC /* QNDnspodEnterprise.m */; };
+		DEA91F181ED01ED8005555B4 /* QNDnspodFree.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74661D509BAD003CDAAC /* QNDnspodFree.m */; };
+		DEA91F191ED01ED8005555B4 /* QNHijackingDetectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74691D509BAD003CDAAC /* QNHijackingDetectWrapper.m */; };
+		DEA91F1A1ED01ED8005555B4 /* QNHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E746B1D509BAD003CDAAC /* QNHosts.m */; };
+		DEA91F1B1ED01ED8005555B4 /* QNResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E746D1D509BAD003CDAAC /* QNResolver.m */; };
+		DEA91F1C1ED01ED8005555B4 /* QNResolvUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E746F1D509BAD003CDAAC /* QNResolvUtil.m */; };
+		DEA91F1D1ED01ED8005555B4 /* QNTxtResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74711D509BAD003CDAAC /* QNTxtResolver.m */; };
+		DEA91F1E1ED01ED8005555B4 /* QNRefresher.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74731D509BAD003CDAAC /* QNRefresher.m */; };
+		DEA91F1F1ED01EDC005555B4 /* QNDes.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74761D509BAD003CDAAC /* QNDes.m */; };
+		DEA91F201ED01EDC005555B4 /* QNGetAddrInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74781D509BAD003CDAAC /* QNGetAddrInfo.m */; };
+		DEA91F211ED01EDC005555B4 /* QNHex.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E747A1D509BAD003CDAAC /* QNHex.m */; };
+		DEA91F221ED01EDC005555B4 /* QNIP.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E747C1D509BAD003CDAAC /* QNIP.m */; };
+		DEA91F231ED01EDF005555B4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7900961D4C60360032D461 /* MBProgressHUD.m */; };
+		DEA91F241ED01EE2005555B4 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74921D509CC4003CDAAC /* AFHTTPSessionManager.m */; };
+		DEA91F251ED01EE2005555B4 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74951D509CC4003CDAAC /* AFNetworkReachabilityManager.m */; };
+		DEA91F261ED01EE2005555B4 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74971D509CC4003CDAAC /* AFSecurityPolicy.m */; };
+		DEA91F271ED01EE2005555B4 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74991D509CC4003CDAAC /* AFURLRequestSerialization.m */; };
+		DEA91F281ED01EE2005555B4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E749B1D509CC4003CDAAC /* AFURLResponseSerialization.m */; };
+		DEA91F291ED01EE2005555B4 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E749D1D509CC4003CDAAC /* AFURLSessionManager.m */; };
+		DEA91F2A1ED01EE5005555B4 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74A01D509CC4003CDAAC /* AFAutoPurgingImageCache.m */; };
+		DEA91F2B1ED01EE5005555B4 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74A21D509CC4003CDAAC /* AFImageDownloader.m */; };
+		DEA91F2C1ED01EE5005555B4 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74A41D509CC4003CDAAC /* AFNetworkActivityIndicatorManager.m */; };
+		DEA91F2D1ED01EE5005555B4 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74A61D509CC4003CDAAC /* UIActivityIndicatorView+AFNetworking.m */; };
+		DEA91F2E1ED01EE5005555B4 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74A81D509CC4003CDAAC /* UIButton+AFNetworking.m */; };
+		DEA91F2F1ED01EE5005555B4 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74AB1D509CC4003CDAAC /* UIImageView+AFNetworking.m */; };
+		DEA91F301ED01EE5005555B4 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74AE1D509CC4003CDAAC /* UIProgressView+AFNetworking.m */; };
+		DEA91F311ED01EE5005555B4 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74B01D509CC4003CDAAC /* UIRefreshControl+AFNetworking.m */; };
+		DEA91F321ED01EE5005555B4 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E74B21D509CC4003CDAAC /* UIWebView+AFNetworking.m */; };
+		DEA91F331ED01EEA005555B4 /* MSLFrameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB715C81DFEDE6400CF31D3 /* MSLFrameUtil.m */; };
+		DEA91F341ED01EEA005555B4 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C781B1D68585A00FED16D /* TopLeftLabel.m */; };
+		DEA91F351ED01EEA005555B4 /* YCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE05DC511E7A37EC0038F72A /* YCButton.m */; };
+		DEA91F361ED01EF6005555B4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7B1DED2E7B00B8260B /* Security.framework */; };
+		DEA91F371ED01EF6005555B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B791DED2E7300B8260B /* CoreGraphics.framework */; };
+		DEA91F381ED01EF6005555B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B771DED2E6900B8260B /* SystemConfiguration.framework */; };
+		DEA91F391ED01EF6005555B4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B751DED2E5F00B8260B /* OpenGLES.framework */; };
+		DEA91F3A1ED01EF6005555B4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B731DED2E5500B8260B /* QuartzCore.framework */; };
+		DEA91F3B1ED01EF6005555B4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B711DED2E4900B8260B /* CoreLocation.framework */; };
+		DEA91F3C1ED01EF6005555B4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE44CC291D8404A9004690EF /* CoreTelephony.framework */; };
+		DEA91F3D1ED01EF6005555B4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE44CC271D840481004690EF /* CoreMotion.framework */; };
+		DEA91F3E1ED01EFA005555B4 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7F1DED2E9700B8260B /* libstdc++.6.0.9.tbd */; };
+		DEA91F3F1ED01EFA005555B4 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DED15B7D1DED2E8500B8260B /* libsqlite3.0.tbd */; };
+		DEA91F401ED01EFD005555B4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE44CC251D840476004690EF /* libsqlite3.tbd */; };
+		DEA91F411ED01EFD005555B4 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE44CC231D840470004690EF /* libc++.tbd */; };
+		DEA91F421ED01EFD005555B4 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE44CC211D840468004690EF /* libz.1.2.5.tbd */; };
+		DEA91F431ED01EFD005555B4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5E74C41D509D3D003CDAAC /* libz.tbd */; };
+		DEA91F441ED01EFD005555B4 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5E74C21D509D0F003CDAAC /* libresolv.tbd */; };
+		DEA91F451ED01F00005555B4 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE554BE21E568DA100D1AA53 /* AlipaySDK.framework */; };
+		DEA91F481ED01F09005555B4 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135EF1DE85E48001190B7 /* BaiduMapAPI_Base.framework */; };
+		DEA91F491ED01F09005555B4 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F01DE85E48001190B7 /* BaiduMapAPI_Cloud.framework */; };
+		DEA91F4A1ED01F09005555B4 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F11DE85E48001190B7 /* BaiduMapAPI_Location.framework */; };
+		DEA91F4B1ED01F09005555B4 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F21DE85E48001190B7 /* BaiduMapAPI_Map.framework */; };
+		DEA91F4C1ED01F09005555B4 /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F31DE85E48001190B7 /* BaiduMapAPI_Radar.framework */; };
+		DEA91F4D1ED01F09005555B4 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F41DE85E48001190B7 /* BaiduMapAPI_Search.framework */; };
+		DEA91F4E1ED01F09005555B4 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9135F51DE85E48001190B7 /* BaiduMapAPI_Utils.framework */; };
+		DEA91F521ED01F15005555B4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE554C531E568DA100D1AA53 /* libWeChatSDK.a */; };
+		DEA91F531ED01F15005555B4 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4D845F1E34A344001AB58B /* libMobClickLibrary.a */; };
+		DEA91F541ED01F15005555B4 /* libUMSocial_Sdk_5.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4D84711E34A344001AB58B /* libUMSocial_Sdk_5.1.a */; };
+		DEA91F551ED01F15005555B4 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4D84811E34A344001AB58B /* libSocialWechat.a */; };
+		DEA91F561ED01F15005555B4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4D84821E34A344001AB58B /* libWeChatSDK.a */; };
+		DEA91F571ED01F22005555B4 /* BeeCloud.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE554BDA1E568DA100D1AA53 /* BeeCloud.bundle */; };
+		DEA91F581ED01F22005555B4 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE4D847B1E34A344001AB58B /* UMSocialSDKResourcesNew.bundle */; };
+		DEA91F591ED01F22005555B4 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE9135F71DE85E48001190B7 /* mapapi.bundle */; };
+		DEA91F5A1ED01F22005555B4 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE51F30F1E164EFF00671967 /* ZLPhotoLib.bundle */; };
+		DEA91F5B1ED01F22005555B4 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE9AAA4A1DFBD315006B56E9 /* MJRefresh.bundle */; };
+		DEA91F5C1ED01F22005555B4 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEF3B54B1E07C97F0016A359 /* IQKeyboardManager.bundle */; };
+		DEA91F5D1ED01FB1005555B4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE64C5831E0A70FF002D7A16 /* Charts.framework */; };
+		DEA91F5E1ED01FB1005555B4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE64C5831E0A70FF002D7A16 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEA91F621ED02E0A005555B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FF4D1CD9902B00BF5926 /* Assets.xcassets */; };
+		DEA91F651ED02EC1005555B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA91F641ED02EC1005555B4 /* Constants.swift */; };
+		DEA91F671ED02F3E005555B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA91F661ED02F3E005555B4 /* BaseViewController.swift */; };
+		DEA91F681ED03159005555B4 /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381741DFD311E0021716B /* DeviceCell.xib */; };
+		DEA91F691ED03159005555B4 /* DeviceCell6.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381771DFD31380021716B /* DeviceCell6.xib */; };
+		DEA91F6A1ED03159005555B4 /* DeviceCellPlus.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381791DFD31420021716B /* DeviceCellPlus.xib */; };
+		DEA91F6B1ED03165005555B4 /* InstallerDetailOldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE807E431E7B78E200060A0D /* InstallerDetailOldViewController.xib */; };
+		DEA91F6C1ED03165005555B4 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */; };
+		DEA91F6D1ED03165005555B4 /* GFJRoofListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0BCE831DFF7EEC00912EAD /* GFJRoofListViewController.xib */; };
+		DEA91F6E1ED03168005555B4 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8A76531D860FB600C5F268 /* LeaseViewController.xib */; };
+		DEA91F6F1ED03168005555B4 /* ToBeInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEAEB28B1D7F881B00174C58 /* ToBeInstallerViewController.xib */; };
+		DEA91F701ED0316E005555B4 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84731E34A344001AB58B /* UMSCommentDetailController.xib */; };
+		DEA91F711ED0316E005555B4 /* UMSCommentInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84741E34A344001AB58B /* UMSCommentInputController.xib */; };
+		DEA91F721ED0316E005555B4 /* UMSCommentInputControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84751E34A344001AB58B /* UMSCommentInputControlleriPad.xib */; };
+		DEA91F731ED0316E005555B4 /* UMShareEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84761E34A344001AB58B /* UMShareEditViewController.xib */; };
+		DEA91F741ED0316E005555B4 /* UMShareEditViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84771E34A344001AB58B /* UMShareEditViewControlleriPad.xib */; };
+		DEA91F751ED0316E005555B4 /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84781E34A344001AB58B /* UMSLoginViewController.xib */; };
+		DEA91F761ED0316E005555B4 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84791E34A344001AB58B /* UMSnsAccountViewController.xib */; };
+		DEA91F771ED0316E005555B4 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D847A1E34A344001AB58B /* UMSShareListController.xib */; };
 		DEA9E6841E0BB54F00D43728 /* GFJBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -375,6 +710,13 @@
 			remoteGlobalIDString = 06165F231D8110E600722320;
 			remoteInfo = Charts;
 		};
+		DEA91F5F1ED01FB1005555B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE64C57C1E0A70FF002D7A16 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -389,6 +731,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA91F611ED01FB1005555B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DEA91F5E1ED01FB1005555B4 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -399,10 +752,6 @@
 		18A7FF4D1CD9902B00BF5926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18A7FF501CD9902B00BF5926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18A7FF521CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18A7FF5B1CD9902B00BF5926 /* GuangFuJieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangFuJieTests.swift; sourceTree = "<group>"; };
-		18A7FF5D1CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuangFuJieUITests.swift; sourceTree = "<group>"; };
-		18A7FF681CD9902B00BF5926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE05DC501E7A37EC0038F72A /* YCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCButton.h; sourceTree = "<group>"; };
 		DE05DC511E7A37EC0038F72A /* YCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCButton.m; sourceTree = "<group>"; };
 		DE0BCE7A1DFF6ECD00912EAD /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
@@ -911,6 +1260,13 @@
 		DE9F876B1DF2BBC90076F508 /* RootSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSafeViewController.swift; sourceTree = "<group>"; };
 		DE9F876C1DF2BBC90076F508 /* RootYeZhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootYeZhuViewController.swift; sourceTree = "<group>"; };
 		DEA1F1291DF14D370057F30D /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		DEA91E041ED01D99005555B4 /* GaoDeGuangFu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaoDeGuangFu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA91E061ED01D9A005555B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DEA91E0D1ED01D9A005555B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEA91E121ED01D9A005555B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEA91E161ED01DD8005555B4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = gaodeguangfu/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		DEA91F641ED02EC1005555B4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DEA91F661ED02F3E005555B4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJBottomButton.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -999,6 +1355,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA91E011ED01D99005555B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA91F4C1ED01F09005555B4 /* BaiduMapAPI_Radar.framework in Frameworks */,
+				DEA91F3B1ED01EF6005555B4 /* CoreLocation.framework in Frameworks */,
+				DEA91F521ED01F15005555B4 /* libWeChatSDK.a in Frameworks */,
+				DEA91F4D1ED01F09005555B4 /* BaiduMapAPI_Search.framework in Frameworks */,
+				DEA91F451ED01F00005555B4 /* AlipaySDK.framework in Frameworks */,
+				DEA91F491ED01F09005555B4 /* BaiduMapAPI_Cloud.framework in Frameworks */,
+				DEA91F541ED01F15005555B4 /* libUMSocial_Sdk_5.1.a in Frameworks */,
+				DEA91F5D1ED01FB1005555B4 /* Charts.framework in Frameworks */,
+				DEA91F481ED01F09005555B4 /* BaiduMapAPI_Base.framework in Frameworks */,
+				DEA91F3A1ED01EF6005555B4 /* QuartzCore.framework in Frameworks */,
+				DEA91F441ED01EFD005555B4 /* libresolv.tbd in Frameworks */,
+				DEA91F531ED01F15005555B4 /* libMobClickLibrary.a in Frameworks */,
+				DEA91F3C1ED01EF6005555B4 /* CoreTelephony.framework in Frameworks */,
+				DEA91F371ED01EF6005555B4 /* CoreGraphics.framework in Frameworks */,
+				DEA91F4B1ED01F09005555B4 /* BaiduMapAPI_Map.framework in Frameworks */,
+				DEA91F561ED01F15005555B4 /* libWeChatSDK.a in Frameworks */,
+				DEA91F3E1ED01EFA005555B4 /* libstdc++.6.0.9.tbd in Frameworks */,
+				DEA91F381ED01EF6005555B4 /* SystemConfiguration.framework in Frameworks */,
+				DEA91F421ED01EFD005555B4 /* libz.1.2.5.tbd in Frameworks */,
+				DEA91F411ED01EFD005555B4 /* libc++.tbd in Frameworks */,
+				DEA91F361ED01EF6005555B4 /* Security.framework in Frameworks */,
+				DEA91F4E1ED01F09005555B4 /* BaiduMapAPI_Utils.framework in Frameworks */,
+				DEA91F431ED01EFD005555B4 /* libz.tbd in Frameworks */,
+				DEA91F391ED01EF6005555B4 /* OpenGLES.framework in Frameworks */,
+				DEA91F3F1ED01EFA005555B4 /* libsqlite3.0.tbd in Frameworks */,
+				DEA91F401ED01EFD005555B4 /* libsqlite3.tbd in Frameworks */,
+				DEA91F4A1ED01F09005555B4 /* BaiduMapAPI_Location.framework in Frameworks */,
+				DEA91F551ED01F15005555B4 /* libSocialWechat.a in Frameworks */,
+				DEA91F3D1ED01EF6005555B4 /* CoreMotion.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1006,8 +1398,7 @@
 			isa = PBXGroup;
 			children = (
 				18A7FF451CD9902B00BF5926 /* GuangFuJie */,
-				18A7FF5A1CD9902B00BF5926 /* GuangFuJieTests */,
-				18A7FF651CD9902B00BF5926 /* GuangFuJieUITests */,
+				DEA91E051ED01D9A005555B4 /* GaoDeGuangFu */,
 				18A7FF441CD9902B00BF5926 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1016,6 +1407,7 @@
 			isa = PBXGroup;
 			children = (
 				18A7FF431CD9902B00BF5926 /* GuangFuJie.app */,
+				DEA91E041ED01D99005555B4 /* GaoDeGuangFu.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1039,24 +1431,6 @@
 				18A7FF521CD9902B00BF5926 /* Info.plist */,
 			);
 			path = GuangFuJie;
-			sourceTree = "<group>";
-		};
-		18A7FF5A1CD9902B00BF5926 /* GuangFuJieTests */ = {
-			isa = PBXGroup;
-			children = (
-				18A7FF5B1CD9902B00BF5926 /* GuangFuJieTests.swift */,
-				18A7FF5D1CD9902B00BF5926 /* Info.plist */,
-			);
-			path = GuangFuJieTests;
-			sourceTree = "<group>";
-		};
-		18A7FF651CD9902B00BF5926 /* GuangFuJieUITests */ = {
-			isa = PBXGroup;
-			children = (
-				18A7FF661CD9902B00BF5926 /* GuangFuJieUITests.swift */,
-				18A7FF681CD9902B00BF5926 /* Info.plist */,
-			);
-			path = GuangFuJieUITests;
 			sourceTree = "<group>";
 		};
 		18B8FA5B1D3CE8A400B334E4 /* Category */ = {
@@ -2337,6 +2711,27 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		DEA91E051ED01D9A005555B4 /* GaoDeGuangFu */ = {
+			isa = PBXGroup;
+			children = (
+				DEA91F631ED02EB4005555B4 /* Utils */,
+				DEA91E061ED01D9A005555B4 /* AppDelegate.swift */,
+				DEA91E0D1ED01D9A005555B4 /* Assets.xcassets */,
+				DEA91E121ED01D9A005555B4 /* Info.plist */,
+				DEA91E161ED01DD8005555B4 /* LaunchScreen.storyboard */,
+			);
+			path = GaoDeGuangFu;
+			sourceTree = "<group>";
+		};
+		DEA91F631ED02EB4005555B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DEA91F641ED02EC1005555B4 /* Constants.swift */,
+				DEA91F661ED02F3E005555B4 /* BaseViewController.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		DEF3B5351E07C97F0016A359 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -2414,13 +2809,32 @@
 			productReference = 18A7FF431CD9902B00BF5926 /* GuangFuJie.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DEA91E031ED01D99005555B4 /* GaoDeGuangFu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEA91E131ED01D9A005555B4 /* Build configuration list for PBXNativeTarget "GaoDeGuangFu" */;
+			buildPhases = (
+				DEA91E001ED01D99005555B4 /* Sources */,
+				DEA91E011ED01D99005555B4 /* Frameworks */,
+				DEA91E021ED01D99005555B4 /* Resources */,
+				DEA91F611ED01FB1005555B4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEA91F601ED01FB1005555B4 /* PBXTargetDependency */,
+			);
+			name = GaoDeGuangFu;
+			productName = GaoDeGuangFu;
+			productReference = DEA91E041ED01D99005555B4 /* GaoDeGuangFu.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		18A7FF3B1CD9902B00BF5926 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "颜超";
 				TargetAttributes = {
@@ -2428,6 +2842,11 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 2S362SNNP3;
 						LastSwiftMigration = 0820;
+					};
+					DEA91E031ED01D99005555B4 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 2S362SNNP3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -2453,6 +2872,7 @@
 			projectRoot = "";
 			targets = (
 				18A7FF421CD9902B00BF5926 /* GuangFuJie */,
+				DEA91E031ED01D99005555B4 /* GaoDeGuangFu */,
 			);
 		};
 /* End PBXProject section */
@@ -2512,6 +2932,37 @@
 				DE8381761DFD311E0021716B /* DeviceCell.xib in Resources */,
 				DE4D84911E34A344001AB58B /* UMSCommentInputControlleriPad.xib in Resources */,
 				DE4D84931E34A344001AB58B /* UMShareEditViewControlleriPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEA91E021ED01D99005555B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA91F6B1ED03165005555B4 /* InstallerDetailOldViewController.xib in Resources */,
+				DEA91F701ED0316E005555B4 /* UMSCommentDetailController.xib in Resources */,
+				DEA91F5A1ED01F22005555B4 /* ZLPhotoLib.bundle in Resources */,
+				DEA91F5B1ED01F22005555B4 /* MJRefresh.bundle in Resources */,
+				DEA91F731ED0316E005555B4 /* UMShareEditViewController.xib in Resources */,
+				DEA91F591ED01F22005555B4 /* mapapi.bundle in Resources */,
+				DEA91E171ED01DD8005555B4 /* LaunchScreen.storyboard in Resources */,
+				DEA91F711ED0316E005555B4 /* UMSCommentInputController.xib in Resources */,
+				DEA91F691ED03159005555B4 /* DeviceCell6.xib in Resources */,
+				DEA91F6E1ED03168005555B4 /* LeaseViewController.xib in Resources */,
+				DEA91F751ED0316E005555B4 /* UMSLoginViewController.xib in Resources */,
+				DEA91F771ED0316E005555B4 /* UMSShareListController.xib in Resources */,
+				DEA91F6F1ED03168005555B4 /* ToBeInstallerViewController.xib in Resources */,
+				DEA91F761ED0316E005555B4 /* UMSnsAccountViewController.xib in Resources */,
+				DEA91F6C1ED03165005555B4 /* MoreInstallerViewController.xib in Resources */,
+				DEA91F581ED01F22005555B4 /* UMSocialSDKResourcesNew.bundle in Resources */,
+				DEA91F681ED03159005555B4 /* DeviceCell.xib in Resources */,
+				DEA91F5C1ED01F22005555B4 /* IQKeyboardManager.bundle in Resources */,
+				DEA91F6D1ED03165005555B4 /* GFJRoofListViewController.xib in Resources */,
+				DEA91F621ED02E0A005555B4 /* Assets.xcassets in Resources */,
+				DEA91F571ED01F22005555B4 /* BeeCloud.bundle in Resources */,
+				DEA91F6A1ED03159005555B4 /* DeviceCellPlus.xib in Resources */,
+				DEA91F721ED0316E005555B4 /* UMSCommentInputControlleriPad.xib in Resources */,
+				DEA91F741ED0316E005555B4 /* UMShareEditViewControlleriPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2806,6 +3257,294 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA91E001ED01D99005555B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA91E821ED01E95005555B4 /* UIViewController+HUD.m in Sources */,
+				DEA91E771ED01E4B005555B4 /* CustomTextField.swift in Sources */,
+				DEA91E731ED01E47005555B4 /* PhoneUtils.swift in Sources */,
+				DEA91F021ED01EC8005555B4 /* QNPHAssetFile.m in Sources */,
+				DEA91E741ED01E47005555B4 /* Colors.swift in Sources */,
+				DEA91E291ED01E16005555B4 /* MyFavViewController.swift in Sources */,
+				DEA91E1A1ED01E16005555B4 /* InstallerDetailOldViewController.swift in Sources */,
+				DEA91E6A1ED01E42005555B4 /* IQPreviousNextView.swift in Sources */,
+				DEA91E691ED01E42005555B4 /* IQBarButtonItem.swift in Sources */,
+				DEA91E751ED01E47005555B4 /* Texts.swift in Sources */,
+				DEA91E3C1ED01E1B005555B4 /* CalResultViewController.swift in Sources */,
+				DEA91E4C1ED01E32005555B4 /* AfterSaleInfo.swift in Sources */,
+				DEA91E7F1ED01E4B005555B4 /* InstallerResultCell.swift in Sources */,
+				DEA91F061ED01ED8005555B4 /* QNResponseInfo.m in Sources */,
+				DEA91ECF1ED01EC3005555B4 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
+				DEA91F271ED01EE2005555B4 /* AFURLRequestSerialization.m in Sources */,
+				DEA91F311ED01EE5005555B4 /* UIRefreshControl+AFNetworking.m in Sources */,
+				DEA91E7D1ED01E4B005555B4 /* GFJBottomButton.swift in Sources */,
+				DEA91ED21ED01EC3005555B4 /* ZLPhotoPickerDatas.m in Sources */,
+				DEA91E841ED01E95005555B4 /* BCAuthReq.m in Sources */,
+				DEA91EE11ED01EC3005555B4 /* MJRefreshFooter.m in Sources */,
+				DEA91E701ED01E47005555B4 /* UserDefaultManager.swift in Sources */,
+				DEA91E2A1ED01E16005555B4 /* InstallerSearchResultViewController.swift in Sources */,
+				DEA91E351ED01E1B005555B4 /* LeaseViewController.swift in Sources */,
+				DEA91EE81ED01EC3005555B4 /* MJRefreshBackStateFooter.m in Sources */,
+				DEA91E5A1ED01E36005555B4 /* IQUITextFieldView+Additions.swift in Sources */,
+				DEA91E8B1ED01E95005555B4 /* BCPreRefundReq.m in Sources */,
+				DEA91E941ED01E95005555B4 /* BCQueryRefundByIdResp.m in Sources */,
+				DEA91E6D1ED01E42005555B4 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				DEA91F131ED01ED8005555B4 /* QNDomain.m in Sources */,
+				DEA91E781ED01E4B005555B4 /* YeZhuCell.swift in Sources */,
+				DEA91ECE1ED01EC3005555B4 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
+				DEA91ED31ED01EC3005555B4 /* ZLPhotoPickerGroup.m in Sources */,
+				DEA91E891ED01E95005555B4 /* BCPayPalReq.m in Sources */,
+				DEA91ED41ED01EC3005555B4 /* UIViewController+Alert.m in Sources */,
+				DEA91EF91ED01EC3005555B4 /* NSObject+MJProperty.m in Sources */,
+				DEA91E8C1ED01E95005555B4 /* BCPreRefundResp.m in Sources */,
+				DEA91EFF1ED01EC8005555B4 /* QNCrc32.m in Sources */,
+				DEA91EF41ED01EC3005555B4 /* MJPropertyKey.m in Sources */,
+				DEA91EA51ED01E95005555B4 /* BCURLResponseSerialization.m in Sources */,
+				DEA91F1D1ED01ED8005555B4 /* QNTxtResolver.m in Sources */,
+				DEA91EF51ED01EC3005555B4 /* MJPropertyType.m in Sources */,
+				DEA91F101ED01ED8005555B4 /* QNAssessment.m in Sources */,
+				DEA91F191ED01ED8005555B4 /* QNHijackingDetectWrapper.m in Sources */,
+				DEA91EB81ED01EA2005555B4 /* DALabeledCircularProgressView.m in Sources */,
+				DEA91F1A1ED01ED8005555B4 /* QNHosts.m in Sources */,
+				DEA91E5B1ED01E36005555B4 /* IQUIView+Hierarchy.swift in Sources */,
+				DEA91E311ED01E1B005555B4 /* GFJWebViewController.swift in Sources */,
+				DEA91E971ED01E95005555B4 /* BCQueryRefundsCountReq.m in Sources */,
+				DEA91E811ED01E95005555B4 /* NSString+AESCrypt.m in Sources */,
+				DEA91EA21ED01E95005555B4 /* BCNetworkReachabilityManager.m in Sources */,
+				DEA91F221ED01EDC005555B4 /* QNIP.m in Sources */,
+				DEA91E881ED01E95005555B4 /* BCPayResp.m in Sources */,
+				DEA91E181ED01E11005555B4 /* API.swift in Sources */,
+				DEA91EEB1ED01EC3005555B4 /* MJRefreshStateHeader.m in Sources */,
+				DEA91E4A1ED01E32005555B4 /* InstallInfo.swift in Sources */,
+				DEA91E5F1ED01E3D005555B4 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				DEA91F161ED01ED8005555B4 /* QNRecord.m in Sources */,
+				DEA91F2B1ED01EE5005555B4 /* AFImageDownloader.m in Sources */,
+				DEA91F671ED02F3E005555B4 /* BaseViewController.swift in Sources */,
+				DEA91E9E1ED01E95005555B4 /* BCNewSubscription.m in Sources */,
+				DEA91E2D1ED01E1B005555B4 /* RootSafeViewController.swift in Sources */,
+				DEA91E1D1ED01E16005555B4 /* MySafeListViewController.swift in Sources */,
+				DEA91EF81ED01EC3005555B4 /* NSObject+MJKeyValue.m in Sources */,
+				DEA91F291ED01EE2005555B4 /* AFURLSessionManager.m in Sources */,
+				DEA91E451ED01E32005555B4 /* AppModel.swift in Sources */,
+				DEA91EEA1ED01EC3005555B4 /* MJRefreshNormalHeader.m in Sources */,
+				DEA91E1B1ED01E16005555B4 /* MoreInstallerViewController.swift in Sources */,
+				DEA91EB31ED01E95005555B4 /* WXUtil.mm in Sources */,
+				DEA91E191ED01E11005555B4 /* API+List.swift in Sources */,
+				DEA91EC21ED01EA2005555B4 /* UIImage+GIF.m in Sources */,
+				DEA91E681ED01E42005555B4 /* IQTextView.swift in Sources */,
+				DEA91F651ED02EC1005555B4 /* Constants.swift in Sources */,
+				DEA91ED91ED01EC3005555B4 /* ZLPhotoPickerCollectionView.m in Sources */,
+				DEA91EB61ED01EA2005555B4 /* SMenuCell.m in Sources */,
+				DEA91E8E1ED01E95005555B4 /* BCQueryBillByIdResp.m in Sources */,
+				DEA91F051ED01EC8005555B4 /* QNUrlSafeBase64.m in Sources */,
+				DEA91F0C1ED01ED8005555B4 /* QNResumeUpload.m in Sources */,
+				DEA91F011ED01EC8005555B4 /* QNFile.m in Sources */,
+				DEA91F0F1ED01ED8005555B4 /* QNUpToken.m in Sources */,
+				DEA91EC81ED01EC3005555B4 /* UIView+ZLExtension.m in Sources */,
+				DEA91E4B1ED01E32005555B4 /* ElectricInfo.swift in Sources */,
+				DEA91F1B1ED01ED8005555B4 /* QNResolver.m in Sources */,
+				DEA91E541ED01E32005555B4 /* DeviceListInfo.swift in Sources */,
+				DEA91EFE1ED01EC8005555B4 /* QNAsyncRun.m in Sources */,
+				DEA91E991ED01E95005555B4 /* BCRefundStatusReq.m in Sources */,
+				DEA91E8D1ED01E95005555B4 /* BCQueryBillByIdReq.m in Sources */,
+				DEA91E5D1ED01E36005555B4 /* IQUIWindow+Hierarchy.swift in Sources */,
+				DEA91E6C1ED01E42005555B4 /* IQToolbar.swift in Sources */,
+				DEA91F341ED01EEA005555B4 /* TopLeftLabel.m in Sources */,
+				DEA91F2F1ED01EE5005555B4 /* UIImageView+AFNetworking.m in Sources */,
+				DEA91E491ED01E32005555B4 /* RoofInfo.swift in Sources */,
+				DEA91F261ED01EE2005555B4 /* AFSecurityPolicy.m in Sources */,
+				DEA91EF11ED01EC3005555B4 /* MJExtensionConst.m in Sources */,
+				DEA91F211ED01EDC005555B4 /* QNHex.m in Sources */,
+				DEA91F2D1ED01EE5005555B4 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				DEA91EBB1ED01EA2005555B4 /* SDWebImageCompat.m in Sources */,
+				DEA91E3D1ED01E1B005555B4 /* GuideViewController.swift in Sources */,
+				DEA91E561ED01E32005555B4 /* NewsInfo.swift in Sources */,
+				DEA91E361ED01E1B005555B4 /* ProviceCityViewController.swift in Sources */,
+				DEA91E4E1ED01E32005555B4 /* InsuranceInfo.swift in Sources */,
+				DEA91E2E1ED01E1B005555B4 /* RootYeZhuViewController.swift in Sources */,
+				DEA91F281ED01EE2005555B4 /* AFURLResponseSerialization.m in Sources */,
+				DEA91E3A1ED01E1B005555B4 /* BuySafeViewController.swift in Sources */,
+				DEA91E7B1ED01E4B005555B4 /* DeviceCell.swift in Sources */,
+				DEA91ECB1ED01EC3005555B4 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
+				DEA91E1F1ED01E16005555B4 /* UserCenterViewController.swift in Sources */,
+				DEA91F121ED01ED8005555B4 /* QNDnsManager.m in Sources */,
+				DEA91E3F1ED01E1B005555B4 /* ReportViewController.swift in Sources */,
+				DEA91EFA1ED01EC3005555B4 /* NSString+MJExtension.m in Sources */,
+				DEA91ECA1ED01EC3005555B4 /* ZLPhotoRect.m in Sources */,
+				DEA91F1C1ED01ED8005555B4 /* QNResolvUtil.m in Sources */,
+				DEA91F2A1ED01EE5005555B4 /* AFAutoPurgingImageCache.m in Sources */,
+				DEA91EFD1ED01EC8005555B4 /* QNALAssetFile.m in Sources */,
+				DEA91EF21ED01EC3005555B4 /* MJFoundation.m in Sources */,
+				DEA91F0B1ED01ED8005555B4 /* QNFormUpload.m in Sources */,
+				DEA91EA01ED01E95005555B4 /* BCSubscriptionQuery.m in Sources */,
+				DEA91F0A1ED01ED8005555B4 /* QNConfiguration.m in Sources */,
+				DEA91EA91ED01E95005555B4 /* BeeCloud+Utils.m in Sources */,
+				DEA91F2E1ED01EE5005555B4 /* UIButton+AFNetworking.m in Sources */,
+				DEA91E5E1ED01E3D005555B4 /* IQKeyboardManagerConstants.swift in Sources */,
+				DEA91E9F1ED01E95005555B4 /* BCSubscription.m in Sources */,
+				DEA91E261ED01E16005555B4 /* MyInstallerDetailViewController.swift in Sources */,
+				DEA91EEF1ED01EC3005555B4 /* UIScrollView+MJRefresh.m in Sources */,
+				DEA91E481ED01E32005555B4 /* BookingStatus.swift in Sources */,
+				DEA91EA81ED01E95005555B4 /* BCPayUtil.m in Sources */,
+				DEA91E981ED01E95005555B4 /* BCQueryRefundsCountResp.m in Sources */,
+				DEA91EBF1ED01EA2005555B4 /* SDWebImageManager.m in Sources */,
+				DEA91EB91ED01EA2005555B4 /* NSData+ImageContentType.m in Sources */,
+				DEA91EE51ED01EC3005555B4 /* MJRefreshAutoStateFooter.m in Sources */,
+				DEA91F251ED01EE2005555B4 /* AFNetworkReachabilityManager.m in Sources */,
+				DEA91E861ED01E95005555B4 /* BCBaseResp.m in Sources */,
+				DEA91EF61ED01EC3005555B4 /* NSObject+MJClass.m in Sources */,
+				DEA91E9A1ED01E95005555B4 /* BCRefundStatusResp.m in Sources */,
+				DEA91E901ED01E95005555B4 /* BCQueryBillsResp.m in Sources */,
+				DEA91E8F1ED01E95005555B4 /* BCQueryBillsReq.m in Sources */,
+				DEA91ED81ED01EC3005555B4 /* ZLPhotoPickerViewController.m in Sources */,
+				DEA91ECC1ED01EC3005555B4 /* ZLPhotoPickerBrowserViewController.m in Sources */,
+				DEA91E1C1ED01E16005555B4 /* MoreSafeViewController.swift in Sources */,
+				DEA91E251ED01E16005555B4 /* BindDeviceViewController.swift in Sources */,
+				DEA91E591ED01E36005555B4 /* IQUIScrollView+Additions.swift in Sources */,
+				DEA91EA71ED01E95005555B4 /* BCPayCache.m in Sources */,
+				DEA91E441ED01E32005555B4 /* QNInfo.swift in Sources */,
+				DEA91EB51ED01EA2005555B4 /* SPullDownMenuView.m in Sources */,
+				DEA91F201ED01EDC005555B4 /* QNGetAddrInfo.m in Sources */,
+				DEA91E421ED01E32005555B4 /* UserInfo.swift in Sources */,
+				DEA91EC71ED01EC3005555B4 /* UIImage+ZLPhotoLib.m in Sources */,
+				DEA91E911ED01E95005555B4 /* BCQueryBillsCountReq.m in Sources */,
+				DEA91E791ED01E4B005555B4 /* InstallerCell.swift in Sources */,
+				DEA91F0E1ED01ED8005555B4 /* QNUploadOption.m in Sources */,
+				DEA91EA61ED01E95005555B4 /* BCURLSessionManager.m in Sources */,
+				DEA91EEC1ED01EC3005555B4 /* MJRefreshConst.m in Sources */,
+				DEA91E7C1ED01E4B005555B4 /* InstallHeaderCell.swift in Sources */,
+				DEA91E411ED01E32005555B4 /* ProvinceModel.swift in Sources */,
+				DEA91F001ED01EC8005555B4 /* QNEtag.m in Sources */,
+				DEA91ED01ED01EC3005555B4 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
+				DEA91E551ED01E32005555B4 /* QNResultInfo.swift in Sources */,
+				DEA91EBA1ED01EA2005555B4 /* SDImageCache.m in Sources */,
+				DEA91E761ED01E4B005555B4 /* LoginView.swift in Sources */,
+				DEA91EC51ED01EA2005555B4 /* UIImageView+WebCache.m in Sources */,
+				DEA91E401ED01E32005555B4 /* CityModel.swift in Sources */,
+				DEA91E9C1ED01E95005555B4 /* BCQueryBillResult.m in Sources */,
+				DEA91F351ED01EEA005555B4 /* YCButton.m in Sources */,
+				DEA91EEE1ED01EC3005555B4 /* UIScrollView+MJExtension.m in Sources */,
+				DEA91EBC1ED01EA2005555B4 /* SDWebImageDecoder.m in Sources */,
+				DEA91F081ED01ED8005555B4 /* QNUserAgent.m in Sources */,
+				DEA91F111ED01ED8005555B4 /* QNIpModel.m in Sources */,
+				DEA91F171ED01ED8005555B4 /* QNDnspodEnterprise.m in Sources */,
+				DEA91E471ED01E32005555B4 /* BankInfo.swift in Sources */,
+				DEA91E2C1ED01E1B005555B4 /* RootInstallerViewController.swift in Sources */,
+				DEA91EAD1ED01E95005555B4 /* BCSandBoxAdapter.m in Sources */,
+				DEA91EBE1ED01EA2005555B4 /* SDWebImageDownloaderOperation.m in Sources */,
+				DEA91EC91ED01EC3005555B4 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
+				DEA91E951ED01E95005555B4 /* BCQueryRefundsReq.m in Sources */,
+				DEA91F241ED01EE2005555B4 /* AFHTTPSessionManager.m in Sources */,
+				DEA91ED11ED01EC3005555B4 /* ZLPhotoAssets.m in Sources */,
+				DEA91E871ED01E95005555B4 /* BCPayReq.m in Sources */,
+				DEA91EC61ED01EA2005555B4 /* UIView+WebCacheOperation.m in Sources */,
+				DEA91E071ED01D9A005555B4 /* AppDelegate.swift in Sources */,
+				DEA91EB41ED01EA2005555B4 /* SMenuButton.m in Sources */,
+				DEA91E371ED01E1B005555B4 /* RoofPriceViewController.swift in Sources */,
+				DEA91E831ED01E95005555B4 /* BeeCloud.m in Sources */,
+				DEA91EB21ED01E95005555B4 /* WXApiManager.m in Sources */,
+				DEA91E601ED01E3D005555B4 /* IQKeyboardManager.swift in Sources */,
+				DEA91E581ED01E36005555B4 /* IQNSArray+Sort.swift in Sources */,
+				DEA91E9D1ED01E95005555B4 /* BCQueryRefundResult.m in Sources */,
+				DEA91EF71ED01EC3005555B4 /* NSObject+MJCoding.m in Sources */,
+				DEA91E711ED01E47005555B4 /* Dimens.swift in Sources */,
+				DEA91F331ED01EEA005555B4 /* MSLFrameUtil.m in Sources */,
+				DEA91E801ED01E95005555B4 /* NSData+AESCrypt.m in Sources */,
+				DEA91EB01ED01E95005555B4 /* WXPayAdapter.m in Sources */,
+				DEA91F041ED01EC8005555B4 /* QNSystem.m in Sources */,
+				DEA91EAA1ED01E95005555B4 /* NSDictionary+Utils.m in Sources */,
+				DEA91EF01ED01EC3005555B4 /* UIView+MJExtension.m in Sources */,
+				DEA91F181ED01ED8005555B4 /* QNDnspodFree.m in Sources */,
+				DEA91EC31ED01EA2005555B4 /* UIImage+MultiFormat.m in Sources */,
+				DEA91E6E1ED01E47005555B4 /* PublishMediaView.swift in Sources */,
+				DEA91E241ED01E16005555B4 /* DeviceDetailViewController.swift in Sources */,
+				DEA91E341ED01E1B005555B4 /* ContactUsViewController.swift in Sources */,
+				DEA91E7A1ED01E4B005555B4 /* SafeCell.swift in Sources */,
+				DEA91EDD1ED01EC3005555B4 /* ZLPhotoPickerImageView.m in Sources */,
+				DEA91E211ED01E16005555B4 /* NearByRoofViewController.swift in Sources */,
+				DEA91EAE1ED01E95005555B4 /* PaySandBoxViewController.m in Sources */,
+				DEA91E521ED01E32005555B4 /* PowerGraphInfo.swift in Sources */,
+				DEA91EE41ED01EC3005555B4 /* MJRefreshAutoNormalFooter.m in Sources */,
+				DEA91EA31ED01E95005555B4 /* BCSecurityPolicy.m in Sources */,
+				DEA91F1E1ED01ED8005555B4 /* QNRefresher.m in Sources */,
+				DEA91E201ED01E16005555B4 /* GFJRoofListViewController.swift in Sources */,
+				DEA91F071ED01ED8005555B4 /* QNSessionManager.m in Sources */,
+				DEA91F091ED01ED8005555B4 /* QNFileRecorder.m in Sources */,
+				DEA91ECD1ED01EC3005555B4 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
+				DEA91EDC1ED01EC3005555B4 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
+				DEA91EE31ED01EC3005555B4 /* MJRefreshAutoGifFooter.m in Sources */,
+				DEA91EE01ED01EC3005555B4 /* MJRefreshComponent.m in Sources */,
+				DEA91EB71ED01EA2005555B4 /* DACircularProgressView.m in Sources */,
+				DEA91E301ED01E1B005555B4 /* RootFindInstallerViewController.swift in Sources */,
+				DEA91E6F1ED01E47005555B4 /* StringUtils.swift in Sources */,
+				DEA91EA11ED01E95005555B4 /* BCHTTPSessionManager.m in Sources */,
+				DEA91E2B1ED01E1B005555B4 /* RootElectricViewController.swift in Sources */,
+				DEA91E391ED01E1B005555B4 /* SafeDetailViewController.swift in Sources */,
+				DEA91E3E1ED01E1B005555B4 /* PhotoViewController.swift in Sources */,
+				DEA91E431ED01E32005555B4 /* DeviceInfo.swift in Sources */,
+				DEA91E611ED01E3D005555B4 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				DEA91E5C1ED01E36005555B4 /* IQUIViewController+Additions.swift in Sources */,
+				DEA91EDE1ED01EC3005555B4 /* MJRefreshAutoFooter.m in Sources */,
+				DEA91E501ED01E32005555B4 /* InsuranceType.swift in Sources */,
+				DEA91F321ED01EE5005555B4 /* UIWebView+AFNetworking.m in Sources */,
+				DEA91EC01ED01EA2005555B4 /* SDWebImagePrefetcher.m in Sources */,
+				DEA91EE71ED01EC3005555B4 /* MJRefreshBackNormalFooter.m in Sources */,
+				DEA91E7E1ED01E4B005555B4 /* NewsCell.swift in Sources */,
+				DEA91EFC1ED01EC8005555B4 /* QN_GTM_Base64.m in Sources */,
+				DEA91EE61ED01EC3005555B4 /* MJRefreshBackGifFooter.m in Sources */,
+				DEA91E1E1ED01E16005555B4 /* InstallBuyViewController.swift in Sources */,
+				DEA91F1F1ED01EDC005555B4 /* QNDes.m in Sources */,
+				DEA91F031ED01EC8005555B4 /* QNPHAssetResource.m in Sources */,
+				DEA91EC41ED01EA2005555B4 /* UIImageView+HighlightedWebCache.m in Sources */,
+				DEA91EFB1ED01EC3005555B4 /* UICountingLabel.m in Sources */,
+				DEA91F2C1ED01EE5005555B4 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				DEA91F0D1ED01ED8005555B4 /* QNUploadManager.m in Sources */,
+				DEA91E461ED01E32005555B4 /* CommonModel.swift in Sources */,
+				DEA91E8A1ED01E95005555B4 /* BCPayPalVerifyReq.m in Sources */,
+				DEA91E571ED01E32005555B4 /* ShareInfo.swift in Sources */,
+				DEA91E281ED01E16005555B4 /* NearByInstallerViewController.swift in Sources */,
+				DEA91F151ED01ED8005555B4 /* QNNetworkInfo.m in Sources */,
+				DEA91EA41ED01E95005555B4 /* BCURLRequestSerialization.m in Sources */,
+				DEA91F141ED01ED8005555B4 /* QNLruCache.m in Sources */,
+				DEA91EBD1ED01EA2005555B4 /* SDWebImageDownloader.m in Sources */,
+				DEA91E6B1ED01E42005555B4 /* IQTitleBarButtonItem.swift in Sources */,
+				DEA91E271ED01E16005555B4 /* InstallerDetailViewController.swift in Sources */,
+				DEA91E4F1ED01E32005555B4 /* InsuranceDetail.swift in Sources */,
+				DEA91E851ED01E95005555B4 /* BCBaseReq.m in Sources */,
+				DEA91EDA1ED01EC3005555B4 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
+				DEA91EAC1ED01E95005555B4 /* BeeCloudAdapter.m in Sources */,
+				DEA91E231ED01E16005555B4 /* GFJMyRoofsViewController.swift in Sources */,
+				DEA91EE21ED01EC3005555B4 /* MJRefreshHeader.m in Sources */,
+				DEA91E531ED01E32005555B4 /* GetInventerMode.swift in Sources */,
+				DEA91EB11ED01E95005555B4 /* ApiXml.mm in Sources */,
+				DEA91E931ED01E95005555B4 /* BCQueryRefundByIdReq.m in Sources */,
+				DEA91F231ED01EDF005555B4 /* MBProgressHUD.m in Sources */,
+				DEA91EF31ED01EC3005555B4 /* MJProperty.m in Sources */,
+				DEA91EAF1ED01E95005555B4 /* AliPayAdapter.m in Sources */,
+				DEA91E2F1ED01E1B005555B4 /* RootNewsViewController.swift in Sources */,
+				DEA91F301ED01EE5005555B4 /* UIProgressView+AFNetworking.m in Sources */,
+				DEA91E9B1ED01E95005555B4 /* BCBaseResult.m in Sources */,
+				DEA91EED1ED01EC3005555B4 /* NSBundle+MJRefresh.m in Sources */,
+				DEA91EE91ED01EC3005555B4 /* MJRefreshGifHeader.m in Sources */,
+				DEA91E221ED01E16005555B4 /* GFJIMInstallerViewController.swift in Sources */,
+				DEA91E321ED01E1B005555B4 /* MapViewController.swift in Sources */,
+				DEA91E961ED01E95005555B4 /* BCQueryRefundsResp.m in Sources */,
+				DEA91ED51ED01EC3005555B4 /* ZLNavigationController.m in Sources */,
+				DEA91EDF1ED01EC3005555B4 /* MJRefreshBackFooter.m in Sources */,
+				DEA91EC11ED01EA2005555B4 /* UIButton+WebCache.m in Sources */,
+				DEA91EAB1ED01E95005555B4 /* NSString+IsValid.m in Sources */,
+				DEA91E921ED01E95005555B4 /* BCQueryBillsCountResp.m in Sources */,
+				DEA91EDB1ED01EC3005555B4 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
+				DEA91ED71ED01EC3005555B4 /* ZLPhotoPickerGroupViewController.m in Sources */,
+				DEA91ED61ED01EC3005555B4 /* ZLPhotoPickerAssetsViewController.m in Sources */,
+				DEA91E381ED01E1B005555B4 /* ToBeInstallerViewController.swift in Sources */,
+				DEA91E3B1ED01E1B005555B4 /* ApplyForOrderViewController.swift in Sources */,
+				DEA91E4D1ED01E32005555B4 /* CommonInfo.swift in Sources */,
+				DEA91E511ED01E32005555B4 /* CalcModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2813,6 +3552,11 @@
 			isa = PBXTargetDependency;
 			name = Charts;
 			targetProxy = DE64C58A1E0A7108002D7A16 /* PBXContainerItemProxy */;
+		};
+		DEA91F601ED01FB1005555B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = DEA91F5F1ED01FB1005555B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3008,6 +3752,74 @@
 			};
 			name = Release;
 		};
+		DEA91E141ED01D9A005555B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = 2S362SNNP3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GuangFuJie/Library/BCPaySDK/Channel/AliPay",
+					"$(PROJECT_DIR)/GuangFuJie/Library/BaiduMap",
+				);
+				INFOPLIST_FILE = GaoDeGuangFu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/GuangFuJie/Library/BCPaySDK/Channel/WXPay",
+					"$(PROJECT_DIR)/GuangFuJie/Library/UMAnalytics_Sdk_3.5.10",
+					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial_Sdk_5.1",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.gaodeguangfu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DEA91E151ED01D9A005555B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = 2S362SNNP3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GuangFuJie/Library/BCPaySDK/Channel/AliPay",
+					"$(PROJECT_DIR)/GuangFuJie/Library/BaiduMap",
+				);
+				INFOPLIST_FILE = GaoDeGuangFu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/GuangFuJie/Library/BCPaySDK/Channel/WXPay",
+					"$(PROJECT_DIR)/GuangFuJie/Library/UMAnalytics_Sdk_3.5.10",
+					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial_Sdk_5.1",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.gaodeguangfu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3028,6 +3840,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		DEA91E131ED01D9A005555B4 /* Build configuration list for PBXNativeTarget "GaoDeGuangFu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA91E141ED01D9A005555B4 /* Debug */,
+				DEA91E151ED01D9A005555B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
