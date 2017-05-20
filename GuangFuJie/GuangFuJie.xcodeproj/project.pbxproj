@@ -613,7 +613,6 @@
 		DEA91F5C1ED01F22005555B4 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEF3B54B1E07C97F0016A359 /* IQKeyboardManager.bundle */; };
 		DEA91F5D1ED01FB1005555B4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE64C5831E0A70FF002D7A16 /* Charts.framework */; };
 		DEA91F5E1ED01FB1005555B4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE64C5831E0A70FF002D7A16 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEA91F621ED02E0A005555B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A7FF4D1CD9902B00BF5926 /* Assets.xcassets */; };
 		DEA91F651ED02EC1005555B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA91F641ED02EC1005555B4 /* Constants.swift */; };
 		DEA91F671ED02F3E005555B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA91F661ED02F3E005555B4 /* BaseViewController.swift */; };
 		DEA91F681ED03159005555B4 /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8381741DFD311E0021716B /* DeviceCell.xib */; };
@@ -632,6 +631,9 @@
 		DEA91F751ED0316E005555B4 /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84781E34A344001AB58B /* UMSLoginViewController.xib */; };
 		DEA91F761ED0316E005555B4 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D84791E34A344001AB58B /* UMSnsAccountViewController.xib */; };
 		DEA91F771ED0316E005555B4 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4D847A1E34A344001AB58B /* UMSShareListController.xib */; };
+		DEA91F791ED039E8005555B4 /* CommonImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA91F781ED039E8005555B4 /* CommonImages.xcassets */; };
+		DEA91F7A1ED039E8005555B4 /* CommonImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA91F781ED039E8005555B4 /* CommonImages.xcassets */; };
+		DEA91F7B1ED03B8D005555B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA91E0D1ED01D9A005555B4 /* Assets.xcassets */; };
 		DEA9E6841E0BB54F00D43728 /* GFJBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */; };
 		DEAEB2771D7EB4E000174C58 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */; };
 		DEAEB27C1D7F841100174C58 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */; };
@@ -1267,6 +1269,7 @@
 		DEA91E161ED01DD8005555B4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = gaodeguangfu/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		DEA91F641ED02EC1005555B4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DEA91F661ED02F3E005555B4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DEA91F781ED039E8005555B4 /* CommonImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonImages.xcassets; sourceTree = "<group>"; };
 		DEA9E6831E0BB54F00D43728 /* GFJBottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJBottomButton.swift; sourceTree = "<group>"; };
 		DEAEB2761D7EB4E000174C58 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
 		DEAEB27B1D7F841100174C58 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
@@ -1429,6 +1432,7 @@
 				18A7FF4D1CD9902B00BF5926 /* Assets.xcassets */,
 				18A7FF4F1CD9902B00BF5926 /* LaunchScreen.storyboard */,
 				18A7FF521CD9902B00BF5926 /* Info.plist */,
+				DEA91F781ED039E8005555B4 /* CommonImages.xcassets */,
 			);
 			path = GuangFuJie;
 			sourceTree = "<group>";
@@ -2928,6 +2932,7 @@
 				DE554C841E568DA100D1AA53 /* BeeCloud.bundle in Resources */,
 				DE807E451E7B78E200060A0D /* InstallerDetailOldViewController.xib in Resources */,
 				DEAEB28C1D7F881B00174C58 /* ToBeInstallerViewController.xib in Resources */,
+				DEA91F791ED039E8005555B4 /* CommonImages.xcassets in Resources */,
 				DE51F3611E164EFF00671967 /* ZLPhotoLib.bundle in Resources */,
 				DE8381761DFD311E0021716B /* DeviceCell.xib in Resources */,
 				DE4D84911E34A344001AB58B /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -2954,15 +2959,16 @@
 				DEA91F6F1ED03168005555B4 /* ToBeInstallerViewController.xib in Resources */,
 				DEA91F761ED0316E005555B4 /* UMSnsAccountViewController.xib in Resources */,
 				DEA91F6C1ED03165005555B4 /* MoreInstallerViewController.xib in Resources */,
+				DEA91F7A1ED039E8005555B4 /* CommonImages.xcassets in Resources */,
 				DEA91F581ED01F22005555B4 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				DEA91F681ED03159005555B4 /* DeviceCell.xib in Resources */,
 				DEA91F5C1ED01F22005555B4 /* IQKeyboardManager.bundle in Resources */,
 				DEA91F6D1ED03165005555B4 /* GFJRoofListViewController.xib in Resources */,
-				DEA91F621ED02E0A005555B4 /* Assets.xcassets in Resources */,
 				DEA91F571ED01F22005555B4 /* BeeCloud.bundle in Resources */,
 				DEA91F6A1ED03159005555B4 /* DeviceCellPlus.xib in Resources */,
 				DEA91F721ED0316E005555B4 /* UMSCommentInputControlleriPad.xib in Resources */,
 				DEA91F741ED0316E005555B4 /* UMShareEditViewControlleriPad.xib in Resources */,
+				DEA91F7B1ED03B8D005555B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3848,6 +3854,7 @@
 				DEA91E151ED01D9A005555B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

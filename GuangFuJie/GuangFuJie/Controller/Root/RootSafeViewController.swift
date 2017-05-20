@@ -55,12 +55,12 @@ class RootSafeViewController: BaseViewController, UIScrollViewDelegate, UITableV
         
         let offSetY : CGFloat = 8
         let scrollViewWidth = PhoneUtils.kScreenWidth
-        let scrollViewHeight = offSetY + (520 * scrollViewWidth) / 750
+        let scrollViewHeight = offSetY + (Constants.bannerImageHeight * scrollViewWidth) / Constants.bannerImageWidth
         
         let footerView = UIView.init(frame: CGRect(x: 0, y: 0, width: scrollViewWidth, height: scrollViewHeight + 15))
         
         let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: scrollViewWidth, height: scrollViewHeight))
-        let images = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
+        let images = Constants.bannerImages
         
         scrollView.contentSize = CGSize(width: scrollViewWidth * CGFloat(images.count), height: 0)
         scrollView.isPagingEnabled = true
