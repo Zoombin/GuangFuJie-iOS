@@ -75,9 +75,9 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     
     func shareApp() {
         let info = ShareInfo()
-        info.shareTitle = "光伏街"
+        info.shareTitle = Constants.projectName
         info.shareLink = "https://itunes.apple.com/app/id1157294691"
-        info.shareDesc = "光伏街是一家基于“互联网”的新能源提供商，是太阳能发电行业最优秀的系统集成商之一"
+        info.shareDesc = "\(Constants.projectName)是一家基于“互联网”的新能源提供商，是太阳能发电行业最优秀的系统集成商之一"
         info.shareImg = nil
         shareButtonClicked(shareInfo: info)
     }

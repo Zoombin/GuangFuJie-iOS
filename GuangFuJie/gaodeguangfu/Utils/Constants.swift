@@ -11,6 +11,7 @@ import UIKit
 class Constants: NSObject {
     static let umAppKey = "591feb47c62dca65260013c3"
     static let project = "gaodeguangfu"
+    static let projectName = "高得光伏"
     static let bannerImages = ["ic_test_ad001", "ic_test_ad002"]
     static let bannerImageWidth: CGFloat = 750
     static let bannerImageHeight: CGFloat = 313

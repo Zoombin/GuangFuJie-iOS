@@ -13,6 +13,7 @@ class Constants: NSObject {
     static let wexinAppKey = "wxbcf80af171ceb211"
     static let wexinAppSecret = "jiangsusurongjspv320583000851610"
     static let project = "guangfujie"
+    static let projectName = "光伏街"
     static let bannerImages = ["ic_test_ad001", "ic_test_ad002", "ic_test_ad003", "ic_test_ad004"]
     static let bannerImageWidth: CGFloat = 750
     static let bannerImageHeight: CGFloat = 520
