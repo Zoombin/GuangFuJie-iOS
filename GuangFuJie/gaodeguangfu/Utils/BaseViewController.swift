@@ -200,7 +200,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
         payReq.scheme = "GuangFuJieApp"
         payReq.billTimeOut = 300
         payReq.viewController = self
-        payReq.optional = ["type" : type]
+        payReq.optional = ["type" : type, "project" : Constants.project]
         BeeCloud.sendBCReq(payReq)
     }
     
