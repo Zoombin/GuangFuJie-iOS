@@ -28,6 +28,9 @@ class GFJWebViewController: BaseViewController {
     }
     
     func addShareInfoButton(info : ShareInfo) {
+        if (Constants.project == "gaodeguangfu") {
+            return
+        }
         shareInfo = info
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareNews))
     }

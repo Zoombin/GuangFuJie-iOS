@@ -184,7 +184,7 @@ class SafeCell: UITableViewCell {
         var type = ""
         var baoeValue = "保额："
         if (info.size != nil) {
-            type = "光伏街发电系统" + StringUtils.getString(info.label)
+            type = "\(Constants.projectName)发电系统" + StringUtils.getString(info.label)
             
             let size = NSString.init(string: info.size!)
             size.replacingOccurrences(of: "KW", with: "")

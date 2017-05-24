@@ -34,9 +34,17 @@ class InstallBuyViewController: BaseViewController {
     
     func addFavButton(isFav : Bool) {
         if (isFav) {
-            self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
+            if (Constants.project == "gaodeguangfu") {
+                self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked))]
+            } else {
+                self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.cancelFavButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
+            }
         } else {
-            self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
+            if (Constants.project == "gaodeguangfu") {
+                self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked))]
+            } else {
+                self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(title: "收藏", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.favButtonClicked)), UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareRoof))]
+            }
         }
     }
     

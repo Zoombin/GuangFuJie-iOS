@@ -13,7 +13,7 @@ class ContactUsViewController: BaseViewController, UITableViewDataSource, UITabl
     var tableView : UITableView!
     
     let cellReuseIdentifier = "UITableViewCell"
-    let titles = ["江苏省苏州市工业园区仁爱路1号", "光伏街电话 4006229666", "邮箱地址 server@pvsr.cn"]
+    let titles = ["江苏省苏州市工业园区仁爱路1号", "\(Constants.projectName)电话 4006229666", "邮箱地址 server@pvsr.cn"]
     let icons = ["ic_h_address", "ic_h_call", "ic_h_email"]
     override func viewDidLoad() {
         super.viewDidLoad()

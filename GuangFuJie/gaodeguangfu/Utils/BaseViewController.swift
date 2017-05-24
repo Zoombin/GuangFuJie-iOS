@@ -62,7 +62,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func initRightNavButton() {
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(image: UIImage(named: "ic_about_v2")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked)), UIBarButtonItem.init(image: UIImage(named: "ic_share_v2")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(shareApp))]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(image: UIImage(named: "ic_about_v2")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.rightButtonClicked))]
     }
     
     func didFinishGetUMSocialData(inViewController response: UMSocialResponseEntity!) {
@@ -187,28 +187,11 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
     }
     
     func selectPayType(_ billno:String,title:String,totalFee:String,type:String) {
-        let actionSheet = UIAlertController.init(title: "选择支付方式", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
-        let actionButtonAliPay = UIAlertAction.init(title: "支付宝", style: UIAlertActionStyle.default) { (action) in
-            self.pay(billno, title: title, totalFee: totalFee, type: type, channel: PayChannel.aliApp)
-        }
-        let actionButtonWX = UIAlertAction.init(title: "微信", style: UIAlertActionStyle.default) { (action) in
-            self.pay(billno, title: title, totalFee: totalFee, type: type, channel: PayChannel.wxApp)
-        }
-        let actionButtonCancel = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel) { (action) in
-            //do nothing
-        }
-        actionSheet.addAction(actionButtonAliPay)
-        actionSheet.addAction(actionButtonWX)
-        actionSheet.addAction(actionButtonCancel)
-        self.present(actionSheet, animated: true, completion: nil)
+        //TODO: 写死支付宝支付
+        self.pay(billno, title: title, totalFee: totalFee, type: type, channel: PayChannel.aliApp)
     }
     
     func pay(_ billno:String,title:String,totalFee:String,type:String, channel: PayChannel) {
-        if (channel == PayChannel.wxApp && !WXApi.isWXAppInstalled()) {
-            self.showHint("请安装微信进行支付")
-            return
-        }
-        
         let payReq = BCPayReq()
         payReq.channel = channel
         payReq.title = title
@@ -304,7 +287,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, UIImage
             if (isLocal) {
                 photo.photoObj = UIImage(named: urls[i] as! String)
             } else {
-               photo.photoObj = urls[i]
+                photo.photoObj = urls[i]
             }
             tmpArray.append(photo)
         }
