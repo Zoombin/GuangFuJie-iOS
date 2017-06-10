@@ -114,7 +114,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITa
         } else {
             if (actionSheet.firstOtherButtonIndex + 1 == buttonIndex) {
                 houseType = 1
-            } else if (actionSheet.firstOtherButtonIndex + 1 == buttonIndex) {
+            } else if (actionSheet.firstOtherButtonIndex + 2 == buttonIndex) {
                 houseType = 2
             } else {
                 houseType = 3
