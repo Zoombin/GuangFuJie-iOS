@@ -29,4 +29,5 @@ class InsuranceDetail: NSObject {
     var client_contract_img: String?    //并网合同图片
     var type : String?
     var label : String?
+    var baoe : String? //保额
 }

@@ -124,30 +124,21 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
             } else if (indexPath.row == 4) {
                 var type = "保险类型："
                 if (info!.size != nil) {
-                    type = type + "\(Constants.projectName)发电系统" + StringUtils.getString(info!.label)
+                    type = type + StringUtils.getString(info!.label)
                 }
                 cell.textLabel?.text = type
             } else if (indexPath.row == 5) {
                 //金额
                 var price = "保险金额："
                 if (info?.price != nil) {
-                    price = price + String(describing: info!.price!)
+                    price = price + String(describing: info!.insured_price!) + "元"
                 }
                 cell.textLabel?.text = price
             } else if (indexPath.row == 6) {
                 //保额
                 var baoeValue = "保额："
                 if (info!.size != nil) {
-                    let size = NSString.init(string: info!.size!)
-                    size.replacingOccurrences(of: "KW", with: "")
-                    let sizeFloat : CGFloat = CGFloat(size.floatValue)
-                    
-                    let baoe1 : CGFloat = sizeFloat * 0.7
-                    let baoe2 : CGFloat = sizeFloat * 0.7
-                    let baoe3 : CGFloat = 2.0
-                    let total : CGFloat = baoe1 + baoe2 + baoe3
-                    let baoe = String(format: "%.1f万/年", total)
-                    baoeValue = baoeValue  + baoe
+                    baoeValue = baoeValue  + StringUtils.getString(info!.baoe) + "万/年"
                 }
                 cell.textLabel?.text = baoeValue
             } else if (indexPath.row == 7) {
