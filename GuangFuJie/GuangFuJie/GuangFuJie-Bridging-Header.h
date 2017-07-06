@@ -7,6 +7,7 @@
 #import "NSData+AESCrypt.h"
 #import "UIViewController+Hud.h"
 #import "QiniuSDK.h"
+#import "ImageTitleButton.h"
 //#import "TopLeftLabel.h"
 #import "BeeCloud.h"
 //#import "SPullDownMenuView.h"

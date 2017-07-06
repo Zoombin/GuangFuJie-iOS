@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
-		DE8683E31F0DC92B00FF7FD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E21F0DC92B00FF7FD3 /* ViewController.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
 		DE8683EB1F0DC92B00FF7FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E91F0DC92B00FF7FD3 /* LaunchScreen.storyboard */; };
@@ -341,6 +340,23 @@
 		DE868DE01F0DE4AC00FF7FD3 /* PaySandBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE868D681F0DE4AC00FF7FD3 /* PaySandBoxViewController.m */; };
 		DE868DE21F0DE4DF00FF7FD3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE868DE11F0DE4DF00FF7FD3 /* CoreTelephony.framework */; };
 		DE868DE41F0DE4EF00FF7FD3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE868DE31F0DE4EF00FF7FD3 /* CoreMotion.framework */; };
+		DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */; };
+		DE868DE81F0DE63200FF7FD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */; };
+		DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
+		DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
+		DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
+		DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */; };
+		DE868DFB1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */; };
+		DE868DFD1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */; };
+		DE868DFE1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */; };
+		DE868E001F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */; };
+		DE868E011F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */; };
+		DE868E031F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */; };
+		DE868E041F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */; };
+		DE868E071F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE868E061F0E2CC600FF7FD3 /* ImageTitleButton.m */; };
+		DE868E081F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE868E061F0E2CC600FF7FD3 /* ImageTitleButton.m */; };
+		DE868E0A1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868E091F0E2D4F00FF7FD3 /* FontUtils.swift */; };
+		DE868E0B1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868E091F0E2D4F00FF7FD3 /* FontUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -437,7 +453,6 @@
 /* Begin PBXFileReference section */
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE8683E21F0DC92B00FF7FD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8683EA1F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -746,6 +761,15 @@
 		DE868D681F0DE4AC00FF7FD3 /* PaySandBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySandBoxViewController.m; sourceTree = "<group>"; };
 		DE868DE11F0DE4DF00FF7FD3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DE868DE31F0DE4EF00FF7FD3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootMapViewController.swift; sourceTree = "<group>"; };
+		DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHomeViewController.swift; sourceTree = "<group>"; };
+		DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInsuranceViewController.swift; sourceTree = "<group>"; };
+		DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNewsViewController.swift; sourceTree = "<group>"; };
+		DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootMyViewController.swift; sourceTree = "<group>"; };
+		DE868E051F0E2CC600FF7FD3 /* ImageTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTitleButton.h; sourceTree = "<group>"; };
+		DE868E061F0E2CC600FF7FD3 /* ImageTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTitleButton.m; sourceTree = "<group>"; };
+		DE868E091F0E2D4F00FF7FD3 /* FontUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -831,7 +855,6 @@
 				DE86843B1F0DCA8F00FF7FD3 /* Utils */,
 				DE86843C1F0DCA8F00FF7FD3 /* Submodules */,
 				DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */,
-				DE8683E21F0DC92B00FF7FD3 /* ViewController.swift */,
 				DE8687811F0DCE6F00FF7FD3 /* GuangFuJie-Bridging-Header.h */,
 				DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */,
 				DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */,
@@ -897,6 +920,8 @@
 		DE8684391F0DCA8F00FF7FD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE868DF11F0DE66400FF7FD3 /* Root */,
+				DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -911,9 +936,12 @@
 		DE86843B1F0DCA8F00FF7FD3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE868E051F0E2CC600FF7FD3 /* ImageTitleButton.h */,
+				DE868E061F0E2CC600FF7FD3 /* ImageTitleButton.m */,
 				DE8687821F0DCEBB00FF7FD3 /* Constants.swift */,
 				DE868ADE1F0DD20A00FF7FD3 /* UserDefaultManager.swift */,
 				DE868AE11F0DD23400FF7FD3 /* PhoneUtils.swift */,
+				DE868E091F0E2D4F00FF7FD3 /* FontUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -947,7 +975,7 @@
 				DE8684B11F0DCBD600FF7FD3 /* Alamofire.framework */,
 				DE8684B31F0DCBD600FF7FD3 /* Alamofire iOS Tests.xctest */,
 				DE8684B51F0DCBD600FF7FD3 /* Alamofire.framework */,
-				DE8684B71F0DCBD600FF7FD3 /* Alamofire OSX Tests.xctest */,
+				DE8684B71F0DCBD600FF7FD3 /* Alamofire macOS Tests.xctest */,
 				DE8684B91F0DCBD600FF7FD3 /* Alamofire.framework */,
 				DE8684BB1F0DCBD600FF7FD3 /* Alamofire tvOS Tests.xctest */,
 				DE8684BD1F0DCBD600FF7FD3 /* Alamofire.framework */,
@@ -1591,6 +1619,18 @@
 			path = BCSandBoxAdapter;
 			sourceTree = "<group>";
 		};
+		DE868DF11F0DE66400FF7FD3 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */,
+				DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */,
+				DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */,
+				DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */,
+				DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1702,10 +1742,10 @@
 			remoteRef = DE8684B41F0DCBD600FF7FD3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DE8684B71F0DCBD600FF7FD3 /* Alamofire OSX Tests.xctest */ = {
+		DE8684B71F0DCBD600FF7FD3 /* Alamofire macOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Alamofire OSX Tests.xctest";
+			path = "Alamofire macOS Tests.xctest";
 			remoteRef = DE8684B61F0DCBD600FF7FD3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1749,6 +1789,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8684301F0DC9DE00FF7FD3 /* LaunchScreen.storyboard in Resources */,
+				DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */,
 				DE86842D1F0DC9DE00FF7FD3 /* Assets.xcassets in Resources */,
 				DE868DDE1F0DE4AC00FF7FD3 /* BeeCloud.bundle in Resources */,
 				DE86842B1F0DC9DE00FF7FD3 /* Main.storyboard in Resources */,
@@ -1763,6 +1804,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE868D8F1F0DE4AC00FF7FD3 /* BCPayReq.m in Sources */,
+				DE868E001F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */,
 				DE868ACA1F0DD1B800FF7FD3 /* MJExtensionConst.m in Sources */,
 				DE8684E91F0DCC7900FF7FD3 /* InsuranceType.swift in Sources */,
 				DE8684ED1F0DCC7900FF7FD3 /* ShareInfo.swift in Sources */,
@@ -1774,9 +1816,11 @@
 				DE868ADF1F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
 				DE868DD51F0DE4AC00FF7FD3 /* NSDictionary+Utils.m in Sources */,
 				DE8684EA1F0DCC7900FF7FD3 /* ElectricInfo.swift in Sources */,
+				DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DE868A081F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DE868DA51F0DE4AC00FF7FD3 /* BCQueryBillsCountResp.m in Sources */,
 				DE868DD31F0DE4AC00FF7FD3 /* BeeCloud+Utils.m in Sources */,
+				DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
 				DE868D8D1F0DE4AC00FF7FD3 /* BCBaseResp.m in Sources */,
 				DE868D851F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
 				DE868DC71F0DE4AC00FF7FD3 /* BCSecurityPolicy.m in Sources */,
@@ -1785,12 +1829,14 @@
 				DE8688831F0DD05900FF7FD3 /* QNResponseInfo.m in Sources */,
 				DE868D691F0DE4AC00FF7FD3 /* AliPayAdapter.m in Sources */,
 				DE86876B1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
+				DE868E071F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
 				DE868DBF1F0DE4AC00FF7FD3 /* BCSubscription.m in Sources */,
 				DE86876F1F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
 				DE86877F1F0DCE4400FF7FD3 /* UIWebView+AFNetworking.m in Sources */,
 				DE868D9F1F0DE4AC00FF7FD3 /* BCQueryBillsReq.m in Sources */,
 				DE8684F31F0DCC7900FF7FD3 /* UserInfo.swift in Sources */,
 				DE868ACE1F0DD1B800FF7FD3 /* MJProperty.m in Sources */,
+				DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DE8688951F0DD05900FF7FD3 /* QNUpToken.m in Sources */,
 				DE868DD11F0DE4AC00FF7FD3 /* BCPayUtil.m in Sources */,
 				DE868DA31F0DE4AC00FF7FD3 /* BCQueryBillsCountReq.m in Sources */,
@@ -1810,6 +1856,7 @@
 				DE868DBD1F0DE4AC00FF7FD3 /* BCNewSubscription.m in Sources */,
 				DE8687631F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */,
 				DE8684F41F0DCC7900FF7FD3 /* CommonModel.swift in Sources */,
+				DE868E031F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */,
 				DE8687791F0DCE4400FF7FD3 /* UIImageView+AFNetworking.m in Sources */,
 				DE8689FA1F0DD0D700FF7FD3 /* QNResolver.m in Sources */,
 				DE868DDF1F0DE4AC00FF7FD3 /* PaySandBoxViewController.m in Sources */,
@@ -1866,7 +1913,6 @@
 				DE868DD71F0DE4AC00FF7FD3 /* NSString+IsValid.m in Sources */,
 				DE86887D1F0DD05900FF7FD3 /* QNPHAssetResource.m in Sources */,
 				DE8684FF1F0DCC7900FF7FD3 /* QNInfo.swift in Sources */,
-				DE8683E31F0DC92B00FF7FD3 /* ViewController.swift in Sources */,
 				DE868AE21F0DD23400FF7FD3 /* PhoneUtils.swift in Sources */,
 				DE8688751F0DD05900FF7FD3 /* QNCrc32.m in Sources */,
 				DE868DB91F0DE4AC00FF7FD3 /* BCQueryBillResult.m in Sources */,
@@ -1877,6 +1923,7 @@
 				DE8684F61F0DCC7900FF7FD3 /* GetInventerMode.swift in Sources */,
 				DE8684401F0DCADE00FF7FD3 /* API.swift in Sources */,
 				DE8684F51F0DCC7900FF7FD3 /* CalcModel.swift in Sources */,
+				DE868DFD1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */,
 				DE8689EA1F0DD0D700FF7FD3 /* QNDomain.m in Sources */,
 				DE868A001F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
 				DE8684F21F0DCC7900FF7FD3 /* QNResultInfo.swift in Sources */,
@@ -1894,6 +1941,7 @@
 				DE868A111F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DE868AD61F0DD1B800FF7FD3 /* NSObject+MJCoding.m in Sources */,
 				DE868D931F0DE4AC00FF7FD3 /* BCPayPalReq.m in Sources */,
+				DE868E0A1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
 				DE868DCD1F0DE4AC00FF7FD3 /* BCURLSessionManager.m in Sources */,
 				DE868DA71F0DE4AC00FF7FD3 /* BCQueryRefundByIdReq.m in Sources */,
 				DE8684FC1F0DCC7900FF7FD3 /* BookingStatus.swift in Sources */,
@@ -1920,6 +1968,7 @@
 				DE8685051F0DCC7E00FF7FD3 /* ShareInfo.swift in Sources */,
 				DE868DC21F0DE4AC00FF7FD3 /* BCSubscriptionQuery.m in Sources */,
 				DE868AD51F0DD1B800FF7FD3 /* NSObject+MJClass.m in Sources */,
+				DE868E081F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
 				DE868DB21F0DE4AC00FF7FD3 /* BCQueryRefundsCountResp.m in Sources */,
 				DE86887A1F0DD05900FF7FD3 /* QNFile.m in Sources */,
 				DE8685081F0DCC7E00FF7FD3 /* DeviceInfo.swift in Sources */,
@@ -1929,6 +1978,7 @@
 				DE868A091F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DE868DA61F0DE4AC00FF7FD3 /* BCQueryBillsCountResp.m in Sources */,
 				DE868DD41F0DE4AC00FF7FD3 /* BeeCloud+Utils.m in Sources */,
+				DE868DE81F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
 				DE868D8E1F0DE4AC00FF7FD3 /* BCBaseResp.m in Sources */,
 				DE868D861F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
 				DE868DC81F0DE4AC00FF7FD3 /* BCSecurityPolicy.m in Sources */,
@@ -1936,6 +1986,7 @@
 				DE8688901F0DD05900FF7FD3 /* QNResumeUpload.m in Sources */,
 				DE8688841F0DD05900FF7FD3 /* QNResponseInfo.m in Sources */,
 				DE868D6A1F0DE4AC00FF7FD3 /* AliPayAdapter.m in Sources */,
+				DE868E011F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */,
 				DE86876C1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
 				DE868DC01F0DE4AC00FF7FD3 /* BCSubscription.m in Sources */,
 				DE8687701F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
@@ -1956,7 +2007,9 @@
 				DE8688721F0DD05900FF7FD3 /* QNALAssetFile.m in Sources */,
 				DE868DAE1F0DE4AC00FF7FD3 /* BCQueryRefundsResp.m in Sources */,
 				DE868AD31F0DD1B800FF7FD3 /* MJPropertyType.m in Sources */,
+				DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DE8689F91F0DD0D700FF7FD3 /* QNHosts.m in Sources */,
+				DE868DFE1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */,
 				DE868D881F0DE4AC00FF7FD3 /* BeeCloud.m in Sources */,
 				DE8687761F0DCE4400FF7FD3 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DE868DBE1F0DE4AC00FF7FD3 /* BCNewSubscription.m in Sources */,
@@ -1977,6 +2030,7 @@
 				DE868DAA1F0DE4AC00FF7FD3 /* BCQueryRefundByIdResp.m in Sources */,
 				DE86887C1F0DD05900FF7FD3 /* QNPHAssetFile.m in Sources */,
 				DE8689E91F0DD0D700FF7FD3 /* QNDnsManager.m in Sources */,
+				DE868E041F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */,
 				DE8687721F0DCE4400FF7FD3 /* AFImageDownloader.m in Sources */,
 				DE8688921F0DD05900FF7FD3 /* QNUploadManager.m in Sources */,
 				DE8685041F0DCC7E00FF7FD3 /* InstallInfo.swift in Sources */,
@@ -1984,6 +2038,7 @@
 				DE868DAC1F0DE4AC00FF7FD3 /* BCQueryRefundsReq.m in Sources */,
 				DE868D961F0DE4AC00FF7FD3 /* BCPayPalVerifyReq.m in Sources */,
 				DE8685131F0DCC7E00FF7FD3 /* AfterSaleInfo.swift in Sources */,
+				DE868E0B1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
 				DE8689FF1F0DD0D700FF7FD3 /* QNTxtResolver.m in Sources */,
 				DE868DCA1F0DE4AC00FF7FD3 /* BCURLRequestSerialization.m in Sources */,
 				DE868DD01F0DE4AC00FF7FD3 /* BCPayCache.m in Sources */,
@@ -2043,6 +2098,7 @@
 				DE86888A1F0DD05900FF7FD3 /* QNFileRecorder.m in Sources */,
 				DE8689E71F0DD0D700FF7FD3 /* QNIpModel.m in Sources */,
 				DE8685151F0DCC7E00FF7FD3 /* BankInfo.swift in Sources */,
+				DE868DFB1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DE868A121F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DE868AD71F0DD1B800FF7FD3 /* NSObject+MJCoding.m in Sources */,
 				DE868D941F0DE4AC00FF7FD3 /* BCPayPalReq.m in Sources */,
