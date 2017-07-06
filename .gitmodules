@@ -16,3 +16,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/MJExtension"]
 	path = GuangFuJie/GuangFuJie/Submodules/MJExtension
 	url = https://github.com/CoderMJLee/MJExtension.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/BeeCloud"]
+	path = GuangFuJie/GuangFuJie/Submodules/BeeCloud
+	url = https://github.com/beecloud/beecloud-ios
