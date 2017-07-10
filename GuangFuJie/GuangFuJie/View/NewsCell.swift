@@ -22,6 +22,9 @@ class NewsCell: UITableViewCell {
         self.newsImageView.setImageWith(URL.init(string: StringUtils.getString(model.titleImage))!)
         self.timeLabel.text = StringUtils.getString(model.createdDate)
         self.contentLabel.text = StringUtils.getString(model.intro)
+        
+        self.contentLabel.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 17))
+        self.timeLabel.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 15))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
