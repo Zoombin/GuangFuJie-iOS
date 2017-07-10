@@ -68,9 +68,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     }
     
     func initView() {
-//        mapView = BMKMapView.init(frame: CGRect(x: 0, y: 50,width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50))
         mapView.zoomLevel = 14
-//        self.view.addSubview(mapView)
     }
     
     override func didReceiveMemoryWarning() {
