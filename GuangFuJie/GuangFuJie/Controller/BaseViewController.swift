@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,18 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func pushViewController(_ to : UIViewController, animation: Bool? = true) {
+        to.hidesBottomBarWhenPushed = true
+        let image = UIImage(named: "ic_back")
+        to.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.backButtonClicked))
+        //注意: 加了这一句，自定义的返回按钮也可以用滑动返回了...
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.pushViewController(to, animated: animation!)
+    }
+    
+    func backButtonClicked() {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation

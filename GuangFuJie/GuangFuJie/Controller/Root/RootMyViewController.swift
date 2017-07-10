@@ -15,6 +15,11 @@ class RootMyViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
