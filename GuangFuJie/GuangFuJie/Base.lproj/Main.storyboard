@@ -36,13 +36,23 @@
                     <view key="view" contentMode="scaleToFill" id="DC7-5X-dHo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ytm-Qx-wSX" customClass="BMKMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="屋顶地图" image="ic_tab_map" selectedImage="ic_tab_map_hl" id="u6X-jJ-RVb"/>
+                    <connections>
+                        <outlet property="mapView" destination="Ytm-Qx-wSX" id="6Gs-8x-hMV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgF-Pc-rkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-882" y="-56"/>
+            <point key="canvasLocation" x="-882.39999999999998" y="-56.221889055472268"/>
         </scene>
         <!--资讯-->
         <scene sceneID="Xyy-0A-K1O">

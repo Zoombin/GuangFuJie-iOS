@@ -9,14 +9,39 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
 
     var window: UIWindow?
-
+    var mapManager = BMKMapManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initSDK()
         return true
+    }
+    
+    func initSDK() {
+        let ret = mapManager.start(Constants.baiduMapKey, generalDelegate: self)
+        if (!ret) {
+            print("manager start failed!")
+        }
+        // Override point for customization after application launch.
+        IQKeyboardManager.sharedManager().enable = true
+        
+        if (!Constants.isSandBox) {
+            MobClick.setCrashReportEnabled(true)
+            MobClick.setLogEnabled(true)
+            MobClick.setAppVersion(PhoneUtils.appVersion)
+            MobClick.start(withAppkey: Constants.umAppKey)
+            MobClick.updateOnlineConfig()
+        }
+        
+        UMSocialData.setAppKey(Constants.umAppKey)
+        UMSocialWechatHandler.setWXAppId(Constants.wexinAppKey, appSecret: Constants.wexinAppSecret, url: "http://www.umeng.com/social")
+        
+        //支付
+        BeeCloud.initWithAppID(Constants.payKey, andAppSecret: Constants.paySecret, sandbox: Constants.isSandBox)
+        BeeCloud.initWeChatPay(Constants.wexinAppKey)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
