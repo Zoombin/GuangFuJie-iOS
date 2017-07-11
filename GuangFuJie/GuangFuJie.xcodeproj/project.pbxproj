@@ -20,6 +20,86 @@
 		DE3952261F14626F00A44740 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952241F14626F00A44740 /* ProviceCityViewController.swift */; };
 		DE3952281F14629100A44740 /* CalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952271F14629100A44740 /* CalResultViewController.swift */; };
 		DE3952291F14629100A44740 /* CalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952271F14629100A44740 /* CalResultViewController.swift */; };
+		DE3953E91F1468CB00A44740 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953891F1468CB00A44740 /* DACircularProgressView.m */; };
+		DE3953EA1F1468CB00A44740 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953891F1468CB00A44740 /* DACircularProgressView.m */; };
+		DE3953EB1F1468CB00A44740 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39538B1F1468CB00A44740 /* DALabeledCircularProgressView.m */; };
+		DE3953EC1F1468CB00A44740 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39538B1F1468CB00A44740 /* DALabeledCircularProgressView.m */; };
+		DE3953ED1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39538E1F1468CB00A44740 /* NSData+ImageContentType.m */; };
+		DE3953EE1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39538E1F1468CB00A44740 /* NSData+ImageContentType.m */; };
+		DE3953EF1F1468CB00A44740 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953901F1468CB00A44740 /* SDImageCache.m */; };
+		DE3953F01F1468CB00A44740 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953901F1468CB00A44740 /* SDImageCache.m */; };
+		DE3953F11F1468CB00A44740 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953921F1468CB00A44740 /* SDWebImageCompat.m */; };
+		DE3953F21F1468CB00A44740 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953921F1468CB00A44740 /* SDWebImageCompat.m */; };
+		DE3953F31F1468CB00A44740 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953941F1468CB00A44740 /* SDWebImageDecoder.m */; };
+		DE3953F41F1468CB00A44740 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953941F1468CB00A44740 /* SDWebImageDecoder.m */; };
+		DE3953F51F1468CB00A44740 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953961F1468CB00A44740 /* SDWebImageDownloader.m */; };
+		DE3953F61F1468CB00A44740 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953961F1468CB00A44740 /* SDWebImageDownloader.m */; };
+		DE3953F71F1468CB00A44740 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953981F1468CB00A44740 /* SDWebImageDownloaderOperation.m */; };
+		DE3953F81F1468CB00A44740 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953981F1468CB00A44740 /* SDWebImageDownloaderOperation.m */; };
+		DE3953F91F1468CB00A44740 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39539A1F1468CB00A44740 /* SDWebImageManager.m */; };
+		DE3953FA1F1468CB00A44740 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39539A1F1468CB00A44740 /* SDWebImageManager.m */; };
+		DE3953FB1F1468CB00A44740 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39539D1F1468CB00A44740 /* SDWebImagePrefetcher.m */; };
+		DE3953FC1F1468CB00A44740 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39539D1F1468CB00A44740 /* SDWebImagePrefetcher.m */; };
+		DE3953FD1F1468CB00A44740 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39539F1F1468CB00A44740 /* UIButton+WebCache.m */; };
+		DE3953FE1F1468CB00A44740 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39539F1F1468CB00A44740 /* UIButton+WebCache.m */; };
+		DE3953FF1F1468CB00A44740 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A11F1468CB00A44740 /* UIImage+GIF.m */; };
+		DE3954001F1468CB00A44740 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A11F1468CB00A44740 /* UIImage+GIF.m */; };
+		DE3954011F1468CB00A44740 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A31F1468CB00A44740 /* UIImage+MultiFormat.m */; };
+		DE3954021F1468CB00A44740 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A31F1468CB00A44740 /* UIImage+MultiFormat.m */; };
+		DE3954031F1468CB00A44740 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A51F1468CB00A44740 /* UIImageView+HighlightedWebCache.m */; };
+		DE3954041F1468CB00A44740 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A51F1468CB00A44740 /* UIImageView+HighlightedWebCache.m */; };
+		DE3954051F1468CB00A44740 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A71F1468CB00A44740 /* UIImageView+WebCache.m */; };
+		DE3954061F1468CB00A44740 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A71F1468CB00A44740 /* UIImageView+WebCache.m */; };
+		DE3954071F1468CB00A44740 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A91F1468CB00A44740 /* UIView+WebCacheOperation.m */; };
+		DE3954081F1468CB00A44740 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953A91F1468CB00A44740 /* UIView+WebCacheOperation.m */; };
+		DE3954091F1468CB00A44740 /* UIImage+ZLPhotoLib.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953AF1F1468CB00A44740 /* UIImage+ZLPhotoLib.m */; };
+		DE39540A1F1468CB00A44740 /* UIImage+ZLPhotoLib.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953AF1F1468CB00A44740 /* UIImage+ZLPhotoLib.m */; };
+		DE39540B1F1468CB00A44740 /* UIView+ZLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953B11F1468CB00A44740 /* UIView+ZLExtension.m */; };
+		DE39540C1F1468CB00A44740 /* UIView+ZLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953B11F1468CB00A44740 /* UIView+ZLExtension.m */; };
+		DE39540D1F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953B81F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m */; };
+		DE39540E1F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953B81F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m */; };
+		DE39540F1F1468CB00A44740 /* ZLPhotoRect.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953BA1F1468CB00A44740 /* ZLPhotoRect.m */; };
+		DE3954101F1468CB00A44740 /* ZLPhotoRect.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953BA1F1468CB00A44740 /* ZLPhotoRect.m */; };
+		DE3954111F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953BD1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m */; };
+		DE3954121F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953BD1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m */; };
+		DE3954131F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953BF1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m */; };
+		DE3954141F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953BF1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m */; };
+		DE3954151F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953C21F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m */; };
+		DE3954161F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953C21F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m */; };
+		DE3954171F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953C41F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m */; };
+		DE3954181F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953C41F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m */; };
+		DE3954191F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953C61F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m */; };
+		DE39541A1F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953C61F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m */; };
+		DE39541B1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953C81F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m */; };
+		DE39541C1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953C81F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m */; };
+		DE39541D1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953CC1F1468CB00A44740 /* ZLPhotoAssets.m */; };
+		DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953CC1F1468CB00A44740 /* ZLPhotoAssets.m */; };
+		DE39541F1F1468CB00A44740 /* ZLPhotoPickerDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953CE1F1468CB00A44740 /* ZLPhotoPickerDatas.m */; };
+		DE3954201F1468CB00A44740 /* ZLPhotoPickerDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953CE1F1468CB00A44740 /* ZLPhotoPickerDatas.m */; };
+		DE3954211F1468CB00A44740 /* ZLPhotoPickerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D01F1468CB00A44740 /* ZLPhotoPickerGroup.m */; };
+		DE3954221F1468CB00A44740 /* ZLPhotoPickerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D01F1468CB00A44740 /* ZLPhotoPickerGroup.m */; };
+		DE3954231F1468CB00A44740 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D31F1468CB00A44740 /* UIViewController+Alert.m */; };
+		DE3954241F1468CB00A44740 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D31F1468CB00A44740 /* UIViewController+Alert.m */; };
+		DE3954251F1468CB00A44740 /* ZLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D51F1468CB00A44740 /* ZLNavigationController.m */; };
+		DE3954261F1468CB00A44740 /* ZLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D51F1468CB00A44740 /* ZLNavigationController.m */; };
+		DE3954271F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D71F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m */; };
+		DE3954281F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D71F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m */; };
+		DE3954291F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D91F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m */; };
+		DE39542A1F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953D91F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m */; };
+		DE39542B1F1468CB00A44740 /* ZLPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953DB1F1468CB00A44740 /* ZLPhotoPickerViewController.m */; };
+		DE39542C1F1468CB00A44740 /* ZLPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953DB1F1468CB00A44740 /* ZLPhotoPickerViewController.m */; };
+		DE39542D1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953DE1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m */; };
+		DE39542E1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953DE1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m */; };
+		DE39542F1F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E01F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m */; };
+		DE3954301F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E01F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m */; };
+		DE3954311F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E21F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m */; };
+		DE3954321F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E21F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m */; };
+		DE3954331F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E41F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m */; };
+		DE3954341F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E41F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m */; };
+		DE3954351F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E61F1468CB00A44740 /* ZLPhotoPickerImageView.m */; };
+		DE3954361F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E61F1468CB00A44740 /* ZLPhotoPickerImageView.m */; };
+		DE3954371F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */; };
+		DE3954381F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
@@ -642,6 +722,88 @@
 		DE3952211F14622500A44740 /* GFJBottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJBottomButton.swift; sourceTree = "<group>"; };
 		DE3952241F14626F00A44740 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
 		DE3952271F14629100A44740 /* CalResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultViewController.swift; sourceTree = "<group>"; };
+		DE3953881F1468CB00A44740 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		DE3953891F1468CB00A44740 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		DE39538A1F1468CB00A44740 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
+		DE39538B1F1468CB00A44740 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		DE39538D1F1468CB00A44740 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		DE39538E1F1468CB00A44740 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		DE39538F1F1468CB00A44740 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		DE3953901F1468CB00A44740 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		DE3953911F1468CB00A44740 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		DE3953921F1468CB00A44740 /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		DE3953931F1468CB00A44740 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		DE3953941F1468CB00A44740 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		DE3953951F1468CB00A44740 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		DE3953961F1468CB00A44740 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		DE3953971F1468CB00A44740 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		DE3953981F1468CB00A44740 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		DE3953991F1468CB00A44740 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		DE39539A1F1468CB00A44740 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		DE39539B1F1468CB00A44740 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		DE39539C1F1468CB00A44740 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		DE39539D1F1468CB00A44740 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		DE39539E1F1468CB00A44740 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		DE39539F1F1468CB00A44740 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		DE3953A01F1468CB00A44740 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		DE3953A11F1468CB00A44740 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		DE3953A21F1468CB00A44740 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		DE3953A31F1468CB00A44740 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		DE3953A41F1468CB00A44740 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		DE3953A51F1468CB00A44740 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		DE3953A61F1468CB00A44740 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		DE3953A71F1468CB00A44740 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		DE3953A81F1468CB00A44740 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		DE3953A91F1468CB00A44740 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		DE3953AE1F1468CB00A44740 /* UIImage+ZLPhotoLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZLPhotoLib.h"; sourceTree = "<group>"; };
+		DE3953AF1F1468CB00A44740 /* UIImage+ZLPhotoLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZLPhotoLib.m"; sourceTree = "<group>"; };
+		DE3953B01F1468CB00A44740 /* UIView+ZLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLExtension.h"; sourceTree = "<group>"; };
+		DE3953B11F1468CB00A44740 /* UIView+ZLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZLExtension.m"; sourceTree = "<group>"; };
+		DE3953B41F1468CB00A44740 /* ZLPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhoto.h; sourceTree = "<group>"; };
+		DE3953B71F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhoto.h; sourceTree = "<group>"; };
+		DE3953B81F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserPhoto.m; sourceTree = "<group>"; };
+		DE3953B91F1468CB00A44740 /* ZLPhotoRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoRect.h; sourceTree = "<group>"; };
+		DE3953BA1F1468CB00A44740 /* ZLPhotoRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoRect.m; sourceTree = "<group>"; };
+		DE3953BC1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.h"; sourceTree = "<group>"; };
+		DE3953BD1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m"; sourceTree = "<group>"; };
+		DE3953BE1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserViewController.h; sourceTree = "<group>"; };
+		DE3953BF1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserViewController.m; sourceTree = "<group>"; };
+		DE3953C11F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhotoImageView.h; sourceTree = "<group>"; };
+		DE3953C21F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserPhotoImageView.m; sourceTree = "<group>"; };
+		DE3953C31F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhotoScrollView.h; sourceTree = "<group>"; };
+		DE3953C41F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserPhotoScrollView.m; sourceTree = "<group>"; };
+		DE3953C51F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhotoView.h; sourceTree = "<group>"; };
+		DE3953C61F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserPhotoView.m; sourceTree = "<group>"; };
+		DE3953C71F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCustomToolBarView.h; sourceTree = "<group>"; };
+		DE3953C81F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerCustomToolBarView.m; sourceTree = "<group>"; };
+		DE3953CB1F1468CB00A44740 /* ZLPhotoAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoAssets.h; sourceTree = "<group>"; };
+		DE3953CC1F1468CB00A44740 /* ZLPhotoAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoAssets.m; sourceTree = "<group>"; };
+		DE3953CD1F1468CB00A44740 /* ZLPhotoPickerDatas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerDatas.h; sourceTree = "<group>"; };
+		DE3953CE1F1468CB00A44740 /* ZLPhotoPickerDatas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerDatas.m; sourceTree = "<group>"; };
+		DE3953CF1F1468CB00A44740 /* ZLPhotoPickerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerGroup.h; sourceTree = "<group>"; };
+		DE3953D01F1468CB00A44740 /* ZLPhotoPickerGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerGroup.m; sourceTree = "<group>"; };
+		DE3953D21F1468CB00A44740 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		DE3953D31F1468CB00A44740 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
+		DE3953D41F1468CB00A44740 /* ZLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLNavigationController.h; sourceTree = "<group>"; };
+		DE3953D51F1468CB00A44740 /* ZLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLNavigationController.m; sourceTree = "<group>"; };
+		DE3953D61F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerAssetsViewController.h; sourceTree = "<group>"; };
+		DE3953D71F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerAssetsViewController.m; sourceTree = "<group>"; };
+		DE3953D81F1468CB00A44740 /* ZLPhotoPickerGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerGroupViewController.h; sourceTree = "<group>"; };
+		DE3953D91F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerGroupViewController.m; sourceTree = "<group>"; };
+		DE3953DA1F1468CB00A44740 /* ZLPhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerViewController.h; sourceTree = "<group>"; };
+		DE3953DB1F1468CB00A44740 /* ZLPhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerViewController.m; sourceTree = "<group>"; };
+		DE3953DD1F1468CB00A44740 /* ZLPhotoPickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCollectionView.h; sourceTree = "<group>"; };
+		DE3953DE1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerCollectionView.m; sourceTree = "<group>"; };
+		DE3953DF1F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCollectionViewCell.h; sourceTree = "<group>"; };
+		DE3953E01F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerCollectionViewCell.m; sourceTree = "<group>"; };
+		DE3953E11F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		DE3953E21F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		DE3953E31F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerGroupTableViewCell.h; sourceTree = "<group>"; };
+		DE3953E41F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerGroupTableViewCell.m; sourceTree = "<group>"; };
+		DE3953E51F1468CB00A44740 /* ZLPhotoPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerImageView.h; sourceTree = "<group>"; };
+		DE3953E61F1468CB00A44740 /* ZLPhotoPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerImageView.m; sourceTree = "<group>"; };
+		DE3953E71F1468CB00A44740 /* ZLPhotoPickerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCommon.h; sourceTree = "<group>"; };
+		DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLPhotoLib.bundle; sourceTree = "<group>"; };
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1154,6 +1316,231 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE39522A1F1468B400A44740 /* ZLPhotoLib */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953861F1468CB00A44740 /* ThreePart */,
+				DE3953AA1F1468CB00A44740 /* ZLPhotoLib */,
+			);
+			path = ZLPhotoLib;
+			sourceTree = "<group>";
+		};
+		DE3953861F1468CB00A44740 /* ThreePart */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953871F1468CB00A44740 /* DACircularProgress */,
+				DE39538C1F1468CB00A44740 /* SDWebImage */,
+			);
+			path = ThreePart;
+			sourceTree = "<group>";
+		};
+		DE3953871F1468CB00A44740 /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953881F1468CB00A44740 /* DACircularProgressView.h */,
+				DE3953891F1468CB00A44740 /* DACircularProgressView.m */,
+				DE39538A1F1468CB00A44740 /* DALabeledCircularProgressView.h */,
+				DE39538B1F1468CB00A44740 /* DALabeledCircularProgressView.m */,
+			);
+			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
+		DE39538C1F1468CB00A44740 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				DE39538D1F1468CB00A44740 /* NSData+ImageContentType.h */,
+				DE39538E1F1468CB00A44740 /* NSData+ImageContentType.m */,
+				DE39538F1F1468CB00A44740 /* SDImageCache.h */,
+				DE3953901F1468CB00A44740 /* SDImageCache.m */,
+				DE3953911F1468CB00A44740 /* SDWebImageCompat.h */,
+				DE3953921F1468CB00A44740 /* SDWebImageCompat.m */,
+				DE3953931F1468CB00A44740 /* SDWebImageDecoder.h */,
+				DE3953941F1468CB00A44740 /* SDWebImageDecoder.m */,
+				DE3953951F1468CB00A44740 /* SDWebImageDownloader.h */,
+				DE3953961F1468CB00A44740 /* SDWebImageDownloader.m */,
+				DE3953971F1468CB00A44740 /* SDWebImageDownloaderOperation.h */,
+				DE3953981F1468CB00A44740 /* SDWebImageDownloaderOperation.m */,
+				DE3953991F1468CB00A44740 /* SDWebImageManager.h */,
+				DE39539A1F1468CB00A44740 /* SDWebImageManager.m */,
+				DE39539B1F1468CB00A44740 /* SDWebImageOperation.h */,
+				DE39539C1F1468CB00A44740 /* SDWebImagePrefetcher.h */,
+				DE39539D1F1468CB00A44740 /* SDWebImagePrefetcher.m */,
+				DE39539E1F1468CB00A44740 /* UIButton+WebCache.h */,
+				DE39539F1F1468CB00A44740 /* UIButton+WebCache.m */,
+				DE3953A01F1468CB00A44740 /* UIImage+GIF.h */,
+				DE3953A11F1468CB00A44740 /* UIImage+GIF.m */,
+				DE3953A21F1468CB00A44740 /* UIImage+MultiFormat.h */,
+				DE3953A31F1468CB00A44740 /* UIImage+MultiFormat.m */,
+				DE3953A41F1468CB00A44740 /* UIImageView+HighlightedWebCache.h */,
+				DE3953A51F1468CB00A44740 /* UIImageView+HighlightedWebCache.m */,
+				DE3953A61F1468CB00A44740 /* UIImageView+WebCache.h */,
+				DE3953A71F1468CB00A44740 /* UIImageView+WebCache.m */,
+				DE3953A81F1468CB00A44740 /* UIView+WebCacheOperation.h */,
+				DE3953A91F1468CB00A44740 /* UIView+WebCacheOperation.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		DE3953AA1F1468CB00A44740 /* ZLPhotoLib */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953AB1F1468CB00A44740 /* Classes */,
+				DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */,
+			);
+			path = ZLPhotoLib;
+			sourceTree = "<group>";
+		};
+		DE3953AB1F1468CB00A44740 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953AC1F1468CB00A44740 /* Utils */,
+				DE3953B41F1468CB00A44740 /* ZLPhoto.h */,
+				DE3953B51F1468CB00A44740 /* ZLPhotoBrowser */,
+				DE3953C91F1468CB00A44740 /* ZLPhotoPicker */,
+				DE3953E71F1468CB00A44740 /* ZLPhotoPickerCommon.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DE3953AC1F1468CB00A44740 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953AD1F1468CB00A44740 /* Category */,
+				DE3953B21F1468CB00A44740 /* Resource */,
+				DE3953B31F1468CB00A44740 /* Views */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE3953AD1F1468CB00A44740 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953AE1F1468CB00A44740 /* UIImage+ZLPhotoLib.h */,
+				DE3953AF1F1468CB00A44740 /* UIImage+ZLPhotoLib.m */,
+				DE3953B01F1468CB00A44740 /* UIView+ZLExtension.h */,
+				DE3953B11F1468CB00A44740 /* UIView+ZLExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DE3953B21F1468CB00A44740 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DE3953B31F1468CB00A44740 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE3953B51F1468CB00A44740 /* ZLPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953B61F1468CB00A44740 /* Models */,
+				DE3953BB1F1468CB00A44740 /* ViewControllers */,
+				DE3953C01F1468CB00A44740 /* Views */,
+			);
+			path = ZLPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		DE3953B61F1468CB00A44740 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953B71F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.h */,
+				DE3953B81F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m */,
+				DE3953B91F1468CB00A44740 /* ZLPhotoRect.h */,
+				DE3953BA1F1468CB00A44740 /* ZLPhotoRect.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE3953BB1F1468CB00A44740 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953BC1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.h */,
+				DE3953BD1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m */,
+				DE3953BE1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.h */,
+				DE3953BF1F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DE3953C01F1468CB00A44740 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953C11F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.h */,
+				DE3953C21F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m */,
+				DE3953C31F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.h */,
+				DE3953C41F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m */,
+				DE3953C51F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.h */,
+				DE3953C61F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m */,
+				DE3953C71F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.h */,
+				DE3953C81F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE3953C91F1468CB00A44740 /* ZLPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953CA1F1468CB00A44740 /* Models */,
+				DE3953D11F1468CB00A44740 /* ViewControllers */,
+				DE3953DC1F1468CB00A44740 /* Views */,
+			);
+			path = ZLPhotoPicker;
+			sourceTree = "<group>";
+		};
+		DE3953CA1F1468CB00A44740 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953CB1F1468CB00A44740 /* ZLPhotoAssets.h */,
+				DE3953CC1F1468CB00A44740 /* ZLPhotoAssets.m */,
+				DE3953CD1F1468CB00A44740 /* ZLPhotoPickerDatas.h */,
+				DE3953CE1F1468CB00A44740 /* ZLPhotoPickerDatas.m */,
+				DE3953CF1F1468CB00A44740 /* ZLPhotoPickerGroup.h */,
+				DE3953D01F1468CB00A44740 /* ZLPhotoPickerGroup.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE3953D11F1468CB00A44740 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953D21F1468CB00A44740 /* UIViewController+Alert.h */,
+				DE3953D31F1468CB00A44740 /* UIViewController+Alert.m */,
+				DE3953D41F1468CB00A44740 /* ZLNavigationController.h */,
+				DE3953D51F1468CB00A44740 /* ZLNavigationController.m */,
+				DE3953D61F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.h */,
+				DE3953D71F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m */,
+				DE3953D81F1468CB00A44740 /* ZLPhotoPickerGroupViewController.h */,
+				DE3953D91F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m */,
+				DE3953DA1F1468CB00A44740 /* ZLPhotoPickerViewController.h */,
+				DE3953DB1F1468CB00A44740 /* ZLPhotoPickerViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DE3953DC1F1468CB00A44740 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE3953DD1F1468CB00A44740 /* ZLPhotoPickerCollectionView.h */,
+				DE3953DE1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m */,
+				DE3953DF1F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.h */,
+				DE3953E01F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m */,
+				DE3953E11F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.h */,
+				DE3953E21F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m */,
+				DE3953E31F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.h */,
+				DE3953E41F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m */,
+				DE3953E51F1468CB00A44740 /* ZLPhotoPickerImageView.h */,
+				DE3953E61F1468CB00A44740 /* ZLPhotoPickerImageView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DE8683D41F0DC92B00FF7FD3 = {
 			isa = PBXGroup;
 			children = (
@@ -1296,6 +1683,7 @@
 		DE86843C1F0DCA8F00FF7FD3 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				DE39522A1F1468B400A44740 /* ZLPhotoLib */,
 				DEC227001F136624007D6DBE /* IQKeyboardManager */,
 				DEC2212F1F13600F007D6DBE /* MJRefresh */,
 				DE868B0D1F0DE49900FF7FD3 /* BeeCloud */,
@@ -2461,6 +2849,7 @@
 				DEC226D11F136363007D6DBE /* UMShareEditViewController.xib in Resources */,
 				DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */,
 				DE868DDD1F0DE4AC00FF7FD3 /* BeeCloud.bundle in Resources */,
+				DE3954371F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */,
 				DEC226D91F136363007D6DBE /* UMSShareListController.xib in Resources */,
 				DEC226CB1F136363007D6DBE /* UMSCommentDetailController.xib in Resources */,
 				DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */,
@@ -2475,6 +2864,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3954381F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */,
 				DEC221241F131577007D6DBE /* CustomImages.xcassets in Resources */,
 				DEC226D81F136363007D6DBE /* UMSnsAccountViewController.xib in Resources */,
 				DE8684301F0DC9DE00FF7FD3 /* LaunchScreen.storyboard in Resources */,
@@ -2518,7 +2908,10 @@
 				DE868DC11F0DE4AC00FF7FD3 /* BCSubscriptionQuery.m in Sources */,
 				DE868AD41F0DD1B800FF7FD3 /* NSObject+MJClass.m in Sources */,
 				DE868DB11F0DE4AC00FF7FD3 /* BCQueryRefundsCountResp.m in Sources */,
+				DE3954311F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
+				DE3953E91F1468CB00A44740 /* DACircularProgressView.m in Sources */,
 				DE8688791F0DD05900FF7FD3 /* QNFile.m in Sources */,
+				DE3954251F1468CB00A44740 /* ZLNavigationController.m in Sources */,
 				DEC229891F136636007D6DBE /* IQNSArray+Sort.swift in Sources */,
 				DEC2225A1F13601E007D6DBE /* UIScrollView+MJExtension.m in Sources */,
 				DEC2299B1F136636007D6DBE /* IQKeyboardReturnKeyHandler.swift in Sources */,
@@ -2529,6 +2922,7 @@
 				DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DE868A081F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DE868DA51F0DE4AC00FF7FD3 /* BCQueryBillsCountResp.m in Sources */,
+				DE3954191F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
 				DEC2225C1F13601E007D6DBE /* UIScrollView+MJRefresh.m in Sources */,
 				DE868DD31F0DE4AC00FF7FD3 /* BeeCloud+Utils.m in Sources */,
 				DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
@@ -2536,11 +2930,15 @@
 				DE868D8D1F0DE4AC00FF7FD3 /* BCBaseResp.m in Sources */,
 				DE868D851F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
 				DE868DC71F0DE4AC00FF7FD3 /* BCSecurityPolicy.m in Sources */,
+				DE3954351F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */,
 				DE868D9B1F0DE4AC00FF7FD3 /* BCQueryBillByIdReq.m in Sources */,
+				DE39542D1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m in Sources */,
+				DE3954211F1468CB00A44740 /* ZLPhotoPickerGroup.m in Sources */,
 				DEC222381F13601E007D6DBE /* MJRefreshAutoFooter.m in Sources */,
 				DE86888F1F0DD05900FF7FD3 /* QNResumeUpload.m in Sources */,
 				DE8688831F0DD05900FF7FD3 /* QNResponseInfo.m in Sources */,
 				DE868D691F0DE4AC00FF7FD3 /* AliPayAdapter.m in Sources */,
+				DE39540B1F1468CB00A44740 /* UIView+ZLExtension.m in Sources */,
 				DE86876B1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
 				DE868E071F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
 				DE868DBF1F0DE4AC00FF7FD3 /* BCSubscription.m in Sources */,
@@ -2552,6 +2950,7 @@
 				DE868ACE1F0DD1B800FF7FD3 /* MJProperty.m in Sources */,
 				DEC229A31F136636007D6DBE /* IQTitleBarButtonItem.swift in Sources */,
 				DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
+				DE3953FB1F1468CB00A44740 /* SDWebImagePrefetcher.m in Sources */,
 				DE8688951F0DD05900FF7FD3 /* QNUpToken.m in Sources */,
 				DE868DD11F0DE4AC00FF7FD3 /* BCPayUtil.m in Sources */,
 				DEC2224C1F13601E007D6DBE /* MJRefreshBackStateFooter.m in Sources */,
@@ -2559,23 +2958,29 @@
 				DE868A041F0DD0D700FF7FD3 /* QNGetAddrInfo.m in Sources */,
 				DE8684EB1F0DCC7900FF7FD3 /* InsuranceInfo.swift in Sources */,
 				DE868A151F0DD11800FF7FD3 /* UIViewController+HUD.m in Sources */,
+				DE3954051F1468CB00A44740 /* UIImageView+WebCache.m in Sources */,
 				DE3952281F14629100A44740 /* CalResultViewController.swift in Sources */,
 				DE39521B1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
 				DEC222441F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE868D971F0DE4AC00FF7FD3 /* BCPreRefundReq.m in Sources */,
+				DE3954111F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
 				DE8688851F0DD05900FF7FD3 /* QNSessionManager.m in Sources */,
 				DE3952221F14622500A44740 /* GFJBottomButton.swift in Sources */,
 				DE86877D1F0DCE4400FF7FD3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DE868DAF1F0DE4AC00FF7FD3 /* BCQueryRefundsCountReq.m in Sources */,
 				DE8688711F0DD05900FF7FD3 /* QNALAssetFile.m in Sources */,
+				DE3954231F1468CB00A44740 /* UIViewController+Alert.m in Sources */,
 				DE868DAD1F0DE4AC00FF7FD3 /* BCQueryRefundsResp.m in Sources */,
 				DE868AD21F0DD1B800FF7FD3 /* MJPropertyType.m in Sources */,
 				DE8689F81F0DD0D700FF7FD3 /* QNHosts.m in Sources */,
+				DE39540D1F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
+				DE3954131F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				DE868D871F0DE4AC00FF7FD3 /* BeeCloud.m in Sources */,
 				DE8687751F0DCE4400FF7FD3 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DE868DBD1F0DE4AC00FF7FD3 /* BCNewSubscription.m in Sources */,
 				DE8687631F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */,
 				DE8684F41F0DCC7900FF7FD3 /* CommonModel.swift in Sources */,
+				DE39540F1F1468CB00A44740 /* ZLPhotoRect.m in Sources */,
 				DE868E031F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */,
 				DE8687791F0DCE4400FF7FD3 /* UIImageView+AFNetworking.m in Sources */,
 				DE8689FA1F0DD0D700FF7FD3 /* QNResolver.m in Sources */,
@@ -2585,11 +2990,13 @@
 				DE8689EE1F0DD0D700FF7FD3 /* QNNetworkInfo.m in Sources */,
 				DE868D8B1F0DE4AC00FF7FD3 /* BCBaseReq.m in Sources */,
 				DE868DD91F0DE4AC00FF7FD3 /* BeeCloudAdapter.m in Sources */,
+				DE3953F91F1468CB00A44740 /* SDWebImageManager.m in Sources */,
 				DEC2223C1F13601E007D6DBE /* MJRefreshComponent.m in Sources */,
 				DEC222501F13601E007D6DBE /* MJRefreshNormalHeader.m in Sources */,
 				DE8687771F0DCE4400FF7FD3 /* UIButton+AFNetworking.m in Sources */,
 				DE3952251F14626F00A44740 /* ProviceCityViewController.swift in Sources */,
 				DE39521E1F14619E00A44740 /* Colors.swift in Sources */,
+				DE3954011F1468CB00A44740 /* UIImage+MultiFormat.m in Sources */,
 				DE8684F11F0DCC7900FF7FD3 /* RoofInfo.swift in Sources */,
 				DEC2225E1F13601E007D6DBE /* UIView+MJExtension.m in Sources */,
 				DEC229951F136636007D6DBE /* IQKeyboardManagerConstants.swift in Sources */,
@@ -2608,6 +3015,7 @@
 				DEC2243B1F136362007D6DBE /* ApiXml.mm in Sources */,
 				DEC2298B1F136636007D6DBE /* IQUIScrollView+Additions.swift in Sources */,
 				DE8684EC1F0DCC7900FF7FD3 /* InstallInfo.swift in Sources */,
+				DE39541B1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				DE86887F1F0DD05900FF7FD3 /* QNSystem.m in Sources */,
 				DE868DAB1F0DE4AC00FF7FD3 /* BCQueryRefundsReq.m in Sources */,
 				DEC222521F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
@@ -2619,16 +3027,22 @@
 				DE868DCF1F0DE4AC00FF7FD3 /* BCPayCache.m in Sources */,
 				DE868A061F0DD0D700FF7FD3 /* QNHex.m in Sources */,
 				DE86888D1F0DD05900FF7FD3 /* QNFormUpload.m in Sources */,
+				DE39541F1F1468CB00A44740 /* ZLPhotoPickerDatas.m in Sources */,
 				DE8688731F0DD05900FF7FD3 /* QNAsyncRun.m in Sources */,
 				DE868DB51F0DE4AC00FF7FD3 /* BCRefundStatusResp.m in Sources */,
 				DE8687671F0DCE4400FF7FD3 /* AFSecurityPolicy.m in Sources */,
 				DE86886F1F0DD05900FF7FD3 /* QN_GTM_Base64.m in Sources */,
 				DE868ACC1F0DD1B800FF7FD3 /* MJFoundation.m in Sources */,
 				DE8689F01F0DD0D700FF7FD3 /* QNRecord.m in Sources */,
+				DE3953F11F1468CB00A44740 /* SDWebImageCompat.m in Sources */,
 				DE86877B1F0DCE4400FF7FD3 /* UIProgressView+AFNetworking.m in Sources */,
 				DE86888B1F0DD05900FF7FD3 /* QNConfiguration.m in Sources */,
+				DE3953F51F1468CB00A44740 /* SDWebImageDownloader.m in Sources */,
 				DE868AD01F0DD1B800FF7FD3 /* MJPropertyKey.m in Sources */,
+				DE3954331F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				DE8684F91F0DCC7900FF7FD3 /* ProvinceModel.swift in Sources */,
+				DE3954171F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
+				DE3953F31F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
 				DE8684E81F0DCC7900FF7FD3 /* InsuranceDetail.swift in Sources */,
 				DE868DC51F0DE4AC00FF7FD3 /* BCNetworkReachabilityManager.m in Sources */,
 				DE8687831F0DCEBB00FF7FD3 /* Constants.swift in Sources */,
@@ -2646,10 +3060,12 @@
 				DE8684FE1F0DCC7900FF7FD3 /* AppModel.swift in Sources */,
 				DE868DB31F0DE4AC00FF7FD3 /* BCRefundStatusReq.m in Sources */,
 				DE8688771F0DD05900FF7FD3 /* QNEtag.m in Sources */,
+				DE39541D1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DE868D911F0DE4AC00FF7FD3 /* BCPayResp.m in Sources */,
 				DE868ADC1F0DD1B800FF7FD3 /* NSString+MJExtension.m in Sources */,
 				DE86876D1F0DCE4400FF7FD3 /* AFURLSessionManager.m in Sources */,
 				DEC2298D1F136636007D6DBE /* IQUITextFieldView+Additions.swift in Sources */,
+				DE3954031F1468CB00A44740 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DE8688931F0DD05900FF7FD3 /* QNUploadOption.m in Sources */,
 				DE868DD71F0DE4AC00FF7FD3 /* NSString+IsValid.m in Sources */,
 				DE86887D1F0DD05900FF7FD3 /* QNPHAssetResource.m in Sources */,
@@ -2660,25 +3076,33 @@
 				DE868D9D1F0DE4AC00FF7FD3 /* BCQueryBillByIdResp.m in Sources */,
 				DE868DDB1F0DE4AC00FF7FD3 /* BCSandBoxAdapter.m in Sources */,
 				DE8689FC1F0DD0D700FF7FD3 /* QNResolvUtil.m in Sources */,
+				DE39542B1F1468CB00A44740 /* ZLPhotoPickerViewController.m in Sources */,
 				DE868A021F0DD0D700FF7FD3 /* QNDes.m in Sources */,
 				DEC222481F13601E007D6DBE /* MJRefreshBackGifFooter.m in Sources */,
+				DE3954071F1468CB00A44740 /* UIView+WebCacheOperation.m in Sources */,
 				DE8684F61F0DCC7900FF7FD3 /* GetInventerMode.swift in Sources */,
 				DEC2212A1F13585D007D6DBE /* StringUtils.swift in Sources */,
 				DE8684401F0DCADE00FF7FD3 /* API.swift in Sources */,
+				DE39542F1F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				DEC229971F136636007D6DBE /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				DE8684F51F0DCC7900FF7FD3 /* CalcModel.swift in Sources */,
+				DE3953EF1F1468CB00A44740 /* SDImageCache.m in Sources */,
 				DE868DFD1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */,
 				DE8689EA1F0DD0D700FF7FD3 /* QNDomain.m in Sources */,
 				DEC222421F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DE868A001F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
 				DE8684F21F0DCC7900FF7FD3 /* QNResultInfo.swift in Sources */,
+				DE3954091F1468CB00A44740 /* UIImage+ZLPhotoLib.m in Sources */,
 				DE868DCB1F0DE4AC00FF7FD3 /* BCURLResponseSerialization.m in Sources */,
 				DE868DB71F0DE4AC00FF7FD3 /* BCBaseResult.m in Sources */,
 				DEC2224A1F13601E007D6DBE /* MJRefreshBackNormalFooter.m in Sources */,
 				DE8689EC1F0DD0D700FF7FD3 /* QNLruCache.m in Sources */,
 				DE8684EE1F0DCC7900FF7FD3 /* DeviceListInfo.swift in Sources */,
 				DE8687691F0DCE4400FF7FD3 /* AFURLRequestSerialization.m in Sources */,
+				DE3953F71F1468CB00A44740 /* SDWebImageDownloaderOperation.m in Sources */,
+				DE3953EB1F1468CB00A44740 /* DALabeledCircularProgressView.m in Sources */,
 				DE868ADA1F0DD1B800FF7FD3 /* NSObject+MJProperty.m in Sources */,
+				DE3953FF1F1468CB00A44740 /* UIImage+GIF.m in Sources */,
 				DE8687651F0DCE4400FF7FD3 /* AFNetworkReachabilityManager.m in Sources */,
 				DE8689F21F0DD0D700FF7FD3 /* QNDnspodEnterprise.m in Sources */,
 				DE8688891F0DD05900FF7FD3 /* QNFileRecorder.m in Sources */,
@@ -2692,7 +3116,9 @@
 				DE868E0A1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
 				DEC2298F1F136636007D6DBE /* IQUIView+Hierarchy.swift in Sources */,
 				DE868DCD1F0DE4AC00FF7FD3 /* BCURLSessionManager.m in Sources */,
+				DE3954271F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DE868DA71F0DE4AC00FF7FD3 /* BCQueryRefundByIdReq.m in Sources */,
+				DE3953FD1F1468CB00A44740 /* UIButton+WebCache.m in Sources */,
 				DEC229A71F136636007D6DBE /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				DE8684FC1F0DCC7900FF7FD3 /* BookingStatus.swift in Sources */,
 				DE8684411F0DCADE00FF7FD3 /* API+List.swift in Sources */,
@@ -2703,11 +3129,14 @@
 				DE8687731F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE8689F41F0DD0D700FF7FD3 /* QNDnspodFree.m in Sources */,
 				DEC222401F13601E007D6DBE /* MJRefreshHeader.m in Sources */,
+				DE3954151F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
+				DE3953ED1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
 				DE868DBB1F0DE4AC00FF7FD3 /* BCQueryRefundResult.m in Sources */,
 				DE8684F71F0DCC7900FF7FD3 /* PowerGraphInfo.swift in Sources */,
 				DEC224431F136362007D6DBE /* WXApiManager.m in Sources */,
 				DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */,
 				DE8684F81F0DCC7900FF7FD3 /* CityModel.swift in Sources */,
+				DE3954291F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2728,7 +3157,10 @@
 				DE868DB21F0DE4AC00FF7FD3 /* BCQueryRefundsCountResp.m in Sources */,
 				DE86887A1F0DD05900FF7FD3 /* QNFile.m in Sources */,
 				DE8685081F0DCC7E00FF7FD3 /* DeviceInfo.swift in Sources */,
+				DE3954321F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
+				DE3953EA1F1468CB00A44740 /* DACircularProgressView.m in Sources */,
 				DEC2298C1F136636007D6DBE /* IQUIScrollView+Additions.swift in Sources */,
+				DE3954261F1468CB00A44740 /* ZLNavigationController.m in Sources */,
 				DE868AE01F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
 				DEC2224D1F13601E007D6DBE /* MJRefreshBackStateFooter.m in Sources */,
 				DE868DD61F0DE4AC00FF7FD3 /* NSDictionary+Utils.m in Sources */,
@@ -2739,6 +3171,7 @@
 				DE868DD41F0DE4AC00FF7FD3 /* BeeCloud+Utils.m in Sources */,
 				DEC2212B1F13585D007D6DBE /* StringUtils.swift in Sources */,
 				DE868DE81F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
+				DE39541A1F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
 				DE868D8E1F0DE4AC00FF7FD3 /* BCBaseResp.m in Sources */,
 				DE868D861F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
 				DE868DC81F0DE4AC00FF7FD3 /* BCSecurityPolicy.m in Sources */,
@@ -2746,11 +3179,15 @@
 				DE8688901F0DD05900FF7FD3 /* QNResumeUpload.m in Sources */,
 				DE8688841F0DD05900FF7FD3 /* QNResponseInfo.m in Sources */,
 				DE868D6A1F0DE4AC00FF7FD3 /* AliPayAdapter.m in Sources */,
+				DE3954361F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */,
 				DE868E011F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */,
+				DE39542E1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m in Sources */,
+				DE3954221F1468CB00A44740 /* ZLPhotoPickerGroup.m in Sources */,
 				DEC2298E1F136636007D6DBE /* IQUITextFieldView+Additions.swift in Sources */,
 				DE86876C1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
 				DE868DC01F0DE4AC00FF7FD3 /* BCSubscription.m in Sources */,
 				DE8687701F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
+				DE39540C1F1468CB00A44740 /* UIView+ZLExtension.m in Sources */,
 				DE8687801F0DCE4400FF7FD3 /* UIWebView+AFNetworking.m in Sources */,
 				DE868DA01F0DE4AC00FF7FD3 /* BCQueryBillsReq.m in Sources */,
 				DE86850B1F0DCC7E00FF7FD3 /* UserInfo.swift in Sources */,
@@ -2762,6 +3199,7 @@
 				DE868A051F0DD0D700FF7FD3 /* QNGetAddrInfo.m in Sources */,
 				DE8685031F0DCC7E00FF7FD3 /* InsuranceInfo.swift in Sources */,
 				DE868A161F0DD11800FF7FD3 /* UIViewController+HUD.m in Sources */,
+				DE3953FC1F1468CB00A44740 /* SDWebImagePrefetcher.m in Sources */,
 				DEC222571F13601E007D6DBE /* MJRefreshConst.m in Sources */,
 				DE868D981F0DE4AC00FF7FD3 /* BCPreRefundReq.m in Sources */,
 				DEC2299A1F136636007D6DBE /* IQKeyboardManager.swift in Sources */,
@@ -2769,23 +3207,29 @@
 				DE86877E1F0DCE4400FF7FD3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DEC229901F136636007D6DBE /* IQUIView+Hierarchy.swift in Sources */,
 				DE868DB01F0DE4AC00FF7FD3 /* BCQueryRefundsCountReq.m in Sources */,
+				DE3954061F1468CB00A44740 /* UIImageView+WebCache.m in Sources */,
 				DE3952291F14629100A44740 /* CalResultViewController.swift in Sources */,
 				DE39521C1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
 				DE8688721F0DD05900FF7FD3 /* QNALAssetFile.m in Sources */,
 				DEC229A41F136636007D6DBE /* IQTitleBarButtonItem.swift in Sources */,
+				DE3954121F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
 				DE868DAE1F0DE4AC00FF7FD3 /* BCQueryRefundsResp.m in Sources */,
 				DE3952231F14622500A44740 /* GFJBottomButton.swift in Sources */,
 				DE868AD31F0DD1B800FF7FD3 /* MJPropertyType.m in Sources */,
 				DEC2225D1F13601E007D6DBE /* UIScrollView+MJRefresh.m in Sources */,
 				DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
+				DE3954241F1468CB00A44740 /* UIViewController+Alert.m in Sources */,
 				DE8689F91F0DD0D700FF7FD3 /* QNHosts.m in Sources */,
 				DE868DFE1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */,
 				DE868D881F0DE4AC00FF7FD3 /* BeeCloud.m in Sources */,
+				DE39540E1F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
+				DE3954141F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				DE8687761F0DCE4400FF7FD3 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DEC2298A1F136636007D6DBE /* IQNSArray+Sort.swift in Sources */,
 				DEC229961F136636007D6DBE /* IQKeyboardManagerConstants.swift in Sources */,
 				DEC221281F13531B007D6DBE /* NewsCell.swift in Sources */,
 				DEC2223B1F13601E007D6DBE /* MJRefreshBackFooter.m in Sources */,
+				DE3954101F1468CB00A44740 /* ZLPhotoRect.m in Sources */,
 				DE868DBE1F0DE4AC00FF7FD3 /* BCNewSubscription.m in Sources */,
 				DEC222511F13601E007D6DBE /* MJRefreshNormalHeader.m in Sources */,
 				DE8687641F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */,
@@ -2795,11 +3239,13 @@
 				DE8689FB1F0DD0D700FF7FD3 /* QNResolver.m in Sources */,
 				DE868DE01F0DE4AC00FF7FD3 /* PaySandBoxViewController.m in Sources */,
 				DE868A141F0DD11800FF7FD3 /* NSString+AESCrypt.m in Sources */,
+				DE3953FA1F1468CB00A44740 /* SDWebImageManager.m in Sources */,
 				DEC2225F1F13601E007D6DBE /* UIView+MJExtension.m in Sources */,
 				DE8689EF1F0DD0D700FF7FD3 /* QNNetworkInfo.m in Sources */,
 				DE868D8C1F0DE4AC00FF7FD3 /* BCBaseReq.m in Sources */,
 				DE3952261F14626F00A44740 /* ProviceCityViewController.swift in Sources */,
 				DE39521F1F14619E00A44740 /* Colors.swift in Sources */,
+				DE3954021F1468CB00A44740 /* UIImage+MultiFormat.m in Sources */,
 				DE868DDA1F0DE4AC00FF7FD3 /* BeeCloudAdapter.m in Sources */,
 				DE8687781F0DCE4400FF7FD3 /* UIButton+AFNetworking.m in Sources */,
 				DE8685091F0DCC7E00FF7FD3 /* RoofInfo.swift in Sources */,
@@ -2818,6 +3264,7 @@
 				DE8688801F0DD05900FF7FD3 /* QNSystem.m in Sources */,
 				DE868DAC1F0DE4AC00FF7FD3 /* BCQueryRefundsReq.m in Sources */,
 				DE868D961F0DE4AC00FF7FD3 /* BCPayPalVerifyReq.m in Sources */,
+				DE39541C1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				DE8685131F0DCC7E00FF7FD3 /* AfterSaleInfo.swift in Sources */,
 				DE868E0B1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
 				DEC222411F13601E007D6DBE /* MJRefreshHeader.m in Sources */,
@@ -2829,16 +3276,22 @@
 				DE868A071F0DD0D700FF7FD3 /* QNHex.m in Sources */,
 				DEC222391F13601E007D6DBE /* MJRefreshAutoFooter.m in Sources */,
 				DE86888E1F0DD05900FF7FD3 /* QNFormUpload.m in Sources */,
+				DE3954201F1468CB00A44740 /* ZLPhotoPickerDatas.m in Sources */,
 				DE8688741F0DD05900FF7FD3 /* QNAsyncRun.m in Sources */,
 				DE868DB61F0DE4AC00FF7FD3 /* BCRefundStatusResp.m in Sources */,
 				DE8687681F0DCE4400FF7FD3 /* AFSecurityPolicy.m in Sources */,
 				DE8688701F0DD05900FF7FD3 /* QN_GTM_Base64.m in Sources */,
 				DE868ACD1F0DD1B800FF7FD3 /* MJFoundation.m in Sources */,
 				DE8689F11F0DD0D700FF7FD3 /* QNRecord.m in Sources */,
+				DE3953F21F1468CB00A44740 /* SDWebImageCompat.m in Sources */,
 				DE86877C1F0DCE4400FF7FD3 /* UIProgressView+AFNetworking.m in Sources */,
 				DE86888C1F0DD05900FF7FD3 /* QNConfiguration.m in Sources */,
+				DE3953F61F1468CB00A44740 /* SDWebImageDownloader.m in Sources */,
 				DE868AD11F0DD1B800FF7FD3 /* MJPropertyKey.m in Sources */,
+				DE3954341F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				DEC229A21F136636007D6DBE /* IQPreviousNextView.swift in Sources */,
+				DE3954181F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
+				DE3953F41F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
 				DEC224441F136362007D6DBE /* WXApiManager.m in Sources */,
 				DE8685111F0DCC7E00FF7FD3 /* ProvinceModel.swift in Sources */,
 				DE8685001F0DCC7E00FF7FD3 /* InsuranceDetail.swift in Sources */,
@@ -2856,10 +3309,12 @@
 				DE8685161F0DCC7E00FF7FD3 /* AppModel.swift in Sources */,
 				DE868DB41F0DE4AC00FF7FD3 /* BCRefundStatusReq.m in Sources */,
 				DEC222451F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
+				DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DEC222431F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DE8688781F0DD05900FF7FD3 /* QNEtag.m in Sources */,
 				DE868D921F0DE4AC00FF7FD3 /* BCPayResp.m in Sources */,
 				DEC2224B1F13601E007D6DBE /* MJRefreshBackNormalFooter.m in Sources */,
+				DE3954041F1468CB00A44740 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DEC224461F136362007D6DBE /* WXUtil.mm in Sources */,
 				DE868ADD1F0DD1B800FF7FD3 /* NSString+MJExtension.m in Sources */,
 				DE86876E1F0DCE4400FF7FD3 /* AFURLSessionManager.m in Sources */,
@@ -2870,25 +3325,33 @@
 				DE86848A1F0DCAFF00FF7FD3 /* API.swift in Sources */,
 				DE868AE31F0DD23400FF7FD3 /* PhoneUtils.swift in Sources */,
 				DE8688761F0DD05900FF7FD3 /* QNCrc32.m in Sources */,
+				DE39542C1F1468CB00A44740 /* ZLPhotoPickerViewController.m in Sources */,
 				DE868DBA1F0DE4AC00FF7FD3 /* BCQueryBillResult.m in Sources */,
 				DE868D9E1F0DE4AC00FF7FD3 /* BCQueryBillByIdResp.m in Sources */,
+				DE3954081F1468CB00A44740 /* UIView+WebCacheOperation.m in Sources */,
 				DE868DDC1F0DE4AC00FF7FD3 /* BCSandBoxAdapter.m in Sources */,
 				DE8689FD1F0DD0D700FF7FD3 /* QNResolvUtil.m in Sources */,
 				DE868A031F0DD0D700FF7FD3 /* QNDes.m in Sources */,
+				DE3954301F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				DE86850E1F0DCC7E00FF7FD3 /* GetInventerMode.swift in Sources */,
 				DE8684361F0DCA0B00FF7FD3 /* AppDelegate.swift in Sources */,
+				DE3953F01F1468CB00A44740 /* SDImageCache.m in Sources */,
 				DEC226C61F136363007D6DBE /* SPullDownMenuView.m in Sources */,
 				DE86850D1F0DCC7E00FF7FD3 /* CalcModel.swift in Sources */,
 				DEC2243C1F136362007D6DBE /* ApiXml.mm in Sources */,
 				DE8689EB1F0DD0D700FF7FD3 /* QNDomain.m in Sources */,
 				DE868A011F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
+				DE39540A1F1468CB00A44740 /* UIImage+ZLPhotoLib.m in Sources */,
 				DEC229981F136636007D6DBE /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				DEC2223F1F13601E007D6DBE /* MJRefreshFooter.m in Sources */,
 				DE86850A1F0DCC7E00FF7FD3 /* QNResultInfo.swift in Sources */,
 				DE868DCC1F0DE4AC00FF7FD3 /* BCURLResponseSerialization.m in Sources */,
 				DE868DB81F0DE4AC00FF7FD3 /* BCBaseResult.m in Sources */,
 				DE8689ED1F0DD0D700FF7FD3 /* QNLruCache.m in Sources */,
+				DE3953F81F1468CB00A44740 /* SDWebImageDownloaderOperation.m in Sources */,
+				DE3953EC1F1468CB00A44740 /* DALabeledCircularProgressView.m in Sources */,
 				DE8685061F0DCC7E00FF7FD3 /* DeviceListInfo.swift in Sources */,
+				DE3954001F1468CB00A44740 /* UIImage+GIF.m in Sources */,
 				DE86876A1F0DCE4400FF7FD3 /* AFURLRequestSerialization.m in Sources */,
 				DE868ADB1F0DD1B800FF7FD3 /* NSObject+MJProperty.m in Sources */,
 				DE8687661F0DCE4400FF7FD3 /* AFNetworkReachabilityManager.m in Sources */,
@@ -2902,7 +3365,9 @@
 				DEC2223D1F13601E007D6DBE /* MJRefreshComponent.m in Sources */,
 				DEC222491F13601E007D6DBE /* MJRefreshBackGifFooter.m in Sources */,
 				DE868AD71F0DD1B800FF7FD3 /* NSObject+MJCoding.m in Sources */,
+				DE3954281F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DE868D941F0DE4AC00FF7FD3 /* BCPayPalReq.m in Sources */,
+				DE3953FE1F1468CB00A44740 /* UIButton+WebCache.m in Sources */,
 				DE868DCE1F0DE4AC00FF7FD3 /* BCURLSessionManager.m in Sources */,
 				DE868DA81F0DE4AC00FF7FD3 /* BCQueryRefundByIdReq.m in Sources */,
 				DE8685141F0DCC7E00FF7FD3 /* BookingStatus.swift in Sources */,
@@ -2913,11 +3378,14 @@
 				DE8685071F0DCC7E00FF7FD3 /* NewsInfo.swift in Sources */,
 				DE8687741F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE8689F51F0DD0D700FF7FD3 /* QNDnspodFree.m in Sources */,
+				DE3954161F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
+				DE3953EE1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
 				DE868DBC1F0DE4AC00FF7FD3 /* BCQueryRefundResult.m in Sources */,
 				DEC222471F13601E007D6DBE /* MJRefreshAutoStateFooter.m in Sources */,
 				DE86850F1F0DCC7E00FF7FD3 /* PowerGraphInfo.swift in Sources */,
 				DE86848B1F0DCAFF00FF7FD3 /* API+List.swift in Sources */,
 				DE8685101F0DCC7E00FF7FD3 /* CityModel.swift in Sources */,
+				DE39542A1F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
