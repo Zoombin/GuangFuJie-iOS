@@ -34,6 +34,17 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if (indexPath.row == 0) {
+            //分享光伏街
+        } else if (indexPath.row == 1) {
+            //技术支持
+        } else if (indexPath.row == 2) {
+            //关于我们
+        } else if (indexPath.row == 3) {
+            //联系我们
+        } else if (indexPath.row == 4) {
+            //设置
+        }
     }
     
 
