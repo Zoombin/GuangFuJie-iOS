@@ -100,6 +100,8 @@
 		DE3954361F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3953E61F1468CB00A44740 /* ZLPhotoPickerImageView.m */; };
 		DE3954371F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */; };
 		DE3954381F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */; };
+		DE39543A1F146DBC00A44740 /* MyInsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954391F146DBC00A44740 /* MyInsuranceListViewController.swift */; };
+		DE39543B1F146DBC00A44740 /* MyInsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954391F146DBC00A44740 /* MyInsuranceListViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
@@ -804,6 +806,7 @@
 		DE3953E61F1468CB00A44740 /* ZLPhotoPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerImageView.m; sourceTree = "<group>"; };
 		DE3953E71F1468CB00A44740 /* ZLPhotoPickerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCommon.h; sourceTree = "<group>"; };
 		DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLPhotoLib.bundle; sourceTree = "<group>"; };
+		DE3954391F146DBC00A44740 /* MyInsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1648,6 +1651,7 @@
 				DE39521A1F14616000A44740 /* RoofPriceViewController.swift */,
 				DE3952241F14626F00A44740 /* ProviceCityViewController.swift */,
 				DE3952271F14629100A44740 /* CalResultViewController.swift */,
+				DE3954391F146DBC00A44740 /* MyInsuranceListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3011,6 +3015,7 @@
 				DE86887B1F0DD05900FF7FD3 /* QNPHAssetFile.m in Sources */,
 				DE8689E81F0DD0D700FF7FD3 /* QNDnsManager.m in Sources */,
 				DE8687711F0DCE4400FF7FD3 /* AFImageDownloader.m in Sources */,
+				DE39543A1F146DBC00A44740 /* MyInsuranceListViewController.swift in Sources */,
 				DE8688911F0DD05900FF7FD3 /* QNUploadManager.m in Sources */,
 				DEC2243B1F136362007D6DBE /* ApiXml.mm in Sources */,
 				DEC2298B1F136636007D6DBE /* IQUIScrollView+Additions.swift in Sources */,
@@ -3260,6 +3265,7 @@
 				DE868E041F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */,
 				DE8687721F0DCE4400FF7FD3 /* AFImageDownloader.m in Sources */,
 				DE8688921F0DD05900FF7FD3 /* QNUploadManager.m in Sources */,
+				DE39543B1F146DBC00A44740 /* MyInsuranceListViewController.swift in Sources */,
 				DE8685041F0DCC7E00FF7FD3 /* InstallInfo.swift in Sources */,
 				DE8688801F0DD05900FF7FD3 /* QNSystem.m in Sources */,
 				DE868DAC1F0DE4AC00FF7FD3 /* BCQueryRefundsReq.m in Sources */,

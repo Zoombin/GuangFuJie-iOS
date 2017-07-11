@@ -21,10 +21,10 @@
 #import "WXApi.h"
 //#import "YCButton.h"
 
-//#import "ZLPhotoPickerViewController.h"
-//#import "ZLPhotoAssets.h"
-//#import "ZLPhotoPickerBrowserViewController.h"
-//
+#import "ZLPhotoPickerViewController.h"
+#import "ZLPhotoAssets.h"
+#import "ZLPhotoPickerBrowserViewController.h"
+
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
