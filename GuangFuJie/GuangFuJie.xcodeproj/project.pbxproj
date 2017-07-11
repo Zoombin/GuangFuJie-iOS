@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
+		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
+		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
@@ -622,6 +625,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1235,6 +1240,8 @@
 				DE868DF11F0DE66400FF7FD3 /* Root */,
 				DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */,
 				DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */,
+				DE39520C1F145D8400A44740 /* LoginViewController.swift */,
+				DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2601,6 +2608,7 @@
 				DE868DC51F0DE4AC00FF7FD3 /* BCNetworkReachabilityManager.m in Sources */,
 				DE8687831F0DCEBB00FF7FD3 /* Constants.swift in Sources */,
 				DEC229A11F136636007D6DBE /* IQPreviousNextView.swift in Sources */,
+				DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */,
 				DEC2224E1F13601E007D6DBE /* MJRefreshGifHeader.m in Sources */,
 				DE868DA11F0DE4AC00FF7FD3 /* BCQueryBillsResp.m in Sources */,
 				DEC224451F136362007D6DBE /* WXUtil.mm in Sources */,
@@ -2664,6 +2672,7 @@
 				DE8684FC1F0DCC7900FF7FD3 /* BookingStatus.swift in Sources */,
 				DE8684411F0DCADE00FF7FD3 /* API+List.swift in Sources */,
 				DE8688811F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
+				DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */,
 				DE868DC31F0DE4AC00FF7FD3 /* BCHTTPSessionManager.m in Sources */,
 				DE8684EF1F0DCC7900FF7FD3 /* NewsInfo.swift in Sources */,
 				DE8687731F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -2868,6 +2877,7 @@
 				DE868DA81F0DE4AC00FF7FD3 /* BCQueryRefundByIdReq.m in Sources */,
 				DE8685141F0DCC7E00FF7FD3 /* BookingStatus.swift in Sources */,
 				DE8684281F0DC9DE00FF7FD3 /* ViewController.swift in Sources */,
+				DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */,
 				DE8688821F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
 				DE868DC41F0DE4AC00FF7FD3 /* BCHTTPSessionManager.m in Sources */,
 				DE8685071F0DCC7E00FF7FD3 /* NewsInfo.swift in Sources */,
