@@ -10,6 +10,16 @@
 		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
+		DE39521B1F14616000A44740 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39521A1F14616000A44740 /* RoofPriceViewController.swift */; };
+		DE39521C1F14616000A44740 /* RoofPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39521A1F14616000A44740 /* RoofPriceViewController.swift */; };
+		DE39521E1F14619E00A44740 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39521D1F14619E00A44740 /* Colors.swift */; };
+		DE39521F1F14619E00A44740 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39521D1F14619E00A44740 /* Colors.swift */; };
+		DE3952221F14622500A44740 /* GFJBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952211F14622500A44740 /* GFJBottomButton.swift */; };
+		DE3952231F14622500A44740 /* GFJBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952211F14622500A44740 /* GFJBottomButton.swift */; };
+		DE3952251F14626F00A44740 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952241F14626F00A44740 /* ProviceCityViewController.swift */; };
+		DE3952261F14626F00A44740 /* ProviceCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952241F14626F00A44740 /* ProviceCityViewController.swift */; };
+		DE3952281F14629100A44740 /* CalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952271F14629100A44740 /* CalResultViewController.swift */; };
+		DE3952291F14629100A44740 /* CalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952271F14629100A44740 /* CalResultViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
@@ -627,6 +637,11 @@
 /* Begin PBXFileReference section */
 		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
+		DE39521A1F14616000A44740 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
+		DE39521D1F14619E00A44740 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DE3952211F14622500A44740 /* GFJBottomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJBottomButton.swift; sourceTree = "<group>"; };
+		DE3952241F14626F00A44740 /* ProviceCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviceCityViewController.swift; sourceTree = "<group>"; };
+		DE3952271F14629100A44740 /* CalResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultViewController.swift; sourceTree = "<group>"; };
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1229,6 +1244,7 @@
 		DE8684381F0DCA8F00FF7FD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE3952211F14622500A44740 /* GFJBottomButton.swift */,
 				DEC221261F13531B007D6DBE /* NewsCell.swift */,
 			);
 			path = View;
@@ -1242,6 +1258,9 @@
 				DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */,
 				DE39520C1F145D8400A44740 /* LoginViewController.swift */,
 				DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */,
+				DE39521A1F14616000A44740 /* RoofPriceViewController.swift */,
+				DE3952241F14626F00A44740 /* ProviceCityViewController.swift */,
+				DE3952271F14629100A44740 /* CalResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1269,6 +1288,7 @@
 				DE868ADE1F0DD20A00FF7FD3 /* UserDefaultManager.swift */,
 				DE868AE11F0DD23400FF7FD3 /* PhoneUtils.swift */,
 				DE868E091F0E2D4F00FF7FD3 /* FontUtils.swift */,
+				DE39521D1F14619E00A44740 /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2539,9 +2559,12 @@
 				DE868A041F0DD0D700FF7FD3 /* QNGetAddrInfo.m in Sources */,
 				DE8684EB1F0DCC7900FF7FD3 /* InsuranceInfo.swift in Sources */,
 				DE868A151F0DD11800FF7FD3 /* UIViewController+HUD.m in Sources */,
+				DE3952281F14629100A44740 /* CalResultViewController.swift in Sources */,
+				DE39521B1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
 				DEC222441F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE868D971F0DE4AC00FF7FD3 /* BCPreRefundReq.m in Sources */,
 				DE8688851F0DD05900FF7FD3 /* QNSessionManager.m in Sources */,
+				DE3952221F14622500A44740 /* GFJBottomButton.swift in Sources */,
 				DE86877D1F0DCE4400FF7FD3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DE868DAF1F0DE4AC00FF7FD3 /* BCQueryRefundsCountReq.m in Sources */,
 				DE8688711F0DD05900FF7FD3 /* QNALAssetFile.m in Sources */,
@@ -2565,6 +2588,8 @@
 				DEC2223C1F13601E007D6DBE /* MJRefreshComponent.m in Sources */,
 				DEC222501F13601E007D6DBE /* MJRefreshNormalHeader.m in Sources */,
 				DE8687771F0DCE4400FF7FD3 /* UIButton+AFNetworking.m in Sources */,
+				DE3952251F14626F00A44740 /* ProviceCityViewController.swift in Sources */,
+				DE39521E1F14619E00A44740 /* Colors.swift in Sources */,
 				DE8684F11F0DCC7900FF7FD3 /* RoofInfo.swift in Sources */,
 				DEC2225E1F13601E007D6DBE /* UIView+MJExtension.m in Sources */,
 				DEC229951F136636007D6DBE /* IQKeyboardManagerConstants.swift in Sources */,
@@ -2744,9 +2769,12 @@
 				DE86877E1F0DCE4400FF7FD3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DEC229901F136636007D6DBE /* IQUIView+Hierarchy.swift in Sources */,
 				DE868DB01F0DE4AC00FF7FD3 /* BCQueryRefundsCountReq.m in Sources */,
+				DE3952291F14629100A44740 /* CalResultViewController.swift in Sources */,
+				DE39521C1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
 				DE8688721F0DD05900FF7FD3 /* QNALAssetFile.m in Sources */,
 				DEC229A41F136636007D6DBE /* IQTitleBarButtonItem.swift in Sources */,
 				DE868DAE1F0DE4AC00FF7FD3 /* BCQueryRefundsResp.m in Sources */,
+				DE3952231F14622500A44740 /* GFJBottomButton.swift in Sources */,
 				DE868AD31F0DD1B800FF7FD3 /* MJPropertyType.m in Sources */,
 				DEC2225D1F13601E007D6DBE /* UIScrollView+MJRefresh.m in Sources */,
 				DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
@@ -2770,6 +2798,8 @@
 				DEC2225F1F13601E007D6DBE /* UIView+MJExtension.m in Sources */,
 				DE8689EF1F0DD0D700FF7FD3 /* QNNetworkInfo.m in Sources */,
 				DE868D8C1F0DE4AC00FF7FD3 /* BCBaseReq.m in Sources */,
+				DE3952261F14626F00A44740 /* ProviceCityViewController.swift in Sources */,
+				DE39521F1F14619E00A44740 /* Colors.swift in Sources */,
 				DE868DDA1F0DE4AC00FF7FD3 /* BeeCloudAdapter.m in Sources */,
 				DE8687781F0DCE4400FF7FD3 /* UIButton+AFNetworking.m in Sources */,
 				DE8685091F0DCC7E00FF7FD3 /* RoofInfo.swift in Sources */,
