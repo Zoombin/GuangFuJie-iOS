@@ -3085,6 +3085,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S362SNNP3;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GuangFuJie/Submodules/BeeCloud/BCPaySDK/Channel/AliPay",
@@ -3102,6 +3103,7 @@
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial_Sdk_5.1",
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMAnalytics_Sdk_3.5.10",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.GuangFuJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
@@ -3115,6 +3117,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S362SNNP3;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GuangFuJie/Submodules/BeeCloud/BCPaySDK/Channel/AliPay",
@@ -3132,6 +3135,7 @@
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial_Sdk_5.1",
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMAnalytics_Sdk_3.5.10",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.GuangFuJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
@@ -3145,6 +3149,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S362SNNP3;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GuangFuJie/Submodules/BeeCloud/BCPaySDK/Channel/AliPay",
@@ -3162,6 +3167,7 @@
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial_Sdk_5.1",
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMAnalytics_Sdk_3.5.10",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.gaodeguangfu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
@@ -3175,6 +3181,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S362SNNP3;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GuangFuJie/Submodules/BeeCloud/BCPaySDK/Channel/AliPay",
@@ -3192,6 +3199,7 @@
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial_Sdk_5.1",
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMAnalytics_Sdk_3.5.10",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.gaodeguangfu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
