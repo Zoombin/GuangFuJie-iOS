@@ -102,6 +102,18 @@
 		DE3954381F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */; };
 		DE39543A1F146DBC00A44740 /* MyInsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954391F146DBC00A44740 /* MyInsuranceListViewController.swift */; };
 		DE39543B1F146DBC00A44740 /* MyInsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954391F146DBC00A44740 /* MyInsuranceListViewController.swift */; };
+		DE3954401F147F1700A44740 /* JoinUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39543F1F147F1700A44740 /* JoinUsViewController.swift */; };
+		DE3954411F147F1700A44740 /* JoinUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39543F1F147F1700A44740 /* JoinUsViewController.swift */; };
+		DE39544D1F147FDD00A44740 /* BuySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39544B1F147FDD00A44740 /* BuySafeViewController.swift */; };
+		DE39544E1F147FDD00A44740 /* BuySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39544B1F147FDD00A44740 /* BuySafeViewController.swift */; };
+		DE39544F1F147FDD00A44740 /* ApplyForOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39544C1F147FDD00A44740 /* ApplyForOrderViewController.swift */; };
+		DE3954501F147FDD00A44740 /* ApplyForOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39544C1F147FDD00A44740 /* ApplyForOrderViewController.swift */; };
+		DE3954521F14802200A44740 /* PublishMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954511F14802200A44740 /* PublishMediaView.swift */; };
+		DE3954531F14802200A44740 /* PublishMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954511F14802200A44740 /* PublishMediaView.swift */; };
+		DE3954551F1480E800A44740 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954541F1480E800A44740 /* Dimens.swift */; };
+		DE3954561F1480E800A44740 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954541F1480E800A44740 /* Dimens.swift */; };
+		DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
+		DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
@@ -807,6 +819,12 @@
 		DE3953E71F1468CB00A44740 /* ZLPhotoPickerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCommon.h; sourceTree = "<group>"; };
 		DE3953E81F1468CB00A44740 /* ZLPhotoLib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLPhotoLib.bundle; sourceTree = "<group>"; };
 		DE3954391F146DBC00A44740 /* MyInsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInsuranceListViewController.swift; sourceTree = "<group>"; };
+		DE39543F1F147F1700A44740 /* JoinUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinUsViewController.swift; sourceTree = "<group>"; };
+		DE39544B1F147FDD00A44740 /* BuySafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuySafeViewController.swift; sourceTree = "<group>"; };
+		DE39544C1F147FDD00A44740 /* ApplyForOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyForOrderViewController.swift; sourceTree = "<group>"; };
+		DE3954511F14802200A44740 /* PublishMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMediaView.swift; sourceTree = "<group>"; };
+		DE3954541F1480E800A44740 /* Dimens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
+		DE3954571F1481E500A44740 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1645,13 +1663,17 @@
 			children = (
 				DE868DF11F0DE66400FF7FD3 /* Root */,
 				DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */,
-				DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */,
-				DE39520C1F145D8400A44740 /* LoginViewController.swift */,
-				DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */,
-				DE39521A1F14616000A44740 /* RoofPriceViewController.swift */,
-				DE3952241F14626F00A44740 /* ProviceCityViewController.swift */,
 				DE3952271F14629100A44740 /* CalResultViewController.swift */,
+				DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */,
+				DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */,
+				DE39543F1F147F1700A44740 /* JoinUsViewController.swift */,
+				DE39520C1F145D8400A44740 /* LoginViewController.swift */,
 				DE3954391F146DBC00A44740 /* MyInsuranceListViewController.swift */,
+				DE3952241F14626F00A44740 /* ProviceCityViewController.swift */,
+				DE39521A1F14616000A44740 /* RoofPriceViewController.swift */,
+				DE39544B1F147FDD00A44740 /* BuySafeViewController.swift */,
+				DE39544C1F147FDD00A44740 /* ApplyForOrderViewController.swift */,
+				DE3954571F1481E500A44740 /* PhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1672,6 +1694,8 @@
 		DE86843B1F0DCA8F00FF7FD3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE3954541F1480E800A44740 /* Dimens.swift */,
+				DE3954511F14802200A44740 /* PublishMediaView.swift */,
 				DEC221291F13585D007D6DBE /* StringUtils.swift */,
 				DE868E051F0E2CC600FF7FD3 /* ImageTitleButton.h */,
 				DE868E061F0E2CC600FF7FD3 /* ImageTitleButton.m */,
@@ -2920,6 +2944,7 @@
 				DEC2225A1F13601E007D6DBE /* UIScrollView+MJExtension.m in Sources */,
 				DEC2299B1F136636007D6DBE /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				DE8684F01F0DCC7900FF7FD3 /* DeviceInfo.swift in Sources */,
+				DE3954521F14802200A44740 /* PublishMediaView.swift in Sources */,
 				DE868ADF1F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
 				DE868DD51F0DE4AC00FF7FD3 /* NSDictionary+Utils.m in Sources */,
 				DE8684EA1F0DCC7900FF7FD3 /* ElectricInfo.swift in Sources */,
@@ -2965,6 +2990,7 @@
 				DE3954051F1468CB00A44740 /* UIImageView+WebCache.m in Sources */,
 				DE3952281F14629100A44740 /* CalResultViewController.swift in Sources */,
 				DE39521B1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
+				DE39544F1F147FDD00A44740 /* ApplyForOrderViewController.swift in Sources */,
 				DEC222441F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE868D971F0DE4AC00FF7FD3 /* BCPreRefundReq.m in Sources */,
 				DE3954111F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
@@ -3033,6 +3059,7 @@
 				DE868A061F0DD0D700FF7FD3 /* QNHex.m in Sources */,
 				DE86888D1F0DD05900FF7FD3 /* QNFormUpload.m in Sources */,
 				DE39541F1F1468CB00A44740 /* ZLPhotoPickerDatas.m in Sources */,
+				DE39544D1F147FDD00A44740 /* BuySafeViewController.swift in Sources */,
 				DE8688731F0DD05900FF7FD3 /* QNAsyncRun.m in Sources */,
 				DE868DB51F0DE4AC00FF7FD3 /* BCRefundStatusResp.m in Sources */,
 				DE8687671F0DCE4400FF7FD3 /* AFSecurityPolicy.m in Sources */,
@@ -3047,6 +3074,7 @@
 				DE3954331F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				DE8684F91F0DCC7900FF7FD3 /* ProvinceModel.swift in Sources */,
 				DE3954171F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
+				DE3954551F1480E800A44740 /* Dimens.swift in Sources */,
 				DE3953F31F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
 				DE8684E81F0DCC7900FF7FD3 /* InsuranceDetail.swift in Sources */,
 				DE868DC51F0DE4AC00FF7FD3 /* BCNetworkReachabilityManager.m in Sources */,
@@ -3063,6 +3091,7 @@
 				DE8684FA1F0DCC7900FF7FD3 /* CommonInfo.swift in Sources */,
 				DE868D891F0DE4AC00FF7FD3 /* BCAuthReq.m in Sources */,
 				DE8684FE1F0DCC7900FF7FD3 /* AppModel.swift in Sources */,
+				DE3954401F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DE868DB31F0DE4AC00FF7FD3 /* BCRefundStatusReq.m in Sources */,
 				DE8688771F0DD05900FF7FD3 /* QNEtag.m in Sources */,
 				DE39541D1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
@@ -3139,6 +3168,7 @@
 				DE868DBB1F0DE4AC00FF7FD3 /* BCQueryRefundResult.m in Sources */,
 				DE8684F71F0DCC7900FF7FD3 /* PowerGraphInfo.swift in Sources */,
 				DEC224431F136362007D6DBE /* WXApiManager.m in Sources */,
+				DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */,
 				DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */,
 				DE8684F81F0DCC7900FF7FD3 /* CityModel.swift in Sources */,
 				DE3954291F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */,
@@ -3170,6 +3200,7 @@
 				DEC2224D1F13601E007D6DBE /* MJRefreshBackStateFooter.m in Sources */,
 				DE868DD61F0DE4AC00FF7FD3 /* NSDictionary+Utils.m in Sources */,
 				DE8685021F0DCC7E00FF7FD3 /* ElectricInfo.swift in Sources */,
+				DE3954531F14802200A44740 /* PublishMediaView.swift in Sources */,
 				DE868A091F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DEC222531F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
 				DE868DA61F0DE4AC00FF7FD3 /* BCQueryBillsCountResp.m in Sources */,
@@ -3215,6 +3246,7 @@
 				DE3954061F1468CB00A44740 /* UIImageView+WebCache.m in Sources */,
 				DE3952291F14629100A44740 /* CalResultViewController.swift in Sources */,
 				DE39521C1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
+				DE3954501F147FDD00A44740 /* ApplyForOrderViewController.swift in Sources */,
 				DE8688721F0DD05900FF7FD3 /* QNALAssetFile.m in Sources */,
 				DEC229A41F136636007D6DBE /* IQTitleBarButtonItem.swift in Sources */,
 				DE3954121F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
@@ -3283,6 +3315,7 @@
 				DEC222391F13601E007D6DBE /* MJRefreshAutoFooter.m in Sources */,
 				DE86888E1F0DD05900FF7FD3 /* QNFormUpload.m in Sources */,
 				DE3954201F1468CB00A44740 /* ZLPhotoPickerDatas.m in Sources */,
+				DE39544E1F147FDD00A44740 /* BuySafeViewController.swift in Sources */,
 				DE8688741F0DD05900FF7FD3 /* QNAsyncRun.m in Sources */,
 				DE868DB61F0DE4AC00FF7FD3 /* BCRefundStatusResp.m in Sources */,
 				DE8687681F0DCE4400FF7FD3 /* AFSecurityPolicy.m in Sources */,
@@ -3297,6 +3330,7 @@
 				DE3954341F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				DEC229A21F136636007D6DBE /* IQPreviousNextView.swift in Sources */,
 				DE3954181F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
+				DE3954561F1480E800A44740 /* Dimens.swift in Sources */,
 				DE3953F41F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
 				DEC224441F136362007D6DBE /* WXApiManager.m in Sources */,
 				DE8685111F0DCC7E00FF7FD3 /* ProvinceModel.swift in Sources */,
@@ -3313,6 +3347,7 @@
 				DE868D8A1F0DE4AC00FF7FD3 /* BCAuthReq.m in Sources */,
 				DEC2224F1F13601E007D6DBE /* MJRefreshGifHeader.m in Sources */,
 				DE8685161F0DCC7E00FF7FD3 /* AppModel.swift in Sources */,
+				DE3954411F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DE868DB41F0DE4AC00FF7FD3 /* BCRefundStatusReq.m in Sources */,
 				DEC222451F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
@@ -3389,6 +3424,7 @@
 				DE868DBC1F0DE4AC00FF7FD3 /* BCQueryRefundResult.m in Sources */,
 				DEC222471F13601E007D6DBE /* MJRefreshAutoStateFooter.m in Sources */,
 				DE86850F1F0DCC7E00FF7FD3 /* PowerGraphInfo.swift in Sources */,
+				DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */,
 				DE86848B1F0DCAFF00FF7FD3 /* API+List.swift in Sources */,
 				DE8685101F0DCC7E00FF7FD3 /* CityModel.swift in Sources */,
 				DE39542A1F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */,

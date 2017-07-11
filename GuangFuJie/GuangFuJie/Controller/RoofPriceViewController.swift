@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, UIActionSheetDelegate {
+class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate {
     var tableView : UITableView!
     var currentType = 0
     var houseType = 0
@@ -99,7 +99,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITa
     }
     
     
-    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+    override func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         if (actionSheet.cancelButtonIndex == buttonIndex) {
             return
         }
@@ -135,7 +135,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITa
         let calButton = GFJBottomButton.init(type: UIButtonType.custom)
         calButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
         calButton.setTitle("立即评估", for: UIControlState.normal)
-        calButton.backgroundColor = Colors.appBule
+        calButton.backgroundColor = Colors.appBlue
         calButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         calButton.titleLabel?.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 17))
         calButton.addTarget(self, action: #selector(self.calacuteNow), for: UIControlEvents.touchUpInside)

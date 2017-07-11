@@ -81,7 +81,7 @@ class CalResultViewController: BaseViewController {
         let submitButton = UIButton.init(type: UIButtonType.custom)
         submitButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
         submitButton.setTitle("提交", for: UIControlState.normal)
-        submitButton.backgroundColor = Colors.appBule
+        submitButton.backgroundColor = Colors.appBlue
         submitButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         submitButton.titleLabel?.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 17))
         submitButton.addTarget(self, action: #selector(self.submitButtonClicked), for: UIControlEvents.touchUpInside)
