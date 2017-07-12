@@ -60,9 +60,35 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SoR-ea-fkA">
+                                        <rect key="frame" x="28" y="43" width="70" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDG-Pj-MHi">
+                                <rect key="frame" x="159" y="496" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="ic_show_funtion"/>
+                                <state key="selected" backgroundImage="ic_close_funtion"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cko-uL-Od9">
+                                <rect key="frame" x="96" y="475" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="ic_map_function_pg"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiR-Z1-twa">
+                                <rect key="frame" x="159" y="432" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="ic_map_fuction_cz"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gm-aw-Evi">
+                                <rect key="frame" x="222" y="475" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="ic_map_function_cs"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1312,6 +1338,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_close_funtion" width="57" height="57"/>
         <image name="ic_home_anzhuang" width="85" height="98"/>
         <image name="ic_home_banner1" width="375" height="144"/>
         <image name="ic_home_dimian" width="85" height="98"/>
@@ -1330,6 +1357,9 @@
         <image name="ic_joinus7" width="185" height="120"/>
         <image name="ic_joinus8" width="185" height="120"/>
         <image name="ic_joinus9" width="183" height="120"/>
+        <image name="ic_map_fuction_cz" width="56" height="56"/>
+        <image name="ic_map_function_cs" width="56" height="56"/>
+        <image name="ic_map_function_pg" width="56" height="56"/>
         <image name="ic_map_green" width="6" height="6"/>
         <image name="ic_map_orange" width="6" height="6"/>
         <image name="ic_map_red" width="6" height="6"/>
@@ -1342,6 +1372,7 @@
         <image name="ic_my_shareapp" width="17" height="14"/>
         <image name="ic_my_support" width="15" height="15"/>
         <image name="ic_my_telphone" width="17" height="17"/>
+        <image name="ic_show_funtion" width="57" height="57"/>
         <image name="ic_tab_home" width="21" height="22"/>
         <image name="ic_tab_home_hl" width="21" height="22"/>
         <image name="ic_tab_insurance" width="24" height="22"/>
