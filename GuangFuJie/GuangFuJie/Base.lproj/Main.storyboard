@@ -75,10 +75,100 @@
             </objects>
             <point key="canvasLocation" x="-3012" y="-919"/>
         </scene>
+        <!--加盟商-->
+        <scene sceneID="4VN-rs-MS5">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="nFe-Qr-qRA" userLabel="加盟商" customClass="JoinUsViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="43n-BD-Z13"/>
+                        <viewControllerLayoutGuide type="bottom" id="uIR-Zc-fTQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jYH-0r-2xr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5E-jT-PYf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X4-H0-59j">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                        <state key="normal" backgroundImage="ic_joinus1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0O-TQ-wba">
+                                        <rect key="frame" x="190" y="175" width="185" height="120"/>
+                                        <state key="normal" backgroundImage="ic_joinus3"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-eT-JuZ">
+                                        <rect key="frame" x="0.0" y="300" width="185" height="120"/>
+                                        <state key="normal" backgroundImage="ic_joinus4"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wo-ex-W7R">
+                                        <rect key="frame" x="190" y="300" width="185" height="120"/>
+                                        <state key="normal" backgroundImage="ic_joinus5"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3G-Mo-dHP">
+                                        <rect key="frame" x="0.0" y="425" width="185" height="120"/>
+                                        <state key="normal" backgroundImage="ic_joinus6"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uB-y0-14U">
+                                        <rect key="frame" x="190" y="425" width="185" height="120"/>
+                                        <state key="normal" backgroundImage="ic_joinus7"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w02-ir-81y">
+                                        <rect key="frame" x="0.0" y="550" width="185" height="120"/>
+                                        <state key="normal" backgroundImage="ic_joinus8"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beW-qw-xZ4">
+                                        <rect key="frame" x="192" y="550" width="183" height="120"/>
+                                        <state key="normal" backgroundImage="ic_joinus9"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qL8-ME-98y">
+                                        <rect key="frame" x="0.0" y="175" width="185" height="120"/>
+                                        <state key="normal" backgroundImage="ic_joinus2"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3uB-y0-14U" firstAttribute="top" secondItem="K3G-Mo-dHP" secondAttribute="top" id="4bh-R9-ztu"/>
+                                    <constraint firstItem="YXc-eT-JuZ" firstAttribute="top" secondItem="6wo-ex-W7R" secondAttribute="top" id="4q3-pC-4JU"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="w02-ir-81y" secondAttribute="leading" id="GdY-EM-ILi"/>
+                                    <constraint firstItem="3uB-y0-14U" firstAttribute="top" secondItem="M5E-jT-PYf" secondAttribute="top" constant="425" id="IR3-pY-nF6"/>
+                                    <constraint firstItem="YXc-eT-JuZ" firstAttribute="top" secondItem="qL8-ME-98y" secondAttribute="bottom" constant="5" id="Jlp-mS-4dq"/>
+                                    <constraint firstItem="3uB-y0-14U" firstAttribute="top" secondItem="6wo-ex-W7R" secondAttribute="bottom" constant="5" id="LO1-Lr-16N"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="qL8-ME-98y" secondAttribute="leading" id="MKE-Vz-D55"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="trailing" secondItem="beW-qw-xZ4" secondAttribute="trailing" id="Mit-jl-IUO"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="top" secondItem="M5E-jT-PYf" secondAttribute="top" id="TyX-51-706"/>
+                                    <constraint firstItem="w02-ir-81y" firstAttribute="top" secondItem="beW-qw-xZ4" secondAttribute="top" id="Wj0-Bw-8Mk"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="YXc-eT-JuZ" secondAttribute="leading" id="iIp-3J-UKC"/>
+                                    <constraint firstItem="beW-qw-xZ4" firstAttribute="top" secondItem="3uB-y0-14U" secondAttribute="bottom" constant="5" id="kC0-Pr-5Eh"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="trailing" secondItem="6wo-ex-W7R" secondAttribute="trailing" id="khv-nR-xfh"/>
+                                    <constraint firstItem="N0O-TQ-wba" firstAttribute="top" secondItem="9X4-H0-59j" secondAttribute="bottom" constant="5" id="lDv-Te-0WR"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="M5E-jT-PYf" secondAttribute="leading" id="mzx-P1-Me9"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="K3G-Mo-dHP" secondAttribute="leading" id="rcw-r9-WwQ"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="trailing" secondItem="3uB-y0-14U" secondAttribute="trailing" id="t8I-I2-KWB"/>
+                                    <constraint firstAttribute="trailing" secondItem="9X4-H0-59j" secondAttribute="trailing" id="tJs-Wg-pi5"/>
+                                    <constraint firstAttribute="bottom" secondItem="9X4-H0-59j" secondAttribute="bottom" constant="497" id="uKF-xM-Nju"/>
+                                    <constraint firstItem="9X4-H0-59j" firstAttribute="trailing" secondItem="N0O-TQ-wba" secondAttribute="trailing" id="zQp-OL-gJ0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M5E-jT-PYf" firstAttribute="top" secondItem="jYH-0r-2xr" secondAttribute="top" id="28J-4d-Zu4"/>
+                            <constraint firstAttribute="trailing" secondItem="M5E-jT-PYf" secondAttribute="trailing" id="FTv-1o-4Bv"/>
+                            <constraint firstItem="M5E-jT-PYf" firstAttribute="leading" secondItem="jYH-0r-2xr" secondAttribute="leading" id="TeL-j4-oIg"/>
+                            <constraint firstItem="M5E-jT-PYf" firstAttribute="bottom" secondItem="uIR-Zc-fTQ" secondAttribute="top" id="aMG-IU-6S0"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3me-9j-psf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2284" y="-1621"/>
+        </scene>
         <!--登录-->
         <scene sceneID="ksU-TY-FjH">
             <objects>
-                <viewController id="41B-JS-F2B" userLabel="登录" customClass="LoginViewController" customModule="GuangFuJie" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="41B-JS-F2B" userLabel="登录" customClass="LoginViewController" customModule="GuangFuJie" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ezv-pM-xtP"/>
                         <viewControllerLayoutGuide type="bottom" id="eaa-hf-3v2"/>
@@ -186,6 +276,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="loginTableView" destination="Ywu-sD-NPb" id="Wnf-Mv-U1C"/>
                     </connections>
@@ -197,7 +288,7 @@
         <!--保险列表-->
         <scene sceneID="1Fk-Wr-qqM">
             <objects>
-                <viewController id="ynC-Sh-VMO" userLabel="保险列表" customClass="InsuranceListViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="ynC-Sh-VMO" userLabel="保险列表" customClass="InsuranceListViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wBn-jI-L7N"/>
                         <viewControllerLayoutGuide type="bottom" id="8oB-Ky-GsO"/>
@@ -312,6 +403,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="inTableView" destination="2hF-Zk-vye" id="f1g-Yt-p1W"/>
                     </connections>
@@ -661,7 +753,7 @@
         <!--我的保险-->
         <scene sceneID="Jyk-XC-d1u">
             <objects>
-                <viewController id="r5M-9l-RyP" userLabel="我的保险" customClass="MyInsuranceListViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="r5M-9l-RyP" userLabel="我的保险" customClass="MyInsuranceListViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dmb-if-knS"/>
                         <viewControllerLayoutGuide type="bottom" id="bwB-4n-uRO"/>
@@ -776,6 +868,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="inTableView" destination="9TJ-ax-HLS" id="e8L-ic-0Hs"/>
                     </connections>
@@ -840,6 +933,9 @@
                                             <constraint firstAttribute="height" constant="100" id="fVl-KP-Hlf"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="ic_home_jiameng"/>
+                                        <connections>
+                                            <segue destination="nFe-Qr-qRA" kind="show" id="Uxv-mQ-cFW"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你想成为" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NW-wW-A62">
                                         <rect key="frame" x="16" y="113" width="89" height="21"/>
@@ -1221,6 +1317,15 @@
         <image name="ic_home_recpro2" width="115" height="110"/>
         <image name="ic_home_recpro3" width="115" height="110"/>
         <image name="ic_home_yezhu" width="85" height="98"/>
+        <image name="ic_joinus1" width="375" height="170"/>
+        <image name="ic_joinus2" width="185" height="120"/>
+        <image name="ic_joinus3" width="185" height="120"/>
+        <image name="ic_joinus4" width="185" height="120"/>
+        <image name="ic_joinus5" width="185" height="120"/>
+        <image name="ic_joinus6" width="185" height="120"/>
+        <image name="ic_joinus7" width="185" height="120"/>
+        <image name="ic_joinus8" width="185" height="120"/>
+        <image name="ic_joinus9" width="183" height="120"/>
         <image name="ic_map_green" width="6" height="6"/>
         <image name="ic_map_orange" width="6" height="6"/>
         <image name="ic_map_red" width="6" height="6"/>
