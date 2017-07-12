@@ -82,8 +82,9 @@ class RootHomeViewController: BaseViewController {
            //客服
             let chatViewManager = MQChatViewManager()
             chatViewManager.chatViewStyle.statusBarStyle = UIStatusBarStyle.lightContent
-            chatViewManager.chatViewStyle.navBarColor = UIColor.white
-            chatViewManager.chatViewStyle.navBarTintColor = Colors.appBlue
+            chatViewManager.chatViewStyle.navBarColor = Colors.appBlue
+            chatViewManager.chatViewStyle.navTitleColor = UIColor.white
+            chatViewManager.chatViewStyle.navBackButtonImage = UIImage(named: "ic_back")
             chatViewManager.pushMQChatViewController(in: self)
         }
     }
