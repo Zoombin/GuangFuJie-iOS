@@ -12,7 +12,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = Colors.bkgColor
         BeeCloud.setBeeCloudDelegate(self)
     }
 

@@ -51,10 +51,34 @@ class RootHomeViewController: BaseViewController {
             button.setTitle(names[i], for: UIControlState.normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 15))
             button.setTitleColor(UIColor.black, for: UIControlState.normal)
+            button.tag = i
+            button.addTarget(self, action: #selector(self.menuButtonClicked(sender:)), for: UIControlEvents.touchUpInside)
             button.verticalImageAndTitle(2)
             menuView.addSubview(button)
             
             index += 1
+        }
+    }
+    
+    func menuButtonClicked(sender: UIButton) {
+        if (sender.tag == 0) {
+           //体验店
+        } else if (sender.tag == 1) {
+           //政策咨询
+        } else if (sender.tag == 2) {
+           //安装运维
+        } else if (sender.tag == 3) {
+           //光伏保险
+            let vc = BuySafeViewController()
+            self.pushViewController(vc)
+        } else if (sender.tag == 4) {
+           //光伏问答
+        } else if (sender.tag == 5) {
+           //公司介绍
+        } else if (sender.tag == 6) {
+           //活动通告
+        } else if (sender.tag == 7) {
+           //客服
         }
     }
     

@@ -523,9 +523,15 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
 
     deinit {
-        typeView.removeFromSuperview()
-        yearsView.removeFromSuperview()
-        salesTypeView.removeFromSuperview()
+        if (typeView != nil) {
+           typeView.removeFromSuperview()
+        }
+        if (yearsView != nil) {
+            yearsView.removeFromSuperview()
+        }
+        if (salesTypeView != nil) {
+            salesTypeView.removeFromSuperview()
+        }
     }
     
     func showYearsView() {
