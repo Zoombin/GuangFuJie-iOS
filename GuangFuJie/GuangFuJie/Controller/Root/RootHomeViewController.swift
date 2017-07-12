@@ -84,7 +84,7 @@ class RootHomeViewController: BaseViewController {
             chatViewManager.chatViewStyle.statusBarStyle = UIStatusBarStyle.lightContent
             chatViewManager.chatViewStyle.navBarColor = Colors.appBlue
             chatViewManager.chatViewStyle.navTitleColor = UIColor.white
-            chatViewManager.chatViewStyle.navBackButtonImage = UIImage(named: "ic_back")
+            chatViewManager.chatViewStyle.navBackButtonImage = UIImage(named: "ic_back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
             chatViewManager.pushMQChatViewController(in: self)
         }
     }
