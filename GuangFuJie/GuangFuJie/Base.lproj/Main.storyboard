@@ -1042,9 +1042,10 @@
             <objects>
                 <navigationController id="jYK-aX-9ae" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="ic_tab_home" selectedImage="ic_tab_home_hl" id="B8G-IH-Nfv"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gDd-dm-DDP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gDd-dm-DDP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="5DT-7n-F6F" kind="relationship" relationship="rootViewController" id="8ZD-XN-Up4"/>
@@ -1059,9 +1060,10 @@
             <objects>
                 <navigationController id="dGc-Kc-oaf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="光伏资讯" image="ic_tab_news" selectedImage="ic_tab_news_hl" id="0py-8M-gMi"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GOW-gN-WMt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GOW-gN-WMt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="ULy-sg-gbR" kind="relationship" relationship="rootViewController" id="cTl-Fa-Zag"/>
@@ -1076,9 +1078,10 @@
             <objects>
                 <navigationController id="gNN-I7-J0n" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="光伏保险" image="ic_tab_insurance" selectedImage="ic_tab_insurance_hl" id="OKl-0s-5nl"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aji-g7-cPI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Aji-g7-cPI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="UWO-gQ-4TB" kind="relationship" relationship="rootViewController" id="k8l-n9-99h"/>
@@ -1093,9 +1096,10 @@
             <objects>
                 <navigationController id="KWr-Sl-spE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="屋顶地图" image="ic_tab_map" selectedImage="ic_tab_map_hl" id="7qg-2m-RN3"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gwd-ug-xXm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gwd-ug-xXm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="vPu-r7-p0r" kind="relationship" relationship="rootViewController" id="6PT-kG-TUw"/>
@@ -1271,7 +1275,6 @@
         <scene sceneID="Zrw-Oa-tPi">
             <objects>
                 <tabBarController id="RWo-NL-TPr" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="zZG-Wa-juF"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ahW-MX-rLC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1294,9 +1297,10 @@
             <objects>
                 <navigationController id="mPy-2f-I8J" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="ic_tab_my" selectedImage="ic_tab_my_hl" id="xi2-sZ-uka"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="65A-dl-jKQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="65A-dl-jKQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="u86-aG-yn6" kind="relationship" relationship="rootViewController" id="H6C-2i-aSS"/>

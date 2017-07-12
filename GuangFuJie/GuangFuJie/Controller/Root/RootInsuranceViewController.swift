@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootInsuranceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RootInsuranceViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var inTableView: UITableView!
     
     override func viewDidLoad() {

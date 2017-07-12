@@ -13,6 +13,13 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.bkgColor
+        //修改navigationBar的背景色
+        self.navigationController?.navigationBar.barTintColor = Colors.appBlue
+        //修改右边按钮的颜色
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        //设置标题的字的颜色
+        self.navigationController!.navigationBar.titleTextAttributes = NSDictionary(object: UIColor.white, forKey: NSForegroundColorAttributeName as NSCopying) as? [String : AnyObject]
+        
         BeeCloud.setBeeCloudDelegate(self)
     }
 
