@@ -32,3 +32,8 @@
 #import <BaiduMapAPI_Radar/BMKRadarComponent.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
+
+//美洽SDK
+#import <MeiQiaSDK/MQManager.h>
+#import "MQChatViewManager.h"
+#import "MQServiceToViewInterface.h"

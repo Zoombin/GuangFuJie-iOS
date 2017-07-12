@@ -80,6 +80,11 @@ class RootHomeViewController: BaseViewController {
            //活动通告
         } else if (sender.tag == 7) {
            //客服
+            let chatViewManager = MQChatViewManager()
+            chatViewManager.chatViewStyle.statusBarStyle = UIStatusBarStyle.lightContent
+            chatViewManager.chatViewStyle.navBarColor = UIColor.white
+            chatViewManager.chatViewStyle.navBarTintColor = Colors.appBlue
+            chatViewManager.pushMQChatViewController(in: self)
         }
     }
     

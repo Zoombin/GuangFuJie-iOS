@@ -1301,6 +1301,7 @@
         <scene sceneID="Zrw-Oa-tPi">
             <objects>
                 <tabBarController id="RWo-NL-TPr" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VoE-Dl-DtJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ahW-MX-rLC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

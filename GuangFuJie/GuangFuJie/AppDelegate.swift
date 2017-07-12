@@ -42,6 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
         //支付
         BeeCloud.initWithAppID(Constants.payKey, andAppSecret: Constants.paySecret, sandbox: Constants.isSandBox)
         BeeCloud.initWeChatPay(Constants.wexinAppKey)
+        
+        MQManager.initWithAppkey("36b32361b68d0e9945c01c51a2e2b791") { (clientId, error) in
+            if (error != nil) {
+                print("美洽 SDK：初始化成功")
+            } else {
+                print("美洽 SDK：初始化失败")
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
