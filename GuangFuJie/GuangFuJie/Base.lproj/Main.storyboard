@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="W2c-NQ-DdL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RWo-NL-TPr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,23 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="5DZ-pb-AYA">
-            <objects>
-                <navigationController id="W2c-NQ-DdL" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DEA-v8-4gz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="RWo-NL-TPr" kind="relationship" relationship="rootViewController" id="yzR-AK-EbH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a8L-4o-2i2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2610" y="-304"/>
-        </scene>
-        <!--屋顶地图-->
+        <!--Root Map View Controller-->
         <scene sceneID="0HX-SR-4tk">
             <objects>
                 <viewController id="vPu-r7-p0r" customClass="RootMapViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,14 +66,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="屋顶地图" image="ic_tab_map" selectedImage="ic_tab_map_hl" id="u6X-jJ-RVb"/>
+                    <navigationItem key="navigationItem" id="obh-9M-s8O"/>
                     <connections>
                         <outlet property="mapView" destination="Ytm-Qx-wSX" id="6Gs-8x-hMV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgF-Pc-rkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-882.39999999999998" y="-56.221889055472268"/>
+            <point key="canvasLocation" x="-3012" y="-919"/>
         </scene>
         <!--登录-->
         <scene sceneID="ksU-TY-FjH">
@@ -208,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CW7-kR-6Ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82.400000000000006" y="-41.829085457271368"/>
+            <point key="canvasLocation" x="-2215" y="715"/>
         </scene>
         <!--保险列表-->
         <scene sceneID="1Fk-Wr-qqM">
@@ -334,12 +318,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOf-cO-yF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="-1418"/>
+            <point key="canvasLocation" x="-2214" y="-242"/>
         </scene>
         <!--资讯-->
         <scene sceneID="Xyy-0A-K1O">
             <objects>
-                <viewController title="光伏资讯" id="ULy-sg-gbR" userLabel="资讯" customClass="RootNewsViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ULy-sg-gbR" userLabel="资讯" customClass="RootNewsViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g6y-vB-u0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="bb2-DF-OvT"/>
@@ -396,16 +380,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="光伏资讯" image="ic_tab_news" selectedImage="ic_tab_news_hl" id="u5o-V5-3yX"/>
+                    <navigationItem key="navigationItem" id="84u-kq-XZk"/>
                     <connections>
                         <outlet property="newsTableView" destination="dDG-O6-mIY" id="YqP-Ly-0ce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xE-C2-sjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1748" y="1286"/>
+            <point key="canvasLocation" x="-3012" y="426"/>
         </scene>
-        <!--我的-->
+        <!--Root My View Controller-->
         <scene sceneID="ojS-Ay-Flu">
             <objects>
                 <viewController id="u86-aG-yn6" customClass="RootMyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
@@ -664,7 +648,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我的" image="ic_tab_my" selectedImage="ic_tab_my_hl" id="RzU-p2-BS3"/>
+                    <navigationItem key="navigationItem" id="1AY-n1-Dou"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="myTableView" destination="GXE-2e-8PB" id="iFH-PD-Gcg"/>
@@ -672,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVb-eo-48t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-882.39999999999998" y="614.84257871064472"/>
+            <point key="canvasLocation" x="-3012" y="1113"/>
         </scene>
         <!--我的保险-->
         <scene sceneID="Jyk-XC-d1u">
@@ -798,9 +782,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ud8-lQ-8A8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="615"/>
+            <point key="canvasLocation" x="-2215" y="1404"/>
         </scene>
-        <!--首页-->
+        <!--Root Home View Controller-->
         <scene sceneID="sOr-Nu-e6P">
             <objects>
                 <viewController id="5DT-7n-F6F" customClass="RootHomeViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
@@ -946,7 +930,7 @@
                             <constraint firstAttribute="trailing" secondItem="OaT-6T-h0p" secondAttribute="trailing" id="XcR-0Q-jh6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="首页" image="ic_tab_home" selectedImage="ic_tab_home_hl" id="75G-PT-vWr"/>
+                    <navigationItem key="navigationItem" id="XMW-RL-sYv"/>
                     <connections>
                         <outlet property="bannerScrollView" destination="mYO-n8-ZpK" id="GFe-XS-Cwu"/>
                         <outlet property="menuView" destination="Lhv-3v-Dvv" id="3ra-Wf-VG5"/>
@@ -955,9 +939,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8V-KN-cii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-882.39999999999998" y="-732.68365817091455"/>
+            <point key="canvasLocation" x="-3012" y="-1621"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="bfs-MV-Ix7">
+            <objects>
+                <navigationController id="jYK-aX-9ae" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="ic_tab_home" selectedImage="ic_tab_home_hl" id="B8G-IH-Nfv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gDd-dm-DDP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5DT-7n-F6F" kind="relationship" relationship="rootViewController" id="8ZD-XN-Up4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXW-KA-3tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3780" y="-1621"/>
+        </scene>
+        <!--光伏资讯-->
+        <scene sceneID="Xa2-8Q-V0e">
+            <objects>
+                <navigationController id="dGc-Kc-oaf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="光伏资讯" image="ic_tab_news" selectedImage="ic_tab_news_hl" id="0py-8M-gMi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GOW-gN-WMt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ULy-sg-gbR" kind="relationship" relationship="rootViewController" id="cTl-Fa-Zag"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGc-oc-Nab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3780" y="426"/>
         </scene>
         <!--光伏保险-->
+        <scene sceneID="19F-WU-Iod">
+            <objects>
+                <navigationController id="gNN-I7-J0n" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="光伏保险" image="ic_tab_insurance" selectedImage="ic_tab_insurance_hl" id="OKl-0s-5nl"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aji-g7-cPI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UWO-gQ-4TB" kind="relationship" relationship="rootViewController" id="k8l-n9-99h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ErY-Fp-5Mx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3780" y="-242"/>
+        </scene>
+        <!--屋顶地图-->
+        <scene sceneID="JsH-yZ-0cd">
+            <objects>
+                <navigationController id="KWr-Sl-spE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="屋顶地图" image="ic_tab_map" selectedImage="ic_tab_map_hl" id="7qg-2m-RN3"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gwd-ug-xXm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vPu-r7-p0r" kind="relationship" relationship="rootViewController" id="6PT-kG-TUw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1E-8p-rv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3780" y="-920"/>
+        </scene>
+        <!--Root Insurance View Controller-->
         <scene sceneID="9rd-Bf-Q6a">
             <objects>
                 <viewController id="UWO-gQ-4TB" customClass="RootInsuranceViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
@@ -1109,7 +1161,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="光伏保险" image="ic_tab_insurance" selectedImage="ic_tab_insurance_hl" id="wjG-TT-cDe"/>
+                    <navigationItem key="navigationItem" id="Q5v-1V-veS"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="inTableView" destination="iYb-a9-eOX" id="fhM-u4-daA"/>
@@ -1117,7 +1169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Azt-cS-b8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-882.39999999999998" y="-1418.1409295352325"/>
+            <point key="canvasLocation" x="-3012" y="-242"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Zrw-Oa-tPi">
@@ -1130,16 +1182,33 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5DT-7n-F6F" kind="relationship" relationship="viewControllers" id="uy2-Gr-IdV"/>
-                        <segue destination="vPu-r7-p0r" kind="relationship" relationship="viewControllers" id="XZs-F1-vhT"/>
-                        <segue destination="UWO-gQ-4TB" kind="relationship" relationship="viewControllers" id="Rhq-sG-jSG"/>
-                        <segue destination="ULy-sg-gbR" kind="relationship" relationship="viewControllers" id="c3j-AO-GTk"/>
-                        <segue destination="u86-aG-yn6" kind="relationship" relationship="viewControllers" id="sZn-oe-gxr"/>
+                        <segue destination="jYK-aX-9ae" kind="relationship" relationship="viewControllers" id="1LB-0d-GSJ"/>
+                        <segue destination="KWr-Sl-spE" kind="relationship" relationship="viewControllers" id="bte-eP-kor"/>
+                        <segue destination="gNN-I7-J0n" kind="relationship" relationship="viewControllers" id="EAH-zI-dbe"/>
+                        <segue destination="dGc-Kc-oaf" kind="relationship" relationship="viewControllers" id="20L-Kb-00G"/>
+                        <segue destination="mPy-2f-I8J" kind="relationship" relationship="viewControllers" id="edS-Hm-cac"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxH-pb-z2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1748" y="-304"/>
+            <point key="canvasLocation" x="-4583" y="-733"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="ZQp-nR-mIt">
+            <objects>
+                <navigationController id="mPy-2f-I8J" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="ic_tab_my" selectedImage="ic_tab_my_hl" id="xi2-sZ-uka"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="65A-dl-jKQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="u86-aG-yn6" kind="relationship" relationship="rootViewController" id="H6C-2i-aSS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0H-j3-6Y8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3780" y="1112"/>
         </scene>
     </scenes>
     <resources>

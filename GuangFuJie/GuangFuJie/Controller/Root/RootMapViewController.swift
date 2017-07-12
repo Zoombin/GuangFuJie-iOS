@@ -19,14 +19,14 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "附近安装商"
+        self.navigationItem.title = "屋顶地图"
         initView()
         locService = BMKLocationService()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
     
     func getNearByPoints(_ loation : CLLocationCoordinate2D) {
