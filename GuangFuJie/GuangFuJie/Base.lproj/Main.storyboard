@@ -1609,7 +1609,7 @@
         <!--光伏问答-->
         <scene sceneID="lhc-iR-ylO">
             <objects>
-                <viewController id="oWt-jJ-nrP" userLabel="光伏问答" customClass="GuangFuAskViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuangFuAskViewController" id="oWt-jJ-nrP" userLabel="光伏问答" customClass="GuangFuAskViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gad-Kx-6xM"/>
                         <viewControllerLayoutGuide type="bottom" id="s0u-gp-Ww3"/>

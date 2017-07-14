@@ -75,6 +75,8 @@ class RootHomeViewController: BaseViewController {
             self.pushViewController(vc)
         } else if (sender.tag == 4) {
            //光伏问答
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "GuangFuAskViewController"))
         } else if (sender.tag == 5) {
            //公司介绍
         } else if (sender.tag == 6) {

@@ -115,7 +115,7 @@
 		DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
-		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
+		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; settings = {ASSET_TAGS = (GuangFuAskViewController, ); }; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
 		DE8683EB1F0DC92B00FF7FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E91F0DC92B00FF7FD3 /* LaunchScreen.storyboard */; };
 		DE8684281F0DC9DE00FF7FD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684271F0DC9DE00FF7FD3 /* ViewController.swift */; };
@@ -449,7 +449,7 @@
 		DE868DE41F0DE4EF00FF7FD3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE868DE31F0DE4EF00FF7FD3 /* CoreMotion.framework */; };
 		DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */; };
 		DE868DE81F0DE63200FF7FD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */; };
-		DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
+		DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; settings = {ASSET_TAGS = (GuangFuAskViewController, ); }; };
 		DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
 		DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
 		DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */; };
@@ -3889,6 +3889,9 @@
 		DE8683D51F0DC92B00FF7FD3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					GuangFuAskViewController,
+				);
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = yc;
