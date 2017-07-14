@@ -298,7 +298,7 @@ class ApplyForOrderViewController: BaseViewController, BMKLocationServiceDelegat
             self.showHint(error)
         }
     }
-    
+
     func submitOrder() {
         if (shouldShowLogin()) {
             return
