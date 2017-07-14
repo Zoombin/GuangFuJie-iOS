@@ -36,6 +36,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         tableView.deselectRow(at: indexPath, animated: true)
         if (indexPath.row == 0) {
             //分享光伏街
+            shareApp()
         } else if (indexPath.row == 1) {
             //技术支持
         } else if (indexPath.row == 2) {

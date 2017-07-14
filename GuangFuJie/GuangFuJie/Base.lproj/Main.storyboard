@@ -1827,11 +1827,11 @@
             </objects>
             <point key="canvasLocation" x="-3780" y="-1621"/>
         </scene>
-        <!--光伏资讯-->
+        <!--政策资讯-->
         <scene sceneID="Xa2-8Q-V0e">
             <objects>
                 <navigationController id="dGc-Kc-oaf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="光伏资讯" image="ic_tab_news" selectedImage="ic_tab_news_hl" id="0py-8M-gMi"/>
+                    <tabBarItem key="tabBarItem" title="政策资讯" image="ic_tab_news" selectedImage="ic_tab_news_hl" id="0py-8M-gMi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GOW-gN-WMt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
