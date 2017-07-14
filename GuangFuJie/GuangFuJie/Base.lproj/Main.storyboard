@@ -68,13 +68,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDG-Pj-MHi" userLabel="打开&amp;关闭">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDG-Pj-MHi" userLabel="打开&amp;关闭">
                                 <rect key="frame" x="159" y="496" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="ic_show_funtion"/>
                                 <state key="selected" backgroundImage="ic_close_funtion"/>
+                                <connections>
+                                    <action selector="closeButtonClicked" destination="vPu-r7-p0r" eventType="touchUpInside" id="Bdx-FI-ExR"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cko-uL-Od9" userLabel="评估">
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cko-uL-Od9" userLabel="评估">
                                 <rect key="frame" x="96" y="475" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="ic_map_function_pg"/>
@@ -82,7 +85,7 @@
                                     <action selector="normalCalButtonClicked" destination="vPu-r7-p0r" eventType="touchUpInside" id="0vl-ts-nen"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiR-Z1-twa" userLabel="出租">
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiR-Z1-twa" userLabel="出租">
                                 <rect key="frame" x="159" y="432" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="ic_map_fuction_cz"/>
@@ -90,7 +93,7 @@
                                     <action selector="leaseButtonClicked" destination="vPu-r7-p0r" eventType="touchUpInside" id="JYX-sa-lQM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gm-aw-Evi" userLabel="测算">
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gm-aw-Evi" userLabel="测算">
                                 <rect key="frame" x="222" y="475" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="ic_map_function_cs"/>
@@ -103,7 +106,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="obh-9M-s8O"/>
                     <connections>
+                        <outlet property="calButton" destination="6gm-aw-Evi" id="Rk4-2W-ZBh"/>
+                        <outlet property="closeButton" destination="FDG-Pj-MHi" id="TuD-N8-eUk"/>
+                        <outlet property="leaseButton" destination="JiR-Z1-twa" id="Lrz-N2-AwD"/>
                         <outlet property="mapView" destination="Ytm-Qx-wSX" id="6Gs-8x-hMV"/>
+                        <outlet property="pgButton" destination="cko-uL-Od9" id="RrB-uO-sQy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgF-Pc-rkd" userLabel="First Responder" sceneMemberID="firstResponder"/>

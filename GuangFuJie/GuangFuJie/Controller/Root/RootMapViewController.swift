@@ -10,6 +10,10 @@ import UIKit
 
 class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKMapViewDelegate {
     
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var pgButton: UIButton!
+    @IBOutlet weak var leaseButton: UIButton!
+    @IBOutlet weak var calButton: UIButton!
     var locService : BMKLocationService!
     
     @IBOutlet weak var mapView : BMKMapView!
@@ -188,6 +192,19 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     @IBAction func normalCalButtonClicked() {
         let vc = RoofPriceViewController()
         self.pushViewController(vc)
+    }
+    
+    @IBAction func closeButtonClicked() {
+        closeButton.isSelected = !closeButton.isSelected
+        UIView.animate(withDuration: 0.5, animations: {
+            self.pgButton.alpha = !self.closeButton.isSelected ? 0.0 : 1.0
+            self.leaseButton.alpha = !self.closeButton.isSelected ? 0.0 : 1.0
+            self.calButton.alpha = !self.closeButton.isSelected ? 0.0 : 1.0
+        }) { (true) in
+            self.pgButton.isUserInteractionEnabled = self.closeButton.isSelected
+            self.leaseButton.isUserInteractionEnabled = self.closeButton.isSelected
+            self.calButton.isUserInteractionEnabled = self.closeButton.isSelected
+        }
     }
 
 }
