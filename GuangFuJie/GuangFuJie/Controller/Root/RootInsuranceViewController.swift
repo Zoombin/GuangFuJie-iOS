@@ -19,7 +19,27 @@ class RootInsuranceViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        let buyBottomView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - 50, width: PhoneUtils.kScreenWidth, height: 50))
+        buyBottomView.backgroundColor = UIColor.white
+        self.view.addSubview(buyBottomView)
+        
+        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
+        let buttonHeight = buyBottomView.frame.size.height - 5 * 2
+        
+        let calButton = GFJBottomButton.init(type: UIButtonType.custom)
+        calButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
+        calButton.setTitle("购买保险", for: UIControlState.normal)
+        calButton.backgroundColor = Colors.appBlue
+        calButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        calButton.titleLabel?.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 17))
+        calButton.addTarget(self, action: #selector(self.buyNow), for: UIControlEvents.touchUpInside)
+        buyBottomView.addSubview(calButton)
+    }
+    
+    func buyNow() {
+        let vc = BuySafeViewController()
+        self.pushViewController(vc)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -757,6 +757,8 @@
 		DEE681FA1F1897AC00157560 /* GFAskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681F81F1897AC00157560 /* GFAskCell.swift */; };
 		DEE681FC1F18B2CD00157560 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681FB1F18B2CD00157560 /* MapViewController.swift */; };
 		DEE681FD1F18B2CD00157560 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681FB1F18B2CD00157560 /* MapViewController.swift */; };
+		DEE682021F18BB9900157560 /* RootProjectCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */; };
+		DEE682031F18BB9900157560 /* RootProjectCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1695,6 +1697,7 @@
 		DEE681F51F1893FF00157560 /* GuangFuAskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuangFuAskViewController.swift; sourceTree = "<group>"; };
 		DEE681F81F1897AC00157560 /* GFAskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFAskCell.swift; sourceTree = "<group>"; };
 		DEE681FB1F18B2CD00157560 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootProjectCalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2845,6 +2848,7 @@
 				DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */,
 				DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */,
 				DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */,
+				DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -4245,6 +4249,7 @@
 				DE8689F61F0DD0D700FF7FD3 /* QNHijackingDetectWrapper.m in Sources */,
 				DEC2223A1F13601E007D6DBE /* MJRefreshBackFooter.m in Sources */,
 				DEC229931F136636007D6DBE /* IQUIWindow+Hierarchy.swift in Sources */,
+				DEE682021F18BB9900157560 /* RootProjectCalViewController.swift in Sources */,
 				DE9E17D81F16121200B959AA /* MQMessageFormViewStyle.m in Sources */,
 				DE8689051F0DD07300FF7FD3 /* MBProgressHUD.m in Sources */,
 				DE9E17C41F16121200B959AA /* wav.mm in Sources */,
@@ -4700,6 +4705,7 @@
 				DE8685151F0DCC7E00FF7FD3 /* BankInfo.swift in Sources */,
 				DE868DFB1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DEC2299C1F136636007D6DBE /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				DEE682031F18BB9900157560 /* RootProjectCalViewController.swift in Sources */,
 				DEE681F41F185FDF00157560 /* YeZhuViewController.swift in Sources */,
 				DE868A121F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DEC2223D1F13601E007D6DBE /* MJRefreshComponent.m in Sources */,

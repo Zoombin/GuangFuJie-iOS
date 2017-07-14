@@ -71,8 +71,8 @@ class RootHomeViewController: BaseViewController {
            //安装运维
         } else if (sender.tag == 3) {
            //光伏保险
-            let vc = BuySafeViewController()
-            self.pushViewController(vc)
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
         } else if (sender.tag == 4) {
            //光伏问答
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
