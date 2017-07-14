@@ -1034,6 +1034,9 @@
                                         <state key="normal" title="光伏问答" image="ic_menu_gfwd">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="oWt-jJ-nrP" kind="show" id="uxD-XH-rAv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mF-md-eoC">
                                         <rect key="frame" x="188" y="478" width="187.5" height="60"/>
@@ -1220,6 +1223,9 @@
                                         <state key="normal" title="光伏问答" image="ic_menu_gfwd">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="oWt-jJ-nrP" kind="show" id="pGW-Co-TeL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsK-FP-ylj">
                                         <rect key="frame" x="188" y="478" width="187.5" height="60"/>
@@ -1380,6 +1386,9 @@
                                         <state key="normal" title="光伏问答" image="ic_menu_gfwd">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="oWt-jJ-nrP" kind="show" id="GOK-lY-krd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USj-Tv-mL2">
                                         <rect key="frame" x="188" y="417" width="187.5" height="60"/>
@@ -1596,6 +1605,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8V-KN-cii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3012" y="-1621"/>
+        </scene>
+        <!--光伏问答-->
+        <scene sceneID="lhc-iR-ylO">
+            <objects>
+                <viewController id="oWt-jJ-nrP" userLabel="光伏问答" customClass="GuangFuAskViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gad-Kx-6xM"/>
+                        <viewControllerLayoutGuide type="bottom" id="s0u-gp-Ww3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6rz-pV-T9H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="110" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ht5-AK-3hV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GFAskCell" id="193-8F-qWw" customClass="GFAskCell" customModule="GaoDeGuangFu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="193-8F-qWw" id="prN-5Q-MHi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请问电站需要多大面积才适合安装太阳能电站" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-yr-T6x">
+                                                    <rect key="frame" x="28" y="14" width="256" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已解答" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-bx-aNP">
+                                                    <rect key="frame" x="292" y="38" width="68" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.21176470588235294" green="0.80000000000000004" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_gfask_repeat" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-Gb-5NC">
+                                                    <rect key="frame" x="28" y="71" width="17" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="只要大于50平米，均可安装" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-S7-wBl">
+                                                    <rect key="frame" x="53" y="68" width="231" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="answerLabel" destination="bKd-S7-wBl" id="raJ-ua-P1Y"/>
+                                            <outlet property="questionLabel" destination="G6J-yr-T6x" id="2qf-qR-Bml"/>
+                                            <outlet property="statusLabel" destination="Rue-bx-aNP" id="ArD-4z-IaE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oWt-jJ-nrP" id="J2s-lG-toU"/>
+                                    <outlet property="delegate" destination="oWt-jJ-nrP" id="yYD-Wh-iC8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="anTableView" destination="Ht5-AK-3hV" id="fbE-Sb-V4W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQo-c2-hjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1770.4000000000001" y="-1558.4707646176912"/>
         </scene>
         <!--首页-->
         <scene sceneID="bfs-MV-Ix7">
@@ -1874,6 +1958,7 @@
     </scenes>
     <resources>
         <image name="ic_close_funtion" width="57" height="57"/>
+        <image name="ic_gfask_repeat" width="17" height="14"/>
         <image name="ic_home_anzhuang" width="85" height="98"/>
         <image name="ic_home_banner1" width="375" height="144"/>
         <image name="ic_home_dimian" width="85" height="98"/>
@@ -1935,4 +2020,7 @@
         <image name="ic_urinstaller_avatar" width="85" height="85"/>
         <image name="my_top_bkg" width="375" height="240"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uxD-XH-rAv"/>
+    </inferredMetricsTieBreakers>
 </document>
