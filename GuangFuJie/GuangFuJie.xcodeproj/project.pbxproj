@@ -759,6 +759,10 @@
 		DEE681FD1F18B2CD00157560 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681FB1F18B2CD00157560 /* MapViewController.swift */; };
 		DEE682021F18BB9900157560 /* RootProjectCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */; };
 		DEE682031F18BB9900157560 /* RootProjectCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */; };
+		DEE682061F18C40400157560 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682041F18C40400157560 /* LeaseViewController.swift */; };
+		DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682041F18C40400157560 /* LeaseViewController.swift */; };
+		DEE682081F18C40400157560 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE682051F18C40400157560 /* LeaseViewController.xib */; };
+		DEE682091F18C40400157560 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE682051F18C40400157560 /* LeaseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1698,6 +1702,8 @@
 		DEE681F81F1897AC00157560 /* GFAskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFAskCell.swift; sourceTree = "<group>"; };
 		DEE681FB1F18B2CD00157560 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootProjectCalViewController.swift; sourceTree = "<group>"; };
+		DEE682041F18C40400157560 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
+		DEE682051F18C40400157560 /* LeaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2125,6 +2131,8 @@
 				DEE681F21F185FDF00157560 /* YeZhuViewController.swift */,
 				DEE681F51F1893FF00157560 /* GuangFuAskViewController.swift */,
 				DEE681FB1F18B2CD00157560 /* MapViewController.swift */,
+				DEE682041F18C40400157560 /* LeaseViewController.swift */,
+				DEE682051F18C40400157560 /* LeaseViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4038,6 +4046,7 @@
 				DEC226D11F136363007D6DBE /* UMShareEditViewController.xib in Resources */,
 				DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */,
 				DE868DDD1F0DE4AC00FF7FD3 /* BeeCloud.bundle in Resources */,
+				DEE682081F18C40400157560 /* LeaseViewController.xib in Resources */,
 				DE3954371F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */,
 				DEC226D91F136363007D6DBE /* UMSShareListController.xib in Resources */,
 				DEC226CB1F136363007D6DBE /* UMSCommentDetailController.xib in Resources */,
@@ -4066,6 +4075,7 @@
 				DEC226CE1F136363007D6DBE /* UMSCommentInputController.xib in Resources */,
 				DEC229AA1F136636007D6DBE /* IQKeyboardManager.bundle in Resources */,
 				DEC226C81F136363007D6DBE /* UMSocialLocalizable.strings in Resources */,
+				DEE682091F18C40400157560 /* LeaseViewController.xib in Resources */,
 				DE86842D1F0DC9DE00FF7FD3 /* Assets.xcassets in Resources */,
 				DE868DDE1F0DE4AC00FF7FD3 /* BeeCloud.bundle in Resources */,
 				DEC226D21F136363007D6DBE /* UMShareEditViewController.xib in Resources */,
@@ -4257,6 +4267,7 @@
 				DE9E17C21F16121200B959AA /* MEIQIA_TTTAttributedLabel.m in Sources */,
 				DE9E17B81F16121200B959AA /* MEIQIA_FBSquareFont.m in Sources */,
 				DE868D991F0DE4AC00FF7FD3 /* BCPreRefundResp.m in Sources */,
+				DEE682061F18C40400157560 /* LeaseViewController.swift in Sources */,
 				DE868DA91F0DE4AC00FF7FD3 /* BCQueryRefundByIdResp.m in Sources */,
 				DE86887B1F0DD05900FF7FD3 /* QNPHAssetFile.m in Sources */,
 				DE8689E81F0DD0D700FF7FD3 /* QNDnsManager.m in Sources */,
@@ -4654,6 +4665,7 @@
 				DE868DB41F0DE4AC00FF7FD3 /* BCRefundStatusReq.m in Sources */,
 				DEC222451F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
+				DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */,
 				DEC222431F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DE8688781F0DD05900FF7FD3 /* QNEtag.m in Sources */,
 				DE868D921F0DE4AC00FF7FD3 /* BCPayResp.m in Sources */,

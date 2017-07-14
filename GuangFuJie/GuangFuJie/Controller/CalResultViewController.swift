@@ -88,7 +88,7 @@ class CalResultViewController: BaseViewController {
         submitBottomView.addSubview(submitButton)
 
         let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - submitBottomView.frame.size.height - 64))
-        scrollView.backgroundColor = UIColor.white
+        scrollView.backgroundColor = Colors.bkgColor
         self.view.addSubview(scrollView)
         
         var line: CGFloat = 0

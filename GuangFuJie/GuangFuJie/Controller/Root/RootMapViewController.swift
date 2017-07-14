@@ -180,7 +180,8 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     
     //出租
     @IBAction func leaseButtonClicked() {
-        
+        let vc = UIViewController.init(nibName: "LeaseViewController", bundle: nil)
+        self.pushViewController(vc)
     }
     
     //评估
