@@ -8,12 +8,19 @@
 
 import UIKit
 //加盟商页面
-class JoinUsViewController: UIViewController {
+class JoinUsViewController: BaseViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "加盟商"
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollView.contentSize = CGSize(width: 0, height: 780)
     }
 
     override func didReceiveMemoryWarning() {

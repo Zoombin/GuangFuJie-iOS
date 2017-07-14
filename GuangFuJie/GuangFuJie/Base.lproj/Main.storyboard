@@ -113,79 +113,236 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5E-jT-PYf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skF-9j-Dc2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X4-H0-59j">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
-                                        <state key="normal" backgroundImage="ic_joinus1"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-mS-CAb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_urinstaller_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="8UZ-cm-a3k">
+                                                <rect key="frame" x="144" y="15" width="86" height="86"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0U-gC-wBo">
+                                                <rect key="frame" x="123" y="135" width="130" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.41960784309999999" green="0.70196078429999997" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="申请成为加盟商">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="苏州XX信息科技有限公司" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmt-pL-bhG">
+                                                <rect key="frame" x="0.0" y="109" width="375" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qJ-4J-y3A">
+                                        <rect key="frame" x="0.0" y="188" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="本地市场" image="ic_menu_bdsc">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0O-TQ-wba">
-                                        <rect key="frame" x="190" y="175" width="185" height="120"/>
-                                        <state key="normal" backgroundImage="ic_joinus3"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge5-wL-jc2">
+                                        <rect key="frame" x="188" y="188" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="体验店　" image="ic_menu_tyd">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-eT-JuZ">
-                                        <rect key="frame" x="0.0" y="300" width="185" height="120"/>
-                                        <state key="normal" backgroundImage="ic_joinus4"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ty-G8-KRY">
+                                        <rect key="frame" x="0.0" y="249" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="光伏政策" image="ic_menu_gfzc">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wo-ex-W7R">
-                                        <rect key="frame" x="190" y="300" width="185" height="120"/>
-                                        <state key="normal" backgroundImage="ic_joinus5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-SW-aIV">
+                                        <rect key="frame" x="188" y="249" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="光伏保险" image="ic_menu_gfbx">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3G-Mo-dHP">
-                                        <rect key="frame" x="0.0" y="425" width="185" height="120"/>
-                                        <state key="normal" backgroundImage="ic_joinus6"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-Ht-yGJ">
+                                        <rect key="frame" x="0.0" y="310" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="光伏贷款" image="ic_menu_gfdk">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uB-y0-14U">
-                                        <rect key="frame" x="190" y="425" width="185" height="120"/>
-                                        <state key="normal" backgroundImage="ic_joinus7"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaf-rS-CXY">
+                                        <rect key="frame" x="188" y="310" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="供电局　" image="ic_menu_gdj">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w02-ir-81y">
-                                        <rect key="frame" x="0.0" y="550" width="185" height="120"/>
-                                        <state key="normal" backgroundImage="ic_joinus8"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOh-5D-i9O">
+                                        <rect key="frame" x="0.0" y="598" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="安装教程" image="ic_menu_azlc">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beW-qw-xZ4">
-                                        <rect key="frame" x="192" y="550" width="183" height="120"/>
-                                        <state key="normal" backgroundImage="ic_joinus9"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYZ-Pj-1CW">
+                                        <rect key="frame" x="188" y="598" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="安装运维" image="ic_menu_azyw">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qL8-ME-98y">
-                                        <rect key="frame" x="0.0" y="175" width="185" height="120"/>
-                                        <state key="normal" backgroundImage="ic_joinus2"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5r-xT-BaG">
+                                        <rect key="frame" x="0.0" y="659" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="光伏问答" image="ic_menu_gfwd">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="oWt-jJ-nrP" kind="show" id="e61-h8-alB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpu-bh-qMA">
+                                        <rect key="frame" x="188" y="659" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="实战模式" image="ic_menu_szms">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRr-N9-9wj">
+                                        <rect key="frame" x="0.0" y="720" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="产品供求" image="ic_menu_cpgq">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvE-kV-kKw">
+                                        <rect key="frame" x="188" y="720" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="客服　　" image="ic_menu_kf">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您可能需要以下需求" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irY-ew-6Pc">
+                                        <rect key="frame" x="27" y="565" width="320" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXJ-hJ-pjf">
+                                        <rect key="frame" x="0.0" y="371" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="地面推广" image="ic_menu_dmtg">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-su-A8j">
+                                        <rect key="frame" x="188" y="371" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="推广支持" image="ic_menu_tgzc">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbC-7k-DAG">
+                                        <rect key="frame" x="0.0" y="432" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="本地安装商" image="ic_menu_bdazs">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBv-CR-aKG">
+                                        <rect key="frame" x="188" y="432" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="本地业主" image="ic_menu_bdyz">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qII-J6-DdX">
+                                        <rect key="frame" x="0.0" y="493" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="投资收益" image="ic_menu_tzsy">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVR-Zm-yEU">
+                                        <rect key="frame" x="188" y="493" width="187.5" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="实战模式" image="ic_menu_szms">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="3uB-y0-14U" firstAttribute="top" secondItem="K3G-Mo-dHP" secondAttribute="top" id="4bh-R9-ztu"/>
-                                    <constraint firstItem="YXc-eT-JuZ" firstAttribute="top" secondItem="6wo-ex-W7R" secondAttribute="top" id="4q3-pC-4JU"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="w02-ir-81y" secondAttribute="leading" id="GdY-EM-ILi"/>
-                                    <constraint firstItem="3uB-y0-14U" firstAttribute="top" secondItem="M5E-jT-PYf" secondAttribute="top" constant="425" id="IR3-pY-nF6"/>
-                                    <constraint firstItem="YXc-eT-JuZ" firstAttribute="top" secondItem="qL8-ME-98y" secondAttribute="bottom" constant="5" id="Jlp-mS-4dq"/>
-                                    <constraint firstItem="3uB-y0-14U" firstAttribute="top" secondItem="6wo-ex-W7R" secondAttribute="bottom" constant="5" id="LO1-Lr-16N"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="qL8-ME-98y" secondAttribute="leading" id="MKE-Vz-D55"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="trailing" secondItem="beW-qw-xZ4" secondAttribute="trailing" id="Mit-jl-IUO"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="top" secondItem="M5E-jT-PYf" secondAttribute="top" id="TyX-51-706"/>
-                                    <constraint firstItem="w02-ir-81y" firstAttribute="top" secondItem="beW-qw-xZ4" secondAttribute="top" id="Wj0-Bw-8Mk"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="YXc-eT-JuZ" secondAttribute="leading" id="iIp-3J-UKC"/>
-                                    <constraint firstItem="beW-qw-xZ4" firstAttribute="top" secondItem="3uB-y0-14U" secondAttribute="bottom" constant="5" id="kC0-Pr-5Eh"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="trailing" secondItem="6wo-ex-W7R" secondAttribute="trailing" id="khv-nR-xfh"/>
-                                    <constraint firstItem="N0O-TQ-wba" firstAttribute="top" secondItem="9X4-H0-59j" secondAttribute="bottom" constant="5" id="lDv-Te-0WR"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="M5E-jT-PYf" secondAttribute="leading" id="mzx-P1-Me9"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="leading" secondItem="K3G-Mo-dHP" secondAttribute="leading" id="rcw-r9-WwQ"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="trailing" secondItem="3uB-y0-14U" secondAttribute="trailing" id="t8I-I2-KWB"/>
-                                    <constraint firstAttribute="trailing" secondItem="9X4-H0-59j" secondAttribute="trailing" id="tJs-Wg-pi5"/>
-                                    <constraint firstAttribute="bottom" secondItem="9X4-H0-59j" secondAttribute="bottom" constant="497" id="uKF-xM-Nju"/>
-                                    <constraint firstItem="9X4-H0-59j" firstAttribute="trailing" secondItem="N0O-TQ-wba" secondAttribute="trailing" id="zQp-OL-gJ0"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="M5E-jT-PYf" firstAttribute="top" secondItem="jYH-0r-2xr" secondAttribute="top" id="28J-4d-Zu4"/>
-                            <constraint firstAttribute="trailing" secondItem="M5E-jT-PYf" secondAttribute="trailing" id="FTv-1o-4Bv"/>
-                            <constraint firstItem="M5E-jT-PYf" firstAttribute="leading" secondItem="jYH-0r-2xr" secondAttribute="leading" id="TeL-j4-oIg"/>
-                            <constraint firstItem="M5E-jT-PYf" firstAttribute="bottom" secondItem="uIR-Zc-fTQ" secondAttribute="top" id="aMG-IU-6S0"/>
-                        </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="skF-9j-Dc2" id="YVd-bf-FJS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3me-9j-psf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1968,15 +2125,6 @@
         <image name="ic_home_recpro2" width="115" height="110"/>
         <image name="ic_home_recpro3" width="115" height="110"/>
         <image name="ic_home_yezhu" width="85" height="98"/>
-        <image name="ic_joinus1" width="375" height="170"/>
-        <image name="ic_joinus2" width="185" height="120"/>
-        <image name="ic_joinus3" width="185" height="120"/>
-        <image name="ic_joinus4" width="185" height="120"/>
-        <image name="ic_joinus5" width="185" height="120"/>
-        <image name="ic_joinus6" width="185" height="120"/>
-        <image name="ic_joinus7" width="185" height="120"/>
-        <image name="ic_joinus8" width="185" height="120"/>
-        <image name="ic_joinus9" width="183" height="120"/>
         <image name="ic_map_fuction_cz" width="56" height="56"/>
         <image name="ic_map_function_cs" width="56" height="56"/>
         <image name="ic_map_function_pg" width="56" height="56"/>
@@ -1985,9 +2133,11 @@
         <image name="ic_map_red" width="6" height="6"/>
         <image name="ic_menu_azlc" width="37" height="37"/>
         <image name="ic_menu_azyw" width="37" height="37"/>
+        <image name="ic_menu_bdazs" width="37" height="37"/>
         <image name="ic_menu_bdsc" width="37" height="37"/>
         <image name="ic_menu_bdyz" width="37" height="37"/>
         <image name="ic_menu_cpgq" width="37" height="37"/>
+        <image name="ic_menu_dmtg" width="37" height="37"/>
         <image name="ic_menu_gdj" width="37" height="37"/>
         <image name="ic_menu_gfbx" width="37" height="37"/>
         <image name="ic_menu_gfdk" width="37" height="37"/>
@@ -1995,7 +2145,9 @@
         <image name="ic_menu_gfzc" width="37" height="37"/>
         <image name="ic_menu_kf" width="37" height="37"/>
         <image name="ic_menu_szms" width="37" height="37"/>
+        <image name="ic_menu_tgzc" width="37" height="37"/>
         <image name="ic_menu_tyd" width="37" height="37"/>
+        <image name="ic_menu_tzsy" width="37" height="37"/>
         <image name="ic_menu_xmcs" width="37" height="37"/>
         <image name="ic_my_about" width="18" height="18"/>
         <image name="ic_my_fav" width="32" height="31"/>
@@ -2021,6 +2173,6 @@
         <image name="my_top_bkg" width="375" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uxD-XH-rAv"/>
+        <segue reference="e61-h8-alB"/>
     </inferredMetricsTieBreakers>
 </document>
