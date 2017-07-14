@@ -171,5 +171,22 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     func didStopLocatingUser() {
         print("didStopLocatingUser")
     }
+    
+    //微信地图计算
+    @IBAction func mapCalButtonClicked() {
+        let vc = MapViewController()
+        self.pushViewController(vc)
+    }
+    
+    //出租
+    @IBAction func leaseButtonClicked() {
+        
+    }
+    
+    //评估
+    @IBAction func normalCalButtonClicked() {
+        let vc = RoofPriceViewController()
+        self.pushViewController(vc)
+    }
 
 }
