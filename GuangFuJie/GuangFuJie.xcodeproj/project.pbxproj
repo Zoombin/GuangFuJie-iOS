@@ -745,6 +745,12 @@
 		DEC229A81F136636007D6DBE /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC229861F136636007D6DBE /* IQUIView+IQKeyboardToolbar.swift */; };
 		DEC229A91F136636007D6DBE /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEC229881F136636007D6DBE /* IQKeyboardManager.bundle */; };
 		DEC229AA1F136636007D6DBE /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEC229881F136636007D6DBE /* IQKeyboardManager.bundle */; };
+		DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
+		DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
+		DEE681F01F185EC000157560 /* DiTuiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */; };
+		DEE681F11F185EC000157560 /* DiTuiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */; };
+		DEE681F31F185FDF00157560 /* YeZhuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681F21F185FDF00157560 /* YeZhuViewController.swift */; };
+		DEE681F41F185FDF00157560 /* YeZhuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681F21F185FDF00157560 /* YeZhuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1677,6 +1683,9 @@
 		DEC229851F136636007D6DBE /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
 		DEC229861F136636007D6DBE /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		DEC229881F136636007D6DBE /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerHomeViewController.swift; sourceTree = "<group>"; };
+		DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiTuiHomeViewController.swift; sourceTree = "<group>"; };
+		DEE681F21F185FDF00157560 /* YeZhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2098,6 +2107,9 @@
 				DE39544B1F147FDD00A44740 /* BuySafeViewController.swift */,
 				DE39544C1F147FDD00A44740 /* ApplyForOrderViewController.swift */,
 				DE3954571F1481E500A44740 /* PhotoViewController.swift */,
+				DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */,
+				DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */,
+				DEE681F21F185FDF00157560 /* YeZhuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4205,6 +4217,7 @@
 				DE39521E1F14619E00A44740 /* Colors.swift in Sources */,
 				DE9E177E1F16121200B959AA /* MQEventMessageFactory.m in Sources */,
 				DE9E175E1F16121200B959AA /* MQAnimatorPush.m in Sources */,
+				DEE681F31F185FDF00157560 /* YeZhuViewController.swift in Sources */,
 				DE9E177C1F16121200B959AA /* MQBotRichTextMessage.m in Sources */,
 				DE3954011F1468CB00A44740 /* UIImage+MultiFormat.m in Sources */,
 				DE8684F11F0DCC7900FF7FD3 /* RoofInfo.swift in Sources */,
@@ -4342,6 +4355,7 @@
 				DEC229971F136636007D6DBE /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				DE9E179A1F16121200B959AA /* MQEvaluationResultCell.m in Sources */,
 				DE8684F51F0DCC7900FF7FD3 /* CalcModel.swift in Sources */,
+				DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
 				DE3953EF1F1468CB00A44740 /* SDImageCache.m in Sources */,
 				DE868DFD1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */,
 				DE9E178E1F16121200B959AA /* MQMessageDateCellModel.m in Sources */,
@@ -4385,6 +4399,7 @@
 				DE868A111F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DE868AD61F0DD1B800FF7FD3 /* NSObject+MJCoding.m in Sources */,
 				DE9E17BA1F16121200B959AA /* MEIQIA_HPGrowingTextView.m in Sources */,
+				DEE681F01F185EC000157560 /* DiTuiHomeViewController.swift in Sources */,
 				DEC2212D1F135AB7007D6DBE /* GFJWebViewController.swift in Sources */,
 				DE9E17CC1F16121200B959AA /* MQInputContentView.m in Sources */,
 				DE9E17CE1F16121200B959AA /* MQInputToolBar.m in Sources */,
@@ -4462,6 +4477,7 @@
 				DE868DD61F0DE4AC00FF7FD3 /* NSDictionary+Utils.m in Sources */,
 				DE8685021F0DCC7E00FF7FD3 /* ElectricInfo.swift in Sources */,
 				DE3954531F14802200A44740 /* PublishMediaView.swift in Sources */,
+				DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
 				DE868A091F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DEC222531F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
 				DE868DA61F0DE4AC00FF7FD3 /* BCQueryBillsCountResp.m in Sources */,
@@ -4663,6 +4679,7 @@
 				DE8685151F0DCC7E00FF7FD3 /* BankInfo.swift in Sources */,
 				DE868DFB1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DEC2299C1F136636007D6DBE /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				DEE681F41F185FDF00157560 /* YeZhuViewController.swift in Sources */,
 				DE868A121F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DEC2223D1F13601E007D6DBE /* MJRefreshComponent.m in Sources */,
 				DEC222491F13601E007D6DBE /* MJRefreshBackGifFooter.m in Sources */,
@@ -4678,6 +4695,7 @@
 				DE8688821F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
 				DE868DC41F0DE4AC00FF7FD3 /* BCHTTPSessionManager.m in Sources */,
 				DE8685071F0DCC7E00FF7FD3 /* NewsInfo.swift in Sources */,
+				DEE681F11F185EC000157560 /* DiTuiHomeViewController.swift in Sources */,
 				DE8687741F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE8689F51F0DD0D700FF7FD3 /* QNDnspodFree.m in Sources */,
 				DE3954161F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,

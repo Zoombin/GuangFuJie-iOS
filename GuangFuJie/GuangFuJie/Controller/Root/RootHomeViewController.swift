@@ -29,6 +29,7 @@ class RootHomeViewController: BaseViewController {
     }
     
     func initView() {
+        self.view.backgroundColor = UIColor.white
         loadMenusView()
         initBannerImageView()
     }
