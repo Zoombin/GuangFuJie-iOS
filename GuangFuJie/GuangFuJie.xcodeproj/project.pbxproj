@@ -115,7 +115,7 @@
 		DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
-		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; settings = {ASSET_TAGS = (GuangFuAskViewController, ); }; };
+		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
 		DE8683EB1F0DC92B00FF7FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E91F0DC92B00FF7FD3 /* LaunchScreen.storyboard */; };
 		DE8684281F0DC9DE00FF7FD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684271F0DC9DE00FF7FD3 /* ViewController.swift */; };
@@ -449,7 +449,7 @@
 		DE868DE41F0DE4EF00FF7FD3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE868DE31F0DE4EF00FF7FD3 /* CoreMotion.framework */; };
 		DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */; };
 		DE868DE81F0DE63200FF7FD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */; };
-		DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; settings = {ASSET_TAGS = (GuangFuAskViewController, ); }; };
+		DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
 		DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
 		DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */; };
@@ -772,6 +772,10 @@
 		DEE6821F1F19E4DE00157560 /* DituiApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6821D1F19E4DE00157560 /* DituiApplyViewController.swift */; };
 		DEE682211F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */; };
 		DEE682221F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */; };
+		DEE682241F19F00100157560 /* DiTuiNoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682231F19F00100157560 /* DiTuiNoteListViewController.swift */; };
+		DEE682251F19F00100157560 /* DiTuiNoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682231F19F00100157560 /* DiTuiNoteListViewController.swift */; };
+		DEE682271F19F30700157560 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682261F19F30700157560 /* NoteCell.swift */; };
+		DEE682281F19F30700157560 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682261F19F30700157560 /* NoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1718,6 +1722,8 @@
 		DEE6821A1F19E35D00157560 /* InstallerApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerApplyViewController.swift; sourceTree = "<group>"; };
 		DEE6821D1F19E4DE00157560 /* DituiApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DituiApplyViewController.swift; sourceTree = "<group>"; };
 		DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuApplyViewController.swift; sourceTree = "<group>"; };
+		DEE682231F19F00100157560 /* DiTuiNoteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiTuiNoteListViewController.swift; sourceTree = "<group>"; };
+		DEE682261F19F30700157560 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2120,6 +2126,7 @@
 				DE3952211F14622500A44740 /* GFJBottomButton.swift */,
 				DEC221261F13531B007D6DBE /* NewsCell.swift */,
 				DEE681F81F1897AC00157560 /* GFAskCell.swift */,
+				DEE682261F19F30700157560 /* NoteCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2152,6 +2159,7 @@
 				DEE6821A1F19E35D00157560 /* InstallerApplyViewController.swift */,
 				DEE6821D1F19E4DE00157560 /* DituiApplyViewController.swift */,
 				DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */,
+				DEE682231F19F00100157560 /* DiTuiNoteListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4303,6 +4311,7 @@
 				DE86887F1F0DD05900FF7FD3 /* QNSystem.m in Sources */,
 				DE9E176B1F16121200B959AA /* MQChatViewConfig.m in Sources */,
 				DE868DAB1F0DE4AC00FF7FD3 /* BCQueryRefundsReq.m in Sources */,
+				DEE682241F19F00100157560 /* DiTuiNoteListViewController.swift in Sources */,
 				DE9E17E01F16121200B959AA /* MQMessageFormInputView.m in Sources */,
 				DE9E17B51F16121200B959AA /* MEIQIA_FBFontSymbol.m in Sources */,
 				DEC222521F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
@@ -4324,6 +4333,7 @@
 				DE9E17811F16121200B959AA /* MQMessageFactoryHelper.m in Sources */,
 				DE868DB51F0DE4AC00FF7FD3 /* BCRefundStatusResp.m in Sources */,
 				DE9E17831F16121200B959AA /* MQTextMessage.m in Sources */,
+				DEE682271F19F30700157560 /* NoteCell.swift in Sources */,
 				DE8687671F0DCE4400FF7FD3 /* AFSecurityPolicy.m in Sources */,
 				DE86886F1F0DD05900FF7FD3 /* QN_GTM_Base64.m in Sources */,
 				DE868ACC1F0DD1B800FF7FD3 /* MJFoundation.m in Sources */,
@@ -4531,6 +4541,7 @@
 				DEC2298C1F136636007D6DBE /* IQUIScrollView+Additions.swift in Sources */,
 				DE3954261F1468CB00A44740 /* ZLNavigationController.m in Sources */,
 				DE868AE01F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
+				DEE682281F19F30700157560 /* NoteCell.swift in Sources */,
 				DEE681F71F1893FF00157560 /* GuangFuAskViewController.swift in Sources */,
 				DEC2224D1F13601E007D6DBE /* MJRefreshBackStateFooter.m in Sources */,
 				DE868DD61F0DE4AC00FF7FD3 /* NSDictionary+Utils.m in Sources */,
@@ -4689,6 +4700,7 @@
 				DE3954411F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DE868DB41F0DE4AC00FF7FD3 /* BCRefundStatusReq.m in Sources */,
 				DEE6821C1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */,
+				DEE682251F19F00100157560 /* DiTuiNoteListViewController.swift in Sources */,
 				DEC222451F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */,

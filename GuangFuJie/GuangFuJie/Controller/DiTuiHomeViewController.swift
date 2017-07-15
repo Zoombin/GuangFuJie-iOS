@@ -14,6 +14,16 @@ class DiTuiHomeViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "地推"
         // Do any additional setup after loading the view.
+        initNoteButton()
+    }
+    
+    func initNoteButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "地推笔记", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.noteListButtonClicked))
+    }
+    
+    func noteListButtonClicked() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        self.pushViewController(sb.instantiateViewController(withIdentifier: "DiTuiNoteListViewController"))
     }
 
     override func didReceiveMemoryWarning() {
