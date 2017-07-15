@@ -20,7 +20,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
         // Do any additional setup after loading the view.
         self.navigationItem.title = "政策资讯"
         
-        newsTableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(self.loadData))
+        //newsTableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(self.loadData))
         newsTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
         
         getNewsList()
@@ -41,7 +41,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     func getNewsList() {
         API.sharedInstance.newsList(currentPage, pagesize: pageSize, success: { (count, array) in
             if (self.currentPage == 0) {
-                self.newsTableView.mj_header.endRefreshing()
+                //self.newsTableView.mj_header.endRefreshing()
                 self.hideHud()
                 self.newsArray.removeAllObjects()
             } else {
@@ -56,7 +56,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
             self.newsTableView.reloadData()
         }) { (msg) in
             self.newsTableView.mj_footer.endRefreshing()
-            self.newsTableView.mj_header.endRefreshing()
+            //self.newsTableView.mj_header.endRefreshing()
             self.hideHud()
             self.showHint(msg)
         }
