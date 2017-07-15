@@ -764,6 +764,8 @@
 		DEE682081F18C40400157560 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE682051F18C40400157560 /* LeaseViewController.xib */; };
 		DEE682091F18C40400157560 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE682051F18C40400157560 /* LeaseViewController.xib */; };
 		DEE6820D1F19C4FD00157560 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */; };
+		DEE682181F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682171F19D0B200157560 /* JoinUsApplyViewController.swift */; };
+		DEE682191F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682171F19D0B200157560 /* JoinUsApplyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1706,6 +1708,7 @@
 		DEE682041F18C40400157560 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEE682051F18C40400157560 /* LeaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaseViewController.xib; sourceTree = "<group>"; };
 		DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DEE682171F19D0B200157560 /* JoinUsApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinUsApplyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2136,6 +2139,7 @@
 				DEE682041F18C40400157560 /* LeaseViewController.swift */,
 				DEE682051F18C40400157560 /* LeaseViewController.xib */,
 				DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */,
+				DEE682171F19D0B200157560 /* JoinUsApplyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4458,6 +4462,7 @@
 				DEC229A71F136636007D6DBE /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				DE8684FC1F0DCC7900FF7FD3 /* BookingStatus.swift in Sources */,
 				DE8684411F0DCADE00FF7FD3 /* API+List.swift in Sources */,
+				DEE682181F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */,
 				DE8688811F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
 				DE9E17C11F16121200B959AA /* MEIQIA_MLAudioRecorder.m in Sources */,
 				DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */,
@@ -4686,6 +4691,7 @@
 				DE868AE31F0DD23400FF7FD3 /* PhoneUtils.swift in Sources */,
 				DE8688761F0DD05900FF7FD3 /* QNCrc32.m in Sources */,
 				DE39542C1F1468CB00A44740 /* ZLPhotoPickerViewController.m in Sources */,
+				DEE682191F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */,
 				DE868DBA1F0DE4AC00FF7FD3 /* BCQueryBillResult.m in Sources */,
 				DE868D9E1F0DE4AC00FF7FD3 /* BCQueryBillByIdResp.m in Sources */,
 				DE3954081F1468CB00A44740 /* UIView+WebCacheOperation.m in Sources */,
