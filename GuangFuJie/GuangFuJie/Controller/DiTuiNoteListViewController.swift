@@ -13,11 +13,12 @@ class DiTuiNoteListViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNote()
+        initView()
         // Do any additional setup after loading the view.
     }
     
     func initView() {
+        self.title = "地推笔记"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "+", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.addNote))
     }
     
