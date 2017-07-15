@@ -9,6 +9,7 @@
 import UIKit
 
 class RootProjectCalViewController: BaseViewController {
+    @IBOutlet weak var bkgXZView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,10 @@ class RootProjectCalViewController: BaseViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        bkgXZView.layer.shadowColor = UIColor.lightGray.cgColor
+        bkgXZView.layer.shadowRadius = 5.0
+        bkgXZView.layer.shadowOpacity = 0.8
+        bkgXZView.layer.shadowOffset = CGSize(width: -5, height: 0)
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
     

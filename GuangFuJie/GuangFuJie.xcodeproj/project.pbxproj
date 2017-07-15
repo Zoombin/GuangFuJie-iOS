@@ -763,6 +763,7 @@
 		DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682041F18C40400157560 /* LeaseViewController.swift */; };
 		DEE682081F18C40400157560 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE682051F18C40400157560 /* LeaseViewController.xib */; };
 		DEE682091F18C40400157560 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE682051F18C40400157560 /* LeaseViewController.xib */; };
+		DEE6820D1F19C4FD00157560 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1704,6 +1705,7 @@
 		DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootProjectCalViewController.swift; sourceTree = "<group>"; };
 		DEE682041F18C40400157560 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEE682051F18C40400157560 /* LeaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaseViewController.xib; sourceTree = "<group>"; };
+		DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2133,6 +2135,7 @@
 				DEE681FB1F18B2CD00157560 /* MapViewController.swift */,
 				DEE682041F18C40400157560 /* LeaseViewController.swift */,
 				DEE682051F18C40400157560 /* LeaseViewController.xib */,
+				DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4401,6 +4404,7 @@
 				DE868A001F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
 				DE9E17D01F16121200B959AA /* MQRecordView.m in Sources */,
 				DE9E17801F16121200B959AA /* MQImageMessage.m in Sources */,
+				DEE6820D1F19C4FD00157560 /* SettingsViewController.swift in Sources */,
 				DE9E17A81F16121200B959AA /* MQChatDeviceUtil.m in Sources */,
 				DE8684F21F0DCC7900FF7FD3 /* QNResultInfo.swift in Sources */,
 				DE9E17C71F16121200B959AA /* MQChatTableView.m in Sources */,
