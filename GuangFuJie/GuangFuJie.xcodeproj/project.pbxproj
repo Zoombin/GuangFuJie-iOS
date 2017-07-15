@@ -766,6 +766,12 @@
 		DEE6820D1F19C4FD00157560 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */; };
 		DEE682181F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682171F19D0B200157560 /* JoinUsApplyViewController.swift */; };
 		DEE682191F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682171F19D0B200157560 /* JoinUsApplyViewController.swift */; };
+		DEE6821B1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6821A1F19E35D00157560 /* InstallerApplyViewController.swift */; };
+		DEE6821C1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6821A1F19E35D00157560 /* InstallerApplyViewController.swift */; };
+		DEE6821E1F19E4DE00157560 /* DituiApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6821D1F19E4DE00157560 /* DituiApplyViewController.swift */; };
+		DEE6821F1F19E4DE00157560 /* DituiApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6821D1F19E4DE00157560 /* DituiApplyViewController.swift */; };
+		DEE682211F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */; };
+		DEE682221F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1709,6 +1715,9 @@
 		DEE682051F18C40400157560 /* LeaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaseViewController.xib; sourceTree = "<group>"; };
 		DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DEE682171F19D0B200157560 /* JoinUsApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinUsApplyViewController.swift; sourceTree = "<group>"; };
+		DEE6821A1F19E35D00157560 /* InstallerApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerApplyViewController.swift; sourceTree = "<group>"; };
+		DEE6821D1F19E4DE00157560 /* DituiApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DituiApplyViewController.swift; sourceTree = "<group>"; };
+		DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuApplyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2140,6 +2149,9 @@
 				DEE682051F18C40400157560 /* LeaseViewController.xib */,
 				DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */,
 				DEE682171F19D0B200157560 /* JoinUsApplyViewController.swift */,
+				DEE6821A1F19E35D00157560 /* InstallerApplyViewController.swift */,
+				DEE6821D1F19E4DE00157560 /* DituiApplyViewController.swift */,
+				DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4152,8 +4164,10 @@
 				DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
 				DE9E17891F16121200B959AA /* MQBotWebViewBubbleAnswerCellModel.m in Sources */,
 				DE9E175F1F16121200B959AA /* MQShareTransitioningDelegateImpl.m in Sources */,
+				DEE682211F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
 				DEC226C11F136363007D6DBE /* SMenuButton.m in Sources */,
 				DE868D8D1F0DE4AC00FF7FD3 /* BCBaseResp.m in Sources */,
+				DEE6821B1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */,
 				DE868D851F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
 				DE9E17751F16121200B959AA /* MQPreChatFormListViewController.m in Sources */,
 				DE868DC71F0DE4AC00FF7FD3 /* BCSecurityPolicy.m in Sources */,
@@ -4209,6 +4223,7 @@
 				DEC222441F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE868D971F0DE4AC00FF7FD3 /* BCPreRefundReq.m in Sources */,
 				DE3954111F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
+				DEE6821E1F19E4DE00157560 /* DituiApplyViewController.swift in Sources */,
 				DE9E17DB1F16121200B959AA /* MQMessageFormViewStyleGreen.m in Sources */,
 				DE8688851F0DD05900FF7FD3 /* QNSessionManager.m in Sources */,
 				DE3952221F14622500A44740 /* GFJBottomButton.swift in Sources */,
@@ -4643,6 +4658,7 @@
 				DE868DB61F0DE4AC00FF7FD3 /* BCRefundStatusResp.m in Sources */,
 				DE8687681F0DCE4400FF7FD3 /* AFSecurityPolicy.m in Sources */,
 				DE8688701F0DD05900FF7FD3 /* QN_GTM_Base64.m in Sources */,
+				DEE6821F1F19E4DE00157560 /* DituiApplyViewController.swift in Sources */,
 				DE868ACD1F0DD1B800FF7FD3 /* MJFoundation.m in Sources */,
 				DE8689F11F0DD0D700FF7FD3 /* QNRecord.m in Sources */,
 				DE3953F21F1468CB00A44740 /* SDWebImageCompat.m in Sources */,
@@ -4672,10 +4688,12 @@
 				DE8685161F0DCC7E00FF7FD3 /* AppModel.swift in Sources */,
 				DE3954411F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DE868DB41F0DE4AC00FF7FD3 /* BCRefundStatusReq.m in Sources */,
+				DEE6821C1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */,
 				DEC222451F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */,
 				DEC222431F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
+				DEE682221F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
 				DE8688781F0DD05900FF7FD3 /* QNEtag.m in Sources */,
 				DE868D921F0DE4AC00FF7FD3 /* BCPayResp.m in Sources */,
 				DEC2224B1F13601E007D6DBE /* MJRefreshBackNormalFooter.m in Sources */,
