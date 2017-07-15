@@ -23,7 +23,8 @@ class DiTuiNoteListViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func addNote() {
-        
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        self.pushViewController(sb.instantiateViewController(withIdentifier: "AddNoteViewController"))
     }
     
     override func viewDidLayoutSubviews() {
