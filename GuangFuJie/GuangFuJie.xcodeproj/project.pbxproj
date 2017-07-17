@@ -742,6 +742,10 @@
 		DE9F9ECA1F19FDD5003CF080 /* MQMessageFormTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9DBB1F19FDD4003CF080 /* MQMessageFormTextView.m */; };
 		DE9F9ECB1F19FDD5003CF080 /* MQMessageFormImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9DBE1F19FDD4003CF080 /* MQMessageFormImageView.m */; };
 		DE9F9ECC1F19FDD5003CF080 /* MQMessageFormImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9DBE1F19FDD4003CF080 /* MQMessageFormImageView.m */; };
+		DEA6CDF71F1B8BDA0061629C /* RoofMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */; };
+		DEA6CDF81F1B8BDA0061629C /* RoofMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */; };
+		DEA6CDFA1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */; };
+		DEA6CDFB1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */; };
 		DEC221231F131577007D6DBE /* CustomImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC221221F131577007D6DBE /* CustomImages.xcassets */; };
 		DEC221241F131577007D6DBE /* CustomImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC221221F131577007D6DBE /* CustomImages.xcassets */; };
 		DEC221271F13531B007D6DBE /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC221261F13531B007D6DBE /* NewsCell.swift */; };
@@ -1732,6 +1736,8 @@
 		DE9F9DBB1F19FDD4003CF080 /* MQMessageFormTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQMessageFormTextView.m; sourceTree = "<group>"; };
 		DE9F9DBD1F19FDD4003CF080 /* MQMessageFormImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQMessageFormImageView.h; sourceTree = "<group>"; };
 		DE9F9DBE1F19FDD4003CF080 /* MQMessageFormImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQMessageFormImageView.m; sourceTree = "<group>"; };
+		DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoofMapInfo.swift; path = GuangFuJie/Models/RoofMapInfo.swift; sourceTree = SOURCE_ROOT; };
+		DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstallerMapInfo.swift; path = GuangFuJie/Models/InstallerMapInfo.swift; sourceTree = SOURCE_ROOT; };
 		DEC221221F131577007D6DBE /* CustomImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CustomImages.xcassets; sourceTree = "<group>"; };
 		DEC221261F13531B007D6DBE /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		DEC221291F13585D007D6DBE /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -2258,6 +2264,8 @@
 				DE8684E51F0DCC7900FF7FD3 /* BankInfo.swift */,
 				DE8684E61F0DCC7900FF7FD3 /* AppModel.swift */,
 				DE8684E71F0DCC7900FF7FD3 /* QNInfo.swift */,
+				DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */,
+				DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */,
 			);
 			name = Models;
 			path = Modules;
@@ -4309,6 +4317,7 @@
 				DE9F9E751F19FDD4003CF080 /* MEIQIA_FBLCDFontView.m in Sources */,
 				DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DE9F9DDD1F19FDD4003CF080 /* MQChatViewConfig.m in Sources */,
+				DEA6CDFA1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */,
 				DE868A081F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DE9F9E311F19FDD4003CF080 /* MQBotMenuAnswerCell.m in Sources */,
 				DE9F9E691F19FDD4003CF080 /* MQAGEmojiPageView.m in Sources */,
@@ -4323,6 +4332,7 @@
 				DE9F9EC91F19FDD5003CF080 /* MQMessageFormTextView.m in Sources */,
 				DE9F9E3B1F19FDD4003CF080 /* MQEvaluationResultCell.m in Sources */,
 				DE868D8D1F0DE4AC00FF7FD3 /* BCBaseResp.m in Sources */,
+				DEA6CDF71F1B8BDA0061629C /* RoofMapInfo.swift in Sources */,
 				DEE6821B1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */,
 				DE9F9E6B1F19FDD4003CF080 /* MEIQIA_CustomIOSAlertView.m in Sources */,
 				DE868D851F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
@@ -4877,6 +4887,7 @@
 				DE9F9E601F19FDD4003CF080 /* MQDateFormatterUtil.m in Sources */,
 				DE8688801F0DD05900FF7FD3 /* QNSystem.m in Sources */,
 				DE868DAC1F0DE4AC00FF7FD3 /* BCQueryRefundsReq.m in Sources */,
+				DEA6CDF81F1B8BDA0061629C /* RoofMapInfo.swift in Sources */,
 				DE9F9E481F19FDD4003CF080 /* MQTextMessageCell.m in Sources */,
 				DE868D961F0DE4AC00FF7FD3 /* BCPayPalVerifyReq.m in Sources */,
 				DE39541C1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
@@ -5060,6 +5071,7 @@
 				DE3954161F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				DE3953EE1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
 				DE868DBC1F0DE4AC00FF7FD3 /* BCQueryRefundResult.m in Sources */,
+				DEA6CDFB1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */,
 				DEC222471F13601E007D6DBE /* MJRefreshAutoStateFooter.m in Sources */,
 				DE86850F1F0DCC7E00FF7FD3 /* PowerGraphInfo.swift in Sources */,
 				DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */,

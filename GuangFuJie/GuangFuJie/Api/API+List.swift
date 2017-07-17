@@ -1227,4 +1227,30 @@ extension API {
             success?(totalCount!, array!)
         }, failure: failure)
     }
+    
+    //安装商地图列表
+    func installerMapList(success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/map"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallerMapInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //屋顶地图列表
+    func roofMapList(success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "roof/map"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = RoofMapInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
 }

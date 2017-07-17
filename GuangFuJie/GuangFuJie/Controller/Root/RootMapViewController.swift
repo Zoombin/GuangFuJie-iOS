@@ -14,6 +14,13 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     @IBOutlet weak var pgButton: UIButton!
     @IBOutlet weak var leaseButton: UIButton!
     @IBOutlet weak var calButton: UIButton!
+    
+    @IBOutlet weak var lineView1: UIView!
+    @IBOutlet weak var lineView2: UIView!
+    @IBOutlet weak var lineView3: UIView!
+    
+    var type = 0 // 0 1 2
+    
     var locService : BMKLocationService!
     
     @IBOutlet weak var mapView : BMKMapView!
@@ -26,6 +33,31 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         self.navigationItem.title = "屋顶地图"
         initView()
         locService = BMKLocationService()
+        
+        loadData()
+    }
+    
+    @IBAction func topButtonClicked(sender: UIButton) {
+        type = sender.tag
+        lineView1.isHidden = true
+        lineView2.isHidden = true
+        lineView3.isHidden = true
+        if (type == 0) {
+            lineView1.isHidden = false
+        } else if (type == 1) {
+            lineView2.isHidden = false
+        } else {
+            lineView3.isHidden = false
+        }
+        loadData()
+    }
+    
+    func loadData() {
+        if (type == 0) {
+            getInstallerMap()
+        } else if (type == 1) {
+            getRoofMap()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,8 +66,27 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     }
     
     func getNearByPoints(_ loation : CLLocationCoordinate2D) {
+        
+    }
+    
+    func getInstallerMap() {
         self.showHud(in: self.view, hint: "获取数据中...")
-        API.sharedInstance.getNearInstaller(loation.latitude, lng: loation.longitude, success: { (roofList) in
+        API.sharedInstance.installerMapList(success: { (count, roofList) in
+            self.hideHud()
+            self.points.removeAllObjects()
+            if (roofList.count > 0) {
+                self.points.addObjects(from: roofList as [AnyObject])
+            }
+            self.addPoints()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
+    func getRoofMap() {
+        self.showHud(in: self.view, hint: "获取数据中...")
+        API.sharedInstance.roofMapList(success: { (count, roofList) in
             self.hideHud()
             self.points.removeAllObjects()
             if (roofList.count > 0) {
@@ -54,20 +105,34 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
             return
         }
         for i in 0..<self.points.count {
-            let installer = self.points[i] as! InstallInfo
-            var companyName = ""
-            if (installer.company_name != nil) {
-                companyName = installer.company_name! + companyName
+            if (type == 0) {
+                let installer = self.points[i] as! InstallerMapInfo
+                let companyName = StringUtils.getString(installer.province)
+                
+                let item = BMKPointAnnotation()
+                if (installer.lat == nil || installer.lng == nil) {
+                    continue
+                }
+                let coordinate = CLLocationCoordinate2D.init(latitude: installer.lat!.doubleValue, longitude: installer.lng!.doubleValue)
+                item.coordinate = coordinate
+                item.title = companyName
+                item.subtitle = "\(installer.count!)家安装商"
+                mapView.addAnnotation(item)
+            } else if (type == 1) {
+                let roof = self.points[i] as! RoofMapInfo
+                let companyName = StringUtils.getString(roof.province)
+                
+                let item = BMKPointAnnotation()
+                if (roof.lat == nil || roof.lng == nil) {
+                    continue
+                }
+                let coordinate = CLLocationCoordinate2D.init(latitude: roof.lat!.doubleValue, longitude: roof.lng!.doubleValue)
+                item.coordinate = coordinate
+                item.title = companyName
+                item.subtitle = "居民屋顶:\(roof.jumingroof!)"
+                mapView.addAnnotation(item)
+                
             }
-            
-            let item = BMKPointAnnotation()
-            if (installer.latitude == nil || installer.longitude == nil) {
-                continue
-            }
-            let coordinate = CLLocationCoordinate2D.init(latitude: installer.latitude!.doubleValue, longitude: installer.longitude!.doubleValue)
-            item.coordinate = coordinate
-            item.title = companyName
-            mapView.addAnnotation(item)
         }
     }
     

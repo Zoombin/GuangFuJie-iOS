@@ -39,8 +39,11 @@
                                         <state key="normal" title="安装商" image="ic_map_orange">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="topButtonClickedWithSender:" destination="vPu-r7-p0r" eventType="touchUpInside" id="bRo-X4-dfL"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmB-Da-97O">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmB-Da-97O">
                                         <rect key="frame" x="125" y="0.0" width="125" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -49,8 +52,11 @@
                                         <state key="normal" title="屋顶" image="ic_map_green">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="topButtonClickedWithSender:" destination="vPu-r7-p0r" eventType="touchUpInside" id="LW5-O7-X4j"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-p6-9XK">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-p6-9XK">
                                         <rect key="frame" x="250" y="0.0" width="125" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -59,7 +65,20 @@
                                         <state key="normal" title="供电局" image="ic_map_red">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="topButtonClickedWithSender:" destination="vPu-r7-p0r" eventType="touchUpInside" id="YsH-eO-qgo"/>
+                                        </connections>
                                     </button>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioM-Rn-5mb">
+                                        <rect key="frame" x="278" y="43" width="70" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-bL-bRZ">
+                                        <rect key="frame" x="153" y="43" width="70" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SoR-ea-fkA">
                                         <rect key="frame" x="28" y="43" width="70" height="2"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,6 +128,9 @@
                         <outlet property="calButton" destination="6gm-aw-Evi" id="Rk4-2W-ZBh"/>
                         <outlet property="closeButton" destination="FDG-Pj-MHi" id="TuD-N8-eUk"/>
                         <outlet property="leaseButton" destination="JiR-Z1-twa" id="Lrz-N2-AwD"/>
+                        <outlet property="lineView1" destination="SoR-ea-fkA" id="0eA-R0-pZC"/>
+                        <outlet property="lineView2" destination="Fqn-bL-bRZ" id="lKC-so-DQE"/>
+                        <outlet property="lineView3" destination="ioM-Rn-5mb" id="Xr2-2L-7Vq"/>
                         <outlet property="mapView" destination="Ytm-Qx-wSX" id="6Gs-8x-hMV"/>
                         <outlet property="pgButton" destination="cko-uL-Od9" id="RrB-uO-sQy"/>
                     </connections>
