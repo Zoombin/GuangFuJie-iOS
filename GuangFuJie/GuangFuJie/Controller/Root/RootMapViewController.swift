@@ -37,6 +37,10 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         loadData()
     }
     
+    func mapStatusDidChanged(_ mapView: BMKMapView!) {
+        print(mapView.zoomLevel)
+    }
+    
     @IBAction func topButtonClicked(sender: UIButton) {
         type = sender.tag
         lineView1.isHidden = true
