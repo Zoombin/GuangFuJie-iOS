@@ -114,6 +114,10 @@
 		DE3954561F1480E800A44740 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954541F1480E800A44740 /* Dimens.swift */; };
 		DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
+		DE6D91F61F2DBAAA008E0E3A /* RootComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */; };
+		DE6D91F81F2DBAC4008E0E3A /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */; };
+		DE6D91FA1F2DBAD8008E0E3A /* RootPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */; };
+		DE6D91FC1F2DBAE2008E0E3A /* RootEarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91FB1F2DBAE2008E0E3A /* RootEarnViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
@@ -1138,6 +1142,10 @@
 		DE3954511F14802200A44740 /* PublishMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMediaView.swift; sourceTree = "<group>"; };
 		DE3954541F1480E800A44740 /* Dimens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		DE3954571F1481E500A44740 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootComViewController.swift; sourceTree = "<group>"; };
+		DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
+		DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPayViewController.swift; sourceTree = "<group>"; };
+		DE6D91FB1F2DBAE2008E0E3A /* RootEarnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootEarnViewController.swift; sourceTree = "<group>"; };
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -2182,6 +2190,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DE6D91EB1F2DBA7A008E0E3A /* ResultRoot */ = {
+			isa = PBXGroup;
+			children = (
+				DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */,
+				DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */,
+				DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */,
+				DE6D91FB1F2DBAE2008E0E3A /* RootEarnViewController.swift */,
+			);
+			path = ResultRoot;
+			sourceTree = "<group>";
+		};
 		DE8683D41F0DC92B00FF7FD3 = {
 			isa = PBXGroup;
 			children = (
@@ -2285,6 +2304,7 @@
 		DE8684391F0DCA8F00FF7FD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE6D91EB1F2DBA7A008E0E3A /* ResultRoot */,
 				DE868DF11F0DE66400FF7FD3 /* Root */,
 				DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */,
 				DE3952271F14629100A44740 /* CalResultViewController.swift */,
@@ -4308,6 +4328,7 @@
 				DEC2299B1F136636007D6DBE /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				DE8684F01F0DCC7900FF7FD3 /* DeviceInfo.swift in Sources */,
 				DE9F9E4D1F19FDD4003CF080 /* MQWebViewBubbleCell.m in Sources */,
+				DE6D91F81F2DBAC4008E0E3A /* RootElectricViewController.swift in Sources */,
 				DE3954521F14802200A44740 /* PublishMediaView.swift in Sources */,
 				DE9F9E071F19FDD4003CF080 /* MQImageMessage.m in Sources */,
 				DE868ADF1F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
@@ -4334,6 +4355,7 @@
 				DE868D8D1F0DE4AC00FF7FD3 /* BCBaseResp.m in Sources */,
 				DEA6CDF71F1B8BDA0061629C /* RoofMapInfo.swift in Sources */,
 				DEE6821B1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */,
+				DE6D91F61F2DBAAA008E0E3A /* RootComViewController.swift in Sources */,
 				DE9F9E6B1F19FDD4003CF080 /* MEIQIA_CustomIOSAlertView.m in Sources */,
 				DE868D851F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
 				DE9F9E471F19FDD4003CF080 /* MQTextMessageCell.m in Sources */,
@@ -4478,6 +4500,7 @@
 				DE86887F1F0DD05900FF7FD3 /* QNSystem.m in Sources */,
 				DE868DAB1F0DE4AC00FF7FD3 /* BCQueryRefundsReq.m in Sources */,
 				DEE682241F19F00100157560 /* DiTuiNoteListViewController.swift in Sources */,
+				DE6D91FC1F2DBAE2008E0E3A /* RootEarnViewController.swift in Sources */,
 				DE9F9E151F19FDD4003CF080 /* MQBotMenuAnswerCellModel.m in Sources */,
 				DE9F9E331F19FDD4003CF080 /* MQBotMenuCell.m in Sources */,
 				DEC222521F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
@@ -4550,6 +4573,7 @@
 				DE9F9E051F19FDD4003CF080 /* MQFileDownloadMessage.m in Sources */,
 				DE8688771F0DD05900FF7FD3 /* QNEtag.m in Sources */,
 				DEE681F91F1897AC00157560 /* GFAskCell.swift in Sources */,
+				DE6D91FA1F2DBAD8008E0E3A /* RootPayViewController.swift in Sources */,
 				DE39541D1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DE868D911F0DE4AC00FF7FD3 /* BCPayResp.m in Sources */,
 				DE868ADC1F0DD1B800FF7FD3 /* NSString+MJExtension.m in Sources */,
