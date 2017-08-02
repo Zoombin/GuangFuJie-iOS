@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
+		DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
@@ -1046,6 +1048,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FranchiseeInfo.swift; path = GuangFuJie/Models/FranchiseeInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE39521A1F14616000A44740 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -2285,6 +2288,7 @@
 				DE8684E71F0DCC7900FF7FD3 /* QNInfo.swift */,
 				DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */,
 				DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */,
+				DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */,
 			);
 			name = Models;
 			path = Modules;
@@ -4377,6 +4381,7 @@
 				DE868E071F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
 				DE868DBF1F0DE4AC00FF7FD3 /* BCSubscription.m in Sources */,
 				DE9F9DD91F19FDD4003CF080 /* UIViewController+MQOrientationFix.m in Sources */,
+				DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */,
 				DE86876F1F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
 				DE86877F1F0DCE4400FF7FD3 /* UIWebView+AFNetworking.m in Sources */,
 				DE868D9F1F0DE4AC00FF7FD3 /* BCQueryBillsReq.m in Sources */,
@@ -4992,6 +4997,7 @@
 				DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */,
 				DEC222431F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DEE682221F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
+				DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */,
 				DE8688781F0DD05900FF7FD3 /* QNEtag.m in Sources */,
 				DE9F9EB81F19FDD5003CF080 /* MQMessageFormViewStyle.m in Sources */,
 				DE9F9E301F19FDD4003CF080 /* MQBotAnswerCell.m in Sources */,

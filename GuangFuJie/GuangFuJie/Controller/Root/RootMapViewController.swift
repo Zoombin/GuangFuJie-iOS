@@ -22,6 +22,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     var type = 0 // 0 1 2
     
     var locService : BMKLocationService!
+    var currentLoation : CLLocationCoordinate2D!
     
     @IBOutlet weak var mapView : BMKMapView!
     var points = NSMutableArray()
@@ -57,6 +58,9 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     }
     
     func loadData() {
+        if (!hasLocated) {
+            return
+        }
         if (type == 0) {
             getInstallerMap()
         } else if (type == 1) {
@@ -70,12 +74,16 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     }
     
     func getNearByPoints(_ loation : CLLocationCoordinate2D) {
-        
+        if (type == 0) {
+            getInstallerMap()
+        } else if (type == 1) {
+            getRoofMap()
+        }
     }
     
     func getInstallerMap() {
         self.showHud(in: self.view, hint: "获取数据中...")
-        API.sharedInstance.installerMapList(success: { (count, roofList) in
+        API.sharedInstance.installerMapListV2(type: "province", lat: NSNumber.init(value: currentLoation.latitude), lng: NSNumber.init(value: currentLoation.longitude), success: { (count, roofList) in
             self.hideHud()
             self.points.removeAllObjects()
             if (roofList.count > 0) {
@@ -85,12 +93,13 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
+
         }
     }
     
     func getRoofMap() {
         self.showHud(in: self.view, hint: "获取数据中...")
-        API.sharedInstance.roofMapList(success: { (count, roofList) in
+        API.sharedInstance.roofMapListV2(type: "province", lat: NSNumber.init(value: currentLoation.latitude), lng: NSNumber.init(value: currentLoation.longitude), success: { (count, roofList) in
             self.hideHud()
             self.points.removeAllObjects()
             if (roofList.count > 0) {
@@ -133,7 +142,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
                 let coordinate = CLLocationCoordinate2D.init(latitude: roof.lat!.doubleValue, longitude: roof.lng!.doubleValue)
                 item.coordinate = coordinate
                 item.title = companyName
-                item.subtitle = "居民屋顶:\(roof.jumingroof!)"
+                item.subtitle = "居民屋顶:\(StringUtils.getString(roof.jumingroof))"
                 mapView.addAnnotation(item)
                 
             }
@@ -189,7 +198,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
         if annotationView == nil {
             annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
-            annotationView?.image = UIImage(named: "ic_map_redpoint")
+            annotationView?.image = UIImage(named: type == 0 ? "ic_map_redpoint" : "ic_map_bluepoint")
             // 设置颜色
             annotationView!.pinColor = UInt(BMKPinAnnotationColorRed)
             // 从天上掉下的动画
@@ -232,6 +241,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         mapView.updateLocationData(userLocation)
         if (hasLocated == false) {
             hasLocated = true
+            currentLoation = userLocation.location.coordinate
             mapView.centerCoordinate = userLocation.location.coordinate
             getNearByPoints(mapView.centerCoordinate)
         }

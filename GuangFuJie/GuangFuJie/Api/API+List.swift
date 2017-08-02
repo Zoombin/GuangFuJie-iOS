@@ -1241,6 +1241,22 @@ extension API {
         }, failure: failure)
     }
     
+    //安装商地图列表V2
+    func installerMapListV2(type: String, lat: NSNumber, lng: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/map"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["type"] = type
+        params["lng"] = lng
+        params["lat"] = lat
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallerMapInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
     //屋顶地图列表
     func roofMapList(success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "roof/map"
@@ -1253,4 +1269,120 @@ extension API {
             success?(totalCount!, array!)
         }, failure: failure)
     }
+    
+    //屋顶地图列表V2
+    func roofMapListV2(type: String, lat: NSNumber, lng: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "roof/map"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["type"] = type // province city area 三选一
+        params["lat"] = lat
+        params["lng"] = lng
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = RoofMapInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //安装商申请
+    func installerAdd(licenserUrl: String, companyName: String, companySize: String, companyDesc: String, phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: InstallInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/add";
+        let params = [
+            "user_id" : getUserId(), //用户id
+            "licenserUrl" : licenserUrl, //证书图片url
+            "companyName" : companyName,
+            "companySize" : companySize,
+            "companyDesc" : companyDesc,
+            "phone": phone,
+            "linkMan": linkMan,
+            "provinceId": provinceId,
+            "cityId": cityId,
+            "areaId": areaId,
+            "addressDetail": addressDetail,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let info = InstallInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+    //加盟商列表
+    func franchiseeList(_ start : NSInteger, pagesize : NSInteger, key: String? = nil, provinceId: NSNumber? = nil, cityId: NSNumber? = nil, areaId: NSNumber? = nil, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "franchisee/list"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        if (key != nil) {
+            params["key"] = key
+        }
+        if (provinceId != nil) {
+            params["provinceId"] = provinceId
+        }
+        if (cityId != nil) {
+            params["cityId"] = cityId
+        }
+        if (areaId != nil) {
+            params["areaId"] = areaId
+        }
+        params["start"] = String(start)
+        params["pageisze"] = String(pagesize)
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = FranchiseeInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //加盟商申请
+    func franchiseeAdd(businessUrl: String, electricalUrl: String, licenserUrl: String, companyName: String, companySize: String, companyDesc: String, phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: FranchiseeInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/add";
+        let params = [
+            "user_id" : getUserId(), //用户id
+            "businessUrl" : businessUrl,
+            "electricalUrl" : electricalUrl,
+            "licenserUrl" : licenserUrl,
+            "companyName" : companyName,
+            "companySize" : companySize,
+            "companyDesc" : companyDesc,
+            "phone": phone,
+            "linkMan": linkMan,
+            "provinceId": provinceId,
+            "cityId": cityId,
+            "areaId": areaId,
+            "addressDetail": addressDetail,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let info = FranchiseeInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+//    //地推申请
+//    func groundAdd(phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: FranchiseeInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+//        let url = Constants.httpHost + "installer/add";
+//        let params = [
+//            "user_id" : getUserId(), //用户id
+//            "name" : name,
+//            "phone" : phone,
+//            "provinceId": provinceId,
+//            "cityId": cityId,
+//            "areaId": areaId,
+//            "addressDetail": addressDetail,
+//            "_o" : 1
+//            ] as [String : Any]
+//        let jsonStr = self.dataToJsonString(params as AnyObject)
+//        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+//        self.post(url, params: newParams as AnyObject?, success: { (data) in
+//            let info = FranchiseeInfo.mj_object(withKeyValues: data)
+//            success?(info!)
+//        }, failure: failure)
+//    }
 }

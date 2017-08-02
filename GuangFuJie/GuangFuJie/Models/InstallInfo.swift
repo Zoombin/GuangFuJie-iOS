@@ -41,4 +41,11 @@ class InstallInfo: NSObject {
     var scope: String?  //经营范围
     var website: String?   //网址
     
+//    var user_id: NSNumber?
+    var project: String?
+    var identity: NSNumber? // 0 普通用户 1 安装商 2 加盟商 3 地推 4 业主
+//    var user_name: String?
+//    var fullname: String?
+    var phone: String?
+    
 }
