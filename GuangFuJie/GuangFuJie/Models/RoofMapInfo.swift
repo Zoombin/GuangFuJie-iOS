@@ -9,7 +9,7 @@
 import UIKit
 
 class RoofMapInfo: NSObject {
-    var province: String?
+    var name: String?
     var jumingroof: String?
     var shangyeroof: String?
     var gongyeroof: String?

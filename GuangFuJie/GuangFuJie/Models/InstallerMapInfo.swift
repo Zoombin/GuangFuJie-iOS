@@ -9,7 +9,7 @@
 import UIKit
 
 class InstallerMapInfo: NSObject {
-    var province: String?
+    var name: String?
     var count: String?
     var lat: NSString?
     var lng: NSString?

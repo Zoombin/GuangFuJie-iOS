@@ -20,9 +20,11 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     @IBOutlet weak var lineView3: UIView!
     
     var type = 0 // 0 1 2
+    var currentLevel: Float = 14
     
     var locService : BMKLocationService!
     var currentLoation : CLLocationCoordinate2D!
+    var searchType = "province"
     
     @IBOutlet weak var mapView : BMKMapView!
     var points = NSMutableArray()
@@ -40,6 +42,28 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     
     func mapStatusDidChanged(_ mapView: BMKMapView!) {
         print(mapView.zoomLevel)
+        if (currentLevel == mapView.zoomLevel) {
+            return
+        }
+        
+        if (mapView.zoomLevel < 7) {
+            if (searchType == "province") {
+                return
+            }
+            searchType = "province"
+        } else if (mapView.zoomLevel > 7 && mapView.zoomLevel < 11) {
+            if (searchType == "city") {
+                return
+            }
+            searchType = "city"
+        } else {
+            if (searchType == "area") {
+                return
+            }
+            searchType = "area"
+        }
+        currentLevel = mapView.zoomLevel
+        loadData()
     }
     
     @IBAction func topButtonClicked(sender: UIButton) {
@@ -73,17 +97,9 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
     
-    func getNearByPoints(_ loation : CLLocationCoordinate2D) {
-        if (type == 0) {
-            getInstallerMap()
-        } else if (type == 1) {
-            getRoofMap()
-        }
-    }
-    
     func getInstallerMap() {
         self.showHud(in: self.view, hint: "获取数据中...")
-        API.sharedInstance.installerMapListV2(type: "province", lat: NSNumber.init(value: currentLoation.latitude), lng: NSNumber.init(value: currentLoation.longitude), success: { (count, roofList) in
+        API.sharedInstance.installerMapListV2(type: searchType, lat: NSNumber.init(value: currentLoation.latitude), lng: NSNumber.init(value: currentLoation.longitude), success: { (count, roofList) in
             self.hideHud()
             self.points.removeAllObjects()
             if (roofList.count > 0) {
@@ -99,7 +115,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     
     func getRoofMap() {
         self.showHud(in: self.view, hint: "获取数据中...")
-        API.sharedInstance.roofMapListV2(type: "province", lat: NSNumber.init(value: currentLoation.latitude), lng: NSNumber.init(value: currentLoation.longitude), success: { (count, roofList) in
+        API.sharedInstance.roofMapListV2(type: searchType, lat: NSNumber.init(value: currentLoation.latitude), lng: NSNumber.init(value: currentLoation.longitude), success: { (count, roofList) in
             self.hideHud()
             self.points.removeAllObjects()
             if (roofList.count > 0) {
@@ -120,12 +136,13 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         for i in 0..<self.points.count {
             if (type == 0) {
                 let installer = self.points[i] as! InstallerMapInfo
-                let companyName = StringUtils.getString(installer.province)
+                let companyName = StringUtils.getString(installer.name)
                 
                 let item = BMKPointAnnotation()
                 if (installer.lat == nil || installer.lng == nil) {
                     continue
                 }
+                
                 let coordinate = CLLocationCoordinate2D.init(latitude: installer.lat!.doubleValue, longitude: installer.lng!.doubleValue)
                 item.coordinate = coordinate
                 item.title = companyName
@@ -133,7 +150,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
                 mapView.addAnnotation(item)
             } else if (type == 1) {
                 let roof = self.points[i] as! RoofMapInfo
-                let companyName = StringUtils.getString(roof.province)
+                let companyName = StringUtils.getString(roof.name)
                 
                 let item = BMKPointAnnotation()
                 if (roof.lat == nil || roof.lng == nil) {
@@ -240,10 +257,11 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         mapView.updateLocationData(userLocation)
         if (hasLocated == false) {
+            locService.stopUserLocationService()
             hasLocated = true
             currentLoation = userLocation.location.coordinate
             mapView.centerCoordinate = userLocation.location.coordinate
-            getNearByPoints(mapView.centerCoordinate)
+            loadData()
         }
     }
     
