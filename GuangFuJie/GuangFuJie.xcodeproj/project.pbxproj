@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
+		DE2542021F32F1B500872C22 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542011F32F1B500872C22 /* GroupInfo.swift */; };
+		DE2542031F32F1B500872C22 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542011F32F1B500872C22 /* GroupInfo.swift */; };
+		DE25420E1F32F23D00872C22 /* LandlordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25420D1F32F23D00872C22 /* LandlordInfo.swift */; };
+		DE25420F1F32F23D00872C22 /* LandlordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25420D1F32F23D00872C22 /* LandlordInfo.swift */; };
+		DE2542111F32F3EB00872C22 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542101F32F3EB00872C22 /* AreaModel.swift */; };
+		DE2542121F32F3EB00872C22 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542101F32F3EB00872C22 /* AreaModel.swift */; };
+		DE2542141F32F4EB00872C22 /* ArticleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542131F32F4EB00872C22 /* ArticleInfo.swift */; };
+		DE2542151F32F4EB00872C22 /* ArticleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542131F32F4EB00872C22 /* ArticleInfo.swift */; };
+		DE2542171F32FD3500872C22 /* NoteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542161F32FD3500872C22 /* NoteInfo.swift */; };
+		DE2542181F32FD3500872C22 /* NoteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542161F32FD3500872C22 /* NoteInfo.swift */; };
+		DE25421A1F32FE9500872C22 /* AskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542191F32FE9500872C22 /* AskInfo.swift */; };
+		DE25421B1F32FE9500872C22 /* AskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542191F32FE9500872C22 /* AskInfo.swift */; };
 		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
@@ -1049,6 +1061,12 @@
 
 /* Begin PBXFileReference section */
 		DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FranchiseeInfo.swift; path = GuangFuJie/Models/FranchiseeInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE2542011F32F1B500872C22 /* GroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupInfo.swift; path = GuangFuJie/Models/GroupInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE25420D1F32F23D00872C22 /* LandlordInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandlordInfo.swift; path = GuangFuJie/Models/LandlordInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE2542101F32F3EB00872C22 /* AreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AreaModel.swift; path = GuangFuJie/Models/AreaModel.swift; sourceTree = SOURCE_ROOT; };
+		DE2542131F32F4EB00872C22 /* ArticleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleInfo.swift; path = GuangFuJie/Models/ArticleInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE2542161F32FD3500872C22 /* NoteInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteInfo.swift; path = GuangFuJie/Models/NoteInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE2542191F32FE9500872C22 /* AskInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AskInfo.swift; path = GuangFuJie/Models/AskInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE39521A1F14616000A44740 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -2280,6 +2298,7 @@
 				DE8684DF1F0DCC7900FF7FD3 /* PowerGraphInfo.swift */,
 				DE8684E01F0DCC7900FF7FD3 /* CityModel.swift */,
 				DE8684E11F0DCC7900FF7FD3 /* ProvinceModel.swift */,
+				DE2542101F32F3EB00872C22 /* AreaModel.swift */,
 				DE8684E21F0DCC7900FF7FD3 /* CommonInfo.swift */,
 				DE8684E31F0DCC7900FF7FD3 /* AfterSaleInfo.swift */,
 				DE8684E41F0DCC7900FF7FD3 /* BookingStatus.swift */,
@@ -2289,6 +2308,11 @@
 				DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */,
 				DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */,
 				DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */,
+				DE2542011F32F1B500872C22 /* GroupInfo.swift */,
+				DE25420D1F32F23D00872C22 /* LandlordInfo.swift */,
+				DE2542131F32F4EB00872C22 /* ArticleInfo.swift */,
+				DE2542161F32FD3500872C22 /* NoteInfo.swift */,
+				DE2542191F32FE9500872C22 /* AskInfo.swift */,
 			);
 			name = Models;
 			path = Modules;
@@ -4385,6 +4409,7 @@
 				DE86876F1F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
 				DE86877F1F0DCE4400FF7FD3 /* UIWebView+AFNetworking.m in Sources */,
 				DE868D9F1F0DE4AC00FF7FD3 /* BCQueryBillsReq.m in Sources */,
+				DE25421A1F32FE9500872C22 /* AskInfo.swift in Sources */,
 				DEC2299F1F136636007D6DBE /* IQBarButtonItem.swift in Sources */,
 				DE8684F31F0DCC7900FF7FD3 /* UserInfo.swift in Sources */,
 				DE868ACE1F0DD1B800FF7FD3 /* MJProperty.m in Sources */,
@@ -4561,6 +4586,7 @@
 				DEC2224E1F13601E007D6DBE /* MJRefreshGifHeader.m in Sources */,
 				DE9F9E731F19FDD4003CF080 /* MEIQIA_FBLCDFont.m in Sources */,
 				DE868DA11F0DE4AC00FF7FD3 /* BCQueryBillsResp.m in Sources */,
+				DE2542021F32F1B500872C22 /* GroupInfo.swift in Sources */,
 				DE9F9EC11F19FDD5003CF080 /* MQMessageFormViewController.m in Sources */,
 				DEC224451F136362007D6DBE /* WXUtil.mm in Sources */,
 				DE8689E41F0DD0D700FF7FD3 /* QNAssessment.m in Sources */,
@@ -4583,6 +4609,7 @@
 				DE868D911F0DE4AC00FF7FD3 /* BCPayResp.m in Sources */,
 				DE868ADC1F0DD1B800FF7FD3 /* NSString+MJExtension.m in Sources */,
 				DE86876D1F0DCE4400FF7FD3 /* AFURLSessionManager.m in Sources */,
+				DE2542111F32F3EB00872C22 /* AreaModel.swift in Sources */,
 				DEC2298D1F136636007D6DBE /* IQUITextFieldView+Additions.swift in Sources */,
 				DE3954031F1468CB00A44740 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DE8688931F0DD05900FF7FD3 /* QNUploadOption.m in Sources */,
@@ -4657,6 +4684,7 @@
 				DE9F9DF11F19FDD4003CF080 /* MQPreChatFormListViewController.m in Sources */,
 				DE868A111F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DE868AD61F0DD1B800FF7FD3 /* NSObject+MJCoding.m in Sources */,
+				DE25420E1F32F23D00872C22 /* LandlordInfo.swift in Sources */,
 				DE9F9E4B1F19FDD4003CF080 /* MQVoiceMessageCell.m in Sources */,
 				DEE681F01F185EC000157560 /* DiTuiHomeViewController.swift in Sources */,
 				DEC2212D1F135AB7007D6DBE /* GFJWebViewController.swift in Sources */,
@@ -4688,7 +4716,9 @@
 				DE8684EF1F0DCC7900FF7FD3 /* NewsInfo.swift in Sources */,
 				DE8687731F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE8689F41F0DD0D700FF7FD3 /* QNDnspodFree.m in Sources */,
+				DE2542141F32F4EB00872C22 /* ArticleInfo.swift in Sources */,
 				DEC222401F13601E007D6DBE /* MJRefreshHeader.m in Sources */,
+				DE2542171F32FD3500872C22 /* NoteInfo.swift in Sources */,
 				DE9F9E011F19FDD4003CF080 /* MQEventMessage.m in Sources */,
 				DE3954151F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				DE3953ED1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
@@ -4725,6 +4755,7 @@
 				DE868AD51F0DD1B800FF7FD3 /* NSObject+MJClass.m in Sources */,
 				DE9F9E361F19FDD4003CF080 /* MQBotWebViewBubbleAnswerCell.m in Sources */,
 				DE868E081F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
+				DE2542181F32FD3500872C22 /* NoteInfo.swift in Sources */,
 				DE868DB21F0DE4AC00FF7FD3 /* BCQueryRefundsCountResp.m in Sources */,
 				DE9F9E081F19FDD4003CF080 /* MQImageMessage.m in Sources */,
 				DE86887A1F0DD05900FF7FD3 /* QNFile.m in Sources */,
@@ -4879,6 +4910,7 @@
 				DE868DDA1F0DE4AC00FF7FD3 /* BeeCloudAdapter.m in Sources */,
 				DE8687781F0DCE4400FF7FD3 /* UIButton+AFNetworking.m in Sources */,
 				DE9F9E3C1F19FDD4003CF080 /* MQEvaluationResultCell.m in Sources */,
+				DE25420F1F32F23D00872C22 /* LandlordInfo.swift in Sources */,
 				DE9F9E7C1F19FDD4003CF080 /* MEIQIA_HPGrowingTextView.m in Sources */,
 				DE9F9DFC1F19FDD4003CF080 /* MQBotMenuMessage.m in Sources */,
 				DE9F9E8A1F19FDD4003CF080 /* MEIQIA_MLAudioRecorder.m in Sources */,
@@ -4887,6 +4919,7 @@
 				DE9F9DF61F19FDD4003CF080 /* MQPreChatSubmitViewController.m in Sources */,
 				DE8689061F0DD07300FF7FD3 /* MBProgressHUD.m in Sources */,
 				DE9F9EB21F19FDD5003CF080 /* MQMessageFormInputModel.m in Sources */,
+				DE25421B1F32FE9500872C22 /* AskInfo.swift in Sources */,
 				DEC222591F13601E007D6DBE /* NSBundle+MJRefresh.m in Sources */,
 				DE868D9A1F0DE4AC00FF7FD3 /* BCPreRefundResp.m in Sources */,
 				DE9F9EC61F19FDD5003CF080 /* MQMessageFormImageCell.m in Sources */,
@@ -4999,6 +5032,7 @@
 				DEE682221F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
 				DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */,
 				DE8688781F0DD05900FF7FD3 /* QNEtag.m in Sources */,
+				DE2542151F32F4EB00872C22 /* ArticleInfo.swift in Sources */,
 				DE9F9EB81F19FDD5003CF080 /* MQMessageFormViewStyle.m in Sources */,
 				DE9F9E301F19FDD4003CF080 /* MQBotAnswerCell.m in Sources */,
 				DE868D921F0DE4AC00FF7FD3 /* BCPayResp.m in Sources */,
@@ -5006,6 +5040,7 @@
 				DE3954041F1468CB00A44740 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DEC224461F136362007D6DBE /* WXUtil.mm in Sources */,
 				DE868ADD1F0DD1B800FF7FD3 /* NSString+MJExtension.m in Sources */,
+				DE2542121F32F3EB00872C22 /* AreaModel.swift in Sources */,
 				DE86876E1F0DCE4400FF7FD3 /* AFURLSessionManager.m in Sources */,
 				DE8688941F0DD05900FF7FD3 /* QNUploadOption.m in Sources */,
 				DE9F9DE01F19FDD4003CF080 /* MQChatViewManager.m in Sources */,
@@ -5092,6 +5127,7 @@
 				DE8688821F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
 				DE9F9E041F19FDD4003CF080 /* MQEventMessageFactory.m in Sources */,
 				DE9F9E861F19FDD4003CF080 /* MEIQIA_CafRecordWriter.m in Sources */,
+				DE2542031F32F1B500872C22 /* GroupInfo.swift in Sources */,
 				DE868DC41F0DE4AC00FF7FD3 /* BCHTTPSessionManager.m in Sources */,
 				DE9F9E161F19FDD4003CF080 /* MQBotMenuAnswerCellModel.m in Sources */,
 				DE8685071F0DCC7E00FF7FD3 /* NewsInfo.swift in Sources */,

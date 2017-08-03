@@ -11,4 +11,7 @@ import UIKit
 class CityModel: NSObject {
     var city_id : NSNumber?
     var city_label : String?
+    
+    var name: String?
+    var father_id: NSNumber?
 }

@@ -118,7 +118,6 @@ extension API {
     func provincelist(_ success: ((_ provinces: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "region/provincelist"
         let params = [
-            "user_id" : getUserId(),
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params as AnyObject)
@@ -127,6 +126,25 @@ extension API {
             let array = ProvinceModel.mj_objectArray(withKeyValuesArray: data)
             success?(array!)
             }, failure: failure)
+    }
+    
+    /**
+     获得省份列表V2
+     
+     - parameter success:
+     - parameter failure:
+     */
+    func provincelistV2(_ success: ((_ provinces: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "v2/region/provincelist"
+        let params = [
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = ProvinceModel.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
+        }, failure: failure)
     }
     
     /**
@@ -139,7 +157,6 @@ extension API {
     func citylist(_ province_id : NSNumber, success: ((_ cities: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "region/citylist"
         let params = [
-            "user_id" : getUserId(),
             "province_id" : province_id,
             "_o" : 1
         ]
@@ -152,10 +169,46 @@ extension API {
     }
     
     /**
+     获得某个省份下的城市列表V2
+     
+     - parameter province_id:
+     - parameter success:
+     - parameter failure:
+     */
+    func citylistV2(_ province_id : NSNumber, success: ((_ cities: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "v2/region/citylist"
+        let params = [
+            "province_id" : province_id,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = CityModel.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
+        }, failure: failure)
+    }
+    
+    //获得某个城市下的区域列表
+    func areaList(_ cityId : NSNumber, success: ((_ cities: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "v2/region/arealist"
+        let params = [
+            "cityId" : cityId,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = AreaModel.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
+        }, failure: failure)
+    }
+    
+    /**
      app强制升级
      
      - parameter success:
-     - parameter failure: 
+     - parameter failure:
      */
     func appupgrade(_ success: ((_ appModel: AppModel) -> Void)?, failure: ((_ msg: String?) -> Void)?){
         let url = Constants.httpHost + "app/upgrade";
@@ -1290,7 +1343,7 @@ extension API {
     func installerAdd(licenserUrl: String, companyName: String, companySize: String, companyDesc: String, phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: InstallInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "installer/add";
         let params = [
-            "user_id" : getUserId(), //用户id
+            "userId" : getUserId(), //用户id
             "licenserUrl" : licenserUrl, //证书图片url
             "companyName" : companyName,
             "companySize" : companySize,
@@ -1342,7 +1395,7 @@ extension API {
     func franchiseeAdd(businessUrl: String, electricalUrl: String, licenserUrl: String, companyName: String, companySize: String, companyDesc: String, phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: FranchiseeInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "installer/add";
         let params = [
-            "user_id" : getUserId(), //用户id
+            "userId" : getUserId(), //用户id
             "businessUrl" : businessUrl,
             "electricalUrl" : electricalUrl,
             "licenserUrl" : licenserUrl,
@@ -1365,24 +1418,110 @@ extension API {
         }, failure: failure)
     }
     
-//    //地推申请
-//    func groundAdd(phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: FranchiseeInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
-//        let url = Constants.httpHost + "installer/add";
-//        let params = [
-//            "user_id" : getUserId(), //用户id
-//            "name" : name,
-//            "phone" : phone,
-//            "provinceId": provinceId,
-//            "cityId": cityId,
-//            "areaId": areaId,
-//            "addressDetail": addressDetail,
-//            "_o" : 1
-//            ] as [String : Any]
-//        let jsonStr = self.dataToJsonString(params as AnyObject)
-//        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
-//        self.post(url, params: newParams as AnyObject?, success: { (data) in
-//            let info = FranchiseeInfo.mj_object(withKeyValues: data)
-//            success?(info!)
-//        }, failure: failure)
-//    }
+    //地推申请
+    func groundAdd(name: String, phone: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: GroupInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/add";
+        let params = [
+            "userId" : getUserId(), //用户id
+            "name" : name,
+            "phone" : phone,
+            "provinceId": provinceId,
+            "cityId": cityId,
+            "areaId": areaId,
+            "addressDetail": addressDetail,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let info = GroupInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+    //业主申请
+    func landlordAdd(name: String, phone: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, roofImg: String, success: ((_ info: LandlordInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/add";
+        let params = [
+            "userId" : getUserId(), //用户id
+            "name" : name,
+            "phone" : phone,
+            "provinceId": provinceId,
+            "cityId": cityId,
+            "areaId": areaId,
+            "addressDetail": addressDetail,
+            "roofImg": roofImg,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let info = LandlordInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+    //图文列表
+    func articlesList(_ start : NSInteger, pagesize : NSInteger, key: String? = nil, provinceId: NSNumber? = nil, cityId: NSNumber? = nil, areaId: NSNumber? = nil, type: NSNumber? = nil, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "articles/list"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        if (key != nil) {
+            params["key"] = key
+        }
+        if (provinceId != nil) {
+            params["provinceId"] = provinceId
+        }
+        if (cityId != nil) {
+            params["cityId"] = cityId
+        }
+        if (areaId != nil) {
+            params["areaId"] = areaId
+        }
+        if (type != nil) {
+            params["type"] = type
+        }
+        params["start"] = String(start)
+        params["pageisze"] = String(pagesize)
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = ArticleInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //添加地推笔记
+    func groundAddnote(_ title: String, phone: String, address: String, msg: String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "booking/add";
+        let params = [
+            "userId" : getUserId(), // 用户id
+            "title": title,
+            "phone": phone,
+            "address": address,
+            "msg": msg,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
+        }, failure: failure)
+    }
+    
+    //地推笔记列表
+    func articlesList(_ start : NSInteger, pagesize : NSInteger, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "articles/list"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["start"] = String(start)
+        params["pageisze"] = String(pagesize)
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = NoteInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
 }

@@ -11,4 +11,6 @@ import UIKit
 class ProvinceModel: NSObject {
     var province_id : NSNumber?
     var province_label : String?
+    
+    var name: String?
 }
