@@ -1515,6 +1515,7 @@ extension API {
         let url = Constants.httpHost + "articles/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
+        params["userId"] = getUserId()
         params["start"] = String(start)
         params["pageisze"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
@@ -1522,6 +1523,22 @@ extension API {
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
             let array = NoteInfo.mj_objectArray(withKeyValuesArray: data)
             success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //获取单一问答详情 (app)
+    func useraskItem(_ id: NSNumber, success: ((_ commonModel: AskInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "booking/add";
+        let params = [
+            "userId" : getUserId(), // 用户id
+            "id" : id,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let info = AskInfo.mj_object(withKeyValues: data)
+            success?(info!)
         }, failure: failure)
     }
 }

@@ -21,6 +21,12 @@
 		DE2542181F32FD3500872C22 /* NoteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542161F32FD3500872C22 /* NoteInfo.swift */; };
 		DE25421A1F32FE9500872C22 /* AskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542191F32FE9500872C22 /* AskInfo.swift */; };
 		DE25421B1F32FE9500872C22 /* AskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542191F32FE9500872C22 /* AskInfo.swift */; };
+		DE25421D1F332A4600872C22 /* ProjectcalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25421C1F332A4600872C22 /* ProjectcalInfo.swift */; };
+		DE25421E1F332A4600872C22 /* ProjectcalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25421C1F332A4600872C22 /* ProjectcalInfo.swift */; };
+		DE2542201F332BA300872C22 /* EnergycalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25421F1F332BA300872C22 /* EnergycalInfo.swift */; };
+		DE2542211F332BA300872C22 /* EnergycalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25421F1F332BA300872C22 /* EnergycalInfo.swift */; };
+		DE2542231F332BF400872C22 /* IncomecalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542221F332BF400872C22 /* IncomecalInfo.swift */; };
+		DE2542241F332BF400872C22 /* IncomecalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542221F332BF400872C22 /* IncomecalInfo.swift */; };
 		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
@@ -1067,6 +1073,9 @@
 		DE2542131F32F4EB00872C22 /* ArticleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleInfo.swift; path = GuangFuJie/Models/ArticleInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE2542161F32FD3500872C22 /* NoteInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteInfo.swift; path = GuangFuJie/Models/NoteInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE2542191F32FE9500872C22 /* AskInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AskInfo.swift; path = GuangFuJie/Models/AskInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE25421C1F332A4600872C22 /* ProjectcalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectcalInfo.swift; path = GuangFuJie/Models/ProjectcalInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE25421F1F332BA300872C22 /* EnergycalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnergycalInfo.swift; path = GuangFuJie/Models/EnergycalInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE2542221F332BF400872C22 /* IncomecalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IncomecalInfo.swift; path = GuangFuJie/Models/IncomecalInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE39521A1F14616000A44740 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -2313,6 +2322,9 @@
 				DE2542131F32F4EB00872C22 /* ArticleInfo.swift */,
 				DE2542161F32FD3500872C22 /* NoteInfo.swift */,
 				DE2542191F32FE9500872C22 /* AskInfo.swift */,
+				DE25421C1F332A4600872C22 /* ProjectcalInfo.swift */,
+				DE25421F1F332BA300872C22 /* EnergycalInfo.swift */,
+				DE2542221F332BF400872C22 /* IncomecalInfo.swift */,
 			);
 			name = Models;
 			path = Modules;
@@ -4387,6 +4399,7 @@
 				DE9F9E6B1F19FDD4003CF080 /* MEIQIA_CustomIOSAlertView.m in Sources */,
 				DE868D851F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
 				DE9F9E471F19FDD4003CF080 /* MQTextMessageCell.m in Sources */,
+				DE2542231F332BF400872C22 /* IncomecalInfo.swift in Sources */,
 				DE868DC71F0DE4AC00FF7FD3 /* BCSecurityPolicy.m in Sources */,
 				DE3954351F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */,
 				DE9F9E451F19FDD4003CF080 /* MQRichTextViewCell.m in Sources */,
@@ -4414,6 +4427,7 @@
 				DE8684F31F0DCC7900FF7FD3 /* UserInfo.swift in Sources */,
 				DE868ACE1F0DD1B800FF7FD3 /* MJProperty.m in Sources */,
 				DEC229A31F136636007D6DBE /* IQTitleBarButtonItem.swift in Sources */,
+				DE25421D1F332A4600872C22 /* ProjectcalInfo.swift in Sources */,
 				DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DE9F9EB51F19FDD5003CF080 /* MQMessageFormViewManager.m in Sources */,
 				DE3953FB1F1468CB00A44740 /* SDWebImagePrefetcher.m in Sources */,
@@ -4730,6 +4744,7 @@
 				DE9F9EBB1F19FDD5003CF080 /* MQMessageFormViewStyleDark.m in Sources */,
 				DE9F9EB31F19FDD5003CF080 /* MQMessageFormConfig.m in Sources */,
 				DE8684F81F0DCC7900FF7FD3 /* CityModel.swift in Sources */,
+				DE2542201F332BA300872C22 /* EnergycalInfo.swift in Sources */,
 				DE3954291F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4790,6 +4805,7 @@
 				DE9F9DE41F19FDD4003CF080 /* MQChatViewStyleBlue.m in Sources */,
 				DE868D8E1F0DE4AC00FF7FD3 /* BCBaseResp.m in Sources */,
 				DE868D861F0DE4AC00FF7FD3 /* WXPayAdapter.m in Sources */,
+				DE2542211F332BA300872C22 /* EnergycalInfo.swift in Sources */,
 				DE9F9E8C1F19FDD5003CF080 /* MEIQIA_TTTAttributedLabel.m in Sources */,
 				DE9F9E541F19FDD4003CF080 /* MQChatAudioPlayer.m in Sources */,
 				DE868DC81F0DE4AC00FF7FD3 /* BCSecurityPolicy.m in Sources */,
@@ -4877,6 +4893,7 @@
 				DEC229961F136636007D6DBE /* IQKeyboardManagerConstants.swift in Sources */,
 				DEC221281F13531B007D6DBE /* NewsCell.swift in Sources */,
 				DE9F9E421F19FDD4003CF080 /* MQImageMessageCell.m in Sources */,
+				DE2542241F332BF400872C22 /* IncomecalInfo.swift in Sources */,
 				DE9F9E9E1F19FDD5003CF080 /* MQButtonGroupBar.m in Sources */,
 				DE9F9DFE1F19FDD4003CF080 /* MQBotMessageFactory.m in Sources */,
 				DEC2223B1F13601E007D6DBE /* MJRefreshBackFooter.m in Sources */,
@@ -5104,6 +5121,7 @@
 				DEC2299C1F136636007D6DBE /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				DE9F9E1A1F19FDD4003CF080 /* MQBotWebViewBubbleAnswerCellModel.m in Sources */,
 				DE9F9E5C1F19FDD4003CF080 /* MQChatFileUtil.m in Sources */,
+				DE25421E1F332A4600872C22 /* ProjectcalInfo.swift in Sources */,
 				DEE682031F18BB9900157560 /* RootProjectCalViewController.swift in Sources */,
 				DE9F9DEE1F19FDD4003CF080 /* MQChatViewTableDataSource.m in Sources */,
 				DE9F9E1C1F19FDD4003CF080 /* MQEvaluationResultCellModel.m in Sources */,
