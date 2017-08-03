@@ -64,7 +64,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITa
         self.present(nav, animated: true, completion: nil)
     }
     
-    func proviceAndCity(_ provice: ProvinceModel, city: CityModel) {
+    func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
         provinceInfo = provice
         cityInfo = city
         tableView.reloadData()

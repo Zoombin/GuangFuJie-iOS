@@ -120,7 +120,7 @@ class LeaseViewController: BaseViewController, ProviceCityViewDelegate {
         self.present(nav, animated: true, completion: nil)
     }
     
-    func proviceAndCity(_ provice: ProvinceModel, city: CityModel) {
+    func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
         provinceInfo = provice
         cityInfo = city
         locationButton.setTitle(provinceInfo!.province_label! + cityInfo!.city_label!, for: UIControlState.normal)

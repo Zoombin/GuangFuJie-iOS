@@ -178,7 +178,7 @@ extension API {
     func citylistV2(_ province_id : NSNumber, success: ((_ cities: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "v2/region/citylist"
         let params = [
-            "province_id" : province_id,
+            "provinceId" : province_id,
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params as AnyObject)

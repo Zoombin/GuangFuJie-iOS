@@ -8,12 +8,14 @@
 
 import UIKit
 
-class RootHomeViewController: BaseViewController {
+class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
 
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var bannerScrollView: UIScrollView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var locationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,18 @@ class RootHomeViewController: BaseViewController {
         self.view.backgroundColor = UIColor.white
         loadMenusView()
         initBannerImageView()
+    }
+    
+    @IBAction func locationSetting() {
+        let vc = ProviceCityViewController()
+        vc.delegate = self
+        
+        let nav = UINavigationController.init(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
+        locationButton.setTitle("\(StringUtils.getString(city.name))\(StringUtils.getString(area.name))", for: UIControlState.normal)
     }
     
     func loadMenusView() {
