@@ -39,7 +39,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     func getNewsList() {
-        API.sharedInstance.newsList(currentPage, pagesize: pageSize, success: { (count, array) in
+        API.sharedInstance.articlesList(currentPage, pagesize: pageSize, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 1, success: { (count, array) in
             if (self.currentPage == 0) {
                 //self.newsTableView.mj_header.endRefreshing()
                 self.hideHud()
@@ -60,6 +60,27 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
             self.hideHud()
             self.showHint(msg)
         }
+//        API.sharedInstance.newsList(currentPage, pagesize: pageSize, success: { (count, array) in
+//            if (self.currentPage == 0) {
+//                //self.newsTableView.mj_header.endRefreshing()
+//                self.hideHud()
+//                self.newsArray.removeAllObjects()
+//            } else {
+//                self.newsTableView.mj_footer.endRefreshing()
+//            }
+//            if (array.count > 0) {
+//                self.newsArray.addObjects(from: array as [AnyObject])
+//            }
+//            if (array.count < self.pageSize) {
+//                self.newsTableView.mj_footer.isHidden = true
+//            }
+//            self.newsTableView.reloadData()
+//        }) { (msg) in
+//            self.newsTableView.mj_footer.endRefreshing()
+//            //self.newsTableView.mj_header.endRefreshing()
+//            self.hideHud()
+//            self.showHint(msg)
+//        }
     }
     
     
@@ -96,7 +117,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "NewsCell"
-        let data = self.newsArray.object(at: indexPath.row) as! NewsInfo
+        let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
 //        let cell = NewsCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! NewsCell
         cell.setData(model: data)

@@ -1511,7 +1511,7 @@ extension API {
     }
     
     //地推笔记列表
-    func articlesList(_ start : NSInteger, pagesize : NSInteger, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func noteList(_ start : NSInteger, pagesize : NSInteger, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "articles/list"
         let params = NSMutableDictionary()
         params["_o"] = 1
