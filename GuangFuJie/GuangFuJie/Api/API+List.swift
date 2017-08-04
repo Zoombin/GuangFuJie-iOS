@@ -1528,7 +1528,7 @@ extension API {
     
     //获取单一问答详情 (app)
     func useraskItem(_ id: NSNumber, success: ((_ commonModel: AskInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
-        let url = Constants.httpHost + "booking/add";
+        let url = Constants.httpHost + "userask/item";
         let params = [
             "userId" : getUserId(), // 用户id
             "id" : id,
@@ -1539,6 +1539,158 @@ extension API {
         self.post(url, params: newParams as AnyObject?, success: { (data) in
             let info = AskInfo.mj_object(withKeyValues: data)
             success?(info!)
+        }, failure: failure)
+    }
+    
+    //辐照计算
+    func projectcalSunenerge(_ lat: NSNumber, lng: NSNumber, success: ((_ commonModel: ProjectcalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "projectcal/sunenerge";
+        let params = [
+            "lat": lat,
+            "lng": lng,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (data) in
+            let info = ProjectcalInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+    //产能计算
+    func projectcalEnergycal(type: NSNumber, size: NSNumber, lat: NSNumber, lng: NSNumber, success: ((_ commonModel: EnergycalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "projectcal/energycal";
+        let params = [
+            "type": type,
+            "size": size,
+            "lat": lat,
+            "lng": lng,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (data) in
+            let info = EnergycalInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+    //收益综合报告
+    func projectcalIncomecal(type: NSNumber, size: NSNumber, invest_amount: NSNumber, recoverable_liquid_capital: NSNumber, annual_maintenance_cost: NSNumber, installed_subsidy: NSNumber, loan_ratio: NSNumber, years_of_loans: NSNumber, occupied_electric_ratio: NSNumber, lectric_price_perional: NSNumber, electricity_subsidy : NSNumber, electricity_subsidy_year: NSNumber, sparetime_electric_price: NSNumber, success: ((_ commonModel: IncomecalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "projectcal/incomecal";
+        let params = [
+            "type": type, //三种类型
+            "size": size, //面积
+            "invest_amount": invest_amount,  //投资金额
+            "recoverable_liquid_capital": recoverable_liquid_capital,  //可回收流动资金
+            "annual_maintenance_cost": annual_maintenance_cost, //年运维成本
+            "installed_subsidy": installed_subsidy, //装机补贴
+            "loan_ratio": loan_ratio,//贷款比例
+            "years_of_loans": years_of_loans, //贷款年数
+            "occupied_electric_ratio": occupied_electric_ratio, //自用电比例
+            "lectric_price_perional": lectric_price_perional, //自用电电价
+            "electricity_subsidy": electricity_subsidy, //用电补贴
+            "electricity_subsidy_year": electricity_subsidy_year,//用电补贴年
+            "sparetime_electric_price": sparetime_electric_price, //余电上网价
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (data) in
+            let info = IncomecalInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+    //收益计算-发电收益
+    func projectcalElecticincomeList(type: NSNumber, size: NSNumber, annual_maintenance_cost: NSNumber, lat: NSNumber, lng: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "projectcal/energycal";
+        let params = [
+            "type": type,
+            "size": size,
+            "annual_maintenance_cost": annual_maintenance_cost,
+            "lat": lat,
+            "lng": lng,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = ElecticIncomeInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    // 收益计算-还款额度
+    func projectcalRepaymentList(invest_amount: NSNumber, invest_year: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "projectcal/repaymentlist";
+        let params = [
+            "invest_amount": invest_amount, //贷款金额 （前面的界面投资金额乘以贷款百分比）
+            "invest_year": invest_amount, //贷款年限
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = RepaymentInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //收益计算-净收益
+    func projectcalNetprofit(annual_maintenance_cost: NSNumber, type: NSNumber, size: NSNumber, lat: NSNumber, lng: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "projectcal/netprofit";
+        let params = [
+            "annual_maintenance_cost": annual_maintenance_cost,//年运维成本
+            "type": type, //三种类型
+            "size": size, //面积
+            "lat": lat,
+            "lng": lng,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = NetprofitInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //收益计算-参数获取
+    func incomecalParams(lat: NSNumber, lng: NSNumber, province: NSNumber, city: NSNumber, area: NSNumber, type: NSNumber, size: NSNumber, success: ((_ commonModel: IncomeCalParams) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "projectcal/incomecalparams";
+        let params = [
+            "lat": lat, //纬度
+            "lng": lng, //经度
+            "province": province,   //省id
+            "city": city,   //城市id
+            "area": area,   //区域id
+            "type": type,   //1,2,3 三种类型
+            "size": size,        //面积
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let info = IncomeCalParams.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+    //地推人员列表
+    func groundList(start: NSInteger, pagesize: NSInteger, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "ground/list";
+        let params = [
+            "start": String(start),
+            "pagesize": String(pagesize),
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = GroupUserInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
         }, failure: failure)
     }
 }
