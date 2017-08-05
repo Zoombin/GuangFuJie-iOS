@@ -79,10 +79,22 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
     func menuButtonClicked(sender: UIButton) {
         if (sender.tag == 0) {
            //体验店
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.type = 6
+            self.pushViewController(vc)
         } else if (sender.tag == 1) {
-           //政策咨询
+           //政策资讯
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.type = 1
+            self.pushViewController(vc)
         } else if (sender.tag == 2) {
            //安装运维
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.type = 7
+            self.pushViewController(vc)
         } else if (sender.tag == 3) {
            //光伏保险
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
@@ -93,8 +105,16 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
             self.pushViewController(sb.instantiateViewController(withIdentifier: "GuangFuAskViewController"))
         } else if (sender.tag == 5) {
            //公司介绍
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.type = 8
+            self.pushViewController(vc)
         } else if (sender.tag == 6) {
            //活动通告
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.type = 9
+            self.pushViewController(vc)
         } else if (sender.tag == 7) {
            //客服
             let chatViewManager = MQChatViewManager()
