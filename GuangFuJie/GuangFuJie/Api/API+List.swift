@@ -1559,10 +1559,10 @@ extension API {
     }
     
     //产能计算
-    func projectcalEnergycal(type: NSNumber, size: NSNumber, lat: NSNumber, lng: NSNumber, success: ((_ commonModel: EnergycalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalEnergycal(type: NSInteger, size: String, lat: NSNumber, lng: NSNumber, success: ((_ commonModel: EnergycalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/energycal";
         let params = [
-            "type": type,
+            "type": String(type),
             "size": size,
             "lat": lat,
             "lng": lng,

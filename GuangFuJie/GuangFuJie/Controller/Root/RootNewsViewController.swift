@@ -118,7 +118,6 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "NewsCell"
         let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
-//        let cell = NewsCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! NewsCell
         cell.setData(model: data)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
