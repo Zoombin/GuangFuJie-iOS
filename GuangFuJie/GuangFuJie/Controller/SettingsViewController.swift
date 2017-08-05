@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var settingsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "设置"
         // Do any additional setup after loading the view.
     }
     
@@ -21,13 +21,28 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return 2
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 1))
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell_\(indexPath.row + 1)")
+        if (indexPath.row == 1) {
+            cell?.detailTextLabel?.text = PhoneUtils.appVersion
+        }
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if (indexPath.row == 0) {
+            //do nothing...
+            self.showHint("清除成功")
+        }
     }
 
     override func didReceiveMemoryWarning() {
