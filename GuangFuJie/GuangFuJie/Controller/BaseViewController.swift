@@ -28,6 +28,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if (self.navigationController!.viewControllers.count > 1) {
+            let image = UIImage(named: "ic_back")
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.backButtonClicked))
+            self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        }
+    }
+    
     func pushViewController(_ to : UIViewController, animation: Bool? = true) {
         to.hidesBottomBarWhenPushed = true
         let image = UIImage(named: "ic_back")
