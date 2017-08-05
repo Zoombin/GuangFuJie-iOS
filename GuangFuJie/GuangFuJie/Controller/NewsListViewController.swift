@@ -1,46 +1,33 @@
 //
-//  RootNewsViewController.swift
+//  NewsListViewController.swift
 //  GuangFuJie
 //
-//  Created by 颜超 on 2017/7/6.
+//  Created by 颜超 on 2017/8/5.
 //  Copyright © 2017年 yc. All rights reserved.
 //
 
 import UIKit
 
-class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-    var newsArray = NSMutableArray()
-    @IBOutlet weak var newsTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
-    
+class NewsListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     var pageSize = 10
     var currentPage = 0
+    var newsArray = NSMutableArray()
+    var key: String?
+    var type: NSNumber?
+    
+    @IBOutlet weak var newsListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "政策资讯"
+    }
+    
+    func initView() {
+        self.title = "资讯"
         
-        //newsTableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(self.loadData))
-        newsTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
-        
+        newsListTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
         getNewsList()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        self.searchButtonClicked()
-    }
-    
-    @IBAction func searchButtonClicked() {
-        if (StringUtils.isEmpty(searchBar.text!)) {
-            self.showHint("请输入搜索内容!")
-            return
-        }
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-        vc.key = searchBar.text;
-        self.pushViewController(vc)
     }
     
     func loadMore() {
@@ -50,29 +37,29 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func loadData() {
         currentPage = 0
-        self.newsTableView.mj_footer.isHidden = false
+        self.newsListTableView.mj_footer.isHidden = false
         self.showHud(in: self.view, hint: "加载中...")
         getNewsList()
     }
     
     func getNewsList() {
-        API.sharedInstance.articlesList(currentPage, pagesize: pageSize, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 1, success: { (count, array) in
+        API.sharedInstance.articlesList(currentPage, pagesize: pageSize, key: key, provinceId: nil, cityId: nil, areaId: nil, type: type, success: { (count, array) in
             if (self.currentPage == 0) {
                 //self.newsTableView.mj_header.endRefreshing()
                 self.hideHud()
                 self.newsArray.removeAllObjects()
             } else {
-                self.newsTableView.mj_footer.endRefreshing()
+                self.newsListTableView.mj_footer.endRefreshing()
             }
             if (array.count > 0) {
                 self.newsArray.addObjects(from: array as [AnyObject])
             }
             if (array.count < self.pageSize) {
-                self.newsTableView.mj_footer.isHidden = true
+                self.newsListTableView.mj_footer.isHidden = true
             }
-            self.newsTableView.reloadData()
+            self.newsListTableView.reloadData()
         }) { (msg) in
-            self.newsTableView.mj_footer.endRefreshing()
+            self.newsListTableView.mj_footer.endRefreshing()
             //self.newsTableView.mj_header.endRefreshing()
             self.hideHud()
             self.showHint(msg)
@@ -81,12 +68,6 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,14 +99,21 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    */
-
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -223,6 +223,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
             // 设置是否可以拖拽
             //            annotationView!.isDraggable = false
         }
+        annotationView?.image = UIImage(named: type == 0 ? "ic_map_redpoint" : "ic_map_bluepoint")
         annotationView?.annotation = annotation
         return annotationView
     }
