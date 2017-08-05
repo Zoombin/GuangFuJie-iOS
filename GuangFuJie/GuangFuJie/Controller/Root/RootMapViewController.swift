@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKMapViewDelegate {
+class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKMapViewDelegate, BMKPoiSearchDelegate {
     
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var pgButton: UIButton!
@@ -23,6 +23,8 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     var currentLevel: Float = 14
     
     var locService : BMKLocationService!
+    var poiService : BMKPoiSearch!
+    
     var currentLoation : CLLocationCoordinate2D!
     var searchType = "province"
     
@@ -36,6 +38,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         self.navigationItem.title = "屋顶地图"
         initView()
         locService = BMKLocationService()
+        poiService = BMKPoiSearch()
         
         loadData()
     }
@@ -89,6 +92,19 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
             getInstallerMap()
         } else if (type == 1) {
             getRoofMap()
+        } else {
+            let option = BMKNearbySearchOption()
+            option.pageIndex = 0
+            option.pageCapacity = 10
+            option.location = currentLoation
+            option.keyword = "供电局"
+            option.radius = 30000
+            let flag = poiService.poiSearchNear(by: option)
+            if (flag) {
+                print("搜索成功")
+            } else {
+                print("搜索失败")
+            }
         }
     }
     
@@ -178,6 +194,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     override func viewWillAppear(_ animated: Bool) {
         mapView.viewWillAppear()
         locService.delegate = self
+        poiService.delegate = self
         mapView.delegate = self
         startLocation()
     }
@@ -185,6 +202,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     override func viewWillDisappear(_ animated: Bool) {
         mapView.viewWillDisappear()
         locService.delegate = nil
+        poiService.delegate = nil
         mapView.delegate = nil
     }
     
@@ -202,6 +220,22 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         mapView.showsUserLocation = false
     }
     
+    func onGetPoiResult(_ searcher: BMKPoiSearch!, result poiResult: BMKPoiResult!, errorCode: BMKSearchErrorCode) {
+        if (errorCode == BMK_SEARCH_NO_ERROR) {
+            mapView.removeAnnotations(mapView.annotations)
+            for i in 0..<poiResult.poiInfoList.count {
+                let poi = poiResult.poiInfoList[i] as! BMKPoiInfo
+                let item = BMKPointAnnotation()
+                item.coordinate = poi.pt
+                item.title = poi.name
+                item.subtitle = poi.address
+                mapView.addAnnotation(item)
+            }
+        } else {
+            //出现异常
+        }
+    }
+    
     // MARK: - BMKMapViewDelegate
     
     /**
@@ -215,7 +249,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
         if annotationView == nil {
             annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
-            annotationView?.image = UIImage(named: type == 0 ? "ic_map_redpoint" : "ic_map_bluepoint")
+            annotationView?.image = UIImage(named: type == 2 ? "ic_map_redpoint" : (type == 0 ? "ic_map_redpoint" : "ic_map_bluepoint"))
             // 设置颜色
             annotationView!.pinColor = UInt(BMKPinAnnotationColorRed)
             // 从天上掉下的动画
@@ -223,7 +257,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
             // 设置是否可以拖拽
             //            annotationView!.isDraggable = false
         }
-        annotationView?.image = UIImage(named: type == 0 ? "ic_map_redpoint" : "ic_map_bluepoint")
+        annotationView?.image = UIImage(named: type == 2 ? "ic_map_redpoint" : (type == 0 ? "ic_map_redpoint" : "ic_map_bluepoint"))
         annotationView?.annotation = annotation
         return annotationView
     }
