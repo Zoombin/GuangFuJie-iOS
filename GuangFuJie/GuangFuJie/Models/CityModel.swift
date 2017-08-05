@@ -14,4 +14,6 @@ class CityModel: NSObject {
     
     var name: String?
     var father_id: NSNumber?
+    var lat: NSNumber?
+    var lng: NSNumber?
 }

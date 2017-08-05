@@ -100,16 +100,16 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        let data = self.newsArray.object(at: indexPath.row) as! NewsInfo
+        let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
         
         let shareInfo = ShareInfo()
-        shareInfo.shareImg = StringUtils.getString(data.titleImage)
-        shareInfo.shareTitle = StringUtils.getString("新闻资讯")
-        shareInfo.shareDesc = StringUtils.getString(data.intro)
-        shareInfo.shareLink = StringUtils.getString(data.link)
+        shareInfo.shareImg = StringUtils.getString(data.image)
+        shareInfo.shareTitle = StringUtils.getString("资讯")
+        shareInfo.shareDesc = StringUtils.getString(data.title)
+        shareInfo.shareLink = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
         
         let vc = GFJWebViewController()
-        vc.url = StringUtils.getString(data.link)
+        vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
         vc.title = "资讯"
         vc.addShareInfoButton(info: shareInfo)
         self.pushViewController(vc)

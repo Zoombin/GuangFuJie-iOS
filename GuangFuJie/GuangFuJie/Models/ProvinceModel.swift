@@ -13,4 +13,6 @@ class ProvinceModel: NSObject {
     var province_label : String?
     
     var name: String?
+    var lat: NSNumber?
+    var lng: NSNumber?
 }

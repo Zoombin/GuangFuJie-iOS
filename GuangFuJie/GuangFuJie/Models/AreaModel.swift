@@ -13,4 +13,6 @@ class AreaModel: NSObject {
     var area_id: NSNumber?
     var name: String?
     var father_id: NSNumber?
+    var lat: NSNumber?
+    var lng: NSNumber?
 }

@@ -1552,7 +1552,7 @@ extension API {
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
-        self.get(url, params: newParams as AnyObject?, success: { (data) in
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
             let info = ProjectcalInfo.mj_object(withKeyValues: data)
             success?(info!)
         }, failure: failure)
@@ -1570,7 +1570,7 @@ extension API {
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
-        self.get(url, params: newParams as AnyObject?, success: { (data) in
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
             let info = EnergycalInfo.mj_object(withKeyValues: data)
             success?(info!)
         }, failure: failure)
@@ -1597,7 +1597,7 @@ extension API {
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
-        self.get(url, params: newParams as AnyObject?, success: { (data) in
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
             let info = IncomecalInfo.mj_object(withKeyValues: data)
             success?(info!)
         }, failure: failure)
