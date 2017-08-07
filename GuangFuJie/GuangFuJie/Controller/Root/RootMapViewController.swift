@@ -235,7 +235,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
             //出现异常
         }
     }
-    
+ 
     // MARK: - BMKMapViewDelegate
     
     /**
