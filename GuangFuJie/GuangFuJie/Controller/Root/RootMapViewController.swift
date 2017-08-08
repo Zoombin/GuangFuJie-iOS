@@ -18,6 +18,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     @IBOutlet weak var lineView1: UIView!
     @IBOutlet weak var lineView2: UIView!
     @IBOutlet weak var lineView3: UIView!
+    @IBOutlet weak var lineView4: UIView!
     
     var type = 0 // 0 1 2
     var currentLevel: Float = 14
@@ -29,9 +30,13 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     var searchType = "province"
     
     @IBOutlet weak var mapView : BMKMapView!
-    var points = NSMutableArray()
+    var installerPoints = NSMutableArray()
+    var roofPoints = NSMutableArray()
+    var nearbyPoints = NSMutableArray()
+    
     var hasLocated = false
     
+    var isLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +79,15 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         lineView1.isHidden = true
         lineView2.isHidden = true
         lineView3.isHidden = true
+        lineView4.isHidden = true
         if (type == 0) {
             lineView1.isHidden = false
         } else if (type == 1) {
             lineView2.isHidden = false
-        } else {
+        } else if (type == 2){
             lineView3.isHidden = false
+        } else {
+            lineView4.isHidden = false
         }
         loadData()
     }
@@ -89,22 +97,24 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
             return
         }
         if (type == 0) {
+            //全部搜索
+            mapView.removeAnnotations(mapView.annotations)
+            installerPoints.removeAllObjects()
+            roofPoints.removeAllObjects()
+            nearbyPoints.removeAllObjects()
+            
             getInstallerMap()
+            getRoofMap()
+            getNearbyElectric()
         } else if (type == 1) {
+            installerPoints.removeAllObjects()
+            getInstallerMap()
+        } else if (type == 2) {
+            roofPoints.removeAllObjects()
             getRoofMap()
         } else {
-            let option = BMKNearbySearchOption()
-            option.pageIndex = 0
-            option.pageCapacity = 10
-            option.location = currentLoation
-            option.keyword = "供电局"
-            option.radius = 30000
-            let flag = poiService.poiSearchNear(by: option)
-            if (flag) {
-                print("搜索成功")
-            } else {
-                print("搜索失败")
-            }
+            nearbyPoints.removeAllObjects()
+            getNearbyElectric()
         }
     }
     
@@ -114,72 +124,134 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     }
     
     func getInstallerMap() {
-        self.showHud(in: self.view, hint: "获取数据中...")
+        showLoading()
         API.sharedInstance.installerMapListV2(type: searchType, lat: NSNumber.init(value: currentLoation.latitude), lng: NSNumber.init(value: currentLoation.longitude), success: { (count, roofList) in
-            self.hideHud()
-            self.points.removeAllObjects()
+            self.hideLoading()
+            self.installerPoints.removeAllObjects()
             if (roofList.count > 0) {
-                self.points.addObjects(from: roofList as [AnyObject])
+                self.installerPoints.addObjects(from: roofList as [AnyObject])
             }
             self.addPoints()
         }) { (msg) in
-            self.hideHud()
+            self.hideLoading()
             self.showHint(msg)
-
+            
+        }
+    }
+    
+    func showLoading() {
+        if (!isLoading) {
+            isLoading = true
+            self.showHud(in: self.view, hint: "获取数据中...")
+        }
+    }
+    
+    func hideLoading() {
+        isLoading = false
+        self.hideHud()
+    }
+    
+    func getNearbyElectric() {
+        let option = BMKNearbySearchOption()
+        option.pageIndex = 0
+        option.pageCapacity = 10
+        option.location = currentLoation
+        option.keyword = "供电局"
+        option.radius = 30000
+        let flag = poiService.poiSearchNear(by: option)
+        showLoading()
+        if (flag) {
+            print("搜索成功")
+        } else {
+            print("搜索失败")
         }
     }
     
     func getRoofMap() {
-        self.showHud(in: self.view, hint: "获取数据中...")
+        showLoading()
         API.sharedInstance.roofMapListV2(type: searchType, lat: NSNumber.init(value: currentLoation.latitude), lng: NSNumber.init(value: currentLoation.longitude), success: { (count, roofList) in
-            self.hideHud()
-            self.points.removeAllObjects()
+            self.hideLoading()
+            self.roofPoints.removeAllObjects()
             if (roofList.count > 0) {
-                self.points.addObjects(from: roofList as [AnyObject])
+                self.roofPoints.addObjects(from: roofList as [AnyObject])
             }
             self.addPoints()
         }) { (msg) in
-            self.hideHud()
+            self.hideLoading()
             self.showHint(msg)
         }
     }
     
     func addPoints() {
-        mapView.removeAnnotations(mapView.annotations)
-        if (self.points.count == 0) {
+        if (type != 0) {
+            mapView.removeAnnotations(mapView.annotations)
+        }
+        if (self.installerPoints.count == 0 && self.roofPoints.count == 0) {
             return
         }
-        for i in 0..<self.points.count {
-            if (type == 0) {
-                let installer = self.points[i] as! InstallerMapInfo
-                let companyName = StringUtils.getString(installer.name)
-                
-                let item = BMKPointAnnotation()
-                if (installer.lat == nil || installer.lng == nil) {
-                    continue
+        if (type == 0) {
+            if (installerPoints.count > 0 && roofPoints.count > 0 && nearbyPoints.count > 0) {
+                mapView.removeAnnotations(mapView.annotations)
+                for i in 0..<installerPoints.count {
+                    let object = self.installerPoints[i] as! NSObject
+                    addInstallerPoint(object: object)
                 }
-                
-                let coordinate = CLLocationCoordinate2D.init(latitude: installer.lat!.doubleValue, longitude: installer.lng!.doubleValue)
-                item.coordinate = coordinate
-                item.title = companyName
-                item.subtitle = "\(installer.count!)家安装商"
-                mapView.addAnnotation(item)
-            } else if (type == 1) {
-                let roof = self.points[i] as! RoofMapInfo
-                let companyName = StringUtils.getString(roof.name)
-                
-                let item = BMKPointAnnotation()
-                if (roof.lat == nil || roof.lng == nil) {
-                    continue
+                for i in 0..<roofPoints.count {
+                    let object = self.roofPoints[i] as! NSObject
+                    addRoofPoint(object: object)
                 }
-                let coordinate = CLLocationCoordinate2D.init(latitude: roof.lat!.doubleValue, longitude: roof.lng!.doubleValue)
-                item.coordinate = coordinate
-                item.title = companyName
-                item.subtitle = "居民屋顶:\(StringUtils.getString(roof.jumingroof))"
-                mapView.addAnnotation(item)
-                
+                for i in 0..<nearbyPoints.count {
+                    let object = self.nearbyPoints[i] as! BMKAnnotation
+                    mapView.addAnnotation(object)
+                }
+            }
+        } else if (type == 1) {
+            for i in 0..<installerPoints.count {
+                let object = self.installerPoints[i] as! NSObject
+                addInstallerPoint(object: object)
+            }
+        } else if (type == 2) {
+            for i in 0..<roofPoints.count {
+                let object = self.roofPoints[i] as! NSObject
+                addRoofPoint(object: object)
+            }
+        } else if (type == 3) {
+            for i in 0..<nearbyPoints.count {
+                let object = self.nearbyPoints[i] as! BMKAnnotation
+                mapView.addAnnotation(object)
             }
         }
+    }
+    
+    func addInstallerPoint(object: NSObject) {
+        let installer = object as! InstallerMapInfo
+        let companyName = StringUtils.getString(installer.name)
+        
+        let item = BMKPointAnnotation()
+        if (installer.lat == nil || installer.lng == nil) {
+            return
+        }
+        
+        let coordinate = CLLocationCoordinate2D.init(latitude: installer.lat!.doubleValue, longitude: installer.lng!.doubleValue)
+        item.coordinate = coordinate
+        item.title = companyName
+        item.subtitle = "\(installer.count!)家安装商"
+        mapView.addAnnotation(item)
+    }
+    
+    func addRoofPoint(object: NSObject) {
+        let roof = object as! RoofMapInfo
+        let companyName = StringUtils.getString(roof.name)
+        
+        let item = BMKPointAnnotation()
+        if (roof.lat == nil || roof.lng == nil) {
+            return
+        }
+        let coordinate = CLLocationCoordinate2D.init(latitude: roof.lat!.doubleValue, longitude: roof.lng!.doubleValue)
+        item.coordinate = coordinate
+        item.title = companyName
+        item.subtitle = "居民屋顶:\(StringUtils.getString(roof.jumingroof))"
+        mapView.addAnnotation(item)
     }
     
     func initView() {
@@ -221,21 +293,25 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
     }
     
     func onGetPoiResult(_ searcher: BMKPoiSearch!, result poiResult: BMKPoiResult!, errorCode: BMKSearchErrorCode) {
+        hideLoading()
         if (errorCode == BMK_SEARCH_NO_ERROR) {
-            mapView.removeAnnotations(mapView.annotations)
+//            mapView.removeAnnotations(mapView.annotations)
+            nearbyPoints.removeAllObjects()
             for i in 0..<poiResult.poiInfoList.count {
                 let poi = poiResult.poiInfoList[i] as! BMKPoiInfo
                 let item = BMKPointAnnotation()
                 item.coordinate = poi.pt
                 item.title = poi.name
                 item.subtitle = poi.address
-                mapView.addAnnotation(item)
+                nearbyPoints.add(item)
+//                mapView.addAnnotation(item)
             }
+            addPoints()
         } else {
             //出现异常
         }
     }
- 
+    
     // MARK: - BMKMapViewDelegate
     
     /**
@@ -249,7 +325,6 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationViewID) as! BMKPinAnnotationView?
         if annotationView == nil {
             annotationView = BMKPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
-            annotationView?.image = UIImage(named: type == 2 ? "ic_map_redpoint" : (type == 0 ? "ic_map_redpoint" : "ic_map_bluepoint"))
             // 设置颜色
             annotationView!.pinColor = UInt(BMKPinAnnotationColorRed)
             // 从天上掉下的动画
@@ -257,7 +332,20 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
             // 设置是否可以拖拽
             //            annotationView!.isDraggable = false
         }
-        annotationView?.image = UIImage(named: type == 2 ? "ic_map_redpoint" : (type == 0 ? "ic_map_redpoint" : "ic_map_bluepoint"))
+        let imageNameRed = "ic_map_redpoint"
+        let imageNameOrange = "ic_map_orangepoint"
+        let imageNameBlue = "ic_map_bluepoint"
+        if (type == 0) {
+            annotationView?.image = UIImage(named: imageNameRed)
+        } else if (type == 1) {
+            annotationView?.image = UIImage(named: imageNameOrange)
+        } else if (type == 2) {
+            annotationView?.image = UIImage(named: imageNameBlue)
+        } else {
+            annotationView?.image = UIImage(named: imageNameRed)
+        }
+        
+        
         annotationView?.annotation = annotation
         return annotationView
     }
@@ -338,5 +426,5 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
             self.calButton.isUserInteractionEnabled = self.closeButton.isSelected
         }
     }
-
+    
 }
