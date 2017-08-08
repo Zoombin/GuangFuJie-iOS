@@ -111,10 +111,11 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
             self.pushViewController(vc)
         } else if (sender.tag == 6) {
            //活动通告
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-            vc.type = 9
-            self.pushViewController(vc)
+            self.showHint("活动正在筹备中，尽请期待")
+//            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+//            vc.type = 9
+//            self.pushViewController(vc)
         } else if (sender.tag == 7) {
            //客服
             let chatViewManager = MQChatViewManager()
