@@ -1887,14 +1887,18 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10Q-85-baI">
-                                        <rect key="frame" x="8" y="17" width="46" height="30"/>
+                                        <rect key="frame" x="8" y="17" width="84" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="苏州">
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="选择地区">
                                             <color key="titleColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="locationSetting" destination="ULy-sg-gbR" eventType="touchUpInside" id="PH1-Nv-ukM"/>
+                                        </connections>
                                     </button>
                                     <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="光伏信息" translatesAutoresizingMaskIntoConstraints="NO" id="KNk-Hd-JLB">
-                                        <rect key="frame" x="54" y="10" width="250" height="44"/>
+                                        <rect key="frame" x="92" y="10" width="212" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1926,28 +1930,60 @@
                                         <state key="normal" title="政策补贴">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="topButtonClicked:" destination="ULy-sg-gbR" eventType="touchUpInside" id="cDd-NX-Gxx"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euU-NM-jbw">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euU-NM-jbw">
                                         <rect key="frame" x="94" y="0.0" width="94" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="资讯">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="topButtonClicked:" destination="ULy-sg-gbR" eventType="touchUpInside" id="jhx-Iw-pOx"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHg-qZ-Dcp">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHg-qZ-Dcp">
                                         <rect key="frame" x="188" y="0.0" width="94" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="电价">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="topButtonClicked:" destination="ULy-sg-gbR" eventType="touchUpInside" id="zNj-Bx-wQo"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9Z-Mr-ky0">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9Z-Mr-ky0">
                                         <rect key="frame" x="282" y="0.0" width="94" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="贷款">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="topButtonClicked:" destination="ULy-sg-gbR" eventType="touchUpInside" id="6BQ-gJ-UIf"/>
+                                        </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xw0-Fs-U2O">
+                                        <rect key="frame" x="12" y="46" width="70" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1CO-Ax-RDk">
+                                        <rect key="frame" x="106" y="46" width="70" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKl-yq-EPu">
+                                        <rect key="frame" x="200" y="46" width="70" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-wG-gdk">
+                                        <rect key="frame" x="294" y="46" width="70" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -1956,13 +1992,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="84u-kq-XZk"/>
                     <connections>
+                        <outlet property="line1" destination="Xw0-Fs-U2O" id="hZl-Fu-j16"/>
+                        <outlet property="line2" destination="1CO-Ax-RDk" id="DF6-4R-hie"/>
+                        <outlet property="line3" destination="bKl-yq-EPu" id="Cav-iu-vHU"/>
+                        <outlet property="line4" destination="wbw-wG-gdk" id="K8r-7w-TsJ"/>
+                        <outlet property="locationButton" destination="10Q-85-baI" id="yyR-Yk-iZ2"/>
                         <outlet property="newsTableView" destination="dDG-O6-mIY" id="YqP-Ly-0ce"/>
                         <outlet property="searchBar" destination="KNk-Hd-JLB" id="vGr-Gg-EQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xE-C2-sjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3002" y="426"/>
+            <point key="canvasLocation" x="-3002.4000000000001" y="425.93703148425789"/>
         </scene>
         <!--Root My View Controller-->
         <scene sceneID="ojS-Ay-Flu">

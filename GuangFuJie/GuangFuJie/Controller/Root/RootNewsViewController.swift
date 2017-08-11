@@ -8,13 +8,22 @@
 
 import UIKit
 
-class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, ProviceCityViewDelegate {
     var newsArray = NSMutableArray()
     @IBOutlet weak var newsTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var locationButton: UIButton!
+    
+    @IBOutlet weak var line1: UIView!
+    @IBOutlet weak var line2: UIView!
+    @IBOutlet weak var line3: UIView!
+    @IBOutlet weak var line4: UIView!
     
     var pageSize = 10
     var currentPage = 0
+    var type = 16
+    
+    var provinceId: NSNumber?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +34,46 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
         newsTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
         
         getNewsList()
+    }
+    
+    @IBAction func locationSetting() {
+        let vc = ProviceCityViewController()
+        vc.delegate = self
+        
+        let nav = UINavigationController.init(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
+        provinceId = provice.province_id
+        locationButton.setTitle("\(StringUtils.getString(provice.name))\(StringUtils.getString(city.name))", for: UIControlState.normal)
+        
+        loadData()
+    }
+    
+    func hideAllLine() {
+        line1.isHidden = true
+        line2.isHidden = true
+        line3.isHidden = true
+        line4.isHidden = true
+    }
+    
+    @IBAction func topButtonClicked(_ sender: UIButton) {
+        hideAllLine()
+        if (sender.tag == 0) {
+            type = 16
+            line1.isHidden = false
+        } else if (sender.tag == 1) {
+            type = 15
+            line2.isHidden = false
+        } else if (sender.tag == 2) {
+            type = 17
+            line3.isHidden = false
+        } else {
+            type = 18
+            line4.isHidden = false
+        }
+        loadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -56,7 +105,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     func getNewsList() {
-        API.sharedInstance.articlesList(currentPage, pagesize: pageSize, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 1, success: { (count, array) in
+        API.sharedInstance.articlesList(currentPage, pagesize: pageSize, key: nil, provinceId: provinceId, cityId: nil, areaId: nil, type: NSNumber.init(value: type), success: { (count, array) in
             if (self.currentPage == 0) {
                 //self.newsTableView.mj_header.endRefreshing()
                 self.hideHud()
