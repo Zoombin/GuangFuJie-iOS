@@ -105,10 +105,17 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
             self.pushViewController(sb.instantiateViewController(withIdentifier: "GuangFuAskViewController"))
         } else if (sender.tag == 5) {
            //公司介绍
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-            vc.type = 8
-            self.pushViewController(vc)
+            API.sharedInstance.articlesList(0, pagesize: 1, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 8, success: { (count, array) in
+                if (array.count >= 1) {
+                    let article = array[0] as! ArticleInfo
+                    let vc = GFJWebViewController()
+                    vc.title = "公司介绍"
+                    vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(article.id!)"
+                    self.pushViewController(vc)
+                }
+            }) { (msg) in
+                self.showHint(msg)
+            }
         } else if (sender.tag == 6) {
            //活动通告
             self.showHint("活动正在筹备中，尽请期待")
