@@ -957,6 +957,8 @@
 		DEE6C9E51F35BECA00AB6031 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6C9C21F35BEC900AB6031 /* IQKeyboardManagerConstantsInternal.swift */; };
 		DEE6C9E61F35BECA00AB6031 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEE6C9C51F35BEC900AB6031 /* IQKeyboardManager.bundle */; };
 		DEE6C9E71F35BECA00AB6031 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEE6C9C51F35BEC900AB6031 /* IQKeyboardManager.bundle */; };
+		DEF593971F3EEA5500448FC5 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF593961F3EEA5500448FC5 /* LoginCell.swift */; };
+		DEF593981F3EEA5500448FC5 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF593961F3EEA5500448FC5 /* LoginCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1929,6 +1931,7 @@
 		DEE6C9C21F35BEC900AB6031 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		DEE6C9C31F35BEC900AB6031 /* IQKeyboardManagerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerSwift.h; path = IQKeyboardManagerSwift/IQKeyboardManagerSwift.h; sourceTree = "<group>"; };
 		DEE6C9C51F35BEC900AB6031 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		DEF593961F3EEA5500448FC5 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2364,6 +2367,7 @@
 				DEC221261F13531B007D6DBE /* NewsCell.swift */,
 				DEE681F81F1897AC00157560 /* GFAskCell.swift */,
 				DEE682261F19F30700157560 /* NoteCell.swift */,
+				DEF593961F3EEA5500448FC5 /* LoginCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4769,6 +4773,7 @@
 				DEC222401F13601E007D6DBE /* MJRefreshHeader.m in Sources */,
 				DE2542171F32FD3500872C22 /* NoteInfo.swift in Sources */,
 				DE9F9E011F19FDD4003CF080 /* MQEventMessage.m in Sources */,
+				DEF593971F3EEA5500448FC5 /* LoginCell.swift in Sources */,
 				DE3954151F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				DE3953ED1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
 				DE868DBB1F0DE4AC00FF7FD3 /* BCQueryRefundResult.m in Sources */,
@@ -4862,6 +4867,7 @@
 				DE9F9EB61F19FDD5003CF080 /* MQMessageFormViewManager.m in Sources */,
 				DE868DC01F0DE4AC00FF7FD3 /* BCSubscription.m in Sources */,
 				DE9F9E5E1F19FDD4003CF080 /* MQChatRegexUtil.m in Sources */,
+				DEF593981F3EEA5500448FC5 /* LoginCell.swift in Sources */,
 				DE8687701F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
 				DEE6C9D51F35BECA00AB6031 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				DE9F9DC41F19FDD4003CF080 /* MQAnimatorPush.m in Sources */,

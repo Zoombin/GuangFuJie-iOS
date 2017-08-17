@@ -11,6 +11,7 @@ import UIKit
 class RootMyViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var footView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,11 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         } else if (indexPath.row == 4) {
             //设置
         }
+    }
+    
+    @IBAction func loginButtonClicked() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        self.pushViewController(sb.instantiateViewController(withIdentifier: "LoginViewController"))
     }
     
 

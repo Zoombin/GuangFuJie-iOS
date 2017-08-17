@@ -10,8 +10,8 @@ import UIKit
 
 class LoginViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var loginTableView: UITableView!
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var codeTextField: UITextField!
+    var phoneTextField: UITextField!
+    var codeTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,13 @@ class LoginViewController: BaseViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell_\(indexPath.row + 1)")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell_\(indexPath.row + 1)") as! LoginCell
+        if (indexPath.row == 0) {
+            self.phoneTextField = cell.contentTextField
+        } else {
+            self.codeTextField = cell.contentTextField
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -41,7 +46,7 @@ class LoginViewController: BaseViewController, UITableViewDelegate, UITableViewD
      登录页面代理方法--获取验证码
      */
     @IBAction func getCodeButtonClicked() {
-        let phone = ""
+        let phone = StringUtils.getString(phoneTextField.text)
         
         if (phone.isEmpty) {
             self.showHint("请输入手机号!")
@@ -64,8 +69,8 @@ class LoginViewController: BaseViewController, UITableViewDelegate, UITableViewD
      - parameter code
      */
     @IBAction func loginButtonClicked() {
-        let phone = ""
-        let code = ""
+        let phone = phoneTextField.text!
+        let code = codeTextField.text!
         
         if (phone.isEmpty) {
             self.showHint("请输入手机号!")
@@ -80,6 +85,7 @@ class LoginViewController: BaseViewController, UITableViewDelegate, UITableViewD
             self.hideHud()
             self.showHint("登录成功!")
             UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+            self.backButtonClicked()
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
