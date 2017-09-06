@@ -31,3 +31,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/MeiqiaSDK"]
 	path = GuangFuJie/GuangFuJie/Submodules/MeiqiaSDK
 	url = https://github.com/Meiqia/MeiqiaSDK-iOS.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/SnapKit"]
+	path = GuangFuJie/GuangFuJie/Submodules/SnapKit
+	url = https://github.com/SnapKit/SnapKit.git
