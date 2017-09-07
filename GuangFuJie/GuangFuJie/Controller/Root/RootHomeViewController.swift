@@ -17,11 +17,14 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
     
     @IBOutlet weak var locationButton: UIButton!
     
+    var bannerData = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "首页"
         initView()
+        loadBannerData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,10 +33,20 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
     
+    func loadBannerData() {
+        API.sharedInstance.articlesList(0, pagesize: 0, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 10, success: { (count, array) in
+            if (array.count > 0) {
+                self.bannerData.addObjects(from: array as! [Any])
+                self.initBannerImageView()
+            }
+        }) { (msg) in
+            
+        }
+    }
+    
     func initView() {
         self.view.backgroundColor = UIColor.white
         loadMenusView()
-        initBannerImageView()
     }
     
     @IBAction func locationSetting() {
@@ -119,10 +132,6 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
         } else if (sender.tag == 6) {
            //活动通告
             self.showHint("活动正在筹备中，尽请期待")
-//            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-//            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-//            vc.type = 9
-//            self.pushViewController(vc)
         } else if (sender.tag == 7) {
            //客服
             let chatViewManager = MQChatViewManager()
@@ -135,9 +144,18 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
     }
     
     func initBannerImageView() {
-        let imageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: bannerScrollView.frame.size.height))
-        imageView.image = UIImage(named: "ic_home_banner1")
-        bannerScrollView.addSubview(imageView)
+        if (bannerScrollView.subviews.count > 0) {
+            for view in bannerScrollView.subviews {
+                view.removeFromSuperview()
+            }
+        }
+        for i in 0..<bannerData.count {
+            let info = bannerData[i] as! ArticleInfo
+            let imageView = UIImageView.init(frame: CGRect(x: CGFloat(i) * PhoneUtils.kScreenWidth, y: 0, width: PhoneUtils.kScreenWidth, height: bannerScrollView.frame.size.height))
+            imageView.setImageWith(URL.init(string: StringUtils.getString(info.image))!)
+            bannerScrollView.addSubview(imageView)
+        }
+        bannerScrollView.contentSize = CGSize(width: PhoneUtils.kScreenWidth * CGFloat(bannerData.count), height: 0)
     }
 
     override func didReceiveMemoryWarning() {
