@@ -153,11 +153,30 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
             let info = bannerData[i] as! ArticleInfo
             let imageView = UIImageView.init(frame: CGRect(x: CGFloat(i) * PhoneUtils.kScreenWidth, y: 0, width: PhoneUtils.kScreenWidth, height: bannerScrollView.frame.size.height))
             imageView.setImageWith(URL.init(string: StringUtils.getString(info.image))!)
+            imageView.tag = i
+            imageView.isUserInteractionEnabled = true
             bannerScrollView.addSubview(imageView)
+            
+            let gesture = UITapGestureRecognizer()
+            gesture.addTarget(self, action: #selector(self.bannerClicked(gesture:)))
+            imageView.addGestureRecognizer(gesture)
+            
         }
         bannerScrollView.contentSize = CGSize(width: PhoneUtils.kScreenWidth * CGFloat(bannerData.count), height: 0)
     }
-
+    
+    func bannerClicked(gesture: UITapGestureRecognizer) {
+        let index = gesture.view?.tag
+        if (index == 0) {
+            self.tabBarController?.selectedIndex = 3
+        } else if (index == 1) {
+            self.tabBarController?.selectedIndex = 2
+        } else if (index == 2) {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
