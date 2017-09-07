@@ -3131,7 +3131,14 @@
                                         <rect key="frame" x="0.0" y="250" width="375" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="5DT-7n-F6F" id="fc3-kw-zgb"/>
+                                        </connections>
                                     </scrollView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Iss-yB-qTh">
+                                        <rect key="frame" x="0.0" y="358" width="375" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yz-he-SfW">
                                         <rect key="frame" x="283" y="142" width="85" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3168,6 +3175,7 @@
                         <outlet property="bannerScrollView" destination="mYO-n8-ZpK" id="GFe-XS-Cwu"/>
                         <outlet property="locationButton" destination="qei-e4-Nr2" id="4ea-wt-ROW"/>
                         <outlet property="menuView" destination="Lhv-3v-Dvv" id="3ra-Wf-VG5"/>
+                        <outlet property="pageControl" destination="Iss-yB-qTh" id="taC-jS-Yw0"/>
                         <outlet property="scrollView" destination="OaT-6T-h0p" id="lDF-9h-kdN"/>
                         <outlet property="searchBar" destination="QzX-c0-2Ao" id="KSh-pi-JJs"/>
                     </connections>

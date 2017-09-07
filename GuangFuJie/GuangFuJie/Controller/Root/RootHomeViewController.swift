@@ -8,12 +8,13 @@
 
 import UIKit
 
-class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
+class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var bannerScrollView: UIScrollView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var locationButton: UIButton!
     
@@ -162,6 +163,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
             imageView.addGestureRecognizer(gesture)
             
         }
+        pageControl.numberOfPages = bannerData.count
         bannerScrollView.contentSize = CGSize(width: PhoneUtils.kScreenWidth * CGFloat(bannerData.count), height: 0)
     }
     
@@ -175,6 +177,12 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = PhoneUtils.kScreenWidth
+        let page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
+        pageControl.currentPage = Int(page)
     }
     
     override func didReceiveMemoryWarning() {
