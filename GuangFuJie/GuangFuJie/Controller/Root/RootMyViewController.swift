@@ -16,7 +16,18 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "我的"
-        // Do any additional setup after loading the view.
+        loadMyCount()
+    }
+    
+    func loadMyCount() {
+        API.sharedInstance.userAllCount(success: { (model) in
+            print(model.deviceCount!)
+            print(model.favorCount!)
+            print(model.insuranceCount!)
+            print(model.roofCount!)
+        }) { (msg) in
+            
+        }
     }
     
     override func viewDidLayoutSubviews() {

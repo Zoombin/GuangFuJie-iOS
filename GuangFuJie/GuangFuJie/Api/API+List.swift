@@ -1693,4 +1693,19 @@ extension API {
             success?(totalCount!, array!)
         }, failure: failure)
     }
+    
+    //我的页面
+    func userAllCount(success: ((_ commonModel: MyCountInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "user/allCount";
+        let params = [
+            "user_id" : getUserId(), // 用户id
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let info = MyCountInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
 }

@@ -890,6 +890,8 @@
 		DEC226DE1F136364007D6DBE /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC224381F136362007D6DBE /* libMobClickLibrary.a */; };
 		DEC226FA1F13639A007D6DBE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; };
 		DEC226FB1F13639A007D6DBE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DED05D271F61383D006741F6 /* MyCountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D261F61383D006741F6 /* MyCountInfo.swift */; };
+		DED05D281F61383D006741F6 /* MyCountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D261F61383D006741F6 /* MyCountInfo.swift */; };
 		DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
 		DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
 		DEE681F01F185EC000157560 /* DiTuiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */; };
@@ -1896,6 +1898,7 @@
 		DEC224391F136362007D6DBE /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		DEC2243A1F136362007D6DBE /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		DEC226EE1F136382007D6DBE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		DED05D261F61383D006741F6 /* MyCountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyCountInfo.swift; path = GuangFuJie/Models/MyCountInfo.swift; sourceTree = SOURCE_ROOT; };
 		DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerHomeViewController.swift; sourceTree = "<group>"; };
 		DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiTuiHomeViewController.swift; sourceTree = "<group>"; };
 		DEE681F21F185FDF00157560 /* YeZhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuViewController.swift; sourceTree = "<group>"; };
@@ -2355,6 +2358,7 @@
 				DE2542391F3454ED00872C22 /* IncomeCalParams.swift */,
 				DE25423C1F34559A00872C22 /* GroupUserInfo.swift */,
 				DE25423F1F3455D700872C22 /* GroupOrderInfo.swift */,
+				DED05D261F61383D006741F6 /* MyCountInfo.swift */,
 			);
 			name = Models;
 			path = Modules;
@@ -4709,6 +4713,7 @@
 				DE2542281F3452EB00872C22 /* ElecticIncomeInfo.swift in Sources */,
 				DEC222421F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DE868A001F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
+				DED05D271F61383D006741F6 /* MyCountInfo.swift in Sources */,
 				DEE6820D1F19C4FD00157560 /* SettingsViewController.swift in Sources */,
 				DE9F9E7D1F19FDD4003CF080 /* MEIQIA_HPTextViewInternal.m in Sources */,
 				DE8684F21F0DCC7900FF7FD3 /* QNResultInfo.swift in Sources */,
@@ -5202,6 +5207,7 @@
 				DE8689F51F0DD0D700FF7FD3 /* QNDnspodFree.m in Sources */,
 				DE3954161F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				DE3953EE1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
+				DED05D281F61383D006741F6 /* MyCountInfo.swift in Sources */,
 				DE868DBC1F0DE4AC00FF7FD3 /* BCQueryRefundResult.m in Sources */,
 				DEA6CDFB1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */,
 				DEC222471F13601E007D6DBE /* MJRefreshAutoStateFooter.m in Sources */,
