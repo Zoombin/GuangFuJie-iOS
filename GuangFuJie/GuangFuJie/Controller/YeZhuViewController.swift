@@ -13,9 +13,18 @@ class YeZhuViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "业主"
-        // Do any additional setup after loading the view.
+        initView()
     }
-
+    
+    func initView() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "业主列表", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.showYeZhuList))
+    }
+    
+    func showYeZhuList() {
+        let vc = GFJRoofListViewController(nibName: "GFJRoofListViewController", bundle: nil)
+        self.pushViewController(vc)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
