@@ -3037,17 +3037,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-WE-7XI">
                                         <rect key="frame" x="7.5" y="603" width="115" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="ic_home_recpro1"/>
+                                        <connections>
+                                            <action selector="exampleButtonClickedWithButton:" destination="5DT-7n-F6F" eventType="touchUpInside" id="6xp-vX-reX"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9H-8E-VUX">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9H-8E-VUX">
                                         <rect key="frame" x="130" y="603" width="115" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="ic_home_recpro2"/>
+                                        <connections>
+                                            <action selector="exampleButtonClickedWithButton:" destination="5DT-7n-F6F" eventType="touchUpInside" id="M7p-C0-mbo"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-0S-iK9">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-0S-iK9">
                                         <rect key="frame" x="252.5" y="603" width="115" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="ic_home_recpro3"/>
+                                        <connections>
+                                            <action selector="exampleButtonClickedWithButton:" destination="5DT-7n-F6F" eventType="touchUpInside" id="6sP-q4-95L"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qei-e4-Nr2">
                                         <rect key="frame" x="16" y="30" width="143" height="22"/>
@@ -3152,6 +3158,9 @@
                     <navigationItem key="navigationItem" id="XMW-RL-sYv"/>
                     <connections>
                         <outlet property="bannerScrollView" destination="mYO-n8-ZpK" id="GFe-XS-Cwu"/>
+                        <outlet property="exampleButton1" destination="wUu-WE-7XI" id="keT-wP-fhG"/>
+                        <outlet property="exampleButton2" destination="T9H-8E-VUX" id="Nfx-P6-sZz"/>
+                        <outlet property="exampleButton3" destination="8jA-0S-iK9" id="06m-7j-D07"/>
                         <outlet property="locationButton" destination="qei-e4-Nr2" id="4ea-wt-ROW"/>
                         <outlet property="menuView" destination="Lhv-3v-Dvv" id="3ra-Wf-VG5"/>
                         <outlet property="pageControl" destination="Iss-yB-qTh" id="taC-jS-Yw0"/>
@@ -4319,9 +4328,6 @@
         <image name="ic_home_dimian" width="85" height="98"/>
         <image name="ic_home_jiameng" width="85" height="98"/>
         <image name="ic_home_location" width="10" height="15"/>
-        <image name="ic_home_recpro1" width="115" height="110"/>
-        <image name="ic_home_recpro2" width="115" height="110"/>
-        <image name="ic_home_recpro3" width="115" height="110"/>
         <image name="ic_home_yezhu" width="85" height="98"/>
         <image name="ic_map_blue" width="6" height="6"/>
         <image name="ic_map_fuction_cz" width="56" height="56"/>

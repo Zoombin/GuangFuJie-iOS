@@ -18,6 +18,11 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
     
     @IBOutlet weak var locationButton: UIButton!
     
+    @IBOutlet weak var exampleButton1: UIButton!
+    @IBOutlet weak var exampleButton2: UIButton!
+    @IBOutlet weak var exampleButton3: UIButton!
+    
+    var exampleData = NSMutableArray()
     var bannerData = NSMutableArray()
     
     override func viewDidLoad() {
@@ -26,12 +31,25 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
         self.navigationItem.title = "首页"
         initView()
         loadBannerData()
+        loadExampleData()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         scrollView.contentSize = CGSize(width: 0, height: 800)
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+    }
+    
+    //加载案例数据
+    func loadExampleData() {
+        API.sharedInstance.articlesList(0, pagesize: 0, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 2, success: { (count, array) in
+            if (array.count > 0) {
+                self.exampleData.addObjects(from: array as! [Any])
+                self.refreshExampleButtons()
+            }
+        }) { (msg) in
+            
+        }
     }
     
     func loadBannerData() {
@@ -48,6 +66,46 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
     func initView() {
         self.view.backgroundColor = UIColor.white
         loadMenusView()
+    }
+    
+    func refreshExampleButtons() {
+        exampleButton1.setBackgroundImage(nil, for: UIControlState.normal)
+        exampleButton2.setBackgroundImage(nil, for: UIControlState.normal)
+        exampleButton3.setBackgroundImage(nil, for: UIControlState.normal)
+        
+        exampleButton1.isUserInteractionEnabled = false
+        exampleButton2.isUserInteractionEnabled = false
+        exampleButton3.isUserInteractionEnabled = false
+        
+        for i in 0..<exampleData.count {
+            let info = exampleData[i] as! ArticleInfo
+            if (i == 0) {
+                exampleButton1.isUserInteractionEnabled = true
+                exampleButton1.setBackgroundImageFor(UIControlState.normal, with: URL.init(string: info.image!)!)
+            } else if (i == 1) {
+                exampleButton2.isUserInteractionEnabled = true
+                exampleButton2.setBackgroundImageFor(UIControlState.normal, with: URL.init(string: info.image!)!)
+            } else if (i == 2) {
+                exampleButton3.isUserInteractionEnabled = true
+                exampleButton3.setBackgroundImageFor(UIControlState.normal, with: URL.init(string: info.image!)!)
+            }
+        }
+    }
+    
+    @IBAction func exampleButtonClicked(button: UIButton) {
+        let data = exampleData[button.tag] as! ArticleInfo
+        
+        let shareInfo = ShareInfo()
+        shareInfo.shareImg = StringUtils.getString(data.image)
+        shareInfo.shareTitle = StringUtils.getString("资讯")
+        shareInfo.shareDesc = StringUtils.getString(data.title)
+        shareInfo.shareLink = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
+        
+        let vc = GFJWebViewController()
+        vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
+        vc.title = StringUtils.getString(data.title)
+        vc.addShareInfoButton(info: shareInfo)
+        self.pushViewController(vc)
     }
     
     @IBAction func locationSetting() {
