@@ -20,6 +20,8 @@
 		DE1F71EF1F62950500B8C2E8 /* GFJRoofListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1F71E81F6294BC00B8C2E8 /* GFJRoofListViewController.xib */; };
 		DE1F71F11F62974F00B8C2E8 /* NearByRoofViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F01F62974F00B8C2E8 /* NearByRoofViewController.swift */; };
 		DE1F71F31F62978000B8C2E8 /* InstallBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F21F62978000B8C2E8 /* InstallBuyViewController.swift */; };
+		DE1F71F51F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */; };
+		DE1F71F61F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */; };
 		DE2542021F32F1B500872C22 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542011F32F1B500872C22 /* GroupInfo.swift */; };
 		DE2542031F32F1B500872C22 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542011F32F1B500872C22 /* GroupInfo.swift */; };
 		DE25420E1F32F23D00872C22 /* LandlordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25420D1F32F23D00872C22 /* LandlordInfo.swift */; };
@@ -1115,6 +1117,7 @@
 		DE1F71EB1F6294FD00B8C2E8 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
 		DE1F71F01F62974F00B8C2E8 /* NearByRoofViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByRoofViewController.swift; sourceTree = "<group>"; };
 		DE1F71F21F62978000B8C2E8 /* InstallBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallBuyViewController.swift; sourceTree = "<group>"; };
+		DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductProvideViewController.swift; sourceTree = "<group>"; };
 		DE2542011F32F1B500872C22 /* GroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupInfo.swift; path = GuangFuJie/Models/GroupInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE25420D1F32F23D00872C22 /* LandlordInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandlordInfo.swift; path = GuangFuJie/Models/LandlordInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE2542101F32F3EB00872C22 /* AreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AreaModel.swift; path = GuangFuJie/Models/AreaModel.swift; sourceTree = SOURCE_ROOT; };
@@ -2455,6 +2458,7 @@
 				DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */,
 				DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */,
 				DEE681F21F185FDF00157560 /* YeZhuViewController.swift */,
+				DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4536,6 +4540,7 @@
 				DEE6C9D21F35BECA00AB6031 /* IQKeyboardManager.swift in Sources */,
 				DE8684EB1F0DCC7900FF7FD3 /* InsuranceInfo.swift in Sources */,
 				DE868A151F0DD11800FF7FD3 /* UIViewController+HUD.m in Sources */,
+				DE1F71F51F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */,
 				DE9F9E7B1F19FDD4003CF080 /* MEIQIA_HPGrowingTextView.m in Sources */,
 				DE3954051F1468CB00A44740 /* UIImageView+WebCache.m in Sources */,
 				DEE681FC1F18B2CD00157560 /* MapViewController.swift in Sources */,
@@ -5266,6 +5271,7 @@
 				DE8685141F0DCC7E00FF7FD3 /* BookingStatus.swift in Sources */,
 				DE8684281F0DC9DE00FF7FD3 /* ViewController.swift in Sources */,
 				DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */,
+				DE1F71F61F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */,
 				DE9F9DCC1F19FDD4003CF080 /* NSArray+MQFunctional.m in Sources */,
 				DE8688821F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
 				DE9F9E041F19FDD4003CF080 /* MQEventMessageFactory.m in Sources */,
