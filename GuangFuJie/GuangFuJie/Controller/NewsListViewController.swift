@@ -84,7 +84,7 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         let vc = GFJWebViewController()
         vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
-        vc.title = "资讯"
+        vc.title = StringUtils.getString(data.title)
         vc.addShareInfoButton(info: shareInfo)
         self.pushViewController(vc)
     }
