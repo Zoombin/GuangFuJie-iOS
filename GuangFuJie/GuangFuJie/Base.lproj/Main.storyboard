@@ -1068,7 +1068,6 @@
                                         </state>
                                         <connections>
                                             <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="mxd-kt-lvh"/>
-                                            <segue destination="oWt-jJ-nrP" kind="show" id="e61-h8-alB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpu-bh-qMA">
@@ -2594,7 +2593,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANj-yW-XTZ">
-                                        <rect key="frame" x="0.0" y="312" width="187.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="311" width="187.5" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2608,7 +2607,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mF-md-eoC">
-                                        <rect key="frame" x="188" y="312" width="187.5" height="60"/>
+                                        <rect key="frame" x="188" y="311" width="187.5" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2621,7 +2620,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-bn-1ae">
-                                        <rect key="frame" x="0.0" y="373" width="187.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="372" width="187.5" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2634,7 +2633,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXG-j2-gLD">
-                                        <rect key="frame" x="188" y="373" width="187.5" height="60"/>
+                                        <rect key="frame" x="188" y="372" width="187.5" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -4375,6 +4374,6 @@
         <image name="ic_yezhua_photo" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pGW-Co-TeL"/>
+        <segue reference="uxD-XH-rAv"/>
     </inferredMetricsTieBreakers>
 </document>
