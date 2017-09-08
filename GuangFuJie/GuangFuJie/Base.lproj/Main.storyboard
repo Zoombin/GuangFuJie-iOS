@@ -3140,6 +3140,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="更多"/>
+                                        <connections>
+                                            <action selector="moreExample" destination="5DT-7n-F6F" eventType="touchUpInside" id="Z1M-zq-xMG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </scrollView>

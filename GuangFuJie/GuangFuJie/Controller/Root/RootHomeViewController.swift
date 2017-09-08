@@ -139,6 +139,11 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
     
     @IBAction func moreExample() {
         //更多案例
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+        vc.type = 2
+        vc.title = "成功案例"
+        self.pushViewController(vc)
     }
     
     func initBannerImageView() {
