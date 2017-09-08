@@ -247,7 +247,13 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
     }
     
     func shouldShowLogin() -> Bool{
-        return true
+        if (UserDefaultManager.isLogin()) {
+            return false
+        } else {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "LoginViewController"))
+            return true
+        }
     }
     
     func didFinishGetUMSocialData(inViewController response: UMSocialResponseEntity!) {

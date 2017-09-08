@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
+		DE1F71D91F62762600B8C2E8 /* InstallerDetailOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */; };
+		DE1F71DA1F62762600B8C2E8 /* InstallerDetailOldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1F71D81F62762600B8C2E8 /* InstallerDetailOldViewController.xib */; };
+		DE1F71E61F62766400B8C2E8 /* MSLFrameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71E51F62766400B8C2E8 /* MSLFrameUtil.m */; };
 		DE2542021F32F1B500872C22 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542011F32F1B500872C22 /* GroupInfo.swift */; };
 		DE2542031F32F1B500872C22 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542011F32F1B500872C22 /* GroupInfo.swift */; };
 		DE25420E1F32F23D00872C22 /* LandlordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25420D1F32F23D00872C22 /* LandlordInfo.swift */; };
@@ -892,6 +895,16 @@
 		DEC226FB1F13639A007D6DBE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DED05D271F61383D006741F6 /* MyCountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D261F61383D006741F6 /* MyCountInfo.swift */; };
 		DED05D281F61383D006741F6 /* MyCountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D261F61383D006741F6 /* MyCountInfo.swift */; };
+		DED05D371F624C4A006741F6 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */; };
+		DED05D381F624C4A006741F6 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */; };
+		DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */; };
+		DED05D441F624C8B006741F6 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */; };
+		DED05D451F624C8B006741F6 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */; };
+		DED05D461F624C8B006741F6 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */; };
+		DED05D481F624CB7006741F6 /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D471F624CB7006741F6 /* YeZhuCell.swift */; };
+		DED05D491F624CBA006741F6 /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D471F624CB7006741F6 /* YeZhuCell.swift */; };
+		DED05D4C1F624E10006741F6 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DED05D4B1F624E10006741F6 /* TopLeftLabel.m */; };
+		DED05D4D1F624E10006741F6 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DED05D4B1F624E10006741F6 /* TopLeftLabel.m */; };
 		DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
 		DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
 		DEE681F01F185EC000157560 /* DiTuiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */; };
@@ -1085,6 +1098,10 @@
 
 /* Begin PBXFileReference section */
 		DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FranchiseeInfo.swift; path = GuangFuJie/Models/FranchiseeInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailOldViewController.swift; sourceTree = "<group>"; };
+		DE1F71D81F62762600B8C2E8 /* InstallerDetailOldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallerDetailOldViewController.xib; sourceTree = "<group>"; };
+		DE1F71E41F62766400B8C2E8 /* MSLFrameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLFrameUtil.h; sourceTree = "<group>"; };
+		DE1F71E51F62766400B8C2E8 /* MSLFrameUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLFrameUtil.m; sourceTree = "<group>"; };
 		DE2542011F32F1B500872C22 /* GroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupInfo.swift; path = GuangFuJie/Models/GroupInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE25420D1F32F23D00872C22 /* LandlordInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandlordInfo.swift; path = GuangFuJie/Models/LandlordInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE2542101F32F3EB00872C22 /* AreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AreaModel.swift; path = GuangFuJie/Models/AreaModel.swift; sourceTree = SOURCE_ROOT; };
@@ -1899,6 +1916,12 @@
 		DEC2243A1F136362007D6DBE /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		DEC226EE1F136382007D6DBE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		DED05D261F61383D006741F6 /* MyCountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyCountInfo.swift; path = GuangFuJie/Models/MyCountInfo.swift; sourceTree = SOURCE_ROOT; };
+		DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
+		DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
+		DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
+		DED05D471F624CB7006741F6 /* YeZhuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuCell.swift; sourceTree = "<group>"; };
+		DED05D4A1F624E10006741F6 /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
+		DED05D4B1F624E10006741F6 /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
 		DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerHomeViewController.swift; sourceTree = "<group>"; };
 		DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiTuiHomeViewController.swift; sourceTree = "<group>"; };
 		DEE681F21F185FDF00157560 /* YeZhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuViewController.swift; sourceTree = "<group>"; };
@@ -2367,6 +2390,7 @@
 		DE8684381F0DCA8F00FF7FD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DED05D471F624CB7006741F6 /* YeZhuCell.swift */,
 				DE3952211F14622500A44740 /* GFJBottomButton.swift */,
 				DEC221261F13531B007D6DBE /* NewsCell.swift */,
 				DEE681F81F1897AC00157560 /* GFAskCell.swift */,
@@ -2381,6 +2405,11 @@
 			children = (
 				DE6D91EB1F2DBA7A008E0E3A /* ResultRoot */,
 				DE868DF11F0DE66400FF7FD3 /* Root */,
+				DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */,
+				DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */,
+				DE1F71D81F62762600B8C2E8 /* InstallerDetailOldViewController.xib */,
+				DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */,
+				DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */,
 				DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */,
 				DE3952271F14629100A44740 /* CalResultViewController.swift */,
 				DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */,
@@ -2428,6 +2457,10 @@
 		DE86843B1F0DCA8F00FF7FD3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE1F71E41F62766400B8C2E8 /* MSLFrameUtil.h */,
+				DE1F71E51F62766400B8C2E8 /* MSLFrameUtil.m */,
+				DED05D4A1F624E10006741F6 /* TopLeftLabel.h */,
+				DED05D4B1F624E10006741F6 /* TopLeftLabel.m */,
 				DE3954541F1480E800A44740 /* Dimens.swift */,
 				DE3954511F14802200A44740 /* PublishMediaView.swift */,
 				DEC221291F13585D007D6DBE /* StringUtils.swift */,
@@ -4318,7 +4351,9 @@
 				DEC222541F13601E007D6DBE /* MJRefresh.bundle in Resources */,
 				DEC226DB1F136363007D6DBE /* UMSocialSDKResourcesNew.bundle in Resources */,
 				DEC226D11F136363007D6DBE /* UMShareEditViewController.xib in Resources */,
+				DED05D381F624C4A006741F6 /* MoreInstallerViewController.xib in Resources */,
 				DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */,
+				DE1F71DA1F62762600B8C2E8 /* InstallerDetailOldViewController.xib in Resources */,
 				DE868DDD1F0DE4AC00FF7FD3 /* BeeCloud.bundle in Resources */,
 				DEE6C9E61F35BECA00AB6031 /* IQKeyboardManager.bundle in Resources */,
 				DEE682081F18C40400157560 /* LeaseViewController.xib in Resources */,
@@ -4345,6 +4380,7 @@
 				DEC226D41F136363007D6DBE /* UMShareEditViewControlleriPad.xib in Resources */,
 				DEC222551F13601E007D6DBE /* MJRefresh.bundle in Resources */,
 				DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */,
+				DED05D461F624C8B006741F6 /* MoreInstallerViewController.xib in Resources */,
 				DE9F9DCA1F19FDD4003CF080 /* MQChatViewAsset.bundle in Resources */,
 				DEC226D01F136363007D6DBE /* UMSCommentInputControlleriPad.xib in Resources */,
 				DEC226CC1F136363007D6DBE /* UMSCommentDetailController.xib in Resources */,
@@ -4422,6 +4458,7 @@
 				DE3954191F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
 				DEC2225C1F13601E007D6DBE /* UIScrollView+MJRefresh.m in Sources */,
 				DE9F9E8D1F19FDD5003CF080 /* amrFileCodec.mm in Sources */,
+				DED05D371F624C4A006741F6 /* MoreInstallerViewController.swift in Sources */,
 				DE868DD31F0DE4AC00FF7FD3 /* BeeCloud+Utils.m in Sources */,
 				DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
 				DEE682211F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
@@ -4632,6 +4669,7 @@
 				DE8684E81F0DCC7900FF7FD3 /* InsuranceDetail.swift in Sources */,
 				DE868DC51F0DE4AC00FF7FD3 /* BCNetworkReachabilityManager.m in Sources */,
 				DEE6C9D61F35BECA00AB6031 /* IQTextView.swift in Sources */,
+				DED05D481F624CB7006741F6 /* YeZhuCell.swift in Sources */,
 				DE8687831F0DCEBB00FF7FD3 /* Constants.swift in Sources */,
 				DE9F9E9D1F19FDD5003CF080 /* MQButtonGroupBar.m in Sources */,
 				DE9F9E031F19FDD4003CF080 /* MQEventMessageFactory.m in Sources */,
@@ -4712,6 +4750,7 @@
 				DE9F999F1F19FD3C003CF080 /* AddNoteViewController.swift in Sources */,
 				DE2542281F3452EB00872C22 /* ElecticIncomeInfo.swift in Sources */,
 				DEC222421F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
+				DE1F71D91F62762600B8C2E8 /* InstallerDetailOldViewController.swift in Sources */,
 				DE868A001F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
 				DED05D271F61383D006741F6 /* MyCountInfo.swift in Sources */,
 				DEE6820D1F19C4FD00157560 /* SettingsViewController.swift in Sources */,
@@ -4761,6 +4800,8 @@
 				DE3954271F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DEE6C9E41F35BECA00AB6031 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				DE9F9E551F19FDD4003CF080 /* MQChatAudioRecorder.m in Sources */,
+				DE1F71E61F62766400B8C2E8 /* MSLFrameUtil.m in Sources */,
+				DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */,
 				DE868DA71F0DE4AC00FF7FD3 /* BCQueryRefundByIdReq.m in Sources */,
 				DE3953FD1F1468CB00A44740 /* UIButton+WebCache.m in Sources */,
 				DE8684FC1F0DCC7900FF7FD3 /* BookingStatus.swift in Sources */,
@@ -4769,6 +4810,7 @@
 				DE8688811F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
 				DE9F9DC31F19FDD4003CF080 /* MQAnimatorPush.m in Sources */,
 				DE9F9E431F19FDD4003CF080 /* MQMessageDateCell.m in Sources */,
+				DED05D4C1F624E10006741F6 /* TopLeftLabel.m in Sources */,
 				DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */,
 				DE868DC31F0DE4AC00FF7FD3 /* BCHTTPSessionManager.m in Sources */,
 				DE8684EF1F0DCC7900FF7FD3 /* NewsInfo.swift in Sources */,
@@ -4945,6 +4987,7 @@
 				DE3954101F1468CB00A44740 /* ZLPhotoRect.m in Sources */,
 				DE868DBE1F0DE4AC00FF7FD3 /* BCNewSubscription.m in Sources */,
 				DE9F9E881F19FDD4003CF080 /* MEIQIA_MLAudioMeterObserver.m in Sources */,
+				DED05D491F624CBA006741F6 /* YeZhuCell.swift in Sources */,
 				DE9F9E901F19FDD5003CF080 /* wav.mm in Sources */,
 				DE9F9ECA1F19FDD5003CF080 /* MQMessageFormTextView.m in Sources */,
 				DEC222511F13601E007D6DBE /* MJRefreshNormalHeader.m in Sources */,
@@ -5030,6 +5073,7 @@
 				DE868DCA1F0DE4AC00FF7FD3 /* BCURLRequestSerialization.m in Sources */,
 				DEC2212E1F135AB7007D6DBE /* GFJWebViewController.swift in Sources */,
 				DE25423E1F34559A00872C22 /* GroupUserInfo.swift in Sources */,
+				DED05D451F624C8B006741F6 /* MoreInstallerViewController.swift in Sources */,
 				DE868DD01F0DE4AC00FF7FD3 /* BCPayCache.m in Sources */,
 				DE9F9E5A1F19FDD4003CF080 /* MQChatEmojize.m in Sources */,
 				DE868A071F0DD0D700FF7FD3 /* QNHex.m in Sources */,
@@ -5113,6 +5157,7 @@
 				DE9F9DE01F19FDD4003CF080 /* MQChatViewManager.m in Sources */,
 				DE868DD81F0DE4AC00FF7FD3 /* NSString+IsValid.m in Sources */,
 				DE86887E1F0DD05900FF7FD3 /* QNPHAssetResource.m in Sources */,
+				DED05D4D1F624E10006741F6 /* TopLeftLabel.m in Sources */,
 				DE8685171F0DCC7E00FF7FD3 /* QNInfo.swift in Sources */,
 				DE86848A1F0DCAFF00FF7FD3 /* API.swift in Sources */,
 				DE9F9E2A1F19FDD4003CF080 /* MQTipsCellModel.m in Sources */,
@@ -5157,6 +5202,7 @@
 				DE3953EC1F1468CB00A44740 /* DALabeledCircularProgressView.m in Sources */,
 				DE8685061F0DCC7E00FF7FD3 /* DeviceListInfo.swift in Sources */,
 				DE3954001F1468CB00A44740 /* UIImage+GIF.m in Sources */,
+				DED05D441F624C8B006741F6 /* NearByInstallerViewController.swift in Sources */,
 				DE86876A1F0DCE4400FF7FD3 /* AFURLRequestSerialization.m in Sources */,
 				DE868ADB1F0DD1B800FF7FD3 /* NSObject+MJProperty.m in Sources */,
 				DE8687661F0DCE4400FF7FD3 /* AFNetworkReachabilityManager.m in Sources */,

@@ -105,6 +105,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
             vc.type = 7
+            vc.title = "安装运维"
             self.pushViewController(vc)
         } else if (sender.tag == 3) {
            //光伏保险

@@ -13,7 +13,16 @@ class InstallerHomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "安装商"
-        // Do any additional setup after loading the view.
+        initView()
+    }
+    
+    func initView() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "安装商列表", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.showInstallerList))
+    }
+    
+    func showInstallerList() {
+        let vc = MoreInstallerViewController(nibName: "MoreInstallerViewController", bundle: nil)
+        self.pushViewController(vc)
     }
     
     @IBAction func buttonClicked(button : UIButton) {
