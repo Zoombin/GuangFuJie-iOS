@@ -132,12 +132,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
             self.showHint("我们正在筹备中，暂未开放")
         } else if (sender.tag == 7) {
            //客服
-            let chatViewManager = MQChatViewManager()
-            chatViewManager.chatViewStyle.statusBarStyle = UIStatusBarStyle.lightContent
-            chatViewManager.chatViewStyle.navBarColor = Colors.appBlue
-            chatViewManager.chatViewStyle.navTitleColor = UIColor.white
-            chatViewManager.chatViewStyle.navBackButtonImage = UIImage(named: "ic_back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-            chatViewManager.pushMQChatViewController(in: self)
+            self.chat()
         }
     }
     

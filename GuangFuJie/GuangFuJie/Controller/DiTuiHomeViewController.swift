@@ -17,6 +17,11 @@ class DiTuiHomeViewController: BaseViewController {
         initNoteButton()
     }
     
+    @IBAction func buttonClicked(button : UIButton) {
+        let title = button.titleLabel?.text
+        self.goToPageByTitle(title: title!)
+    }
+    
     func initNoteButton() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "地推笔记", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.noteListButtonClicked))
     }

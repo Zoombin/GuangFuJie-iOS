@@ -15,6 +15,11 @@ class InstallerHomeViewController: BaseViewController {
         self.title = "安装商"
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func buttonClicked(button : UIButton) {
+        let title = button.titleLabel?.text
+        self.goToPageByTitle(title: title!)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

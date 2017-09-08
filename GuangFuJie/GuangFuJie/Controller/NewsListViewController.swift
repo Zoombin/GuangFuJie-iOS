@@ -24,8 +24,6 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     func initView() {
-        self.title = "资讯"
-        
         newsListTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
         getNewsList()
     }

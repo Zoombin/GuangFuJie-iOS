@@ -28,6 +28,10 @@ class JoinUsViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func buttonClicked(button : UIButton) {
+        let title = button.titleLabel?.text
+        self.goToPageByTitle(title: title!)
+    }
 
     /*
     // MARK: - Navigation

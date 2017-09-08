@@ -962,6 +962,9 @@
                                         <state key="normal" title="本地市场" image="ic_menu_bdsc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="h9r-po-6eO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge5-wL-jc2">
                                         <rect key="frame" x="188" y="128" width="187.5" height="60"/>
@@ -972,6 +975,9 @@
                                         <state key="normal" title="体验店　" image="ic_menu_tyd">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="ejB-Xy-sA5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ty-G8-KRY">
                                         <rect key="frame" x="0.0" y="189" width="187.5" height="60"/>
@@ -982,6 +988,9 @@
                                         <state key="normal" title="光伏政策" image="ic_menu_gfzc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="QQq-wm-T6D"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-SW-aIV">
                                         <rect key="frame" x="188" y="189" width="187.5" height="60"/>
@@ -992,6 +1001,9 @@
                                         <state key="normal" title="光伏保险" image="ic_menu_gfbx">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="bBr-mO-cVI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-Ht-yGJ">
                                         <rect key="frame" x="0.0" y="250" width="187.5" height="60"/>
@@ -1002,6 +1014,9 @@
                                         <state key="normal" title="光伏贷款" image="ic_menu_gfdk">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="2z6-gE-DfJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaf-rS-CXY">
                                         <rect key="frame" x="188" y="250" width="187.5" height="60"/>
@@ -1012,6 +1027,9 @@
                                         <state key="normal" title="供电局　" image="ic_menu_gdj">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="SlF-kY-mSA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOh-5D-i9O">
                                         <rect key="frame" x="0.0" y="495" width="187.5" height="60"/>
@@ -1022,6 +1040,9 @@
                                         <state key="normal" title="加盟支持" image="ic_menu_jmzc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="7oF-a2-ldw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYZ-Pj-1CW">
                                         <rect key="frame" x="188" y="495" width="187.5" height="60"/>
@@ -1032,6 +1053,9 @@
                                         <state key="normal" title="安装运维" image="ic_menu_azyw">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="lWS-A7-TH3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5r-xT-BaG">
                                         <rect key="frame" x="0.0" y="556" width="187.5" height="60"/>
@@ -1043,6 +1067,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="mxd-kt-lvh"/>
                                             <segue destination="oWt-jJ-nrP" kind="show" id="e61-h8-alB"/>
                                         </connections>
                                     </button>
@@ -1055,6 +1080,9 @@
                                         <state key="normal" title="客服　　" image="ic_menu_kf">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="E1j-wy-cwn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXJ-hJ-pjf">
                                         <rect key="frame" x="0.0" y="311" width="187.5" height="60"/>
@@ -1065,6 +1093,9 @@
                                         <state key="normal" title="地面推广" image="ic_menu_dmtg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="S91-80-AfS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-su-A8j">
                                         <rect key="frame" x="188" y="311" width="187.5" height="60"/>
@@ -1075,6 +1106,9 @@
                                         <state key="normal" title="推广支持" image="ic_menu_tgzc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="eGx-6x-CVt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbC-7k-DAG">
                                         <rect key="frame" x="0.0" y="372" width="187.5" height="60"/>
@@ -1085,6 +1119,9 @@
                                         <state key="normal" title="本地安装商" image="ic_menu_bdazs">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="hGK-5U-eAr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBv-CR-aKG">
                                         <rect key="frame" x="188" y="372" width="187.5" height="60"/>
@@ -1095,6 +1132,9 @@
                                         <state key="normal" title="本地业主" image="ic_menu_bdyz">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="do5-xQ-qQT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qII-J6-DdX">
                                         <rect key="frame" x="0.0" y="433" width="187.5" height="60"/>
@@ -1105,6 +1145,9 @@
                                         <state key="normal" title="投资收益" image="ic_menu_tzsy">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="3xh-C7-P8K"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVR-Zm-yEU">
                                         <rect key="frame" x="188" y="433" width="187.5" height="60"/>
@@ -1115,6 +1158,9 @@
                                         <state key="normal" title="实战模式" image="ic_menu_szms">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nFe-Qr-qRA" eventType="touchUpInside" id="TaP-Ya-oVq"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="blf-hH-Jo9">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -2473,6 +2519,9 @@
                                         <state key="normal" title="本地市场" image="ic_menu_bdsc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="xF6-NM-pEj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VQ-s9-mhV">
                                         <rect key="frame" x="188" y="128" width="187.5" height="60"/>
@@ -2483,6 +2532,9 @@
                                         <state key="normal" title="本地业主" image="ic_menu_bdyz">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="ORX-z6-1Su"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph6-gD-gZc">
                                         <rect key="frame" x="0.0" y="189" width="187.5" height="60"/>
@@ -2493,6 +2545,9 @@
                                         <state key="normal" title="光伏政策" image="ic_menu_gfzc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="WSm-wQ-OfX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABm-kP-d6n">
                                         <rect key="frame" x="188" y="189" width="187.5" height="60"/>
@@ -2503,6 +2558,9 @@
                                         <state key="normal" title="光伏保险" image="ic_menu_gfbx">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="g7o-6p-Q6r"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBT-yz-J9z">
                                         <rect key="frame" x="0.0" y="250" width="187.5" height="60"/>
@@ -2513,6 +2571,9 @@
                                         <state key="normal" title="光伏贷款" image="ic_menu_gfdk">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="Qqx-yC-Hg2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVE-Xw-xam">
                                         <rect key="frame" x="188" y="250" width="187.5" height="60"/>
@@ -2523,6 +2584,9 @@
                                         <state key="normal" title="供电局　" image="ic_menu_gdj">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="JVO-lt-ZCN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANj-yW-XTZ">
                                         <rect key="frame" x="0.0" y="312" width="187.5" height="60"/>
@@ -2534,6 +2598,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="BKx-B5-NPl"/>
                                             <segue destination="oWt-jJ-nrP" kind="show" id="uxD-XH-rAv"/>
                                         </connections>
                                     </button>
@@ -2546,6 +2611,9 @@
                                         <state key="normal" title="实战模式" image="ic_menu_szms">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="hoT-bx-URP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-bn-1ae">
                                         <rect key="frame" x="0.0" y="373" width="187.5" height="60"/>
@@ -2556,6 +2624,9 @@
                                         <state key="normal" title="产品供求" image="ic_menu_cpgq">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="eWH-7P-lZc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXG-j2-gLD">
                                         <rect key="frame" x="188" y="373" width="187.5" height="60"/>
@@ -2566,6 +2637,9 @@
                                         <state key="normal" title="客服　　" image="ic_menu_kf">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="nRd-D1-OZt" eventType="touchUpInside" id="Bbl-PS-tNS"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rOB-Ut-z8A">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -2631,6 +2705,9 @@
                                         <state key="normal" title="本地市场" image="ic_menu_bdsc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="lem-41-Lnf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylM-Md-zaD">
                                         <rect key="frame" x="188" y="128" width="187.5" height="60"/>
@@ -2641,6 +2718,9 @@
                                         <state key="normal" title="本地业主" image="ic_menu_bdyz">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="c9k-JW-iLt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2E-x5-nSw">
                                         <rect key="frame" x="0.0" y="189" width="187.5" height="60"/>
@@ -2651,6 +2731,9 @@
                                         <state key="normal" title="光伏政策" image="ic_menu_gfzc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="YhY-dr-4F0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2q-Pf-YWf">
                                         <rect key="frame" x="188" y="189" width="187.5" height="60"/>
@@ -2661,6 +2744,9 @@
                                         <state key="normal" title="光伏保险" image="ic_menu_gfbx">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="CCF-kX-yTG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCL-pg-FVc">
                                         <rect key="frame" x="0.0" y="250" width="187.5" height="60"/>
@@ -2671,6 +2757,9 @@
                                         <state key="normal" title="光伏贷款" image="ic_menu_gfdk">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="l3e-hB-k4r"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikW-Y1-FCs">
                                         <rect key="frame" x="188" y="250" width="187.5" height="60"/>
@@ -2681,6 +2770,9 @@
                                         <state key="normal" title="供电局　" image="ic_menu_gdj">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="lUF-cN-VVY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoL-hw-vRr">
                                         <rect key="frame" x="0.0" y="312" width="187.5" height="60"/>
@@ -2692,6 +2784,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="DfU-nj-qZH"/>
                                             <segue destination="oWt-jJ-nrP" kind="show" id="pGW-Co-TeL"/>
                                         </connections>
                                     </button>
@@ -2704,6 +2797,9 @@
                                         <state key="normal" title="实战模式" image="ic_menu_szms">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="Ogh-DU-R1y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fw-fm-VTg">
                                         <rect key="frame" x="0.0" y="373" width="187.5" height="60"/>
@@ -2714,6 +2810,9 @@
                                         <state key="normal" title="产品供求" image="ic_menu_cpgq">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="prS-Ud-YGa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3Y-TB-vpz">
                                         <rect key="frame" x="188" y="373" width="187.5" height="60"/>
@@ -2724,6 +2823,9 @@
                                         <state key="normal" title="客服　　" image="ic_menu_kf">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="sDj-Fr-phP" eventType="touchUpInside" id="n8C-Dh-EHp"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CmC-rK-ZUp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -2806,6 +2908,9 @@
                                         <state key="normal" title="光伏政策" image="ic_menu_gfzc">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="chC-y7-hb3" eventType="touchUpInside" id="Lm8-rJ-x2x"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-jt-zlQ">
                                         <rect key="frame" x="188" y="128" width="187.5" height="60"/>
@@ -2816,6 +2921,9 @@
                                         <state key="normal" title="光伏保险" image="ic_menu_gfbx">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="chC-y7-hb3" eventType="touchUpInside" id="5hg-wj-N8R"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLO-k9-IEC">
                                         <rect key="frame" x="0.0" y="189" width="187.5" height="60"/>
@@ -2826,6 +2934,9 @@
                                         <state key="normal" title="光伏贷款" image="ic_menu_gfdk">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="chC-y7-hb3" eventType="touchUpInside" id="Hh8-RA-wLp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tif-fF-x2i">
                                         <rect key="frame" x="188" y="189" width="187.5" height="60"/>
@@ -2833,9 +2944,12 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
-                                        <state key="normal" title="供电局" image="ic_menu_gdj">
+                                        <state key="normal" title="供电局　" image="ic_menu_gdj">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="chC-y7-hb3" eventType="touchUpInside" id="NIf-iY-7jS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USj-Tv-mL2">
                                         <rect key="frame" x="188" y="251" width="187.5" height="60"/>
@@ -2846,6 +2960,9 @@
                                         <state key="normal" title="实战模式" image="ic_menu_szms">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="chC-y7-hb3" eventType="touchUpInside" id="3Dd-RV-3WL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3A-S3-CZi">
                                         <rect key="frame" x="0.0" y="312" width="187.5" height="60"/>
@@ -2856,6 +2973,9 @@
                                         <state key="normal" title="产品供求" image="ic_menu_cpgq">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="chC-y7-hb3" eventType="touchUpInside" id="Q2c-dG-Qlu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuq-hc-ZNB">
                                         <rect key="frame" x="188" y="312" width="187.5" height="60"/>
@@ -2866,6 +2986,9 @@
                                         <state key="normal" title="客服　　" image="ic_menu_kf">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="chC-y7-hb3" eventType="touchUpInside" id="Ds3-v9-XUv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIj-7Y-DK1">
                                         <rect key="frame" x="0.0" y="251" width="187.5" height="60"/>
@@ -2876,6 +2999,9 @@
                                         <state key="normal" title="安装运维" image="ic_menu_azyw">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonClickedWithButton:" destination="chC-y7-hb3" eventType="touchUpInside" id="3bl-TK-eLw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </scrollView>
@@ -4230,6 +4356,6 @@
         <image name="ic_yezhua_photo" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e61-h8-alB"/>
+        <segue reference="pGW-Co-TeL"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,6 +22,70 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         
         BeeCloud.setBeeCloudDelegate(self)
     }
+    
+    func goToPageByTitle(title: String) {
+        var title = title
+        var newTitle = NSString.init(string: title)
+        newTitle = newTitle.replacingOccurrences(of: "　", with: "") as NSString
+        title = newTitle as String
+        if (title == "本地市场") {
+            self.tabBarController?.selectedIndex = 1
+        } else if (title == "体验店") {
+            //体验店
+        } else if (title == "光伏政策") {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.title = title
+            vc.type = 16
+            self.pushViewController(vc)
+        } else if (title == "光伏保险") {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
+        } else if (title == "光伏贷款") {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.title = title
+            vc.type = 18
+            self.pushViewController(vc)
+        } else if (title == "供电局") {
+            self.tabBarController?.selectedIndex = 1
+        } else if (title == "地面推广") {
+            //地面推广
+        } else if (title == "推广支持") {
+            //???
+        } else if (title == "本地安装商") {
+            //更多安装商
+        } else if (title == "本地业主") {
+            //本地业主
+        } else if (title == "投资收益") {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.title = title
+            vc.type = 11
+            self.pushViewController(vc)
+        } else if (title == "实战模式") {
+            //暂无
+        } else if (title == "加盟支持") {
+            //暂无
+        } else if (title == "安装运维") {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.title = title
+            vc.type = 7
+            self.pushViewController(vc)
+        } else if (title == "产品供求") {
+            //产品供求
+        } else if (title == "客服　") {
+            self.chat()
+        } else if (title == "安装教程") {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.title = title
+            vc.type = 7
+            self.pushViewController(vc)
+        }
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,6 +129,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         actionSheet.addAction(actionButtonWX)
         actionSheet.addAction(actionButtonCancel)
         self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func chat() {
+        let chatViewManager = MQChatViewManager()
+        chatViewManager.chatViewStyle.statusBarStyle = UIStatusBarStyle.lightContent
+        chatViewManager.chatViewStyle.navBarColor = Colors.appBlue
+        chatViewManager.chatViewStyle.navTitleColor = UIColor.white
+        chatViewManager.chatViewStyle.navBackButtonImage = UIImage(named: "ic_back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        chatViewManager.pushMQChatViewController(in: self)
     }
     
     func pay(_ billno:String,title:String,totalFee:String,type:String, channel: PayChannel) {
