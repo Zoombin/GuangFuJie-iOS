@@ -15,7 +15,7 @@ class LoginViewController: BaseViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "登录"
         // Do any additional setup after loading the view.
     }
 

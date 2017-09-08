@@ -11,12 +11,24 @@ import UIKit
 class RootMyViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var footView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "我的"
         loadMyCount()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if (UserDefaultManager.isLogin()) {
+            userName.text = UserDefaultManager.getUser()?.user_name
+            footView.isHidden = false
+        } else {
+            userName.text = "点击登录"
+            footView.isHidden = true
+        }
     }
     
     func loadMyCount() {
@@ -36,7 +48,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,21 +63,31 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             shareApp()
         } else if (indexPath.row == 1) {
             //技术支持
+            let vc = GFJWebViewController()
+            vc.url = "http://zoombin.com"
+            self.pushViewController(vc)
         } else if (indexPath.row == 2) {
             //关于我们
             let vc = GFJWebViewController()
             vc.urlTag = 0
             self.pushViewController(vc)
         } else if (indexPath.row == 3) {
-            //联系我们
-        } else if (indexPath.row == 4) {
             //设置
         }
     }
     
     @IBAction func loginButtonClicked() {
+        if (UserDefaultManager.isLogin() == true) {
+            return
+        }
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
         self.pushViewController(sb.instantiateViewController(withIdentifier: "LoginViewController"))
+    }
+    
+    @IBAction func logOutButtonClicked() {
+        UserDefaultManager.logOut()
+        userName.text = "点击登录"
+        footView.isHidden = true
     }
     
 

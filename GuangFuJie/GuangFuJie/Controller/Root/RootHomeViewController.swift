@@ -99,10 +99,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
             self.pushViewController(vc)
         } else if (sender.tag == 1) {
            //政策资讯
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-            vc.type = 1
-            self.pushViewController(vc)
+            self.tabBarController?.selectedIndex = 3
         } else if (sender.tag == 2) {
            //安装运维
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
@@ -132,7 +129,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
             }
         } else if (sender.tag == 6) {
            //活动通告
-            self.showHint("活动正在筹备中，尽请期待")
+            self.showHint("我们正在筹备中，暂未开放")
         } else if (sender.tag == 7) {
            //客服
             let chatViewManager = MQChatViewManager()
@@ -142,6 +139,10 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
             chatViewManager.chatViewStyle.navBackButtonImage = UIImage(named: "ic_back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
             chatViewManager.pushMQChatViewController(in: self)
         }
+    }
+    
+    @IBAction func moreExample() {
+        //更多案例
     }
     
     func initBannerImageView() {
