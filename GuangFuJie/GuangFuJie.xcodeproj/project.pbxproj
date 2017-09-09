@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
+		DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
+		DE1A55141F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
+		DE1A551F1F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */; };
+		DE1A55201F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */; };
 		DE1F71D91F62762600B8C2E8 /* InstallerDetailOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */; };
 		DE1F71DA1F62762600B8C2E8 /* InstallerDetailOldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1F71D81F62762600B8C2E8 /* InstallerDetailOldViewController.xib */; };
 		DE1F71E61F62766400B8C2E8 /* MSLFrameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71E51F62766400B8C2E8 /* MSLFrameUtil.m */; };
@@ -1108,6 +1112,8 @@
 
 /* Begin PBXFileReference section */
 		DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FranchiseeInfo.swift; path = GuangFuJie/Models/FranchiseeInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddViewController.swift; sourceTree = "<group>"; };
+		DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListViewController.swift; sourceTree = "<group>"; };
 		DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailOldViewController.swift; sourceTree = "<group>"; };
 		DE1F71D81F62762600B8C2E8 /* InstallerDetailOldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallerDetailOldViewController.xib; sourceTree = "<group>"; };
 		DE1F71E41F62766400B8C2E8 /* MSLFrameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLFrameUtil.h; sourceTree = "<group>"; };
@@ -2459,6 +2465,8 @@
 				DEE682201F19E5C300157560 /* YeZhuApplyViewController.swift */,
 				DEE681F21F185FDF00157560 /* YeZhuViewController.swift */,
 				DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */,
+				DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */,
+				DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4471,6 +4479,7 @@
 				DE868DD51F0DE4AC00FF7FD3 /* NSDictionary+Utils.m in Sources */,
 				DE9F9E871F19FDD4003CF080 /* MEIQIA_MLAudioMeterObserver.m in Sources */,
 				DE8684EA1F0DCC7900FF7FD3 /* ElectricInfo.swift in Sources */,
+				DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */,
 				DE9F9E751F19FDD4003CF080 /* MEIQIA_FBLCDFontView.m in Sources */,
 				DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DE9F9DDD1F19FDD4003CF080 /* MQChatViewConfig.m in Sources */,
@@ -4851,6 +4860,7 @@
 				DE9F9E011F19FDD4003CF080 /* MQEventMessage.m in Sources */,
 				DEF593971F3EEA5500448FC5 /* LoginCell.swift in Sources */,
 				DE3954151F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
+				DE1A551F1F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */,
 				DE3953ED1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
 				DE868DBB1F0DE4AC00FF7FD3 /* BCQueryRefundResult.m in Sources */,
 				DE8684F71F0DCC7900FF7FD3 /* PowerGraphInfo.swift in Sources */,
@@ -5091,6 +5101,7 @@
 				DEA6CDF81F1B8BDA0061629C /* RoofMapInfo.swift in Sources */,
 				DE9F9E481F19FDD4003CF080 /* MQTextMessageCell.m in Sources */,
 				DE868D961F0DE4AC00FF7FD3 /* BCPayPalVerifyReq.m in Sources */,
+				DE1A55141F63B51E00939E60 /* QuestionAddViewController.swift in Sources */,
 				DE39541C1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				DE8685131F0DCC7E00FF7FD3 /* AfterSaleInfo.swift in Sources */,
 				DE9F9E261F19FDD4003CF080 /* MQRichTextViewModel.m in Sources */,
@@ -5290,6 +5301,7 @@
 				DEA6CDFB1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */,
 				DEC222471F13601E007D6DBE /* MJRefreshAutoStateFooter.m in Sources */,
 				DE86850F1F0DCC7E00FF7FD3 /* PowerGraphInfo.swift in Sources */,
+				DE1A55201F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */,
 				DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */,
 				DE86848B1F0DCAFF00FF7FD3 /* API+List.swift in Sources */,
 				DE8685101F0DCC7E00FF7FD3 /* CityModel.swift in Sources */,

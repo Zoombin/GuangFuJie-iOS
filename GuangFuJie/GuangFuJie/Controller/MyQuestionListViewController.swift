@@ -1,14 +1,14 @@
 //
-//  GuangFuAskViewController.swift
+//  MyQuestionListViewController.swift
 //  GuangFuJie
 //
-//  Created by 颜超 on 2017/7/14.
+//  Created by 颜超 on 2017/9/9.
 //  Copyright © 2017年 yc. All rights reserved.
 //
 
 import UIKit
 
-class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class MyQuestionListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var anTableView: UITableView!
     
     override func viewDidLoad() {
@@ -17,15 +17,9 @@ class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func initView() {
-        self.title = "光伏问答"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "提问", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.gotoAskQuestion))
+        self.title = "我的提问"
     }
     
-    func gotoAskQuestion() {
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        self.pushViewController(sb.instantiateViewController(withIdentifier: "QuestionAddViewController"))
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,15 +46,15 @@ class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
 }
