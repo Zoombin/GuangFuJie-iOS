@@ -13,7 +13,7 @@ class InsuranceListViewController: BaseViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "购买保险列表"
         // Do any additional setup after loading the view.
     }
     
