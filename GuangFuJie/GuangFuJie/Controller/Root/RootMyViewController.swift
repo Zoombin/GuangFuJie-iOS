@@ -65,10 +65,12 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             //技术支持
             let vc = GFJWebViewController()
             vc.url = "http://zoombin.com"
+            vc.title = "技术支持"
             self.pushViewController(vc)
         } else if (indexPath.row == 2) {
             //关于我们
             let vc = GFJWebViewController()
+            vc.title = "关于我们"
             vc.urlTag = 0
             self.pushViewController(vc)
         } else if (indexPath.row == 3) {
