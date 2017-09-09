@@ -1751,5 +1751,16 @@ extension API {
         }, failure: failure)
     }
     
+    //现金流
+    func projectcalCashflow(_ params : [String : Any], success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "projectcal/cashflow"
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
+        }, failure: failure)
+    }
+    
     
 }
