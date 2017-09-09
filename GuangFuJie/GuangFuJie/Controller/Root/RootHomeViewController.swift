@@ -152,8 +152,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
         if (sender.tag == 0) {
            //体验店
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-            vc.type = 6
+            let vc = sb.instantiateViewController(withIdentifier: "ExperienceShopViewController")
             self.pushViewController(vc)
         } else if (sender.tag == 1) {
            //政策资讯

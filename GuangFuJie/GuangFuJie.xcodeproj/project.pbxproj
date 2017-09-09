@@ -921,6 +921,8 @@
 		DED05D4D1F624E10006741F6 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DED05D4B1F624E10006741F6 /* TopLeftLabel.m */; };
 		DED352941F63D48F00BA1B52 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED352931F63D48F00BA1B52 /* LocationInfo.swift */; };
 		DED352951F63D48F00BA1B52 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED352931F63D48F00BA1B52 /* LocationInfo.swift */; };
+		DED352A01F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */; };
+		DED352A11F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */; };
 		DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
 		DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
 		DEE681F01F185EC000157560 /* DiTuiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */; };
@@ -1947,6 +1949,7 @@
 		DED05D4A1F624E10006741F6 /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
 		DED05D4B1F624E10006741F6 /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
 		DED352931F63D48F00BA1B52 /* LocationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationInfo.swift; path = GuangFuJie/Models/LocationInfo.swift; sourceTree = SOURCE_ROOT; };
+		DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceShopViewController.swift; sourceTree = "<group>"; };
 		DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerHomeViewController.swift; sourceTree = "<group>"; };
 		DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiTuiHomeViewController.swift; sourceTree = "<group>"; };
 		DEE681F21F185FDF00157560 /* YeZhuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuViewController.swift; sourceTree = "<group>"; };
@@ -2471,6 +2474,7 @@
 				DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */,
 				DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */,
 				DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */,
+				DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4636,6 +4640,7 @@
 				DE9F9DEB1F19FDD4003CF080 /* MQChatViewService.m in Sources */,
 				DE868D991F0DE4AC00FF7FD3 /* BCPreRefundResp.m in Sources */,
 				DEE682061F18C40400157560 /* LeaseViewController.swift in Sources */,
+				DED352A01F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */,
 				DE9F9EB91F19FDD5003CF080 /* MQMessageFormViewStyleBlue.m in Sources */,
 				DE868DA91F0DE4AC00FF7FD3 /* BCQueryRefundByIdResp.m in Sources */,
 				DE86887B1F0DD05900FF7FD3 /* QNPHAssetFile.m in Sources */,
@@ -5113,6 +5118,7 @@
 				DE868E0B1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
 				DEC222411F13601E007D6DBE /* MJRefreshHeader.m in Sources */,
 				DE9F9DD41F19FDD4003CF080 /* UIImage+MQGenerate.m in Sources */,
+				DED352A11F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */,
 				DE8689FF1F0DD0D700FF7FD3 /* QNTxtResolver.m in Sources */,
 				DEC226C41F136363007D6DBE /* SMenuCell.m in Sources */,
 				DE868DCA1F0DE4AC00FF7FD3 /* BCURLRequestSerialization.m in Sources */,

@@ -32,6 +32,9 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             self.tabBarController?.selectedIndex = 1
         } else if (title == "体验店") {
             //体验店
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "ExperienceShopViewController")
+            self.pushViewController(vc)
         } else if (title == "光伏政策") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
