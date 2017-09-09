@@ -1007,7 +1007,7 @@ extension API {
     }
     
     //附近安装商
-    func getNearInstallerV1(_ longitude : NSNumber? = nil, latitude : NSNumber? = nil, size : NSNumber? = nil, success: ((_ roofList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func getNearInstallerV1(_ longitude : NSNumber? = nil, latitude : NSNumber? = nil, size : NSNumber? = nil, success: ((_ installerList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "installer/near_installers"
         let params = [
             "longitude" : longitude,
@@ -1025,12 +1025,26 @@ extension API {
     
     
     //附近安装商
-    func getNearInstallerV2(_ province_id : NSNumber? = nil, city_id : NSNumber? = nil, area_id : NSNumber? = nil, success: ((_ roofList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func getNearInstallerV2(_ province_id : NSNumber? = nil, city_id : NSNumber? = nil, area_id : NSNumber? = nil, success: ((_ installerList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "installer/getInstallersById"
         let params = [
             "province_id" : province_id,
             "city_id" : city_id,
             "area_id" : area_id,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
+        }, failure: failure)
+    }
+    
+    //安装商推荐
+    func installerSuggest(success: ((_ installerList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/suggest"
+        let params = [
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params as AnyObject)
@@ -1720,4 +1734,22 @@ extension API {
             success?(info!)
         }, failure: failure)
     }
+    
+    //根据经纬度获取城市信息
+    func getCityFromLatlng(lat: NSNumber, lng: NSNumber, success: ((_ commonModel: LocationInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "map/getCityfromLatlng";
+        let params = [
+            "lat": lat,
+            "lng": lng,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let info = LocationInfo.mj_object(withKeyValues: data)
+            success?(info!)
+        }, failure: failure)
+    }
+    
+    
 }
