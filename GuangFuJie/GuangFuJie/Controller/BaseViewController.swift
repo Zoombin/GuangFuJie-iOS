@@ -75,6 +75,9 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             self.pushViewController(vc)
         } else if (title == "产品供求") {
             //产品供求
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "ProductProvideViewController")
+            self.pushViewController(vc)
         } else if (title == "客服　") {
             self.chat()
         } else if (title == "安装教程") {
