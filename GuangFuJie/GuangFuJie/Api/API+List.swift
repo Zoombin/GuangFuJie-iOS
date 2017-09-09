@@ -1006,19 +1006,31 @@ extension API {
             }, failure: failure)
     }
     
-    /**
-     附近安装商
-     
-     - parameter lat:
-     - parameter lng:
-     - parameter success:
-     - parameter failure:
-     */
-    func getNearInstaller(_ lat : Double, lng : Double, success: ((_ roofList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
-        let url = Constants.httpHost + "user/nearby_installers"
+    //附近安装商
+    func getNearInstallerV1(_ longitude : NSNumber? = nil, latitude : NSNumber? = nil, size : NSNumber? = nil, success: ((_ roofList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/near_installers"
         let params = [
-            "latitude" : lat,
-            "longitude" : lng,
+            "longitude" : longitude,
+            "latitude" : latitude,
+            "size" : size,
+            "_o" : 1
+        ]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
+        }, failure: failure)
+    }
+    
+    
+    //附近安装商
+    func getNearInstallerV2(_ province_id : NSNumber? = nil, city_id : NSNumber? = nil, area_id : NSNumber? = nil, success: ((_ roofList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/getInstallersById"
+        let params = [
+            "province_id" : province_id,
+            "city_id" : city_id,
+            "area_id" : area_id,
             "_o" : 1
         ]
         let jsonStr = self.dataToJsonString(params as AnyObject)

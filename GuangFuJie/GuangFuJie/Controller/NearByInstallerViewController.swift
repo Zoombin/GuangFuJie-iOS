@@ -25,7 +25,7 @@ class NearByInstallerViewController: BaseViewController, BMKLocationServiceDeleg
     
     func getNearByPoints(_ loation : CLLocationCoordinate2D) {
         self.showHud(in: self.view, hint: "获取数据中...")
-        API.sharedInstance.getNearInstaller(loation.latitude, lng: loation.longitude, success: { (roofList) in
+        API.sharedInstance.getNearInstallerV1(loation.latitude as NSNumber, latitude: loation.longitude as NSNumber, size: 10, success: { (roofList) in
             self.hideHud()
             self.points.removeAllObjects()
             if (roofList.count > 0) {
@@ -51,10 +51,10 @@ class NearByInstallerViewController: BaseViewController, BMKLocationServiceDeleg
             }
             
             let item = BMKPointAnnotation()
-            if (installer.latitude == nil || installer.longitude == nil) {
+            if (installer.lat == nil || installer.lng == nil) {
                 continue
             }
-            let coordinate = CLLocationCoordinate2D.init(latitude: installer.latitude!.doubleValue, longitude: installer.longitude!.doubleValue)
+            let coordinate = CLLocationCoordinate2D.init(latitude: installer.lat!.doubleValue, longitude: installer.lng!.doubleValue)
             item.coordinate = coordinate
             item.title = companyName
             mapView.addAnnotation(item)

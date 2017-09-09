@@ -32,6 +32,9 @@ class InstallInfo: NSObject {
     var longitude : NSNumber?   //经度
     var latitude : NSNumber?    //纬度
     
+    var lng : NSNumber?   //经度
+    var lat : NSNumber?    //纬度
+    
     var id: NSNumber? //安装商id
     var companyName: String? //公司名
     var corporation: String?    //法人
