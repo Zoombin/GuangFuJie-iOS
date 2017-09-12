@@ -81,7 +81,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "ProductProvideViewController")
             self.pushViewController(vc)
-        } else if (title == "客服　") {
+        } else if (title == "客服") {
             self.chat()
         } else if (title == "安装教程") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
@@ -89,6 +89,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             vc.title = title
             vc.type = 7
             self.pushViewController(vc)
+        } else {
+            self.showHint("功能暂未开放")
         }
 
     }
