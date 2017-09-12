@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -2215,47 +2214,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rpr-Sb-Pe0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpr-Sb-Pe0">
                                                     <rect key="frame" x="15" y="9" width="80" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="P8g-Af-lRr"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJ6-FK-OdM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJ6-FK-OdM">
                                                     <rect key="frame" x="107" y="9" width="250" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrE-rX-UpO">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrE-rX-UpO">
                                                     <rect key="frame" x="107" y="68" width="250" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="1Pr-1T-ZDD"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIB-FZ-gjF">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIB-FZ-gjF">
                                                     <rect key="frame" x="0.0" y="99" width="375" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="XJ6-FK-OdM" secondAttribute="trailing" constant="10" id="4ih-3K-iWs"/>
-                                                <constraint firstItem="rpr-Sb-Pe0" firstAttribute="bottom" secondItem="xrE-rX-UpO" secondAttribute="bottom" id="719-rH-gY2"/>
-                                                <constraint firstItem="rpr-Sb-Pe0" firstAttribute="top" secondItem="oDN-hd-2Ek" secondAttribute="topMargin" constant="1" id="8lg-GC-ssU"/>
-                                                <constraint firstItem="WIB-FZ-gjF" firstAttribute="leading" secondItem="oDN-hd-2Ek" secondAttribute="leading" id="GPk-mZ-dEe"/>
-                                                <constraint firstItem="rpr-Sb-Pe0" firstAttribute="leading" secondItem="oDN-hd-2Ek" secondAttribute="leadingMargin" constant="7" id="OLY-Kq-ab2"/>
-                                                <constraint firstItem="rpr-Sb-Pe0" firstAttribute="top" secondItem="XJ6-FK-OdM" secondAttribute="top" id="WDc-Wg-14v"/>
-                                                <constraint firstAttribute="trailing" secondItem="WIB-FZ-gjF" secondAttribute="trailing" id="atA-1u-ZGf"/>
-                                                <constraint firstItem="WIB-FZ-gjF" firstAttribute="top" secondItem="rpr-Sb-Pe0" secondAttribute="bottom" constant="10" id="eOd-1U-l6H"/>
-                                                <constraint firstAttribute="bottom" secondItem="WIB-FZ-gjF" secondAttribute="bottom" id="fTg-w3-7hx"/>
-                                                <constraint firstItem="xrE-rX-UpO" firstAttribute="top" secondItem="XJ6-FK-OdM" secondAttribute="bottom" constant="38" id="kRe-Gs-Urv"/>
-                                                <constraint firstItem="XJ6-FK-OdM" firstAttribute="leading" secondItem="xrE-rX-UpO" secondAttribute="leading" id="lVx-YB-F7H"/>
-                                                <constraint firstItem="XJ6-FK-OdM" firstAttribute="leading" secondItem="rpr-Sb-Pe0" secondAttribute="trailing" constant="12" id="xVi-HP-KEd"/>
-                                                <constraint firstItem="XJ6-FK-OdM" firstAttribute="trailing" secondItem="xrE-rX-UpO" secondAttribute="trailing" id="zAl-VH-cl7"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="contentLabel" destination="XJ6-FK-OdM" id="sc7-eX-Tik"/>
