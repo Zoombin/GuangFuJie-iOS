@@ -3598,9 +3598,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OaT-6T-h0p">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OaT-6T-h0p">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-WE-7XI">
                                         <rect key="frame" x="7.5" y="603" width="115" height="110"/>
@@ -3722,6 +3721,14 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OaT-6T-h0p" firstAttribute="leading" secondItem="5Mk-Zi-ZLS" secondAttribute="leading" id="FxO-Vd-G7v"/>
+                            <constraint firstItem="9EC-3V-OUw" firstAttribute="top" secondItem="OaT-6T-h0p" secondAttribute="bottom" id="S5x-p5-9kS"/>
+                            <constraint firstItem="OaT-6T-h0p" firstAttribute="width" secondItem="5Mk-Zi-ZLS" secondAttribute="width" id="XP8-gC-77m"/>
+                            <constraint firstAttribute="trailing" secondItem="OaT-6T-h0p" secondAttribute="trailing" id="fQI-py-Hbc"/>
+                            <constraint firstItem="OaT-6T-h0p" firstAttribute="height" secondItem="5Mk-Zi-ZLS" secondAttribute="height" id="r6k-sa-FpT"/>
+                            <constraint firstItem="OaT-6T-h0p" firstAttribute="top" secondItem="5Mk-Zi-ZLS" secondAttribute="top" id="t5O-vR-gHD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XMW-RL-sYv"/>
                     <connections>
