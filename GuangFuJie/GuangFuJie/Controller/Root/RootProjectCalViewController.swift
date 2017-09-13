@@ -160,8 +160,8 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         API.sharedInstance.projectcalSunenerge(currentLat!, lng: currentLng!, success: { (info) in
             self.projectCalInfo = info
             self.hideHud()
-            self.average30.text = "年日照时数:\(StringUtils.getNumber(info.sunlight_year)) 小时"
-            self.averagehor.text = "年辐照总量:\(StringUtils.getNumber(info.energy_year)) Kwh/㎡.年"
+            self.averagehor.text = "年日照时数:\(StringUtils.getNumber(info.sunlight_year)) 小时"
+            self.average30.text = "年辐照总量:\(StringUtils.getNumber(info.energy_year)) Kwh/㎡.年"
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
