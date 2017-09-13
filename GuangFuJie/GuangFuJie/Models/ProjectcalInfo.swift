@@ -12,4 +12,7 @@ class ProjectcalInfo: NSObject {
     var average_hor: NSNumber? //水平辐照
     var average_30: NSNumber? //倾角辐照
     var sample_angle: NSNumber? //参考倾角
+    
+    var sunlight_year: NSNumber? //年日照小时数
+    var energy_year: NSNumber? //年辐照总量
 }

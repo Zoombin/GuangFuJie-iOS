@@ -19,7 +19,6 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     @IBOutlet weak var average30: UILabel!
     @IBOutlet weak var averagehor: UILabel!
-    @IBOutlet weak var sampleAngle: UILabel!
     
     @IBOutlet weak var roofSizeTextField: UITextField!
     @IBOutlet weak var roofTypeButton: UIButton!
@@ -145,8 +144,8 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
         locationButton.setTitle("\(StringUtils.getString(city.name))\(StringUtils.getString(area.name))", for: UIControlState.normal)
         
-        latLabel.text = "纬度:\(StringUtils.getNumber(area.lat))"
-        lngLabel.text = "经度:\(StringUtils.getNumber(area.lng))"
+        latLabel.text = String(format: "纬度:%.2f", StringUtils.getNumber(area.lat).floatValue)
+        lngLabel.text = String(format: "经度:%.2f", StringUtils.getNumber(area.lng).floatValue)
         currentLat = area.lat
         currentLng = area.lng
     }
@@ -161,9 +160,8 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         API.sharedInstance.projectcalSunenerge(currentLat!, lng: currentLng!, success: { (info) in
             self.projectCalInfo = info
             self.hideHud()
-            self.average30.text = "水平辐照总值:\(StringUtils.getNumber(info.average_30))Kwh/㎡"
-            self.averagehor.text = "倾角辐照总值:\(StringUtils.getNumber(info.average_hor))Kwh/㎡"
-            self.sampleAngle.text = "参考倾角:\(StringUtils.getNumber(info.sample_angle))度"
+            self.average30.text = "年日照时数:\(StringUtils.getNumber(info.sunlight_year)) 小时"
+            self.averagehor.text = "年辐照总量:\(StringUtils.getNumber(info.energy_year)) Kwh/㎡.年"
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
