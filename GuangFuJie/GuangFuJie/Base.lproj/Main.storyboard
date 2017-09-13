@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -3779,40 +3781,64 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GFAskCell" id="193-8F-qWw" customClass="GFAskCell" customModule="GaoDeGuangFu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="193-8F-qWw" id="prN-5Q-MHi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请问电站需要多大面积才适合安装太阳能电站" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-yr-T6x">
-                                                    <rect key="frame" x="28" y="14" width="256" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请问电站需要多大面积才适合安装太阳能电站" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-yr-T6x">
+                                                    <rect key="frame" x="28" y="14" width="219" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="219" id="XHx-Py-c2f"/>
+                                                        <constraint firstAttribute="width" secondItem="G6J-yr-T6x" secondAttribute="height" multiplier="32:5" constant="-37" id="qvV-c9-fBS"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已解答" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-bx-aNP">
-                                                    <rect key="frame" x="292" y="38" width="68" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已解答" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-bx-aNP">
+                                                    <rect key="frame" x="297" y="38" width="63" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="63" id="gbs-8T-6rH"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21176470588235294" green="0.80000000000000004" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_gfask_repeat" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-Gb-5NC">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gfask_repeat" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-Gb-5NC">
                                                     <rect key="frame" x="28" y="71" width="17" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="17" id="5gW-c9-KLh"/>
+                                                        <constraint firstAttribute="width" secondItem="2MU-Gb-5NC" secondAttribute="height" multiplier="17:15" id="GiO-2y-S79"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="只要大于50平米，均可安装" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-S7-wBl">
-                                                    <rect key="frame" x="53" y="68" width="231" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="只要大于50平米，均可安装" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-S7-wBl">
+                                                    <rect key="frame" x="53" y="68" width="194" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="194" id="Wme-s9-IOk"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bKd-S7-wBl" firstAttribute="top" secondItem="G6J-yr-T6x" secondAttribute="bottom" constant="14" id="5lU-5k-WbK"/>
+                                                <constraint firstItem="2MU-Gb-5NC" firstAttribute="leading" secondItem="G6J-yr-T6x" secondAttribute="leading" id="RL4-xW-NaG"/>
+                                                <constraint firstItem="Rue-bx-aNP" firstAttribute="top" secondItem="prN-5Q-MHi" secondAttribute="topMargin" constant="30" id="ktc-HQ-jYe"/>
+                                                <constraint firstItem="2MU-Gb-5NC" firstAttribute="centerY" secondItem="bKd-S7-wBl" secondAttribute="centerY" id="lcA-dM-pVs"/>
+                                                <constraint firstItem="bKd-S7-wBl" firstAttribute="leading" secondItem="2MU-Gb-5NC" secondAttribute="leading" constant="25" id="m4F-Fl-ehw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Rue-bx-aNP" secondAttribute="bottom" constant="32" id="vcD-rQ-uhe"/>
+                                                <constraint firstItem="G6J-yr-T6x" firstAttribute="leading" secondItem="prN-5Q-MHi" secondAttribute="leadingMargin" constant="20" id="vpZ-xJ-wK8"/>
+                                                <constraint firstItem="G6J-yr-T6x" firstAttribute="top" secondItem="prN-5Q-MHi" secondAttribute="topMargin" constant="6" id="whh-Oo-fgA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Rue-bx-aNP" secondAttribute="trailing" constant="7" id="zM9-cE-Zrl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="bKd-S7-wBl" secondAttribute="bottom" constant="21" id="t1D-96-0Kk"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="answerLabel" destination="bKd-S7-wBl" id="raJ-ua-P1Y"/>
                                             <outlet property="questionLabel" destination="G6J-yr-T6x" id="2qf-qR-Bml"/>
@@ -3834,7 +3860,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQo-c2-hjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1439" y="-1621"/>
+            <point key="canvasLocation" x="-1439.2" y="-1621.4392803598203"/>
         </scene>
         <!--首页-->
         <scene sceneID="bfs-MV-Ix7">
