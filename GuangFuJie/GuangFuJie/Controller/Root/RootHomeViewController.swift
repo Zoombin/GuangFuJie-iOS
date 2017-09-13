@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScrollViewDelegate {
+class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScrollViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var bannerScrollView: UIScrollView!
