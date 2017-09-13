@@ -10,10 +10,21 @@ import UIKit
 
 class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var anTableView: UITableView!
+    var qaList = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
+        loadQuestionList()
+    }
+    
+    func loadQuestionList() {
+        API.sharedInstance.qaList(start: 0, pagesize: 10, success: { (count, array) in
+            self.qaList.addObjects(from: array as! [Any])
+            self.anTableView.reloadData()
+        }) { (msg) in
+            self.showHint(msg)
+        }
     }
     
     func initView() {
@@ -35,7 +46,7 @@ class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return qaList.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -48,8 +59,11 @@ class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GFAskCell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GFAskCell") as! GFAskCell
+        let qaInfo = qaList[indexPath.row] as! QuestionInfo
+        cell.questionLabel.text = qaInfo.question
+        cell.answerLabel.text = qaInfo.answer
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

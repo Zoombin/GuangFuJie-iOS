@@ -1778,4 +1778,20 @@ extension API {
         }, failure: failure)
     }
     
+    //问题列表
+    func qaList(start: NSInteger, pagesize: NSInteger, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "userask/list";
+        let params = [
+            "start": String(start),
+            "pagesize": String(pagesize),
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = QuestionInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
 }

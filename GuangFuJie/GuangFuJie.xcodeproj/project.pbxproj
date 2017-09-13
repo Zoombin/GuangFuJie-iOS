@@ -163,6 +163,8 @@
 		DE3954561F1480E800A44740 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954541F1480E800A44740 /* Dimens.swift */; };
 		DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
+		DE3AE0B61F691FC600A7A34A /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */; };
+		DE3AE0B71F691FC700A7A34A /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */; };
 		DE6D91F61F2DBAAA008E0E3A /* RootComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */; };
 		DE6D91F81F2DBAC4008E0E3A /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */; };
 		DE6D91FA1F2DBAD8008E0E3A /* RootPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */; };
@@ -1239,6 +1241,7 @@
 		DE3954511F14802200A44740 /* PublishMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMediaView.swift; sourceTree = "<group>"; };
 		DE3954541F1480E800A44740 /* Dimens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		DE3954571F1481E500A44740 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionInfo.swift; path = GuangFuJie/Models/QuestionInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootComViewController.swift; sourceTree = "<group>"; };
 		DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
 		DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPayViewController.swift; sourceTree = "<group>"; };
@@ -2411,6 +2414,7 @@
 				DE25423F1F3455D700872C22 /* GroupOrderInfo.swift */,
 				DED05D261F61383D006741F6 /* MyCountInfo.swift */,
 				DED352931F63D48F00BA1B52 /* LocationInfo.swift */,
+				DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */,
 			);
 			name = Models;
 			path = Modules;
@@ -4699,6 +4703,7 @@
 				DE86888B1F0DD05900FF7FD3 /* QNConfiguration.m in Sources */,
 				DE9F9DDB1F19FDD4003CF080 /* MQCustomizedUIText.m in Sources */,
 				DE9F9E671F19FDD4003CF080 /* MQAGEmojiKeyBoardView.m in Sources */,
+				DE3AE0B61F691FC600A7A34A /* QuestionInfo.swift in Sources */,
 				DE3953F51F1468CB00A44740 /* SDWebImageDownloader.m in Sources */,
 				DEE6C9DA1F35BECA00AB6031 /* IQPreviousNextView.swift in Sources */,
 				DE868AD01F0DD1B800FF7FD3 /* MJPropertyKey.m in Sources */,
@@ -5240,6 +5245,7 @@
 				DE868A011F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
 				DE9F9EB41F19FDD5003CF080 /* MQMessageFormConfig.m in Sources */,
 				DE39540A1F1468CB00A44740 /* UIImage+ZLPhotoLib.m in Sources */,
+				DE3AE0B71F691FC700A7A34A /* QuestionInfo.swift in Sources */,
 				DE9F9E6E1F19FDD4003CF080 /* MEIQIA_FBBitmapFont.m in Sources */,
 				DEC2223F1F13601E007D6DBE /* MJRefreshFooter.m in Sources */,
 				DE86850A1F0DCC7E00FF7FD3 /* QNResultInfo.swift in Sources */,
