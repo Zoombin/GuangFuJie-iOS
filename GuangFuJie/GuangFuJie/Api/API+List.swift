@@ -1762,5 +1762,20 @@ extension API {
         }, failure: failure)
     }
     
+    //提交问题
+    func qaAdd(_ question : String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "userask/add"
+        let params = [
+            "userId" : getUserId(), // 用户id
+            "question" : question,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
+        }, failure: failure)
+    }
     
 }

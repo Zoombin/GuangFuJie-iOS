@@ -9,13 +9,16 @@
 import UIKit
 
 class QuestionAddViewController: BaseViewController {
-
+    
+    @IBOutlet var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
     }
     
     func initView() {
+        self.title = "提问"
         let questionBottomView = UIView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
         questionBottomView.backgroundColor = UIColor.white
         self.view.addSubview(questionBottomView)
@@ -32,7 +35,7 @@ class QuestionAddViewController: BaseViewController {
         addButton.addTarget(self, action: #selector(self.addQuestionButtonClicked), for: UIControlEvents.touchUpInside)
         questionBottomView.addSubview(addButton)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "我的提问", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.showMyQuestions))
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "我的提问", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.showMyQuestions))
     }
     
     func showMyQuestions() {
@@ -41,8 +44,17 @@ class QuestionAddViewController: BaseViewController {
     }
     
     func addQuestionButtonClicked() {
-        self.showHint("提交成功")
-        self.navigationController?.popViewController(animated: true)
+        if (textView.text.isEmpty) {
+            self.showHint("请输入问题")
+            return
+        }
+        self.showHud(in: self.view, hint: "提交中...")
+        API.sharedInstance.qaAdd(textView.text!, success: { (model) in
+            self.showHint("提交成功")
+            self.navigationController?.popViewController(animated: true)
+        }) { (msg) in
+            self.showHint(msg)
+        }
     }
 
     override func didReceiveMemoryWarning() {

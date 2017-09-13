@@ -22,6 +22,9 @@ class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func gotoAskQuestion() {
+        if (shouldShowLogin() == true) {
+            return
+        }
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
         self.pushViewController(sb.instantiateViewController(withIdentifier: "QuestionAddViewController"))
     }
