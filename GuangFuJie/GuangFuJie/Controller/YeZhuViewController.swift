@@ -9,11 +9,25 @@
 import UIKit
 
 class YeZhuViewController: BaseViewController {
-
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "业主"
         initView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (UserDefaultManager.isLogin()) {
+            loginButton.setTitle(UserDefaultManager.getUser()?.user_name, for: UIControlState.normal)
+        }
+    }
+    
+    @IBAction func loginButtonClicked() {
+        if (shouldShowLogin()) {
+            return
+        }
     }
     
     func initView() {

@@ -1241,7 +1241,7 @@
                                                 <rect key="frame" x="23" y="17" width="86" height="86"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHy-d9-fBx">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHy-d9-fBx">
                                                 <rect key="frame" x="122" y="45" width="130" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1250,7 +1250,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="xPj-bH-gPk" kind="show" id="rls-Ho-rsw"/>
+                                                    <action selector="loginButtonClicked" destination="nFe-Qr-qRA" eventType="touchUpInside" id="O70-VJ-DG2"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1263,6 +1263,7 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="loginButton" destination="iHy-d9-fBx" id="qrx-JV-wO4"/>
                         <outlet property="scrollView" destination="skF-9j-Dc2" id="YVd-bf-FJS"/>
                     </connections>
                 </viewController>
@@ -3238,7 +3239,7 @@
                                                 <rect key="frame" x="23" y="17" width="86" height="86"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPq-5g-tvx">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPq-5g-tvx">
                                                 <rect key="frame" x="122" y="45" width="130" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3247,7 +3248,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="uJL-e1-i67" kind="show" id="cRc-oa-w1E"/>
+                                                    <action selector="loginButtonClicked" destination="nRd-D1-OZt" eventType="touchUpInside" id="uxs-dx-VfZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -3264,6 +3265,9 @@
                             <constraint firstAttribute="bottom" secondItem="p4m-yb-gzE" secondAttribute="bottom" id="h9J-av-c1n"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="xPq-5g-tvx" id="uwL-bL-1uM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gue-Zp-MF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3424,7 +3428,7 @@
                                                 <rect key="frame" x="23" y="17" width="86" height="86"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR5-3V-Ggk">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR5-3V-Ggk">
                                                 <rect key="frame" x="122" y="45" width="130" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3433,7 +3437,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="50m-t0-UEM" kind="show" id="KEO-Q9-FJK"/>
+                                                    <action selector="loginButtonClicked" destination="sDj-Fr-phP" eventType="touchUpInside" id="cUG-wG-FTF"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -3444,6 +3448,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="cR5-3V-Ggk" id="Vwx-yD-QxX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z8L-hL-ynL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3473,7 +3480,7 @@
                                                 <rect key="frame" x="23" y="17" width="86" height="86"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Bt-Dp2">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-Bt-Dp2">
                                                 <rect key="frame" x="122" y="45" width="130" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3482,7 +3489,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="KLe-aO-deQ" kind="show" id="xsE-T3-3a4"/>
+                                                    <action selector="loginButtonClicked" destination="chC-y7-hb3" eventType="touchUpInside" id="aIT-Qd-llK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -3597,6 +3604,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="xKA-Bt-Dp2" id="DMy-Nf-E48"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0df-2Y-Yjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5029,6 +5039,6 @@
         <image name="ic_yezhua_photo" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uxD-XH-rAv"/>
+        <segue reference="pGW-Co-TeL"/>
     </inferredMetricsTieBreakers>
 </document>

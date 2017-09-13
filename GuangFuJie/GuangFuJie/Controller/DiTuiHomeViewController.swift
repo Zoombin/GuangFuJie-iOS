@@ -9,12 +9,26 @@
 import UIKit
 
 class DiTuiHomeViewController: BaseViewController {
-
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "地推"
         // Do any additional setup after loading the view.
         initNoteButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (UserDefaultManager.isLogin()) {
+            loginButton.setTitle(UserDefaultManager.getUser()?.user_name, for: UIControlState.normal)
+        }
+    }
+    
+    @IBAction func loginButtonClicked() {
+        if (shouldShowLogin()) {
+            return
+        }
     }
     
     @IBAction func buttonClicked(button : UIButton) {

@@ -11,11 +11,30 @@ import UIKit
 class JoinUsViewController: BaseViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "加盟商"
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (UserDefaultManager.isLogin()) {
+            loginButton.setTitle(UserDefaultManager.getUser()?.user_name, for: UIControlState.normal)
+        }
+    }
+    
+    @IBAction func loginButtonClicked() {
+        if (shouldShowLogin()) {
+            return
+        }
+    }
+    
+    @IBAction func buttonClicked(button : UIButton) {
+        let title = button.titleLabel?.text
+        self.goToPageByTitle(title: title!)
     }
     
     override func viewDidLayoutSubviews() {
@@ -26,11 +45,6 @@ class JoinUsViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func buttonClicked(button : UIButton) {
-        let title = button.titleLabel?.text
-        self.goToPageByTitle(title: title!)
     }
 
     /*
