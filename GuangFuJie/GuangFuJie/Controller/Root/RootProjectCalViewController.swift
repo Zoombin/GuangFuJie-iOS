@@ -182,17 +182,17 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         API.sharedInstance.projectcalEnergycal(type: type, size: roofSizeTextField.text!, lat: currentLat!, lng: currentLng!, success: { (info) in
             self.hideHud()
             self.energyCalInfo = info
-            self.buildSize.text = "\(StringUtils.getNumber(info.build_size))Kwp"
-            self.buildPrice.text = "\(StringUtils.getNumber(info.build_price))万元"
-            self.electricFirstyearHours.text = "\(StringUtils.getNumber(info.electric_firstyear_hours))小时"
-            self.electricFirstyearDayaverage.text = "\(StringUtils.getNumber(info.electric_firstyear_dayaverage))度"
-            self.electricFirstyearTotal.text = "\(StringUtils.getNumber(info.electric_firstyear_total))度"
-            self.electric25.text = "\(StringUtils.getNumber(info.electric_25))度"
-            self.reduceC.text = "\(StringUtils.getNumber(info.reduce_c))千克"
-            self.reduceCo2.text = "\(StringUtils.getNumber(info.reduce_co2))千克"
-            self.reduceSo2.text = "\(StringUtils.getNumber(info.reduce_so2))千克"
-            self.reduceNox.text = "\(StringUtils.getNumber(info.reduce_nox))千克"
-            self.reduceSmoke.text = "\(StringUtils.getNumber(info.reduce_smoke))千克"
+            self.buildSize.text = "装机容量：\(StringUtils.getNumber(info.build_size))Kwp"
+            self.buildPrice.text = "建设费用：\(StringUtils.getNumber(info.build_price))万元"
+            self.electricFirstyearHours.text = "首年发电利用小时数：\(StringUtils.getNumber(info.electric_firstyear_hours))小时"
+            self.electricFirstyearDayaverage.text = "首年日发电量：\(StringUtils.getNumber(info.electric_firstyear_dayaverage))度"
+            self.electricFirstyearTotal.text = "首年总发电量：\(StringUtils.getNumber(info.electric_firstyear_total))度"
+            self.electric25.text = "25年总发电量：\(StringUtils.getNumber(info.electric_25))度"
+            self.reduceC.text = "节约标准煤：\(StringUtils.getNumber(info.reduce_c))千克"
+            self.reduceCo2.text = "减少CO₂排放：\(StringUtils.getNumber(info.reduce_co2))千克"
+            self.reduceSo2.text = "减少SO₂排放：\(StringUtils.getNumber(info.reduce_so2))千克"
+            self.reduceNox.text = "减少NOx排放：\(StringUtils.getNumber(info.reduce_nox))千克"
+            self.reduceSmoke.text = "减少烟雾排放：\(StringUtils.getNumber(info.reduce_smoke))千克"
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
