@@ -208,9 +208,17 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        addBkgViewShadow(view: bkgXZView)
-        addBkgViewShadow(view: bkgCNView)
-        addBkgViewShadow(view: bkgSYView)
+//        addBkgViewShadow(view: bkgXZView)
+//        addBkgViewShadow(view: bkgCNView)
+//        addBkgViewShadow(view: bkgSYView)
+        bkgXZView.layer.borderColor = UIColor.black.cgColor
+        bkgXZView.layer.borderWidth = 0.5
+        
+        bkgCNView.layer.borderColor = UIColor.black.cgColor
+        bkgCNView.layer.borderWidth = 0.5
+        
+        bkgSYView.layer.borderColor = UIColor.black.cgColor
+        bkgSYView.layer.borderWidth = 0.5
         
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
