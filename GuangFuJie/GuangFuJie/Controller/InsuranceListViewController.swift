@@ -10,20 +10,33 @@ import UIKit
 
 class InsuranceListViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var inTableView: UITableView!
+    var infoArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "购买保险列表"
         // Do any additional setup after loading the view.
+        loadData()
+    }
+    
+    func loadData() {
+        API.sharedInstance.usersHaveInsuranceList(0, pagesize: 10, success: { (array) in
+            self.infoArray.addObjects(from: array as! [Any])
+            self.inTableView.reloadData()
+        }) { (msg) in
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return infoArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InsuranceCell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InsuranceCell") as! InsuranceCell
+        let info = infoArray[indexPath.row] as! InsuranceInfo
+        cell.setData(info, isSelf: false)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

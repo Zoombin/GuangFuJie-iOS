@@ -39,7 +39,7 @@ class RootInsuranceViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func loadData() {
-        API.sharedInstance.usersHaveInsuranceList(0, pagesize: 10, success: { (array) in
+        API.sharedInstance.usersHaveInsuranceList(0, pagesize: 1, success: { (array) in
             self.infoArray.addObjects(from: array as! [Any])
             self.inTableView.reloadData()
         }) { (msg) in
@@ -53,12 +53,14 @@ class RootInsuranceViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return infoArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InsuranceCell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InsuranceCell") as! InsuranceCell
+        let info = infoArray[indexPath.row] as! InsuranceInfo
+        cell.setData(info, isSelf: false)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

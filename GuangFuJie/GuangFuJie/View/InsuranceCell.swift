@@ -11,7 +11,7 @@ import UIKit
 class InsuranceCell: UITableViewCell {
     @IBOutlet var nameLabel : UILabel!
     @IBOutlet var phoneLabel : UILabel!
-    @IBOutlet var idLabel : UILabel!
+//    @IBOutlet var idLabel : UILabel!
     @IBOutlet var priceLabel : UILabel!
     @IBOutlet var tipsLabel : UILabel!
     
@@ -22,8 +22,8 @@ class InsuranceCell: UITableViewCell {
     //    var addressLabel : UILabel!
     
     @IBOutlet var buyTimeLabel : UILabel!
-    @IBOutlet var viewMoreButton : UIButton!
-    @IBOutlet var payButton : UIButton!
+//    @IBOutlet var viewMoreButton : UIButton!
+//    @IBOutlet var payButton : UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,7 +41,6 @@ class InsuranceCell: UITableViewCell {
         if (info.beneficiary_name != nil) {
             name = name + info.beneficiary_name! + " "
         }
-        name = name + "已购买保险"
         self.nameLabel.text = isSelf ? "我购买的保险" : name
         
         var phone = ""
@@ -54,7 +53,7 @@ class InsuranceCell: UITableViewCell {
         if (info.id_no != nil) {
             idCard = idCard + info.id_no!
         }
-        self.idLabel.text = isSelf ? "" : idCard
+//        self.idLabel.text = isSelf ? "" : idCard
         
         var type = ""
         var baoeValue = "保额："
@@ -90,7 +89,7 @@ class InsuranceCell: UITableViewCell {
         //        }
         //        self.addressLabel.text = location
         
-        self.payButton.isHidden = true
+//        self.payButton.isHidden = true
         if (isSelf) {
             if (info.order_status!.int32Value == 2) {
                 self.tipsLabel.text = "已成功投保"
@@ -98,7 +97,7 @@ class InsuranceCell: UITableViewCell {
                 self.tipsLabel.text = "已投保"
             } else {
                 self.tipsLabel.text = "未付款"
-                self.payButton.isHidden = false
+//                self.payButton.isHidden = false
             }
         }
     }

@@ -2223,7 +2223,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InsuranceCell" rowHeight="170" id="Wrz-d2-0Va">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InsuranceCell" rowHeight="170" id="Wrz-d2-0Va" customClass="InsuranceCell" customModule="GaoDeGuangFu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wrz-d2-0Va" id="pOz-HJ-Acd">
@@ -2314,6 +2314,17 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="baoeLabel" destination="c6W-KN-L5a" id="E3s-gt-Y4k"/>
+                                            <outlet property="buyTimeLabel" destination="uV6-6D-2A7" id="K3E-Bn-lcW"/>
+                                            <outlet property="nameLabel" destination="lDy-YJ-L7g" id="kcs-oE-cov"/>
+                                            <outlet property="phoneLabel" destination="ZnL-k9-SuK" id="wu3-ny-9xr"/>
+                                            <outlet property="priceLabel" destination="ZXK-96-u2G" id="zgG-de-tLr"/>
+                                            <outlet property="rangeLabel" destination="R3M-AZ-1Sr" id="A9e-9j-apW"/>
+                                            <outlet property="safeTypeLabel" destination="mEL-Fu-eNb" id="Ezw-qE-hew"/>
+                                            <outlet property="tipsLabel" destination="oZV-Yc-Pde" id="AOU-7o-WGQ"/>
+                                            <outlet property="yearsSizeLabel" destination="E9t-NW-Wsc" id="ynf-2Q-8Yj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -4772,7 +4783,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InsuranceCell" rowHeight="170" id="3t1-Ia-hRp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InsuranceCell" rowHeight="170" id="3t1-Ia-hRp" customClass="InsuranceCell" customModule="GaoDeGuangFu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="245.5" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3t1-Ia-hRp" id="9DO-h7-rFt">
@@ -4863,6 +4874,17 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="baoeLabel" destination="02I-Bh-byc" id="QVQ-TF-paN"/>
+                                            <outlet property="buyTimeLabel" destination="wBB-yH-rir" id="BSX-Nu-47k"/>
+                                            <outlet property="nameLabel" destination="Mhd-xa-CwO" id="MUh-bQ-6Yi"/>
+                                            <outlet property="phoneLabel" destination="tIE-pn-IAc" id="NpJ-Ev-YzU"/>
+                                            <outlet property="priceLabel" destination="jdL-Ya-nIh" id="RtI-yD-MpO"/>
+                                            <outlet property="rangeLabel" destination="sre-8c-Rla" id="dmV-gF-H9U"/>
+                                            <outlet property="safeTypeLabel" destination="V9T-uA-ehm" id="haJ-ls-dna"/>
+                                            <outlet property="tipsLabel" destination="DLi-E4-w7a" id="fee-hS-zba"/>
+                                            <outlet property="yearsSizeLabel" destination="k2I-xW-4vx" id="6iR-XZ-Nvc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
