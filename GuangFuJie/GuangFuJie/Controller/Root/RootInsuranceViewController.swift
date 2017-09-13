@@ -10,11 +10,12 @@ import UIKit
 
 class RootInsuranceViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var inTableView: UITableView!
+    var infoArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "光伏保险"
-        // Do any additional setup after loading the view.
+        self.loadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,6 +36,15 @@ class RootInsuranceViewController: BaseViewController, UITableViewDelegate, UITa
         calButton.titleLabel?.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 17))
         calButton.addTarget(self, action: #selector(self.buyNow), for: UIControlEvents.touchUpInside)
         buyBottomView.addSubview(calButton)
+    }
+    
+    func loadData() {
+        API.sharedInstance.usersHaveInsuranceList(0, pagesize: 10, success: { (array) in
+            self.infoArray.addObjects(from: array as! [Any])
+            self.inTableView.reloadData()
+        }) { (msg) in
+            
+        }
     }
     
     func buyNow() {

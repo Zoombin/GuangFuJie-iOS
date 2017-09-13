@@ -165,6 +165,8 @@
 		DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE3AE0B61F691FC600A7A34A /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */; };
 		DE3AE0B71F691FC700A7A34A /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */; };
+		DE3AE0C21F69265E00A7A34A /* InsuranceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */; };
+		DE3AE0C31F69265E00A7A34A /* InsuranceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */; };
 		DE6D91F61F2DBAAA008E0E3A /* RootComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */; };
 		DE6D91F81F2DBAC4008E0E3A /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */; };
 		DE6D91FA1F2DBAD8008E0E3A /* RootPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */; };
@@ -1242,6 +1244,7 @@
 		DE3954541F1480E800A44740 /* Dimens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		DE3954571F1481E500A44740 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionInfo.swift; path = GuangFuJie/Models/QuestionInfo.swift; sourceTree = SOURCE_ROOT; };
+		DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceCell.swift; sourceTree = "<group>"; };
 		DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootComViewController.swift; sourceTree = "<group>"; };
 		DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
 		DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPayViewController.swift; sourceTree = "<group>"; };
@@ -2430,6 +2433,7 @@
 				DEE681F81F1897AC00157560 /* GFAskCell.swift */,
 				DEE682261F19F30700157560 /* NoteCell.swift */,
 				DEF593961F3EEA5500448FC5 /* LoginCell.swift */,
+				DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4550,6 +4554,7 @@
 				DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DE9F9EB51F19FDD5003CF080 /* MQMessageFormViewManager.m in Sources */,
 				DE3953FB1F1468CB00A44740 /* SDWebImagePrefetcher.m in Sources */,
+				DE3AE0C21F69265E00A7A34A /* InsuranceCell.swift in Sources */,
 				DE9F9E9F1F19FDD5003CF080 /* MQInputContentView.m in Sources */,
 				DE8688951F0DD05900FF7FD3 /* QNUpToken.m in Sources */,
 				DE868DD11F0DE4AC00FF7FD3 /* BCPayUtil.m in Sources */,
@@ -4911,6 +4916,7 @@
 				DEE6C9CD1F35BECA00AB6031 /* IQUIView+Hierarchy.swift in Sources */,
 				DEC2225B1F13601E007D6DBE /* UIScrollView+MJExtension.m in Sources */,
 				DE868AD51F0DD1B800FF7FD3 /* NSObject+MJClass.m in Sources */,
+				DE3AE0C31F69265E00A7A34A /* InsuranceCell.swift in Sources */,
 				DE9F9E361F19FDD4003CF080 /* MQBotWebViewBubbleAnswerCell.m in Sources */,
 				DE868E081F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
 				DE2542181F32FD3500872C22 /* NoteInfo.swift in Sources */,
