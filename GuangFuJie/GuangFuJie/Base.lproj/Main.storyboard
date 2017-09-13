@@ -4245,9 +4245,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EBb-oG-jFl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBb-oG-jFl">
                                 <rect key="frame" x="75" y="64" width="300" height="553"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="纬度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmi-6f-B90">
                                         <rect key="frame" x="29" y="53" width="116" height="21"/>
@@ -4323,9 +4322,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Biq-Eg-rta">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Biq-Eg-rta">
                                 <rect key="frame" x="75" y="64" width="300" height="553"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUl-QW-FB7">
                                         <rect key="frame" x="21" y="499" width="110" height="40"/>
@@ -4604,9 +4602,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yh-0w-ySr">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yh-0w-ySr">
                                 <rect key="frame" x="75" y="65" width="300" height="553"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ8-k5-fb1">
                                         <rect key="frame" x="21" y="499" width="110" height="40"/>
@@ -4896,9 +4893,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0d-qx-Q2V">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0d-qx-Q2V">
                                 <rect key="frame" x="0.0" y="64" width="75" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="日照计算">
@@ -4908,9 +4904,8 @@
                                     <action selector="leftStepButtonClicked:" destination="EjW-3D-Nib" eventType="touchUpInside" id="zf8-Zr-PDF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXI-Wl-NbQ">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXI-Wl-NbQ">
                                 <rect key="frame" x="0.0" y="203" width="75" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="产能计算">
@@ -4920,9 +4915,8 @@
                                     <action selector="leftStepButtonClicked:" destination="EjW-3D-Nib" eventType="touchUpInside" id="CUk-rq-Hnw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-AW-PCr">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-AW-PCr">
                                 <rect key="frame" x="0.0" y="342" width="75" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="收益分析">
@@ -4932,10 +4926,12 @@
                                     <action selector="leftStepButtonClicked:" destination="EjW-3D-Nib" eventType="touchUpInside" id="Oer-64-Z8S"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQW-7g-bhW">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQW-7g-bhW">
                                 <rect key="frame" x="0.0" y="481" width="75" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="aDp-oj-vRB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="项目勘测">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -4943,6 +4939,36 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Biq-Eg-rta" firstAttribute="top" secondItem="gQT-o7-dXu" secondAttribute="bottom" id="3Jh-dG-vB2"/>
+                            <constraint firstItem="rh3-AW-PCr" firstAttribute="width" secondItem="e0d-qx-Q2V" secondAttribute="width" id="5XH-aE-sXR"/>
+                            <constraint firstItem="rh3-AW-PCr" firstAttribute="leading" secondItem="LWa-xt-Tem" secondAttribute="leading" id="5pZ-c2-OOL"/>
+                            <constraint firstItem="LXI-Wl-NbQ" firstAttribute="height" secondItem="e0d-qx-Q2V" secondAttribute="height" id="C3x-3M-ZsY"/>
+                            <constraint firstItem="rh3-AW-PCr" firstAttribute="height" secondItem="e0d-qx-Q2V" secondAttribute="height" id="Ce0-O5-yh3"/>
+                            <constraint firstAttribute="trailing" secondItem="1Yh-0w-ySr" secondAttribute="trailing" id="D1t-UB-cYl"/>
+                            <constraint firstItem="WQW-7g-bhW" firstAttribute="height" secondItem="e0d-qx-Q2V" secondAttribute="height" id="DC9-pX-otr"/>
+                            <constraint firstItem="WQW-7g-bhW" firstAttribute="leading" secondItem="e0d-qx-Q2V" secondAttribute="leading" id="EdT-4g-NcF"/>
+                            <constraint firstItem="1Yh-0w-ySr" firstAttribute="top" secondItem="gQT-o7-dXu" secondAttribute="bottom" constant="1" id="KB5-ea-vie"/>
+                            <constraint firstItem="biz-gO-pov" firstAttribute="top" secondItem="Biq-Eg-rta" secondAttribute="bottom" constant="1" id="MdL-tS-IrK"/>
+                            <constraint firstItem="biz-gO-pov" firstAttribute="top" secondItem="EBb-oG-jFl" secondAttribute="bottom" constant="1" id="Nrb-ns-ICA"/>
+                            <constraint firstItem="LXI-Wl-NbQ" firstAttribute="leading" secondItem="LWa-xt-Tem" secondAttribute="leading" id="PPL-xZ-6t6"/>
+                            <constraint firstItem="e0d-qx-Q2V" firstAttribute="top" secondItem="gQT-o7-dXu" secondAttribute="bottom" id="PUO-tx-81Q"/>
+                            <constraint firstItem="LXI-Wl-NbQ" firstAttribute="width" secondItem="e0d-qx-Q2V" secondAttribute="width" id="SVS-bK-w2T"/>
+                            <constraint firstItem="LXI-Wl-NbQ" firstAttribute="top" secondItem="e0d-qx-Q2V" secondAttribute="bottom" id="X6G-fb-XvI"/>
+                            <constraint firstItem="WQW-7g-bhW" firstAttribute="top" secondItem="rh3-AW-PCr" secondAttribute="bottom" id="YzQ-he-rID"/>
+                            <constraint firstItem="rh3-AW-PCr" firstAttribute="top" secondItem="LXI-Wl-NbQ" secondAttribute="bottom" id="a1e-pR-sTq"/>
+                            <constraint firstAttribute="trailing" secondItem="Biq-Eg-rta" secondAttribute="trailing" id="bYC-cG-SCT"/>
+                            <constraint firstItem="1Yh-0w-ySr" firstAttribute="leading" secondItem="rh3-AW-PCr" secondAttribute="trailing" id="brk-1p-tZF"/>
+                            <constraint firstItem="WQW-7g-bhW" firstAttribute="leading" secondItem="rh3-AW-PCr" secondAttribute="leading" id="cJ8-Tn-Wj1"/>
+                            <constraint firstItem="Biq-Eg-rta" firstAttribute="leading" secondItem="WQW-7g-bhW" secondAttribute="trailing" id="chs-fB-1yN"/>
+                            <constraint firstItem="EBb-oG-jFl" firstAttribute="top" secondItem="gQT-o7-dXu" secondAttribute="bottom" id="kcm-HS-8l5"/>
+                            <constraint firstAttribute="trailing" secondItem="EBb-oG-jFl" secondAttribute="trailing" id="mjp-97-yJR"/>
+                            <constraint firstItem="biz-gO-pov" firstAttribute="top" secondItem="1Yh-0w-ySr" secondAttribute="bottom" id="ofs-vG-UVL"/>
+                            <constraint firstItem="Biq-Eg-rta" firstAttribute="leading" secondItem="1Yh-0w-ySr" secondAttribute="leading" id="plk-dR-Gsb"/>
+                            <constraint firstAttribute="bottom" secondItem="WQW-7g-bhW" secondAttribute="bottom" constant="47" id="u4S-Rc-KP7"/>
+                            <constraint firstItem="1Yh-0w-ySr" firstAttribute="leading" secondItem="LXI-Wl-NbQ" secondAttribute="trailing" id="vfQ-38-QyP"/>
+                            <constraint firstItem="EBb-oG-jFl" firstAttribute="leading" secondItem="WQW-7g-bhW" secondAttribute="trailing" id="xnZ-uM-8HU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oPb-dT-Rt7"/>
                     <connections>
