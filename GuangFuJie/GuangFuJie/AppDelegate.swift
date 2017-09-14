@@ -50,6 +50,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
                 print("美洽 SDK：初始化失败")
             }
         }
+        
+        if (UserDefaultManager.showGuide()) {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "GuideViewController")
+            self.window?.rootViewController = vc
+        } else {
+            initMain()
+        }
+    }
+    
+    func initMain() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "HomeTabBarController")
+        self.window?.rootViewController = vc
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -167,6 +167,8 @@
 		DE3AE0B71F691FC700A7A34A /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */; };
 		DE3AE0C21F69265E00A7A34A /* InsuranceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */; };
 		DE3AE0C31F69265E00A7A34A /* InsuranceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */; };
+		DE6790671F6A692500A654BC /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6790661F6A692500A654BC /* GuideViewController.swift */; };
+		DE6790711F6A6C6B00A654BC /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6790661F6A692500A654BC /* GuideViewController.swift */; };
 		DE6D91F61F2DBAAA008E0E3A /* RootComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */; };
 		DE6D91F81F2DBAC4008E0E3A /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */; };
 		DE6D91FA1F2DBAD8008E0E3A /* RootPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */; };
@@ -1247,6 +1249,7 @@
 		DE3954571F1481E500A44740 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionInfo.swift; path = GuangFuJie/Models/QuestionInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceCell.swift; sourceTree = "<group>"; };
+		DE6790661F6A692500A654BC /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootComViewController.swift; sourceTree = "<group>"; };
 		DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
 		DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPayViewController.swift; sourceTree = "<group>"; };
@@ -2448,6 +2451,7 @@
 				DE868DF11F0DE66400FF7FD3 /* Root */,
 				DE9F999E1F19FD3C003CF080 /* AddNoteViewController.swift */,
 				DE39544C1F147FDD00A44740 /* ApplyForOrderViewController.swift */,
+				DE6790661F6A692500A654BC /* GuideViewController.swift */,
 				DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */,
 				DE39544B1F147FDD00A44740 /* BuySafeViewController.swift */,
 				DE3952271F14629100A44740 /* CalResultViewController.swift */,
@@ -4651,6 +4655,7 @@
 				DE8689051F0DD07300FF7FD3 /* MBProgressHUD.m in Sources */,
 				DE9F9E5B1F19FDD4003CF080 /* MQChatFileUtil.m in Sources */,
 				DE9F9DEB1F19FDD4003CF080 /* MQChatViewService.m in Sources */,
+				DE6790671F6A692500A654BC /* GuideViewController.swift in Sources */,
 				DE868D991F0DE4AC00FF7FD3 /* BCPreRefundResp.m in Sources */,
 				DEE682061F18C40400157560 /* LeaseViewController.swift in Sources */,
 				DED352A01F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */,
@@ -5022,6 +5027,7 @@
 				DE9F9E201F19FDD4003CF080 /* MQFileDownloadCellModel.m in Sources */,
 				DE39521C1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
 				DE3954501F147FDD00A44740 /* ApplyForOrderViewController.swift in Sources */,
+				DE6790711F6A6C6B00A654BC /* GuideViewController.swift in Sources */,
 				DE8688721F0DD05900FF7FD3 /* QNALAssetFile.m in Sources */,
 				DE3954121F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
 				DE9F9E7E1F19FDD4003CF080 /* MEIQIA_HPTextViewInternal.m in Sources */,
