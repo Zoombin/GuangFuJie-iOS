@@ -14,17 +14,17 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     @IBOutlet weak var bkgSYView: UIView!
     @IBOutlet weak var bkgXJLView: UIView!
     
+    //日照计算
     @IBOutlet weak var latLabel: UILabel!
     @IBOutlet weak var lngLabel: UILabel!
     @IBOutlet weak var locationButton: UIButton!
-    
     @IBOutlet weak var average30: UILabel!
     @IBOutlet weak var averagehor: UILabel!
     
+    //产能计算
     @IBOutlet weak var roofSizeTextField: UITextField!
     @IBOutlet weak var roofTypeButton: UIButton!
     
-    //产能计算
     @IBOutlet weak var buildSize: UILabel! //装机容量
     @IBOutlet weak var buildPrice: UILabel! //装机费用
     @IBOutlet weak var electricFirstyearHours: UILabel! //首年利用小时数
@@ -36,6 +36,30 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     @IBOutlet weak var reduceSo2: UILabel! //减少二氧化硫
     @IBOutlet weak var reduceNox: UILabel! //减少氮化物排放
     @IBOutlet weak var reduceSmoke: UILabel! //减少烟雾排行
+    
+    //收益分析
+    @IBOutlet weak var tzjeLabel: UILabel! //投资金额
+    @IBOutlet weak var khsldzjTextField: UITextField! //可回收流动资金
+    @IBOutlet weak var ywcbTextField: UITextField! //运维成本
+    @IBOutlet weak var zjbtTextField: UITextField! //装机补贴
+    @IBOutlet weak var dkblTextField: UITextField! //贷款比例
+    @IBOutlet weak var dknxTextField: UITextField! //贷款年限
+    @IBOutlet weak var fullButton: UIButton! //全额上网
+    @IBOutlet weak var leftButton: UIButton! //余电上网
+    @IBOutlet weak var zydblTextField: UITextField! //自用电比例
+    @IBOutlet weak var zyddjTextField: UITextField! //自用电电价
+    @IBOutlet weak var ydbtTextField: UITextField! //用电补贴
+    @IBOutlet weak var ydbtnxTextField: UITextField! //用电补贴年限
+    @IBOutlet weak var ydswjTextField: UITextField! //余电上网价
+    
+    //现金流向
+    @IBOutlet weak var tzjeLabel: UILabel! //投资金额
+    @IBOutlet weak var zjrlLabel: UILabel! //装机容量
+    @IBOutlet weak var dkLabel: UILabel! //贷款金额
+    @IBOutlet weak var dknxLabel: UILabel! //贷款年限
+    @IBOutlet weak var hkfsButton: UIButton! //还款方式
+    @IBOutlet weak var dkllTextField: UITextField! //贷款利率
+    @IBOutlet weak var dkbTextField: UITextField! //贷款倍率
     
     
     var projectCalInfo: ProjectcalInfo?
@@ -95,7 +119,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             hideAllView()
             self.bkgCNView.isHidden = false
             changeStepButtonWithIndex(index: 1)
-        } else {
+        } else if (sender.tag == 2) {
             if (energyCalInfo == nil) {
                 self.showHint("请先计算产能计算数据")
                 return
@@ -103,6 +127,9 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             hideAllView()
             self.bkgSYView.isHidden = false
             changeStepButtonWithIndex(index: 2)
+            getSYParams()
+        } else {
+            
         }
     }
     
@@ -198,6 +225,21 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             self.hideHud()
             self.showHint(msg)
         }
+    }
+    
+    //获取收益分析的参数
+    func getSYParams() {
+        API.sharedInstance.getCityFromLatlng(lat: currentLat!, lng: currentLng!, success: { (locationInfo) in
+            API.sharedInstance.incomecalParams(lat: self.currentLat!, lng: self.currentLng!, province: locationInfo.province_id!, city: locationInfo.city_id!, area: locationInfo.area_id!, type: NSNumber.init(value: self.type), size: roofSizeTextField.text, onlineType: 0, success: { (params) in
+                
+            }) { (msg) in
+                self.showHint(msg)
+            }
+        }) { (msg) in
+            self.showHint(msg)
+        }
+        
+        
     }
     
     func addBkgViewShadow(view: UIView) {

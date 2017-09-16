@@ -36,6 +36,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        searchBar.delegate = self
         scrollView.contentSize = CGSize(width: 0, height: 800)
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
@@ -236,6 +237,12 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
         }
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.resignFirstResponder()
+        self.tabBarController?.selectedIndex = 3
+        return false
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

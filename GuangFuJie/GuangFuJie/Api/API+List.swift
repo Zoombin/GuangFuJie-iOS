@@ -1684,7 +1684,7 @@ extension API {
     }
     
     //收益计算-参数获取
-    func incomecalParams(lat: NSNumber, lng: NSNumber, province: NSNumber, city: NSNumber, area: NSNumber, type: NSNumber, size: NSNumber, success: ((_ commonModel: IncomeCalParams) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func incomecalParams(lat: NSNumber, lng: NSNumber, province: NSNumber, city: NSNumber, area: NSNumber, type: NSNumber, size: NSNumber, onlineType: NSNumber, success: ((_ commonModel: IncomeCalParams) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/incomecalparams";
         let params = [
             "lat": lat, //纬度
@@ -1694,6 +1694,7 @@ extension API {
             "area": area,   //区域id
             "type": type,   //1,2,3 三种类型
             "size": size,        //面积
+            "onlineType": onlineType, //上网模式 1：全额上网 2：余电上网
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
