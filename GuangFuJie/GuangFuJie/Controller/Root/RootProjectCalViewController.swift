@@ -53,14 +53,12 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     @IBOutlet weak var ydswjTextField: UITextField! //余电上网价
     
     //现金流向
-    @IBOutlet weak var tzjeLabel: UILabel! //投资金额
+    @IBOutlet weak var xjtzjeLabel: UILabel! //现金流向投资金额
     @IBOutlet weak var zjrlLabel: UILabel! //装机容量
     @IBOutlet weak var dkLabel: UILabel! //贷款金额
-    @IBOutlet weak var dknxLabel: UILabel! //贷款年限
     @IBOutlet weak var hkfsButton: UIButton! //还款方式
     @IBOutlet weak var dkllTextField: UITextField! //贷款利率
     @IBOutlet weak var dkbTextField: UITextField! //贷款倍率
-    
     
     var projectCalInfo: ProjectcalInfo?
     var energyCalInfo: EnergycalInfo?
@@ -129,7 +127,9 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             changeStepButtonWithIndex(index: 2)
             getSYParams()
         } else {
-            
+            hideAllView()
+            self.bkgXJLView.isHidden = false
+            changeStepButtonWithIndex(index: 3)
         }
     }
     
@@ -147,7 +147,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             }
             hideAllView()
             self.bkgCNView.isHidden = false
-            changeStepButtonWithIndex(index: 1)
+            changeStepButtonWithIndex(index: 1)                                
         } else if (bkgCNView.isHidden == false) {
             if (energyCalInfo == nil) {
                 self.showHint("请先计算产能计算数据")
@@ -156,6 +156,10 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             hideAllView()
             self.bkgSYView.isHidden = false
             changeStepButtonWithIndex(index: 2)
+        } else if (bkgSYView.isHidden == false) {
+            hideAllView()
+            self.bkgXJLView.isHidden = false
+            changeStepButtonWithIndex(index: 3)
         }
     }
     
@@ -229,17 +233,16 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     //获取收益分析的参数
     func getSYParams() {
-        API.sharedInstance.getCityFromLatlng(lat: currentLat!, lng: currentLng!, success: { (locationInfo) in
-            API.sharedInstance.incomecalParams(lat: self.currentLat!, lng: self.currentLng!, province: locationInfo.province_id!, city: locationInfo.city_id!, area: locationInfo.area_id!, type: NSNumber.init(value: self.type), size: roofSizeTextField.text, onlineType: 0, success: { (params) in
-                
-            }) { (msg) in
-                self.showHint(msg)
-            }
-        }) { (msg) in
-            self.showHint(msg)
-        }
-        
-        
+//        API.sharedInstance.getCityFromLatlng(lat: currentLat!, lng: currentLng!, success: { (locationInfo) in
+//            API.sharedInstance.incomecalParams(lat: self.currentLat!, lng: self.currentLng!, province: locationInfo.province_id!, city: locationInfo.city_id!, area: locationInfo.area_id!, type: NSNumber.init(value: self.type), size: roofSizeTextField.text, onlineType: 0, success: { (params) in
+//                
+//            }) { (msg) in
+//                self.showHint(msg)
+//            }
+//        }) { (msg) in
+//            self.showHint(msg)
+//        }
+
     }
     
     func addBkgViewShadow(view: UIView) {
@@ -280,12 +283,12 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     @IBAction func showTypeAction() {
         let vc = UIAlertController.init(title: "选择铺设方式", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
-        let type1Action = UIAlertAction.init(title: "水平铺设", style: UIAlertActionStyle.default) { (action) in
-            self.roofTypeButton.setTitle("水平铺设", for: UIControlState.normal)
+        let type1Action = UIAlertAction.init(title: "平顶", style: UIAlertActionStyle.default) { (action) in
+            self.roofTypeButton.setTitle("平顶", for: UIControlState.normal)
             self.type = 1
         }
-        let type2Action = UIAlertAction.init(title: "倾角铺设", style: UIAlertActionStyle.default) { (action) in
-            self.roofTypeButton.setTitle("倾角铺设", for: UIControlState.normal)
+        let type2Action = UIAlertAction.init(title: "斜顶", style: UIAlertActionStyle.default) { (action) in
+            self.roofTypeButton.setTitle("斜顶", for: UIControlState.normal)
             self.type = 2
         }
         let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
