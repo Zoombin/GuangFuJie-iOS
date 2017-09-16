@@ -12,6 +12,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     @IBOutlet weak var bkgXZView: UIView!
     @IBOutlet weak var bkgCNView: UIView!
     @IBOutlet weak var bkgSYView: UIView!
+    @IBOutlet weak var bkgXJLView: UIView!
     
     @IBOutlet weak var latLabel: UILabel!
     @IBOutlet weak var lngLabel: UILabel!
@@ -46,7 +47,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     @IBOutlet weak var step1Button: UIButton!
     @IBOutlet weak var step2Button: UIButton!
     @IBOutlet weak var step3Button: UIButton!
-//    @IBOutlet weak var step1Button: UIButton!
+    @IBOutlet weak var step4Button: UIButton!
     
     var type = 0
     
@@ -208,9 +209,6 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        addBkgViewShadow(view: bkgXZView)
-//        addBkgViewShadow(view: bkgCNView)
-//        addBkgViewShadow(view: bkgSYView)
         bkgXZView.layer.borderColor = UIColor.black.cgColor
         bkgXZView.layer.borderWidth = 0.5
         
