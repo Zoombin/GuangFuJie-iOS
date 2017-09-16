@@ -182,7 +182,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     //位置选择Delegate方法
     func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
-        locationButton.setTitle("\(StringUtils.getString(city.name))\(StringUtils.getString(area.name))", for: UIControlState.normal)
+        locationButton.setTitle("\(StringUtils.getString(provice.name))\(StringUtils.getString(city.name))\(StringUtils.getString(area.name))", for: UIControlState.normal)
         
         latLabel.text = String(format: "纬度:%.2f", StringUtils.getNumber(area.lat).floatValue)
         lngLabel.text = String(format: "经度:%.2f", StringUtils.getNumber(area.lng).floatValue)
@@ -276,6 +276,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     @IBAction func calSYButtonClicked() {
         let tmpParams = CalResultParams()
+        tmpParams.address = locationButton.titleLabel?.text!
         tmpParams.type = NSNumber.init(value: type)
         tmpParams.size = roofSizeTextField.text!
         tmpParams.invest_amount = energyCalInfo!.build_price

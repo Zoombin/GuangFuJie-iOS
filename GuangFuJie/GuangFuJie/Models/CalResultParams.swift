@@ -9,7 +9,7 @@
 import UIKit
 
 class CalResultParams: NSObject {
-    
+    var address: String? //地址
     var type: NSNumber?                     //1,2,3 三种类型
     var size: String?                       //面积
     var invest_amount: NSNumber?            //投资金额

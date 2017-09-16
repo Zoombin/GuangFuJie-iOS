@@ -29,12 +29,28 @@ class RootComViewController: BaseViewController, UITableViewDelegate, UITableVie
         self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.projectcalIncomecal(type: params.type!, size: params.size!, invest_amount: params.invest_amount!, recoverable_liquid_capital: params.recoverable_liquid_capital!, annual_maintenance_cost: params.annual_maintenance_cost!, installed_subsidy: params.installed_subsidy!, loan_ratio: params.loan_ratio!, years_of_loans: params.years_of_loans!, occupied_electric_ratio: params.occupied_electric_ratio!, electric_price_perional: params.electric_price_perional!, electricity_subsidy: params.electricity_subsidy!, electricity_subsidy_year: params.electricity_subsidy_year!, sparetime_electric_price: params.sparetime_electric_price!, wOfPrice: params.wOfPrice!, firstYearKwElectric: params.firstYearKwElectric!, success: { (calInfo) in
             self.hideHud()
+            self.inputValue(result: calInfo)
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
         }
     }
     
+    func inputValue(result: IncomecalInfo) {
+        results.addObjects(from: [params.address!,
+                                  result.energy_year! + "kWh/㎡",
+                                  result.size! + "㎡",
+                                  result.build_size! + "kWh",
+                                  result.invest_amount! + "元",
+                                  result.annual_maintenance_cost! + "元",
+                                  result.electric_firstyear_total! + "度",
+                                  result.electric_25! + "度",
+                                  result.income_firstyear! + "元",
+                                  result.income_25! + "元",
+                                  result.income_rate! + "%",
+                                  result.income_date! + "年"])
+        resultTableView.reloadData()
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -60,6 +76,7 @@ class RootComViewController: BaseViewController, UITableViewDelegate, UITableVie
         let cellIdentifier = "ResultCell\((indexPath.row+1)%2 == 0 ? "1" : "2")"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         cell?.textLabel?.text = titles[indexPath.row]
+        cell?.detailTextLabel?.text = results[indexPath.row] as? String
         return cell!
     }
     

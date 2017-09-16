@@ -1625,7 +1625,7 @@ extension API {
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
-        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
             let info = IncomecalInfo.mj_object(withKeyValues: data)
             success?(info!)
         }, failure: failure)
