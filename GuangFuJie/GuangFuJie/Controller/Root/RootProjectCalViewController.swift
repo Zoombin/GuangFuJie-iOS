@@ -274,6 +274,34 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         ydswjTextField.text = "\(StringUtils.getNumber(params.sparetime_electric_price))"
     }
     
+    @IBAction func calSYButtonClicked() {
+        let tmpParams = CalResultParams()
+        tmpParams.type = NSNumber.init(value: type)
+        tmpParams.size = roofSizeTextField.text!
+        tmpParams.invest_amount = energyCalInfo!.build_price
+        let ywcbPercent = NSString.init(string: ywcbTextField.text!)
+        let ywcbValue = ywcbPercent.floatValue * energyCalInfo!.build_price!.floatValue
+        
+        tmpParams.annual_maintenance_cost = String(format: "%.2f%", ywcbValue)
+        tmpParams.recoverable_liquid_capital = String(format: "%.2f", StringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
+        tmpParams.installed_subsidy = zjbtTextField.text!
+        tmpParams.loan_ratio = dkblTextField.text!
+        tmpParams.years_of_loans = dknxTextField.text!
+        tmpParams.occupied_electric_ratio = zydblTextField.text!
+        tmpParams.electric_price_perional = zyddjTextField.text!
+        tmpParams.electricity_subsidy = ydbtTextField.text!
+        tmpParams.electricity_subsidy_year = ydbtnxTextField.text!
+        tmpParams.sparetime_electric_price = ydswjTextField.text!
+        tmpParams.wOfPrice = "8"
+        tmpParams.firstYearKwElectric = "4"
+        
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let tabVC = sb.instantiateViewController(withIdentifier: "CalResultTabBar") as! UITabBarController
+        let first = tabVC.viewControllers?.first as! RootComViewController
+        first.params = tmpParams
+        self.pushViewController(tabVC)
+    }
+    
     func addBkgViewShadow(view: UIView) {
         view.layer.shadowColor = UIColor.lightGray.cgColor
         view.layer.shadowRadius = 5.0

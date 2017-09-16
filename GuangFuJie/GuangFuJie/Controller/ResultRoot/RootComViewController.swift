@@ -10,23 +10,38 @@ import UIKit
 
 class RootComViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var resultTableView: UITableView!
-    var titles = ["投资金额", "年运维成本", "首年发电量", "25年总发电量", "首年收益", "25年总收益", "收益率", "回报周期"]
+    
+    var params: CalResultParams!
+    var titles = ["项目地点", "年辐射量", "屋顶面积", "装机容量", "投资金额", "年运维成本", "首年发电量", "25年总发电量", "首年收益", "25年总收益", "收益率", "回报周期"]
+    var results = NSMutableArray()
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
         // Do any additional setup after loading the view.
+        loadComReport()
     }
     
     func initView() {
         self.navigationItem.title = "综合收益"
     }
     
+    func loadComReport() {
+        self.showHud(in: self.view, hint: "加载中...")
+        API.sharedInstance.projectcalIncomecal(type: params.type!, size: params.size!, invest_amount: params.invest_amount!, recoverable_liquid_capital: params.recoverable_liquid_capital!, annual_maintenance_cost: params.annual_maintenance_cost!, installed_subsidy: params.installed_subsidy!, loan_ratio: params.loan_ratio!, years_of_loans: params.years_of_loans!, occupied_electric_ratio: params.occupied_electric_ratio!, electric_price_perional: params.electric_price_perional!, electricity_subsidy: params.electricity_subsidy!, electricity_subsidy_year: params.electricity_subsidy_year!, sparetime_electric_price: params.sparetime_electric_price!, wOfPrice: params.wOfPrice!, firstYearKwElectric: params.firstYearKwElectric!, success: { (calInfo) in
+            self.hideHud()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return results.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

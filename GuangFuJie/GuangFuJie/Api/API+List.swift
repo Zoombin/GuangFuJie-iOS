@@ -1603,7 +1603,7 @@ extension API {
     }
     
     //收益综合报告
-    func projectcalIncomecal(type: NSNumber, size: NSNumber, invest_amount: NSNumber, recoverable_liquid_capital: NSNumber, annual_maintenance_cost: NSNumber, installed_subsidy: NSNumber, loan_ratio: NSNumber, years_of_loans: NSNumber, occupied_electric_ratio: NSNumber, lectric_price_perional: NSNumber, electricity_subsidy : NSNumber, electricity_subsidy_year: NSNumber, sparetime_electric_price: NSNumber, success: ((_ commonModel: IncomecalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalIncomecal(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, wOfPrice: String, firstYearKwElectric: String, success: ((_ commonModel: IncomecalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/incomecal";
         let params = [
             "type": type, //三种类型
@@ -1615,10 +1615,12 @@ extension API {
             "loan_ratio": loan_ratio,//贷款比例
             "years_of_loans": years_of_loans, //贷款年数
             "occupied_electric_ratio": occupied_electric_ratio, //自用电比例
-            "lectric_price_perional": lectric_price_perional, //自用电电价
+            "electric_price_perional": electric_price_perional, //自用电电价
             "electricity_subsidy": electricity_subsidy, //用电补贴
             "electricity_subsidy_year": electricity_subsidy_year,//用电补贴年
             "sparetime_electric_price": sparetime_electric_price, //余电上网价
+            "wOfPrice": wOfPrice, //每瓦投资金额                  默认：8
+            "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电     默认：4
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)

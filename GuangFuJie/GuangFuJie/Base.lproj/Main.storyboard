@@ -1788,7 +1788,7 @@
         <!--收益报告-->
         <scene sceneID="Xbn-N1-8k2">
             <objects>
-                <tabBarController title="收益报告" hidesBottomBarWhenPushed="YES" id="10d-fN-HDj" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CalResultTabBar" title="收益报告" hidesBottomBarWhenPushed="YES" id="10d-fN-HDj" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="8EO-TF-HzH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -4800,6 +4800,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="计算收益"/>
+                                        <connections>
+                                            <action selector="calSYButtonClicked" destination="EjW-3D-Nib" eventType="touchUpInside" id="dIp-8x-5Bh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAA-Xl-lVg">
                                         <rect key="frame" x="159" y="499" width="110" height="40"/>
