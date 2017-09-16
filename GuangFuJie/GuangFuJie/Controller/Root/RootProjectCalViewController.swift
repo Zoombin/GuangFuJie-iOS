@@ -88,6 +88,9 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         
         self.step3Button.backgroundColor = Colors.calUnSelectColor
         self.step3Button.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)
+        
+        self.step4Button.backgroundColor = Colors.calUnSelectColor
+        self.step4Button.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)
     }
     
     func changeStepButtonWithIndex(index: NSInteger) {
@@ -101,6 +104,9 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         } else if (index == 2) {
             self.step3Button.backgroundColor = Colors.calSelectedColor
             self.step3Button.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+        } else if (index == 3) {
+            self.step4Button.backgroundColor = Colors.calSelectedColor
+            self.step4Button.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
         }
     }
     
@@ -137,6 +143,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         self.bkgXZView.isHidden = true
         self.bkgCNView.isHidden = true
         self.bkgSYView.isHidden = true
+        self.bkgXJLView.isHidden = true
     }
     
     @IBAction func nextStep() {
@@ -156,6 +163,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             hideAllView()
             self.bkgSYView.isHidden = false
             changeStepButtonWithIndex(index: 2)
+            getSYParams()
         } else if (bkgSYView.isHidden == false) {
             hideAllView()
             self.bkgXJLView.isHidden = false
@@ -233,16 +241,37 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     //获取收益分析的参数
     func getSYParams() {
-//        API.sharedInstance.getCityFromLatlng(lat: currentLat!, lng: currentLng!, success: { (locationInfo) in
-//            API.sharedInstance.incomecalParams(lat: self.currentLat!, lng: self.currentLng!, province: locationInfo.province_id!, city: locationInfo.city_id!, area: locationInfo.area_id!, type: NSNumber.init(value: self.type), size: roofSizeTextField.text, onlineType: 0, success: { (params) in
-//                
-//            }) { (msg) in
-//                self.showHint(msg)
-//            }
-//        }) { (msg) in
-//            self.showHint(msg)
-//        }
-
+        API.sharedInstance.getCityFromLatlng(lat: currentLat!, lng: currentLng!, success: { (locationInfo) in
+            API.sharedInstance.incomecalParams(lat: self.currentLat!, lng: self.currentLng!, province: locationInfo.province_id!, city: locationInfo.city_id!, area: locationInfo.area_id!, type: NSNumber.init(value: self.type), size: self.roofSizeTextField.text!, onlineType: self.fullButton.isSelected == true ? 1 : 2, success: { (params) in
+                self.inputSYValues(params: params)
+            }) { (msg) in
+                self.showHint(msg)
+            }
+        }) { (msg) in
+            self.showHint(msg)
+        }
+    }
+    
+    func inputSYValues(params: IncomeCalParams) {
+        tzjeLabel.text = "\(StringUtils.getNumber(energyCalInfo!.build_price))"
+        if (khsldzjTextField.text!.isEmpty) {
+            khsldzjTextField.text = String(format: "%.2f", StringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
+        }
+        if (ywcbTextField.text!.isEmpty) {
+            ywcbTextField.text = "\(StringUtils.getNumber(params.annual_maintenance_cost))"
+        }
+        if (zjbtTextField.text!.isEmpty) {
+            zjbtTextField.text = "\(StringUtils.getNumber(params.installed_subsidy))"
+        }
+        if (dkblTextField.text!.isEmpty) {
+            dkblTextField.text = "\(StringUtils.getNumber(params.loan_ratio))"
+            dknxTextField.text = "\(StringUtils.getNumber(params.years_of_loans))"
+        }
+        zydblTextField.text = "\(StringUtils.getNumber(params.occupied_electric_ratio))"
+        zyddjTextField.text = "\(StringUtils.getNumber(params.electric_price_perional))"
+        ydbtTextField.text = "\(StringUtils.getNumber(params.electricity_subsidy))"
+        ydbtnxTextField.text = "\(StringUtils.getNumber(params.electricity_subsidy_year))"
+        ydswjTextField.text = "\(StringUtils.getNumber(params.sparetime_electric_price))"
     }
     
     func addBkgViewShadow(view: UIView) {
@@ -250,6 +279,21 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         view.layer.shadowRadius = 5.0
         view.layer.shadowOpacity = 0.8
         view.layer.shadowOffset = CGSize(width: -5, height: 0)
+    }
+    
+    func resetAllCheckBox() {
+        fullButton.isSelected = false //全额
+        leftButton.isSelected = false //余电
+    }
+    
+   @IBAction func checkBoxButtonClicked(_ sender: UIButton) {
+        resetAllCheckBox()
+        if (sender.tag == 0) {
+            sender.isSelected = true
+        } else if (sender.tag == 1) {
+            sender.isSelected = true
+        }
+        getSYParams()
     }
 
     override func viewDidLayoutSubviews() {
@@ -262,6 +306,9 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         
         bkgSYView.layer.borderColor = UIColor.black.cgColor
         bkgSYView.layer.borderWidth = 0.5
+        
+        bkgXJLView.layer.borderColor = UIColor.black.cgColor
+        bkgXJLView.layer.borderWidth = 0.5
         
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         

@@ -1684,7 +1684,7 @@ extension API {
     }
     
     //收益计算-参数获取
-    func incomecalParams(lat: NSNumber, lng: NSNumber, province: NSNumber, city: NSNumber, area: NSNumber, type: NSNumber, size: NSNumber, onlineType: NSNumber, success: ((_ commonModel: IncomeCalParams) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func incomecalParams(lat: NSNumber, lng: NSNumber, province: NSNumber, city: NSNumber, area: NSNumber, type: NSNumber, size: String, onlineType: NSNumber, success: ((_ commonModel: IncomeCalParams) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/incomecalparams";
         let params = [
             "lat": lat, //纬度
