@@ -53,13 +53,18 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         } else if (title == "供电局") {
             self.tabBarController?.selectedIndex = 1
         } else if (title == "地面推广") {
-            //地面推广
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "DiTuiHomeViewController"))
         } else if (title == "推广支持") {
             //???
         } else if (title == "本地安装商") {
             //更多安装商
+            let vc = MoreInstallerViewController(nibName: "MoreInstallerViewController", bundle: nil)
+            self.pushViewController(vc)
         } else if (title == "本地业主") {
             //本地业主
+            let vc = GFJRoofListViewController(nibName: "GFJRoofListViewController", bundle: nil)
+            self.pushViewController(vc)
         } else if (title == "投资收益") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
@@ -67,9 +72,9 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             vc.type = 11
             self.pushViewController(vc)
         } else if (title == "实战模式") {
-            //暂无
+            self.showHint("功能暂未开放")
         } else if (title == "加盟支持") {
-            //暂无
+            self.showHint("功能暂未开放")
         } else if (title == "安装运维") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController

@@ -60,6 +60,8 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     @IBOutlet weak var dkllTextField: UITextField! //贷款利率
     @IBOutlet weak var dkbTextField: UITextField! //贷款倍率
     
+    var loanType = 1 //还款方式
+    
     var projectCalInfo: ProjectcalInfo?
     var energyCalInfo: EnergycalInfo?
     
@@ -288,6 +290,17 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         ydbtTextField.text = "\(StringUtils.getNumber(params.electricity_subsidy))"
         ydbtnxTextField.text = "\(StringUtils.getNumber(params.electricity_subsidy_year))"
         ydswjTextField.text = "\(StringUtils.getNumber(params.sparetime_electric_price))"
+    }
+    
+    func inputXMCSValues() {
+//        @IBOutlet weak var xjtzjeLabel: UILabel! //现金流向投资金额
+//        @IBOutlet weak var zjrlLabel: UILabel! //装机容量
+//        @IBOutlet weak var dkLabel: UILabel! //贷款金额
+//        @IBOutlet weak var hkfsButton: UIButton! //还款方式
+//        @IBOutlet weak var dkllTextField: UITextField! //贷款利率
+//        @IBOutlet weak var dkbTextField: UITextField! //贷款倍率
+        dkllTextField.text = "4.9"
+        dkbTextField.text = "1.0"
     }
     
     @IBAction func calSYButtonClicked() {
