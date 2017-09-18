@@ -11,6 +11,8 @@
 		DE02379B1F6D1491008BE3C5 /* CalResultParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237991F6D1491008BE3C5 /* CalResultParams.swift */; };
 		DE02379D1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */; };
 		DE02379E1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */; };
+		DE0237A61F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
+		DE0237A71F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
 		DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
@@ -1129,6 +1131,7 @@
 /* Begin PBXFileReference section */
 		DE0237991F6D1491008BE3C5 /* CalResultParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalResultParams.swift; path = GuangFuJie/Models/CalResultParams.swift; sourceTree = SOURCE_ROOT; };
 		DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultCommonCell.swift; sourceTree = "<group>"; };
+		DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashListViewController.swift; sourceTree = "<group>"; };
 		DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FranchiseeInfo.swift; path = GuangFuJie/Models/FranchiseeInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddViewController.swift; sourceTree = "<group>"; };
 		DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListViewController.swift; sourceTree = "<group>"; };
@@ -2499,6 +2502,7 @@
 				DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */,
 				DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */,
 				DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */,
+				DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4866,6 +4870,7 @@
 				DE9F9DEF1F19FDD4003CF080 /* MQPreChatCells.m in Sources */,
 				DE02379D1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */,
 				DEE6C9DE1F35BECA00AB6031 /* IQToolbar.swift in Sources */,
+				DE0237A61F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */,
 				DE9F9E2F1F19FDD4003CF080 /* MQBotAnswerCell.m in Sources */,
 				DE868D931F0DE4AC00FF7FD3 /* BCPayPalReq.m in Sources */,
 				DE868E0A1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
@@ -5200,6 +5205,7 @@
 				DE868DC61F0DE4AC00FF7FD3 /* BCNetworkReachabilityManager.m in Sources */,
 				DE8687861F0DCEDC00FF7FD3 /* Constants.swift in Sources */,
 				DE9F9DD81F19FDD4003CF080 /* UIViewController+MQHieriachy.m in Sources */,
+				DE0237A71F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */,
 				DE9F9E141F19FDD4003CF080 /* MQBotAnswerCellModel.m in Sources */,
 				DE9F9E1E1F19FDD4003CF080 /* MQEventCellModel.m in Sources */,
 				DE868DA21F0DE4AC00FF7FD3 /* BCQueryBillsResp.m in Sources */,

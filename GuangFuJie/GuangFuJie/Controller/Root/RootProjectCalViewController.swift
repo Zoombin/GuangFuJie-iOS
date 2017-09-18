@@ -133,6 +133,14 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             changeStepButtonWithIndex(index: 2)
             getSYParams()
         } else {
+            if (projectCalInfo == nil) {
+                self.showHint("请先计算项目选址数据")
+                return
+            }
+            if (energyCalInfo == nil) {
+                self.showHint("请先计算产能计算数据")
+                return
+            }
             hideAllView()
             self.bkgXJLView.isHidden = false
             changeStepButtonWithIndex(index: 3)
@@ -165,6 +173,14 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             changeStepButtonWithIndex(index: 2)
             getSYParams()
         } else if (bkgSYView.isHidden == false) {
+            if (projectCalInfo == nil) {
+                self.showHint("请先计算项目选址数据")
+                return
+            }
+            if (energyCalInfo == nil) {
+                self.showHint("请先计算产能计算数据")
+                return
+            }
             hideAllView()
             self.bkgXJLView.isHidden = false
             changeStepButtonWithIndex(index: 3)
