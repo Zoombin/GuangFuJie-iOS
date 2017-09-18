@@ -88,6 +88,7 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
                 self.infoArray2.addObjects(from: array as [AnyObject])
                 self.loadAreaWithCity(self.infoArray2.firstObject as! CityModel, province: self.currentProvice!)
             }
+            self.currentCity = self.infoArray2.firstObject as? CityModel
             self.tableView2.reloadData()
         }) { (error) in
             self.showHint(error)
@@ -110,6 +111,7 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
             } else {
                 self.infoArray3.addObjects(from: array as [AnyObject])
             }
+            self.currentArea = self.infoArray3.firstObject as? AreaModel
             self.tableView3.reloadData()
         }) { (error) in
             self.showHint(error)
