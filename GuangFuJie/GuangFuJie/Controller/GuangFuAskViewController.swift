@@ -68,11 +68,11 @@ class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let info = qaList[indexPath.row] as! QuestionInfo
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "QuestionDetailViewController") as! QuestionDetailViewController
-        vc.questionInfo = info
-        self.pushViewController(vc)
+//        let info = qaList[indexPath.row] as! QuestionInfo
+//        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "QuestionDetailViewController") as! QuestionDetailViewController
+//        vc.questionInfo = info
+//        self.pushViewController(vc)
     }
 
     /*
