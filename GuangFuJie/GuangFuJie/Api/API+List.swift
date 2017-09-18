@@ -1698,14 +1698,24 @@ extension API {
     }
     
     //收益计算-净收益
-    func projectcalNetprofit(annual_maintenance_cost: NSNumber, type: NSNumber, size: NSNumber, lat: NSNumber, lng: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalNetprofit(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, wOfPrice: String, firstYearKwElectric: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/netprofit";
         let params = [
-            "annual_maintenance_cost": annual_maintenance_cost,//年运维成本
             "type": type, //三种类型
             "size": size, //面积
-            "lat": lat,
-            "lng": lng,
+            "invest_amount": invest_amount,  //投资金额
+            "recoverable_liquid_capital": recoverable_liquid_capital,  //可回收流动资金
+            "annual_maintenance_cost": annual_maintenance_cost, //年运维成本
+            "installed_subsidy": installed_subsidy, //装机补贴
+            "loan_ratio": loan_ratio,//贷款比例
+            "years_of_loans": years_of_loans, //贷款年数
+            "occupied_electric_ratio": occupied_electric_ratio, //自用电比例
+            "electric_price_perional": electric_price_perional, //自用电电价
+            "electricity_subsidy": electricity_subsidy, //用电补贴
+            "electricity_subsidy_year": electricity_subsidy_year,//用电补贴年
+            "sparetime_electric_price": sparetime_electric_price, //余电上网价
+            "wOfPrice": wOfPrice, //每瓦投资金额                  默认：8
+            "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电     默认：4
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)

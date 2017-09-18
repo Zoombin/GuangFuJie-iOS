@@ -9,8 +9,8 @@
 import UIKit
 
 class NetprofitInfo: NSObject {
-    var month: NSNumber?     //第几月
-    var monthPay: NSNumber?    //月还款
-    var monthEarn: NSNumber?   //每月花费
-    var netProfit: NSNumber?   //净利润
+    var month: String?     //第几月
+    var monthPay: String?    //月还款
+    var monthEarn: String?   //每月花费
+    var netProfit: String?   //净利润
 }
