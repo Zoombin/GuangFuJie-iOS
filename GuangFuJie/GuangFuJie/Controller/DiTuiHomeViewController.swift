@@ -37,7 +37,7 @@ class DiTuiHomeViewController: BaseViewController {
     }
     
     func initNoteButton() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "地推笔记", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.noteListButtonClicked))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "地推笔记", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.noteListButtonClicked))
     }
     
     func noteListButtonClicked() {
