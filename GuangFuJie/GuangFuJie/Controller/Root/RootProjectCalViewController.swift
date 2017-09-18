@@ -412,6 +412,23 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func showLoanTypeAction() {
+        let vc = UIAlertController.init(title: "选择还款方式", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let type1Action = UIAlertAction.init(title: "等额本息", style: UIAlertActionStyle.default) { (action) in
+            self.hkfsButton.setTitle("等额本息", for: UIControlState.normal)
+            self.loanType = 1
+        }
+        let type2Action = UIAlertAction.init(title: "等额本金", style: UIAlertActionStyle.default) { (action) in
+            self.hkfsButton.setTitle("等额本金", for: UIControlState.normal)
+            self.loanType = 2
+        }
+        let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        vc.addAction(type1Action)
+        vc.addAction(type2Action)
+        vc.addAction(cancelAction)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
