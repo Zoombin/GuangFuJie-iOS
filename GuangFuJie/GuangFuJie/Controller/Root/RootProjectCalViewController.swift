@@ -300,6 +300,15 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         let tabVC = sb.instantiateViewController(withIdentifier: "CalResultTabBar") as! UITabBarController
         let first = tabVC.viewControllers?.first as! RootComViewController
         first.params = tmpParams
+        
+        let second = tabVC.viewControllers?[1] as! RootElectricViewController
+        second.params = tmpParams
+        
+        let third = tabVC.viewControllers?[2] as! RootPayViewController
+        third.params = tmpParams
+        
+        let fourth = tabVC.viewControllers?[3] as! RootEarnViewController
+        fourth.params = tmpParams
         self.pushViewController(tabVC)
     }
     

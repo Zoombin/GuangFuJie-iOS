@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DE02379A1F6D1491008BE3C5 /* CalResultParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237991F6D1491008BE3C5 /* CalResultParams.swift */; };
 		DE02379B1F6D1491008BE3C5 /* CalResultParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237991F6D1491008BE3C5 /* CalResultParams.swift */; };
+		DE02379D1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */; };
+		DE02379E1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */; };
 		DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
@@ -1126,6 +1128,7 @@
 
 /* Begin PBXFileReference section */
 		DE0237991F6D1491008BE3C5 /* CalResultParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalResultParams.swift; path = GuangFuJie/Models/CalResultParams.swift; sourceTree = SOURCE_ROOT; };
+		DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultCommonCell.swift; sourceTree = "<group>"; };
 		DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FranchiseeInfo.swift; path = GuangFuJie/Models/FranchiseeInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddViewController.swift; sourceTree = "<group>"; };
 		DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListViewController.swift; sourceTree = "<group>"; };
@@ -2444,6 +2447,7 @@
 				DEE682261F19F30700157560 /* NoteCell.swift */,
 				DEF593961F3EEA5500448FC5 /* LoginCell.swift */,
 				DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */,
+				DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4860,6 +4864,7 @@
 				DEC2212D1F135AB7007D6DBE /* GFJWebViewController.swift in Sources */,
 				DE9F9E8F1F19FDD5003CF080 /* wav.mm in Sources */,
 				DE9F9DEF1F19FDD4003CF080 /* MQPreChatCells.m in Sources */,
+				DE02379D1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */,
 				DEE6C9DE1F35BECA00AB6031 /* IQToolbar.swift in Sources */,
 				DE9F9E2F1F19FDD4003CF080 /* MQBotAnswerCell.m in Sources */,
 				DE868D931F0DE4AC00FF7FD3 /* BCPayPalReq.m in Sources */,
@@ -5308,6 +5313,7 @@
 				DE9F9DEE1F19FDD4003CF080 /* MQChatViewTableDataSource.m in Sources */,
 				DE9F9E1C1F19FDD4003CF080 /* MQEvaluationResultCellModel.m in Sources */,
 				DEE681F41F185FDF00157560 /* YeZhuViewController.swift in Sources */,
+				DE02379E1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */,
 				DE9F9E181F19FDD4003CF080 /* MQBotMenuCellModel.m in Sources */,
 				DE868A121F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DE9F9EBC1F19FDD5003CF080 /* MQMessageFormViewStyleDark.m in Sources */,

@@ -9,8 +9,8 @@
 import UIKit
 
 class RepaymentInfo: NSObject {
-    var month: NSNumber? //第几月
-    var monthPay: NSNumber? //月还款
-    var total_money: NSNumber?  //还要还多少
-    var interest: NSNumber?   //利息
+    var month: String? //第几月
+    var monthPay: String? //月还款
+    var total_money: String?  //还要还多少
+    var interest: String?   //利息
 }

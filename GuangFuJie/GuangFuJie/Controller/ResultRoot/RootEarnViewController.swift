@@ -10,6 +10,9 @@ import UIKit
 
 class RootEarnViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var resultTableView: UITableView!
+    var results = NSMutableArray()
+    var params: CalResultParams!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
@@ -41,9 +44,9 @@ class RootEarnViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ResultCell\((indexPath.row+1)%2 == 0 ? "1" : "2")"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        return cell!
+        let cellIdentifier = "CalResultCommonCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! CalResultCommonCell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
