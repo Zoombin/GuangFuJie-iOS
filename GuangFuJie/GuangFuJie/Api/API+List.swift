@@ -1796,7 +1796,7 @@ extension API {
     }
     
     //现金流
-    func projectcalCashflow(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, loan_rate: String, loan_type: String, wOfPrice: String, firstYearKwElectric: String, onlineType: NSNumber, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalCashflow(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, loan_rate: String, loan_type: String, wOfPrice: String, firstYearKwElectric: String, onlineType: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/cashflow"
         let params = [
             "type": type, //三种类型
@@ -1813,7 +1813,7 @@ extension API {
             "electricity_subsidy_year": electricity_subsidy_year,//用电补贴年
             "sparetime_electric_price": sparetime_electric_price, //余电上网价
             "loan_rate": loan_rate, //利率
-            "loan_rate": loan_rate, //还款方式
+            "loan_type": loan_type, //还款方式
             "wOfPrice": wOfPrice, //每瓦投资金额 默认：8
             "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电 默认：4
             "onlineType": onlineType, //现金流
@@ -1821,9 +1821,9 @@ extension API {
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
-        self.post(url, params: newParams as AnyObject?, success: { (data) in
-            let commonModel = CommonModel.mj_object(withKeyValues: data)
-            success?(commonModel!)
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = CashInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
         }, failure: failure)
     }
     

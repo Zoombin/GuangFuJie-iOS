@@ -1006,6 +1006,10 @@
 		DEE6C9E71F35BECA00AB6031 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEE6C9C51F35BEC900AB6031 /* IQKeyboardManager.bundle */; };
 		DEF593971F3EEA5500448FC5 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF593961F3EEA5500448FC5 /* LoginCell.swift */; };
 		DEF593981F3EEA5500448FC5 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF593961F3EEA5500448FC5 /* LoginCell.swift */; };
+		DEFF5DE91F6FF95D00F58A04 /* CashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DE81F6FF95D00F58A04 /* CashCell.swift */; };
+		DEFF5DEA1F6FF95D00F58A04 /* CashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DE81F6FF95D00F58A04 /* CashCell.swift */; };
+		DEFF5DF51F7001BA00F58A04 /* CashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DF41F7001BA00F58A04 /* CashInfo.swift */; };
+		DEFF5DF61F7001BA00F58A04 /* CashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DF41F7001BA00F58A04 /* CashInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2007,6 +2011,8 @@
 		DEE6C9C31F35BEC900AB6031 /* IQKeyboardManagerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerSwift.h; path = IQKeyboardManagerSwift/IQKeyboardManagerSwift.h; sourceTree = "<group>"; };
 		DEE6C9C51F35BEC900AB6031 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		DEF593961F3EEA5500448FC5 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		DEFF5DE81F6FF95D00F58A04 /* CashCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashCell.swift; sourceTree = "<group>"; };
+		DEFF5DF41F7001BA00F58A04 /* CashInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CashInfo.swift; path = GuangFuJie/Models/CashInfo.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2434,6 +2440,7 @@
 				DED352931F63D48F00BA1B52 /* LocationInfo.swift */,
 				DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */,
 				DE0237991F6D1491008BE3C5 /* CalResultParams.swift */,
+				DEFF5DF41F7001BA00F58A04 /* CashInfo.swift */,
 			);
 			name = Models;
 			path = Modules;
@@ -2451,6 +2458,7 @@
 				DEF593961F3EEA5500448FC5 /* LoginCell.swift */,
 				DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */,
 				DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */,
+				DEFF5DE81F6FF95D00F58A04 /* CashCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4686,6 +4694,8 @@
 				DE9F9DED1F19FDD4003CF080 /* MQChatViewTableDataSource.m in Sources */,
 				DE9F9E611F19FDD4003CF080 /* MQImageUtil.m in Sources */,
 				DEC2243B1F136362007D6DBE /* ApiXml.mm in Sources */,
+				DEFF5DF51F7001BA00F58A04 /* CashInfo.swift in Sources */,
+				DEFF5DE91F6FF95D00F58A04 /* CashCell.swift in Sources */,
 				DE8684EC1F0DCC7900FF7FD3 /* InstallInfo.swift in Sources */,
 				DE9F9E951F19FDD5003CF080 /* MQChatTableView.m in Sources */,
 				DE9F9E5D1F19FDD4003CF080 /* MQChatRegexUtil.m in Sources */,
@@ -4968,6 +4978,7 @@
 				DE9F9DF21F19FDD4003CF080 /* MQPreChatFormListViewController.m in Sources */,
 				DE8685021F0DCC7E00FF7FD3 /* ElectricInfo.swift in Sources */,
 				DE3954531F14802200A44740 /* PublishMediaView.swift in Sources */,
+				DEFF5DEA1F6FF95D00F58A04 /* CashCell.swift in Sources */,
 				DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
 				DE868A091F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DEC222531F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
@@ -4997,6 +5008,7 @@
 				DEE6C9C71F35BEC900AB6031 /* IQNSArray+Sort.swift in Sources */,
 				DE9F99A01F19FD3C003CF080 /* AddNoteViewController.swift in Sources */,
 				DE86876C1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
+				DEFF5DF61F7001BA00F58A04 /* CashInfo.swift in Sources */,
 				DE9F9EB61F19FDD5003CF080 /* MQMessageFormViewManager.m in Sources */,
 				DE868DC01F0DE4AC00FF7FD3 /* BCSubscription.m in Sources */,
 				DE9F9E5E1F19FDD4003CF080 /* MQChatRegexUtil.m in Sources */,

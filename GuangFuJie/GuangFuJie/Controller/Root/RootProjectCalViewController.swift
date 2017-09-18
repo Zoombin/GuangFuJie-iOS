@@ -146,6 +146,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             hideAllView()
             self.bkgXJLView.isHidden = false
             changeStepButtonWithIndex(index: 3)
+            inputXMCSValues()
         }
     }
     
@@ -186,6 +187,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             hideAllView()
             self.bkgXJLView.isHidden = false
             changeStepButtonWithIndex(index: 3)
+            inputXMCSValues()
         }
     }
     
@@ -293,12 +295,9 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     }
     
     func inputXMCSValues() {
-//        @IBOutlet weak var xjtzjeLabel: UILabel! //现金流向投资金额
-//        @IBOutlet weak var zjrlLabel: UILabel! //装机容量
-//        @IBOutlet weak var dkLabel: UILabel! //贷款金额
-//        @IBOutlet weak var hkfsButton: UIButton! //还款方式
-//        @IBOutlet weak var dkllTextField: UITextField! //贷款利率
-//        @IBOutlet weak var dkbTextField: UITextField! //贷款倍率
+        xjtzjeLabel.text = "投资金额 \(StringUtils.getNumber(energyCalInfo!.build_price)) 元"
+        zjrlLabel.text = "装机容量 \(StringUtils.getNumber(energyCalInfo!.build_size)) Kwh"
+        dkLabel.text = "贷款 \(dkblTextField.text!)% \(dknxTextField.text!)"
         dkllTextField.text = "4.9"
         dkbTextField.text = "1.0"
     }
@@ -339,6 +338,46 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         let fourth = tabVC.viewControllers?[3] as! RootEarnViewController
         fourth.params = tmpParams
         self.pushViewController(tabVC)
+    }
+    
+    @IBAction func calCashButtonClicked() {
+        if (dkllTextField.text!.isEmpty) {
+            self.showHint("贷款利率不能为空!")
+            return
+        }
+        if (dkbTextField.text!.isEmpty) {
+            self.showHint("利率倍数不能为空!")
+            return
+        }
+        let tmpParams = CalResultParams()
+        tmpParams.address = locationButton.titleLabel?.text!
+        tmpParams.type = NSNumber.init(value: type)
+        tmpParams.size = roofSizeTextField.text!
+        tmpParams.invest_amount = energyCalInfo!.build_price
+        let ywcbPercent = NSString.init(string: ywcbTextField.text!)
+        let ywcbValue = ywcbPercent.floatValue * energyCalInfo!.build_price!.floatValue
+        
+        tmpParams.annual_maintenance_cost = String(format: "%.2f%", ywcbValue)
+        tmpParams.recoverable_liquid_capital = String(format: "%.2f", StringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
+        tmpParams.installed_subsidy = zjbtTextField.text!
+        tmpParams.loan_ratio = dkblTextField.text!
+        tmpParams.years_of_loans = dknxTextField.text!
+        tmpParams.occupied_electric_ratio = zydblTextField.text!
+        tmpParams.electric_price_perional = zyddjTextField.text!
+        tmpParams.electricity_subsidy = ydbtTextField.text!
+        tmpParams.electricity_subsidy_year = ydbtnxTextField.text!
+        tmpParams.sparetime_electric_price = ydswjTextField.text!
+        tmpParams.wOfPrice = "8"
+        tmpParams.firstYearKwElectric = "4"
+        
+        let rate = NSString.init(string: dkllTextField.text!).floatValue * NSString.init(string: dkbTextField.text!).floatValue
+        tmpParams.loan_rate = "\(rate)"
+        tmpParams.loan_type = "\(loanType)"
+        
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "CashListViewController") as! CashListViewController
+        vc.params = tmpParams
+        self.pushViewController(vc)
     }
     
     func addBkgViewShadow(view: UIView) {
