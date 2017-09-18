@@ -19,4 +19,7 @@ class Colors: NSObject {
     
     static let installColor : UIColor = UIColor(colorLiteralRed: 74/255.0, green: 178/255.0, blue: 230/255.0, alpha: 1.0)
     static let installRedColor : UIColor = UIColor(colorLiteralRed: 255/255.0, green: 18/255.0, blue: 18/255.0, alpha: 1.0)
+    
+    static let lightBlue : UIColor = UIColor(colorLiteralRed: 232/255.0, green: 244/255.0, blue: 253/255.0, alpha: 1.0)
+    static let lightYellow : UIColor = UIColor(colorLiteralRed: 253/255.0, green: 249/255.0, blue: 232/255.0, alpha: 1.0)
 }

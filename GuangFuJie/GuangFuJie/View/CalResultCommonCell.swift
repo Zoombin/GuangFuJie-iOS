@@ -18,6 +18,10 @@ class CalResultCommonCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        firstLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        secondLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        thirdLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        fourthLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

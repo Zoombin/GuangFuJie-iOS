@@ -16,7 +16,25 @@ class RootEarnViewController: BaseViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
+        addTopHeaderView()
+        
         loadData()
+    }
+    
+    func addTopHeaderView() {
+        let times = PhoneUtils.kScreenWidth / 375
+        let titles = ["月", "现金流入(元)", "现金流出(元)", "累计净现(元)"]
+        let titleWidth = PhoneUtils.kScreenWidth / CGFloat(titles.count)
+        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 50 * times))
+        for i in 0..<titles.count {
+            let label = UILabel.init(frame: CGRect(x: titleWidth * CGFloat(i), y: 0, width: titleWidth, height: headerView.frame.size.height))
+            label.text = titles[i]
+            label.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+            label.backgroundColor = i % 2 == 0 ? Colors.lightBlue : Colors.lightYellow
+            label.textAlignment = NSTextAlignment.center
+            headerView.addSubview(label)
+        }
+        resultTableView.tableHeaderView = headerView
     }
     
     func initView() {
