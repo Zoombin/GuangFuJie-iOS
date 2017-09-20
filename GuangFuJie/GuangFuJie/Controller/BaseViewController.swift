@@ -54,9 +54,10 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             self.tabBarController?.selectedIndex = 1
         } else if (title == "地面推广") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "DiTuiHomeViewController"))
+            let vc = sb.instantiateViewController(withIdentifier: "DiTuiHomeViewController")
+            self.pushViewController(vc)
         } else if (title == "推广支持") {
-            //???
+            self.showHint("功能暂未开放")
         } else if (title == "本地安装商") {
             //更多安装商
             let vc = MoreInstallerViewController(nibName: "MoreInstallerViewController", bundle: nil)

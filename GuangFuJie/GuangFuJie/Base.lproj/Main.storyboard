@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RWo-NL-TPr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RWo-NL-TPr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1012,7 +1012,7 @@
         <!--加盟商-->
         <scene sceneID="4VN-rs-MS5">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="nFe-Qr-qRA" userLabel="加盟商" customClass="JoinUsViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinUsViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="nFe-Qr-qRA" userLabel="加盟商" customClass="JoinUsViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="43n-BD-Z13"/>
                         <viewControllerLayoutGuide type="bottom" id="uIR-Zc-fTQ"/>
@@ -3485,7 +3485,7 @@
         <!--安装商首页-->
         <scene sceneID="qUz-v6-srI">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="nRd-D1-OZt" userLabel="安装商首页" customClass="InstallerHomeViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstallerHomeViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="nRd-D1-OZt" userLabel="安装商首页" customClass="InstallerHomeViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fDY-iX-ove"/>
                         <viewControllerLayoutGuide type="bottom" id="efO-qU-TRx"/>
@@ -3720,7 +3720,7 @@
         <!--地推首页-->
         <scene sceneID="sbu-Kw-hH1">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="sDj-Fr-phP" userLabel="地推首页" customClass="DiTuiHomeViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiTuiHomeViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="sDj-Fr-phP" userLabel="地推首页" customClass="DiTuiHomeViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7pV-6p-SpS"/>
                         <viewControllerLayoutGuide type="bottom" id="efC-tY-3EB"/>
@@ -3955,7 +3955,7 @@
         <!--业主首页-->
         <scene sceneID="ArU-gL-3UF">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="chC-y7-hb3" userLabel="业主首页" customClass="YeZhuViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YeZhuViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="chC-y7-hb3" userLabel="业主首页" customClass="YeZhuViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pc7-P1-Bki"/>
                         <viewControllerLayoutGuide type="bottom" id="J11-11-Atd"/>
@@ -4179,7 +4179,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-WE-7XI">
-                                        <rect key="frame" x="8" y="603" width="115" height="110"/>
+                                        <rect key="frame" x="8" y="615" width="115" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wUu-WE-7XI" secondAttribute="height" multiplier="23:22" id="NrG-L6-ity"/>
                                         </constraints>
@@ -4188,7 +4188,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9H-8E-VUX">
-                                        <rect key="frame" x="130" y="603" width="115" height="110"/>
+                                        <rect key="frame" x="130" y="615" width="115" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="T9H-8E-VUX" secondAttribute="height" multiplier="23:22" id="RfZ-cX-1fn"/>
                                         </constraints>
@@ -4197,7 +4197,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-0S-iK9">
-                                        <rect key="frame" x="253" y="603" width="115" height="110"/>
+                                        <rect key="frame" x="253" y="615" width="115" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8jA-0S-iK9" secondAttribute="height" multiplier="23:22" id="Kd7-uu-6wj"/>
                                         </constraints>
@@ -4220,7 +4220,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxZ-GV-2vE">
-                                        <rect key="frame" x="99" y="142" width="85" height="100"/>
+                                        <rect key="frame" x="99" y="154" width="85" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="uxZ-GV-2vE" secondAttribute="height" multiplier="17:20" id="3th-xY-b6d"/>
                                         </constraints>
@@ -4230,7 +4230,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pG2-LE-D0W">
-                                        <rect key="frame" x="191" y="142" width="85" height="100"/>
+                                        <rect key="frame" x="191" y="154" width="85" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pG2-LE-D0W" secondAttribute="height" multiplier="17:20" id="dpO-Ev-FFf"/>
                                         </constraints>
@@ -4240,7 +4240,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d4-p1-Vto">
-                                        <rect key="frame" x="7" y="142" width="85" height="100"/>
+                                        <rect key="frame" x="7" y="154" width="85" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7d4-p1-Vto" secondAttribute="height" multiplier="17:20" id="aZh-fJ-OBz"/>
                                             <constraint firstAttribute="height" constant="100" id="uX9-3k-wju"/>
@@ -4251,22 +4251,22 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你想成为" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NW-wW-A62">
-                                        <rect key="frame" x="16" y="113" width="219" height="21"/>
+                                        <rect key="frame" x="16" y="125" width="219" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="光伏信息" translatesAutoresizingMaskIntoConstraints="NO" id="QzX-c0-2Ao">
-                                        <rect key="frame" x="0.0" y="58" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="58" width="375" height="56"/>
                                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhv-3v-Dvv">
-                                        <rect key="frame" x="0.0" y="392" width="375" height="180"/>
+                                        <rect key="frame" x="0.0" y="404" width="375" height="180"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYO-n8-ZpK">
-                                        <rect key="frame" x="0.0" y="250" width="375" height="145"/>
+                                        <rect key="frame" x="0.0" y="262" width="375" height="145"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="145" id="FCl-0E-pfX"/>
@@ -4276,10 +4276,10 @@
                                         </connections>
                                     </scrollView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Iss-yB-qTh">
-                                        <rect key="frame" x="0.0" y="358" width="375" height="37"/>
+                                        <rect key="frame" x="0.0" y="370" width="375" height="37"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yz-he-SfW">
-                                        <rect key="frame" x="283" y="142" width="85" height="100"/>
+                                        <rect key="frame" x="283" y="154" width="85" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6yz-he-SfW" secondAttribute="height" multiplier="17:20" id="Cyp-fc-6D8"/>
                                         </constraints>
@@ -4289,20 +4289,20 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycq-bh-kOK">
-                                        <rect key="frame" x="0.0" y="565" width="375" height="5"/>
+                                        <rect key="frame" x="0.0" y="577" width="375" height="5"/>
                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="BuO-qu-qH8"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐案例" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZg-Sb-Rd8">
-                                        <rect key="frame" x="8" y="576" width="127" height="30"/>
+                                        <rect key="frame" x="8" y="588" width="127" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o3-u9-ryi">
-                                        <rect key="frame" x="307" y="576" width="60" height="30"/>
+                                        <rect key="frame" x="307" y="588" width="60" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Ovd-1b-ObQ"/>
                                         </constraints>
@@ -4509,7 +4509,7 @@
                 <navigationController id="jYK-aX-9ae" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="ic_tab_home" selectedImage="ic_tab_home_hl" id="B8G-IH-Nfv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gDd-dm-DDP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -4527,7 +4527,7 @@
                 <navigationController id="dGc-Kc-oaf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="政策资讯" image="ic_tab_news" selectedImage="ic_tab_news_hl" id="0py-8M-gMi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GOW-gN-WMt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -4545,7 +4545,7 @@
                 <navigationController id="gNN-I7-J0n" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="项目测算" image="ic_tab_insurance" selectedImage="ic_tab_insurance_hl" id="OKl-0s-5nl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aji-g7-cPI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -5647,7 +5647,7 @@
                 <navigationController id="KWr-Sl-spE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="屋顶地图" image="ic_tab_map" selectedImage="ic_tab_map_hl" id="7qg-2m-RN3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gwd-ug-xXm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -5878,7 +5878,7 @@
                 <navigationController id="mPy-2f-I8J" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="ic_tab_my" selectedImage="ic_tab_my_hl" id="xi2-sZ-uka"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="65A-dl-jKQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.14117647059999999" green="0.51372549020000002" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -5948,6 +5948,6 @@
         <image name="ic_yezhua_photo" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uxD-XH-rAv"/>
+        <segue reference="pGW-Co-TeL"/>
     </inferredMetricsTieBreakers>
 </document>
