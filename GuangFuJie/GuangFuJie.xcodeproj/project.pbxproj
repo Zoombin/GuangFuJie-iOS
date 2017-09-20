@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE02379A1F6D1491008BE3C5 /* CalResultParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237991F6D1491008BE3C5 /* CalResultParams.swift */; };
-		DE02379B1F6D1491008BE3C5 /* CalResultParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237991F6D1491008BE3C5 /* CalResultParams.swift */; };
 		DE02379D1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */; };
 		DE02379E1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */; };
 		DE0237A61F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
 		DE0237A71F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
-		DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
-		DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */; };
 		DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
 		DE1A55141F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
 		DE1A551F1F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */; };
@@ -32,36 +28,6 @@
 		DE1F71F31F62978000B8C2E8 /* InstallBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F21F62978000B8C2E8 /* InstallBuyViewController.swift */; };
 		DE1F71F51F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */; };
 		DE1F71F61F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */; };
-		DE2542021F32F1B500872C22 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542011F32F1B500872C22 /* GroupInfo.swift */; };
-		DE2542031F32F1B500872C22 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542011F32F1B500872C22 /* GroupInfo.swift */; };
-		DE25420E1F32F23D00872C22 /* LandlordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25420D1F32F23D00872C22 /* LandlordInfo.swift */; };
-		DE25420F1F32F23D00872C22 /* LandlordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25420D1F32F23D00872C22 /* LandlordInfo.swift */; };
-		DE2542111F32F3EB00872C22 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542101F32F3EB00872C22 /* AreaModel.swift */; };
-		DE2542121F32F3EB00872C22 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542101F32F3EB00872C22 /* AreaModel.swift */; };
-		DE2542141F32F4EB00872C22 /* ArticleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542131F32F4EB00872C22 /* ArticleInfo.swift */; };
-		DE2542151F32F4EB00872C22 /* ArticleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542131F32F4EB00872C22 /* ArticleInfo.swift */; };
-		DE2542171F32FD3500872C22 /* NoteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542161F32FD3500872C22 /* NoteInfo.swift */; };
-		DE2542181F32FD3500872C22 /* NoteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542161F32FD3500872C22 /* NoteInfo.swift */; };
-		DE25421A1F32FE9500872C22 /* AskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542191F32FE9500872C22 /* AskInfo.swift */; };
-		DE25421B1F32FE9500872C22 /* AskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542191F32FE9500872C22 /* AskInfo.swift */; };
-		DE25421D1F332A4600872C22 /* ProjectcalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25421C1F332A4600872C22 /* ProjectcalInfo.swift */; };
-		DE25421E1F332A4600872C22 /* ProjectcalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25421C1F332A4600872C22 /* ProjectcalInfo.swift */; };
-		DE2542201F332BA300872C22 /* EnergycalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25421F1F332BA300872C22 /* EnergycalInfo.swift */; };
-		DE2542211F332BA300872C22 /* EnergycalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25421F1F332BA300872C22 /* EnergycalInfo.swift */; };
-		DE2542231F332BF400872C22 /* IncomecalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542221F332BF400872C22 /* IncomecalInfo.swift */; };
-		DE2542241F332BF400872C22 /* IncomecalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542221F332BF400872C22 /* IncomecalInfo.swift */; };
-		DE2542281F3452EB00872C22 /* ElecticIncomeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542271F3452EA00872C22 /* ElecticIncomeInfo.swift */; };
-		DE2542321F34530600872C22 /* ElecticIncomeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542271F3452EA00872C22 /* ElecticIncomeInfo.swift */; };
-		DE2542341F34545E00872C22 /* RepaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542331F34545E00872C22 /* RepaymentInfo.swift */; };
-		DE2542351F34545E00872C22 /* RepaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542331F34545E00872C22 /* RepaymentInfo.swift */; };
-		DE2542371F3454A300872C22 /* NetprofitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542361F3454A300872C22 /* NetprofitInfo.swift */; };
-		DE2542381F3454A300872C22 /* NetprofitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542361F3454A300872C22 /* NetprofitInfo.swift */; };
-		DE25423A1F3454ED00872C22 /* IncomeCalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542391F3454ED00872C22 /* IncomeCalParams.swift */; };
-		DE25423B1F3454ED00872C22 /* IncomeCalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2542391F3454ED00872C22 /* IncomeCalParams.swift */; };
-		DE25423D1F34559A00872C22 /* GroupUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25423C1F34559A00872C22 /* GroupUserInfo.swift */; };
-		DE25423E1F34559A00872C22 /* GroupUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25423C1F34559A00872C22 /* GroupUserInfo.swift */; };
-		DE2542401F3455D700872C22 /* GroupOrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25423F1F3455D700872C22 /* GroupOrderInfo.swift */; };
-		DE2542411F3455D700872C22 /* GroupOrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25423F1F3455D700872C22 /* GroupOrderInfo.swift */; };
 		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
@@ -169,8 +135,6 @@
 		DE3954561F1480E800A44740 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954541F1480E800A44740 /* Dimens.swift */; };
 		DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
 		DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3954571F1481E500A44740 /* PhotoViewController.swift */; };
-		DE3AE0B61F691FC600A7A34A /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */; };
-		DE3AE0B71F691FC700A7A34A /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */; };
 		DE3AE0C21F69265E00A7A34A /* InsuranceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */; };
 		DE3AE0C31F69265E00A7A34A /* InsuranceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */; };
 		DE6790671F6A692500A654BC /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6790661F6A692500A654BC /* GuideViewController.swift */; };
@@ -196,54 +160,6 @@
 		DE8684BF1F0DCBF300FF7FD3 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE8684B11F0DCBD600FF7FD3 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE8684C31F0DCBF800FF7FD3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8684B11F0DCBD600FF7FD3 /* Alamofire.framework */; };
 		DE8684C41F0DCBF800FF7FD3 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE8684B11F0DCBD600FF7FD3 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DE8684E81F0DCC7900FF7FD3 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D01F0DCC7900FF7FD3 /* InsuranceDetail.swift */; };
-		DE8684E91F0DCC7900FF7FD3 /* InsuranceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D11F0DCC7900FF7FD3 /* InsuranceType.swift */; };
-		DE8684EA1F0DCC7900FF7FD3 /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D21F0DCC7900FF7FD3 /* ElectricInfo.swift */; };
-		DE8684EB1F0DCC7900FF7FD3 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D31F0DCC7900FF7FD3 /* InsuranceInfo.swift */; };
-		DE8684EC1F0DCC7900FF7FD3 /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D41F0DCC7900FF7FD3 /* InstallInfo.swift */; };
-		DE8684ED1F0DCC7900FF7FD3 /* ShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D51F0DCC7900FF7FD3 /* ShareInfo.swift */; };
-		DE8684EE1F0DCC7900FF7FD3 /* DeviceListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D61F0DCC7900FF7FD3 /* DeviceListInfo.swift */; };
-		DE8684EF1F0DCC7900FF7FD3 /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D71F0DCC7900FF7FD3 /* NewsInfo.swift */; };
-		DE8684F01F0DCC7900FF7FD3 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D81F0DCC7900FF7FD3 /* DeviceInfo.swift */; };
-		DE8684F11F0DCC7900FF7FD3 /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D91F0DCC7900FF7FD3 /* RoofInfo.swift */; };
-		DE8684F21F0DCC7900FF7FD3 /* QNResultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DA1F0DCC7900FF7FD3 /* QNResultInfo.swift */; };
-		DE8684F31F0DCC7900FF7FD3 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DB1F0DCC7900FF7FD3 /* UserInfo.swift */; };
-		DE8684F41F0DCC7900FF7FD3 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DC1F0DCC7900FF7FD3 /* CommonModel.swift */; };
-		DE8684F51F0DCC7900FF7FD3 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DD1F0DCC7900FF7FD3 /* CalcModel.swift */; };
-		DE8684F61F0DCC7900FF7FD3 /* GetInventerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DE1F0DCC7900FF7FD3 /* GetInventerMode.swift */; };
-		DE8684F71F0DCC7900FF7FD3 /* PowerGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DF1F0DCC7900FF7FD3 /* PowerGraphInfo.swift */; };
-		DE8684F81F0DCC7900FF7FD3 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E01F0DCC7900FF7FD3 /* CityModel.swift */; };
-		DE8684F91F0DCC7900FF7FD3 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E11F0DCC7900FF7FD3 /* ProvinceModel.swift */; };
-		DE8684FA1F0DCC7900FF7FD3 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E21F0DCC7900FF7FD3 /* CommonInfo.swift */; };
-		DE8684FB1F0DCC7900FF7FD3 /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E31F0DCC7900FF7FD3 /* AfterSaleInfo.swift */; };
-		DE8684FC1F0DCC7900FF7FD3 /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E41F0DCC7900FF7FD3 /* BookingStatus.swift */; };
-		DE8684FD1F0DCC7900FF7FD3 /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E51F0DCC7900FF7FD3 /* BankInfo.swift */; };
-		DE8684FE1F0DCC7900FF7FD3 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E61F0DCC7900FF7FD3 /* AppModel.swift */; };
-		DE8684FF1F0DCC7900FF7FD3 /* QNInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E71F0DCC7900FF7FD3 /* QNInfo.swift */; };
-		DE8685001F0DCC7E00FF7FD3 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D01F0DCC7900FF7FD3 /* InsuranceDetail.swift */; };
-		DE8685011F0DCC7E00FF7FD3 /* InsuranceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D11F0DCC7900FF7FD3 /* InsuranceType.swift */; };
-		DE8685021F0DCC7E00FF7FD3 /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D21F0DCC7900FF7FD3 /* ElectricInfo.swift */; };
-		DE8685031F0DCC7E00FF7FD3 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D31F0DCC7900FF7FD3 /* InsuranceInfo.swift */; };
-		DE8685041F0DCC7E00FF7FD3 /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D41F0DCC7900FF7FD3 /* InstallInfo.swift */; };
-		DE8685051F0DCC7E00FF7FD3 /* ShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D51F0DCC7900FF7FD3 /* ShareInfo.swift */; };
-		DE8685061F0DCC7E00FF7FD3 /* DeviceListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D61F0DCC7900FF7FD3 /* DeviceListInfo.swift */; };
-		DE8685071F0DCC7E00FF7FD3 /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D71F0DCC7900FF7FD3 /* NewsInfo.swift */; };
-		DE8685081F0DCC7E00FF7FD3 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D81F0DCC7900FF7FD3 /* DeviceInfo.swift */; };
-		DE8685091F0DCC7E00FF7FD3 /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684D91F0DCC7900FF7FD3 /* RoofInfo.swift */; };
-		DE86850A1F0DCC7E00FF7FD3 /* QNResultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DA1F0DCC7900FF7FD3 /* QNResultInfo.swift */; };
-		DE86850B1F0DCC7E00FF7FD3 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DB1F0DCC7900FF7FD3 /* UserInfo.swift */; };
-		DE86850C1F0DCC7E00FF7FD3 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DC1F0DCC7900FF7FD3 /* CommonModel.swift */; };
-		DE86850D1F0DCC7E00FF7FD3 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DD1F0DCC7900FF7FD3 /* CalcModel.swift */; };
-		DE86850E1F0DCC7E00FF7FD3 /* GetInventerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DE1F0DCC7900FF7FD3 /* GetInventerMode.swift */; };
-		DE86850F1F0DCC7E00FF7FD3 /* PowerGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684DF1F0DCC7900FF7FD3 /* PowerGraphInfo.swift */; };
-		DE8685101F0DCC7E00FF7FD3 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E01F0DCC7900FF7FD3 /* CityModel.swift */; };
-		DE8685111F0DCC7E00FF7FD3 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E11F0DCC7900FF7FD3 /* ProvinceModel.swift */; };
-		DE8685121F0DCC7E00FF7FD3 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E21F0DCC7900FF7FD3 /* CommonInfo.swift */; };
-		DE8685131F0DCC7E00FF7FD3 /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E31F0DCC7900FF7FD3 /* AfterSaleInfo.swift */; };
-		DE8685141F0DCC7E00FF7FD3 /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E41F0DCC7900FF7FD3 /* BookingStatus.swift */; };
-		DE8685151F0DCC7E00FF7FD3 /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E51F0DCC7900FF7FD3 /* BankInfo.swift */; };
-		DE8685161F0DCC7E00FF7FD3 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E61F0DCC7900FF7FD3 /* AppModel.swift */; };
-		DE8685171F0DCC7E00FF7FD3 /* QNInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8684E71F0DCC7900FF7FD3 /* QNInfo.swift */; };
 		DE8687631F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8687421F0DCE4400FF7FD3 /* AFHTTPSessionManager.m */; };
 		DE8687641F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8687421F0DCE4400FF7FD3 /* AFHTTPSessionManager.m */; };
 		DE8687651F0DCE4400FF7FD3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8687451F0DCE4400FF7FD3 /* AFNetworkReachabilityManager.m */; };
@@ -709,12 +625,102 @@
 		DE9F9ECA1F19FDD5003CF080 /* MQMessageFormTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9DBB1F19FDD4003CF080 /* MQMessageFormTextView.m */; };
 		DE9F9ECB1F19FDD5003CF080 /* MQMessageFormImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9DBE1F19FDD4003CF080 /* MQMessageFormImageView.m */; };
 		DE9F9ECC1F19FDD5003CF080 /* MQMessageFormImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9F9DBE1F19FDD4003CF080 /* MQMessageFormImageView.m */; };
-		DEA6CDF71F1B8BDA0061629C /* RoofMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */; };
-		DEA6CDF81F1B8BDA0061629C /* RoofMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */; };
-		DEA6CDFA1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */; };
-		DEA6CDFB1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */; };
 		DEB031551F698CD000FA9528 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */; };
 		DEB031561F698CD000FA9528 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */; };
+		DEB9C9FA1F722FA6007BE2A3 /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CB1F722FA6007BE2A3 /* AfterSaleInfo.swift */; };
+		DEB9C9FB1F722FA6007BE2A3 /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CB1F722FA6007BE2A3 /* AfterSaleInfo.swift */; };
+		DEB9C9FC1F722FA6007BE2A3 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CC1F722FA6007BE2A3 /* AppModel.swift */; };
+		DEB9C9FD1F722FA6007BE2A3 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CC1F722FA6007BE2A3 /* AppModel.swift */; };
+		DEB9C9FE1F722FA6007BE2A3 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CD1F722FA6007BE2A3 /* AreaModel.swift */; };
+		DEB9C9FF1F722FA6007BE2A3 /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CD1F722FA6007BE2A3 /* AreaModel.swift */; };
+		DEB9CA001F722FA6007BE2A3 /* ArticleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CE1F722FA6007BE2A3 /* ArticleInfo.swift */; };
+		DEB9CA011F722FA6007BE2A3 /* ArticleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CE1F722FA6007BE2A3 /* ArticleInfo.swift */; };
+		DEB9CA021F722FA6007BE2A3 /* AskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CF1F722FA6007BE2A3 /* AskInfo.swift */; };
+		DEB9CA031F722FA6007BE2A3 /* AskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CF1F722FA6007BE2A3 /* AskInfo.swift */; };
+		DEB9CA041F722FA6007BE2A3 /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D01F722FA6007BE2A3 /* BankInfo.swift */; };
+		DEB9CA051F722FA6007BE2A3 /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D01F722FA6007BE2A3 /* BankInfo.swift */; };
+		DEB9CA061F722FA6007BE2A3 /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D11F722FA6007BE2A3 /* BookingStatus.swift */; };
+		DEB9CA071F722FA6007BE2A3 /* BookingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D11F722FA6007BE2A3 /* BookingStatus.swift */; };
+		DEB9CA081F722FA6007BE2A3 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D21F722FA6007BE2A3 /* CalcModel.swift */; };
+		DEB9CA091F722FA6007BE2A3 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D21F722FA6007BE2A3 /* CalcModel.swift */; };
+		DEB9CA0A1F722FA6007BE2A3 /* CalResultParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D31F722FA6007BE2A3 /* CalResultParams.swift */; };
+		DEB9CA0B1F722FA6007BE2A3 /* CalResultParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D31F722FA6007BE2A3 /* CalResultParams.swift */; };
+		DEB9CA0C1F722FA6007BE2A3 /* CashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D41F722FA6007BE2A3 /* CashInfo.swift */; };
+		DEB9CA0D1F722FA6007BE2A3 /* CashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D41F722FA6007BE2A3 /* CashInfo.swift */; };
+		DEB9CA0E1F722FA6007BE2A3 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D51F722FA6007BE2A3 /* CityModel.swift */; };
+		DEB9CA0F1F722FA6007BE2A3 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D51F722FA6007BE2A3 /* CityModel.swift */; };
+		DEB9CA101F722FA6007BE2A3 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D61F722FA6007BE2A3 /* CommonInfo.swift */; };
+		DEB9CA111F722FA6007BE2A3 /* CommonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D61F722FA6007BE2A3 /* CommonInfo.swift */; };
+		DEB9CA121F722FA6007BE2A3 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D71F722FA6007BE2A3 /* CommonModel.swift */; };
+		DEB9CA131F722FA6007BE2A3 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D71F722FA6007BE2A3 /* CommonModel.swift */; };
+		DEB9CA141F722FA6007BE2A3 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D81F722FA6007BE2A3 /* DeviceInfo.swift */; };
+		DEB9CA151F722FA6007BE2A3 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D81F722FA6007BE2A3 /* DeviceInfo.swift */; };
+		DEB9CA161F722FA6007BE2A3 /* DeviceListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D91F722FA6007BE2A3 /* DeviceListInfo.swift */; };
+		DEB9CA171F722FA6007BE2A3 /* DeviceListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9D91F722FA6007BE2A3 /* DeviceListInfo.swift */; };
+		DEB9CA181F722FA6007BE2A3 /* ElecticIncomeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DA1F722FA6007BE2A3 /* ElecticIncomeInfo.swift */; };
+		DEB9CA191F722FA6007BE2A3 /* ElecticIncomeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DA1F722FA6007BE2A3 /* ElecticIncomeInfo.swift */; };
+		DEB9CA1A1F722FA6007BE2A3 /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DB1F722FA6007BE2A3 /* ElectricInfo.swift */; };
+		DEB9CA1B1F722FA6007BE2A3 /* ElectricInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DB1F722FA6007BE2A3 /* ElectricInfo.swift */; };
+		DEB9CA1C1F722FA6007BE2A3 /* EnergycalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DC1F722FA6007BE2A3 /* EnergycalInfo.swift */; };
+		DEB9CA1D1F722FA6007BE2A3 /* EnergycalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DC1F722FA6007BE2A3 /* EnergycalInfo.swift */; };
+		DEB9CA1E1F722FA6007BE2A3 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DD1F722FA6007BE2A3 /* FranchiseeInfo.swift */; };
+		DEB9CA1F1F722FA6007BE2A3 /* FranchiseeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DD1F722FA6007BE2A3 /* FranchiseeInfo.swift */; };
+		DEB9CA201F722FA6007BE2A3 /* GetInventerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DE1F722FA6007BE2A3 /* GetInventerMode.swift */; };
+		DEB9CA211F722FA6007BE2A3 /* GetInventerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DE1F722FA6007BE2A3 /* GetInventerMode.swift */; };
+		DEB9CA221F722FA6007BE2A3 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DF1F722FA6007BE2A3 /* GroupInfo.swift */; };
+		DEB9CA231F722FA6007BE2A3 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9DF1F722FA6007BE2A3 /* GroupInfo.swift */; };
+		DEB9CA241F722FA6007BE2A3 /* GroupOrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E01F722FA6007BE2A3 /* GroupOrderInfo.swift */; };
+		DEB9CA251F722FA6007BE2A3 /* GroupOrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E01F722FA6007BE2A3 /* GroupOrderInfo.swift */; };
+		DEB9CA261F722FA6007BE2A3 /* GroupUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E11F722FA6007BE2A3 /* GroupUserInfo.swift */; };
+		DEB9CA271F722FA6007BE2A3 /* GroupUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E11F722FA6007BE2A3 /* GroupUserInfo.swift */; };
+		DEB9CA281F722FA6007BE2A3 /* IncomecalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E21F722FA6007BE2A3 /* IncomecalInfo.swift */; };
+		DEB9CA291F722FA6007BE2A3 /* IncomecalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E21F722FA6007BE2A3 /* IncomecalInfo.swift */; };
+		DEB9CA2A1F722FA6007BE2A3 /* IncomeCalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E31F722FA6007BE2A3 /* IncomeCalParams.swift */; };
+		DEB9CA2B1F722FA6007BE2A3 /* IncomeCalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E31F722FA6007BE2A3 /* IncomeCalParams.swift */; };
+		DEB9CA2C1F722FA6007BE2A3 /* InstallerMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E41F722FA6007BE2A3 /* InstallerMapInfo.swift */; };
+		DEB9CA2D1F722FA6007BE2A3 /* InstallerMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E41F722FA6007BE2A3 /* InstallerMapInfo.swift */; };
+		DEB9CA2E1F722FA6007BE2A3 /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E51F722FA6007BE2A3 /* InstallInfo.swift */; };
+		DEB9CA2F1F722FA6007BE2A3 /* InstallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E51F722FA6007BE2A3 /* InstallInfo.swift */; };
+		DEB9CA301F722FA6007BE2A3 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E61F722FA6007BE2A3 /* InsuranceDetail.swift */; };
+		DEB9CA311F722FA6007BE2A3 /* InsuranceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E61F722FA6007BE2A3 /* InsuranceDetail.swift */; };
+		DEB9CA321F722FA6007BE2A3 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E71F722FA6007BE2A3 /* InsuranceInfo.swift */; };
+		DEB9CA331F722FA6007BE2A3 /* InsuranceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E71F722FA6007BE2A3 /* InsuranceInfo.swift */; };
+		DEB9CA341F722FA6007BE2A3 /* InsuranceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E81F722FA6007BE2A3 /* InsuranceType.swift */; };
+		DEB9CA351F722FA6007BE2A3 /* InsuranceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E81F722FA6007BE2A3 /* InsuranceType.swift */; };
+		DEB9CA361F722FA6007BE2A3 /* LandlordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E91F722FA6007BE2A3 /* LandlordInfo.swift */; };
+		DEB9CA371F722FA6007BE2A3 /* LandlordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9E91F722FA6007BE2A3 /* LandlordInfo.swift */; };
+		DEB9CA381F722FA6007BE2A3 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EA1F722FA6007BE2A3 /* LocationInfo.swift */; };
+		DEB9CA391F722FA6007BE2A3 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EA1F722FA6007BE2A3 /* LocationInfo.swift */; };
+		DEB9CA3A1F722FA6007BE2A3 /* MyCountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EB1F722FA6007BE2A3 /* MyCountInfo.swift */; };
+		DEB9CA3B1F722FA6007BE2A3 /* MyCountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EB1F722FA6007BE2A3 /* MyCountInfo.swift */; };
+		DEB9CA3C1F722FA6007BE2A3 /* NetprofitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EC1F722FA6007BE2A3 /* NetprofitInfo.swift */; };
+		DEB9CA3D1F722FA6007BE2A3 /* NetprofitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EC1F722FA6007BE2A3 /* NetprofitInfo.swift */; };
+		DEB9CA3E1F722FA6007BE2A3 /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9ED1F722FA6007BE2A3 /* NewsInfo.swift */; };
+		DEB9CA3F1F722FA6007BE2A3 /* NewsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9ED1F722FA6007BE2A3 /* NewsInfo.swift */; };
+		DEB9CA401F722FA6007BE2A3 /* NoteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EE1F722FA6007BE2A3 /* NoteInfo.swift */; };
+		DEB9CA411F722FA6007BE2A3 /* NoteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EE1F722FA6007BE2A3 /* NoteInfo.swift */; };
+		DEB9CA421F722FA6007BE2A3 /* PowerGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EF1F722FA6007BE2A3 /* PowerGraphInfo.swift */; };
+		DEB9CA431F722FA6007BE2A3 /* PowerGraphInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9EF1F722FA6007BE2A3 /* PowerGraphInfo.swift */; };
+		DEB9CA441F722FA6007BE2A3 /* ProjectcalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F01F722FA6007BE2A3 /* ProjectcalInfo.swift */; };
+		DEB9CA451F722FA6007BE2A3 /* ProjectcalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F01F722FA6007BE2A3 /* ProjectcalInfo.swift */; };
+		DEB9CA461F722FA6007BE2A3 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F11F722FA6007BE2A3 /* ProvinceModel.swift */; };
+		DEB9CA471F722FA6007BE2A3 /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F11F722FA6007BE2A3 /* ProvinceModel.swift */; };
+		DEB9CA481F722FA6007BE2A3 /* QNInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F21F722FA6007BE2A3 /* QNInfo.swift */; };
+		DEB9CA491F722FA6007BE2A3 /* QNInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F21F722FA6007BE2A3 /* QNInfo.swift */; };
+		DEB9CA4A1F722FA6007BE2A3 /* QNResultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F31F722FA6007BE2A3 /* QNResultInfo.swift */; };
+		DEB9CA4B1F722FA6007BE2A3 /* QNResultInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F31F722FA6007BE2A3 /* QNResultInfo.swift */; };
+		DEB9CA4C1F722FA6007BE2A3 /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F41F722FA6007BE2A3 /* QuestionInfo.swift */; };
+		DEB9CA4D1F722FA6007BE2A3 /* QuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F41F722FA6007BE2A3 /* QuestionInfo.swift */; };
+		DEB9CA4E1F722FA6007BE2A3 /* RepaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F51F722FA6007BE2A3 /* RepaymentInfo.swift */; };
+		DEB9CA4F1F722FA6007BE2A3 /* RepaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F51F722FA6007BE2A3 /* RepaymentInfo.swift */; };
+		DEB9CA501F722FA6007BE2A3 /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F61F722FA6007BE2A3 /* RoofInfo.swift */; };
+		DEB9CA511F722FA6007BE2A3 /* RoofInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F61F722FA6007BE2A3 /* RoofInfo.swift */; };
+		DEB9CA521F722FA6007BE2A3 /* RoofMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F71F722FA6007BE2A3 /* RoofMapInfo.swift */; };
+		DEB9CA531F722FA6007BE2A3 /* RoofMapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F71F722FA6007BE2A3 /* RoofMapInfo.swift */; };
+		DEB9CA541F722FA6007BE2A3 /* ShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F81F722FA6007BE2A3 /* ShareInfo.swift */; };
+		DEB9CA551F722FA6007BE2A3 /* ShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F81F722FA6007BE2A3 /* ShareInfo.swift */; };
+		DEB9CA561F722FA6007BE2A3 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F91F722FA6007BE2A3 /* UserInfo.swift */; };
+		DEB9CA571F722FA6007BE2A3 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9F91F722FA6007BE2A3 /* UserInfo.swift */; };
 		DEC221231F131577007D6DBE /* CustomImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC221221F131577007D6DBE /* CustomImages.xcassets */; };
 		DEC221241F131577007D6DBE /* CustomImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC221221F131577007D6DBE /* CustomImages.xcassets */; };
 		DEC221271F13531B007D6DBE /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC221261F13531B007D6DBE /* NewsCell.swift */; };
@@ -823,8 +829,6 @@
 		DEC226DE1F136364007D6DBE /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC224381F136362007D6DBE /* libMobClickLibrary.a */; };
 		DEC226FA1F13639A007D6DBE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; };
 		DEC226FB1F13639A007D6DBE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DED05D271F61383D006741F6 /* MyCountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D261F61383D006741F6 /* MyCountInfo.swift */; };
-		DED05D281F61383D006741F6 /* MyCountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D261F61383D006741F6 /* MyCountInfo.swift */; };
 		DED05D371F624C4A006741F6 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */; };
 		DED05D381F624C4A006741F6 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */; };
 		DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */; };
@@ -835,8 +839,6 @@
 		DED05D491F624CBA006741F6 /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D471F624CB7006741F6 /* YeZhuCell.swift */; };
 		DED05D4C1F624E10006741F6 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DED05D4B1F624E10006741F6 /* TopLeftLabel.m */; };
 		DED05D4D1F624E10006741F6 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DED05D4B1F624E10006741F6 /* TopLeftLabel.m */; };
-		DED352941F63D48F00BA1B52 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED352931F63D48F00BA1B52 /* LocationInfo.swift */; };
-		DED352951F63D48F00BA1B52 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED352931F63D48F00BA1B52 /* LocationInfo.swift */; };
 		DED352A01F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */; };
 		DED352A11F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */; };
 		DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
@@ -910,8 +912,6 @@
 		DEF593981F3EEA5500448FC5 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF593961F3EEA5500448FC5 /* LoginCell.swift */; };
 		DEFF5DE91F6FF95D00F58A04 /* CashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DE81F6FF95D00F58A04 /* CashCell.swift */; };
 		DEFF5DEA1F6FF95D00F58A04 /* CashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DE81F6FF95D00F58A04 /* CashCell.swift */; };
-		DEFF5DF51F7001BA00F58A04 /* CashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DF41F7001BA00F58A04 /* CashInfo.swift */; };
-		DEFF5DF61F7001BA00F58A04 /* CashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DF41F7001BA00F58A04 /* CashInfo.swift */; };
 		DEFF5EE81F700E5100F58A04 /* BeeCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DFC1F700E5100F58A04 /* BeeCloud.m */; };
 		DEFF5EE91F700E5100F58A04 /* BeeCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5DFC1F700E5100F58A04 /* BeeCloud.m */; };
 		DEFF5EEA1F700E5100F58A04 /* BCAuthReq.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF5E001F700E5100F58A04 /* BCAuthReq.m */; };
@@ -1133,10 +1133,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DE0237991F6D1491008BE3C5 /* CalResultParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalResultParams.swift; path = GuangFuJie/Models/CalResultParams.swift; sourceTree = SOURCE_ROOT; };
 		DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultCommonCell.swift; sourceTree = "<group>"; };
 		DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashListViewController.swift; sourceTree = "<group>"; };
-		DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FranchiseeInfo.swift; path = GuangFuJie/Models/FranchiseeInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddViewController.swift; sourceTree = "<group>"; };
 		DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListViewController.swift; sourceTree = "<group>"; };
 		DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailOldViewController.swift; sourceTree = "<group>"; };
@@ -1149,21 +1147,6 @@
 		DE1F71F01F62974F00B8C2E8 /* NearByRoofViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByRoofViewController.swift; sourceTree = "<group>"; };
 		DE1F71F21F62978000B8C2E8 /* InstallBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallBuyViewController.swift; sourceTree = "<group>"; };
 		DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductProvideViewController.swift; sourceTree = "<group>"; };
-		DE2542011F32F1B500872C22 /* GroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupInfo.swift; path = GuangFuJie/Models/GroupInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE25420D1F32F23D00872C22 /* LandlordInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandlordInfo.swift; path = GuangFuJie/Models/LandlordInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE2542101F32F3EB00872C22 /* AreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AreaModel.swift; path = GuangFuJie/Models/AreaModel.swift; sourceTree = SOURCE_ROOT; };
-		DE2542131F32F4EB00872C22 /* ArticleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleInfo.swift; path = GuangFuJie/Models/ArticleInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE2542161F32FD3500872C22 /* NoteInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteInfo.swift; path = GuangFuJie/Models/NoteInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE2542191F32FE9500872C22 /* AskInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AskInfo.swift; path = GuangFuJie/Models/AskInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE25421C1F332A4600872C22 /* ProjectcalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectcalInfo.swift; path = GuangFuJie/Models/ProjectcalInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE25421F1F332BA300872C22 /* EnergycalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnergycalInfo.swift; path = GuangFuJie/Models/EnergycalInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE2542221F332BF400872C22 /* IncomecalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IncomecalInfo.swift; path = GuangFuJie/Models/IncomecalInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE2542271F3452EA00872C22 /* ElecticIncomeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElecticIncomeInfo.swift; path = GuangFuJie/Models/ElecticIncomeInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE2542331F34545E00872C22 /* RepaymentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepaymentInfo.swift; path = GuangFuJie/Models/RepaymentInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE2542361F3454A300872C22 /* NetprofitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetprofitInfo.swift; path = GuangFuJie/Models/NetprofitInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE2542391F3454ED00872C22 /* IncomeCalParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IncomeCalParams.swift; path = GuangFuJie/Models/IncomeCalParams.swift; sourceTree = SOURCE_ROOT; };
-		DE25423C1F34559A00872C22 /* GroupUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupUserInfo.swift; path = GuangFuJie/Models/GroupUserInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE25423F1F3455D700872C22 /* GroupOrderInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupOrderInfo.swift; path = GuangFuJie/Models/GroupOrderInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE39521A1F14616000A44740 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -1260,7 +1243,6 @@
 		DE3954511F14802200A44740 /* PublishMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMediaView.swift; sourceTree = "<group>"; };
 		DE3954541F1480E800A44740 /* Dimens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		DE3954571F1481E500A44740 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionInfo.swift; path = GuangFuJie/Models/QuestionInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceCell.swift; sourceTree = "<group>"; };
 		DE6790661F6A692500A654BC /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		DE6D91F51F2DBAAA008E0E3A /* RootComViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootComViewController.swift; sourceTree = "<group>"; };
@@ -1283,30 +1265,6 @@
 		DE86843E1F0DCADE00FF7FD3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DE86843F1F0DCADE00FF7FD3 /* API+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+List.swift"; sourceTree = "<group>"; };
 		DE8684A51F0DCBD600FF7FD3 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		DE8684D01F0DCC7900FF7FD3 /* InsuranceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsuranceDetail.swift; path = GuangFuJie/Models/InsuranceDetail.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D11F0DCC7900FF7FD3 /* InsuranceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsuranceType.swift; path = GuangFuJie/Models/InsuranceType.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D21F0DCC7900FF7FD3 /* ElectricInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElectricInfo.swift; path = GuangFuJie/Models/ElectricInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D31F0DCC7900FF7FD3 /* InsuranceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsuranceInfo.swift; path = GuangFuJie/Models/InsuranceInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D41F0DCC7900FF7FD3 /* InstallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstallInfo.swift; path = GuangFuJie/Models/InstallInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D51F0DCC7900FF7FD3 /* ShareInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareInfo.swift; path = GuangFuJie/Models/ShareInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D61F0DCC7900FF7FD3 /* DeviceListInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceListInfo.swift; path = GuangFuJie/Models/DeviceListInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D71F0DCC7900FF7FD3 /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsInfo.swift; path = GuangFuJie/Models/NewsInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D81F0DCC7900FF7FD3 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceInfo.swift; path = GuangFuJie/Models/DeviceInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684D91F0DCC7900FF7FD3 /* RoofInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoofInfo.swift; path = GuangFuJie/Models/RoofInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684DA1F0DCC7900FF7FD3 /* QNResultInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QNResultInfo.swift; path = GuangFuJie/Models/QNResultInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684DB1F0DCC7900FF7FD3 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = GuangFuJie/Models/UserInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684DC1F0DCC7900FF7FD3 /* CommonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonModel.swift; path = GuangFuJie/Models/CommonModel.swift; sourceTree = SOURCE_ROOT; };
-		DE8684DD1F0DCC7900FF7FD3 /* CalcModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalcModel.swift; path = GuangFuJie/Models/CalcModel.swift; sourceTree = SOURCE_ROOT; };
-		DE8684DE1F0DCC7900FF7FD3 /* GetInventerMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetInventerMode.swift; path = GuangFuJie/Models/GetInventerMode.swift; sourceTree = SOURCE_ROOT; };
-		DE8684DF1F0DCC7900FF7FD3 /* PowerGraphInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerGraphInfo.swift; path = GuangFuJie/Models/PowerGraphInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684E01F0DCC7900FF7FD3 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityModel.swift; path = GuangFuJie/Models/CityModel.swift; sourceTree = SOURCE_ROOT; };
-		DE8684E11F0DCC7900FF7FD3 /* ProvinceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProvinceModel.swift; path = GuangFuJie/Models/ProvinceModel.swift; sourceTree = SOURCE_ROOT; };
-		DE8684E21F0DCC7900FF7FD3 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonInfo.swift; path = GuangFuJie/Models/CommonInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684E31F0DCC7900FF7FD3 /* AfterSaleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AfterSaleInfo.swift; path = GuangFuJie/Models/AfterSaleInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684E41F0DCC7900FF7FD3 /* BookingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookingStatus.swift; path = GuangFuJie/Models/BookingStatus.swift; sourceTree = SOURCE_ROOT; };
-		DE8684E51F0DCC7900FF7FD3 /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BankInfo.swift; path = GuangFuJie/Models/BankInfo.swift; sourceTree = SOURCE_ROOT; };
-		DE8684E61F0DCC7900FF7FD3 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppModel.swift; path = GuangFuJie/Models/AppModel.swift; sourceTree = SOURCE_ROOT; };
-		DE8684E71F0DCC7900FF7FD3 /* QNInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QNInfo.swift; path = GuangFuJie/Models/QNInfo.swift; sourceTree = SOURCE_ROOT; };
 		DE8687411F0DCE4400FF7FD3 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		DE8687421F0DCE4400FF7FD3 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		DE8687431F0DCE4400FF7FD3 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -1763,9 +1721,54 @@
 		DE9F9DBB1F19FDD4003CF080 /* MQMessageFormTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQMessageFormTextView.m; sourceTree = "<group>"; };
 		DE9F9DBD1F19FDD4003CF080 /* MQMessageFormImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQMessageFormImageView.h; sourceTree = "<group>"; };
 		DE9F9DBE1F19FDD4003CF080 /* MQMessageFormImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQMessageFormImageView.m; sourceTree = "<group>"; };
-		DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoofMapInfo.swift; path = GuangFuJie/Models/RoofMapInfo.swift; sourceTree = SOURCE_ROOT; };
-		DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstallerMapInfo.swift; path = GuangFuJie/Models/InstallerMapInfo.swift; sourceTree = SOURCE_ROOT; };
 		DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
+		DEB9C9CB1F722FA6007BE2A3 /* AfterSaleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSaleInfo.swift; sourceTree = "<group>"; };
+		DEB9C9CC1F722FA6007BE2A3 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		DEB9C9CD1F722FA6007BE2A3 /* AreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaModel.swift; sourceTree = "<group>"; };
+		DEB9C9CE1F722FA6007BE2A3 /* ArticleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleInfo.swift; sourceTree = "<group>"; };
+		DEB9C9CF1F722FA6007BE2A3 /* AskInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskInfo.swift; sourceTree = "<group>"; };
+		DEB9C9D01F722FA6007BE2A3 /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
+		DEB9C9D11F722FA6007BE2A3 /* BookingStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatus.swift; sourceTree = "<group>"; };
+		DEB9C9D21F722FA6007BE2A3 /* CalcModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcModel.swift; sourceTree = "<group>"; };
+		DEB9C9D31F722FA6007BE2A3 /* CalResultParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultParams.swift; sourceTree = "<group>"; };
+		DEB9C9D41F722FA6007BE2A3 /* CashInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashInfo.swift; sourceTree = "<group>"; };
+		DEB9C9D51F722FA6007BE2A3 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		DEB9C9D61F722FA6007BE2A3 /* CommonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInfo.swift; sourceTree = "<group>"; };
+		DEB9C9D71F722FA6007BE2A3 /* CommonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
+		DEB9C9D81F722FA6007BE2A3 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		DEB9C9D91F722FA6007BE2A3 /* DeviceListInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListInfo.swift; sourceTree = "<group>"; };
+		DEB9C9DA1F722FA6007BE2A3 /* ElecticIncomeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElecticIncomeInfo.swift; sourceTree = "<group>"; };
+		DEB9C9DB1F722FA6007BE2A3 /* ElectricInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricInfo.swift; sourceTree = "<group>"; };
+		DEB9C9DC1F722FA6007BE2A3 /* EnergycalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergycalInfo.swift; sourceTree = "<group>"; };
+		DEB9C9DD1F722FA6007BE2A3 /* FranchiseeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FranchiseeInfo.swift; sourceTree = "<group>"; };
+		DEB9C9DE1F722FA6007BE2A3 /* GetInventerMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInventerMode.swift; sourceTree = "<group>"; };
+		DEB9C9DF1F722FA6007BE2A3 /* GroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
+		DEB9C9E01F722FA6007BE2A3 /* GroupOrderInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOrderInfo.swift; sourceTree = "<group>"; };
+		DEB9C9E11F722FA6007BE2A3 /* GroupUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupUserInfo.swift; sourceTree = "<group>"; };
+		DEB9C9E21F722FA6007BE2A3 /* IncomecalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomecalInfo.swift; sourceTree = "<group>"; };
+		DEB9C9E31F722FA6007BE2A3 /* IncomeCalParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeCalParams.swift; sourceTree = "<group>"; };
+		DEB9C9E41F722FA6007BE2A3 /* InstallerMapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerMapInfo.swift; sourceTree = "<group>"; };
+		DEB9C9E51F722FA6007BE2A3 /* InstallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallInfo.swift; sourceTree = "<group>"; };
+		DEB9C9E61F722FA6007BE2A3 /* InsuranceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceDetail.swift; sourceTree = "<group>"; };
+		DEB9C9E71F722FA6007BE2A3 /* InsuranceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceInfo.swift; sourceTree = "<group>"; };
+		DEB9C9E81F722FA6007BE2A3 /* InsuranceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceType.swift; sourceTree = "<group>"; };
+		DEB9C9E91F722FA6007BE2A3 /* LandlordInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandlordInfo.swift; sourceTree = "<group>"; };
+		DEB9C9EA1F722FA6007BE2A3 /* LocationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationInfo.swift; sourceTree = "<group>"; };
+		DEB9C9EB1F722FA6007BE2A3 /* MyCountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCountInfo.swift; sourceTree = "<group>"; };
+		DEB9C9EC1F722FA6007BE2A3 /* NetprofitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetprofitInfo.swift; sourceTree = "<group>"; };
+		DEB9C9ED1F722FA6007BE2A3 /* NewsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInfo.swift; sourceTree = "<group>"; };
+		DEB9C9EE1F722FA6007BE2A3 /* NoteInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteInfo.swift; sourceTree = "<group>"; };
+		DEB9C9EF1F722FA6007BE2A3 /* PowerGraphInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerGraphInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F01F722FA6007BE2A3 /* ProjectcalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectcalInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F11F722FA6007BE2A3 /* ProvinceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceModel.swift; sourceTree = "<group>"; };
+		DEB9C9F21F722FA6007BE2A3 /* QNInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QNInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F31F722FA6007BE2A3 /* QNResultInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QNResultInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F41F722FA6007BE2A3 /* QuestionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F51F722FA6007BE2A3 /* RepaymentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepaymentInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F61F722FA6007BE2A3 /* RoofInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F71F722FA6007BE2A3 /* RoofMapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofMapInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F81F722FA6007BE2A3 /* ShareInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInfo.swift; sourceTree = "<group>"; };
+		DEB9C9F91F722FA6007BE2A3 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		DEC221221F131577007D6DBE /* CustomImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CustomImages.xcassets; sourceTree = "<group>"; };
 		DEC221261F13531B007D6DBE /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		DEC221291F13585D007D6DBE /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -1864,14 +1867,12 @@
 		DEC224391F136362007D6DBE /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		DEC2243A1F136362007D6DBE /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		DEC226EE1F136382007D6DBE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
-		DED05D261F61383D006741F6 /* MyCountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyCountInfo.swift; path = GuangFuJie/Models/MyCountInfo.swift; sourceTree = SOURCE_ROOT; };
 		DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
 		DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
 		DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
 		DED05D471F624CB7006741F6 /* YeZhuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuCell.swift; sourceTree = "<group>"; };
 		DED05D4A1F624E10006741F6 /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
 		DED05D4B1F624E10006741F6 /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
-		DED352931F63D48F00BA1B52 /* LocationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationInfo.swift; path = GuangFuJie/Models/LocationInfo.swift; sourceTree = SOURCE_ROOT; };
 		DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceShopViewController.swift; sourceTree = "<group>"; };
 		DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerHomeViewController.swift; sourceTree = "<group>"; };
 		DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiTuiHomeViewController.swift; sourceTree = "<group>"; };
@@ -1910,7 +1911,6 @@
 		DEE6C9C51F35BEC900AB6031 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		DEF593961F3EEA5500448FC5 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		DEFF5DE81F6FF95D00F58A04 /* CashCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashCell.swift; sourceTree = "<group>"; };
-		DEFF5DF41F7001BA00F58A04 /* CashInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CashInfo.swift; path = GuangFuJie/Models/CashInfo.swift; sourceTree = SOURCE_ROOT; };
 		DEFF5DFA1F700E5100F58A04 /* BCPayObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCPayObjects.h; sourceTree = "<group>"; };
 		DEFF5DFB1F700E5100F58A04 /* BeeCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeCloud.h; sourceTree = "<group>"; };
 		DEFF5DFC1F700E5100F58A04 /* BeeCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeCloud.m; sourceTree = "<group>"; };
@@ -2359,9 +2359,9 @@
 		DE8683DF1F0DC92B00FF7FD3 /* GuangFuJie */ = {
 			isa = PBXGroup;
 			children = (
+				DEB9C9CA1F722FA5007BE2A3 /* Models */,
 				DE868A0A1F0DD11800FF7FD3 /* Category */,
 				DE86843D1F0DCAD500FF7FD3 /* Api */,
-				DE8684371F0DCA8F00FF7FD3 /* Models */,
 				DE8684381F0DCA8F00FF7FD3 /* View */,
 				DE8684391F0DCA8F00FF7FD3 /* Controller */,
 				DE86843A1F0DCA8F00FF7FD3 /* Library */,
@@ -2389,61 +2389,6 @@
 				DE8684311F0DC9DE00FF7FD3 /* Info.plist */,
 			);
 			path = GaoDeGuangFu;
-			sourceTree = "<group>";
-		};
-		DE8684371F0DCA8F00FF7FD3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DE8684D01F0DCC7900FF7FD3 /* InsuranceDetail.swift */,
-				DE8684D11F0DCC7900FF7FD3 /* InsuranceType.swift */,
-				DE8684D21F0DCC7900FF7FD3 /* ElectricInfo.swift */,
-				DE8684D31F0DCC7900FF7FD3 /* InsuranceInfo.swift */,
-				DE8684D41F0DCC7900FF7FD3 /* InstallInfo.swift */,
-				DE8684D51F0DCC7900FF7FD3 /* ShareInfo.swift */,
-				DE8684D61F0DCC7900FF7FD3 /* DeviceListInfo.swift */,
-				DE8684D71F0DCC7900FF7FD3 /* NewsInfo.swift */,
-				DE8684D81F0DCC7900FF7FD3 /* DeviceInfo.swift */,
-				DE8684D91F0DCC7900FF7FD3 /* RoofInfo.swift */,
-				DE8684DA1F0DCC7900FF7FD3 /* QNResultInfo.swift */,
-				DE8684DB1F0DCC7900FF7FD3 /* UserInfo.swift */,
-				DE8684DC1F0DCC7900FF7FD3 /* CommonModel.swift */,
-				DE8684DD1F0DCC7900FF7FD3 /* CalcModel.swift */,
-				DE8684DE1F0DCC7900FF7FD3 /* GetInventerMode.swift */,
-				DE8684DF1F0DCC7900FF7FD3 /* PowerGraphInfo.swift */,
-				DE8684E01F0DCC7900FF7FD3 /* CityModel.swift */,
-				DE8684E11F0DCC7900FF7FD3 /* ProvinceModel.swift */,
-				DE2542101F32F3EB00872C22 /* AreaModel.swift */,
-				DE8684E21F0DCC7900FF7FD3 /* CommonInfo.swift */,
-				DE8684E31F0DCC7900FF7FD3 /* AfterSaleInfo.swift */,
-				DE8684E41F0DCC7900FF7FD3 /* BookingStatus.swift */,
-				DE8684E51F0DCC7900FF7FD3 /* BankInfo.swift */,
-				DE8684E61F0DCC7900FF7FD3 /* AppModel.swift */,
-				DE8684E71F0DCC7900FF7FD3 /* QNInfo.swift */,
-				DEA6CDF61F1B8BDA0061629C /* RoofMapInfo.swift */,
-				DEA6CDF91F1B8BEF0061629C /* InstallerMapInfo.swift */,
-				DE1643261F31B48D00BE5748 /* FranchiseeInfo.swift */,
-				DE2542011F32F1B500872C22 /* GroupInfo.swift */,
-				DE25420D1F32F23D00872C22 /* LandlordInfo.swift */,
-				DE2542131F32F4EB00872C22 /* ArticleInfo.swift */,
-				DE2542161F32FD3500872C22 /* NoteInfo.swift */,
-				DE2542191F32FE9500872C22 /* AskInfo.swift */,
-				DE25421C1F332A4600872C22 /* ProjectcalInfo.swift */,
-				DE25421F1F332BA300872C22 /* EnergycalInfo.swift */,
-				DE2542221F332BF400872C22 /* IncomecalInfo.swift */,
-				DE2542271F3452EA00872C22 /* ElecticIncomeInfo.swift */,
-				DE2542331F34545E00872C22 /* RepaymentInfo.swift */,
-				DE2542361F3454A300872C22 /* NetprofitInfo.swift */,
-				DE2542391F3454ED00872C22 /* IncomeCalParams.swift */,
-				DE25423C1F34559A00872C22 /* GroupUserInfo.swift */,
-				DE25423F1F3455D700872C22 /* GroupOrderInfo.swift */,
-				DED05D261F61383D006741F6 /* MyCountInfo.swift */,
-				DED352931F63D48F00BA1B52 /* LocationInfo.swift */,
-				DE3AE0B51F691FC600A7A34A /* QuestionInfo.swift */,
-				DE0237991F6D1491008BE3C5 /* CalResultParams.swift */,
-				DEFF5DF41F7001BA00F58A04 /* CashInfo.swift */,
-			);
-			name = Models;
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		DE8684381F0DCA8F00FF7FD3 /* View */ = {
@@ -3624,6 +3569,60 @@
 			path = MQMessageFromImageView;
 			sourceTree = "<group>";
 		};
+		DEB9C9CA1F722FA5007BE2A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEB9C9CB1F722FA6007BE2A3 /* AfterSaleInfo.swift */,
+				DEB9C9CC1F722FA6007BE2A3 /* AppModel.swift */,
+				DEB9C9CD1F722FA6007BE2A3 /* AreaModel.swift */,
+				DEB9C9CE1F722FA6007BE2A3 /* ArticleInfo.swift */,
+				DEB9C9CF1F722FA6007BE2A3 /* AskInfo.swift */,
+				DEB9C9D01F722FA6007BE2A3 /* BankInfo.swift */,
+				DEB9C9D11F722FA6007BE2A3 /* BookingStatus.swift */,
+				DEB9C9D21F722FA6007BE2A3 /* CalcModel.swift */,
+				DEB9C9D31F722FA6007BE2A3 /* CalResultParams.swift */,
+				DEB9C9D41F722FA6007BE2A3 /* CashInfo.swift */,
+				DEB9C9D51F722FA6007BE2A3 /* CityModel.swift */,
+				DEB9C9D61F722FA6007BE2A3 /* CommonInfo.swift */,
+				DEB9C9D71F722FA6007BE2A3 /* CommonModel.swift */,
+				DEB9C9D81F722FA6007BE2A3 /* DeviceInfo.swift */,
+				DEB9C9D91F722FA6007BE2A3 /* DeviceListInfo.swift */,
+				DEB9C9DA1F722FA6007BE2A3 /* ElecticIncomeInfo.swift */,
+				DEB9C9DB1F722FA6007BE2A3 /* ElectricInfo.swift */,
+				DEB9C9DC1F722FA6007BE2A3 /* EnergycalInfo.swift */,
+				DEB9C9DD1F722FA6007BE2A3 /* FranchiseeInfo.swift */,
+				DEB9C9DE1F722FA6007BE2A3 /* GetInventerMode.swift */,
+				DEB9C9DF1F722FA6007BE2A3 /* GroupInfo.swift */,
+				DEB9C9E01F722FA6007BE2A3 /* GroupOrderInfo.swift */,
+				DEB9C9E11F722FA6007BE2A3 /* GroupUserInfo.swift */,
+				DEB9C9E21F722FA6007BE2A3 /* IncomecalInfo.swift */,
+				DEB9C9E31F722FA6007BE2A3 /* IncomeCalParams.swift */,
+				DEB9C9E41F722FA6007BE2A3 /* InstallerMapInfo.swift */,
+				DEB9C9E51F722FA6007BE2A3 /* InstallInfo.swift */,
+				DEB9C9E61F722FA6007BE2A3 /* InsuranceDetail.swift */,
+				DEB9C9E71F722FA6007BE2A3 /* InsuranceInfo.swift */,
+				DEB9C9E81F722FA6007BE2A3 /* InsuranceType.swift */,
+				DEB9C9E91F722FA6007BE2A3 /* LandlordInfo.swift */,
+				DEB9C9EA1F722FA6007BE2A3 /* LocationInfo.swift */,
+				DEB9C9EB1F722FA6007BE2A3 /* MyCountInfo.swift */,
+				DEB9C9EC1F722FA6007BE2A3 /* NetprofitInfo.swift */,
+				DEB9C9ED1F722FA6007BE2A3 /* NewsInfo.swift */,
+				DEB9C9EE1F722FA6007BE2A3 /* NoteInfo.swift */,
+				DEB9C9EF1F722FA6007BE2A3 /* PowerGraphInfo.swift */,
+				DEB9C9F01F722FA6007BE2A3 /* ProjectcalInfo.swift */,
+				DEB9C9F11F722FA6007BE2A3 /* ProvinceModel.swift */,
+				DEB9C9F21F722FA6007BE2A3 /* QNInfo.swift */,
+				DEB9C9F31F722FA6007BE2A3 /* QNResultInfo.swift */,
+				DEB9C9F41F722FA6007BE2A3 /* QuestionInfo.swift */,
+				DEB9C9F51F722FA6007BE2A3 /* RepaymentInfo.swift */,
+				DEB9C9F61F722FA6007BE2A3 /* RoofInfo.swift */,
+				DEB9C9F71F722FA6007BE2A3 /* RoofMapInfo.swift */,
+				DEB9C9F81F722FA6007BE2A3 /* ShareInfo.swift */,
+				DEB9C9F91F722FA6007BE2A3 /* UserInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DEC2212F1F13600F007D6DBE /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -4481,12 +4480,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFF5F061F700E5100F58A04 /* BCQueryBillsCountResp.m in Sources */,
+				DEB9CA4C1F722FA6007BE2A3 /* QuestionInfo.swift in Sources */,
 				DE9F9EA91F19FDD5003CF080 /* MQToast.m in Sources */,
 				DEC222581F13601E007D6DBE /* NSBundle+MJRefresh.m in Sources */,
 				DE868E001F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */,
+				DEB9CA341F722FA6007BE2A3 /* InsuranceType.swift in Sources */,
 				DE868ACA1F0DD1B800FF7FD3 /* MJExtensionConst.m in Sources */,
+				DEB9CA281F722FA6007BE2A3 /* IncomecalInfo.swift in Sources */,
 				DE9F9EC71F19FDD5003CF080 /* MQMessageFormInputView.m in Sources */,
-				DE8684E91F0DCC7900FF7FD3 /* InsuranceType.swift in Sources */,
 				DE9F9DFD1F19FDD4003CF080 /* MQBotMessageFactory.m in Sources */,
 				DEC226C31F136363007D6DBE /* SMenuCell.m in Sources */,
 				DE9F9DE91F19FDD4003CF080 /* MQChatViewController.m in Sources */,
@@ -4495,14 +4496,14 @@
 				DEE6C9CC1F35BECA00AB6031 /* IQUIView+Hierarchy.swift in Sources */,
 				DEC226C51F136363007D6DBE /* SPullDownMenuView.m in Sources */,
 				DE9F9E1B1F19FDD4003CF080 /* MQEvaluationResultCellModel.m in Sources */,
-				DE2542341F34545E00872C22 /* RepaymentInfo.swift in Sources */,
 				DEC222561F13601E007D6DBE /* MJRefreshConst.m in Sources */,
 				DE9F9E831F19FDD4003CF080 /* MEIQIA_AmrRecordWriter.m in Sources */,
-				DE8684ED1F0DCC7900FF7FD3 /* ShareInfo.swift in Sources */,
 				DEFF5F0C1F700E5100F58A04 /* BCQueryRefundsReq.m in Sources */,
 				DEC222461F13601E007D6DBE /* MJRefreshAutoStateFooter.m in Sources */,
+				DEB9CA541F722FA6007BE2A3 /* ShareInfo.swift in Sources */,
 				DE9F9E591F19FDD4003CF080 /* MQChatEmojize.m in Sources */,
 				DE9F9EA71F19FDD5003CF080 /* MQRecordView.m in Sources */,
+				DEB9CA1C1F722FA6007BE2A3 /* EnergycalInfo.swift in Sources */,
 				DE868AD41F0DD1B800FF7FD3 /* NSObject+MJClass.m in Sources */,
 				DE9F9E9B1F19FDD5003CF080 /* MQRecorderView.m in Sources */,
 				DE3954311F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
@@ -4511,24 +4512,27 @@
 				DE8688791F0DD05900FF7FD3 /* QNFile.m in Sources */,
 				DE3954251F1468CB00A44740 /* ZLNavigationController.m in Sources */,
 				DEFF5F041F700E5100F58A04 /* BCQueryBillsCountReq.m in Sources */,
+				DEB9CA561F722FA6007BE2A3 /* UserInfo.swift in Sources */,
 				DEFF5EF81F700E5100F58A04 /* BCPreRefundReq.m in Sources */,
 				DE9F9EAB1F19FDD5003CF080 /* MQBotWebViewController.m in Sources */,
+				DEB9CA321F722FA6007BE2A3 /* InsuranceInfo.swift in Sources */,
 				DEFF5EF01F700E5100F58A04 /* BCPayReq.m in Sources */,
 				DEC2225A1F13601E007D6DBE /* UIScrollView+MJExtension.m in Sources */,
+				DEB9CA461F722FA6007BE2A3 /* ProvinceModel.swift in Sources */,
 				DEFF5F421F700E5100F58A04 /* AliPayAdapter.m in Sources */,
-				DE8684F01F0DCC7900FF7FD3 /* DeviceInfo.swift in Sources */,
 				DE9F9E4D1F19FDD4003CF080 /* MQWebViewBubbleCell.m in Sources */,
 				DE6D91F81F2DBAC4008E0E3A /* RootElectricViewController.swift in Sources */,
 				DE3954521F14802200A44740 /* PublishMediaView.swift in Sources */,
 				DE9F9E071F19FDD4003CF080 /* MQImageMessage.m in Sources */,
 				DE868ADF1F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
 				DE9F9E871F19FDD4003CF080 /* MEIQIA_MLAudioMeterObserver.m in Sources */,
-				DE8684EA1F0DCC7900FF7FD3 /* ElectricInfo.swift in Sources */,
+				DEB9CA061F722FA6007BE2A3 /* BookingStatus.swift in Sources */,
 				DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */,
 				DE9F9E751F19FDD4003CF080 /* MEIQIA_FBLCDFontView.m in Sources */,
 				DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
+				DEB9CA4E1F722FA6007BE2A3 /* RepaymentInfo.swift in Sources */,
 				DE9F9DDD1F19FDD4003CF080 /* MQChatViewConfig.m in Sources */,
-				DEA6CDFA1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */,
+				DEB9C9FC1F722FA6007BE2A3 /* AppModel.swift in Sources */,
 				DE868A081F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DE9F9E311F19FDD4003CF080 /* MQBotMenuAnswerCell.m in Sources */,
 				DE9F9E691F19FDD4003CF080 /* MQAGEmojiPageView.m in Sources */,
@@ -4538,20 +4542,21 @@
 				DE9F9E8D1F19FDD5003CF080 /* amrFileCodec.mm in Sources */,
 				DED05D371F624C4A006741F6 /* MoreInstallerViewController.swift in Sources */,
 				DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
+				DEB9CA041F722FA6007BE2A3 /* BankInfo.swift in Sources */,
 				DEE682211F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
 				DEE6C9CA1F35BECA00AB6031 /* IQUITextFieldView+Additions.swift in Sources */,
 				DEC226C11F136363007D6DBE /* SMenuButton.m in Sources */,
 				DE9F9EC91F19FDD5003CF080 /* MQMessageFormTextView.m in Sources */,
 				DE9F9E3B1F19FDD4003CF080 /* MQEvaluationResultCell.m in Sources */,
-				DEA6CDF71F1B8BDA0061629C /* RoofMapInfo.swift in Sources */,
 				DEE6821B1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */,
 				DEFF5F2E1F700E5100F58A04 /* BCURLSessionManager.m in Sources */,
+				DEB9CA2E1F722FA6007BE2A3 /* InstallInfo.swift in Sources */,
 				DE6D91F61F2DBAAA008E0E3A /* RootComViewController.swift in Sources */,
 				DEFF5F001F700E5100F58A04 /* BCQueryBillsReq.m in Sources */,
 				DE9F9E6B1F19FDD4003CF080 /* MEIQIA_CustomIOSAlertView.m in Sources */,
 				DE9F9E471F19FDD4003CF080 /* MQTextMessageCell.m in Sources */,
-				DE2542231F332BF400872C22 /* IncomecalInfo.swift in Sources */,
 				DE3954351F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */,
+				DEB9CA2A1F722FA6007BE2A3 /* IncomeCalParams.swift in Sources */,
 				DE9F9E451F19FDD4003CF080 /* MQRichTextViewCell.m in Sources */,
 				DE39542D1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m in Sources */,
 				DE9F9EC31F19FDD5003CF080 /* MQMessageFormViewService.m in Sources */,
@@ -4562,19 +4567,15 @@
 				DE39540B1F1468CB00A44740 /* UIView+ZLExtension.m in Sources */,
 				DE86876B1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
 				DE9F9EA31F19FDD5003CF080 /* MQInputToolBar.m in Sources */,
+				DEB9CA421F722FA6007BE2A3 /* PowerGraphInfo.swift in Sources */,
 				DE9F9E6D1F19FDD4003CF080 /* MEIQIA_FBBitmapFont.m in Sources */,
 				DE868E071F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
 				DE9F9DD91F19FDD4003CF080 /* UIViewController+MQOrientationFix.m in Sources */,
-				DE1643271F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */,
+				DEB9CA481F722FA6007BE2A3 /* QNInfo.swift in Sources */,
 				DE86876F1F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
 				DE86877F1F0DCE4400FF7FD3 /* UIWebView+AFNetworking.m in Sources */,
-				DE25421A1F32FE9500872C22 /* AskInfo.swift in Sources */,
-				DE8684F31F0DCC7900FF7FD3 /* UserInfo.swift in Sources */,
 				DEFF5F2A1F700E5100F58A04 /* BCURLRequestSerialization.m in Sources */,
-				DE2542401F3455D700872C22 /* GroupOrderInfo.swift in Sources */,
 				DE868ACE1F0DD1B800FF7FD3 /* MJProperty.m in Sources */,
-				DE25421D1F332A4600872C22 /* ProjectcalInfo.swift in Sources */,
-				DE25423A1F3454ED00872C22 /* IncomeCalParams.swift in Sources */,
 				DEFF5F121F700E5100F58A04 /* BCQueryRefundsCountResp.m in Sources */,
 				DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DE9F9EB51F19FDD5003CF080 /* MQMessageFormViewManager.m in Sources */,
@@ -4588,29 +4589,33 @@
 				DE9F9E111F19FDD4003CF080 /* MQVoiceMessage.m in Sources */,
 				DE868A041F0DD0D700FF7FD3 /* QNGetAddrInfo.m in Sources */,
 				DEE6C9D21F35BECA00AB6031 /* IQKeyboardManager.swift in Sources */,
-				DE8684EB1F0DCC7900FF7FD3 /* InsuranceInfo.swift in Sources */,
 				DEFF5F161F700E5100F58A04 /* BCRefundStatusResp.m in Sources */,
 				DE868A151F0DD11800FF7FD3 /* UIViewController+HUD.m in Sources */,
 				DE1F71F51F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */,
+				DEB9CA181F722FA6007BE2A3 /* ElecticIncomeInfo.swift in Sources */,
 				DEFF5F3A1F700E5100F58A04 /* BeeCloudAdapter.m in Sources */,
 				DE9F9E7B1F19FDD4003CF080 /* MEIQIA_HPGrowingTextView.m in Sources */,
 				DE3954051F1468CB00A44740 /* UIImageView+WebCache.m in Sources */,
 				DEE681FC1F18B2CD00157560 /* MapViewController.swift in Sources */,
 				DE3952281F14629100A44740 /* CalResultViewController.swift in Sources */,
 				DEFF5F101F700E5100F58A04 /* BCQueryRefundsCountReq.m in Sources */,
+				DEB9CA301F722FA6007BE2A3 /* InsuranceDetail.swift in Sources */,
 				DEFF5EEA1F700E5100F58A04 /* BCAuthReq.m in Sources */,
 				DE39521B1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
+				DEB9C9FE1F722FA6007BE2A3 /* AreaModel.swift in Sources */,
 				DE39544F1F147FDD00A44740 /* ApplyForOrderViewController.swift in Sources */,
 				DEC222441F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE3954111F1468CB00A44740 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
 				DE9F9E3F1F19FDD4003CF080 /* MQFileDownloadCell.m in Sources */,
 				DEE6821E1F19E4DE00157560 /* DituiApplyViewController.swift in Sources */,
 				DE9F9E091F19FDD4003CF080 /* MQMessageFactoryHelper.m in Sources */,
+				DEB9CA401F722FA6007BE2A3 /* NoteInfo.swift in Sources */,
 				DE9F9EAF1F19FDD5003CF080 /* MQWebViewController.m in Sources */,
 				DE8688851F0DD05900FF7FD3 /* QNSessionManager.m in Sources */,
 				DEFF5EFC1F700E5100F58A04 /* BCQueryBillByIdReq.m in Sources */,
 				DE3952221F14622500A44740 /* GFJBottomButton.swift in Sources */,
 				DE86877D1F0DCE4400FF7FD3 /* UIRefreshControl+AFNetworking.m in Sources */,
+				DEB9CA381F722FA6007BE2A3 /* LocationInfo.swift in Sources */,
 				DEFF5F7E1F700E5100F58A04 /* WXPayAdapter.m in Sources */,
 				DEFF5F021F700E5100F58A04 /* BCQueryBillsResp.m in Sources */,
 				DEFF5F3C1F700E5100F58A04 /* BCSandBoxAdapter.m in Sources */,
@@ -4633,8 +4638,9 @@
 				DE9F9E651F19FDD4003CF080 /* MQWindowUtil.m in Sources */,
 				DE8687751F0DCE4400FF7FD3 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DE9F9E791F19FDD4003CF080 /* MEIQIA_FBSquareFontView.m in Sources */,
+				DEB9CA241F722FA6007BE2A3 /* GroupOrderInfo.swift in Sources */,
+				DEB9CA201F722FA6007BE2A3 /* GetInventerMode.swift in Sources */,
 				DE8687631F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */,
-				DE8684F41F0DCC7900FF7FD3 /* CommonModel.swift in Sources */,
 				DE39540F1F1468CB00A44740 /* ZLPhotoRect.m in Sources */,
 				DE868E031F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */,
 				DE9F9DFB1F19FDD4003CF080 /* MQBotMenuMessage.m in Sources */,
@@ -4645,19 +4651,19 @@
 				DE868A131F0DD11800FF7FD3 /* NSString+AESCrypt.m in Sources */,
 				DE9F9E351F19FDD4003CF080 /* MQBotWebViewBubbleAnswerCell.m in Sources */,
 				DE8689EE1F0DD0D700FF7FD3 /* QNNetworkInfo.m in Sources */,
-				DE25423D1F34559A00872C22 /* GroupUserInfo.swift in Sources */,
 				DE3953F91F1468CB00A44740 /* SDWebImageManager.m in Sources */,
 				DEC2223C1F13601E007D6DBE /* MJRefreshComponent.m in Sources */,
 				DEC222501F13601E007D6DBE /* MJRefreshNormalHeader.m in Sources */,
 				DE8687771F0DCE4400FF7FD3 /* UIButton+AFNetworking.m in Sources */,
 				DEFF5F141F700E5100F58A04 /* BCRefundStatusReq.m in Sources */,
 				DE3952251F14626F00A44740 /* ProviceCityViewController.swift in Sources */,
+				DEB9CA141F722FA6007BE2A3 /* DeviceInfo.swift in Sources */,
 				DE39521E1F14619E00A44740 /* Colors.swift in Sources */,
 				DEE681F31F185FDF00157560 /* YeZhuViewController.swift in Sources */,
 				DE3954011F1468CB00A44740 /* UIImage+MultiFormat.m in Sources */,
 				DE9F9DCD1F19FDD4003CF080 /* NSError+MQConvenient.m in Sources */,
 				DEE6C9D01F35BECA00AB6031 /* IQUIWindow+Hierarchy.swift in Sources */,
-				DE8684F11F0DCC7900FF7FD3 /* RoofInfo.swift in Sources */,
+				DEB9CA261F722FA6007BE2A3 /* GroupUserInfo.swift in Sources */,
 				DEC2225E1F13601E007D6DBE /* UIView+MJExtension.m in Sources */,
 				DEC2223E1F13601E007D6DBE /* MJRefreshFooter.m in Sources */,
 				DE9F9EBF1F19FDD5003CF080 /* MQMessageFormCategoryViewController.m in Sources */,
@@ -4671,6 +4677,7 @@
 				DEE6C9D81F35BECA00AB6031 /* IQBarButtonItem.swift in Sources */,
 				DE9F9E1D1F19FDD4003CF080 /* MQEventCellModel.m in Sources */,
 				DE8689051F0DD07300FF7FD3 /* MBProgressHUD.m in Sources */,
+				DEB9CA1A1F722FA6007BE2A3 /* ElectricInfo.swift in Sources */,
 				DE9F9E5B1F19FDD4003CF080 /* MQChatFileUtil.m in Sources */,
 				DE9F9DEB1F19FDD4003CF080 /* MQChatViewService.m in Sources */,
 				DE6790671F6A692500A654BC /* GuideViewController.swift in Sources */,
@@ -4680,9 +4687,9 @@
 				DE86887B1F0DD05900FF7FD3 /* QNPHAssetFile.m in Sources */,
 				DEE6C9DC1F35BECA00AB6031 /* IQTitleBarButtonItem.swift in Sources */,
 				DEE6C9E01F35BECA00AB6031 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
-				DE2542371F3454A300872C22 /* NetprofitInfo.swift in Sources */,
 				DE8689E81F0DD0D700FF7FD3 /* QNDnsManager.m in Sources */,
 				DE8687711F0DCE4400FF7FD3 /* AFImageDownloader.m in Sources */,
+				DEB9CA0C1F722FA6007BE2A3 /* CashInfo.swift in Sources */,
 				DE9F9E851F19FDD4003CF080 /* MEIQIA_CafRecordWriter.m in Sources */,
 				DE39543A1F146DBC00A44740 /* MyInsuranceListViewController.swift in Sources */,
 				DE8688911F0DD05900FF7FD3 /* QNUploadManager.m in Sources */,
@@ -4690,9 +4697,7 @@
 				DE9F9DED1F19FDD4003CF080 /* MQChatViewTableDataSource.m in Sources */,
 				DE9F9E611F19FDD4003CF080 /* MQImageUtil.m in Sources */,
 				DEC2243B1F136362007D6DBE /* ApiXml.mm in Sources */,
-				DEFF5DF51F7001BA00F58A04 /* CashInfo.swift in Sources */,
 				DEFF5DE91F6FF95D00F58A04 /* CashCell.swift in Sources */,
-				DE8684EC1F0DCC7900FF7FD3 /* InstallInfo.swift in Sources */,
 				DE9F9E951F19FDD5003CF080 /* MQChatTableView.m in Sources */,
 				DE9F9E5D1F19FDD4003CF080 /* MQChatRegexUtil.m in Sources */,
 				DE39541B1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
@@ -4703,12 +4708,12 @@
 				DE6D91FC1F2DBAE2008E0E3A /* RootEarnViewController.swift in Sources */,
 				DE9F9E151F19FDD4003CF080 /* MQBotMenuAnswerCellModel.m in Sources */,
 				DE9F9E331F19FDD4003CF080 /* MQBotMenuCell.m in Sources */,
+				DEB9CA521F722FA6007BE2A3 /* RoofMapInfo.swift in Sources */,
 				DEC222521F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
 				DEFF5EF61F700E5100F58A04 /* BCPayPalVerifyReq.m in Sources */,
 				DE9F9DE71F19FDD4003CF080 /* MQChatViewStyleGreen.m in Sources */,
 				DE9F9EAD1F19FDD5003CF080 /* MQEmbededWebView.m in Sources */,
 				DE9F9E0D1F19FDD4003CF080 /* MQTextMessage.m in Sources */,
-				DE8684FB1F0DCC7900FF7FD3 /* AfterSaleInfo.swift in Sources */,
 				DE8689FE1F0DD0D700FF7FD3 /* QNTxtResolver.m in Sources */,
 				DE9F9ECB1F19FDD5003CF080 /* MQMessageFormImageView.m in Sources */,
 				DE868A061F0DD0D700FF7FD3 /* QNHex.m in Sources */,
@@ -4718,6 +4723,7 @@
 				DE9F9EBD1F19FDD5003CF080 /* MQMessageFormViewStyleGreen.m in Sources */,
 				DE9F9E8B1F19FDD5003CF080 /* MEIQIA_TTTAttributedLabel.m in Sources */,
 				DEFF5F241F700E5100F58A04 /* BCHTTPSessionManager.m in Sources */,
+				DEB9CA001F722FA6007BE2A3 /* ArticleInfo.swift in Sources */,
 				DE8688731F0DD05900FF7FD3 /* QNAsyncRun.m in Sources */,
 				DEFF5EEC1F700E5100F58A04 /* BCBaseReq.m in Sources */,
 				DEE682271F19F30700157560 /* NoteCell.swift in Sources */,
@@ -4726,43 +4732,45 @@
 				DE86886F1F0DD05900FF7FD3 /* QN_GTM_Base64.m in Sources */,
 				DE9F9DC11F19FDD4003CF080 /* MQServiceToViewInterface.m in Sources */,
 				DE868ACC1F0DD1B800FF7FD3 /* MJFoundation.m in Sources */,
+				DEB9CA161F722FA6007BE2A3 /* DeviceListInfo.swift in Sources */,
 				DE8689F01F0DD0D700FF7FD3 /* QNRecord.m in Sources */,
 				DEE6C9C81F35BEC900AB6031 /* IQUIScrollView+Additions.swift in Sources */,
 				DE3953F11F1468CB00A44740 /* SDWebImageCompat.m in Sources */,
 				DE9F9E371F19FDD4003CF080 /* MQChatBaseCell.m in Sources */,
+				DEB9CA221F722FA6007BE2A3 /* GroupInfo.swift in Sources */,
 				DE86877B1F0DCE4400FF7FD3 /* UIProgressView+AFNetworking.m in Sources */,
 				DEFF5F1E1F700E5100F58A04 /* BCNewSubscription.m in Sources */,
 				DE9F9DF71F19FDD4003CF080 /* MQBaseMessage.m in Sources */,
 				DE86888B1F0DD05900FF7FD3 /* QNConfiguration.m in Sources */,
 				DE9F9DDB1F19FDD4003CF080 /* MQCustomizedUIText.m in Sources */,
 				DE9F9E671F19FDD4003CF080 /* MQAGEmojiKeyBoardView.m in Sources */,
-				DE3AE0B61F691FC600A7A34A /* QuestionInfo.swift in Sources */,
 				DE3953F51F1468CB00A44740 /* SDWebImageDownloader.m in Sources */,
 				DEE6C9DA1F35BECA00AB6031 /* IQPreviousNextView.swift in Sources */,
 				DEFF5F181F700E5100F58A04 /* BCBaseResult.m in Sources */,
 				DE868AD01F0DD1B800FF7FD3 /* MJPropertyKey.m in Sources */,
 				DE3954331F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				DE9F9DE51F19FDD4003CF080 /* MQChatViewStyleDark.m in Sources */,
-				DE8684F91F0DCC7900FF7FD3 /* ProvinceModel.swift in Sources */,
 				DE3954171F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				DE9F9E491F19FDD4003CF080 /* MQTipsCell.m in Sources */,
 				DE1F71E91F6294BC00B8C2E8 /* GFJRoofListViewController.swift in Sources */,
 				DE3954551F1480E800A44740 /* Dimens.swift in Sources */,
 				DE3953F31F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
-				DE8684E81F0DCC7900FF7FD3 /* InsuranceDetail.swift in Sources */,
 				DEE6C9D61F35BECA00AB6031 /* IQTextView.swift in Sources */,
 				DED05D481F624CB7006741F6 /* YeZhuCell.swift in Sources */,
 				DE8687831F0DCEBB00FF7FD3 /* Constants.swift in Sources */,
 				DEFF5F381F700E5100F58A04 /* NSString+IsValid.m in Sources */,
+				DEB9CA081F722FA6007BE2A3 /* CalcModel.swift in Sources */,
+				DEB9CA3A1F722FA6007BE2A3 /* MyCountInfo.swift in Sources */,
 				DE9F9E9D1F19FDD5003CF080 /* MQButtonGroupBar.m in Sources */,
 				DE9F9E031F19FDD4003CF080 /* MQEventMessageFactory.m in Sources */,
 				DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */,
+				DEB9CA441F722FA6007BE2A3 /* ProjectcalInfo.swift in Sources */,
 				DE9F9DC71F19FDD4003CF080 /* MQTransitioningAnimation.m in Sources */,
 				DEFF5F261F700E5100F58A04 /* BCNetworkReachabilityManager.m in Sources */,
 				DE9F9E6F1F19FDD4003CF080 /* MEIQIA_FBBitmapFontView.m in Sources */,
+				DEB9CA4A1F722FA6007BE2A3 /* QNResultInfo.swift in Sources */,
 				DEC2224E1F13601E007D6DBE /* MJRefreshGifHeader.m in Sources */,
 				DE9F9E731F19FDD4003CF080 /* MEIQIA_FBLCDFont.m in Sources */,
-				DE2542021F32F1B500872C22 /* GroupInfo.swift in Sources */,
 				DE9F9EC11F19FDD5003CF080 /* MQMessageFormViewController.m in Sources */,
 				DEC224451F136362007D6DBE /* WXUtil.mm in Sources */,
 				DE8689E41F0DD0D700FF7FD3 /* QNAssessment.m in Sources */,
@@ -4770,19 +4778,18 @@
 				DE9F9EB71F19FDD5003CF080 /* MQMessageFormViewStyle.m in Sources */,
 				DE9F9DD31F19FDD4003CF080 /* UIImage+MQGenerate.m in Sources */,
 				DE868AD81F0DD1B800FF7FD3 /* NSObject+MJKeyValue.m in Sources */,
-				DE8684FA1F0DCC7900FF7FD3 /* CommonInfo.swift in Sources */,
 				DE9F9DCB1F19FDD4003CF080 /* NSArray+MQFunctional.m in Sources */,
-				DE8684FE1F0DCC7900FF7FD3 /* AppModel.swift in Sources */,
 				DE3954401F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DE9F9E051F19FDD4003CF080 /* MQFileDownloadMessage.m in Sources */,
 				DE8688771F0DD05900FF7FD3 /* QNEtag.m in Sources */,
 				DEE681F91F1897AC00157560 /* GFAskCell.swift in Sources */,
+				DEB9CA501F722FA6007BE2A3 /* RoofInfo.swift in Sources */,
+				DEB9CA361F722FA6007BE2A3 /* LandlordInfo.swift in Sources */,
 				DEFF5F1C1F700E5100F58A04 /* BCQueryRefundResult.m in Sources */,
 				DE6D91FA1F2DBAD8008E0E3A /* RootPayViewController.swift in Sources */,
 				DE39541D1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DE868ADC1F0DD1B800FF7FD3 /* NSString+MJExtension.m in Sources */,
 				DE86876D1F0DCE4400FF7FD3 /* AFURLSessionManager.m in Sources */,
-				DE2542111F32F3EB00872C22 /* AreaModel.swift in Sources */,
 				DE3954031F1468CB00A44740 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DE8688931F0DD05900FF7FD3 /* QNUploadOption.m in Sources */,
 				DE9F9DFF1F19FDD4003CF080 /* MQBotRichTextMessage.m in Sources */,
@@ -4792,16 +4799,15 @@
 				DE9F9DF51F19FDD4003CF080 /* MQPreChatSubmitViewController.m in Sources */,
 				DE86887D1F0DD05900FF7FD3 /* QNPHAssetResource.m in Sources */,
 				DE1F71F31F62978000B8C2E8 /* InstallBuyViewController.swift in Sources */,
-				DE8684FF1F0DCC7900FF7FD3 /* QNInfo.swift in Sources */,
 				DE9F9DE11F19FDD4003CF080 /* MQChatViewStyle.m in Sources */,
 				DE9F9EC51F19FDD5003CF080 /* MQMessageFormImageCell.m in Sources */,
 				DE868AE21F0DD23400FF7FD3 /* PhoneUtils.swift in Sources */,
 				DE9F9EA51F19FDD5003CF080 /* MQRefresh.m in Sources */,
+				DEB9CA2C1F722FA6007BE2A3 /* InstallerMapInfo.swift in Sources */,
 				DE8688751F0DD05900FF7FD3 /* QNCrc32.m in Sources */,
 				DEB031551F698CD000FA9528 /* QuestionDetailViewController.swift in Sources */,
 				DEE6C9C61F35BEC900AB6031 /* IQNSArray+Sort.swift in Sources */,
 				DE9F9E2D1F19FDD4003CF080 /* MQWebViewBubbleCellModel.m in Sources */,
-				DED352941F63D48F00BA1B52 /* LocationInfo.swift in Sources */,
 				DEFF5EF21F700E5100F58A04 /* BCPayResp.m in Sources */,
 				DE9F9E191F19FDD4003CF080 /* MQBotWebViewBubbleAnswerCellModel.m in Sources */,
 				DE8689FC1F0DD0D700FF7FD3 /* QNResolvUtil.m in Sources */,
@@ -4815,42 +4821,39 @@
 				DE868A021F0DD0D700FF7FD3 /* QNDes.m in Sources */,
 				DE1F71EC1F6294FD00B8C2E8 /* InstallerCell.swift in Sources */,
 				DEFF5F301F700E5100F58A04 /* BCPayCache.m in Sources */,
+				DEB9CA121F722FA6007BE2A3 /* CommonModel.swift in Sources */,
 				DEC222481F13601E007D6DBE /* MJRefreshBackGifFooter.m in Sources */,
 				DE9F9E211F19FDD4003CF080 /* MQImageCellModel.m in Sources */,
 				DEFF5F0A1F700E5100F58A04 /* BCQueryRefundByIdResp.m in Sources */,
 				DEFF5EFA1F700E5100F58A04 /* BCPreRefundResp.m in Sources */,
 				DE3954071F1468CB00A44740 /* UIView+WebCacheOperation.m in Sources */,
-				DE8684F61F0DCC7900FF7FD3 /* GetInventerMode.swift in Sources */,
+				DEB9C9FA1F722FA6007BE2A3 /* AfterSaleInfo.swift in Sources */,
 				DEC2212A1F13585D007D6DBE /* StringUtils.swift in Sources */,
 				DE8684401F0DCADE00FF7FD3 /* API.swift in Sources */,
 				DE39542F1F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				DE9F9E411F19FDD4003CF080 /* MQImageMessageCell.m in Sources */,
 				DEE6C9A41F35BAA300AB6031 /* NewsListViewController.swift in Sources */,
 				DE9F9DF31F19FDD4003CF080 /* MQPreChatFormViewModel.m in Sources */,
-				DE8684F51F0DCC7900FF7FD3 /* CalcModel.swift in Sources */,
 				DE9F9E131F19FDD4003CF080 /* MQBotAnswerCellModel.m in Sources */,
 				DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
+				DEB9CA0A1F722FA6007BE2A3 /* CalResultParams.swift in Sources */,
 				DE3953EF1F1468CB00A44740 /* SDImageCache.m in Sources */,
 				DE9F9DE31F19FDD4003CF080 /* MQChatViewStyleBlue.m in Sources */,
 				DE9F9E531F19FDD4003CF080 /* MQChatAudioPlayer.m in Sources */,
 				DE868DFD1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */,
 				DE8689EA1F0DD0D700FF7FD3 /* QNDomain.m in Sources */,
 				DE9F999F1F19FD3C003CF080 /* AddNoteViewController.swift in Sources */,
-				DE2542281F3452EB00872C22 /* ElecticIncomeInfo.swift in Sources */,
-				DE02379A1F6D1491008BE3C5 /* CalResultParams.swift in Sources */,
 				DEC222421F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DE1F71D91F62762600B8C2E8 /* InstallerDetailOldViewController.swift in Sources */,
 				DE868A001F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
-				DED05D271F61383D006741F6 /* MyCountInfo.swift in Sources */,
 				DEE6820D1F19C4FD00157560 /* SettingsViewController.swift in Sources */,
 				DE9F9E7D1F19FDD4003CF080 /* MEIQIA_HPTextViewInternal.m in Sources */,
-				DE8684F21F0DCC7900FF7FD3 /* QNResultInfo.swift in Sources */,
+				DEB9CA3C1F722FA6007BE2A3 /* NetprofitInfo.swift in Sources */,
 				DE3954091F1468CB00A44740 /* UIImage+ZLPhotoLib.m in Sources */,
 				DEC2224A1F13601E007D6DBE /* MJRefreshBackNormalFooter.m in Sources */,
 				DE8689EC1F0DD0D700FF7FD3 /* QNLruCache.m in Sources */,
 				DE9F9E5F1F19FDD4003CF080 /* MQDateFormatterUtil.m in Sources */,
 				DE9F9DD51F19FDD4003CF080 /* UIView+MQLayout.m in Sources */,
-				DE8684EE1F0DCC7900FF7FD3 /* DeviceListInfo.swift in Sources */,
 				DE8687691F0DCE4400FF7FD3 /* AFURLRequestSerialization.m in Sources */,
 				DE3953F71F1468CB00A44740 /* SDWebImageDownloaderOperation.m in Sources */,
 				DE3953EB1F1468CB00A44740 /* DALabeledCircularProgressView.m in Sources */,
@@ -4866,11 +4869,9 @@
 				DEC221271F13531B007D6DBE /* NewsCell.swift in Sources */,
 				DEFF5F361F700E5100F58A04 /* NSDictionary+Utils.m in Sources */,
 				DE9F9E271F19FDD4003CF080 /* MQTextCellModel.m in Sources */,
-				DE8684FD1F0DCC7900FF7FD3 /* BankInfo.swift in Sources */,
 				DE9F9DF11F19FDD4003CF080 /* MQPreChatFormListViewController.m in Sources */,
 				DE868A111F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DE868AD61F0DD1B800FF7FD3 /* NSObject+MJCoding.m in Sources */,
-				DE25420E1F32F23D00872C22 /* LandlordInfo.swift in Sources */,
 				DE9F9E4B1F19FDD4003CF080 /* MQVoiceMessageCell.m in Sources */,
 				DEE681F01F185EC000157560 /* DiTuiHomeViewController.swift in Sources */,
 				DEC2212D1F135AB7007D6DBE /* GFJWebViewController.swift in Sources */,
@@ -4885,16 +4886,17 @@
 				DE9F9EB11F19FDD5003CF080 /* MQMessageFormInputModel.m in Sources */,
 				DEFF5F2C1F700E5100F58A04 /* BCURLResponseSerialization.m in Sources */,
 				DE9F9E891F19FDD4003CF080 /* MEIQIA_MLAudioRecorder.m in Sources */,
+				DEB9CA101F722FA6007BE2A3 /* CommonInfo.swift in Sources */,
 				DE9F9E231F19FDD4003CF080 /* MQMessageDateCellModel.m in Sources */,
 				DE9F9E0F1F19FDD4003CF080 /* MQVisialMessageFactory.m in Sources */,
 				DEFF5F1A1F700E5100F58A04 /* BCQueryBillResult.m in Sources */,
+				DEB9CA0E1F722FA6007BE2A3 /* CityModel.swift in Sources */,
 				DE3954271F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DEE6C9E41F35BECA00AB6031 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				DE9F9E551F19FDD4003CF080 /* MQChatAudioRecorder.m in Sources */,
 				DE1F71E61F62766400B8C2E8 /* MSLFrameUtil.m in Sources */,
 				DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */,
 				DE3953FD1F1468CB00A44740 /* UIButton+WebCache.m in Sources */,
-				DE8684FC1F0DCC7900FF7FD3 /* BookingStatus.swift in Sources */,
 				DE8684411F0DCADE00FF7FD3 /* API+List.swift in Sources */,
 				DEE682181F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */,
 				DE8688811F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
@@ -4902,28 +4904,25 @@
 				DE9F9E431F19FDD4003CF080 /* MQMessageDateCell.m in Sources */,
 				DED05D4C1F624E10006741F6 /* TopLeftLabel.m in Sources */,
 				DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */,
-				DE8684EF1F0DCC7900FF7FD3 /* NewsInfo.swift in Sources */,
 				DE8687731F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE8689F41F0DD0D700FF7FD3 /* QNDnspodFree.m in Sources */,
-				DE2542141F32F4EB00872C22 /* ArticleInfo.swift in Sources */,
 				DEC222401F13601E007D6DBE /* MJRefreshHeader.m in Sources */,
-				DE2542171F32FD3500872C22 /* NoteInfo.swift in Sources */,
 				DE9F9E011F19FDD4003CF080 /* MQEventMessage.m in Sources */,
 				DEF593971F3EEA5500448FC5 /* LoginCell.swift in Sources */,
+				DEB9CA021F722FA6007BE2A3 /* AskInfo.swift in Sources */,
 				DE3954151F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
+				DEB9CA1E1F722FA6007BE2A3 /* FranchiseeInfo.swift in Sources */,
 				DE1A551F1F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */,
 				DE3953ED1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
-				DE8684F71F0DCC7900FF7FD3 /* PowerGraphInfo.swift in Sources */,
 				DEC224431F136362007D6DBE /* WXApiManager.m in Sources */,
 				DEFF5F221F700E5100F58A04 /* BCSubscriptionQuery.m in Sources */,
+				DEB9CA3E1F722FA6007BE2A3 /* NewsInfo.swift in Sources */,
 				DEFF5EE81F700E5100F58A04 /* BeeCloud.m in Sources */,
 				DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */,
 				DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */,
 				DE9F9EBB1F19FDD5003CF080 /* MQMessageFormViewStyleDark.m in Sources */,
 				DE9F9EB31F19FDD5003CF080 /* MQMessageFormConfig.m in Sources */,
 				DEFF5EF41F700E5100F58A04 /* BCPayPalReq.m in Sources */,
-				DE8684F81F0DCC7900FF7FD3 /* CityModel.swift in Sources */,
-				DE2542201F332BA300872C22 /* EnergycalInfo.swift in Sources */,
 				DE3954291F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4932,34 +4931,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE2542321F34530600872C22 /* ElecticIncomeInfo.swift in Sources */,
 				DE9F9DE81F19FDD4003CF080 /* MQChatViewStyleGreen.m in Sources */,
 				DEB031561F698CD000FA9528 /* QuestionDetailViewController.swift in Sources */,
+				DEB9CA0F1F722FA6007BE2A3 /* CityModel.swift in Sources */,
+				DEB9CA391F722FA6007BE2A3 /* LocationInfo.swift in Sources */,
+				DEB9CA571F722FA6007BE2A3 /* UserInfo.swift in Sources */,
 				DE868ACB1F0DD1B800FF7FD3 /* MJExtensionConst.m in Sources */,
 				DEFF5EED1F700E5100F58A04 /* BCBaseReq.m in Sources */,
 				DE9F9E841F19FDD4003CF080 /* MEIQIA_AmrRecordWriter.m in Sources */,
-				DE8685011F0DCC7E00FF7FD3 /* InsuranceType.swift in Sources */,
-				DE8685051F0DCC7E00FF7FD3 /* ShareInfo.swift in Sources */,
 				DEE6C9D31F35BECA00AB6031 /* IQKeyboardManager.swift in Sources */,
 				DE9F9E6C1F19FDD4003CF080 /* MEIQIA_CustomIOSAlertView.m in Sources */,
 				DE9F9DEC1F19FDD4003CF080 /* MQChatViewService.m in Sources */,
+				DEB9CA3F1F722FA6007BE2A3 /* NewsInfo.swift in Sources */,
 				DE9F9E0A1F19FDD4003CF080 /* MQMessageFactoryHelper.m in Sources */,
 				DE9F9E2E1F19FDD4003CF080 /* MQWebViewBubbleCellModel.m in Sources */,
 				DEE6C9E31F35BECA00AB6031 /* IQKeyboardManagerConstants.swift in Sources */,
+				DEB9CA051F722FA6007BE2A3 /* BankInfo.swift in Sources */,
 				DEE6C9CD1F35BECA00AB6031 /* IQUIView+Hierarchy.swift in Sources */,
+				DEB9CA4D1F722FA6007BE2A3 /* QuestionInfo.swift in Sources */,
 				DEC2225B1F13601E007D6DBE /* UIScrollView+MJExtension.m in Sources */,
 				DE868AD51F0DD1B800FF7FD3 /* NSObject+MJClass.m in Sources */,
 				DE3AE0C31F69265E00A7A34A /* InsuranceCell.swift in Sources */,
 				DE9F9E361F19FDD4003CF080 /* MQBotWebViewBubbleAnswerCell.m in Sources */,
 				DEFF5EF91F700E5100F58A04 /* BCPreRefundReq.m in Sources */,
 				DE868E081F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
-				DE2542181F32FD3500872C22 /* NoteInfo.swift in Sources */,
 				DE9F9E081F19FDD4003CF080 /* MQImageMessage.m in Sources */,
 				DE86887A1F0DD05900FF7FD3 /* QNFile.m in Sources */,
 				DEFF5F231F700E5100F58A04 /* BCSubscriptionQuery.m in Sources */,
 				DE9F9EA01F19FDD5003CF080 /* MQInputContentView.m in Sources */,
 				DEFF5F091F700E5100F58A04 /* BCQueryRefundByIdReq.m in Sources */,
-				DE8685081F0DCC7E00FF7FD3 /* DeviceInfo.swift in Sources */,
 				DE9F9EC21F19FDD5003CF080 /* MQMessageFormViewController.m in Sources */,
 				DE3954321F1468CB00A44740 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
 				DE3953EA1F1468CB00A44740 /* DACircularProgressView.m in Sources */,
@@ -4967,6 +4967,7 @@
 				DE9F9E641F19FDD4003CF080 /* MQStringSizeUtil.m in Sources */,
 				DE9F9DC61F19FDD4003CF080 /* MQShareTransitioningDelegateImpl.m in Sources */,
 				DE3954261F1468CB00A44740 /* ZLNavigationController.m in Sources */,
+				DEB9CA4F1F722FA6007BE2A3 /* RepaymentInfo.swift in Sources */,
 				DEE6C9C91F35BEC900AB6031 /* IQUIScrollView+Additions.swift in Sources */,
 				DEFF5F0F1F700E5100F58A04 /* BCQueryRefundsResp.m in Sources */,
 				DE868AE01F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
@@ -4978,28 +4979,31 @@
 				DE9F9DF21F19FDD4003CF080 /* MQPreChatFormListViewController.m in Sources */,
 				DEFF5EF31F700E5100F58A04 /* BCPayResp.m in Sources */,
 				DEFF5F1B1F700E5100F58A04 /* BCQueryBillResult.m in Sources */,
-				DE8685021F0DCC7E00FF7FD3 /* ElectricInfo.swift in Sources */,
 				DE3954531F14802200A44740 /* PublishMediaView.swift in Sources */,
 				DEFF5DEA1F6FF95D00F58A04 /* CashCell.swift in Sources */,
+				DEB9CA451F722FA6007BE2A3 /* ProjectcalInfo.swift in Sources */,
 				DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
 				DE868A091F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DEC222531F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
 				DE9F9EC01F19FDD5003CF080 /* MQMessageFormCategoryViewController.m in Sources */,
+				DEB9CA031F722FA6007BE2A3 /* AskInfo.swift in Sources */,
 				DEC2212B1F13585D007D6DBE /* StringUtils.swift in Sources */,
 				DE868DE81F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
 				DE39541A1F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
 				DEFF5F131F700E5100F58A04 /* BCQueryRefundsCountResp.m in Sources */,
 				DE9F9DE41F19FDD4003CF080 /* MQChatViewStyleBlue.m in Sources */,
 				DEFF5F7F1F700E5100F58A04 /* WXPayAdapter.m in Sources */,
-				DE2542211F332BA300872C22 /* EnergycalInfo.swift in Sources */,
 				DE9F9E8C1F19FDD5003CF080 /* MEIQIA_TTTAttributedLabel.m in Sources */,
 				DEFF5EE91F700E5100F58A04 /* BeeCloud.m in Sources */,
+				DEB9CA291F722FA6007BE2A3 /* IncomecalInfo.swift in Sources */,
 				DE9F9E541F19FDD4003CF080 /* MQChatAudioPlayer.m in Sources */,
 				DE8688901F0DD05900FF7FD3 /* QNResumeUpload.m in Sources */,
 				DEFF5F331F700E5100F58A04 /* BCPayUtil.m in Sources */,
 				DE8688841F0DD05900FF7FD3 /* QNResponseInfo.m in Sources */,
 				DE3954361F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */,
 				DE9F9E7A1F19FDD4003CF080 /* MEIQIA_FBSquareFontView.m in Sources */,
+				DEB9C9FD1F722FA6007BE2A3 /* AppModel.swift in Sources */,
+				DEB9C9FF1F722FA6007BE2A3 /* AreaModel.swift in Sources */,
 				DEFF5F211F700E5100F58A04 /* BCSubscription.m in Sources */,
 				DE9F9EC41F19FDD5003CF080 /* MQMessageFormViewService.m in Sources */,
 				DE868E011F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */,
@@ -5011,12 +5015,12 @@
 				DE86876C1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
 				DEFF5EF11F700E5100F58A04 /* BCPayReq.m in Sources */,
 				DEFF5F2B1F700E5100F58A04 /* BCURLRequestSerialization.m in Sources */,
-				DEFF5DF61F7001BA00F58A04 /* CashInfo.swift in Sources */,
 				DE9F9EB61F19FDD5003CF080 /* MQMessageFormViewManager.m in Sources */,
 				DEFF5F2F1F700E5100F58A04 /* BCURLSessionManager.m in Sources */,
 				DE9F9E5E1F19FDD4003CF080 /* MQChatRegexUtil.m in Sources */,
 				DEF593981F3EEA5500448FC5 /* LoginCell.swift in Sources */,
 				DE8687701F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
+				DEB9CA131F722FA6007BE2A3 /* CommonModel.swift in Sources */,
 				DEE6C9D51F35BECA00AB6031 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				DE9F9DC41F19FDD4003CF080 /* MQAnimatorPush.m in Sources */,
 				DE9F9DFA1F19FDD4003CF080 /* MQBotAnswerMessage.m in Sources */,
@@ -5025,19 +5029,22 @@
 				DE9F9E241F19FDD4003CF080 /* MQMessageDateCellModel.m in Sources */,
 				DE9F9DF41F19FDD4003CF080 /* MQPreChatFormViewModel.m in Sources */,
 				DE39540C1F1468CB00A44740 /* UIView+ZLExtension.m in Sources */,
+				DEB9CA0D1F722FA6007BE2A3 /* CashInfo.swift in Sources */,
+				DEB9CA411F722FA6007BE2A3 /* NoteInfo.swift in Sources */,
 				DE9F9DD01F19FDD4003CF080 /* NSNull+MQSafe.m in Sources */,
 				DEFF5F351F700E5100F58A04 /* BeeCloud+Utils.m in Sources */,
+				DEB9CA2B1F722FA6007BE2A3 /* IncomeCalParams.swift in Sources */,
 				DE8687801F0DCE4400FF7FD3 /* UIWebView+AFNetworking.m in Sources */,
 				DEE6C9D11F35BECA00AB6031 /* IQUIWindow+Hierarchy.swift in Sources */,
-				DE86850B1F0DCC7E00FF7FD3 /* UserInfo.swift in Sources */,
 				DE868ACF1F0DD1B800FF7FD3 /* MJProperty.m in Sources */,
+				DEB9CA4B1F722FA6007BE2A3 /* QNResultInfo.swift in Sources */,
 				DE8688961F0DD05900FF7FD3 /* QNUpToken.m in Sources */,
 				DEFF5F291F700E5100F58A04 /* BCSecurityPolicy.m in Sources */,
+				DEB9CA511F722FA6007BE2A3 /* RoofInfo.swift in Sources */,
 				DEE681FA1F1897AC00157560 /* GFAskCell.swift in Sources */,
 				DE9F9E2C1F19FDD4003CF080 /* MQVoiceCellModel.m in Sources */,
 				DE9F9EAA1F19FDD5003CF080 /* MQToast.m in Sources */,
 				DE868A051F0DD0D700FF7FD3 /* QNGetAddrInfo.m in Sources */,
-				DE8685031F0DCC7E00FF7FD3 /* InsuranceInfo.swift in Sources */,
 				DE9F9DE61F19FDD4003CF080 /* MQChatViewStyleDark.m in Sources */,
 				DE868A161F0DD11800FF7FD3 /* UIViewController+HUD.m in Sources */,
 				DEFF5EFB1F700E5100F58A04 /* BCPreRefundResp.m in Sources */,
@@ -5052,9 +5059,11 @@
 				DEFF5F151F700E5100F58A04 /* BCRefundStatusReq.m in Sources */,
 				DE86877E1F0DCE4400FF7FD3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DE3954061F1468CB00A44740 /* UIImageView+WebCache.m in Sources */,
+				DEB9CA091F722FA6007BE2A3 /* CalcModel.swift in Sources */,
 				DE3952291F14629100A44740 /* CalResultViewController.swift in Sources */,
 				DE9F9EB01F19FDD5003CF080 /* MQWebViewController.m in Sources */,
 				DE9F9E201F19FDD4003CF080 /* MQFileDownloadCellModel.m in Sources */,
+				DEB9C9FB1F722FA6007BE2A3 /* AfterSaleInfo.swift in Sources */,
 				DE39521C1F14616000A44740 /* RoofPriceViewController.swift in Sources */,
 				DE3954501F147FDD00A44740 /* ApplyForOrderViewController.swift in Sources */,
 				DE6790711F6A6C6B00A654BC /* GuideViewController.swift in Sources */,
@@ -5083,7 +5092,8 @@
 				DE8687761F0DCE4400FF7FD3 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DEC221281F13531B007D6DBE /* NewsCell.swift in Sources */,
 				DE9F9E421F19FDD4003CF080 /* MQImageMessageCell.m in Sources */,
-				DE2542241F332BF400872C22 /* IncomecalInfo.swift in Sources */,
+				DEB9CA2D1F722FA6007BE2A3 /* InstallerMapInfo.swift in Sources */,
+				DEB9CA0B1F722FA6007BE2A3 /* CalResultParams.swift in Sources */,
 				DE9F9E9E1F19FDD5003CF080 /* MQButtonGroupBar.m in Sources */,
 				DE9F9DFE1F19FDD4003CF080 /* MQBotMessageFactory.m in Sources */,
 				DEC2223B1F13601E007D6DBE /* MJRefreshBackFooter.m in Sources */,
@@ -5094,12 +5104,11 @@
 				DE9F9ECA1F19FDD5003CF080 /* MQMessageFormTextView.m in Sources */,
 				DEC222511F13601E007D6DBE /* MJRefreshNormalHeader.m in Sources */,
 				DE8687641F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */,
+				DEB9CA311F722FA6007BE2A3 /* InsuranceDetail.swift in Sources */,
 				DE9F9EA41F19FDD5003CF080 /* MQInputToolBar.m in Sources */,
 				DE9F9DDE1F19FDD4003CF080 /* MQChatViewConfig.m in Sources */,
 				DEE6C9CF1F35BECA00AB6031 /* IQUIViewController+Additions.swift in Sources */,
-				DE2542351F34545E00872C22 /* RepaymentInfo.swift in Sources */,
 				DE9F9DDC1F19FDD4003CF080 /* MQCustomizedUIText.m in Sources */,
-				DE86850C1F0DCC7E00FF7FD3 /* CommonModel.swift in Sources */,
 				DE9F9E461F19FDD4003CF080 /* MQRichTextViewCell.m in Sources */,
 				DEC226C21F136363007D6DBE /* SMenuButton.m in Sources */,
 				DE86877A1F0DCE4400FF7FD3 /* UIImageView+AFNetworking.m in Sources */,
@@ -5117,16 +5126,13 @@
 				DE3954021F1468CB00A44740 /* UIImage+MultiFormat.m in Sources */,
 				DE8687781F0DCE4400FF7FD3 /* UIButton+AFNetworking.m in Sources */,
 				DE9F9E3C1F19FDD4003CF080 /* MQEvaluationResultCell.m in Sources */,
-				DE25420F1F32F23D00872C22 /* LandlordInfo.swift in Sources */,
 				DE9F9E7C1F19FDD4003CF080 /* MEIQIA_HPGrowingTextView.m in Sources */,
 				DE9F9DFC1F19FDD4003CF080 /* MQBotMenuMessage.m in Sources */,
 				DE9F9E8A1F19FDD4003CF080 /* MEIQIA_MLAudioRecorder.m in Sources */,
-				DE8685091F0DCC7E00FF7FD3 /* RoofInfo.swift in Sources */,
 				DE8689F71F0DD0D700FF7FD3 /* QNHijackingDetectWrapper.m in Sources */,
 				DE9F9DF61F19FDD4003CF080 /* MQPreChatSubmitViewController.m in Sources */,
 				DE8689061F0DD07300FF7FD3 /* MBProgressHUD.m in Sources */,
 				DE9F9EB21F19FDD5003CF080 /* MQMessageFormInputModel.m in Sources */,
-				DE25421B1F32FE9500872C22 /* AskInfo.swift in Sources */,
 				DEC222591F13601E007D6DBE /* NSBundle+MJRefresh.m in Sources */,
 				DEE6C9DD1F35BECA00AB6031 /* IQTitleBarButtonItem.swift in Sources */,
 				DE9F9EC61F19FDD5003CF080 /* MQMessageFormImageCell.m in Sources */,
@@ -5153,34 +5159,33 @@
 				DE9F9EAE1F19FDD5003CF080 /* MQEmbededWebView.m in Sources */,
 				DEFF5F051F700E5100F58A04 /* BCQueryBillsCountReq.m in Sources */,
 				DE39543B1F146DBC00A44740 /* MyInsuranceListViewController.swift in Sources */,
+				DEB9CA371F722FA6007BE2A3 /* LandlordInfo.swift in Sources */,
 				DEE6C9D71F35BECA00AB6031 /* IQTextView.swift in Sources */,
 				DE9F9E061F19FDD4003CF080 /* MQFileDownloadMessage.m in Sources */,
-				DE8685041F0DCC7E00FF7FD3 /* InstallInfo.swift in Sources */,
 				DE9F9E601F19FDD4003CF080 /* MQDateFormatterUtil.m in Sources */,
 				DE8688801F0DD05900FF7FD3 /* QNSystem.m in Sources */,
-				DEA6CDF81F1B8BDA0061629C /* RoofMapInfo.swift in Sources */,
+				DEB9CA351F722FA6007BE2A3 /* InsuranceType.swift in Sources */,
 				DEFF5F171F700E5100F58A04 /* BCRefundStatusResp.m in Sources */,
 				DE9F9E481F19FDD4003CF080 /* MQTextMessageCell.m in Sources */,
 				DE1A55141F63B51E00939E60 /* QuestionAddViewController.swift in Sources */,
 				DE39541C1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
-				DE8685131F0DCC7E00FF7FD3 /* AfterSaleInfo.swift in Sources */,
 				DE9F9E261F19FDD4003CF080 /* MQRichTextViewModel.m in Sources */,
 				DE868E0B1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
 				DEC222411F13601E007D6DBE /* MJRefreshHeader.m in Sources */,
 				DE9F9DD41F19FDD4003CF080 /* UIImage+MQGenerate.m in Sources */,
 				DED352A11F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */,
+				DEB9CA271F722FA6007BE2A3 /* GroupUserInfo.swift in Sources */,
 				DE8689FF1F0DD0D700FF7FD3 /* QNTxtResolver.m in Sources */,
 				DEC226C41F136363007D6DBE /* SMenuCell.m in Sources */,
 				DEC2212E1F135AB7007D6DBE /* GFJWebViewController.swift in Sources */,
-				DE25423E1F34559A00872C22 /* GroupUserInfo.swift in Sources */,
 				DED05D451F624C8B006741F6 /* MoreInstallerViewController.swift in Sources */,
+				DEB9CA191F722FA6007BE2A3 /* ElecticIncomeInfo.swift in Sources */,
 				DE9F9E5A1F19FDD4003CF080 /* MQChatEmojize.m in Sources */,
 				DE868A071F0DD0D700FF7FD3 /* QNHex.m in Sources */,
 				DEC222391F13601E007D6DBE /* MJRefreshAutoFooter.m in Sources */,
 				DE86888E1F0DD05900FF7FD3 /* QNFormUpload.m in Sources */,
 				DE3954201F1468CB00A44740 /* ZLPhotoPickerDatas.m in Sources */,
 				DE39544E1F147FDD00A44740 /* BuySafeViewController.swift in Sources */,
-				DED352951F63D48F00BA1B52 /* LocationInfo.swift in Sources */,
 				DE8688741F0DD05900FF7FD3 /* QNAsyncRun.m in Sources */,
 				DE8687681F0DCE4400FF7FD3 /* AFSecurityPolicy.m in Sources */,
 				DE8688701F0DD05900FF7FD3 /* QN_GTM_Base64.m in Sources */,
@@ -5191,24 +5196,25 @@
 				DE3953F21F1468CB00A44740 /* SDWebImageCompat.m in Sources */,
 				DE9F9E441F19FDD4003CF080 /* MQMessageDateCell.m in Sources */,
 				DE9F9DC81F19FDD4003CF080 /* MQTransitioningAnimation.m in Sources */,
+				DEB9CA531F722FA6007BE2A3 /* RoofMapInfo.swift in Sources */,
 				DE86877C1F0DCE4400FF7FD3 /* UIProgressView+AFNetworking.m in Sources */,
 				DE9F9E581F19FDD4003CF080 /* MQChatDeviceUtil.m in Sources */,
 				DE86888C1F0DD05900FF7FD3 /* QNConfiguration.m in Sources */,
 				DE3953F61F1468CB00A44740 /* SDWebImageDownloader.m in Sources */,
+				DEB9CA2F1F722FA6007BE2A3 /* InstallInfo.swift in Sources */,
 				DE9F9EA21F19FDD5003CF080 /* MQTabInputContentView.m in Sources */,
 				DE868AD11F0DD1B800FF7FD3 /* MJPropertyKey.m in Sources */,
 				DE3954341F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				DE9F9E781F19FDD4003CF080 /* MEIQIA_FBSquareFont.m in Sources */,
+				DEB9CA011F722FA6007BE2A3 /* ArticleInfo.swift in Sources */,
 				DE9F9E3A1F19FDD4003CF080 /* MQEvaluationCell.m in Sources */,
 				DE3954181F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				DE3954561F1480E800A44740 /* Dimens.swift in Sources */,
-				DE25423B1F3454ED00872C22 /* IncomeCalParams.swift in Sources */,
+				DEB9CA1F1F722FA6007BE2A3 /* FranchiseeInfo.swift in Sources */,
 				DE3953F41F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
 				DEC224441F136362007D6DBE /* WXApiManager.m in Sources */,
 				DE9F9DD61F19FDD4003CF080 /* UIView+MQLayout.m in Sources */,
-				DE8685111F0DCC7E00FF7FD3 /* ProvinceModel.swift in Sources */,
 				DE9F9E941F19FDD5003CF080 /* MQKeyboardController.m in Sources */,
-				DE8685001F0DCC7E00FF7FD3 /* InsuranceDetail.swift in Sources */,
 				DE9F9E6A1F19FDD4003CF080 /* MQAGEmojiPageView.m in Sources */,
 				DEE6C9D91F35BECA00AB6031 /* IQBarButtonItem.swift in Sources */,
 				DE8687861F0DCEDC00FF7FD3 /* Constants.swift in Sources */,
@@ -5220,13 +5226,12 @@
 				DE8689E51F0DD0D700FF7FD3 /* QNAssessment.m in Sources */,
 				DE8688881F0DD05900FF7FD3 /* QNUserAgent.m in Sources */,
 				DE868AD91F0DD1B800FF7FD3 /* NSObject+MJKeyValue.m in Sources */,
+				DEB9CA1B1F722FA6007BE2A3 /* ElectricInfo.swift in Sources */,
 				DE9F9EBA1F19FDD5003CF080 /* MQMessageFormViewStyleBlue.m in Sources */,
-				DE8685121F0DCC7E00FF7FD3 /* CommonInfo.swift in Sources */,
 				DEFF5EFD1F700E5100F58A04 /* BCQueryBillByIdReq.m in Sources */,
 				DE9F9DE21F19FDD4003CF080 /* MQChatViewStyle.m in Sources */,
 				DE9F9E681F19FDD4003CF080 /* MQAGEmojiKeyBoardView.m in Sources */,
 				DEC2224F1F13601E007D6DBE /* MJRefreshGifHeader.m in Sources */,
-				DE8685161F0DCC7E00FF7FD3 /* AppModel.swift in Sources */,
 				DE3954411F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DEFF5EF51F700E5100F58A04 /* BCPayPalReq.m in Sources */,
 				DE9F9ECC1F19FDD5003CF080 /* MQMessageFormImageView.m in Sources */,
@@ -5243,65 +5248,65 @@
 				DEC222431F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DEE682221F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
 				DEFF5F311F700E5100F58A04 /* BCPayCache.m in Sources */,
-				DE1643281F31B48D00BE5748 /* FranchiseeInfo.swift in Sources */,
 				DEFF5F031F700E5100F58A04 /* BCQueryBillsResp.m in Sources */,
 				DE8688781F0DD05900FF7FD3 /* QNEtag.m in Sources */,
-				DE2542151F32F4EB00872C22 /* ArticleInfo.swift in Sources */,
 				DE9F9EB81F19FDD5003CF080 /* MQMessageFormViewStyle.m in Sources */,
 				DE9F9E301F19FDD4003CF080 /* MQBotAnswerCell.m in Sources */,
+				DEB9CA231F722FA6007BE2A3 /* GroupInfo.swift in Sources */,
 				DEFF5F071F700E5100F58A04 /* BCQueryBillsCountResp.m in Sources */,
 				DEFF5F411F700E5100F58A04 /* PaySandBoxViewController.m in Sources */,
 				DEC2224B1F13601E007D6DBE /* MJRefreshBackNormalFooter.m in Sources */,
 				DE3954041F1468CB00A44740 /* UIImageView+HighlightedWebCache.m in Sources */,
+				DEB9CA151F722FA6007BE2A3 /* DeviceInfo.swift in Sources */,
+				DEB9CA471F722FA6007BE2A3 /* ProvinceModel.swift in Sources */,
 				DEC224461F136362007D6DBE /* WXUtil.mm in Sources */,
 				DE868ADD1F0DD1B800FF7FD3 /* NSString+MJExtension.m in Sources */,
-				DE2542121F32F3EB00872C22 /* AreaModel.swift in Sources */,
 				DEFF5F371F700E5100F58A04 /* NSDictionary+Utils.m in Sources */,
+				DEB9CA251F722FA6007BE2A3 /* GroupOrderInfo.swift in Sources */,
 				DE86876E1F0DCE4400FF7FD3 /* AFURLSessionManager.m in Sources */,
 				DE8688941F0DD05900FF7FD3 /* QNUploadOption.m in Sources */,
 				DE9F9DE01F19FDD4003CF080 /* MQChatViewManager.m in Sources */,
 				DE86887E1F0DD05900FF7FD3 /* QNPHAssetResource.m in Sources */,
 				DED05D4D1F624E10006741F6 /* TopLeftLabel.m in Sources */,
-				DE8685171F0DCC7E00FF7FD3 /* QNInfo.swift in Sources */,
 				DE86848A1F0DCAFF00FF7FD3 /* API.swift in Sources */,
+				DEB9CA431F722FA6007BE2A3 /* PowerGraphInfo.swift in Sources */,
 				DE9F9E2A1F19FDD4003CF080 /* MQTipsCellModel.m in Sources */,
 				DE868AE31F0DD23400FF7FD3 /* PhoneUtils.swift in Sources */,
 				DE8688761F0DD05900FF7FD3 /* QNCrc32.m in Sources */,
 				DE39542C1F1468CB00A44740 /* ZLPhotoPickerViewController.m in Sources */,
 				DEE682191F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */,
+				DEB9CA211F722FA6007BE2A3 /* GetInventerMode.swift in Sources */,
 				DEE6C9CB1F35BECA00AB6031 /* IQUITextFieldView+Additions.swift in Sources */,
 				DEE6C9E51F35BECA00AB6031 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				DE9F9E741F19FDD4003CF080 /* MEIQIA_FBLCDFont.m in Sources */,
 				DE9F9E501F19FDD4003CF080 /* MQAssetUtil.m in Sources */,
 				DE3954081F1468CB00A44740 /* UIView+WebCacheOperation.m in Sources */,
 				DE8689FD1F0DD0D700FF7FD3 /* QNResolvUtil.m in Sources */,
+				DEB9CA551F722FA6007BE2A3 /* ShareInfo.swift in Sources */,
 				DE868A031F0DD0D700FF7FD3 /* QNDes.m in Sources */,
 				DE3954301F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
-				DE86850E1F0DCC7E00FF7FD3 /* GetInventerMode.swift in Sources */,
 				DE8684361F0DCA0B00FF7FD3 /* AppDelegate.swift in Sources */,
 				DE9F9E321F19FDD4003CF080 /* MQBotMenuAnswerCell.m in Sources */,
 				DE3953F01F1468CB00A44740 /* SDImageCache.m in Sources */,
 				DE9F9EA81F19FDD5003CF080 /* MQRecordView.m in Sources */,
 				DEC226C61F136363007D6DBE /* SPullDownMenuView.m in Sources */,
 				DEFF5F431F700E5100F58A04 /* AliPayAdapter.m in Sources */,
-				DE86850D1F0DCC7E00FF7FD3 /* CalcModel.swift in Sources */,
 				DEC2243C1F136362007D6DBE /* ApiXml.mm in Sources */,
 				DE8689EB1F0DD0D700FF7FD3 /* QNDomain.m in Sources */,
 				DE868A011F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
 				DE9F9EB41F19FDD5003CF080 /* MQMessageFormConfig.m in Sources */,
+				DEB9CA071F722FA6007BE2A3 /* BookingStatus.swift in Sources */,
 				DE39540A1F1468CB00A44740 /* UIImage+ZLPhotoLib.m in Sources */,
-				DE3AE0B71F691FC700A7A34A /* QuestionInfo.swift in Sources */,
 				DE9F9E6E1F19FDD4003CF080 /* MEIQIA_FBBitmapFont.m in Sources */,
 				DEC2223F1F13601E007D6DBE /* MJRefreshFooter.m in Sources */,
-				DE86850A1F0DCC7E00FF7FD3 /* QNResultInfo.swift in Sources */,
 				DE8689ED1F0DD0D700FF7FD3 /* QNLruCache.m in Sources */,
 				DE3953F81F1468CB00A44740 /* SDWebImageDownloaderOperation.m in Sources */,
 				DE9F9E021F19FDD4003CF080 /* MQEventMessage.m in Sources */,
+				DEB9CA491F722FA6007BE2A3 /* QNInfo.swift in Sources */,
 				DE9F9DD21F19FDD4003CF080 /* UIColor+MQHex.m in Sources */,
 				DE9F9E3E1F19FDD4003CF080 /* MQEventMessageCell.m in Sources */,
 				DE9F9DDA1F19FDD4003CF080 /* UIViewController+MQOrientationFix.m in Sources */,
 				DE3953EC1F1468CB00A44740 /* DALabeledCircularProgressView.m in Sources */,
-				DE8685061F0DCC7E00FF7FD3 /* DeviceListInfo.swift in Sources */,
 				DE3954001F1468CB00A44740 /* UIImage+GIF.m in Sources */,
 				DED05D441F624C8B006741F6 /* NearByInstallerViewController.swift in Sources */,
 				DE86876A1F0DCE4400FF7FD3 /* AFURLRequestSerialization.m in Sources */,
@@ -5314,20 +5319,15 @@
 				DEFF5EEF1F700E5100F58A04 /* BCBaseResp.m in Sources */,
 				DEFF5F3D1F700E5100F58A04 /* BCSandBoxAdapter.m in Sources */,
 				DE9F99AB1F19FD48003CF080 /* SettingsViewController.swift in Sources */,
-				DE2542411F3455D700872C22 /* GroupOrderInfo.swift in Sources */,
-				DE8685151F0DCC7E00FF7FD3 /* BankInfo.swift in Sources */,
 				DE9F9DC21F19FDD4003CF080 /* MQServiceToViewInterface.m in Sources */,
 				DE9F9EA61F19FDD5003CF080 /* MQRefresh.m in Sources */,
 				DE868DFB1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DE1F71ED1F62950200B8C2E8 /* InstallerCell.swift in Sources */,
-				DE02379B1F6D1491008BE3C5 /* CalResultParams.swift in Sources */,
 				DEFF5F391F700E5100F58A04 /* NSString+IsValid.m in Sources */,
 				DE9F9E921F19FDD5003CF080 /* VoiceConverter.mm in Sources */,
 				DE9F9E1A1F19FDD4003CF080 /* MQBotWebViewBubbleAnswerCellModel.m in Sources */,
 				DE1F71EE1F62950500B8C2E8 /* GFJRoofListViewController.swift in Sources */,
-				DE2542381F3454A300872C22 /* NetprofitInfo.swift in Sources */,
 				DE9F9E5C1F19FDD4003CF080 /* MQChatFileUtil.m in Sources */,
-				DE25421E1F332A4600872C22 /* ProjectcalInfo.swift in Sources */,
 				DEE682031F18BB9900157560 /* RootProjectCalViewController.swift in Sources */,
 				DE9F9DEE1F19FDD4003CF080 /* MQChatViewTableDataSource.m in Sources */,
 				DE9F9E1C1F19FDD4003CF080 /* MQEvaluationResultCellModel.m in Sources */,
@@ -5337,37 +5337,36 @@
 				DE868A121F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
 				DE9F9EBC1F19FDD5003CF080 /* MQMessageFormViewStyleDark.m in Sources */,
 				DEE6C9DF1F35BECA00AB6031 /* IQToolbar.swift in Sources */,
+				DEB9CA3D1F722FA6007BE2A3 /* NetprofitInfo.swift in Sources */,
+				DEB9CA111F722FA6007BE2A3 /* CommonInfo.swift in Sources */,
 				DEC2223D1F13601E007D6DBE /* MJRefreshComponent.m in Sources */,
 				DEC222491F13601E007D6DBE /* MJRefreshBackGifFooter.m in Sources */,
 				DE868AD71F0DD1B800FF7FD3 /* NSObject+MJCoding.m in Sources */,
 				DE9F9E661F19FDD4003CF080 /* MQWindowUtil.m in Sources */,
 				DE3954281F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DE3953FE1F1468CB00A44740 /* UIButton+WebCache.m in Sources */,
-				DE8685141F0DCC7E00FF7FD3 /* BookingStatus.swift in Sources */,
+				DEB9CA171F722FA6007BE2A3 /* DeviceListInfo.swift in Sources */,
 				DE8684281F0DC9DE00FF7FD3 /* ViewController.swift in Sources */,
 				DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */,
 				DE1F71F61F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */,
 				DE9F9DCC1F19FDD4003CF080 /* NSArray+MQFunctional.m in Sources */,
 				DE8688821F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
 				DE9F9E041F19FDD4003CF080 /* MQEventMessageFactory.m in Sources */,
+				DEB9CA3B1F722FA6007BE2A3 /* MyCountInfo.swift in Sources */,
 				DE9F9E861F19FDD4003CF080 /* MEIQIA_CafRecordWriter.m in Sources */,
 				DEFF5F1F1F700E5100F58A04 /* BCNewSubscription.m in Sources */,
-				DE2542031F32F1B500872C22 /* GroupInfo.swift in Sources */,
 				DE9F9E161F19FDD4003CF080 /* MQBotMenuAnswerCellModel.m in Sources */,
-				DE8685071F0DCC7E00FF7FD3 /* NewsInfo.swift in Sources */,
 				DEE681F11F185EC000157560 /* DiTuiHomeViewController.swift in Sources */,
+				DEB9CA1D1F722FA6007BE2A3 /* EnergycalInfo.swift in Sources */,
 				DE8687741F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				DEB9CA331F722FA6007BE2A3 /* InsuranceInfo.swift in Sources */,
 				DE8689F51F0DD0D700FF7FD3 /* QNDnspodFree.m in Sources */,
 				DE3954161F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				DE3953EE1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
-				DED05D281F61383D006741F6 /* MyCountInfo.swift in Sources */,
-				DEA6CDFB1F1B8BEF0061629C /* InstallerMapInfo.swift in Sources */,
 				DEC222471F13601E007D6DBE /* MJRefreshAutoStateFooter.m in Sources */,
-				DE86850F1F0DCC7E00FF7FD3 /* PowerGraphInfo.swift in Sources */,
 				DE1A55201F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */,
 				DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */,
 				DE86848B1F0DCAFF00FF7FD3 /* API+List.swift in Sources */,
-				DE8685101F0DCC7E00FF7FD3 /* CityModel.swift in Sources */,
 				DEFF5F3B1F700E5100F58A04 /* BeeCloudAdapter.m in Sources */,
 				DE39542A1F1468CB00A44740 /* ZLPhotoPickerGroupViewController.m in Sources */,
 			);
