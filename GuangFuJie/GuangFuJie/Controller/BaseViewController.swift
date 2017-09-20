@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeCloudDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UMSocialUIDelegate {
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeCloudDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -269,34 +269,49 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         }
     }
     
-    func didFinishGetUMSocialData(inViewController response: UMSocialResponseEntity!) {
-        if (response.responseCode == UMSResponseCodeSuccess) {
-            self.showHint("分享成功")
-        } else {
-            self.showHint("分享失败")
-        }
-    }
-    
     func shareApp() {
         let info = ShareInfo()
         info.shareTitle = Constants.projectName
         info.shareLink = "https://itunes.apple.com/app/id1157294691"
         info.shareDesc = "\(Constants.projectName)是一家基于“互联网”的新能源提供商，是太阳能发电行业最优秀的系统集成商之一"
-        info.shareImg = nil
+        info.shareImg = UIImage(named: "icon")
         shareButtonClicked(shareInfo: info)
     }
     
     func shareButtonClicked(shareInfo: ShareInfo) {
-        UMSocialData.default().extConfig.wechatSessionData.title = shareInfo.shareTitle
-        UMSocialData.default().extConfig.wechatSessionData.url = shareInfo.shareLink
+        let platforms = NSMutableArray()
+        if (UMSocialManager.default().isInstall(UMSocialPlatformType.wechatSession) && UMSocialManager.default().isInstall(UMSocialPlatformType.wechatTimeLine)) {
+            platforms.add(UMSocialPlatformType.wechatSession.rawValue)
+            platforms.add(UMSocialPlatformType.wechatTimeLine.rawValue)
+        }
+        if (platforms.count == 0) {
+            self.showHint("您没有可以分享的平台")
+            return
+        }
+       UMSocialUIManager.setPreDefinePlatforms(platforms as [AnyObject])
+       UMSocialUIManager.showShareMenuViewInWindow { (platformType, userInfo) in
+            self.shareData(info: shareInfo, platformType: platformType)
+        }
+    }
+    
+    func shareData(info: ShareInfo, platformType: UMSocialPlatformType) {
+        let messageObject = UMSocialMessageObject()
+        let shareObject = UMShareWebpageObject()
+        shareObject.title = info.shareTitle
+        shareObject.descr = info.shareDesc
+        shareObject.webpageUrl = info.shareLink
+        if (info.shareImg != nil) {
+            shareObject.thumbImage = info.shareImg
+        }
+        messageObject.shareObject = shareObject
         
-        UMSocialData.default().extConfig.wechatTimelineData.title = shareInfo.shareTitle
-        UMSocialData.default().extConfig.wechatTimelineData.url = shareInfo.shareLink
-        
-        let content = shareInfo.shareDesc
-        
-        let snsNames = [UMShareToWechatSession, UMShareToWechatTimeline]
-        UMSocialSnsService.presentSnsIconSheetView(self, appKey: Constants.umAppKey, shareText: content, shareImage: shareInfo.shareImg != nil ? NSData.init(contentsOf: URL.init(string: shareInfo.shareImg as! String)!) : UIImage(named: "icon"), shareToSnsNames: snsNames, delegate: self)
+        UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self) { (data, error) in
+            if (error == nil) {
+                self.showHint("分享成功")
+            } else {
+                self.showHint("分享失败")
+            }
+        }
     }
 
     /*

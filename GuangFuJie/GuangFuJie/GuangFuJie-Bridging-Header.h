@@ -17,7 +17,9 @@
 #import "MJRefresh.h"
 #import "MSLFrameUtil.h"
 #import "MobClick.h"
-#import "UMSocial.h"
+#import <UMSocialCore/UMSocialCore.h>
+#import <UShareUI/UShareUI.h>
+#import <UMSocialNetwork/UMSocialNetwork.h>
 #import "UMSocialWechatHandler.h"
 #import "WXApi.h"
 //#import "YCButton.h"

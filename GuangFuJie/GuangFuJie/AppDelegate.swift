@@ -36,8 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
             MobClick.updateOnlineConfig()
         }
         
-        UMSocialData.setAppKey(Constants.umAppKey)
-        UMSocialWechatHandler.setWXAppId(Constants.wexinAppKey, appSecret: Constants.wexinAppSecret, url: "http://www.umeng.com/social")
+        //初始化友盟分享
+        UMSocialManager.default().openLog(Constants.isDebug)
+        UMSocialManager.default().umSocialAppkey = Constants.umAppKey
+        UMSocialManager.default().setPlaform(UMSocialPlatformType.wechatSession, appKey: Constants.wexinAppKey, appSecret: Constants.wexinAppSecret, redirectURL: "http://mobile.umeng.com/social")
+        UMSocialManager.default().setPlaform(UMSocialPlatformType.wechatTimeLine, appKey: Constants.wexinAppKey, appSecret: Constants.wexinAppSecret, redirectURL: "http://mobile.umeng.com/social")
         
         //支付
         BeeCloud.initWithAppID(Constants.payKey, andAppSecret: Constants.paySecret, sandbox: Constants.isSandBox)

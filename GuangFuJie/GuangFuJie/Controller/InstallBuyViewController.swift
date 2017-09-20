@@ -52,12 +52,7 @@ class InstallBuyViewController: BaseViewController {
         if (rInfo == nil) {
             return
         }
-        UMSocialData.default().extConfig.wechatSessionData.title = rInfo!.fullname! + "的屋顶"
-        UMSocialData.default().extConfig.wechatSessionData.url = "http://d.xiumi.us/board/v5/2KnRY/28903497"
-        
-        UMSocialData.default().extConfig.wechatTimelineData.title = rInfo!.fullname! + "的屋顶"
-        UMSocialData.default().extConfig.wechatTimelineData.url = "http://d.xiumi.us/board/v5/2KnRY/28903497"
-
+        let title = rInfo!.fullname! + "的屋顶"
         let size = "屋顶面积:" + String(format:"%.2f", StringUtils.getNumber(rInfo?.area_size).floatValue) + "㎡"
         let roofType = "屋顶类型:" + (rInfo!.type! == 2 ? "斜面" : "平面")
         let price = "出租单价:" + String(describing: rInfo!.price!) + "元/㎡"
@@ -73,18 +68,13 @@ class InstallBuyViewController: BaseViewController {
         }
 
         let content = size + "," + roofType + "," + price + "," + address
-        let logo = UIImage(named: "icon")
         
-        let snsNames = [UMShareToWechatSession, UMShareToWechatTimeline]
-        UMSocialSnsService.presentSnsIconSheetView(self, appKey: Constants.umAppKey, shareText: content, shareImage: logo, shareToSnsNames: snsNames, delegate: self)
-    }
-    
-    override func didFinishGetUMSocialData(inViewController response: UMSocialResponseEntity!) {
-        if (response.responseCode == UMSResponseCodeSuccess) {
-            self.showHint("分享成功")
-        } else {
-            self.showHint("分享失败")
-        }
+        let shareInfo = ShareInfo()
+        shareInfo.shareTitle = ""
+        shareInfo.shareDesc = content
+        shareInfo.shareImg = UIImage(named: "icon")
+        shareInfo.shareLink = "http://d.xiumi.us/board/v5/2KnRY/28903497"
+        self.shareButtonClicked(shareInfo: shareInfo)
     }
     
     func favButtonClicked() {
