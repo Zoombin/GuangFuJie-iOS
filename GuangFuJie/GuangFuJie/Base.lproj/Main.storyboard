@@ -1022,10 +1022,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skF-9j-Dc2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blf-hH-Jo9">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_urinstaller_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="luU-YV-VWs">
                                                 <rect key="frame" x="23" y="17" width="86" height="86"/>
@@ -1050,7 +1050,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qJ-4J-y3A">
-                                        <rect key="frame" x="0.0" y="192" width="188" height="60"/>
+                                        <rect key="frame" x="0.0" y="128" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="pbH-Na-8XW"/>
@@ -1065,7 +1065,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge5-wL-jc2">
-                                        <rect key="frame" x="188" y="192" width="188" height="60"/>
+                                        <rect key="frame" x="188" y="128" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1077,7 +1077,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ty-G8-KRY">
-                                        <rect key="frame" x="0.0" y="253" width="188" height="60"/>
+                                        <rect key="frame" x="0.0" y="189" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1089,7 +1089,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-SW-aIV">
-                                        <rect key="frame" x="188" y="253" width="188" height="60"/>
+                                        <rect key="frame" x="188" y="189" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1101,7 +1101,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-Ht-yGJ">
-                                        <rect key="frame" x="0.0" y="314" width="188" height="60"/>
+                                        <rect key="frame" x="0.0" y="250" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1113,7 +1113,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaf-rS-CXY">
-                                        <rect key="frame" x="188" y="314" width="188" height="60"/>
+                                        <rect key="frame" x="188" y="250" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1125,7 +1125,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOh-5D-i9O">
-                                        <rect key="frame" x="0.0" y="558" width="188" height="60"/>
+                                        <rect key="frame" x="0.0" y="494" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1137,7 +1137,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYZ-Pj-1CW">
-                                        <rect key="frame" x="188" y="558" width="188" height="60"/>
+                                        <rect key="frame" x="188" y="494" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1149,7 +1149,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5r-xT-BaG">
-                                        <rect key="frame" x="0.0" y="619" width="188" height="60"/>
+                                        <rect key="frame" x="0.0" y="555" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1161,7 +1161,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpu-bh-qMA">
-                                        <rect key="frame" x="188" y="619" width="188" height="60"/>
+                                        <rect key="frame" x="188" y="555" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1173,7 +1173,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXJ-hJ-pjf">
-                                        <rect key="frame" x="0.0" y="375" width="188" height="60"/>
+                                        <rect key="frame" x="0.0" y="311" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1185,7 +1185,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-su-A8j">
-                                        <rect key="frame" x="188" y="375" width="188" height="60"/>
+                                        <rect key="frame" x="188" y="311" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1197,7 +1197,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbC-7k-DAG">
-                                        <rect key="frame" x="0.0" y="436" width="188" height="60"/>
+                                        <rect key="frame" x="0.0" y="372" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1209,7 +1209,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBv-CR-aKG">
-                                        <rect key="frame" x="188" y="436" width="188" height="60"/>
+                                        <rect key="frame" x="188" y="372" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1221,7 +1221,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qII-J6-DdX">
-                                        <rect key="frame" x="0.0" y="497" width="188" height="60"/>
+                                        <rect key="frame" x="0.0" y="433" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1233,7 +1233,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVR-Zm-yEU">
-                                        <rect key="frame" x="188" y="497" width="188" height="60"/>
+                                        <rect key="frame" x="188" y="433" width="188" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1285,7 +1285,7 @@
                                     <constraint firstItem="Mfu-SW-aIV" firstAttribute="height" secondItem="8qJ-4J-y3A" secondAttribute="height" id="Tnx-Lz-WkL"/>
                                     <constraint firstItem="cVR-Zm-yEU" firstAttribute="top" secondItem="IBv-CR-aKG" secondAttribute="bottom" constant="1" id="UMh-pD-teO"/>
                                     <constraint firstItem="d5r-xT-BaG" firstAttribute="top" secondItem="iOh-5D-i9O" secondAttribute="bottom" constant="1" id="V8l-MP-KEo"/>
-                                    <constraint firstItem="blf-hH-Jo9" firstAttribute="top" secondItem="skF-9j-Dc2" secondAttribute="top" constant="64" id="X7d-sD-Kee"/>
+                                    <constraint firstItem="blf-hH-Jo9" firstAttribute="top" secondItem="skF-9j-Dc2" secondAttribute="top" id="X7d-sD-Kee"/>
                                     <constraint firstAttribute="trailing" secondItem="ge5-wL-jc2" secondAttribute="trailing" constant="-0.5" id="XYb-dA-Eea"/>
                                     <constraint firstAttribute="bottom" secondItem="d5r-xT-BaG" secondAttribute="bottom" constant="-12" id="ZMo-Ac-lHU"/>
                                     <constraint firstItem="dgN-su-A8j" firstAttribute="height" secondItem="8qJ-4J-y3A" secondAttribute="height" id="ajJ-9g-nxO"/>
@@ -1330,7 +1330,7 @@
                         <constraints>
                             <constraint firstItem="skF-9j-Dc2" firstAttribute="leading" secondItem="jYH-0r-2xr" secondAttribute="leading" id="400-4W-4yy"/>
                             <constraint firstAttribute="trailing" secondItem="skF-9j-Dc2" secondAttribute="trailing" id="JdF-xl-PAu"/>
-                            <constraint firstItem="skF-9j-Dc2" firstAttribute="top" secondItem="jYH-0r-2xr" secondAttribute="top" id="nX7-mj-qkA"/>
+                            <constraint firstItem="skF-9j-Dc2" firstAttribute="top" secondItem="jYH-0r-2xr" secondAttribute="top" constant="64" id="nX7-mj-qkA"/>
                             <constraint firstItem="skF-9j-Dc2" firstAttribute="bottom" secondItem="uIR-Zc-fTQ" secondAttribute="top" id="r0h-uA-vY5"/>
                         </constraints>
                     </view>
@@ -1342,7 +1342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3me-9j-psf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3780" y="-2341"/>
+            <point key="canvasLocation" x="-3780" y="-2341.0794602698652"/>
         </scene>
         <!--登录-->
         <scene sceneID="ksU-TY-FjH">
@@ -5948,6 +5948,6 @@
         <image name="ic_yezhua_photo" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pGW-Co-TeL"/>
+        <segue reference="uxD-XH-rAv"/>
     </inferredMetricsTieBreakers>
 </document>
