@@ -490,7 +490,7 @@
         <!--安装商申请-->
         <scene sceneID="3s6-6W-B1u">
             <objects>
-                <viewController id="uJL-e1-i67" userLabel="安装商申请" customClass="InstallerApplyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstallerApplyViewController" id="uJL-e1-i67" userLabel="安装商申请" customClass="InstallerApplyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wiI-j2-fFu"/>
                         <viewControllerLayoutGuide type="bottom" id="OfQ-iX-vEW"/>
@@ -725,7 +725,7 @@
         <!--地推申请-->
         <scene sceneID="Z2X-if-Kvl">
             <objects>
-                <viewController id="50m-t0-UEM" userLabel="地推申请" customClass="DituiApplyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DituiApplyViewController" id="50m-t0-UEM" userLabel="地推申请" customClass="DituiApplyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T1e-DG-cuk"/>
                         <viewControllerLayoutGuide type="bottom" id="pcW-Zi-rHN"/>
@@ -849,7 +849,7 @@
         <!--业主申请-->
         <scene sceneID="bGy-nY-yeN">
             <objects>
-                <viewController id="KLe-aO-deQ" userLabel="业主申请" customClass="YeZhuApplyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YeZhuApplyViewController" id="KLe-aO-deQ" userLabel="业主申请" customClass="YeZhuApplyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OqS-2G-bIo"/>
                         <viewControllerLayoutGuide type="bottom" id="fPw-QI-Oey"/>
