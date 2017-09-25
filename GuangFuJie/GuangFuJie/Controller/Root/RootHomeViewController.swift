@@ -34,6 +34,11 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
         loadExampleData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         searchBar.delegate = self

@@ -5606,27 +5606,27 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Xdz-3q-duW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_home_banner1" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-w4-0qI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpP-sK-Hrn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        </imageView>
+                                        </scrollView>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xQ3-SB-Og2">
-                                            <rect key="frame" x="0.0" y="155" width="3" height="20"/>
+                                            <rect key="frame" x="0.0" y="195" width="3" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="1" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最新用户购买保险" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chu-h0-uwz">
-                                            <rect key="frame" x="11" y="155" width="151" height="21"/>
+                                            <rect key="frame" x="11" y="195" width="151" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifS-25-W44">
-                                            <rect key="frame" x="285" y="150" width="82" height="30"/>
+                                            <rect key="frame" x="285" y="190" width="82" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="查看更多">
@@ -5641,7 +5641,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InsuranceCell" rowHeight="170" id="3t1-Ia-hRp" customClass="InsuranceCell" customModule="GaoDeGuangFu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="245.5" width="375" height="170"/>
+                                        <rect key="frame" x="0.0" y="285.5" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3t1-Ia-hRp" id="9DO-h7-rFt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
@@ -5755,6 +5755,7 @@
                     <navigationItem key="navigationItem" id="Q5v-1V-veS"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bannerScrollView" destination="wpP-sK-Hrn" id="pGZ-5H-DRQ"/>
                         <outlet property="inTableView" destination="iYb-a9-eOX" id="fhM-u4-daA"/>
                     </connections>
                 </viewController>
@@ -5827,7 +5828,6 @@
         <image name="ic_close_funtion" width="57" height="57"/>
         <image name="ic_gfask_repeat" width="17" height="14"/>
         <image name="ic_home_anzhuang" width="85" height="98"/>
-        <image name="ic_home_banner1" width="375" height="144"/>
         <image name="ic_home_dimian" width="85" height="98"/>
         <image name="ic_home_jiameng" width="85" height="98"/>
         <image name="ic_home_location" width="10" height="15"/>

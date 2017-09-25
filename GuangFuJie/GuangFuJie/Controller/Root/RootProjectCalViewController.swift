@@ -81,6 +81,11 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
+    }
+    
     func resetStepButton() {
         self.step1Button.backgroundColor = Colors.calUnSelectColor
         self.step1Button.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)

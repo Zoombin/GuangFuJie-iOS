@@ -10,16 +10,67 @@ import UIKit
 
 class RootInsuranceViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var inTableView: UITableView!
+    @IBOutlet weak var bannerScrollView: UIScrollView!
+    
     var infoArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "光伏保险"
         self.loadData()
+        self.initBannerImageView()
+    }
+    
+    func initBannerImageView() {
+        if (bannerScrollView.subviews.count > 0) {
+            for view in bannerScrollView.subviews {
+                view.removeFromSuperview()
+            }
+        }
+        for i in 0..<2 {
+            let imageView = UIImageView.init(frame: CGRect(x: CGFloat(i) * PhoneUtils.kScreenWidth, y: 0, width: PhoneUtils.kScreenWidth, height: bannerScrollView.frame.size.height))
+            imageView.tag = i
+            imageView.isUserInteractionEnabled = true
+            if (i == 0) {
+                imageView.image = UIImage(named: "ic_insure01")
+            } else if (i == 1) {
+                imageView.image = UIImage(named: "ic_insure02")
+            }
+            bannerScrollView.addSubview(imageView)
+            
+            let gesture = UITapGestureRecognizer()
+            gesture.addTarget(self, action: #selector(self.bannerClicked(gesture:)))
+            imageView.addGestureRecognizer(gesture)
+            
+        }
+        bannerScrollView.contentSize = CGSize(width: PhoneUtils.kScreenWidth * CGFloat(2), height: 0)
+    }
+    
+    func bannerClicked(gesture: UITapGestureRecognizer) {
+        let index = gesture.view!.tag
+        if (index == 0) {
+            let vc = GFJWebViewController()
+            vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(276)"
+            vc.title = "光伏保险"
+            self.pushViewController(vc)
+
+        } else if (index == 1) {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+            vc.title = "保险案例"
+            vc.type = 22
+            self.pushViewController(vc)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        bannerScrollView.isPagingEnabled = true
         
         let buyBottomView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - 50, width: PhoneUtils.kScreenWidth, height: 50))
         buyBottomView.backgroundColor = UIColor.white

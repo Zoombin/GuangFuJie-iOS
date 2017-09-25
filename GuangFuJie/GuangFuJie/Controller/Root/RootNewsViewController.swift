@@ -36,6 +36,11 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
         getNewsList()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
+    }
+    
     @IBAction func locationSetting() {
         let vc = ProviceCityViewController()
         vc.delegate = self

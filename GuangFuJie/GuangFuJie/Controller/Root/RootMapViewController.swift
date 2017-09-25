@@ -48,6 +48,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         loadData()
     }
     
+    
     func mapStatusDidChanged(_ mapView: BMKMapView!) {
         print(mapView.zoomLevel)
         if (currentLevel == mapView.zoomLevel) {
@@ -269,6 +270,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
         poiService.delegate = self
         mapView.delegate = self
         startLocation()
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     override func viewWillDisappear(_ animated: Bool) {

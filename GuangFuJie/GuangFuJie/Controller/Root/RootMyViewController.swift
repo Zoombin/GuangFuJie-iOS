@@ -20,6 +20,11 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         loadMyCount()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if (UserDefaultManager.isLogin()) {
@@ -64,7 +69,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         } else if (indexPath.row == 1) {
             //技术支持
             let vc = GFJWebViewController()
-            vc.url = "http://zoombin.com"
+            vc.url = "http://www.pvsr.cn"
             vc.title = "技术支持"
             self.pushViewController(vc)
         } else if (indexPath.row == 2) {
@@ -91,7 +96,6 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         userName.text = "点击登录"
         footView.isHidden = true
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
