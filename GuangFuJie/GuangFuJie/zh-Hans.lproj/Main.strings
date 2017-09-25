@@ -1,0 +1,834 @@
+
+/* Class = "UILabel"; text = "保额: 9万元/年"; ObjectID = "02I-Bh-byc"; */
+"02I-Bh-byc.text" = "保额: 9万元/年";
+
+/* Class = "UILabel"; text = "首年总发电量："; ObjectID = "05Z-qd-Td7"; */
+"05Z-qd-Td7.text" = "首年总发电量：";
+
+/* Class = "UILabel"; text = "节能减排"; ObjectID = "0kH-zm-0cj"; */
+"0kH-zm-0cj.text" = "节能减排";
+
+/* Class = "UITabBarItem"; title = "净收益"; ObjectID = "0mD-KA-0gY"; */
+"0mD-KA-0gY.title" = "净收益";
+
+/* Class = "UITabBarItem"; title = "政策资讯"; ObjectID = "0py-8M-gMi"; */
+"0py-8M-gMi.title" = "政策资讯";
+
+/* Class = "UIButton"; normalTitle = "选择地区"; ObjectID = "10Q-85-baI"; */
+"10Q-85-baI.normalTitle" = "选择地区";
+
+/* Class = "UITabBarController"; title = "收益报告"; ObjectID = "10d-fN-HDj"; */
+"10d-fN-HDj.title" = "收益报告";
+
+/* Class = "UILabel"; text = "铺设方式:"; ObjectID = "12w-OB-L5f"; */
+"12w-OB-L5f.text" = "铺设方式:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1GI-tZ-RM1"; */
+"1GI-tZ-RM1.text" = "Label";
+
+/* Class = "UILabel"; text = "光伏发电系统10KW"; ObjectID = "1Vj-R4-WkF"; */
+"1Vj-R4-WkF.text" = "光伏发电系统10KW";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1XV-dI-plm"; */
+"1XV-dI-plm.text" = "Label";
+
+/* Class = "UILabel"; text = "首年日发电量："; ObjectID = "1n2-oX-Sds"; */
+"1n2-oX-Sds.text" = "首年日发电量：";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1zm-Ld-1PE"; */
+"1zm-Ld-1PE.text" = "Label";
+
+/* Class = "UILabel"; text = "还款方式"; ObjectID = "2LT-bc-gFe"; */
+"2LT-bc-gFe.text" = "还款方式";
+
+/* Class = "UILabel"; text = "姓名(必填)"; ObjectID = "2Nq-fC-Hxl"; */
+"2Nq-fC-Hxl.text" = "姓名(必填)";
+
+/* Class = "UILabel"; text = "元/瓦"; ObjectID = "2vY-Hi-xcM"; */
+"2vY-Hi-xcM.text" = "元/瓦";
+
+/* Class = "UILabel"; text = "元/瓦"; ObjectID = "31d-fs-AiD"; */
+"31d-fs-AiD.text" = "元/瓦";
+
+/* Class = "UILabel"; text = "光伏发电系统10KW"; ObjectID = "3CE-HD-D9O"; */
+"3CE-HD-D9O.text" = "光伏发电系统10KW";
+
+/* Class = "UILabel"; text = "投保日期: 2017-6-28"; ObjectID = "3FX-QX-dq3"; */
+"3FX-QX-dq3.text" = "投保日期: 2017-6-28";
+
+/* Class = "UILabel"; text = "公司名称"; ObjectID = "3Hb-Cx-Fx2"; */
+"3Hb-Cx-Fx2.text" = "公司名称";
+
+/* Class = "UILabel"; text = "只要大于50平米，均可安装"; ObjectID = "4L2-6C-Zt0"; */
+"4L2-6C-Zt0.text" = "只要大于50平米，均可安装";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "4Pa-ic-nMb"; */
+"4Pa-ic-nMb.text" = "Detail";
+
+/* Class = "UIButton"; normalTitle = "更多"; ObjectID = "4o3-u9-ryi"; */
+"4o3-u9-ryi.normalTitle" = "更多";
+
+/* Class = "UILabel"; text = "拍照上传"; ObjectID = "4ux-Vv-7P1"; */
+"4ux-Vv-7P1.text" = "拍照上传";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "4zJ-2V-PaZ"; */
+"4zJ-2V-PaZ.normalTitle" = "下一步";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "54R-Oz-s6Q"; */
+"54R-Oz-s6Q.text" = "Label";
+
+/* Class = "UILabel"; text = "投资金额："; ObjectID = "55o-l4-I8f"; */
+"55o-l4-I8f.text" = "投资金额：";
+
+/* Class = "UIButton"; normalTitle = "产品供求"; ObjectID = "5Fw-fm-VTg"; */
+"5Fw-fm-VTg.normalTitle" = "产品供求";
+
+/* Class = "UIButton"; normalTitle = "产品展示"; ObjectID = "5LB-wk-JgB"; */
+"5LB-wk-JgB.normalTitle" = "产品展示";
+
+/* Class = "UILabel"; text = "元/度"; ObjectID = "5Sn-zz-qZ7"; */
+"5Sn-zz-qZ7.text" = "元/度";
+
+/* Class = "UIButton"; normalTitle = "光伏政策"; ObjectID = "5Ty-G8-KRY"; */
+"5Ty-G8-KRY.normalTitle" = "光伏政策";
+
+/* Class = "UIButton"; normalTitle = "本地业主"; ObjectID = "5VQ-s9-mhV"; */
+"5VQ-s9-mhV.normalTitle" = "本地业主";
+
+/* Class = "UILabel"; text = "清除缓存"; ObjectID = "5qb-zE-eCd"; */
+"5qb-zE-eCd.text" = "清除缓存";
+
+/* Class = "UIButton"; normalTitle = "获取地区数据"; ObjectID = "67h-bD-nKb"; */
+"67h-bD-nKb.normalTitle" = "获取地区数据";
+
+/* Class = "UILabel"; text = "所在城市"; ObjectID = "689-qd-e02"; */
+"689-qd-e02.text" = "所在城市";
+
+/* Class = "UILabel"; text = "你想成为"; ObjectID = "6NW-wW-A62"; */
+"6NW-wW-A62.text" = "你想成为";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6VU-X6-Wcr"; */
+"6VU-X6-Wcr.text" = "Label";
+
+/* Class = "UILabel"; text = "版本号"; ObjectID = "6XO-qV-j5r"; */
+"6XO-qV-j5r.text" = "版本号";
+
+/* Class = "UILabel"; text = "投保年限: 一年"; ObjectID = "6bb-xb-Uwa"; */
+"6bb-xb-Uwa.text" = "投保年限: 一年";
+
+/* Class = "UIButton"; normalTitle = "实战模式"; ObjectID = "7mF-md-eoC"; */
+"7mF-md-eoC.normalTitle" = "实战模式";
+
+/* Class = "UITabBarItem"; title = "屋顶地图"; ObjectID = "7qg-2m-RN3"; */
+"7qg-2m-RN3.title" = "屋顶地图";
+
+/* Class = "UITabBarItem"; title = "还款额度"; ObjectID = "83f-R7-s19"; */
+"83f-R7-s19.title" = "还款额度";
+
+/* Class = "UIButton"; normalTitle = "本地市场"; ObjectID = "8qJ-4J-y3A"; */
+"8qJ-4J-y3A.normalTitle" = "本地市场";
+
+/* Class = "UIButton"; normalTitle = "退出登录"; ObjectID = "8rX-bH-O1K"; */
+"8rX-bH-O1K.normalTitle" = "退出登录";
+
+/* Class = "UILabel"; text = "屋顶面积:"; ObjectID = "8tF-mI-dRc"; */
+"8tF-mI-dRc.text" = "屋顶面积:";
+
+/* Class = "UILabel"; text = "元/度"; ObjectID = "9CV-wQ-fS8"; */
+"9CV-wQ-fS8.text" = "元/度";
+
+/* Class = "UILabel"; text = "减少烟雾排放"; ObjectID = "9qN-xc-ml9"; */
+"9qN-xc-ml9.text" = "减少烟雾排放";
+
+/* Class = "UILabel"; text = "联系方式"; ObjectID = "A5l-bO-6le"; */
+"A5l-bO-6le.text" = "联系方式";
+
+/* Class = "UIButton"; normalTitle = "光伏保险"; ObjectID = "ABm-kP-d6n"; */
+"ABm-kP-d6n.normalTitle" = "光伏保险";
+
+/* Class = "UILabel"; text = "节约标准煤："; ObjectID = "AJR-5u-5La"; */
+"AJR-5u-5La.text" = "节约标准煤：";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "ANc-nf-cf9"; */
+"ANc-nf-cf9.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "安装运维"; ObjectID = "ANj-yW-XTZ"; */
+"ANj-yW-XTZ.normalTitle" = "安装运维";
+
+/* Class = "UILabel"; text = "姓名"; ObjectID = "AQ7-1w-zuz"; */
+"AQ7-1w-zuz.text" = "姓名";
+
+/* Class = "UILabel"; text = "营业执照"; ObjectID = "ARr-Y0-fi0"; */
+"ARr-Y0-fi0.text" = "营业执照";
+
+/* Class = "UIButton"; normalTitle = "供电局　"; ObjectID = "AVE-Xw-xam"; */
+"AVE-Xw-xam.normalTitle" = "供电局　";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "B8G-IH-Nfv"; */
+"B8G-IH-Nfv.title" = "首页";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BGf-DS-G1z"; */
+"BGf-DS-G1z.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "发电收益"; ObjectID = "BQ6-rs-HZy"; */
+"BQ6-rs-HZy.title" = "发电收益";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CF2-DR-b7r"; */
+"CF2-DR-b7r.text" = "Label";
+
+/* Class = "UILabel"; text = "年辐照总量: 0 Kwh/㎡.年"; ObjectID = "CP9-n3-sA5"; */
+"CP9-n3-sA5.text" = "年辐照总量: 0 Kwh/㎡.年";
+
+/* Class = "UILabel"; text = "已购买保险"; ObjectID = "CcZ-V2-HAC"; */
+"CcZ-V2-HAC.text" = "已购买保险";
+
+/* Class = "UILabel"; text = "最新用户购买保险"; ObjectID = "Chu-h0-uwz"; */
+"Chu-h0-uwz.text" = "最新用户购买保险";
+
+/* Class = "UILabel"; text = "已投保"; ObjectID = "DLi-E4-w7a"; */
+"DLi-E4-w7a.text" = "已投保";
+
+/* Class = "UILabel"; text = "屋顶所在城市"; ObjectID = "Dga-JQ-fsa"; */
+"Dga-JQ-fsa.text" = "屋顶所在城市";
+
+/* Class = "UILabel"; text = "自用电比例："; ObjectID = "DpP-zQ-ObJ"; */
+"DpP-zQ-ObJ.text" = "自用电比例：";
+
+/* Class = "UILabel"; text = "投保年限: 一年"; ObjectID = "E9t-NW-Wsc"; */
+"E9t-NW-Wsc.text" = "投保年限: 一年";
+
+/* Class = "UILabel"; text = "公司规模"; ObjectID = "FVU-7B-IFk"; */
+"FVU-7B-IFk.text" = "公司规模";
+
+/* Class = "UILabel"; text = "请问电站需要多大面积才适合安装太阳能电站"; ObjectID = "G6J-yr-T6x"; */
+"G6J-yr-T6x.text" = "请问电站需要多大面积才适合安装太阳能电站";
+
+/* Class = "UIButton"; normalTitle = "产品供求"; ObjectID = "H3A-S3-CZi"; */
+"H3A-S3-CZi.normalTitle" = "产品供求";
+
+/* Class = "UILabel"; text = "装机补贴："; ObjectID = "HJB-Qv-tOu"; */
+"HJB-Qv-tOu.text" = "装机补贴：";
+
+/* Class = "UILabel"; text = "138***0556"; ObjectID = "HqY-Gr-zEa"; */
+"HqY-Gr-zEa.text" = "138***0556";
+
+/* Class = "UIButton"; normalTitle = "本地业主"; ObjectID = "IBv-CR-aKG"; */
+"IBv-CR-aKG.normalTitle" = "本地业主";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "IHO-8o-UQp"; */
+"IHO-8o-UQp.normalTitle" = "登录";
+
+/* Class = "UILabel"; text = "投资金额  0.00  元"; ObjectID = "IgQ-GN-HwS"; */
+"IgQ-GN-HwS.text" = "投资金额  0.00  元";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "J2I-QT-jPF"; */
+"J2I-QT-jPF.text" = "Label";
+
+/* Class = "UILabel"; text = "联系人"; ObjectID = "J3b-0V-mg7"; */
+"J3b-0V-mg7.text" = "联系人";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JMr-Yf-PYJ"; */
+"JMr-Yf-PYJ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "光伏贷款"; ObjectID = "Jlt-Ht-yGJ"; */
+"Jlt-Ht-yGJ.normalTitle" = "光伏贷款";
+
+/* Class = "UIViewController"; title = "综合收益"; ObjectID = "K1S-9d-KOZ"; */
+"K1S-9d-KOZ.title" = "综合收益";
+
+/* Class = "UILabel"; text = "所在城市"; ObjectID = "K9I-zo-LL7"; */
+"K9I-zo-LL7.text" = "所在城市";
+
+/* Class = "UILabel"; text = "技术支持"; ObjectID = "KGz-xJ-Hg1"; */
+"KGz-xJ-Hg1.text" = "技术支持";
+
+/* Class = "UISearchBar"; placeholder = "光伏信息"; ObjectID = "KNk-Hd-JLB"; */
+"KNk-Hd-JLB.placeholder" = "光伏信息";
+
+/* Class = "UILabel"; text = "详细地址"; ObjectID = "KiM-aa-Ure"; */
+"KiM-aa-Ure.text" = "详细地址";
+
+/* Class = "UIButton"; normalTitle = "屋顶"; ObjectID = "KmB-Da-97O"; */
+"KmB-Da-97O.normalTitle" = "屋顶";
+
+/* Class = "UILabel"; text = "点击图片上传资质证书"; ObjectID = "LLY-JQ-6v7"; */
+"LLY-JQ-6v7.text" = "点击图片上传资质证书";
+
+/* Class = "UIButton"; normalTitle = "产能计算"; ObjectID = "LXI-Wl-NbQ"; */
+"LXI-Wl-NbQ.normalTitle" = "产能计算";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "Lgj-dy-k1y"; */
+"Lgj-dy-k1y.normalTitle" = "下一步";
+
+/* Class = "UIButton"; normalTitle = "实战模式"; ObjectID = "LsK-FP-ylj"; */
+"LsK-FP-ylj.normalTitle" = "实战模式";
+
+/* Class = "UILabel"; text = "张三三"; ObjectID = "Lye-Mp-Awn"; */
+"Lye-Mp-Awn.text" = "张三三";
+
+/* Class = "UILabel"; text = "最后跟进: 2017-7-14"; ObjectID = "MKA-0i-vUN"; */
+"MKA-0i-vUN.text" = "最后跟进: 2017-7-14";
+
+/* Class = "UIButton"; normalTitle = "光伏保险"; ObjectID = "Mfu-SW-aIV"; */
+"Mfu-SW-aIV.normalTitle" = "光伏保险";
+
+/* Class = "UILabel"; text = "张三三"; ObjectID = "Mhd-xa-CwO"; */
+"Mhd-xa-CwO.text" = "张三三";
+
+/* Class = "UILabel"; text = "贷款利率"; ObjectID = "Muy-o3-0iN"; */
+"Muy-o3-0iN.text" = "贷款利率";
+
+/* Class = "UITextField"; placeholder = "请输入手机号"; ObjectID = "Mxj-QC-Xnr"; */
+"Mxj-QC-Xnr.placeholder" = "请输入手机号";
+
+/* Class = "UIButton"; normalTitle = "光伏保险"; ObjectID = "N2q-Pf-YWf"; */
+"N2q-Pf-YWf.normalTitle" = "光伏保险";
+
+/* Class = "UITabBarItem"; title = "综合收益"; ObjectID = "NPn-te-l7g"; */
+"NPn-te-l7g.title" = "综合收益";
+
+/* Class = "UIButton"; normalTitle = "光伏贷款"; ObjectID = "OCL-pg-FVc"; */
+"OCL-pg-FVc.normalTitle" = "光伏贷款";
+
+/* Class = "UITabBarItem"; title = "项目测算"; ObjectID = "OKl-0s-5nl"; */
+"OKl-0s-5nl.title" = "项目测算";
+
+/* Class = "UIButton"; normalTitle = "客服　　"; ObjectID = "OXG-j2-gLD"; */
+"OXG-j2-gLD.normalTitle" = "客服　　";
+
+/* Class = "UIButton"; normalTitle = "客服　　"; ObjectID = "P3Y-TB-vpz"; */
+"P3Y-TB-vpz.normalTitle" = "客服　　";
+
+/* Class = "UILabel"; text = "XXX的屋顶"; ObjectID = "PB4-WZ-lLJ"; */
+"PB4-WZ-lLJ.text" = "XXX的屋顶";
+
+/* Class = "UILabel"; text = "公司简介"; ObjectID = "PyQ-Sh-3jT"; */
+"PyQ-Sh-3jT.text" = "公司简介";
+
+/* Class = "UIButton"; normalTitle = "计算"; ObjectID = "Q3N-iR-VjW"; */
+"Q3N-iR-VjW.normalTitle" = "计算";
+
+/* Class = "UILabel"; text = "x"; ObjectID = "QMf-DV-Fkr"; */
+"QMf-DV-Fkr.text" = "x";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "QST-SK-kdR"; */
+"QST-SK-kdR.text" = "1.0";
+
+/* Class = "UILabel"; text = "发电量"; ObjectID = "QjW-Au-iYW"; */
+"QjW-Au-iYW.text" = "发电量";
+
+/* Class = "UILabel"; text = "纬度："; ObjectID = "Qmi-6f-B90"; */
+"Qmi-6f-B90.text" = "纬度：";
+
+/* Class = "UIButton"; normalTitle = "光伏保险"; ObjectID = "Qqf-jt-zlQ"; */
+"Qqf-jt-zlQ.normalTitle" = "光伏保险";
+
+/* Class = "UISearchBar"; placeholder = "光伏信息"; ObjectID = "QzX-c0-2Ao"; */
+"QzX-c0-2Ao.placeholder" = "光伏信息";
+
+/* Class = "UILabel"; text = "2017-5-28 至 2018-5-28"; ObjectID = "R3M-AZ-1Sr"; */
+"R3M-AZ-1Sr.text" = "2017-5-28 至 2018-5-28";
+
+/* Class = "UIButton"; normalTitle = "本地市场"; ObjectID = "Rda-Xb-v3c"; */
+"Rda-Xb-v3c.normalTitle" = "本地市场";
+
+/* Class = "UIViewController"; title = "发电收益"; ObjectID = "Rdo-ax-7HQ"; */
+"Rdo-ax-7HQ.title" = "发电收益";
+
+/* Class = "UIButton"; normalTitle = "选择城市"; ObjectID = "RnG-zb-we0"; */
+"RnG-zb-we0.normalTitle" = "选择城市";
+
+/* Class = "UILabel"; text = "已解答"; ObjectID = "Rue-bx-aNP"; */
+"Rue-bx-aNP.text" = "已解答";
+
+/* Class = "UILabel"; text = "贷款  0.00  元  0  年"; ObjectID = "S4v-Rf-W4t"; */
+"S4v-Rf-W4t.text" = "贷款  0.00  元  0  年";
+
+/* Class = "UILabel"; text = "%"; ObjectID = "SDx-5Q-DH7"; */
+"SDx-5Q-DH7.text" = "%";
+
+/* Class = "UILabel"; text = "以下为计算结果"; ObjectID = "SHc-DN-2Ms"; */
+"SHc-DN-2Ms.text" = "以下为计算结果";
+
+/* Class = "UILabel"; text = "请登录"; ObjectID = "Sso-Go-PJ1"; */
+"Sso-Go-PJ1.text" = "请登录";
+
+/* Class = "UILabel"; text = "建筑业企业资质证书"; ObjectID = "U4V-Wm-5kN"; */
+"U4V-Wm-5kN.text" = "建筑业企业资质证书";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "UAA-Xl-lVg"; */
+"UAA-Xl-lVg.normalTitle" = "下一步";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UNp-uT-8k4"; */
+"UNp-uT-8k4.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "实战模式"; ObjectID = "USj-Tv-mL2"; */
+"USj-Tv-mL2.normalTitle" = "实战模式";
+
+/* Class = "UILabel"; text = "方案:设备险+第三方责任2万元"; ObjectID = "V9T-uA-ehm"; */
+"V9T-uA-ehm.text" = "方案:设备险+第三方责任2万元";
+
+/* Class = "UIButton"; normalTitle = "地面推广"; ObjectID = "VXJ-hJ-pjf"; */
+"VXJ-hJ-pjf.normalTitle" = "地面推广";
+
+/* Class = "UILabel"; text = "姓名(必填)"; ObjectID = "Vl0-up-Nnm"; */
+"Vl0-up-Nnm.text" = "姓名(必填)";
+
+/* Class = "UIButton"; normalTitle = "光伏政策"; ObjectID = "W2E-x5-nSw"; */
+"W2E-x5-nSw.normalTitle" = "光伏政策";
+
+/* Class = "UIButton"; normalTitle = "现金流向"; ObjectID = "WQW-7g-bhW"; */
+"WQW-7g-bhW.normalTitle" = "现金流向";
+
+/* Class = "UIButton"; normalTitle = "产品供求"; ObjectID = "WaA-bn-1ae"; */
+"WaA-bn-1ae.normalTitle" = "产品供求";
+
+/* Class = "UIButton"; normalTitle = "重新计算"; ObjectID = "Wkk-ZU-t4T"; */
+"Wkk-ZU-t4T.normalTitle" = "重新计算";
+
+/* Class = "UILabel"; text = "贷款比例："; ObjectID = "XFZ-4z-a4e"; */
+"XFZ-4z-a4e.text" = "贷款比例：";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XJ6-FK-OdM"; */
+"XJ6-FK-OdM.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "光伏政策"; ObjectID = "Xqa-AI-ALt"; */
+"Xqa-AI-ALt.normalTitle" = "光伏政策";
+
+/* Class = "UILabel"; text = "联系人"; ObjectID = "XrJ-Ou-i4s"; */
+"XrJ-Ou-i4s.text" = "联系人";
+
+/* Class = "UILabel"; text = "点击图片上传资质证书"; ObjectID = "YFk-R3-g0F"; */
+"YFk-R3-g0F.text" = "点击图片上传资质证书";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "YTh-xN-szI"; */
+"YTh-xN-szI.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "客服　　"; ObjectID = "Yuq-hc-ZNB"; */
+"Yuq-hc-ZNB.normalTitle" = "客服　　";
+
+/* Class = "UILabel"; text = "已投保"; ObjectID = "ZBv-6V-9Is"; */
+"ZBv-6V-9Is.text" = "已投保";
+
+/* Class = "UILabel"; text = "所在城市"; ObjectID = "ZF8-2P-PEl"; */
+"ZF8-2P-PEl.text" = "所在城市";
+
+/* Class = "UILabel"; text = "减少NOx排放"; ObjectID = "ZSb-Wl-aZG"; */
+"ZSb-Wl-aZG.text" = "减少NOx排放";
+
+/* Class = "UILabel"; text = "¥100"; ObjectID = "ZXK-96-u2G"; */
+"ZXK-96-u2G.text" = "¥100";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZaO-y3-ziF"; */
+"ZaO-y3-ziF.text" = "Label";
+
+/* Class = "UILabel"; text = "138***0556"; ObjectID = "ZnL-k9-SuK"; */
+"ZnL-k9-SuK.text" = "138***0556";
+
+/* Class = "UITextField"; placeholder = "请输入验证码"; ObjectID = "Zna-aU-tJh"; */
+"Zna-aU-tJh.placeholder" = "请输入验证码";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aNR-ME-sXU"; */
+"aNR-ME-sXU.text" = "Label";
+
+/* Class = "UILabel"; text = "元"; ObjectID = "aXA-EM-caa"; */
+"aXA-EM-caa.text" = "元";
+
+/* Class = "UILabel"; text = "地址: 江苏省苏州市工业园区"; ObjectID = "b3a-8m-tud"; */
+"b3a-8m-tud.text" = "地址: 江苏省苏州市工业园区";
+
+/* Class = "UILabel"; text = "地址"; ObjectID = "bFW-zY-jxy"; */
+"bFW-zY-jxy.text" = "地址";
+
+/* Class = "UILabel"; text = "只要大于50平米，均可安装"; ObjectID = "bKd-S7-wBl"; */
+"bKd-S7-wBl.text" = "只要大于50平米，均可安装";
+
+/* Class = "UILabel"; text = "公司名称"; ObjectID = "bYj-pR-K5e"; */
+"bYj-pR-K5e.text" = "公司名称";
+
+/* Class = "UILabel"; text = "保额: 9万元/年"; ObjectID = "c6W-KN-L5a"; */
+"c6W-KN-L5a.text" = "保额: 9万元/年";
+
+/* Class = "UILabel"; text = "光伏发电系统10KW"; ObjectID = "c77-eq-rq7"; */
+"c77-eq-rq7.text" = "光伏发电系统10KW";
+
+/* Class = "UIButton"; normalTitle = "申请加入"; ObjectID = "cR5-3V-Ggk"; */
+"cR5-3V-Ggk.normalTitle" = "申请加入";
+
+/* Class = "UIButton"; normalTitle = "实战模式"; ObjectID = "cVR-Zm-yEU"; */
+"cVR-Zm-yEU.normalTitle" = "实战模式";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cXT-2Z-QsS"; */
+"cXT-2Z-QsS.text" = "Label";
+
+/* Class = "UILabel"; text = "减少CO₂ 排放"; ObjectID = "cru-Qp-5QX"; */
+"cru-Qp-5QX.text" = "减少CO₂ 排放";
+
+/* Class = "UILabel"; text = "%"; ObjectID = "cxZ-Kp-8Z8"; */
+"cxZ-Kp-8Z8.text" = "%";
+
+/* Class = "UIButton"; normalTitle = "供电局"; ObjectID = "d3j-p6-9XK"; */
+"d3j-p6-9XK.normalTitle" = "供电局";
+
+/* Class = "UIButton"; normalTitle = "产品供求"; ObjectID = "d5r-xT-BaG"; */
+"d5r-xT-BaG.normalTitle" = "产品供求";
+
+/* Class = "UILabel"; text = "余电上网价："; ObjectID = "dGj-hL-LiZ"; */
+"dGj-hL-LiZ.text" = "余电上网价：";
+
+/* Class = "UILabel"; text = "可回收流动资金："; ObjectID = "dYq-vY-XuN"; */
+"dYq-vY-XuN.text" = "可回收流动资金：";
+
+/* Class = "UIButton"; normalTitle = "推广支持"; ObjectID = "dgN-su-A8j"; */
+"dgN-su-A8j.normalTitle" = "推广支持";
+
+/* Class = "UIButton"; normalTitle = "日照计算"; ObjectID = "e0d-qx-Q2V"; */
+"e0d-qx-Q2V.normalTitle" = "日照计算";
+
+/* Class = "UIButton"; normalTitle = "本地市场"; ObjectID = "e87-SN-qwX"; */
+"e87-SN-qwX.normalTitle" = "本地市场";
+
+/* Class = "UIButton"; normalTitle = "余额上网"; ObjectID = "eEs-3E-SBy"; */
+"eEs-3E-SBy.normalTitle" = "余额上网";
+
+/* Class = "UILabel"; text = "手机号(必填)"; ObjectID = "eii-bX-zYG"; */
+"eii-bX-zYG.text" = "手机号(必填)";
+
+/* Class = "UILabel"; text = "关于我们"; ObjectID = "epF-Zm-lYZ"; */
+"epF-Zm-lYZ.text" = "关于我们";
+
+/* Class = "UIButton"; normalTitle = "资讯"; ObjectID = "euU-NM-jbw"; */
+"euU-NM-jbw.normalTitle" = "资讯";
+
+/* Class = "UILabel"; text = "元"; ObjectID = "f49-Nw-aPe"; */
+"f49-Nw-aPe.text" = "元";
+
+/* Class = "UILabel"; text = "首年发电利用小时数："; ObjectID = "fH5-qO-65W"; */
+"fH5-qO-65W.text" = "首年发电利用小时数：";
+
+/* Class = "UILabel"; text = "详细地址"; ObjectID = "fs0-ws-MVp"; */
+"fs0-ws-MVp.text" = "详细地址";
+
+/* Class = "UILabel"; text = "备注"; ObjectID = "gEd-fj-QgX"; */
+"gEd-fj-QgX.text" = "备注";
+
+/* Class = "UIButton"; normalTitle = "选择方式"; ObjectID = "gQx-1f-gQw"; */
+"gQx-1f-gQw.normalTitle" = "选择方式";
+
+/* Class = "UIButton"; normalTitle = "开始计算"; ObjectID = "gR2-wC-h47"; */
+"gR2-wC-h47.normalTitle" = "开始计算";
+
+/* Class = "UIButton"; normalTitle = "产品列表"; ObjectID = "gbv-a1-OPz"; */
+"gbv-a1-OPz.normalTitle" = "产品列表";
+
+/* Class = "UIButton"; normalTitle = "体验店　"; ObjectID = "ge5-wL-jc2"; */
+"ge5-wL-jc2.normalTitle" = "体验店　";
+
+/* Class = "UIViewController"; title = "净收益"; ObjectID = "ghl-io-0gJ"; */
+"ghl-io-0gJ.title" = "净收益";
+
+/* Class = "UIButton"; normalTitle = "客服　　"; ObjectID = "gpu-bh-qMA"; */
+"gpu-bh-qMA.normalTitle" = "客服　　";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "h8q-TI-9Jh"; */
+"h8q-TI-9Jh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "h9a-te-jUH"; */
+"h9a-te-jUH.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hZI-Qa-Lvo"; */
+"hZI-Qa-Lvo.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "本地安装商"; ObjectID = "hbC-7k-DAG"; */
+"hbC-7k-DAG.normalTitle" = "本地安装商";
+
+/* Class = "UIButton"; normalTitle = "安装商"; ObjectID = "hjV-b4-zui"; */
+"hjV-b4-zui.normalTitle" = "安装商";
+
+/* Class = "UILabel"; text = "分享光伏街"; ObjectID = "hw5-HL-wHT"; */
+"hw5-HL-wHT.text" = "分享光伏街";
+
+/* Class = "UILabel"; text = "上网模式:"; ObjectID = "i6f-xz-qdP"; */
+"i6f-xz-qdP.text" = "上网模式:";
+
+/* Class = "UIButton"; normalTitle = "申请加入"; ObjectID = "iHy-d9-fBx"; */
+"iHy-d9-fBx.normalTitle" = "申请加入";
+
+/* Class = "UIButton"; normalTitle = "加盟支持"; ObjectID = "iOh-5D-i9O"; */
+"iOh-5D-i9O.normalTitle" = "加盟支持";
+
+/* Class = "UILabel"; text = "年日照时数: 0 小时"; ObjectID = "iWV-Jp-xXY"; */
+"iWV-Jp-xXY.text" = "年日照时数: 0 小时";
+
+/* Class = "UILabel"; text = "推荐案例"; ObjectID = "iZg-Sb-Rd8"; */
+"iZg-Sb-Rd8.text" = "推荐案例";
+
+/* Class = "UIButton"; normalTitle = "供电局　"; ObjectID = "iaf-rS-CXY"; */
+"iaf-rS-CXY.normalTitle" = "供电局　";
+
+/* Class = "UIButton"; normalTitle = "查看更多"; ObjectID = "ifS-25-W44"; */
+"ifS-25-W44.normalTitle" = "查看更多";
+
+/* Class = "UIButton"; normalTitle = "供电局　"; ObjectID = "ikW-Y1-FCs"; */
+"ikW-Y1-FCs.normalTitle" = "供电局　";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ipX-sU-DJr"; */
+"ipX-sU-DJr.text" = "Label";
+
+/* Class = "UILabel"; text = "年"; ObjectID = "jLy-HT-mri"; */
+"jLy-HT-mri.text" = "年";
+
+/* Class = "UILabel"; text = "公司资质"; ObjectID = "jTG-Bb-cFa"; */
+"jTG-Bb-cFa.text" = "公司资质";
+
+/* Class = "UILabel"; text = "25年总发电量"; ObjectID = "jTW-Q9-Q9d"; */
+"jTW-Q9-Q9d.text" = "25年总发电量";
+
+/* Class = "UILabel"; text = "¥100"; ObjectID = "jdL-Ya-nIh"; */
+"jdL-Ya-nIh.text" = "¥100";
+
+/* Class = "UILabel"; text = "投保年限: 一年"; ObjectID = "k2I-xW-4vx"; */
+"k2I-xW-4vx.text" = "投保年限: 一年";
+
+/* Class = "UILabel"; text = "朝南"; ObjectID = "k2z-JF-EP5"; */
+"k2z-JF-EP5.text" = "朝南";
+
+/* Class = "UIButton"; normalTitle = "店面展示"; ObjectID = "kRd-7G-Eao"; */
+"kRd-7G-Eao.normalTitle" = "店面展示";
+
+/* Class = "UILabel"; text = "年"; ObjectID = "kjq-kF-HkO"; */
+"kjq-kF-HkO.text" = "年";
+
+/* Class = "UILabel"; text = "张三三"; ObjectID = "lDy-YJ-L7g"; */
+"lDy-YJ-L7g.text" = "张三三";
+
+/* Class = "UILabel"; text = "公司规模"; ObjectID = "la6-C4-OgC"; */
+"la6-C4-OgC.text" = "公司规模";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "llr-ul-Lks"; */
+"llr-ul-Lks.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "贷款"; ObjectID = "m9Z-Mr-ky0"; */
+"m9Z-Mr-ky0.normalTitle" = "贷款";
+
+/* Class = "UILabel"; text = "方案:设备险+第三方责任2万元"; ObjectID = "mEL-Fu-eNb"; */
+"mEL-Fu-eNb.text" = "方案:设备险+第三方责任2万元";
+
+/* Class = "UILabel"; text = "详细地址"; ObjectID = "mKC-Xn-VgE"; */
+"mKC-Xn-VgE.text" = "详细地址";
+
+/* Class = "UILabel"; text = "设置"; ObjectID = "mVa-Q0-fhK"; */
+"mVa-Q0-fhK.text" = "设置";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "mfC-AV-YfY"; */
+"mfC-AV-YfY.text" = "Detail";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mfV-FL-E3L"; */
+"mfV-FL-E3L.text" = "Label";
+
+/* Class = "UILabel"; text = "减少SO₂ 排放"; ObjectID = "n0j-Tn-Tio"; */
+"n0j-Tn-Tio.text" = "减少SO₂ 排放";
+
+/* Class = "UIButton"; normalTitle = "计算收益"; ObjectID = "nQ8-k5-fb1"; */
+"nQ8-k5-fb1.normalTitle" = "计算收益";
+
+/* Class = "UIButton"; normalTitle = "安装运维"; ObjectID = "nYZ-Pj-1CW"; */
+"nYZ-Pj-1CW.normalTitle" = "安装运维";
+
+/* Class = "UIButton"; normalTitle = "等额本息"; ObjectID = "nab-T7-GbW"; */
+"nab-T7-GbW.normalTitle" = "等额本息";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nkK-3E-Xfs"; */
+"nkK-3E-Xfs.text" = "Label";
+
+/* Class = "UILabel"; text = "免密码登录(注册)"; ObjectID = "o42-nV-nEa"; */
+"o42-nV-nEa.text" = "免密码登录(注册)";
+
+/* Class = "UIButton"; normalTitle = "全部"; ObjectID = "o8e-yN-O5L"; */
+"o8e-yN-O5L.normalTitle" = "全部";
+
+/* Class = "UILabel"; text = "以下为计算结果"; ObjectID = "o8u-94-3Lz"; */
+"o8u-94-3Lz.text" = "以下为计算结果";
+
+/* Class = "UILabel"; text = "已投保"; ObjectID = "oZV-Yc-Pde"; */
+"oZV-Yc-Pde.text" = "已投保";
+
+/* Class = "UILabel"; text = "详细地址"; ObjectID = "oop-xd-tkh"; */
+"oop-xd-tkh.text" = "详细地址";
+
+/* Class = "UILabel"; text = "%"; ObjectID = "p9c-DG-jPE"; */
+"p9c-DG-jPE.text" = "%";
+
+/* Class = "UILabel"; text = "方案:设备险+第三方责任2万元"; ObjectID = "p9l-FS-IYC"; */
+"p9l-FS-IYC.text" = "方案:设备险+第三方责任2万元";
+
+/* Class = "UILabel"; text = "电话"; ObjectID = "pLi-ce-fWQ"; */
+"pLi-ce-fWQ.text" = "电话";
+
+/* Class = "UIButton"; normalTitle = "政策补贴"; ObjectID = "pOC-vr-HPz"; */
+"pOC-vr-HPz.normalTitle" = "政策补贴";
+
+/* Class = "UIButton"; normalTitle = "光伏政策"; ObjectID = "ph6-gD-gZc"; */
+"ph6-gD-gZc.normalTitle" = "光伏政策";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "prm-As-M0H"; */
+"prm-As-M0H.text" = "Label";
+
+/* Class = "UILabel"; text = "用电补贴："; ObjectID = "pwk-SM-e7Y"; */
+"pwk-SM-e7Y.text" = "用电补贴：";
+
+/* Class = "UILabel"; text = "建设费用："; ObjectID = "qG4-nV-KfR"; */
+"qG4-nV-KfR.text" = "建设费用：";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qHB-bf-hh1"; */
+"qHB-bf-hh1.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "投资收益"; ObjectID = "qII-J6-DdX"; */
+"qII-J6-DdX.normalTitle" = "投资收益";
+
+/* Class = "UILabel"; text = "联系方式"; ObjectID = "qSg-Ce-xZC"; */
+"qSg-Ce-xZC.text" = "联系方式";
+
+/* Class = "UIViewController"; title = "还款额度"; ObjectID = "qc5-1g-6l1"; */
+"qc5-1g-6l1.title" = "还款额度";
+
+/* Class = "UIButton"; normalTitle = "发送验证码"; ObjectID = "qdN-iL-kcs"; */
+"qdN-iL-kcs.normalTitle" = "发送验证码";
+
+/* Class = "UIButton"; normalTitle = "选择地区"; ObjectID = "qei-e4-Nr2"; */
+"qei-e4-Nr2.normalTitle" = "选择地区";
+
+/* Class = "UIButton"; normalTitle = "安装运维"; ObjectID = "qoL-hw-vRr"; */
+"qoL-hw-vRr.normalTitle" = "安装运维";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "r6g-rp-PGK"; */
+"r6g-rp-PGK.text" = "Title";
+
+/* Class = "UILabel"; text = "已解答"; ObjectID = "rGC-Hw-8Yt"; */
+"rGC-Hw-8Yt.text" = "已解答";
+
+/* Class = "UILabel"; text = "装机容量："; ObjectID = "rNi-5b-qAY"; */
+"rNi-5b-qAY.text" = "装机容量：";
+
+/* Class = "UIButton"; normalTitle = "收益分析"; ObjectID = "rh3-AW-PCr"; */
+"rh3-AW-PCr.normalTitle" = "收益分析";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "roL-Sn-IbU"; */
+"roL-Sn-IbU.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "光伏贷款"; ObjectID = "sBT-yz-J9z"; */
+"sBT-yz-J9z.normalTitle" = "光伏贷款";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sLL-i2-nDx"; */
+"sLL-i2-nDx.text" = "Label";
+
+/* Class = "UILabel"; text = "已购买保险"; ObjectID = "sNN-0L-qHd"; */
+"sNN-0L-qHd.text" = "已购买保险";
+
+/* Class = "UILabel"; text = "2017-5-28 至 2018-5-28"; ObjectID = "sre-8c-Rla"; */
+"sre-8c-Rla.text" = "2017-5-28 至 2018-5-28";
+
+/* Class = "UILabel"; text = "平米"; ObjectID = "sxl-Mb-GTU"; */
+"sxl-Mb-GTU.text" = "平米";
+
+/* Class = "UILabel"; text = "屋顶照片"; ObjectID = "tEg-qi-Ols"; */
+"tEg-qi-Ols.text" = "屋顶照片";
+
+/* Class = "UILabel"; text = "备注: 哈哈哈哈哈哈"; ObjectID = "tGK-QV-U8Q"; */
+"tGK-QV-U8Q.text" = "备注: 哈哈哈哈哈哈";
+
+/* Class = "UILabel"; text = "138***0556"; ObjectID = "tIE-pn-IAc"; */
+"tIE-pn-IAc.text" = "138***0556";
+
+/* Class = "UIButton"; normalTitle = "品牌列表"; ObjectID = "tOZ-nb-4BF"; */
+"tOZ-nb-4BF.normalTitle" = "品牌列表";
+
+/* Class = "UIButton"; normalTitle = "供电局　"; ObjectID = "tif-fF-x2i"; */
+"tif-fF-x2i.normalTitle" = "供电局　";
+
+/* Class = "UIButton"; normalTitle = "余电上网"; ObjectID = "txg-Zm-fE4"; */
+"txg-Zm-fE4.normalTitle" = "余电上网";
+
+/* Class = "UILabel"; text = "公司资质"; ObjectID = "u7O-7q-dDT"; */
+"u7O-7q-dDT.text" = "公司资质";
+
+/* Class = "UILabel"; text = "投保日期: 2017-6-28"; ObjectID = "uV6-6D-2A7"; */
+"uV6-6D-2A7.text" = "投保日期: 2017-6-28";
+
+/* Class = "UILabel"; text = "手机号(必填)"; ObjectID = "up6-hH-fIS"; */
+"up6-hH-fIS.text" = "手机号(必填)";
+
+/* Class = "UILabel"; text = "营业执照"; ObjectID = "v7O-fA-yv8"; */
+"v7O-fA-yv8.text" = "营业执照";
+
+/* Class = "UIButton"; normalTitle = "光伏贷款"; ObjectID = "vLO-k9-IEC"; */
+"vLO-k9-IEC.normalTitle" = "光伏贷款";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vau-JO-COi"; */
+"vau-JO-COi.text" = "Label";
+
+/* Class = "UILabel"; text = "公司简介"; ObjectID = "vj3-Gc-hHI"; */
+"vj3-Gc-hHI.text" = "公司简介";
+
+/* Class = "UILabel"; text = "= 0.0%"; ObjectID = "vkM-Jg-LhY"; */
+"vkM-Jg-LhY.text" = "= 0.0%";
+
+/* Class = "UILabel"; text = "投保日期: 2017-6-28"; ObjectID = "wBB-yH-rir"; */
+"wBB-yH-rir.text" = "投保日期: 2017-6-28";
+
+/* Class = "UIButton"; normalTitle = "安装运维"; ObjectID = "wIj-7Y-DK1"; */
+"wIj-7Y-DK1.normalTitle" = "安装运维";
+
+/* Class = "UILabel"; text = "电话: 13812345678"; ObjectID = "wbm-nd-K5R"; */
+"wbm-nd-K5R.text" = "电话: 13812345678";
+
+/* Class = "UILabel"; text = "已购买保险"; ObjectID = "wgT-ck-rxB"; */
+"wgT-ck-rxB.text" = "已购买保险";
+
+/* Class = "UILabel"; text = "请问电站需要多大面积才适合安装太阳能电站"; ObjectID = "wrg-BK-OW2"; */
+"wrg-BK-OW2.text" = "请问电站需要多大面积才适合安装太阳能电站";
+
+/* Class = "UILabel"; text = "保额: 9万元/年"; ObjectID = "x2a-Rg-bkb"; */
+"x2a-Rg-bkb.text" = "保额: 9万元/年";
+
+/* Class = "UIButton"; normalTitle = "申请加入"; ObjectID = "xKA-Bt-Dp2"; */
+"xKA-Bt-Dp2.normalTitle" = "申请加入";
+
+/* Class = "UILabel"; text = "装机容量  0.00  Kwh"; ObjectID = "xLs-Ud-fpf"; */
+"xLs-Ud-fpf.text" = "装机容量  0.00  Kwh";
+
+/* Class = "UIButton"; normalTitle = "申请加入"; ObjectID = "xPq-5g-tvx"; */
+"xPq-5g-tvx.normalTitle" = "申请加入";
+
+/* Class = "UITabBarItem"; title = "我的"; ObjectID = "xi2-sZ-uka"; */
+"xi2-sZ-uka.title" = "我的";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xrE-rX-UpO"; */
+"xrE-rX-UpO.text" = "Label";
+
+/* Class = "UILabel"; text = "自用电电价："; ObjectID = "y6a-hr-nPB"; */
+"y6a-hr-nPB.text" = "自用电电价：";
+
+/* Class = "UILabel"; text = "承装(修、试)电力设施许可证"; ObjectID = "y73-GL-kbx"; */
+"y73-GL-kbx.text" = "承装(修、试)电力设施许可证";
+
+/* Class = "UILabel"; text = "经度:"; ObjectID = "yBy-j0-2G9"; */
+"yBy-j0-2G9.text" = "经度:";
+
+/* Class = "UILabel"; text = "¥100"; ObjectID = "yVp-MB-7cF"; */
+"yVp-MB-7cF.text" = "¥100";
+
+/* Class = "UILabel"; text = "运维成本"; ObjectID = "ydJ-PX-yhX"; */
+"ydJ-PX-yhX.text" = "运维成本";
+
+/* Class = "UIButton"; normalTitle = "本地业主"; ObjectID = "ylM-Md-zaD"; */
+"ylM-Md-zaD.normalTitle" = "本地业主";
+
+/* Class = "UIButton"; normalTitle = "电价"; ObjectID = "zHg-qZ-Dcp"; */
+"zHg-qZ-Dcp.normalTitle" = "电价";
+
+/* Class = "UIButton"; normalTitle = "重新计算"; ObjectID = "zcO-D6-Uun"; */
+"zcO-D6-Uun.normalTitle" = "重新计算";
+
+/* Class = "UIButton"; normalTitle = "搜索"; ObjectID = "zy0-4p-qXp"; */
+"zy0-4p-qXp.normalTitle" = "搜索";

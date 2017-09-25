@@ -8,8 +8,8 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeCloudDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
-
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeCloudDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, BMKLocationServiceDelegate {
+    let locationManager = BMKLocationService()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.bkgColor
@@ -24,26 +24,20 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
     }
     
     func getCurrentLocation() {
-        let locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 100.0
-        if (Int(UIDevice.current.systemVersion)! > 7) {
-            locationManager.requestWhenInUseAuthorization()
-        }
-        locationManager.startUpdatingLocation()
+        locationManager.startUserLocationService()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let newLocation = locations[0]
-        manager.stopUpdatingLocation()
-        saveLocationInfo(location: newLocation)
+    func didUpdate(_ userLocation: BMKUserLocation!) {
+        print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
+        locationManager.stopUserLocationService()
+        saveLocationInfo(location: userLocation.location)
     }
     
     func saveLocationInfo(location: CLLocation) {
         API.sharedInstance.getCityFromLatlng(lat: NSNumber.init(value: location.coordinate.latitude), lng: NSNumber.init(value: location.coordinate.longitude), success: { (locationInfo) in
-            UserDefaultManager.saveString("location", value: "location")
-            NotificationCenter.default.post(name: "RefreshLocation", object: nil)
+            UserDefaultManager.saveString(UserDefaultManager.USER_LOCATION, value: locationInfo.mj_JSONString())
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "RefreshLocation"), object: nil)
         }) { (msg) in
             
         }

@@ -52,7 +52,8 @@ class QuestionDetailViewController: BaseViewController {
         bkgView.addSubview(questionLabel)
         
         let askDateLabel = UILabel.init(frame: CGRect(x: offSetX, y: questionLabel.frame.maxY, width: width - offSetX, height: 20))
-        askDateLabel.text = "提问时间：\(questionInfo!.created_date!.substring(to: String.Index(10)))"
+        let index = questionInfo!.created_date!.index(questionInfo!.created_date!.endIndex, offsetBy: -9)
+        askDateLabel.text = "提问时间：\(questionInfo!.created_date!.substring(to: index))"
         askDateLabel.font = UIFont.systemFont(ofSize: 13 + fontOffSet)
         askDateLabel.textColor = UIColor.lightGray
         bkgView.addSubview(askDateLabel)

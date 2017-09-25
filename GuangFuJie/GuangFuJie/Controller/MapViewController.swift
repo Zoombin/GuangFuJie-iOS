@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapViewDelegate, BMKGeoCodeSearchDelegate, UISearchBarDelegate, UIAlertViewDelegate {
+class MapViewController: BaseViewController, BMKMapViewDelegate, BMKGeoCodeSearchDelegate, UISearchBarDelegate, UIAlertViewDelegate {
     var searchBar : UISearchBar!
     
     var polyline: BMKPolyline?
@@ -378,7 +378,7 @@ class MapViewController: BaseViewController, BMKLocationServiceDelegate, BMKMapV
      *用户位置更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdate(_ userLocation: BMKUserLocation!) {
+    override func didUpdate(_ userLocation: BMKUserLocation!) {
         print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         mapView.updateLocationData(userLocation)
         if (hasLocated == false) {

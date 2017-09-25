@@ -34,6 +34,17 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
         newsTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
         
         getNewsList()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLocation), name: NSNotification.Name(rawValue: "RefreshLocation"), object: nil)
+        self.getCurrentLocation()
+    }
+    
+    func refreshLocation() {
+        if (UserDefaultManager.getLocation() != nil) {
+            let location = UserDefaultManager.getLocation()
+            locationButton.setTitle("\(StringUtils.getString(location!.city_name))\(StringUtils.getString(location!.area_name))", for: UIControlState.normal)
+            provinceId = location!.province_id
+            getNewsList()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

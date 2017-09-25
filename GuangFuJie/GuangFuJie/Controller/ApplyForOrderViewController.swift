@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ApplyForOrderViewController: BaseViewController, BMKLocationServiceDelegate, BMKGeoCodeSearchDelegate {
+class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate {
     var locService : BMKLocationService!
     var geocodeSearch: BMKGeoCodeSearch!
     
@@ -374,7 +374,7 @@ class ApplyForOrderViewController: BaseViewController, BMKLocationServiceDelegat
      *用户位置更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdate(_ userLocation: BMKUserLocation!) {
+    override func didUpdate(_ userLocation: BMKUserLocation!) {
         print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         if (hasLocated == false) {
             hasLocated = true

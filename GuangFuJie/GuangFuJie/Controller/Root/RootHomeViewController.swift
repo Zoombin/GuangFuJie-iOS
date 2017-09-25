@@ -33,7 +33,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
         loadBannerData()
         loadExampleData()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLocation), name: "refreshLocation", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLocation), name: NSNotification.Name(rawValue: "RefreshLocation"), object: nil)
         self.getCurrentLocation()
     }
     

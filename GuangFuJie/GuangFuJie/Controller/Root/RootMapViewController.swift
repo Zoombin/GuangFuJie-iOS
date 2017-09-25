@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKMapViewDelegate, BMKPoiSearchDelegate {
+class RootMapViewController:BaseViewController, BMKMapViewDelegate, BMKPoiSearchDelegate {
     
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var pgButton: UIButton!
@@ -378,7 +378,7 @@ class RootMapViewController:BaseViewController, BMKLocationServiceDelegate, BMKM
      *用户位置更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdate(_ userLocation: BMKUserLocation!) {
+    override func didUpdate(_ userLocation: BMKUserLocation!) {
         print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         mapView.updateLocationData(userLocation)
         if (hasLocated == false) {
