@@ -11,6 +11,7 @@ import UIKit
 class UserDefaultManager: NSObject {
     static let USER_INFO = "userInfo"
     static let APP_VERSION = "appVersion"
+    static let USER_LOCATION = "currentLocation"
     
     static let userDefault : UserDefaults = UserDefaults.standard
     
@@ -39,8 +40,22 @@ class UserDefaultManager: NSObject {
         return nil
     }
     
+    static func getLocation() -> LocationInfo? {
+        let locationStr = getString(UserDefaultManager.USER_LOCATION)
+        if (locationStr == "") {
+            return nil
+        } else {
+            let locationInfo = LocationInfo.mj_object(withKeyValues: locationStr)
+            return locationInfo
+        }
+    }
+    
     static func clearUserData() {
         userDefault.removeObject(forKey: USER_INFO)
+    }
+    
+    static func clearLocationData() {
+        userDefault.removeObject(forKey: USER_LOCATION)
     }
     
     static func logOut() {

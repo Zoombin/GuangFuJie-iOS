@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeCloudDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate {
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeCloudDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,32 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         self.navigationController!.navigationBar.titleTextAttributes = NSDictionary(object: UIColor.white, forKey: NSForegroundColorAttributeName as NSCopying) as? [String : AnyObject]
         
         BeeCloud.setBeeCloudDelegate(self)
+    }
+    
+    func getCurrentLocation() {
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 100.0
+        if (Int(UIDevice.current.systemVersion)! > 7) {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let newLocation = locations[0]
+        manager.stopUpdatingLocation()
+        saveLocationInfo(location: newLocation)
+    }
+    
+    func saveLocationInfo(location: CLLocation) {
+        API.sharedInstance.getCityFromLatlng(lat: NSNumber.init(value: location.coordinate.latitude), lng: NSNumber.init(value: location.coordinate.longitude), success: { (locationInfo) in
+            UserDefaultManager.saveString("location", value: "location")
+            NotificationCenter.default.post(name: "RefreshLocation", object: nil)
+        }) { (msg) in
+            
+        }
     }
     
     func goToPageByTitle(title: String) {

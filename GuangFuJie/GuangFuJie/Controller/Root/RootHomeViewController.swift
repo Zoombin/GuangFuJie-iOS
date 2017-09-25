@@ -32,6 +32,16 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
         initView()
         loadBannerData()
         loadExampleData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLocation), name: "refreshLocation", object: nil)
+        self.getCurrentLocation()
+    }
+    
+    func refreshLocation() {
+        if (UserDefaultManager.getLocation() != nil) {
+            let location = UserDefaultManager.getLocation()
+            locationButton.setTitle("\(StringUtils.getString(location!.city_name))\(StringUtils.getString(location!.area_name))", for: UIControlState.normal)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
