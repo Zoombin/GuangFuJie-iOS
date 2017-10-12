@@ -275,7 +275,8 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     }
     
     func showRoofList() {
-        
+        let vc = MyRoofsViewController()
+        self.pushViewController(vc)
     }
     
     func showInsuranceList() {
@@ -289,7 +290,8 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     }
     
     func showFavList() {
-        
+        let vc = MyFavViewController()
+        self.pushViewController(vc)
     }
 
     /*

@@ -47,6 +47,10 @@
 		DE2389E41F8F588900A9EE89 /* SafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E21F8F588900A9EE89 /* SafeCell.swift */; };
 		DE2389E61F8F58B600A9EE89 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */; };
 		DE2389E71F8F58B600A9EE89 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */; };
+		DE2389E91F8F5A5000A9EE89 /* MyRoofsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E81F8F5A5000A9EE89 /* MyRoofsViewController.swift */; };
+		DE2389EA1F8F5A5000A9EE89 /* MyRoofsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E81F8F5A5000A9EE89 /* MyRoofsViewController.swift */; };
+		DE2389EC1F8F5AD200A9EE89 /* MyFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389EB1F8F5AD200A9EE89 /* MyFavViewController.swift */; };
+		DE2389ED1F8F5AD200A9EE89 /* MyFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389EB1F8F5AD200A9EE89 /* MyFavViewController.swift */; };
 		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
@@ -1172,6 +1176,8 @@
 		DE2389DF1F8F4EA800A9EE89 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DE2389E21F8F588900A9EE89 /* SafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCell.swift; sourceTree = "<group>"; };
 		DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDetailViewController.swift; sourceTree = "<group>"; };
+		DE2389E81F8F5A5000A9EE89 /* MyRoofsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoofsViewController.swift; sourceTree = "<group>"; };
+		DE2389EB1F8F5AD200A9EE89 /* MyFavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavViewController.swift; sourceTree = "<group>"; };
 		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE39521A1F14616000A44740 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -2492,6 +2498,8 @@
 				DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */,
 				DE2389C11F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift */,
 				DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */,
+				DE2389E81F8F5A5000A9EE89 /* MyRoofsViewController.swift */,
+				DE2389EB1F8F5AD200A9EE89 /* MyFavViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4755,6 +4763,7 @@
 				DE9131A91F7939B7002C9D98 /* MQChatViewService.m in Sources */,
 				DEFF5EF61F700E5100F58A04 /* BCPayPalVerifyReq.m in Sources */,
 				DE8689FE1F0DD0D700FF7FD3 /* QNTxtResolver.m in Sources */,
+				DE2389E91F8F5A5000A9EE89 /* MyRoofsViewController.swift in Sources */,
 				DE868A061F0DD0D700FF7FD3 /* QNHex.m in Sources */,
 				DE9131B51F7939B7002C9D98 /* MQBaseMessage.m in Sources */,
 				DE9132811F7939B7002C9D98 /* MQMessageFormCategoryViewController.m in Sources */,
@@ -4881,6 +4890,7 @@
 				DE39542F1F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				DEE6C9A41F35BAA300AB6031 /* NewsListViewController.swift in Sources */,
 				DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
+				DE2389EC1F8F5AD200A9EE89 /* MyFavViewController.swift in Sources */,
 				DEB9CA0A1F722FA6007BE2A3 /* CalResultParams.swift in Sources */,
 				DE3953EF1F1468CB00A44740 /* SDImageCache.m in Sources */,
 				DE868DFD1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */,
@@ -5085,6 +5095,7 @@
 				DEFF5F2B1F700E5100F58A04 /* BCURLRequestSerialization.m in Sources */,
 				DE9131F41F7939B7002C9D98 /* MQBotWebViewBubbleAnswerCell.m in Sources */,
 				DEFF5F2F1F700E5100F58A04 /* BCURLSessionManager.m in Sources */,
+				DE2389ED1F8F5AD200A9EE89 /* MyFavViewController.swift in Sources */,
 				DE91318A1F7939B7002C9D98 /* NSArray+MQFunctional.m in Sources */,
 				DEF593981F3EEA5500448FC5 /* LoginCell.swift in Sources */,
 				DE8687701F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
@@ -5207,6 +5218,7 @@
 				DEE681FD1F18B2CD00157560 /* MapViewController.swift in Sources */,
 				DEE6C9DB1F35BECA00AB6031 /* IQPreviousNextView.swift in Sources */,
 				DE868E041F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */,
+				DE2389EA1F8F5A5000A9EE89 /* MyRoofsViewController.swift in Sources */,
 				DE8687721F0DCE4400FF7FD3 /* AFImageDownloader.m in Sources */,
 				DE8688921F0DD05900FF7FD3 /* QNUploadManager.m in Sources */,
 				DEFF5F0D1F700E5100F58A04 /* BCQueryRefundsReq.m in Sources */,
