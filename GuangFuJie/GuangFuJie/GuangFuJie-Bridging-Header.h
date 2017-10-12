@@ -8,20 +8,19 @@
 #import "UIViewController+Hud.h"
 #import "QiniuSDK.h"
 #import "ImageTitleButton.h"
-#import "TopLeftLabel.h"
 #import "BeeCloud.h"
 //#import "SPullDownMenuView.h"
 #import "MJExtension.h"
 #import "UIImageView+AFNetworking.h"
 #import "UIButton+AFNetworking.h"
 #import "MJRefresh.h"
-#import "MSLFrameUtil.h"
 #import "MobClick.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
 #import <UMSocialNetwork/UMSocialNetwork.h>
 #import "UMSocialWechatHandler.h"
 #import "WXApi.h"
+#import "YCUtils.h"
 //#import "YCButton.h"
 
 #import "ZLPhotoPickerViewController.h"

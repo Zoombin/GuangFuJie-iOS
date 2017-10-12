@@ -40,8 +40,8 @@ class QuestionDetailViewController: BaseViewController {
         scrollView.addSubview(bkgView)
         
         let width = bkgView.frame.size.width
-        let questionLabelHeight = MSLFrameUtil.getLabHeight(questionInfo!.question, font: UIFont.systemFont(ofSize: 15 + fontOffSet), width: bkgView.frame.size.width - 2 * offSetX)
-        let answerHeight = MSLFrameUtil.getLabHeight(questionInfo!.answer, font: UIFont.systemFont(ofSize: 15 + fontOffSet), width: bkgView.frame.size.width - offSetX * 3 - iconWidth)
+        let questionLabelHeight = YCFrameUtil.getLabHeight(questionInfo!.question, font: UIFont.systemFont(ofSize: 15 + fontOffSet), width: bkgView.frame.size.width - 2 * offSetX)
+        let answerHeight = YCFrameUtil.getLabHeight(questionInfo!.answer, font: UIFont.systemFont(ofSize: 15 + fontOffSet), width: bkgView.frame.size.width - offSetX * 3 - iconWidth)
         
         let questionLabel = UILabel.init(frame: CGRect(x: offSetX, y: 0, width: width - 2 * offSetX, height: questionLabelHeight))
         questionLabel.textAlignment = NSTextAlignment.left

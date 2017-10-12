@@ -31,3 +31,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/SnapKit"]
 	path = GuangFuJie/GuangFuJie/Submodules/SnapKit
 	url = https://github.com/SnapKit/SnapKit.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/YCUtils"]
+	path = GuangFuJie/GuangFuJie/Submodules/YCUtils
+	url = https://github.com/ycabc1989/YCUtils.git

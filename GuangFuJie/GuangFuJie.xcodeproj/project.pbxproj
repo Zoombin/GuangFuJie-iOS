@@ -17,7 +17,6 @@
 		DE1A55201F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */; };
 		DE1F71D91F62762600B8C2E8 /* InstallerDetailOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */; };
 		DE1F71DA1F62762600B8C2E8 /* InstallerDetailOldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1F71D81F62762600B8C2E8 /* InstallerDetailOldViewController.xib */; };
-		DE1F71E61F62766400B8C2E8 /* MSLFrameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71E51F62766400B8C2E8 /* MSLFrameUtil.m */; };
 		DE1F71E91F6294BC00B8C2E8 /* GFJRoofListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71E71F6294BC00B8C2E8 /* GFJRoofListViewController.swift */; };
 		DE1F71EA1F6294BC00B8C2E8 /* GFJRoofListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1F71E81F6294BC00B8C2E8 /* GFJRoofListViewController.xib */; };
 		DE1F71EC1F6294FD00B8C2E8 /* InstallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71EB1F6294FD00B8C2E8 /* InstallerCell.swift */; };
@@ -627,6 +626,22 @@
 		DE9F99A01F19FD3C003CF080 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F999E1F19FD3C003CF080 /* AddNoteViewController.swift */; };
 		DE9F99AA1F19FD48003CF080 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE9F99AB1F19FD48003CF080 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */; };
+		DEA4FD7E1F8E075F006767E7 /* YCPhoneUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD701F8E075E006767E7 /* YCPhoneUtils.swift */; };
+		DEA4FD7F1F8E075F006767E7 /* YCStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD711F8E075E006767E7 /* YCStringUtils.swift */; };
+		DEA4FD801F8E075F006767E7 /* YCStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD721F8E075E006767E7 /* YCStringUtils.m */; };
+		DEA4FD811F8E0760006767E7 /* NSData+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD751F8E075F006767E7 /* NSData+AESCrypt.m */; };
+		DEA4FD821F8E0760006767E7 /* NSString+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD771F8E075F006767E7 /* NSString+AESCrypt.m */; };
+		DEA4FD831F8E0760006767E7 /* YCFrameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD791F8E075F006767E7 /* YCFrameUtil.m */; };
+		DEA4FD841F8E0760006767E7 /* YCTopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD7B1F8E075F006767E7 /* YCTopLeftLabel.m */; };
+		DEA4FD851F8E0760006767E7 /* YCPhoneUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD7C1F8E075F006767E7 /* YCPhoneUtils.m */; };
+		DEA4FD861F8E0765006767E7 /* YCPhoneUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD701F8E075E006767E7 /* YCPhoneUtils.swift */; };
+		DEA4FD871F8E0765006767E7 /* YCStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD711F8E075E006767E7 /* YCStringUtils.swift */; };
+		DEA4FD881F8E0768006767E7 /* YCPhoneUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD7C1F8E075F006767E7 /* YCPhoneUtils.m */; };
+		DEA4FD891F8E0768006767E7 /* YCStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD721F8E075E006767E7 /* YCStringUtils.m */; };
+		DEA4FD8A1F8E076D006767E7 /* NSData+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD751F8E075F006767E7 /* NSData+AESCrypt.m */; };
+		DEA4FD8B1F8E076D006767E7 /* NSString+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD771F8E075F006767E7 /* NSString+AESCrypt.m */; };
+		DEA4FD8E1F8E0D1E006767E7 /* YCLineUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD8D1F8E0D1E006767E7 /* YCLineUtils.m */; };
+		DEA4FD8F1F8E0D1E006767E7 /* YCLineUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA4FD8D1F8E0D1E006767E7 /* YCLineUtils.m */; };
 		DEB031551F698CD000FA9528 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */; };
 		DEB031561F698CD000FA9528 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */; };
 		DEB9C9FA1F722FA6007BE2A3 /* AfterSaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9C9CB1F722FA6007BE2A3 /* AfterSaleInfo.swift */; };
@@ -821,8 +836,6 @@
 		DED05D461F624C8B006741F6 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */; };
 		DED05D481F624CB7006741F6 /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D471F624CB7006741F6 /* YeZhuCell.swift */; };
 		DED05D491F624CBA006741F6 /* YeZhuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D471F624CB7006741F6 /* YeZhuCell.swift */; };
-		DED05D4C1F624E10006741F6 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DED05D4B1F624E10006741F6 /* TopLeftLabel.m */; };
-		DED05D4D1F624E10006741F6 /* TopLeftLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DED05D4B1F624E10006741F6 /* TopLeftLabel.m */; };
 		DED352A01F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */; };
 		DED352A11F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */; };
 		DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */; };
@@ -1123,8 +1136,6 @@
 		DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListViewController.swift; sourceTree = "<group>"; };
 		DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailOldViewController.swift; sourceTree = "<group>"; };
 		DE1F71D81F62762600B8C2E8 /* InstallerDetailOldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallerDetailOldViewController.xib; sourceTree = "<group>"; };
-		DE1F71E41F62766400B8C2E8 /* MSLFrameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLFrameUtil.h; sourceTree = "<group>"; };
-		DE1F71E51F62766400B8C2E8 /* MSLFrameUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLFrameUtil.m; sourceTree = "<group>"; };
 		DE1F71E71F6294BC00B8C2E8 /* GFJRoofListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJRoofListViewController.swift; sourceTree = "<group>"; };
 		DE1F71E81F6294BC00B8C2E8 /* GFJRoofListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFJRoofListViewController.xib; sourceTree = "<group>"; };
 		DE1F71EB1F6294FD00B8C2E8 /* InstallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerCell.swift; sourceTree = "<group>"; };
@@ -1711,6 +1722,23 @@
 		DE9E17E71F16135800B959AA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		DE9E17E91F16136300B959AA /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		DE9F999E1F19FD3C003CF080 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		DEA4FD6D1F8E075D006767E7 /* YCPhoneUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCPhoneUtils.h; path = YCUtils/YCUtils/YCPhoneUtils.h; sourceTree = "<group>"; };
+		DEA4FD6E1F8E075E006767E7 /* YCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCUtils.h; path = YCUtils/YCUtils/YCUtils.h; sourceTree = "<group>"; };
+		DEA4FD701F8E075E006767E7 /* YCPhoneUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCPhoneUtils.swift; sourceTree = "<group>"; };
+		DEA4FD711F8E075E006767E7 /* YCStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCStringUtils.swift; sourceTree = "<group>"; };
+		DEA4FD721F8E075E006767E7 /* YCStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YCStringUtils.m; path = YCUtils/YCUtils/YCStringUtils.m; sourceTree = "<group>"; };
+		DEA4FD741F8E075F006767E7 /* NSData+AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AESCrypt.h"; sourceTree = "<group>"; };
+		DEA4FD751F8E075F006767E7 /* NSData+AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AESCrypt.m"; sourceTree = "<group>"; };
+		DEA4FD761F8E075F006767E7 /* NSString+AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AESCrypt.h"; sourceTree = "<group>"; };
+		DEA4FD771F8E075F006767E7 /* NSString+AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AESCrypt.m"; sourceTree = "<group>"; };
+		DEA4FD781F8E075F006767E7 /* YCFrameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCFrameUtil.h; sourceTree = "<group>"; };
+		DEA4FD791F8E075F006767E7 /* YCFrameUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCFrameUtil.m; sourceTree = "<group>"; };
+		DEA4FD7A1F8E075F006767E7 /* YCTopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCTopLeftLabel.h; sourceTree = "<group>"; };
+		DEA4FD7B1F8E075F006767E7 /* YCTopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCTopLeftLabel.m; sourceTree = "<group>"; };
+		DEA4FD7C1F8E075F006767E7 /* YCPhoneUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YCPhoneUtils.m; path = YCUtils/YCUtils/YCPhoneUtils.m; sourceTree = "<group>"; };
+		DEA4FD7D1F8E075F006767E7 /* YCStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCStringUtils.h; path = YCUtils/YCUtils/YCStringUtils.h; sourceTree = "<group>"; };
+		DEA4FD8C1F8E0D1E006767E7 /* YCLineUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YCLineUtils.h; path = YCUtils/YCUtils/YCLineUtils.h; sourceTree = "<group>"; };
+		DEA4FD8D1F8E0D1E006767E7 /* YCLineUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YCLineUtils.m; path = YCUtils/YCUtils/YCLineUtils.m; sourceTree = "<group>"; };
 		DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
 		DEB9C9CB1F722FA6007BE2A3 /* AfterSaleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSaleInfo.swift; sourceTree = "<group>"; };
 		DEB9C9CC1F722FA6007BE2A3 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
@@ -1837,8 +1865,6 @@
 		DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
 		DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
 		DED05D471F624CB7006741F6 /* YeZhuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YeZhuCell.swift; sourceTree = "<group>"; };
-		DED05D4A1F624E10006741F6 /* TopLeftLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLeftLabel.h; sourceTree = "<group>"; };
-		DED05D4B1F624E10006741F6 /* TopLeftLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLeftLabel.m; sourceTree = "<group>"; };
 		DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceShopViewController.swift; sourceTree = "<group>"; };
 		DEE681EC1F185D2000157560 /* InstallerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerHomeViewController.swift; sourceTree = "<group>"; };
 		DEE681EF1F185EC000157560 /* DiTuiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiTuiHomeViewController.swift; sourceTree = "<group>"; };
@@ -2446,10 +2472,6 @@
 		DE86843B1F0DCA8F00FF7FD3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DE1F71E41F62766400B8C2E8 /* MSLFrameUtil.h */,
-				DE1F71E51F62766400B8C2E8 /* MSLFrameUtil.m */,
-				DED05D4A1F624E10006741F6 /* TopLeftLabel.h */,
-				DED05D4B1F624E10006741F6 /* TopLeftLabel.m */,
 				DE3954541F1480E800A44740 /* Dimens.swift */,
 				DE3954511F14802200A44740 /* PublishMediaView.swift */,
 				DEC221291F13585D007D6DBE /* StringUtils.swift */,
@@ -2467,6 +2489,7 @@
 		DE86843C1F0DCA8F00FF7FD3 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				DEA4FD1E1F8E0745006767E7 /* YCUtils */,
 				DE9F99AC1F19FDC0003CF080 /* MeiqiaSDK */,
 				DE39522A1F1468B400A44740 /* ZLPhotoLib */,
 				DEC227001F136624007D6DBE /* IQKeyboardManager */,
@@ -3540,6 +3563,48 @@
 			path = MeiqiaSDK;
 			sourceTree = "<group>";
 		};
+		DEA4FD1E1F8E0745006767E7 /* YCUtils */ = {
+			isa = PBXGroup;
+			children = (
+				DEA4FD6F1F8E075E006767E7 /* Swift */,
+				DEA4FD731F8E075F006767E7 /* ThirdSDK */,
+				DEA4FD6D1F8E075D006767E7 /* YCPhoneUtils.h */,
+				DEA4FD7C1F8E075F006767E7 /* YCPhoneUtils.m */,
+				DEA4FD7D1F8E075F006767E7 /* YCStringUtils.h */,
+				DEA4FD721F8E075E006767E7 /* YCStringUtils.m */,
+				DEA4FD6E1F8E075E006767E7 /* YCUtils.h */,
+				DEA4FD8C1F8E0D1E006767E7 /* YCLineUtils.h */,
+				DEA4FD8D1F8E0D1E006767E7 /* YCLineUtils.m */,
+			);
+			path = YCUtils;
+			sourceTree = "<group>";
+		};
+		DEA4FD6F1F8E075E006767E7 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				DEA4FD701F8E075E006767E7 /* YCPhoneUtils.swift */,
+				DEA4FD711F8E075E006767E7 /* YCStringUtils.swift */,
+			);
+			name = Swift;
+			path = YCUtils/YCUtils/Swift;
+			sourceTree = "<group>";
+		};
+		DEA4FD731F8E075F006767E7 /* ThirdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DEA4FD741F8E075F006767E7 /* NSData+AESCrypt.h */,
+				DEA4FD751F8E075F006767E7 /* NSData+AESCrypt.m */,
+				DEA4FD761F8E075F006767E7 /* NSString+AESCrypt.h */,
+				DEA4FD771F8E075F006767E7 /* NSString+AESCrypt.m */,
+				DEA4FD781F8E075F006767E7 /* YCFrameUtil.h */,
+				DEA4FD791F8E075F006767E7 /* YCFrameUtil.m */,
+				DEA4FD7A1F8E075F006767E7 /* YCTopLeftLabel.h */,
+				DEA4FD7B1F8E075F006767E7 /* YCTopLeftLabel.m */,
+			);
+			name = ThirdSDK;
+			path = YCUtils/YCUtils/ThirdSDK;
+			sourceTree = "<group>";
+		};
 		DEB9C9CA1F722FA5007BE2A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -4446,6 +4511,7 @@
 				DE9131EF1F7939B7002C9D98 /* MQBotMenuAnswerCell.m in Sources */,
 				DE9131BF1F7939B7002C9D98 /* MQEventMessage.m in Sources */,
 				DE91320D1F7939B7002C9D98 /* MQAssetUtil.m in Sources */,
+				DEA4FD831F8E0760006767E7 /* YCFrameUtil.m in Sources */,
 				DE9131E71F7939B7002C9D98 /* MQTipsCellModel.m in Sources */,
 				DEFF5EF01F700E5100F58A04 /* BCPayReq.m in Sources */,
 				DEC2225A1F13601E007D6DBE /* UIScrollView+MJExtension.m in Sources */,
@@ -4495,6 +4561,7 @@
 				DEB9CA421F722FA6007BE2A3 /* PowerGraphInfo.swift in Sources */,
 				DE91328B1F7939B7002C9D98 /* MQMessageFormTextView.m in Sources */,
 				DE868E071F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
+				DEA4FD811F8E0760006767E7 /* NSData+AESCrypt.m in Sources */,
 				DEB9CA481F722FA6007BE2A3 /* QNInfo.swift in Sources */,
 				DE9132511F7939B7002C9D98 /* MQKeyboardController.m in Sources */,
 				DE86876F1F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
@@ -4517,7 +4584,9 @@
 				DE9132451F7939B7002C9D98 /* MEIQIA_MLAudioMeterObserver.m in Sources */,
 				DE868A151F0DD11800FF7FD3 /* UIViewController+HUD.m in Sources */,
 				DE1F71F51F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */,
+				DEA4FD851F8E0760006767E7 /* YCPhoneUtils.m in Sources */,
 				DEB9CA181F722FA6007BE2A3 /* ElecticIncomeInfo.swift in Sources */,
+				DEA4FD7E1F8E075F006767E7 /* YCPhoneUtils.swift in Sources */,
 				DEFF5F3A1F700E5100F58A04 /* BeeCloudAdapter.m in Sources */,
 				DE3954051F1468CB00A44740 /* UIImageView+WebCache.m in Sources */,
 				DEE681FC1F18B2CD00157560 /* MapViewController.swift in Sources */,
@@ -4560,6 +4629,7 @@
 				DE9131F51F7939B7002C9D98 /* MQChatBaseCell.m in Sources */,
 				DE9132031F7939B7002C9D98 /* MQRichTextViewCell.m in Sources */,
 				DEB9CA201F722FA6007BE2A3 /* GetInventerMode.swift in Sources */,
+				DEA4FD841F8E0760006767E7 /* YCTopLeftLabel.m in Sources */,
 				DE8687631F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */,
 				DE39540F1F1468CB00A44740 /* ZLPhotoRect.m in Sources */,
 				DE868E031F0DEB0900FF7FD3 /* RootMyViewController.swift in Sources */,
@@ -4591,6 +4661,7 @@
 				DEB9CA261F722FA6007BE2A3 /* GroupUserInfo.swift in Sources */,
 				DE9132091F7939B7002C9D98 /* MQVoiceMessageCell.m in Sources */,
 				DEC2225E1F13601E007D6DBE /* UIView+MJExtension.m in Sources */,
+				DEA4FD8E1F8E0D1E006767E7 /* YCLineUtils.m in Sources */,
 				DE91322F1F7939B7002C9D98 /* MEIQIA_FBFontSymbol.m in Sources */,
 				DEC2223E1F13601E007D6DBE /* MJRefreshFooter.m in Sources */,
 				DE8689F61F0DD0D700FF7FD3 /* QNHijackingDetectWrapper.m in Sources */,
@@ -4684,6 +4755,7 @@
 				DE9131E51F7939B7002C9D98 /* MQTextCellModel.m in Sources */,
 				DE3954551F1480E800A44740 /* Dimens.swift in Sources */,
 				DE3953F31F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
+				DEA4FD7F1F8E075F006767E7 /* YCStringUtils.swift in Sources */,
 				DE9132591F7939B7002C9D98 /* MQRecorderView.m in Sources */,
 				DEE6C9D61F35BECA00AB6031 /* IQTextView.swift in Sources */,
 				DED05D481F624CB7006741F6 /* YeZhuCell.swift in Sources */,
@@ -4806,6 +4878,7 @@
 				DE0237A61F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */,
 				DE868E0A1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
 				DEFF5F2C1F700E5100F58A04 /* BCURLResponseSerialization.m in Sources */,
+				DEA4FD801F8E075F006767E7 /* YCStringUtils.m in Sources */,
 				DEB9CA101F722FA6007BE2A3 /* CommonInfo.swift in Sources */,
 				DEFF5F1A1F700E5100F58A04 /* BCQueryBillResult.m in Sources */,
 				DE9131F11F7939B7002C9D98 /* MQBotMenuCell.m in Sources */,
@@ -4813,17 +4886,16 @@
 				DE3954271F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DEE6C9E41F35BECA00AB6031 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				DE9132791F7939B7002C9D98 /* MQMessageFormViewStyle.m in Sources */,
-				DE1F71E61F62766400B8C2E8 /* MSLFrameUtil.m in Sources */,
 				DE91321D1F7939B7002C9D98 /* MQDateFormatterUtil.m in Sources */,
 				DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */,
 				DE3953FD1F1468CB00A44740 /* UIButton+WebCache.m in Sources */,
 				DE8684411F0DCADE00FF7FD3 /* API+List.swift in Sources */,
+				DEA4FD821F8E0760006767E7 /* NSString+AESCrypt.m in Sources */,
 				DEE682181F19D0B200157560 /* JoinUsApplyViewController.swift in Sources */,
 				DE9132271F7939B7002C9D98 /* MQAGEmojiPageView.m in Sources */,
 				DE9131931F7939B7002C9D98 /* UIView+MQLayout.m in Sources */,
 				DE8688811F0DD05900FF7FD3 /* QNUrlSafeBase64.m in Sources */,
 				DE91320F1F7939B7002C9D98 /* MQBundleUtil.m in Sources */,
-				DED05D4C1F624E10006741F6 /* TopLeftLabel.m in Sources */,
 				DE9131991F7939B7002C9D98 /* MQCustomizedUIText.m in Sources */,
 				DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */,
 				DE8687731F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -4886,6 +4958,7 @@
 				DE868E081F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */,
 				DE9131EA1F7939B7002C9D98 /* MQVoiceCellModel.m in Sources */,
 				DE9132861F7939B7002C9D98 /* MQMessageFormViewService.m in Sources */,
+				DEA4FD871F8E0765006767E7 /* YCStringUtils.swift in Sources */,
 				DE86887A1F0DD05900FF7FD3 /* QNFile.m in Sources */,
 				DE9131F61F7939B7002C9D98 /* MQChatBaseCell.m in Sources */,
 				DEFF5F231F700E5100F58A04 /* BCSubscriptionQuery.m in Sources */,
@@ -4914,6 +4987,7 @@
 				DEB9CA451F722FA6007BE2A3 /* ProjectcalInfo.swift in Sources */,
 				DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
 				DE9131A01F7939B7002C9D98 /* MQChatViewStyle.m in Sources */,
+				DEA4FD8A1F8E076D006767E7 /* NSData+AESCrypt.m in Sources */,
 				DE9132641F7939B7002C9D98 /* MQInputToolView.m in Sources */,
 				DE868A091F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DEC222531F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
@@ -5147,9 +5221,11 @@
 				DEB9CA1F1F722FA6007BE2A3 /* FranchiseeInfo.swift in Sources */,
 				DE3953F41F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
 				DEE6C9D91F35BECA00AB6031 /* IQBarButtonItem.swift in Sources */,
+				DEA4FD8F1F8E0D1E006767E7 /* YCLineUtils.m in Sources */,
 				DE91321E1F7939B7002C9D98 /* MQDateFormatterUtil.m in Sources */,
 				DE8687861F0DCEDC00FF7FD3 /* Constants.swift in Sources */,
 				DE0237A71F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */,
+				DEA4FD8B1F8E076D006767E7 /* NSString+AESCrypt.m in Sources */,
 				DE9131D61F7939B7002C9D98 /* MQBotMenuCellModel.m in Sources */,
 				DEFF5F011F700E5100F58A04 /* BCQueryBillsReq.m in Sources */,
 				DE8689E51F0DD0D700FF7FD3 /* QNAssessment.m in Sources */,
@@ -5176,6 +5252,7 @@
 				DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */,
 				DE9132561F7939B7002C9D98 /* MQEvaluationView.m in Sources */,
+				DEA4FD861F8E0765006767E7 /* YCPhoneUtils.swift in Sources */,
 				DEC222431F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DEE682221F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
 				DEFF5F311F700E5100F58A04 /* BCPayCache.m in Sources */,
@@ -5195,7 +5272,6 @@
 				DE86876E1F0DCE4400FF7FD3 /* AFURLSessionManager.m in Sources */,
 				DE8688941F0DD05900FF7FD3 /* QNUploadOption.m in Sources */,
 				DE86887E1F0DD05900FF7FD3 /* QNPHAssetResource.m in Sources */,
-				DED05D4D1F624E10006741F6 /* TopLeftLabel.m in Sources */,
 				DE86848A1F0DCAFF00FF7FD3 /* API.swift in Sources */,
 				DEB9CA431F722FA6007BE2A3 /* PowerGraphInfo.swift in Sources */,
 				DE868AE31F0DD23400FF7FD3 /* PhoneUtils.swift in Sources */,
@@ -5264,6 +5340,7 @@
 				DEB9CA111F722FA6007BE2A3 /* CommonInfo.swift in Sources */,
 				DEC2223D1F13601E007D6DBE /* MJRefreshComponent.m in Sources */,
 				DE9131E21F7939B7002C9D98 /* MQMessageDateCellModel.m in Sources */,
+				DEA4FD891F8E0768006767E7 /* YCStringUtils.m in Sources */,
 				DEC222491F13601E007D6DBE /* MJRefreshBackGifFooter.m in Sources */,
 				DE868AD71F0DD1B800FF7FD3 /* NSObject+MJCoding.m in Sources */,
 				DE3954281F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */,
@@ -5279,6 +5356,7 @@
 				DEB9CA1D1F722FA6007BE2A3 /* EnergycalInfo.swift in Sources */,
 				DE8687741F0DCE4400FF7FD3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DEB9CA331F722FA6007BE2A3 /* InsuranceInfo.swift in Sources */,
+				DEA4FD881F8E0768006767E7 /* YCPhoneUtils.m in Sources */,
 				DE91327C1F7939B7002C9D98 /* MQMessageFormViewStyleBlue.m in Sources */,
 				DE9132161F7939B7002C9D98 /* MQChatDeviceUtil.m in Sources */,
 				DE8689F51F0DD0D700FF7FD3 /* QNDnspodFree.m in Sources */,

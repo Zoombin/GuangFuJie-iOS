@@ -15,8 +15,8 @@ class YeZhuCell: UITableViewCell {
     var nameLabel : UILabel!
     var statusLabel : UILabel!
     
-    var descriptionLabel : TopLeftLabel!
-    var addressLabel : TopLeftLabel!
+    var descriptionLabel : YCTopLeftLabel!
+    var addressLabel : YCTopLeftLabel!
     
     var tipsLabel : UILabel!
     var viewMoreButton : UIButton!
@@ -63,7 +63,7 @@ class YeZhuCell: UITableViewCell {
         let bottomView = UIView.init(frame: CGRect(x: 0, y: (topView.frame).maxY, width: bkgViewWidth, height: bkgViewHeight * 2 / 3))
         bkgView.addSubview(bottomView)
         
-        descriptionLabel = TopLeftLabel.init(frame: CGRect(x: dir2 * 3, y: bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.45))
+        descriptionLabel = YCTopLeftLabel.init(frame: CGRect(x: dir2 * 3, y: bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.45))
         descriptionLabel.text = "这里显示的是描述"
         descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         descriptionLabel.numberOfLines = 3
@@ -74,7 +74,7 @@ class YeZhuCell: UITableViewCell {
         desPoint.image = UIImage(named: "ic_yellow_point")
         bottomView.addSubview(desPoint)
         
-        addressLabel = TopLeftLabel.init(frame: CGRect(x: dir2 * 3, y: (descriptionLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.20))
+        addressLabel = YCTopLeftLabel.init(frame: CGRect(x: dir2 * 3, y: (descriptionLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.20))
         addressLabel.text = "这里显示的地址"
         addressLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(addressLabel)

@@ -260,7 +260,7 @@ class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate 
         }
         introLabel.text = intro
         let originHeight = introLabel.frame.size.height
-        var height = MSLFrameUtil.getLabHeight(intro, fontSize: Dimens.fontSizeComm, width: introLabel.frame.size.width)
+        var height = YCFrameUtil.getLabHeight(intro, fontSize: Dimens.fontSizeComm, width: introLabel.frame.size.width)
         if (originHeight > height) {
             height = originHeight
         }
