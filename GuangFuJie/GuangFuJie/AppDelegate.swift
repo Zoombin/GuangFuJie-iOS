@@ -9,10 +9,14 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAlertViewDelegate {
 
     var window: UIWindow?
     var mapManager = BMKMapManager()
+    
+    var updateUrl = ""
+    var normalUpdateTag = 1001 //普通更新
+    var focusUpdateTag = 1002  //强制更新
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -63,6 +67,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
         }
     }
     
+    func refreshUserInfo() {
+        if (!UserDefaultManager.isLogin()) {
+            return
+        }
+        API.sharedInstance.getUserInfo({ (userinfo) in
+            UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+        }) { (msg) in
+            
+        }
+    }
+    
+    //检查更新（只做强制升级用）
+    func checkAppVersion() {
+        API.sharedInstance.appupgrade({ (appModel) in
+            if(appModel.is_upgrade!.intValue == 2){
+                let urlString = appModel.download_url
+                self.updateUrl = urlString!
+                let alertView = UIAlertView.init(title: "提示", message: "App有更新，是否去更新？", delegate: self, cancelButtonTitle: "确定")
+                alertView.tag = self.focusUpdateTag
+                alertView.show()
+            } else if (appModel.is_upgrade!.intValue == 1){
+                let urlString = appModel.download_url
+                self.updateUrl = urlString!
+                let alertView = UIAlertView.init(title: "提示", message: "App有更新，是否去更新？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+                alertView.tag = self.normalUpdateTag
+                alertView.show()
+            }
+        }) { (msg) in
+            print(msg)
+        }
+    }
+    
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        if (alertView.tag == normalUpdateTag) {
+            //普通更新
+            if (alertView.cancelButtonIndex != buttonIndex) {
+                let url = URL(string: updateUrl)
+                UIApplication.shared.openURL(url! as URL)
+            }
+        } else if (alertView.tag == focusUpdateTag) {
+            //强制更新
+            let url = URL(string: updateUrl)
+            UIApplication.shared.openURL(url! as URL)
+        }
+        
+    }
+    
     func initMain() {
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "HomeTabBarController")
@@ -85,6 +136,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        checkAppVersion()
+        refreshUserInfo()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
