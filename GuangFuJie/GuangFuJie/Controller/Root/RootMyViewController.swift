@@ -133,7 +133,20 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.refreshUserStatus()
+        self.refreshUserInfo()
+    }
+    
+    func refreshUserInfo() {
+        if (!UserDefaultManager.isLogin()) {
+            self.refreshUserStatus()
+            return
+        }
+        API.sharedInstance.getUserInfo({ (userinfo) in
+            UserDefaultManager.saveString(UserDefaultManager.USER_INFO, value: userinfo.mj_JSONString())
+            self.refreshUserStatus()
+        }) { (msg) in
+            
+        }
     }
     
     func refreshUserStatus() {
@@ -145,10 +158,23 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             statusButton.isHidden = false
             myTableView.tableFooterView?.isHidden = false
             //身份  普通人 --> 地推(3)-->  业主(4)  --> 安装商(1)  --> 加盟商(2)
-//            let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity) == 0
-//            if (role == 0) {
-//                
-//            }
+            let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity)
+            if (role == 0) {
+                //普通人
+                print("普通人")
+            } else if (role == 3) {
+                //地推
+                print("地推")
+            } else if (role == 4) {
+                //业主
+                print("业主")
+            } else if (role == 1) {
+                //安装商
+                print("安装商")
+            } else if (role == 2) {
+                //加盟商
+                print("加盟商")
+            }
         } else {
             loginButton.isHidden = false
             userNameLabel.text = ""
@@ -239,7 +265,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         let alertView = UIAlertController.init(title: "提示", message: "您确定要登出吗？", preferredStyle: UIAlertControllerStyle.alert)
         let sureAction = UIAlertAction.init(title: "确定", style: UIAlertActionStyle.default) { (action) in
             UserDefaultManager.logOut()
-            self.refreshUserStatus()
+            self.refreshUserInfo()
         }
         let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel) { (action) in
             
