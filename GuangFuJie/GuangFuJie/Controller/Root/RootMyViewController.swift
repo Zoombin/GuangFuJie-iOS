@@ -63,6 +63,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         statusButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         statusButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
         statusButton.setTitle("申请成为地推", for: UIControlState.normal)
+        statusButton.addTarget(self, action: #selector(self.statusButtonClicked), for: UIControlEvents.touchUpInside)
         statusButton.backgroundColor = Colors.applyGreen
         topView.addSubview(statusButton)
         
@@ -161,19 +162,19 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity)
             if (role == 0) {
                 //普通人
-                print("普通人")
+                statusButton.setTitle("申请成为地推", for: UIControlState.normal)
             } else if (role == 3) {
                 //地推
-                print("地推")
+                statusButton.setTitle("申请成为业主", for: UIControlState.normal)
             } else if (role == 4) {
                 //业主
-                print("业主")
+                statusButton.setTitle("申请成为安装商", for: UIControlState.normal)
             } else if (role == 1) {
                 //安装商
-                print("安装商")
+                statusButton.setTitle("申请成为加盟商", for: UIControlState.normal)
             } else if (role == 2) {
                 //加盟商
-                print("加盟商")
+                statusButton.isHidden = true
             }
         } else {
             loginButton.isHidden = false
@@ -322,6 +323,51 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     func showFavList() {
         let vc = MyFavViewController()
+        self.pushViewController(vc)
+    }
+    
+    func statusButtonClicked() {
+        let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity)
+        if (role == 0) {
+            //普通人
+            print("申请地推")
+            applyDiTui()
+        } else if (role == 3) {
+            //地推
+            print("申请业主")
+            applyYeZhu()
+        } else if (role == 4) {
+            //业主
+            print("申请安装商")
+            applyAnZhuang()
+        } else if (role == 1) {
+            //安装商
+            print("申请加盟商")
+            applyJiaMeng()
+        }
+    }
+    
+    func applyYeZhu() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "YeZhuApplyViewController")
+        self.pushViewController(vc)
+    }
+    
+    func applyJiaMeng() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "JoinUsViewController")
+        self.pushViewController(vc)
+    }
+    
+    func applyAnZhuang() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "InstallerApplyViewController")
+        self.pushViewController(vc)
+    }
+    
+    func applyDiTui() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DituiApplyViewController")
         self.pushViewController(vc)
     }
 
