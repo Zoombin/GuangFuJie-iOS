@@ -43,6 +43,10 @@
 		DE2389DE1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389DC1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift */; };
 		DE2389E01F8F4EA800A9EE89 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389DF1F8F4EA800A9EE89 /* ReportViewController.swift */; };
 		DE2389E11F8F4EA800A9EE89 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389DF1F8F4EA800A9EE89 /* ReportViewController.swift */; };
+		DE2389E31F8F588900A9EE89 /* SafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E21F8F588900A9EE89 /* SafeCell.swift */; };
+		DE2389E41F8F588900A9EE89 /* SafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E21F8F588900A9EE89 /* SafeCell.swift */; };
+		DE2389E61F8F58B600A9EE89 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */; };
+		DE2389E71F8F58B600A9EE89 /* SafeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */; };
 		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
@@ -1166,6 +1170,8 @@
 		DE2389D91F8F4DC700A9EE89 /* BindDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindDeviceViewController.swift; sourceTree = "<group>"; };
 		DE2389DC1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewController.swift; sourceTree = "<group>"; };
 		DE2389DF1F8F4EA800A9EE89 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		DE2389E21F8F588900A9EE89 /* SafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCell.swift; sourceTree = "<group>"; };
+		DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDetailViewController.swift; sourceTree = "<group>"; };
 		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE39521A1F14616000A44740 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -2428,6 +2434,7 @@
 				DE3AE0C11F69265E00A7A34A /* InsuranceCell.swift */,
 				DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */,
 				DEFF5DE81F6FF95D00F58A04 /* CashCell.swift */,
+				DE2389E21F8F588900A9EE89 /* SafeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2484,6 +2491,7 @@
 				DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */,
 				DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */,
 				DE2389C11F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift */,
+				DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4811,12 +4819,14 @@
 				DE91327F1F7939B7002C9D98 /* MQMessageFormViewStyleGreen.m in Sources */,
 				DEB9CA4A1F722FA6007BE2A3 /* QNResultInfo.swift in Sources */,
 				DE9131971F7939B7002C9D98 /* UIViewController+MQOrientationFix.m in Sources */,
+				DE2389E61F8F58B600A9EE89 /* SafeDetailViewController.swift in Sources */,
 				DEC2224E1F13601E007D6DBE /* MJRefreshGifHeader.m in Sources */,
 				DE8689E41F0DD0D700FF7FD3 /* QNAssessment.m in Sources */,
 				DE8688871F0DD05900FF7FD3 /* QNUserAgent.m in Sources */,
 				DE9131E91F7939B7002C9D98 /* MQVoiceCellModel.m in Sources */,
 				DE868AD81F0DD1B800FF7FD3 /* NSObject+MJKeyValue.m in Sources */,
 				DE91325F1F7939B7002C9D98 /* MQTabInputContentView.m in Sources */,
+				DE2389E31F8F588900A9EE89 /* SafeCell.swift in Sources */,
 				DE3954401F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DE9132731F7939B7002C9D98 /* MQMessageFormInputModel.m in Sources */,
 				DE8688771F0DD05900FF7FD3 /* QNEtag.m in Sources */,
@@ -5079,6 +5089,7 @@
 				DEF593981F3EEA5500448FC5 /* LoginCell.swift in Sources */,
 				DE8687701F0DCE4400FF7FD3 /* AFAutoPurgingImageCache.m in Sources */,
 				DE9132581F7939B7002C9D98 /* MQImageViewerViewController.m in Sources */,
+				DE2389E41F8F588900A9EE89 /* SafeCell.swift in Sources */,
 				DEB9CA131F722FA6007BE2A3 /* CommonModel.swift in Sources */,
 				DE9131E41F7939B7002C9D98 /* MQRichTextViewModel.m in Sources */,
 				DEE6C9D51F35BECA00AB6031 /* IQKeyboardReturnKeyHandler.swift in Sources */,
@@ -5133,6 +5144,7 @@
 				DEFF5EFF1F700E5100F58A04 /* BCQueryBillByIdResp.m in Sources */,
 				DEC2225D1F13601E007D6DBE /* UIScrollView+MJRefresh.m in Sources */,
 				DE9131AC1F7939B7002C9D98 /* MQChatViewTableDataSource.m in Sources */,
+				DE2389E71F8F58B600A9EE89 /* SafeDetailViewController.swift in Sources */,
 				DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DEE6C9E11F35BECA00AB6031 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				DE91324A1F7939B7002C9D98 /* MEIQIA_TTTAttributedLabel.m in Sources */,

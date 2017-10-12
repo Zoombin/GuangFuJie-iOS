@@ -260,6 +260,9 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     }
     
     func menuButtonClicked(gesutre: UIGestureRecognizer) {
+        if (shouldShowLogin()) {
+            return
+        }
         if (gesutre.view?.tag == 0) {
             showRoofList()
         } else if (gesutre.view?.tag == 1) {
@@ -276,7 +279,8 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     }
     
     func showInsuranceList() {
-        
+        let vc = MyInsuranceListViewController()
+        self.pushViewController(vc)
     }
     
     func showDeviceList() {
