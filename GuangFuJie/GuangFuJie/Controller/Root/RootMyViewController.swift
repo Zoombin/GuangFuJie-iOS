@@ -81,9 +81,14 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             label.textAlignment = NSTextAlignment.center
             label.backgroundColor = UIColor.white
             label.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+            label.tag = i
             bottomView.addSubview(label)
             self.changeLabelColor(label: label)
             YCLineUtils.addRightLine(label, color: Colors.sperateLine, percent: 80)
+            
+            let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.menuButtonClicked(gesutre:)))
+            label.isUserInteractionEnabled = true
+            label.addGestureRecognizer(gesture)
             
             if (i == 0) {
                roofCountLabel = label
@@ -254,6 +259,18 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         label.attributedText = attrString
     }
     
+    func menuButtonClicked(gesutre: UIGestureRecognizer) {
+        if (gesutre.view?.tag == 0) {
+            showRoofList()
+        } else if (gesutre.view?.tag == 1) {
+            showInsuranceList()
+        } else if (gesutre.view?.tag == 2) {
+            showDeviceList()
+        } else {
+            showFavList()
+        }
+    }
+    
     func showRoofList() {
         
     }
@@ -263,10 +280,11 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     }
     
     func showDeviceList() {
-        
+        let vc = MyDeviceListControllerViewController()
+        self.pushViewController(vc)
     }
     
-    func favList() {
+    func showFavList() {
         
     }
 

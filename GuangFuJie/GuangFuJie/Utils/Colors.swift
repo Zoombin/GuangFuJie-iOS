@@ -27,4 +27,10 @@ class Colors: NSObject {
     
     static let applyGreen : UIColor = UIColor.init(red: 0/255.0, green: 170/255.0, blue: 0/255.0, alpha: 1.0)
     static let sperateLine: UIColor = UIColor.init(red: 220/255.0, green: 220/255.0, blue: 220/255.0, alpha: 1.0)
+    
+    static let topButtonColor : UIColor = UIColor.init(red: 210/255.0, green: 210/255.0, blue: 210/255.0, alpha: 1.0)
+    
+    static let statusOK : UIColor = UIColor.init(red: 17/255.0, green: 201/255.0, blue: 81/255.0, alpha: 1.0)
+    static let statusError : UIColor = UIColor.init(red: 251/255.0, green: 0/255.0, blue: 6/255.0, alpha: 1.0)
+    static let statusOffLine : UIColor = UIColor.init(red: 244/255.0, green: 173/255.0, blue: 0/255.0, alpha: 1.0)
 }

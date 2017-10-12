@@ -27,6 +27,22 @@
 		DE1F71F31F62978000B8C2E8 /* InstallBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F21F62978000B8C2E8 /* InstallBuyViewController.swift */; };
 		DE1F71F51F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */; };
 		DE1F71F61F62A1BA00B8C2E8 /* ProductProvideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */; };
+		DE2389C21F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389C11F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift */; };
+		DE2389C31F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389C11F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift */; };
+		DE2389D11F8F4CFF00A9EE89 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389CD1F8F4CFE00A9EE89 /* DeviceCell.swift */; };
+		DE2389D21F8F4CFF00A9EE89 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389CD1F8F4CFE00A9EE89 /* DeviceCell.swift */; };
+		DE2389D31F8F4CFF00A9EE89 /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2389CE1F8F4CFE00A9EE89 /* DeviceCell.xib */; };
+		DE2389D41F8F4CFF00A9EE89 /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2389CE1F8F4CFE00A9EE89 /* DeviceCell.xib */; };
+		DE2389D51F8F4CFF00A9EE89 /* DeviceCell6.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2389CF1F8F4CFF00A9EE89 /* DeviceCell6.xib */; };
+		DE2389D61F8F4CFF00A9EE89 /* DeviceCell6.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2389CF1F8F4CFF00A9EE89 /* DeviceCell6.xib */; };
+		DE2389D71F8F4CFF00A9EE89 /* DeviceCellPlus.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2389D01F8F4CFF00A9EE89 /* DeviceCellPlus.xib */; };
+		DE2389D81F8F4CFF00A9EE89 /* DeviceCellPlus.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2389D01F8F4CFF00A9EE89 /* DeviceCellPlus.xib */; };
+		DE2389DA1F8F4DC800A9EE89 /* BindDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389D91F8F4DC700A9EE89 /* BindDeviceViewController.swift */; };
+		DE2389DB1F8F4DC800A9EE89 /* BindDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389D91F8F4DC700A9EE89 /* BindDeviceViewController.swift */; };
+		DE2389DD1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389DC1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift */; };
+		DE2389DE1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389DC1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift */; };
+		DE2389E01F8F4EA800A9EE89 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389DF1F8F4EA800A9EE89 /* ReportViewController.swift */; };
+		DE2389E11F8F4EA800A9EE89 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2389DF1F8F4EA800A9EE89 /* ReportViewController.swift */; };
 		DE39520D1F145D8400A44740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
 		DE3952181F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
 		DE3952191F145DCE00A44740 /* InsuranceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */; };
@@ -1142,6 +1158,14 @@
 		DE1F71F01F62974F00B8C2E8 /* NearByRoofViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByRoofViewController.swift; sourceTree = "<group>"; };
 		DE1F71F21F62978000B8C2E8 /* InstallBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallBuyViewController.swift; sourceTree = "<group>"; };
 		DE1F71F41F62A1BA00B8C2E8 /* ProductProvideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductProvideViewController.swift; sourceTree = "<group>"; };
+		DE2389C11F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDeviceListControllerViewController.swift; sourceTree = "<group>"; };
+		DE2389CD1F8F4CFE00A9EE89 /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		DE2389CE1F8F4CFE00A9EE89 /* DeviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
+		DE2389CF1F8F4CFF00A9EE89 /* DeviceCell6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCell6.xib; sourceTree = "<group>"; };
+		DE2389D01F8F4CFF00A9EE89 /* DeviceCellPlus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceCellPlus.xib; sourceTree = "<group>"; };
+		DE2389D91F8F4DC700A9EE89 /* BindDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindDeviceViewController.swift; sourceTree = "<group>"; };
+		DE2389DC1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewController.swift; sourceTree = "<group>"; };
+		DE2389DF1F8F4EA800A9EE89 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DE39520C1F145D8400A44740 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE3952171F145DCE00A44740 /* InsuranceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceListViewController.swift; sourceTree = "<group>"; };
 		DE39521A1F14616000A44740 /* RoofPriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofPriceViewController.swift; sourceTree = "<group>"; };
@@ -2390,6 +2414,10 @@
 		DE8684381F0DCA8F00FF7FD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE2389CD1F8F4CFE00A9EE89 /* DeviceCell.swift */,
+				DE2389CE1F8F4CFE00A9EE89 /* DeviceCell.xib */,
+				DE2389CF1F8F4CFF00A9EE89 /* DeviceCell6.xib */,
+				DE2389D01F8F4CFF00A9EE89 /* DeviceCellPlus.xib */,
 				DE1F71EB1F6294FD00B8C2E8 /* InstallerCell.swift */,
 				DED05D471F624CB7006741F6 /* YeZhuCell.swift */,
 				DE3952211F14622500A44740 /* GFJBottomButton.swift */,
@@ -2411,7 +2439,10 @@
 				DE868DF11F0DE66400FF7FD3 /* Root */,
 				DE9F999E1F19FD3C003CF080 /* AddNoteViewController.swift */,
 				DE39544C1F147FDD00A44740 /* ApplyForOrderViewController.swift */,
+				DE2389D91F8F4DC700A9EE89 /* BindDeviceViewController.swift */,
 				DE6790661F6A692500A654BC /* GuideViewController.swift */,
+				DE2389DC1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift */,
+				DE2389DF1F8F4EA800A9EE89 /* ReportViewController.swift */,
 				DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */,
 				DE39544B1F147FDD00A44740 /* BuySafeViewController.swift */,
 				DE3952271F14629100A44740 /* CalResultViewController.swift */,
@@ -2452,6 +2483,7 @@
 				DED3529F1F63EDA100BA1B52 /* ExperienceShopViewController.swift */,
 				DEB031541F698CD000FA9528 /* QuestionDetailViewController.swift */,
 				DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */,
+				DE2389C11F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4427,8 +4459,10 @@
 				DEC226BF1F136363007D6DBE /* mapapi.bundle in Resources */,
 				DEB9CA9E1F7232B8007BE2A3 /* README.txt in Resources */,
 				DE8683EB1F0DC92B00FF7FD3 /* LaunchScreen.storyboard in Resources */,
+				DE2389D71F8F4CFF00A9EE89 /* DeviceCellPlus.xib in Resources */,
 				DEC221231F131577007D6DBE /* CustomImages.xcassets in Resources */,
 				DE9131871F7939B7002C9D98 /* MQChatViewAsset.bundle in Resources */,
+				DE2389D31F8F4CFF00A9EE89 /* DeviceCell.xib in Resources */,
 				DEC222541F13601E007D6DBE /* MJRefresh.bundle in Resources */,
 				DEFF5F3E1F700E5100F58A04 /* BeeCloud.bundle in Resources */,
 				DEB9CA9C1F7232B8007BE2A3 /* read_me.txt in Resources */,
@@ -4436,6 +4470,7 @@
 				DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */,
 				DE1F71DA1F62762600B8C2E8 /* InstallerDetailOldViewController.xib in Resources */,
 				DEE6C9E61F35BECA00AB6031 /* IQKeyboardManager.bundle in Resources */,
+				DE2389D51F8F4CFF00A9EE89 /* DeviceCell6.xib in Resources */,
 				DEE682081F18C40400157560 /* LeaseViewController.xib in Resources */,
 				DE3954371F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */,
 				DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */,
@@ -4451,8 +4486,10 @@
 				DEE6C9E71F35BECA00AB6031 /* IQKeyboardManager.bundle in Resources */,
 				DEB9CA9F1F7232B8007BE2A3 /* README.txt in Resources */,
 				DE3954381F1468CB00A44740 /* ZLPhotoLib.bundle in Resources */,
+				DE2389D81F8F4CFF00A9EE89 /* DeviceCellPlus.xib in Resources */,
 				DEC221241F131577007D6DBE /* CustomImages.xcassets in Resources */,
 				DE9131881F7939B7002C9D98 /* MQChatViewAsset.bundle in Resources */,
+				DE2389D41F8F4CFF00A9EE89 /* DeviceCell.xib in Resources */,
 				DE8684301F0DC9DE00FF7FD3 /* LaunchScreen.storyboard in Resources */,
 				DEC222551F13601E007D6DBE /* MJRefresh.bundle in Resources */,
 				DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */,
@@ -4460,6 +4497,7 @@
 				DED05D461F624C8B006741F6 /* MoreInstallerViewController.xib in Resources */,
 				DEFF5F3F1F700E5100F58A04 /* BeeCloud.bundle in Resources */,
 				DEC226C01F136363007D6DBE /* mapapi.bundle in Resources */,
+				DE2389D61F8F4CFF00A9EE89 /* DeviceCell6.xib in Resources */,
 				DEE682091F18C40400157560 /* LeaseViewController.xib in Resources */,
 				DE86842D1F0DC9DE00FF7FD3 /* Assets.xcassets in Resources */,
 				DE1F71EF1F62950500B8C2E8 /* GFJRoofListViewController.xib in Resources */,
@@ -4555,6 +4593,7 @@
 				DEC222381F13601E007D6DBE /* MJRefreshAutoFooter.m in Sources */,
 				DE9131DF1F7939B7002C9D98 /* MQImageCellModel.m in Sources */,
 				DE86888F1F0DD05900FF7FD3 /* QNResumeUpload.m in Sources */,
+				DE2389DD1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift in Sources */,
 				DE8688831F0DD05900FF7FD3 /* QNResponseInfo.m in Sources */,
 				DE39540B1F1468CB00A44740 /* UIView+ZLExtension.m in Sources */,
 				DE86876B1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
@@ -4592,6 +4631,7 @@
 				DEE681FC1F18B2CD00157560 /* MapViewController.swift in Sources */,
 				DE3952281F14629100A44740 /* CalResultViewController.swift in Sources */,
 				DE9131D71F7939B7002C9D98 /* MQBotWebViewBubbleAnswerCellModel.m in Sources */,
+				DE2389E01F8F4EA800A9EE89 /* ReportViewController.swift in Sources */,
 				DEFF5F101F700E5100F58A04 /* BCQueryRefundsCountReq.m in Sources */,
 				DEB9CA301F722FA6007BE2A3 /* InsuranceDetail.swift in Sources */,
 				DEFF5EEA1F700E5100F58A04 /* BCAuthReq.m in Sources */,
@@ -4608,6 +4648,7 @@
 				DE3952221F14622500A44740 /* GFJBottomButton.swift in Sources */,
 				DE86877D1F0DCE4400FF7FD3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DEB9CA381F722FA6007BE2A3 /* LocationInfo.swift in Sources */,
+				DE2389DA1F8F4DC800A9EE89 /* BindDeviceViewController.swift in Sources */,
 				DE9132131F7939B7002C9D98 /* MQChatAudioRecorder.m in Sources */,
 				DEFF5F7E1F700E5100F58A04 /* WXPayAdapter.m in Sources */,
 				DEFF5F021F700E5100F58A04 /* BCQueryBillsResp.m in Sources */,
@@ -4786,6 +4827,7 @@
 				DEB9CA361F722FA6007BE2A3 /* LandlordInfo.swift in Sources */,
 				DEFF5F1C1F700E5100F58A04 /* BCQueryRefundResult.m in Sources */,
 				DE6D91FA1F2DBAD8008E0E3A /* RootPayViewController.swift in Sources */,
+				DE2389C21F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift in Sources */,
 				DE39541D1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DE9132691F7939B7002C9D98 /* MQToast.m in Sources */,
 				DE9132411F7939B7002C9D98 /* MEIQIA_AmrRecordWriter.m in Sources */,
@@ -4837,6 +4879,7 @@
 				DEC222421F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
 				DE1F71D91F62762600B8C2E8 /* InstallerDetailOldViewController.swift in Sources */,
 				DE868A001F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
+				DE2389D11F8F4CFF00A9EE89 /* DeviceCell.swift in Sources */,
 				DE9132331F7939B7002C9D98 /* MEIQIA_FBLCDFontView.m in Sources */,
 				DEE6820D1F19C4FD00157560 /* SettingsViewController.swift in Sources */,
 				DEB9CA3C1F722FA6007BE2A3 /* NetprofitInfo.swift in Sources */,
@@ -4991,6 +5034,7 @@
 				DE9132641F7939B7002C9D98 /* MQInputToolView.m in Sources */,
 				DE868A091F0DD0D700FF7FD3 /* QNIP.m in Sources */,
 				DEC222531F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
+				DE2389D21F8F4CFF00A9EE89 /* DeviceCell.swift in Sources */,
 				DEB9CA031F722FA6007BE2A3 /* AskInfo.swift in Sources */,
 				DEC2212B1F13585D007D6DBE /* StringUtils.swift in Sources */,
 				DE9131E61F7939B7002C9D98 /* MQTextCellModel.m in Sources */,
@@ -5107,6 +5151,7 @@
 				DEC221281F13531B007D6DBE /* NewsCell.swift in Sources */,
 				DE91326A1F7939B7002C9D98 /* MQToast.m in Sources */,
 				DE9131EC1F7939B7002C9D98 /* MQWebViewBubbleCellModel.m in Sources */,
+				DE2389E11F8F4EA800A9EE89 /* ReportViewController.swift in Sources */,
 				DEB9CA2D1F722FA6007BE2A3 /* InstallerMapInfo.swift in Sources */,
 				DEB9CA0B1F722FA6007BE2A3 /* CalResultParams.swift in Sources */,
 				DEC2223B1F13601E007D6DBE /* MJRefreshBackFooter.m in Sources */,
@@ -5143,6 +5188,7 @@
 				DEC222591F13601E007D6DBE /* NSBundle+MJRefresh.m in Sources */,
 				DEE6C9DD1F35BECA00AB6031 /* IQTitleBarButtonItem.swift in Sources */,
 				DEE6C9A51F35BAA300AB6031 /* NewsListViewController.swift in Sources */,
+				DE2389C31F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift in Sources */,
 				DE86887C1F0DD05900FF7FD3 /* QNPHAssetFile.m in Sources */,
 				DE8689E91F0DD0D700FF7FD3 /* QNDnsManager.m in Sources */,
 				DE9132101F7939B7002C9D98 /* MQBundleUtil.m in Sources */,
@@ -5237,6 +5283,7 @@
 				DE9132181F7939B7002C9D98 /* MQChatEmojize.m in Sources */,
 				DEFF5EFD1F700E5100F58A04 /* BCQueryBillByIdReq.m in Sources */,
 				DEC2224F1F13601E007D6DBE /* MJRefreshGifHeader.m in Sources */,
+				DE2389DB1F8F4DC800A9EE89 /* BindDeviceViewController.swift in Sources */,
 				DE91324C1F7939B7002C9D98 /* amrFileCodec.mm in Sources */,
 				DE3954411F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DE9131DA1F7939B7002C9D98 /* MQEvaluationResultCellModel.m in Sources */,
@@ -5289,6 +5336,7 @@
 				DEB9CA551F722FA6007BE2A3 /* ShareInfo.swift in Sources */,
 				DE868A031F0DD0D700FF7FD3 /* QNDes.m in Sources */,
 				DE3954301F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
+				DE2389DE1F8F4DFC00A9EE89 /* DeviceDetailViewController.swift in Sources */,
 				DE8684361F0DCA0B00FF7FD3 /* AppDelegate.swift in Sources */,
 				DE9131CE1F7939B7002C9D98 /* MQVisialMessageFactory.m in Sources */,
 				DE3953F01F1468CB00A44740 /* SDImageCache.m in Sources */,
