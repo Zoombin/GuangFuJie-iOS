@@ -207,10 +207,10 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     //位置选择Delegate方法
     func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
-        locationButton.setTitle("\(StringUtils.getString(provice.name))\(StringUtils.getString(city.name))\(StringUtils.getString(area.name))", for: UIControlState.normal)
+        locationButton.setTitle("\(YCStringUtils.getString(provice.name))\(YCStringUtils.getString(city.name))\(YCStringUtils.getString(area.name))", for: UIControlState.normal)
         
-        latLabel.text = String(format: "纬度:%.2f", StringUtils.getNumber(area.lat).floatValue)
-        lngLabel.text = String(format: "经度:%.2f", StringUtils.getNumber(area.lng).floatValue)
+        latLabel.text = String(format: "纬度:%.2f", YCStringUtils.getNumber(area.lat).floatValue)
+        lngLabel.text = String(format: "经度:%.2f", YCStringUtils.getNumber(area.lng).floatValue)
         currentLat = area.lat
         currentLng = area.lng
     }
@@ -225,8 +225,8 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         API.sharedInstance.projectcalSunenerge(currentLat!, lng: currentLng!, success: { (info) in
             self.projectCalInfo = info
             self.hideHud()
-            self.averagehor.text = "年日照时数:\(StringUtils.getNumber(info.sunlight_year)) 小时"
-            self.average30.text = "年辐照总量:\(StringUtils.getNumber(info.energy_year)) Kwh/㎡.年"
+            self.averagehor.text = "年日照时数:\(YCStringUtils.getNumber(info.sunlight_year)) 小时"
+            self.average30.text = "年辐照总量:\(YCStringUtils.getNumber(info.energy_year)) Kwh/㎡.年"
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
@@ -235,7 +235,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     //产能计算
     @IBAction func loadCNData() {
-        if (StringUtils.isEmpty(roofSizeTextField.text!)) {
+        if (YCStringUtils.isEmpty(roofSizeTextField.text!)) {
             self.showHint("请输入屋顶面积")
             return
         }
@@ -247,17 +247,17 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         API.sharedInstance.projectcalEnergycal(type: type, size: roofSizeTextField.text!, lat: currentLat!, lng: currentLng!, success: { (info) in
             self.hideHud()
             self.energyCalInfo = info
-            self.buildSize.text = "装机容量：\(StringUtils.getNumber(info.build_size))Kwp"
-            self.buildPrice.text = "建设费用：\(StringUtils.getNumber(info.build_price))万元"
-            self.electricFirstyearHours.text = "首年发电利用小时数：\(StringUtils.getNumber(info.electric_firstyear_hours))小时"
-            self.electricFirstyearDayaverage.text = "首年日发电量：\(StringUtils.getNumber(info.electric_firstyear_dayaverage))度"
-            self.electricFirstyearTotal.text = "首年总发电量：\(StringUtils.getNumber(info.electric_firstyear_total))度"
-            self.electric25.text = "25年总发电量：\(StringUtils.getNumber(info.electric_25))度"
-            self.reduceC.text = "节约标准煤：\(StringUtils.getNumber(info.reduce_c))千克"
-            self.reduceCo2.text = "减少CO₂排放：\(StringUtils.getNumber(info.reduce_co2))千克"
-            self.reduceSo2.text = "减少SO₂排放：\(StringUtils.getNumber(info.reduce_so2))千克"
-            self.reduceNox.text = "减少NOx排放：\(StringUtils.getNumber(info.reduce_nox))千克"
-            self.reduceSmoke.text = "减少烟雾排放：\(StringUtils.getNumber(info.reduce_smoke))千克"
+            self.buildSize.text = "装机容量：\(YCStringUtils.getNumber(info.build_size))Kwp"
+            self.buildPrice.text = "建设费用：\(YCStringUtils.getNumber(info.build_price))万元"
+            self.electricFirstyearHours.text = "首年发电利用小时数：\(YCStringUtils.getNumber(info.electric_firstyear_hours))小时"
+            self.electricFirstyearDayaverage.text = "首年日发电量：\(YCStringUtils.getNumber(info.electric_firstyear_dayaverage))度"
+            self.electricFirstyearTotal.text = "首年总发电量：\(YCStringUtils.getNumber(info.electric_firstyear_total))度"
+            self.electric25.text = "25年总发电量：\(YCStringUtils.getNumber(info.electric_25))度"
+            self.reduceC.text = "节约标准煤：\(YCStringUtils.getNumber(info.reduce_c))千克"
+            self.reduceCo2.text = "减少CO₂排放：\(YCStringUtils.getNumber(info.reduce_co2))千克"
+            self.reduceSo2.text = "减少SO₂排放：\(YCStringUtils.getNumber(info.reduce_so2))千克"
+            self.reduceNox.text = "减少NOx排放：\(YCStringUtils.getNumber(info.reduce_nox))千克"
+            self.reduceSmoke.text = "减少烟雾排放：\(YCStringUtils.getNumber(info.reduce_smoke))千克"
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
@@ -278,30 +278,30 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     }
     
     func inputSYValues(params: IncomeCalParams) {
-        tzjeLabel.text = "\(StringUtils.getNumber(energyCalInfo!.build_price))"
+        tzjeLabel.text = "\(YCStringUtils.getNumber(energyCalInfo!.build_price))"
         if (khsldzjTextField.text!.isEmpty) {
-            khsldzjTextField.text = String(format: "%.2f", StringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
+            khsldzjTextField.text = String(format: "%.2f", YCStringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
         }
         if (ywcbTextField.text!.isEmpty) {
-            ywcbTextField.text = "\(StringUtils.getNumber(params.annual_maintenance_cost))"
+            ywcbTextField.text = "\(YCStringUtils.getNumber(params.annual_maintenance_cost))"
         }
         if (zjbtTextField.text!.isEmpty) {
-            zjbtTextField.text = "\(StringUtils.getNumber(params.installed_subsidy))"
+            zjbtTextField.text = "\(YCStringUtils.getNumber(params.installed_subsidy))"
         }
         if (dkblTextField.text!.isEmpty) {
-            dkblTextField.text = "\(StringUtils.getNumber(params.loan_ratio))"
-            dknxTextField.text = "\(StringUtils.getNumber(params.years_of_loans))"
+            dkblTextField.text = "\(YCStringUtils.getNumber(params.loan_ratio))"
+            dknxTextField.text = "\(YCStringUtils.getNumber(params.years_of_loans))"
         }
-        zydblTextField.text = "\(StringUtils.getNumber(params.occupied_electric_ratio))"
-        zyddjTextField.text = "\(StringUtils.getNumber(params.electric_price_perional))"
-        ydbtTextField.text = "\(StringUtils.getNumber(params.electricity_subsidy))"
-        ydbtnxTextField.text = "\(StringUtils.getNumber(params.electricity_subsidy_year))"
-        ydswjTextField.text = "\(StringUtils.getNumber(params.sparetime_electric_price))"
+        zydblTextField.text = "\(YCStringUtils.getNumber(params.occupied_electric_ratio))"
+        zyddjTextField.text = "\(YCStringUtils.getNumber(params.electric_price_perional))"
+        ydbtTextField.text = "\(YCStringUtils.getNumber(params.electricity_subsidy))"
+        ydbtnxTextField.text = "\(YCStringUtils.getNumber(params.electricity_subsidy_year))"
+        ydswjTextField.text = "\(YCStringUtils.getNumber(params.sparetime_electric_price))"
     }
     
     func inputXMCSValues() {
-        xjtzjeLabel.text = "投资金额 \(StringUtils.getNumber(energyCalInfo!.build_price)) 元"
-        zjrlLabel.text = "装机容量 \(StringUtils.getNumber(energyCalInfo!.build_size)) Kwh"
+        xjtzjeLabel.text = "投资金额 \(YCStringUtils.getNumber(energyCalInfo!.build_price)) 元"
+        zjrlLabel.text = "装机容量 \(YCStringUtils.getNumber(energyCalInfo!.build_size)) Kwh"
         dkLabel.text = "贷款 \(dkblTextField.text!)% \(dknxTextField.text!)"
         dkllTextField.text = "4.9"
         dkbTextField.text = "1.0"
@@ -317,7 +317,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         let ywcbValue = ywcbPercent.floatValue * energyCalInfo!.build_price!.floatValue
         
         tmpParams.annual_maintenance_cost = String(format: "%.2f%", ywcbValue)
-        tmpParams.recoverable_liquid_capital = String(format: "%.2f", StringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
+        tmpParams.recoverable_liquid_capital = String(format: "%.2f", YCStringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
         tmpParams.installed_subsidy = zjbtTextField.text!
         tmpParams.loan_ratio = dkblTextField.text!
         tmpParams.years_of_loans = dknxTextField.text!
@@ -363,7 +363,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         let ywcbValue = ywcbPercent.floatValue * energyCalInfo!.build_price!.floatValue
         
         tmpParams.annual_maintenance_cost = String(format: "%.2f%", ywcbValue)
-        tmpParams.recoverable_liquid_capital = String(format: "%.2f", StringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
+        tmpParams.recoverable_liquid_capital = String(format: "%.2f", YCStringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
         tmpParams.installed_subsidy = zjbtTextField.text!
         tmpParams.loan_ratio = dkblTextField.text!
         tmpParams.years_of_loans = dknxTextField.text!

@@ -77,14 +77,14 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
         let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
         
         let shareInfo = ShareInfo()
-        shareInfo.shareImg = StringUtils.getString(data.image)
-        shareInfo.shareTitle = StringUtils.getString("资讯")
-        shareInfo.shareDesc = StringUtils.getString(data.title)
+        shareInfo.shareImg = YCStringUtils.getString(data.image)
+        shareInfo.shareTitle = YCStringUtils.getString("资讯")
+        shareInfo.shareDesc = YCStringUtils.getString(data.title)
         shareInfo.shareLink = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
         
         let vc = GFJWebViewController()
         vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
-        vc.title = StringUtils.getString(data.title)
+        vc.title = YCStringUtils.getString(data.title)
         vc.addShareInfoButton(info: shareInfo)
         self.pushViewController(vc)
     }

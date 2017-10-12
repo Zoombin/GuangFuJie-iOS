@@ -58,8 +58,8 @@ class InsuranceCell: UITableViewCell {
         var type = ""
         var baoeValue = "保额："
         if (info.size != nil) {
-            type = StringUtils.getString(info.label)
-            baoeValue = baoeValue  + StringUtils.getString(info.baoe) + "万/年"
+            type = YCStringUtils.getString(info.label)
+            baoeValue = baoeValue  + YCStringUtils.getString(info.baoe) + "万/年"
         }
         self.baoeLabel.text = baoeValue
         self.safeTypeLabel.text = type

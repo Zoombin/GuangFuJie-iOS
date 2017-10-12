@@ -44,9 +44,9 @@ class DeviceCell: UITableViewCell {
             self.statusButton.isEnabled = true
         }
         
-        self.powerLabel.text = String(format: "%.2fkw", StringUtils.getNumber(device.energy_all).floatValue)
+        self.powerLabel.text = String(format: "%.2fkw", YCStringUtils.getNumber(device.energy_all).floatValue)
         
-        let deviceid = StringUtils.getString(device.device_id)
+        let deviceid = YCStringUtils.getString(device.device_id)
         self.snButton.titleLabel?.adjustsFontSizeToFitWidth = true
         self.snButton.setTitle(deviceid, for: UIControlState.normal)
     }

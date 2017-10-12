@@ -701,7 +701,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             let insureType = types[i] as! InsuranceType
             let button = UIButton.init(type: UIButtonType.custom)
             button.frame = CGRect(x: dir + index * dir + width * index, y: (line + 1) * dir + height * line, width: width, height: height)
-            button.setTitle(StringUtils.getString(insureType.label), for: UIControlState.normal)
+            button.setTitle(YCStringUtils.getString(insureType.label), for: UIControlState.normal)
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 1
             button.setTitleColor(UIColor.black, for: UIControlState.normal)
@@ -775,7 +775,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             let salesType = salesTypes![i] as! NSDictionary
             let button = UIButton.init(type: UIButtonType.custom)
             button.frame = CGRect(x: dir, y: (CGFloat(i) + 1) * dir + height * CGFloat(i), width: width, height: height)
-            button.setTitle(StringUtils.getString(salesType["typeName"] as? String), for: UIControlState.normal)
+            button.setTitle(YCStringUtils.getString(salesType["typeName"] as? String), for: UIControlState.normal)
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 1
             button.setTitleColor(UIColor.black, for: UIControlState.normal)
@@ -876,28 +876,28 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func refreshBaoeBaofei() {
-        guigeLabel.text = StringUtils.getString(insureModel!.label)
+        guigeLabel.text = YCStringUtils.getString(insureModel!.label)
         reSizePrice()
         
-        baoe1Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_device))
-        baoe2Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_third_two))
-        baoe3Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_third_five))
-        baoe4Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_third_ten))
-        baoe5Label.text = String(format: "%@万", StringUtils.getString(insureModel!.protect_steal))
+        baoe1Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_device))
+        baoe2Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_two))
+        baoe3Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_five))
+        baoe4Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_ten))
+        baoe5Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_steal))
         
-        baof1Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_device))
-        baof2Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_two))
-        baof3Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_five))
-        baof4Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_ten))
-        baof5Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_steal))
+        baof1Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_device))
+        baof2Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_two))
+        baof3Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_five))
+        baof4Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_ten))
+        baof5Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_steal))
         
         if (seaSwitch.isOn) {
-            baof1Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_device_sea))
-            baof5Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_steal_sea))
+            baof1Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_device_sea))
+            baof5Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_steal_sea))
             
-            baof2Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_two_sea))
-            baof3Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_five_sea))
-            baof4Label.text = String(format: "%@元", StringUtils.getString(insureModel!.price_third_ten_sea))
+            baof2Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_two_sea))
+            baof3Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_five_sea))
+            baof4Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_ten_sea))
         }
     }
     

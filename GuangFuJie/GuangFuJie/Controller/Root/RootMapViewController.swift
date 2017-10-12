@@ -226,7 +226,7 @@ class RootMapViewController:BaseViewController, BMKMapViewDelegate, BMKPoiSearch
     
     func addInstallerPoint(object: NSObject) {
         let installer = object as! InstallerMapInfo
-        let companyName = StringUtils.getString(installer.name)
+        let companyName = YCStringUtils.getString(installer.name)
         
         let item = BMKPointAnnotation()
         if (installer.lat == nil || installer.lng == nil) {
@@ -242,7 +242,7 @@ class RootMapViewController:BaseViewController, BMKMapViewDelegate, BMKPoiSearch
     
     func addRoofPoint(object: NSObject) {
         let roof = object as! RoofMapInfo
-        let companyName = StringUtils.getString(roof.name)
+        let companyName = YCStringUtils.getString(roof.name)
         
         let item = BMKPointAnnotation()
         if (roof.lat == nil || roof.lng == nil) {
@@ -251,7 +251,7 @@ class RootMapViewController:BaseViewController, BMKMapViewDelegate, BMKPoiSearch
         let coordinate = CLLocationCoordinate2D.init(latitude: roof.lat!.doubleValue, longitude: roof.lng!.doubleValue)
         item.coordinate = coordinate
         item.title = companyName
-        item.subtitle = "居民屋顶:\(StringUtils.getString(roof.jumingroof))"
+        item.subtitle = "居民屋顶:\(YCStringUtils.getString(roof.jumingroof))"
         mapView.addAnnotation(item)
     }
     

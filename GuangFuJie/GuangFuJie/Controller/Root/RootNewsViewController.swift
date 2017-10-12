@@ -41,7 +41,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     func refreshLocation() {
         if (UserDefaultManager.getLocation() != nil) {
             let location = UserDefaultManager.getLocation()
-            locationButton.setTitle("\(StringUtils.getString(location!.city_name))\(StringUtils.getString(location!.area_name))", for: UIControlState.normal)
+            locationButton.setTitle("\(YCStringUtils.getString(location!.city_name))\(YCStringUtils.getString(location!.area_name))", for: UIControlState.normal)
             provinceId = location!.province_id
             getNewsList()
         }
@@ -62,7 +62,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
         provinceId = provice.province_id
-        locationButton.setTitle("\(StringUtils.getString(provice.name))\(StringUtils.getString(city.name))", for: UIControlState.normal)
+        locationButton.setTitle("\(YCStringUtils.getString(provice.name))\(YCStringUtils.getString(city.name))", for: UIControlState.normal)
         
         loadData()
     }
@@ -98,7 +98,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func searchButtonClicked() {
-        if (StringUtils.isEmpty(searchBar.text!)) {
+        if (YCStringUtils.isEmpty(searchBar.text!)) {
             self.showHint("请输入搜索内容!")
             return
         }
@@ -163,9 +163,9 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
         let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
         
         let shareInfo = ShareInfo()
-        shareInfo.shareImg = StringUtils.getString(data.image)
-        shareInfo.shareTitle = StringUtils.getString("资讯")
-        shareInfo.shareDesc = StringUtils.getString(data.title)
+        shareInfo.shareImg = YCStringUtils.getString(data.image)
+        shareInfo.shareTitle = YCStringUtils.getString("资讯")
+        shareInfo.shareDesc = YCStringUtils.getString(data.title)
         shareInfo.shareLink = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
         
         let vc = GFJWebViewController()

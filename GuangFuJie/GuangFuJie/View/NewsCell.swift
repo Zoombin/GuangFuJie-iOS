@@ -19,9 +19,9 @@ class NewsCell: UITableViewCell {
     }
     
     func setData(model: ArticleInfo) {
-        self.newsImageView.setImageWith(URL.init(string: StringUtils.getString(model.image))!)
-        self.timeLabel.text = StringUtils.getString(model.created_date)
-        self.contentLabel.text = StringUtils.getString(model.title)
+        self.newsImageView.setImageWith(URL.init(string: YCStringUtils.getString(model.image))!)
+        self.timeLabel.text = YCStringUtils.getString(model.created_date)
+        self.contentLabel.text = YCStringUtils.getString(model.title)
         
         self.contentLabel.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 17))
         self.timeLabel.font = UIFont.systemFont(ofSize: FontUtils.getFontSize(size: 15))

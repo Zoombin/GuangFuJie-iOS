@@ -782,8 +782,6 @@
 		DEC221241F131577007D6DBE /* CustomImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC221221F131577007D6DBE /* CustomImages.xcassets */; };
 		DEC221271F13531B007D6DBE /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC221261F13531B007D6DBE /* NewsCell.swift */; };
 		DEC221281F13531B007D6DBE /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC221261F13531B007D6DBE /* NewsCell.swift */; };
-		DEC2212A1F13585D007D6DBE /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC221291F13585D007D6DBE /* StringUtils.swift */; };
-		DEC2212B1F13585D007D6DBE /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC221291F13585D007D6DBE /* StringUtils.swift */; };
 		DEC2212D1F135AB7007D6DBE /* GFJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */; };
 		DEC2212E1F135AB7007D6DBE /* GFJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */; };
 		DEC222381F13601E007D6DBE /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC2220C1F13601E007D6DBE /* MJRefreshAutoFooter.m */; };
@@ -1837,7 +1835,6 @@
 		DEB9CA971F7232B8007BE2A3 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
 		DEC221221F131577007D6DBE /* CustomImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CustomImages.xcassets; sourceTree = "<group>"; };
 		DEC221261F13531B007D6DBE /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
-		DEC221291F13585D007D6DBE /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJWebViewController.swift; sourceTree = "<group>"; };
 		DEC2220B1F13601E007D6DBE /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		DEC2220C1F13601E007D6DBE /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -2522,7 +2519,6 @@
 			children = (
 				DE3954541F1480E800A44740 /* Dimens.swift */,
 				DE3954511F14802200A44740 /* PublishMediaView.swift */,
-				DEC221291F13585D007D6DBE /* StringUtils.swift */,
 				DE868E051F0E2CC600FF7FD3 /* ImageTitleButton.h */,
 				DE868E061F0E2CC600FF7FD3 /* ImageTitleButton.m */,
 				DE8687821F0DCEBB00FF7FD3 /* Constants.swift */,
@@ -4885,7 +4881,6 @@
 				DE3954071F1468CB00A44740 /* UIView+WebCacheOperation.m in Sources */,
 				DE91326B1F7939B7002C9D98 /* MQBotWebViewController.m in Sources */,
 				DEB9C9FA1F722FA6007BE2A3 /* AfterSaleInfo.swift in Sources */,
-				DEC2212A1F13585D007D6DBE /* StringUtils.swift in Sources */,
 				DE8684401F0DCADE00FF7FD3 /* API.swift in Sources */,
 				DE39542F1F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				DEE6C9A41F35BAA300AB6031 /* NewsListViewController.swift in Sources */,
@@ -5056,7 +5051,6 @@
 				DEC222531F13601E007D6DBE /* MJRefreshStateHeader.m in Sources */,
 				DE2389D21F8F4CFF00A9EE89 /* DeviceCell.swift in Sources */,
 				DEB9CA031F722FA6007BE2A3 /* AskInfo.swift in Sources */,
-				DEC2212B1F13585D007D6DBE /* StringUtils.swift in Sources */,
 				DE9131E61F7939B7002C9D98 /* MQTextCellModel.m in Sources */,
 				DE9132481F7939B7002C9D98 /* MEIQIA_MLAudioRecorder.m in Sources */,
 				DE868DE81F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,

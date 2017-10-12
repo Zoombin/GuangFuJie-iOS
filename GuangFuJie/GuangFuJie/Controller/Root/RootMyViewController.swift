@@ -144,6 +144,11 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             userNameLabel.isHidden = false
             statusButton.isHidden = false
             myTableView.tableFooterView?.isHidden = false
+            //身份  普通人 --> 地推(3)-->  业主(4)  --> 安装商(1)  --> 加盟商(2)
+//            let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity) == 0
+//            if (role == 0) {
+//                
+//            }
         } else {
             loginButton.isHidden = false
             userNameLabel.text = ""

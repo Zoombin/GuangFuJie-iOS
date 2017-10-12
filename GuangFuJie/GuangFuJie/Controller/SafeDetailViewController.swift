@@ -124,7 +124,7 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
             } else if (indexPath.row == 4) {
                 var type = "保险类型："
                 if (info!.size != nil) {
-                    type = type + StringUtils.getString(info!.label)
+                    type = type + YCStringUtils.getString(info!.label)
                 }
                 cell.textLabel?.text = type
             } else if (indexPath.row == 5) {
@@ -138,7 +138,7 @@ class SafeDetailViewController: BaseViewController, UITableViewDataSource, UITab
                 //保额
                 var baoeValue = "保额："
                 if (info!.size != nil) {
-                    baoeValue = baoeValue  + StringUtils.getString(info!.baoe) + "万/年"
+                    baoeValue = baoeValue  + YCStringUtils.getString(info!.baoe) + "万/年"
                 }
                 cell.textLabel?.text = baoeValue
             } else if (indexPath.row == 7) {

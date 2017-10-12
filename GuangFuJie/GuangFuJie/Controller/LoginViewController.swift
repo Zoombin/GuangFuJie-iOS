@@ -46,7 +46,7 @@ class LoginViewController: BaseViewController, UITableViewDelegate, UITableViewD
      登录页面代理方法--获取验证码
      */
     @IBAction func getCodeButtonClicked() {
-        let phone = StringUtils.getString(phoneTextField.text)
+        let phone = YCStringUtils.getString(phoneTextField.text)
         
         if (phone.isEmpty) {
             self.showHint("请输入手机号!")

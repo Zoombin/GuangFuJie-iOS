@@ -63,13 +63,13 @@ class CalResultViewController: BaseViewController {
         
         var titleStrs = [String]()
         titleStrs.append(cityName)
-        titleStrs.append("\(StringUtils.getString(eInfo.area_size)) ㎡")
-        titleStrs.append("\(StringUtils.getString(eInfo.costExpect)) 元")
-        titleStrs.append("\(StringUtils.getString(eInfo.sGovernment)) 元")
-        titleStrs.append("\(StringUtils.getString(eInfo.sLocal)) 元")
-        titleStrs.append("\(StringUtils.getString(eInfo.costReturn)) %")
-        titleStrs.append(String(format: "%.2f 度", StringUtils.getNumber(eInfo.year_du).floatValue))
-        titleStrs.append("\(String(format: "%.2f", StringUtils.getNumber(eInfo.year_money).floatValue)) 元")
+        titleStrs.append("\(YCStringUtils.getString(eInfo.area_size)) ㎡")
+        titleStrs.append("\(YCStringUtils.getString(eInfo.costExpect)) 元")
+        titleStrs.append("\(YCStringUtils.getString(eInfo.sGovernment)) 元")
+        titleStrs.append("\(YCStringUtils.getString(eInfo.sLocal)) 元")
+        titleStrs.append("\(YCStringUtils.getString(eInfo.costReturn)) %")
+        titleStrs.append(String(format: "%.2f 度", YCStringUtils.getNumber(eInfo.year_du).floatValue))
+        titleStrs.append("\(String(format: "%.2f", YCStringUtils.getNumber(eInfo.year_money).floatValue)) 元")
         
         let submitBottomView = UIView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 50, width: PhoneUtils.kScreenWidth, height: 50))
         submitBottomView.backgroundColor = UIColor.white

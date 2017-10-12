@@ -40,7 +40,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
     func refreshLocation() {
         if (UserDefaultManager.getLocation() != nil) {
             let location = UserDefaultManager.getLocation()
-            locationButton.setTitle("\(StringUtils.getString(location!.city_name))\(StringUtils.getString(location!.area_name))", for: UIControlState.normal)
+            locationButton.setTitle("\(YCStringUtils.getString(location!.city_name))\(YCStringUtils.getString(location!.area_name))", for: UIControlState.normal)
         }
     }
     
@@ -112,14 +112,14 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
         let data = exampleData[button.tag] as! ArticleInfo
         
         let shareInfo = ShareInfo()
-        shareInfo.shareImg = StringUtils.getString(data.image)
-        shareInfo.shareTitle = StringUtils.getString("资讯")
-        shareInfo.shareDesc = StringUtils.getString(data.title)
+        shareInfo.shareImg = YCStringUtils.getString(data.image)
+        shareInfo.shareTitle = YCStringUtils.getString("资讯")
+        shareInfo.shareDesc = YCStringUtils.getString(data.title)
         shareInfo.shareLink = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
         
         let vc = GFJWebViewController()
         vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
-        vc.title = StringUtils.getString(data.title)
+        vc.title = YCStringUtils.getString(data.title)
         vc.addShareInfoButton(info: shareInfo)
         self.pushViewController(vc)
     }
@@ -133,7 +133,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
     }
     
     func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
-        locationButton.setTitle("\(StringUtils.getString(city.name))\(StringUtils.getString(area.name))", for: UIControlState.normal)
+        locationButton.setTitle("\(YCStringUtils.getString(city.name))\(YCStringUtils.getString(area.name))", for: UIControlState.normal)
     }
     
     func loadMenusView() {
@@ -228,7 +228,7 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
         for i in 0..<bannerData.count {
             let info = bannerData[i] as! ArticleInfo
             let imageView = UIImageView.init(frame: CGRect(x: CGFloat(i) * PhoneUtils.kScreenWidth, y: 0, width: PhoneUtils.kScreenWidth, height: bannerScrollView.frame.size.height))
-            imageView.setImageWith(URL.init(string: StringUtils.getString(info.image))!)
+            imageView.setImageWith(URL.init(string: YCStringUtils.getString(info.image))!)
             imageView.tag = i
             imageView.isUserInteractionEnabled = true
             bannerScrollView.addSubview(imageView)

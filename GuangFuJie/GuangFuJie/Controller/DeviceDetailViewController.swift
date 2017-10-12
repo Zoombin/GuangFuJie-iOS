@@ -396,14 +396,14 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             totalplantLabel.text = "0棵"
             return
         }
-        todayElectricLabel.text = String(format: "%.2fkw", StringUtils.getNumber(deviceInfo.energy_day).floatValue)
-        totalElectricLabel.text = String(format: "%.2fkw", StringUtils.getNumber(deviceInfo.energy_all).floatValue)
-        todayMoneyLabel.text = String(format: "%.2f元", StringUtils.getNumber(deviceInfo.money_day).floatValue)
-        totalMoneyLabel.text = String(format: "%.2f元", StringUtils.getNumber(deviceInfo.money_all).floatValue)
-        todayjianpaiLabel.text = String(format: "%.2f吨", StringUtils.getNumber(deviceInfo.coal_day).floatValue)
-        totaljianpaiLabel.text = String(format: "%.2f吨", StringUtils.getNumber(deviceInfo.coal_all).floatValue)
-        todayplantLabel.text = String(format: "%.2f棵", StringUtils.getNumber(deviceInfo.plant_day).floatValue)
-        totalplantLabel.text = String(format: "%.2f棵", StringUtils.getNumber(deviceInfo.plant_all).floatValue)
+        todayElectricLabel.text = String(format: "%.2fkw", YCStringUtils.getNumber(deviceInfo.energy_day).floatValue)
+        totalElectricLabel.text = String(format: "%.2fkw", YCStringUtils.getNumber(deviceInfo.energy_all).floatValue)
+        todayMoneyLabel.text = String(format: "%.2f元", YCStringUtils.getNumber(deviceInfo.money_day).floatValue)
+        totalMoneyLabel.text = String(format: "%.2f元", YCStringUtils.getNumber(deviceInfo.money_all).floatValue)
+        todayjianpaiLabel.text = String(format: "%.2f吨", YCStringUtils.getNumber(deviceInfo.coal_day).floatValue)
+        totaljianpaiLabel.text = String(format: "%.2f吨", YCStringUtils.getNumber(deviceInfo.coal_all).floatValue)
+        todayplantLabel.text = String(format: "%.2f棵", YCStringUtils.getNumber(deviceInfo.plant_day).floatValue)
+        totalplantLabel.text = String(format: "%.2f棵", YCStringUtils.getNumber(deviceInfo.plant_all).floatValue)
     }
     
     //报修
