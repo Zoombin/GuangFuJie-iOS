@@ -1366,22 +1366,24 @@ extension API {
     }
     
     //安装商申请
-    func installerAdd(licenserUrl: String, companyName: String, companySize: String, companyDesc: String, phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: InstallInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func installerAdd(licenserUrl: String, companyName: String, companySize: String, companyDesc: String, phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, capital: String, success: ((_ info: InstallInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "installer/add";
         let params = [
             "userId" : getUserId(), //用户id
-            "licenserUrl" : licenserUrl, //证书图片url
+            "licenseUrl" : licenserUrl, //证书图片url
             "companyName" : companyName,
             "companySize" : companySize,
             "companyDesc" : companyDesc,
             "phone": phone,
             "linkMan": linkMan,
+            "capital": capital, //注册资本
             "provinceId": provinceId,
             "cityId": cityId,
             "areaId": areaId,
             "addressDetail": addressDetail,
             "_o" : 1
             ] as [String : Any]
+        
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.post(url, params: newParams as AnyObject?, success: { (data) in
