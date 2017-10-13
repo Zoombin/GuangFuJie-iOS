@@ -233,7 +233,7 @@
         <!--加盟商申请-->
         <scene sceneID="AdG-oW-CsD">
             <objects>
-                <viewController id="xPj-bH-gPk" userLabel="加盟商申请" customClass="JoinUsApplyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinUsApplyViewController" id="xPj-bH-gPk" userLabel="加盟商申请" customClass="JoinUsApplyViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R1R-Ox-Z3U"/>
                         <viewControllerLayoutGuide type="bottom" id="3zN-bv-ABk"/>
@@ -252,7 +252,7 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0A-xV-f85">
                                             <rect key="frame" x="0.0" y="5" width="375" height="200"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="公司资质" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7O-7q-dDT">
                                                     <rect key="frame" x="8" y="15" width="79" height="21"/>
@@ -509,7 +509,7 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4m3-50-cWg">
                                             <rect key="frame" x="0.0" y="5" width="375" height="200"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="公司资质" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTG-Bb-cFa">
                                                     <rect key="frame" x="8" y="15" width="79" height="21"/>
@@ -864,7 +864,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="yaZ-IZ-YaK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="屋顶照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-qi-Ols">
                                             <rect key="frame" x="19" y="18" width="87" height="21"/>
@@ -5683,6 +5683,6 @@
         <image name="ic_yezhua_photo" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uxD-XH-rAv"/>
+        <segue reference="pGW-Co-TeL"/>
     </inferredMetricsTieBreakers>
 </document>

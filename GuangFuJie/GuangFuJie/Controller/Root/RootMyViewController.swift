@@ -24,6 +24,11 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     var userNameLabel: UILabel!
     var statusButton: UIButton!
     
+    var dituiButton: UIButton!
+    var yezhuButton: UIButton!
+    var anzhuangButton: UIButton!
+    var jiamengButton: UIButton!
+    
     //身份  普通人 --> 地推(3)-->  业主(4)  --> 安装商(1)  --> 加盟商(2)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +46,29 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         let topView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 163 * times))
         topView.backgroundColor = Colors.appBlue
         headerView.addSubview(topView)
+        
+        let imgs = ["ic_my_role_jiamengshang", "ic_my_role_anzhuangshang", "ic_my_role_yezhu", "ic_my_role_ditui"]
+        let titles = ["加盟商", "安装商", "业主", "地推"]
+        for i in 0..<imgs.count {
+            let button = UIButton.init(type: UIButtonType.custom)
+            button.frame = CGRect(x: PhoneUtils.kScreenWidth - 70 * times, y: CGFloat(i) * 28 * times, width: 70 * times, height: 28 * times)
+            button.setBackgroundImage(UIImage(named: imgs[i]), for: UIControlState.normal)
+            button.setTitle(titles[i], for: UIControlState.normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+            button.setTitleColor(UIColor.white, for: UIControlState.normal)
+            button.isHidden = true
+            headerView.addSubview(button)
+            
+            if (i == 0) {
+                jiamengButton = button
+            } else if (i == 1) {
+                anzhuangButton = button
+            } else if (i == 2) {
+                yezhuButton = button
+            } else {
+                dituiButton = button
+            }
+        }
         
         let avatarImage = UIImageView.init(frame: CGRect(x: 10 * times, y: (163 - 74) / 2 * times, width: 74 * times, height: 74 * times))
         avatarImage.image = UIImage(named: "ic_avatar")
@@ -152,6 +180,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     func refreshUserStatus() {
         loadMyCount()
+        resetRolesBtn()
         if (UserDefaultManager.isLogin()) {
             loginButton.isHidden = true
             userNameLabel.text = UserDefaultManager.getUser()?.user_name
@@ -355,7 +384,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     func applyJiaMeng() {
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "JoinUsViewController")
+        let vc = sb.instantiateViewController(withIdentifier: "JoinUsApplyViewController")
         self.pushViewController(vc)
     }
     
@@ -371,6 +400,48 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         self.pushViewController(vc)
     }
 
+    func resetRolesBtn() {
+        dituiButton.isHidden = true
+        yezhuButton.isHidden = true
+        anzhuangButton.isHidden = true
+        jiamengButton.isHidden = true
+        if (!UserDefaultManager.isLogin()) {
+            return
+        }
+        let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity)
+        if (role == 0) {
+            //普通人
+        } else if (role == 3) {
+            //地推
+            dituiButton.isHidden = false
+            dituiButton.frame = CGRect(x: dituiButton.frame.minX, y: (163 * times - dituiButton.frame.height) / 2, width: dituiButton.frame.width, height: dituiButton.frame.height)
+        } else if (role == 4) {
+            //业主
+            dituiButton.isHidden = false
+            yezhuButton.isHidden = false
+            yezhuButton.frame = CGRect(x: dituiButton.frame.minX, y: (163 * times - dituiButton.frame.height * 2) / 2, width: dituiButton.frame.width, height: dituiButton.frame.height)
+            dituiButton.frame = CGRect(x: dituiButton.frame.minX, y: yezhuButton.frame.maxY, width: dituiButton.frame.width, height: dituiButton.frame.height)
+        } else if (role == 1) {
+            //安装商
+            dituiButton.isHidden = false
+            yezhuButton.isHidden = false
+            anzhuangButton.isHidden = false
+            anzhuangButton.frame = CGRect(x: dituiButton.frame.minX, y: (163 * times - dituiButton.frame.height * 3) / 2, width: dituiButton.frame.width, height: dituiButton.frame.height)
+            yezhuButton.frame = CGRect(x: dituiButton.frame.minX, y: anzhuangButton.frame.maxY, width: dituiButton.frame.width, height: dituiButton.frame.height)
+            dituiButton.frame = CGRect(x: dituiButton.frame.minX, y: yezhuButton.frame.maxY, width: dituiButton.frame.width, height: dituiButton.frame.height)
+        } else if (role == 2) {
+            //加盟商
+            dituiButton.isHidden = false
+            yezhuButton.isHidden = false
+            anzhuangButton.isHidden = false
+            jiamengButton.isHidden = false
+            jiamengButton.frame = CGRect(x: dituiButton.frame.minX, y: (163 * times - dituiButton.frame.height * 4) / 2, width: dituiButton.frame.width, height: dituiButton.frame.height)
+            anzhuangButton.frame = CGRect(x: dituiButton.frame.minX, y: jiamengButton.frame.maxY, width: dituiButton.frame.width, height: dituiButton.frame.height)
+            yezhuButton.frame = CGRect(x: dituiButton.frame.minX, y: anzhuangButton.frame.maxY, width: dituiButton.frame.width, height: dituiButton.frame.height)
+            dituiButton.frame = CGRect(x: dituiButton.frame.minX, y: yezhuButton.frame.maxY, width: dituiButton.frame.width, height: dituiButton.frame.height)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -23,7 +23,7 @@ class CalResultCommonCell: UITableViewCell {
         thirdLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         fourthLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         
-        let width = PhoneUtils.kScreenWidth / 7
+        let width = PhoneUtils.kScreenWidth / 4
         firstLabel.frame = CGRect(x: 0, y: 0, width: width, height: firstLabel.frame.size.height)
         secondLabel.frame = CGRect(x: width, y: 0, width: width, height: secondLabel.frame.size.height)
         thirdLabel.frame = CGRect(x: width * 2, y: 0, width: width, height: thirdLabel.frame.size.height)
