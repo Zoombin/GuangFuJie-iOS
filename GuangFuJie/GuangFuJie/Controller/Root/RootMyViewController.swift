@@ -77,6 +77,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         userNameLabel = UILabel.init(frame: CGRect(x: avatarImage.frame.maxX + 10 * times, y: 57 * times, width: 100 * times, height: 27 * times))
         userNameLabel.textColor = UIColor.white
         userNameLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        userNameLabel.isHidden = true
         topView.addSubview(userNameLabel)
         
         loginButton = UIButton.init(frame: CGRect(x: avatarImage.frame.maxX + 10 * times, y: (163 - 27) * times / 2, width: 100 * times, height: 27 * times))
@@ -85,6 +86,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 17))
         loginButton.setTitle("点击登录", for: UIControlState.normal)
         loginButton.addTarget(self, action: #selector(loginButtonClicked), for: UIControlEvents.touchUpInside)
+        loginButton.isHidden = true
         topView.addSubview(loginButton)
         
         statusButton = UIButton.init(frame: CGRect(x: avatarImage.frame.maxX + 10 * times, y: 86 * times, width: 110 * times, height: 27 * times))
@@ -93,6 +95,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         statusButton.setTitle("申请成为地推", for: UIControlState.normal)
         statusButton.addTarget(self, action: #selector(self.statusButtonClicked), for: UIControlEvents.touchUpInside)
         statusButton.backgroundColor = Colors.applyGreen
+        statusButton.isHidden = true
         topView.addSubview(statusButton)
         
         let bottomView = UIView.init(frame: CGRect(x: 0, y: topView.frame.maxY, width: PhoneUtils.kScreenWidth, height: 70 * times))
@@ -154,7 +157,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellResueIdentifier")
     }
-    
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.leftBarButtonItem = nil

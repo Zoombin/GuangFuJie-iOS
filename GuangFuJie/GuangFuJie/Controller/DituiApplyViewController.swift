@@ -96,17 +96,6 @@ class DituiApplyViewController: BaseViewController, UITableViewDataSource, UITab
         return cell!
     }
     
-    func getTextField(views: [UIView]) -> UITextField {
-        for i in 0..<views.count {
-            let view = views[i]
-            if (view.isKind(of: UITextField.self)) {
-                print("是TextField")
-                return view as! UITextField
-            }
-        }
-        return UITextField()
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if (indexPath.row == 2) {

@@ -334,6 +334,16 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             }
         }
     }
+    
+    func getTextField(views: [UIView]) -> UITextField {
+        for i in 0..<views.count {
+            let view = views[i]
+            if (view.isKind(of: UITextField.self)) {
+                return view as! UITextField
+            }
+        }
+        return UITextField()
+    }
 
     /*
     // MARK: - Navigation
