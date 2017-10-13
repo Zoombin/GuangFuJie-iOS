@@ -63,10 +63,7 @@ class DituiApplyViewController: BaseViewController, UITableViewDataSource, UITab
             self.showHint("请输入姓名!")
             return
         }
-        if (address.isEmpty) {
-            self.showHint("请输入地址!")
-            return
-        }
+        //地址可不填
         if (currentProvince == nil || currentCity == nil || currentArea == nil) {
             self.showHint("请选择地区!")
             return

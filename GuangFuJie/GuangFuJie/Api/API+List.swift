@@ -1419,7 +1419,7 @@ extension API {
     
     //加盟商申请
     func franchiseeAdd(businessUrl: String, electricalUrl: String, licenserUrl: String, companyName: String, companySize: String, companyDesc: String, phone: String, linkMan: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: FranchiseeInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
-        let url = Constants.httpHost + "installer/add";
+        let url = Constants.httpHost + "franchisee/add";
         let params = [
             "userId" : getUserId(), //用户id
             "businessUrl" : businessUrl,
@@ -1446,7 +1446,7 @@ extension API {
     
     //地推申请
     func groundAdd(name: String, phone: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, success: ((_ info: GroupInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
-        let url = Constants.httpHost + "installer/add";
+        let url = Constants.httpHost + "ground/add";
         let params = [
             "userId" : getUserId(), //用户id
             "name" : name,
@@ -1467,7 +1467,7 @@ extension API {
     
     //业主申请
     func landlordAdd(name: String, phone: String, provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber, addressDetail: String, roofImg: String, success: ((_ info: LandlordInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
-        let url = Constants.httpHost + "installer/add";
+        let url = Constants.httpHost + "landlord/add";
         let params = [
             "userId" : getUserId(), //用户id
             "name" : name,
