@@ -192,6 +192,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             myTableView.tableFooterView?.isHidden = false
             //身份  普通人 --> 地推(3)-->  业主(4)  --> 安装商(1)  --> 加盟商(2)
             let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity)
+            userNameLabel.frame = CGRect(x: userNameLabel.frame.origin.x, y: 57 * times, width: userNameLabel.frame.size.width, height: userNameLabel.frame.size.height)
             if (role == 0) {
                 //普通人
                 statusButton.setTitle("申请成为地推", for: UIControlState.normal)
@@ -207,6 +208,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             } else if (role == 2) {
                 //加盟商
                 statusButton.isHidden = true
+                userNameLabel.frame = CGRect(x: userNameLabel.frame.origin.x, y: (163 * times - userNameLabel.frame.size.height) / 2, width: userNameLabel.frame.size.width, height: userNameLabel.frame.size.height)
             }
         } else {
             loginButton.isHidden = false

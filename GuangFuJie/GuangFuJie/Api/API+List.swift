@@ -1426,7 +1426,7 @@ extension API {
             "userId" : getUserId(), //用户id
             "businessUrl" : businessUrl,
             "electricalUrl" : electricalUrl,
-            "licenserUrl" : licenserUrl,
+            "licenseUrl" : licenserUrl,
             "companyName" : companyName,
             "companySize" : companySize,
             "companyDesc" : companyDesc,

@@ -488,6 +488,9 @@
                     </view>
                     <connections>
                         <outlet property="applyTableView" destination="cHh-4Y-uHM" id="S0U-dV-YqB"/>
+                        <outlet property="photoImage1" destination="6eU-qQ-gEf" id="Oi2-I8-wFY"/>
+                        <outlet property="photoImage2" destination="Iwg-ng-Pfm" id="dty-Cm-Pc8"/>
+                        <outlet property="photoImage3" destination="g3F-H8-yet" id="Tvr-K2-MbP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbM-ll-5lT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2540,21 +2543,21 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GI-tZ-RM1">
-                                                    <rect key="frame" x="106.5" y="9" width="250" height="21"/>
+                                                    <rect key="frame" x="107" y="9" width="250" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfV-FL-E3L">
-                                                    <rect key="frame" x="106.5" y="68" width="250" height="21"/>
+                                                    <rect key="frame" x="107" y="68" width="250" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-l0-yW9">
-                                                    <rect key="frame" x="-0.5" y="98.5" width="374.5" height="1"/>
+                                                    <rect key="frame" x="0.0" y="99" width="374" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -5401,7 +5404,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xxp-RZ-VaI">
-                                                    <rect key="frame" x="0.0" y="99" width="375" height="0.5"/>
+                                                    <rect key="frame" x="0.0" y="99" width="375" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
