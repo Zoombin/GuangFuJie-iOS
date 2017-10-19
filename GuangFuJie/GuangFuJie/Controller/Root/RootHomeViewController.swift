@@ -206,7 +206,9 @@ class RootHomeViewController: BaseViewController, ProviceCityViewDelegate, UIScr
             self.showHint("我们正在筹备中，暂未开放")
         } else if (sender.tag == 7) {
            //客服
-            self.chat()
+//            self.chat()
+            let vc = RootProjectCalV2ViewController()
+            self.pushViewController(vc)
         }
     }
     
