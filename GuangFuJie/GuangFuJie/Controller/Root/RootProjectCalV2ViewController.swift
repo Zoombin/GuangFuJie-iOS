@@ -10,6 +10,7 @@ import UIKit
 
 class RootProjectCalV2ViewController: BaseViewController {
     let times = PhoneUtils.kScreenWidth / 375
+    var leftBtns = NSMutableArray()
     var leftButton1: UIButton!
     var leftButton2: UIButton!
     var leftButton3: UIButton!
@@ -38,7 +39,6 @@ class RootProjectCalV2ViewController: BaseViewController {
         let btnWidth = 56 * times
         let btnHeight = contentScrollView.frame.size.height / 4
         
-        let btns = NSMutableArray()
         for i in 0..<leftBtnTitles.count {
             let button = UIButton.init(type: UIButtonType.custom)
             button.backgroundColor = UIColor.lightGray
@@ -49,18 +49,20 @@ class RootProjectCalV2ViewController: BaseViewController {
             button.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
             button.titleLabel?.numberOfLines = 0
             button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+            button.tag = i
+            button.addTarget(self, action: #selector(self.leftButtonClicked(btn:)), for: UIControlEvents.touchUpInside)
             contentScrollView.addSubview(button)
             
-            btns.add(button)
+            leftBtns.add(button)
             if (i == 0) {
                 button.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
                 button.backgroundColor = Colors.calSelectedColor
             }
         }
-        leftButton1 = btns[0] as! UIButton
-        leftButton2 = btns[1] as! UIButton
-        leftButton3 = btns[2] as! UIButton
-        leftButton4 = btns[3] as! UIButton
+        leftButton1 = leftBtns[0] as! UIButton
+        leftButton2 = leftBtns[1] as! UIButton
+        leftButton3 = leftBtns[2] as! UIButton
+        leftButton4 = leftBtns[3] as! UIButton
         
     }
     
@@ -72,10 +74,46 @@ class RootProjectCalV2ViewController: BaseViewController {
         self.view.addSubview(contentScrollView)
         
         initLeftButtons()
-//        initFirstLeftView()
-//        initSecondLeftView()
+        
+        initSecondLeftView()
         initThirdLeftView()
-//        initFourthLeftVie()
+        initFourthLeftView()
+        initFirstLeftView()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "生成截图", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.screenShot))
+    }
+    
+    func screenShot() {
+        
+    }
+    
+    func leftButtonClicked(btn: UIButton) {
+        firstContentView.isHidden = true
+        secondContentView.isHidden = true
+        thirdContentView.isHidden = true
+        fourthContentView.isHidden = true
+        for i in 0..<leftBtns.count {
+            let button = leftBtns[i] as! UIButton
+            button.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)
+            button.backgroundColor = Colors.calUnSelectColor
+        }
+        if (btn.tag == 0) {
+            firstContentView.isHidden = false
+            btn.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+            btn.backgroundColor = Colors.calSelectedColor
+        } else if (btn.tag == 1) {
+            secondContentView.isHidden = false
+            btn.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+            btn.backgroundColor = Colors.calSelectedColor
+        } else if (btn.tag == 2) {
+            thirdContentView.isHidden = false
+            btn.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+            btn.backgroundColor = Colors.calSelectedColor
+        } else if (btn.tag == 3) {
+            fourthContentView.isHidden = false
+            btn.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+            btn.backgroundColor = Colors.calSelectedColor
+        }
     }
     
     //MARK: 项目测算
@@ -624,7 +662,7 @@ class RootProjectCalV2ViewController: BaseViewController {
         self.view.addSubview(fourthContentView)
         
         fourthContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: fourthContentView.frame.size.width, height: fourthContentView.frame.size.height))
-        firstContentView.addSubview(fourthContentScroll)
+        fourthContentView.addSubview(fourthContentScroll)
     }
 
     override func didReceiveMemoryWarning() {
