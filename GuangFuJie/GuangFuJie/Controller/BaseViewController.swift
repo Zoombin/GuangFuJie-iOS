@@ -335,6 +335,12 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         }
     }
     
+    func navigationBarAndStatusBarHeight() -> CGFloat{
+        let rectOfStatusbar = UIApplication.shared.statusBarFrame
+        let rectOfNavigationbar = self.navigationController?.navigationBar.frame
+        return rectOfStatusbar.size.height + rectOfNavigationbar!.size.height
+    }
+    
     func getTextField(views: [UIView]) -> UITextField {
         for i in 0..<views.count {
             let view = views[i]
