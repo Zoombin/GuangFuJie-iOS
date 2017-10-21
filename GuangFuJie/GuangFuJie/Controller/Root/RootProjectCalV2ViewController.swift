@@ -154,7 +154,7 @@ class RootProjectCalV2ViewController: BaseViewController {
         self.addLeftShadow(view: secondContentView)
         self.view.addSubview(secondContentView)
         
-        secondContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: secondContentView.frame.size.width, height: secondContentView.frame.size.height - 50))
+        secondContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: secondContentView.frame.size.width, height: secondContentView.frame.size.height - 50 * times))
         secondContentView.addSubview(secondContentScroll)
         
         let roofSizeLabel = UILabel.init(frame: CGRect(x: 0, y: 5 * times, width: 60 * times, height: 34 * times))
@@ -345,7 +345,7 @@ class RootProjectCalV2ViewController: BaseViewController {
         self.addLeftShadow(view: thirdContentView)
         self.view.addSubview(thirdContentView)
         
-        thirdContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: thirdContentView.frame.size.width, height: thirdContentView.frame.size.height))
+        thirdContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: thirdContentView.frame.size.width, height: thirdContentView.frame.size.height - 50 * times))
         thirdContentView.addSubview(thirdContentScroll)
         
         //投资金额
@@ -473,6 +473,148 @@ class RootProjectCalV2ViewController: BaseViewController {
         let line = UILabel.init(frame: CGRect(x: 0, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width, height: 0.5))
         line.backgroundColor = UIColor.lightGray
         thirdContentScroll.addSubview(line)
+        currentY = line.frame.maxY
+        
+        //上网模式
+        let netMethodLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 55 * times, height: 35 * times))
+        netMethodLabel.text = "上网模式"
+        netMethodLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        thirdContentScroll.addSubview(netMethodLabel)
+        
+        let leftCheckBox = UIButton.init(frame: CGRect(x: netMethodLabel.frame.maxX, y: currentY + 10 * times, width: 110 * times, height: 35 * times))
+        leftCheckBox.setTitleColor(UIColor.black, for: UIControlState.normal)
+        leftCheckBox.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        leftCheckBox.setTitle("全额上网", for: UIControlState.normal)
+        leftCheckBox.setImage(UIImage(named: "checkbox_hl"), for: UIControlState.selected)
+        leftCheckBox.setImage(UIImage(named: "checkbox"), for: UIControlState.normal)
+        thirdContentScroll.addSubview(leftCheckBox)
+        
+        let rightCheckBox = UIButton.init(frame: CGRect(x: leftCheckBox.frame.maxX + 5 * times, y: currentY + 10 * times, width: 110 * times, height: 35 * times))
+        rightCheckBox.setTitleColor(UIColor.black, for: UIControlState.normal)
+        rightCheckBox.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        rightCheckBox.setTitle("余电上网", for: UIControlState.normal)
+        rightCheckBox.setImage(UIImage(named: "checkbox_hl"), for: UIControlState.selected)
+        rightCheckBox.setImage(UIImage(named: "checkbox"), for: UIControlState.normal)
+        thirdContentScroll.addSubview(rightCheckBox)
+        currentY = rightCheckBox.frame.maxY
+        
+        //自用电比例
+        let zydblLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        zydblLabel.text = "自用电比例"
+        zydblLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        thirdContentScroll.addSubview(zydblLabel)
+        
+        let zydblTextField = UITextField.init(frame: CGRect(x: zydblLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
+        zydblTextField.layer.cornerRadius = 3
+        zydblTextField.layer.borderColor = UIColor.lightGray.cgColor
+        zydblTextField.layer.borderWidth = 0.5
+        zydblTextField.layer.masksToBounds = true
+        zydblTextField.textAlignment = NSTextAlignment.center
+        zydblTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        thirdContentScroll.addSubview(zydblTextField)
+        
+        let zydblRightLabel = UILabel.init(frame: CGRect(x: zydblTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - zydblTextField.frame.maxX, height: 35 * times))
+        zydblRightLabel.text = "%"
+        zydblRightLabel.textAlignment = NSTextAlignment.center
+        zydblRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        thirdContentScroll.addSubview(zydblRightLabel)
+        currentY = zydblRightLabel.frame.maxY
+        
+        //自用电电价
+        let zyddjLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        zyddjLabel.text = "自用电电价"
+        zyddjLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        thirdContentScroll.addSubview(zyddjLabel)
+        
+        let zyddjTextField = UITextField.init(frame: CGRect(x: zyddjLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
+        zyddjTextField.layer.cornerRadius = 3
+        zyddjTextField.layer.borderColor = UIColor.lightGray.cgColor
+        zyddjTextField.layer.borderWidth = 0.5
+        zyddjTextField.layer.masksToBounds = true
+        zyddjTextField.textAlignment = NSTextAlignment.center
+        zyddjTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        thirdContentScroll.addSubview(zyddjTextField)
+        
+        let zyddjRightLabel = UILabel.init(frame: CGRect(x: zyddjTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - zyddjTextField.frame.maxX, height: 35 * times))
+        zyddjRightLabel.text = "元/度"
+        zyddjRightLabel.textAlignment = NSTextAlignment.center
+        zyddjRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        thirdContentScroll.addSubview(zyddjRightLabel)
+        currentY = zyddjRightLabel.frame.maxY
+        
+        //用电补贴
+        let ydbtLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 55 * times, height: 35 * times))
+        ydbtLabel.text = "用电补贴"
+        ydbtLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        thirdContentScroll.addSubview(ydbtLabel)
+        
+        let ydbtPriceTextField = UITextField.init(frame: CGRect(x: ydbtLabel.frame.maxX, y: currentY + 10 * times, width: 90 * times, height: 35 * times))
+        ydbtPriceTextField.layer.cornerRadius = 3
+        ydbtPriceTextField.layer.borderColor = UIColor.lightGray.cgColor
+        ydbtPriceTextField.layer.borderWidth = 0.5
+        ydbtPriceTextField.layer.masksToBounds = true
+        ydbtPriceTextField.textAlignment = NSTextAlignment.center
+        ydbtPriceTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        thirdContentScroll.addSubview(ydbtPriceTextField)
+        
+        let ydbtMiddleLabel = UILabel.init(frame: CGRect(x: ydbtPriceTextField.frame.maxX, y: currentY + 10 * times, width: 40 * times, height: 35 * times))
+        ydbtMiddleLabel.text = "元/度"
+        ydbtMiddleLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        ydbtMiddleLabel.textAlignment = NSTextAlignment.center
+        thirdContentScroll.addSubview(ydbtMiddleLabel)
+        
+        let ydbtYearsTextField = UITextField.init(frame: CGRect(x: ydbtMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 90 * times, height: 35 * times))
+        ydbtYearsTextField.layer.cornerRadius = 3
+        ydbtYearsTextField.layer.borderColor = UIColor.lightGray.cgColor
+        ydbtYearsTextField.layer.borderWidth = 0.5
+        ydbtYearsTextField.layer.masksToBounds = true
+        ydbtYearsTextField.textAlignment = NSTextAlignment.center
+        ydbtYearsTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        thirdContentScroll.addSubview(ydbtYearsTextField)
+        
+        let ydbtRightLabel = UILabel.init(frame: CGRect(x: ydbtYearsTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - ydbtYearsTextField.frame.maxX, height: 35 * times))
+        ydbtRightLabel.text = "年"
+        ydbtRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        ydbtRightLabel.textAlignment = NSTextAlignment.center
+        thirdContentScroll.addSubview(ydbtRightLabel)
+        currentY = ydbtRightLabel.frame.maxY
+        
+        //余电上网价
+        let ydswjLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        ydswjLabel.text = "余电上网价"
+        ydswjLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        thirdContentScroll.addSubview(ydswjLabel)
+        
+        let ydswjTextField = UITextField.init(frame: CGRect(x: ydswjLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
+        ydswjTextField.layer.cornerRadius = 3
+        ydswjTextField.layer.borderColor = UIColor.lightGray.cgColor
+        ydswjTextField.layer.borderWidth = 0.5
+        ydswjTextField.layer.masksToBounds = true
+        ydswjTextField.textAlignment = NSTextAlignment.center
+        ydswjTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        thirdContentScroll.addSubview(ydswjTextField)
+        
+        let ydswjRightLabel = UILabel.init(frame: CGRect(x: ydswjTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - ydswjTextField.frame.maxX, height: 35 * times))
+        ydswjRightLabel.text = "元/瓦"
+        ydswjRightLabel.textAlignment = NSTextAlignment.center
+        ydswjRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        thirdContentScroll.addSubview(ydswjRightLabel)
+        currentY = ydswjRightLabel.frame.maxY
+        
+        thirdContentScroll.contentSize = CGSize(width: 0, height: currentY)
+        
+        let bottomOffSetX = (thirdContentView.frame.size.width - 124 * times * 2) / 3
+        let reCalButton = UIButton.init(type: UIButtonType.custom)
+        reCalButton.frame = CGRect(x: bottomOffSetX, y: thirdContentScroll.frame.maxY, width: 124 * times, height: 38 * times)
+        reCalButton.setTitle("计算收益", for: UIControlState.normal)
+        self.setCalBlueButtonCommonSet(btn: reCalButton)
+        thirdContentView.addSubview(reCalButton)
+        
+        let nextStepButton = UIButton.init(type: UIButtonType.custom)
+        nextStepButton.frame = CGRect(x: bottomOffSetX * 2 + 124 * times, y: thirdContentScroll.frame.maxY, width: 124 * times, height: 38 * times)
+        nextStepButton.setTitle("下一步", for: UIControlState.normal)
+        self.setCalBlueButtonCommonSet(btn: nextStepButton)
+        thirdContentView.addSubview(nextStepButton)
     }
     
     func initFourthLeftView() {
