@@ -189,6 +189,7 @@ class RootProjectCalV2ViewController: BaseViewController {
     func initSecondLeftView() {
         secondContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight()))
         secondContentView.backgroundColor = UIColor.white
+        secondContentView.isHidden = true
         self.addLeftShadow(view: secondContentView)
         self.view.addSubview(secondContentView)
         
@@ -380,6 +381,7 @@ class RootProjectCalV2ViewController: BaseViewController {
     func initThirdLeftView() {
         thirdContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight()))
         thirdContentView.backgroundColor = UIColor.white
+        thirdContentView.isHidden = true
         self.addLeftShadow(view: thirdContentView)
         self.view.addSubview(thirdContentView)
         
@@ -658,11 +660,152 @@ class RootProjectCalV2ViewController: BaseViewController {
     func initFourthLeftView() {
         fourthContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight()))
         fourthContentView.backgroundColor = UIColor.white
+        fourthContentView.isHidden = true
         self.addLeftShadow(view: fourthContentView)
         self.view.addSubview(fourthContentView)
         
         fourthContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: fourthContentView.frame.size.width, height: fourthContentView.frame.size.height))
         fourthContentView.addSubview(fourthContentScroll)
+        
+        //投资金额
+        let tzjeLabel = UILabel.init(frame: CGRect(x: 10 * times, y: 15 * times, width: 55 * times, height: 35 * times))
+        tzjeLabel.text = "投资金额"
+        tzjeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        fourthContentScroll.addSubview(tzjeLabel)
+        
+        let lxtzjeValueLabel = UILabel.init(frame: CGRect(x: tzjeLabel.frame.maxX, y: 15 * times, width: 224 * times, height: 35 * times))
+        lxtzjeValueLabel.text = "0.00"
+        lxtzjeValueLabel.textAlignment = NSTextAlignment.center
+        lxtzjeValueLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        fourthContentScroll.addSubview(lxtzjeValueLabel)
+        
+        let tzjeRightLabel = UILabel.init(frame: CGRect(x: lxtzjeValueLabel.frame.maxX, y: 15 * times, width: fourthContentScroll.frame.size.width - lxtzjeValueLabel.frame.maxX, height: 35 * times))
+        tzjeRightLabel.text = "元"
+        tzjeRightLabel.textAlignment = NSTextAlignment.center
+        tzjeRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        fourthContentScroll.addSubview(tzjeRightLabel)
+        var currentY = tzjeRightLabel.frame.maxY
+        
+        //装机容量
+        let zjrlLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 55 * times, height: 35 * times))
+        zjrlLabel.text = "装机容量"
+        zjrlLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        fourthContentScroll.addSubview(zjrlLabel)
+        
+        let lxzjrlValueLabel = UILabel.init(frame: CGRect(x: tzjeLabel.frame.maxX, y: currentY + 10 * times, width: 224 * times, height: 35 * times))
+        lxzjrlValueLabel.text = "0.00"
+        lxzjrlValueLabel.textAlignment = NSTextAlignment.center
+        lxzjrlValueLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        fourthContentScroll.addSubview(lxzjrlValueLabel)
+        
+        let zjrlRightLabel = UILabel.init(frame: CGRect(x: lxzjrlValueLabel.frame.maxX, y: currentY + 10 * times, width: fourthContentScroll.frame.size.width - lxzjrlValueLabel.frame.maxX, height: 35 * times))
+        zjrlRightLabel.text = "kWh"
+        zjrlRightLabel.textAlignment = NSTextAlignment.center
+        zjrlRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        fourthContentScroll.addSubview(zjrlRightLabel)
+        currentY = zjrlRightLabel.frame.maxY
+        
+        //贷款金额 年数
+        let dkjeLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 55 * times, height: 35 * times))
+        dkjeLabel.text = "贷　　款"
+        dkjeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        fourthContentScroll.addSubview(dkjeLabel)
+        
+        let dkblPercentTextField = UILabel.init(frame: CGRect(x: dkjeLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
+        dkblPercentTextField.textAlignment = NSTextAlignment.center
+        dkblPercentTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        fourthContentScroll.addSubview(dkblPercentTextField)
+        
+        let dkjeMiddleLabel = UILabel.init(frame: CGRect(x: dkblPercentTextField.frame.maxX, y: currentY + 10 * times, width: 30 * times, height: 35 * times))
+        dkjeMiddleLabel.text = "元"
+        dkjeMiddleLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        dkjeMiddleLabel.textAlignment = NSTextAlignment.center
+        fourthContentScroll.addSubview(dkjeMiddleLabel)
+        
+        let dkjeYearsTextField = UITextField.init(frame: CGRect(x: dkjeMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
+        dkjeYearsTextField.textAlignment = NSTextAlignment.center
+        dkjeYearsTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        fourthContentScroll.addSubview(dkjeYearsTextField)
+        
+        let dkjeRightLabel = UILabel.init(frame: CGRect(x: dkjeYearsTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - dkjeYearsTextField.frame.maxX, height: 35 * times))
+        dkjeRightLabel.text = "年"
+        dkjeRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        dkjeRightLabel.textAlignment = NSTextAlignment.center
+        fourthContentScroll.addSubview(dkjeRightLabel)
+        currentY = dkjeRightLabel.frame.maxY
+        
+        //还款方式
+        let backTypeLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 55 * times, height: 35 * times))
+        backTypeLabel.text = "还款方式"
+        backTypeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        backTypeLabel.textAlignment = NSTextAlignment.center
+        fourthContentScroll.addSubview(backTypeLabel)
+        
+        let backTypeButton = UIButton.init(frame: CGRect(x: backTypeLabel.frame.maxX , y: currentY + 10 * times, width: 240 * times, height: 35 * times))
+        backTypeButton.layer.cornerRadius = 3
+        backTypeButton.layer.borderColor = UIColor.lightGray.cgColor
+        backTypeButton.layer.borderWidth = 0.5
+        backTypeButton.layer.masksToBounds = true
+        backTypeButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        fourthContentScroll.addSubview(backTypeButton)
+        currentY = backTypeButton.frame.maxY
+        
+        //贷款利率
+        let dkllLabel = UILabel.init(frame: CGRect(x: 10 * times, y: currentY + 10 * times, width: 55 * times, height: 35 * times))
+        dkllLabel.text = "贷款利率"
+        dkllLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        fourthContentScroll.addSubview(dkllLabel)
+        
+        let llRightView = UILabel.init(frame: CGRect(x: 0, y: 0, width: 30 * times, height: 35 * times))
+        llRightView.text = "%"
+        llRightView.textAlignment = NSTextAlignment.center
+        llRightView.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        
+        let dkllTextField = UITextField.init(frame: CGRect(x: dkllLabel.frame.maxX, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        dkllTextField.layer.cornerRadius = 3
+        dkllTextField.layer.borderColor = UIColor.lightGray.cgColor
+        dkllTextField.layer.borderWidth = 0.5
+        dkllTextField.layer.masksToBounds = true
+        dkllTextField.textAlignment = NSTextAlignment.center
+        dkllTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        dkllTextField.rightViewMode = UITextFieldViewMode.always
+        dkllTextField.rightView = llRightView
+        fourthContentScroll.addSubview(dkllTextField)
+        
+        let dkllMiddleLabel = UILabel.init(frame: CGRect(x: dkllTextField.frame.maxX, y: currentY + 10 * times, width: 30 * times, height: 35 * times))
+        dkllMiddleLabel.text = "x"
+        dkllMiddleLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        dkllMiddleLabel.textAlignment = NSTextAlignment.center
+        fourthContentScroll.addSubview(dkllMiddleLabel)
+        
+        let timesRightView = UILabel.init(frame: CGRect(x: 0, y: 0, width: 30 * times, height: 35 * times))
+        timesRightView.text = "倍"
+        timesRightView.textAlignment = NSTextAlignment.center
+        timesRightView.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        
+        let dkllTimesTextField = UITextField.init(frame: CGRect(x: dkllMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        dkllTimesTextField.layer.cornerRadius = 3
+        dkllTimesTextField.layer.borderColor = UIColor.lightGray.cgColor
+        dkllTimesTextField.layer.borderWidth = 0.5
+        dkllTimesTextField.layer.masksToBounds = true
+        dkllTimesTextField.textAlignment = NSTextAlignment.center
+        dkllTimesTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        dkllTimesTextField.rightViewMode = UITextFieldViewMode.always
+        dkllTimesTextField.rightView = timesRightView
+        fourthContentScroll.addSubview(dkllTimesTextField)
+        
+        let dkllRightLabel = UILabel.init(frame: CGRect(x: dkllTimesTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - dkllTimesTextField.frame.maxX, height: 35 * times))
+        dkllRightLabel.text = "= 4.9%"
+        dkllRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        dkllRightLabel.textAlignment = NSTextAlignment.center
+        fourthContentScroll.addSubview(dkllRightLabel)
+        currentY = dkllRightLabel.frame.maxY
+        
+        let startCalButton = UIButton.init(type: UIButtonType.custom)
+        startCalButton.frame = CGRect(x: (fourthContentScroll.frame.size.width - 268 * times) / 2, y: currentY + 30 * times, width: 268 * times, height: 38 * times)
+        startCalButton.setTitle("开始计算", for: UIControlState.normal)
+        self.setCalBlueButtonCommonSet(btn: startCalButton)
+        fourthContentScroll.addSubview(startCalButton)
     }
 
     override func didReceiveMemoryWarning() {
