@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootProjectCalV2ViewController: BaseViewController {
+class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegate {
     let times = PhoneUtils.kScreenWidth / 375
     var leftBtns = NSMutableArray()
     var leftButton1: UIButton!
@@ -28,6 +28,25 @@ class RootProjectCalV2ViewController: BaseViewController {
     var secondContentScroll: UIScrollView! //产能计算
     var thirdContentScroll: UIScrollView!  //收益分析
     var fourthContentScroll: UIScrollView! //现金流向
+    
+    //日照计算控件
+    var locationButton: UIButton! //地区按钮
+    var latLabel: UILabel! //经度
+    var lngLabel: UILabel! //纬度
+    var sunHourLabel: UILabel! //日照小时数
+    var sunYearTotalLabel: UILabel! //日照数值
+    
+    var projectCalInfo: ProjectcalInfo?
+    var energyCalInfo: EnergycalInfo?
+    
+    var currentLat: NSNumber?
+    var currentLng: NSNumber?
+    
+    //产能计算控件
+    
+    //收益分析
+    
+    //现金流向
     
     let leftBtnTitles = ["日照\n计算", "产能\n计算", "收益\n分析", "现金\n流向"]
     override func viewDidLoad() {
@@ -126,28 +145,30 @@ class RootProjectCalV2ViewController: BaseViewController {
         firstContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: firstContentView.frame.size.width, height: firstContentView.frame.size.height))
         firstContentView.addSubview(firstContentScroll)
         
-        let locationButton = UIButton.init(type: UIButtonType.custom)
-        locationButton.frame = CGRect(x: 19 * times, y: 16 * times, width: 170, height: 18)
+        locationButton = UIButton.init(type: UIButtonType.custom)
+        locationButton.frame = CGRect(x: 19 * times, y: 16 * times, width: 240, height: 18)
         locationButton.setTitle("请选择地区", for: UIControlState.normal)
         locationButton.setTitleColor(UIColor.black, for: UIControlState.normal)
         locationButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
         locationButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+        locationButton.addTarget(self, action: #selector(self.locationSetting), for: UIControlEvents.touchUpInside)
         firstContentScroll.addSubview(locationButton)
         
-        let latLabel = UILabel.init(frame: CGRect(x: locationButton.frame.origin.x, y: locationButton.frame.maxY + 35 * times, width: 100 * times, height: 18 * times))
+        latLabel = UILabel.init(frame: CGRect(x: locationButton.frame.origin.x, y: locationButton.frame.maxY + 35 * times, width: 100 * times, height: 18 * times))
         latLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
-        latLabel.text = "经度：75.23"
+        latLabel.text = "经度：--"
         firstContentScroll.addSubview(latLabel)
         
-        let lngLabel = UILabel.init(frame: CGRect(x: latLabel.frame.maxX + 42 * times, y: locationButton.frame.maxY + 35 * times, width: 100 * times, height: 18 * times))
+        lngLabel = UILabel.init(frame: CGRect(x: latLabel.frame.maxX + 42 * times, y: locationButton.frame.maxY + 35 * times, width: 100 * times, height: 18 * times))
         lngLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
-        lngLabel.text = "纬度：75.23"
+        lngLabel.text = "纬度：--"
         firstContentScroll.addSubview(lngLabel)
         
         let sunriseButton = UIButton.init(type: UIButtonType.custom)
         sunriseButton.frame = CGRect(x: (firstContentScroll.frame.size.width - 268 * times) / 2, y: latLabel.frame.maxY + 41 * times, width: 268 * times, height: 38 * times)
         sunriseButton.setTitle("获取日照数据", for: UIControlState.normal)
         self.setCalBlueButtonCommonSet(btn: sunriseButton)
+        sunriseButton.addTarget(self, action: #selector(self.loadSunriseData), for: UIControlEvents.touchUpInside)
         firstContentScroll.addSubview(sunriseButton)
         
         let line = UILabel.init(frame: CGRect(x: sunriseButton.frame.minX, y: sunriseButton.frame.maxY + 26 * times, width: sunriseButton.frame.size.width, height: 0.5))
@@ -161,13 +182,13 @@ class RootProjectCalV2ViewController: BaseViewController {
         tipsLabel.backgroundColor = UIColor.white
         firstContentScroll.addSubview(tipsLabel)
         
-        let sunHourLabel = UILabel.init(frame: CGRect(x: 13 * times, y: line.frame.maxY + 20, width: 200 * times, height: 15 * times))
-        sunHourLabel.text = "年日照时数：1418 小时"
+        sunHourLabel = UILabel.init(frame: CGRect(x: 13 * times, y: line.frame.maxY + 20, width: 200 * times, height: 15 * times))
+        sunHourLabel.text = "年日照时数：-- 小时"
         sunHourLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         firstContentScroll.addSubview(sunHourLabel)
         
-        let sunYearTotalLabel = UILabel.init(frame: CGRect(x: 13 * times, y: sunHourLabel.frame.maxY + 17, width: 200 * times, height: 15 * times))
-        sunYearTotalLabel.text = "年辐照总量：1657 kWh/㎡.年"
+        sunYearTotalLabel = UILabel.init(frame: CGRect(x: 13 * times, y: sunHourLabel.frame.maxY + 17, width: 200 * times, height: 15 * times))
+        sunYearTotalLabel.text = "年辐照总量：-- kWh/㎡.年"
         sunYearTotalLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         firstContentScroll.addSubview(sunYearTotalLabel)
         
@@ -183,6 +204,42 @@ class RootProjectCalV2ViewController: BaseViewController {
         nextStepButton.setTitle("下一步", for: UIControlState.normal)
         self.setCalBlueButtonCommonSet(btn: nextStepButton)
         firstContentScroll.addSubview(nextStepButton)
+    }
+    
+    func locationSetting() {
+        let vc = ProviceCityViewController()
+        vc.delegate = self
+        
+        let nav = UINavigationController.init(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    //位置选择Delegate方法
+    func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
+        locationButton.setTitle("\(YCStringUtils.getString(provice.name))\(YCStringUtils.getString(city.name))\(YCStringUtils.getString(area.name))", for: UIControlState.normal)
+        
+        latLabel.text = String(format: "纬度：%.2f", YCStringUtils.getNumber(area.lat).floatValue)
+        lngLabel.text = String(format: "经度：%.2f", YCStringUtils.getNumber(area.lng).floatValue)
+        currentLat = area.lat
+        currentLng = area.lng
+    }
+    
+    //年日照幅度
+    func loadSunriseData() {
+        if (currentLat == nil || currentLng == nil) {
+            self.showHint("请先选择位置")
+            return
+        }
+        self.showHud(in: self.view, hint: "获取数据中...")
+        API.sharedInstance.projectcalSunenerge(currentLat!, lng: currentLng!, success: { (info) in
+            self.projectCalInfo = info
+            self.hideHud()
+            self.sunHourLabel.text = "年日照时数：\(YCStringUtils.getNumber(info.sunlight_year)) 小时"
+            self.sunYearTotalLabel.text = "年辐照总量：\(YCStringUtils.getNumber(info.energy_year)) Kwh/㎡.年"
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
     }
     
     //MARK: 产能计算
