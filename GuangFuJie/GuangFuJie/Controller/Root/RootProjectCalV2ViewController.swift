@@ -202,6 +202,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         let nextStepButton = UIButton.init(type: UIButtonType.custom)
         nextStepButton.frame = CGRect(x: offSetX * 2 + 124 * times, y: firstContentScroll.frame.size.height - 50 * times, width: 124 * times, height: 38 * times)
         nextStepButton.setTitle("下一步", for: UIControlState.normal)
+        nextStepButton.addTarget(self, action: #selector(self.nextStep), for: UIControlEvents.touchUpInside)
         self.setCalBlueButtonCommonSet(btn: nextStepButton)
         firstContentScroll.addSubview(nextStepButton)
     }
@@ -883,6 +884,101 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         btn.backgroundColor = Colors.appBlue
         btn.setTitleColor(UIColor.white, for: UIControlState.normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+    }
+    
+    func hideAllView() {
+        firstContentView.isHidden = true
+        secondContentView.isHidden = true
+        thirdContentView.isHidden = true
+        fourthContentView.isHidden = true
+    }
+    
+    //#MARK 下一步
+    func nextStep() {
+        if (firstContentView.isHidden == false) {
+            if (projectCalInfo == nil) {
+                self.showHint("请先计算项目选址数据")
+                return
+            }
+            hideAllView()
+            self.secondContentView.isHidden = false
+            changeStepButtonWithIndex(index: 1)
+        } else if (secondContentView.isHidden == false) {
+            if (energyCalInfo == nil) {
+                self.showHint("请先计算产能计算数据")
+                return
+            }
+            hideAllView()
+            self.thirdContentView.isHidden = false
+            changeStepButtonWithIndex(index: 2)
+//            getSYParams()
+        } else if (thirdContentView.isHidden == false) {
+            
+        } else if (fourthContentView.isHidden == false) {
+            
+        }
+//        if (bkgXZView.isHidden == false) {
+//            if (projectCalInfo == nil) {
+//                self.showHint("请先计算项目选址数据")
+//                return
+//            }
+//            hideAllView()
+//            self.bkgCNView.isHidden = false
+//            changeStepButtonWithIndex(index: 1)
+//        } else if (bkgCNView.isHidden == false) {
+//            if (energyCalInfo == nil) {
+//                self.showHint("请先计算产能计算数据")
+//                return
+//            }
+//            hideAllView()
+//            self.bkgSYView.isHidden = false
+//            changeStepButtonWithIndex(index: 2)
+//            getSYParams()
+//        } else if (bkgSYView.isHidden == false) {
+//            if (projectCalInfo == nil) {
+//                self.showHint("请先计算项目选址数据")
+//                return
+//            }
+//            if (energyCalInfo == nil) {
+//                self.showHint("请先计算产能计算数据")
+//                return
+//            }
+//            hideAllView()
+//            self.bkgXJLView.isHidden = false
+//            changeStepButtonWithIndex(index: 3)
+//            inputXMCSValues()
+//        }
+    }
+    
+    func resetStepButton() {
+        self.leftButton1.backgroundColor = Colors.calUnSelectColor
+        self.leftButton1.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)
+        
+        self.leftButton2.backgroundColor = Colors.calUnSelectColor
+        self.leftButton2.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)
+        
+        self.leftButton3.backgroundColor = Colors.calUnSelectColor
+        self.leftButton3.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)
+        
+        self.leftButton4.backgroundColor = Colors.calUnSelectColor
+        self.leftButton4.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)
+    }
+    
+    func changeStepButtonWithIndex(index: NSInteger) {
+        resetStepButton()
+        if (index == 0) {
+            self.leftButton1.backgroundColor = Colors.calSelectedColor
+            self.leftButton1.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+        } else if (index == 1) {
+            self.leftButton2.backgroundColor = Colors.calSelectedColor
+            self.leftButton2.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+        } else if (index == 2) {
+            self.leftButton3.backgroundColor = Colors.calSelectedColor
+            self.leftButton3.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+        } else if (index == 3) {
+            self.leftButton4.backgroundColor = Colors.calSelectedColor
+            self.leftButton4.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
+        }
     }
 
 }
