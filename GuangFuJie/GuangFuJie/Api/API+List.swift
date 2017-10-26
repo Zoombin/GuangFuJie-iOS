@@ -1587,13 +1587,15 @@ extension API {
     }
     
     //产能计算
-    func projectcalEnergycal(type: NSInteger, size: String, lat: NSNumber, lng: NSNumber, success: ((_ commonModel: EnergycalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalEnergycal(type: NSInteger, size: String, lat: NSNumber, lng: NSNumber, wOfPrice: String, firstYearKwElectric: String, success: ((_ commonModel: EnergycalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/energycal";
         let params = [
             "type": String(type),
             "size": size,
             "lat": lat,
             "lng": lng,
+            "wOfPrice": wOfPrice, //每瓦投资金额                  默认：8
+            "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电     默认：4
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)

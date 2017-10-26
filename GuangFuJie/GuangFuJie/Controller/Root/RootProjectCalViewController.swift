@@ -226,7 +226,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             self.projectCalInfo = info
             self.hideHud()
             self.averagehor.text = "年日照时数:\(YCStringUtils.getNumber(info.sunlight_year)) 小时"
-            self.average30.text = "年辐照总量:\(YCStringUtils.getNumber(info.energy_year)) Kwh/㎡.年"
+            self.average30.text = "年辐照总量:\(YCStringUtils.getNumber(info.energy_year)) 度/平方米"
         }) { (msg) in
             self.hideHud()
             self.showHint(msg)
@@ -244,24 +244,24 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
             return
         }
         self.showHud(in: self.view, hint: "获取数据中...")
-        API.sharedInstance.projectcalEnergycal(type: type, size: roofSizeTextField.text!, lat: currentLat!, lng: currentLng!, success: { (info) in
-            self.hideHud()
-            self.energyCalInfo = info
-            self.buildSize.text = "装机容量：\(YCStringUtils.getNumber(info.build_size))Kwp"
-            self.buildPrice.text = "建设费用：\(YCStringUtils.getNumber(info.build_price))万元"
-            self.electricFirstyearHours.text = "首年发电利用小时数：\(YCStringUtils.getNumber(info.electric_firstyear_hours))小时"
-            self.electricFirstyearDayaverage.text = "首年日发电量：\(YCStringUtils.getNumber(info.electric_firstyear_dayaverage))度"
-            self.electricFirstyearTotal.text = "首年总发电量：\(YCStringUtils.getNumber(info.electric_firstyear_total))度"
-            self.electric25.text = "25年总发电量：\(YCStringUtils.getNumber(info.electric_25))度"
-            self.reduceC.text = "节约标准煤：\(YCStringUtils.getNumber(info.reduce_c))千克"
-            self.reduceCo2.text = "减少CO₂排放：\(YCStringUtils.getNumber(info.reduce_co2))千克"
-            self.reduceSo2.text = "减少SO₂排放：\(YCStringUtils.getNumber(info.reduce_so2))千克"
-            self.reduceNox.text = "减少NOx排放：\(YCStringUtils.getNumber(info.reduce_nox))千克"
-            self.reduceSmoke.text = "减少烟雾排放：\(YCStringUtils.getNumber(info.reduce_smoke))千克"
-        }) { (msg) in
-            self.hideHud()
-            self.showHint(msg)
-        }
+//        API.sharedInstance.projectcalEnergycal(type: type, size: roofSizeTextField.text!, lat: currentLat!, lng: currentLng!, success: { (info) in
+//            self.hideHud()
+//            self.energyCalInfo = info
+//            self.buildSize.text = "装机容量：\(YCStringUtils.getNumber(info.build_size))Kwp"
+//            self.buildPrice.text = "建设费用：\(YCStringUtils.getNumber(info.build_price))万元"
+//            self.electricFirstyearHours.text = "首年发电利用小时数：\(YCStringUtils.getNumber(info.electric_firstyear_hours))小时"
+//            self.electricFirstyearDayaverage.text = "首年日发电量：\(YCStringUtils.getNumber(info.electric_firstyear_dayaverage))度"
+//            self.electricFirstyearTotal.text = "首年总发电量：\(YCStringUtils.getNumber(info.electric_firstyear_total))度"
+//            self.electric25.text = "25年总发电量：\(YCStringUtils.getNumber(info.electric_25))度"
+//            self.reduceC.text = "节约标准煤：\(YCStringUtils.getNumber(info.reduce_c))千克"
+//            self.reduceCo2.text = "减少CO₂排放：\(YCStringUtils.getNumber(info.reduce_co2))千克"
+//            self.reduceSo2.text = "减少SO₂排放：\(YCStringUtils.getNumber(info.reduce_so2))千克"
+//            self.reduceNox.text = "减少NOx排放：\(YCStringUtils.getNumber(info.reduce_nox))千克"
+//            self.reduceSmoke.text = "减少烟雾排放：\(YCStringUtils.getNumber(info.reduce_smoke))千克"
+//        }) { (msg) in
+//            self.hideHud()
+//            self.showHint(msg)
+//        }
     }
     
     //获取收益分析的参数
@@ -301,7 +301,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
     
     func inputXMCSValues() {
         xjtzjeLabel.text = "投资金额 \(YCStringUtils.getNumber(energyCalInfo!.build_price)) 元"
-        zjrlLabel.text = "装机容量 \(YCStringUtils.getNumber(energyCalInfo!.build_size)) Kwh"
+        zjrlLabel.text = "装机容量 \(YCStringUtils.getNumber(energyCalInfo!.build_size)) 千瓦"
         dkLabel.text = "贷款 \(dkblTextField.text!)% \(dknxTextField.text!)"
         dkllTextField.text = "4.9"
         dkbTextField.text = "1.0"

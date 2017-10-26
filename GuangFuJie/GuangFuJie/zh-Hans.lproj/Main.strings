@@ -177,7 +177,7 @@
 "CF2-DR-b7r.text" = "Label";
 
 /* Class = "UILabel"; text = "年辐照总量: 0 Kwh/㎡.年"; ObjectID = "CP9-n3-sA5"; */
-"CP9-n3-sA5.text" = "年辐照总量: 0 Kwh/㎡.年";
+"CP9-n3-sA5.text" = "年辐照总量: 0 度/平方米";
 
 /* Class = "UILabel"; text = "已购买保险"; ObjectID = "CcZ-V2-HAC"; */
 "CcZ-V2-HAC.text" = "已购买保险";

@@ -78,8 +78,8 @@ class RootEarnViewController: BaseViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! CalResultCommonCell
         let info = results[indexPath.row] as! NetprofitInfo
         cell.firstLabel.text = info.month!
-        cell.secondLabel.text = info.monthPay!
-        cell.thirdLabel.text = info.monthEarn!
+        cell.secondLabel.text = info.monthEarn!
+        cell.thirdLabel.text = info.monthPay!
         cell.fourthLabel.text = info.netProfit!
         return cell
     }

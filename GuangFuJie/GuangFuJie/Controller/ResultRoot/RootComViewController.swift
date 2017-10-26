@@ -38,17 +38,17 @@ class RootComViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     func inputValue(result: IncomecalInfo) {
         results.addObjects(from: [params.address!,
-                                  result.energy_year! + "kWh/㎡",
-                                  result.size! + "㎡",
-                                  result.build_size! + "kWh",
-                                  result.invest_amount! + "元",
-                                  result.annual_maintenance_cost! + "元",
-                                  result.electric_firstyear_total! + "度",
-                                  result.electric_25! + "度",
-                                  result.income_firstyear! + "元",
-                                  result.income_25! + "元",
-                                  result.income_rate! + "%",
-                                  result.income_date! + "年"])
+                                  result.energy_year! + " 度/平方米",
+                                  result.size! + " 平方米",
+                                  result.build_size! + " 千瓦",
+                                  result.invest_amount! + " 元",
+                                  result.annual_maintenance_cost! + " 元",
+                                  result.electric_firstyear_total! + " 度",
+                                  result.electric_25! + " 度",
+                                  result.income_firstyear! + " 元",
+                                  result.income_25! + " 元",
+                                  result.income_rate! + " %",
+                                  result.income_date! + " 年"])
         resultTableView.reloadData()
     }
     
