@@ -289,6 +289,10 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         roofTypeButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
         secondContentScroll.addSubview(roofTypeButton)
         
+        let darkIcons = UIImageView.init(frame: CGRect(x: roofTypeButton.frame.size.width - 20 * times, y: (roofTypeButton.frame.size.height - 8 * times) / 2, width: 13 * times, height: 8 * times))
+        darkIcons.image = UIImage(named: "ic_arrow_down_black")
+        roofTypeButton.addSubview(darkIcons)
+        
         let roofTypeRightLabel = UILabel.init(frame: CGRect(x: roofTypeButton.frame.maxX, y: roofSizeTextField.frame.maxY + 10 * times, width: secondContentScroll.frame.size.width - roofTypeButton.frame.maxX, height: 34 * times))
         roofTypeRightLabel.text = "朝南"
         roofTypeRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
@@ -318,25 +322,40 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         
         var currentY = tipsLabel.frame.maxY + 22 * times
         let ckqjLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY, width: labelWidth, height: labelHeight))
-        ckqjLabel.text = "参考倾角：0 度"
+        ckqjLabel.text = "参考倾角：-- 度"
         ckqjLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(ckqjLabel)
         currentY = ckqjLabel.frame.maxY
         
         let zjrlLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        zjrlLabel.text = "装机容量：0 kWh"
+        zjrlLabel.text = "装机容量：-- kWh"
         zjrlLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(zjrlLabel)
         currentY = zjrlLabel.frame.maxY
         
-        let mwtzjeLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
+        let mwtzjeLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: 95 * times, height: labelHeight))
         mwtzjeLabel.text = "每瓦投资金额："
         mwtzjeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(mwtzjeLabel)
-        currentY = mwtzjeLabel.frame.maxY
+        
+        let mwtzjeTextField = UITextField.init(frame: CGRect(x: mwtzjeLabel.frame.maxX, y: currentY + 5 * times, width: 65 * times, height: labelHeight))
+        mwtzjeTextField.layer.cornerRadius = 3
+        mwtzjeTextField.layer.borderColor = UIColor.lightGray.cgColor
+        mwtzjeTextField.layer.borderWidth = 0.5
+        mwtzjeTextField.layer.masksToBounds = true
+        mwtzjeTextField.textAlignment = NSTextAlignment.center
+        mwtzjeTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        secondContentScroll.addSubview(mwtzjeTextField)
+        
+        let mwtzjeRightLabel = UILabel.init(frame: CGRect(x: mwtzjeTextField.frame.maxX, y: currentY + 5 * times, width: 20 * times, height: labelHeight))
+        mwtzjeRightLabel.text = "元"
+        mwtzjeRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        secondContentScroll.addSubview(mwtzjeRightLabel)
+        mwtzjeRightLabel.textAlignment = NSTextAlignment.center
+        currentY = mwtzjeRightLabel.frame.maxY
         
         let tzjeLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        tzjeLabel.text = "投资金额：0 元"
+        tzjeLabel.text = "投资金额：-- 元"
         tzjeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(tzjeLabel)
         currentY = tzjeLabel.frame.maxY
@@ -351,31 +370,46 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         currentY = fdlLabel.frame.maxY
         
         let snfdlyxsLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        snfdlyxsLabel.text = "首年发电利用小时：0 小时"
+        snfdlyxsLabel.text = "首年发电利用小时：-- 小时"
         snfdlyxsLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(snfdlyxsLabel)
         currentY = snfdlyxsLabel.frame.maxY
         
-        let snmqwrfdlLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
+        let snmqwrfdlLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: 135 * times, height: labelHeight))
         snmqwrfdlLabel.text = "首年每千瓦日发电量："
         snmqwrfdlLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(snmqwrfdlLabel)
-        currentY = snmqwrfdlLabel.frame.maxY
+        
+        let snmqwrfdTextField = UITextField.init(frame: CGRect(x: snmqwrfdlLabel.frame.maxX, y: currentY + 5 * times, width: 65 * times, height: labelHeight))
+        snmqwrfdTextField.layer.cornerRadius = 3
+        snmqwrfdTextField.layer.borderColor = UIColor.lightGray.cgColor
+        snmqwrfdTextField.layer.borderWidth = 0.5
+        snmqwrfdTextField.layer.masksToBounds = true
+        snmqwrfdTextField.textAlignment = NSTextAlignment.center
+        snmqwrfdTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        secondContentScroll.addSubview(snmqwrfdTextField)
+        
+        let snmqwrfdRightLabel = UILabel.init(frame: CGRect(x: snmqwrfdTextField.frame.maxX, y: currentY + 5 * times, width: 20 * times, height: labelHeight))
+        snmqwrfdRightLabel.text = "度"
+        snmqwrfdRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        secondContentScroll.addSubview(snmqwrfdRightLabel)
+        snmqwrfdRightLabel.textAlignment = NSTextAlignment.center
+        currentY = snmqwrfdRightLabel.frame.maxY
         
         let snrfdLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        snrfdLabel.text = "首年日发电：0 度"
+        snrfdLabel.text = "首年日发电：-- 度"
         snrfdLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(snrfdLabel)
         currentY = snrfdLabel.frame.maxY
         
         let snzfdLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        snzfdLabel.text = "首年总发电：0 度"
+        snzfdLabel.text = "首年总发电：-- 度"
         snzfdLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(snzfdLabel)
         currentY = snzfdLabel.frame.maxY
         
         let zfd25Label = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        zfd25Label.text = "25年总发电：0 度"
+        zfd25Label.text = "25年总发电：-- 度"
         zfd25Label.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(zfd25Label)
         currentY = zfd25Label.frame.maxY
@@ -391,31 +425,31 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         currentY = jnjpLabel.frame.maxY
         
         let jybztLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        jybztLabel.text = "节约标准碳：0 千克"
+        jybztLabel.text = "节约标准碳：-- 千克"
         jybztLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(jybztLabel)
         currentY = jybztLabel.frame.maxY
         
         let co2Label = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        co2Label.text = "减少CO₂排放：0 千克"
+        co2Label.text = "减少CO₂排放：-- 千克"
         co2Label.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(co2Label)
         currentY = co2Label.frame.maxY
         
         let so2Label = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        so2Label.text = "减少SO₂排放：0 千克"
+        so2Label.text = "减少SO₂排放：-- 千克"
         so2Label.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(so2Label)
         currentY = so2Label.frame.maxY
         
         let no2Label = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        no2Label.text = "减少氮化物排放：0 千克"
+        no2Label.text = "减少氮化物排放：-- 千克"
         no2Label.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(no2Label)
         currentY = no2Label.frame.maxY
         
         let smokeLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        smokeLabel.text = "减少烟雾排放：0 千克"
+        smokeLabel.text = "减少烟雾排放：-- 千克"
         smokeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(smokeLabel)
         currentY = smokeLabel.frame.maxY
@@ -806,6 +840,10 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         backTypeButton.layer.masksToBounds = true
         backTypeButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
         fourthContentScroll.addSubview(backTypeButton)
+        
+        let darkIcons = UIImageView.init(frame: CGRect(x: backTypeButton.frame.size.width - 20 * times, y: (backTypeButton.frame.size.height - 8 * times) / 2, width: 13 * times, height: 8 * times))
+        darkIcons.image = UIImage(named: "ic_arrow_down_black")
+        backTypeButton.addSubview(darkIcons)
         currentY = backTypeButton.frame.maxY
         
         //贷款利率

@@ -162,7 +162,7 @@ class RootProjectCalViewController: BaseViewController, ProviceCityViewDelegate 
         self.bkgXJLView.isHidden = true
     }
     
-    @IBAction func nextStep() {
+     func nextStep() {
         if (bkgXZView.isHidden == false) {
             if (projectCalInfo == nil) {
                 self.showHint("请先计算项目选址数据")
