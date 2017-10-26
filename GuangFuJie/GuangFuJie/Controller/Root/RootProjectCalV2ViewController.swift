@@ -853,6 +853,8 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     }
     
     func calSYButtonClicked() {
+        if (k)
+        
         let tmpParams = CalResultParams()
         tmpParams.address = locationButton.titleLabel?.text!
         tmpParams.type = NSNumber.init(value: type)
@@ -1094,6 +1096,14 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         self.setCalBlueButtonCommonSet(btn: startCalButton)
         fourthContentScroll.addSubview(startCalButton)
     }
+    
+    func inputXMCSValues() {
+//        xjtzjeLabel.text = "投资金额 \(YCStringUtils.getNumber(energyCalInfo!.build_price)) 元"
+//        zjrlLabel.text = "装机容量 \(YCStringUtils.getNumber(energyCalInfo!.build_size)) 千瓦"
+//        dkLabel.text = "贷款 \(dkblTextField.text!)% \(dknxTextField.text!)"
+//        dkllTextField.text = "4.9"
+//        dkbTextField.text = "1.0"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -1142,7 +1152,18 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
             changeStepButtonWithIndex(index: 2)
             getSYParams()
         } else if (thirdContentView.isHidden == false) {
-            
+            if (projectCalInfo == nil) {
+                self.showHint("请先计算项目选址数据")
+                return
+            }
+            if (energyCalInfo == nil) {
+                self.showHint("请先计算产能计算数据")
+                return
+            }
+            hideAllView()
+            self.fourthContentScroll.isHidden = false
+            changeStepButtonWithIndex(index: 3)
+//            inputXMCSValues()
         } else if (fourthContentView.isHidden == false) {
             
         }
