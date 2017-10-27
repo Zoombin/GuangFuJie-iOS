@@ -23,6 +23,12 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
     
     func initView() {
         self.navigationItem.title = "发电收益"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "生成截图", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.screenShot))
+    }
+    
+    func screenShot() {
+        let image = YCPhoneUtils.screenShot(view: self.view)
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
     func addTopHeaderView() {

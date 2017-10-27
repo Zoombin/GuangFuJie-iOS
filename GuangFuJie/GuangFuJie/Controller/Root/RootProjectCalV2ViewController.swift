@@ -145,7 +145,8 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     }
     
     func screenShot() {
-        
+        let image = YCPhoneUtils.screenShot(view: self.view)
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
     func leftButtonClicked(btn: UIButton) {

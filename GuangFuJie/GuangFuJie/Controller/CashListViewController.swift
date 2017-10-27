@@ -41,6 +41,16 @@ class CashListViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func initView() {
         self.navigationItem.title = "现金流向"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "生成截图", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.screenShot))
+    }
+    
+    func screenShot() {
+        let image = YCPhoneUtils.screenShot(view: self.view)
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveSuccess), nil)
+    }
+    
+    func saveSuccess() {
+        self.showHint("截屏成功")
     }
     
     func loadData() {
