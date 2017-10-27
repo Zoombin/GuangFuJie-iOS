@@ -142,6 +142,21 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         initFirstLeftView()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "生成截图", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.screenShot))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLocation), name: NSNotification.Name(rawValue: "RefreshLocation"), object: nil)
+        self.getCurrentLocation()
+    }
+    
+    func refreshLocation() {
+        if (UserDefaultManager.getLocation() != nil) {
+            let location = UserDefaultManager.getLocation()
+            locationButton.setTitle("\(YCStringUtils.getString(location!.province_name))\(YCStringUtils.getString(location!.city_name))\(YCStringUtils.getString(location!.area_name))", for: UIControlState.normal)
+            
+            latLabel.text = String(format: "纬度：%.2f", YCStringUtils.getNumber(location!.lat).floatValue)
+            lngLabel.text = String(format: "经度：%.2f", YCStringUtils.getNumber(location!.lng).floatValue)
+            currentLat = location!.lat
+            currentLng = location!.lng
+        }
     }
     
     func screenShot() {
