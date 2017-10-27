@@ -170,27 +170,40 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentView.isHidden = true
         thirdContentView.isHidden = true
         fourthContentView.isHidden = true
-        for i in 0..<leftBtns.count {
-            let button = leftBtns[i] as! UIButton
-            button.setTitleColor(Colors.calUnSelectTextColor, for: UIControlState.normal)
-            button.backgroundColor = Colors.calUnSelectColor
-        }
         if (btn.tag == 0) {
-            firstContentView.isHidden = false
-            btn.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
-            btn.backgroundColor = Colors.calSelectedColor
+            hideAllView()
+            self.firstContentView.isHidden = false
+            changeStepButtonWithIndex(index: 0)
         } else if (btn.tag == 1) {
-            secondContentView.isHidden = false
-            btn.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
-            btn.backgroundColor = Colors.calSelectedColor
+            if (projectCalInfo == nil) {
+                self.showHint("请先计算项目选址数据")
+                return
+            }
+            hideAllView()
+            self.secondContentView.isHidden = false
+            changeStepButtonWithIndex(index: 1)
         } else if (btn.tag == 2) {
-            thirdContentView.isHidden = false
-            btn.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
-            btn.backgroundColor = Colors.calSelectedColor
-        } else if (btn.tag == 3) {
-            fourthContentView.isHidden = false
-            btn.setTitleColor(Colors.calSelectedTextColor, for: UIControlState.normal)
-            btn.backgroundColor = Colors.calSelectedColor
+            if (energyCalInfo == nil) {
+                self.showHint("请先计算产能计算数据")
+                return
+            }
+            hideAllView()
+            self.thirdContentView.isHidden = false
+            changeStepButtonWithIndex(index: 2)
+            getSYParams()
+        } else {
+            if (projectCalInfo == nil) {
+                self.showHint("请先计算项目选址数据")
+                return
+            }
+            if (energyCalInfo == nil) {
+                self.showHint("请先计算产能计算数据")
+                return
+            }
+            hideAllView()
+            self.fourthContentView.isHidden = false
+            changeStepButtonWithIndex(index: 3)
+            inputXMCSValues()
         }
     }
     
@@ -320,7 +333,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentScroll.addSubview(roofSizeLabel)
         
         roofSizeTextField = UITextField.init(frame: CGRect(x: roofSizeLabel.frame.maxX, y: 5 * times, width: 210 * times, height: 34 * times))
-        roofSizeTextField.keyboardType = UIKeyboardType.numberPad
+        roofSizeTextField.keyboardType = UIKeyboardType.decimalPad
         roofSizeTextField.layer.cornerRadius = 3
         roofSizeTextField.layer.borderColor = UIColor.lightGray.cgColor
         roofSizeTextField.layer.borderWidth = 0.5
@@ -403,7 +416,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentScroll.addSubview(mwtzjeLabel)
         
         mwtzjeTextField = UITextField.init(frame: CGRect(x: mwtzjeLabel.frame.maxX, y: currentY + 5 * times, width: 65 * times, height: labelHeight))
-        mwtzjeTextField.keyboardType = UIKeyboardType.numberPad
+        mwtzjeTextField.keyboardType = UIKeyboardType.decimalPad
         mwtzjeTextField.layer.cornerRadius = 3
         mwtzjeTextField.layer.borderColor = UIColor.lightGray.cgColor
         mwtzjeTextField.layer.borderWidth = 0.5
@@ -446,7 +459,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentScroll.addSubview(snmqwrfdlLabel)
         
         snmqwrfdTextField = UITextField.init(frame: CGRect(x: snmqwrfdlLabel.frame.maxX, y: currentY + 5 * times, width: 65 * times, height: labelHeight))
-        snmqwrfdTextField.keyboardType = UIKeyboardType.numberPad
+        snmqwrfdTextField.keyboardType = UIKeyboardType.decimalPad
         snmqwrfdTextField.layer.cornerRadius = 3
         snmqwrfdTextField.layer.borderColor = UIColor.lightGray.cgColor
         snmqwrfdTextField.layer.borderWidth = 0.5
@@ -635,7 +648,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(khsldzjLabel)
         
         khsldzjTextField = UITextField.init(frame: CGRect(x: khsldzjLabel.frame.maxX, y: currentY + 10 * times, width: 180 * times, height: 35 * times))
-        khsldzjTextField.keyboardType = UIKeyboardType.numberPad
+        khsldzjTextField.keyboardType = UIKeyboardType.decimalPad
         khsldzjTextField.layer.cornerRadius = 3
         khsldzjTextField.layer.borderColor = UIColor.lightGray.cgColor
         khsldzjTextField.layer.borderWidth = 0.5
@@ -658,7 +671,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ywcbLabel)
         
         ywcbTextField = UITextField.init(frame: CGRect(x: ywcbLabel.frame.maxX, y: currentY + 10 * times, width: 224 * times, height: 35 * times))
-        ywcbTextField.keyboardType = UIKeyboardType.numberPad
+        ywcbTextField.keyboardType = UIKeyboardType.decimalPad
         ywcbTextField.layer.cornerRadius = 3
         ywcbTextField.layer.borderColor = UIColor.lightGray.cgColor
         ywcbTextField.layer.borderWidth = 0.5
@@ -681,7 +694,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(zjbtLabel)
         
         zjbtTextField = UITextField.init(frame: CGRect(x: ywcbLabel.frame.maxX, y: currentY + 10 * times, width: 215 * times, height: 35 * times))
-        zjbtTextField.keyboardType = UIKeyboardType.numberPad
+        zjbtTextField.keyboardType = UIKeyboardType.decimalPad
         zjbtTextField.layer.cornerRadius = 3
         zjbtTextField.layer.borderColor = UIColor.lightGray.cgColor
         zjbtTextField.layer.borderWidth = 0.5
@@ -704,7 +717,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(dkblLabel)
         
         dkblPercentTextField = UITextField.init(frame: CGRect(x: dkblLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
-        dkblPercentTextField.keyboardType = UIKeyboardType.numberPad
+        dkblPercentTextField.keyboardType = UIKeyboardType.decimalPad
         dkblPercentTextField.layer.cornerRadius = 3
         dkblPercentTextField.layer.borderColor = UIColor.lightGray.cgColor
         dkblPercentTextField.layer.borderWidth = 0.5
@@ -720,7 +733,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(dkblMiddleLabel)
         
         dkblYearsTextField = UITextField.init(frame: CGRect(x: dkblMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
-        dkblYearsTextField.keyboardType = UIKeyboardType.numberPad
+        dkblYearsTextField.keyboardType = UIKeyboardType.decimalPad
         dkblYearsTextField.layer.cornerRadius = 3
         dkblYearsTextField.layer.borderColor = UIColor.lightGray.cgColor
         dkblYearsTextField.layer.borderWidth = 0.5
@@ -774,7 +787,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(zydblLabel)
         
         zydblTextField = UITextField.init(frame: CGRect(x: zydblLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
-        zydblTextField.keyboardType = UIKeyboardType.numberPad
+        zydblTextField.keyboardType = UIKeyboardType.decimalPad
         zydblTextField.layer.cornerRadius = 3
         zydblTextField.layer.borderColor = UIColor.lightGray.cgColor
         zydblTextField.layer.borderWidth = 0.5
@@ -797,7 +810,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(zyddjLabel)
         
         zyddjTextField = UITextField.init(frame: CGRect(x: zyddjLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
-        zyddjTextField.keyboardType = UIKeyboardType.numberPad
+        zyddjTextField.keyboardType = UIKeyboardType.decimalPad
         zyddjTextField.layer.cornerRadius = 3
         zyddjTextField.layer.borderColor = UIColor.lightGray.cgColor
         zyddjTextField.layer.borderWidth = 0.5
@@ -820,7 +833,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ydbtLabel)
         
         ydbtPriceTextField = UITextField.init(frame: CGRect(x: ydbtLabel.frame.maxX, y: currentY + 10 * times, width: 90 * times, height: 35 * times))
-        ydbtPriceTextField.keyboardType = UIKeyboardType.numberPad
+        ydbtPriceTextField.keyboardType = UIKeyboardType.decimalPad
         ydbtPriceTextField.layer.cornerRadius = 3
         ydbtPriceTextField.layer.borderColor = UIColor.lightGray.cgColor
         ydbtPriceTextField.layer.borderWidth = 0.5
@@ -836,7 +849,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ydbtMiddleLabel)
         
         ydbtYearsTextField = UITextField.init(frame: CGRect(x: ydbtMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 90 * times, height: 35 * times))
-        ydbtYearsTextField.keyboardType = UIKeyboardType.numberPad
+        ydbtYearsTextField.keyboardType = UIKeyboardType.decimalPad
         ydbtYearsTextField.layer.cornerRadius = 3
         ydbtYearsTextField.layer.borderColor = UIColor.lightGray.cgColor
         ydbtYearsTextField.layer.borderWidth = 0.5
@@ -859,7 +872,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ydswjLabel)
         
         ydswjTextField = UITextField.init(frame: CGRect(x: ydswjLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
-        ydswjTextField.keyboardType = UIKeyboardType.numberPad
+        ydswjTextField.keyboardType = UIKeyboardType.decimalPad
         ydswjTextField.layer.cornerRadius = 3
         ydswjTextField.layer.borderColor = UIColor.lightGray.cgColor
         ydswjTextField.layer.borderWidth = 0.5
@@ -1134,7 +1147,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         llRightView.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         
         dkllTextField = UITextField.init(frame: CGRect(x: dkllLabel.frame.maxX, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
-        dkllTextField.keyboardType = UIKeyboardType.numberPad
+        dkllTextField.keyboardType = UIKeyboardType.decimalPad
         dkllTextField.layer.cornerRadius = 3
         dkllTextField.layer.borderColor = UIColor.lightGray.cgColor
         dkllTextField.layer.borderWidth = 0.5
@@ -1158,7 +1171,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         timesRightView.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         
         dkllTimesTextField = UITextField.init(frame: CGRect(x: dkllMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
-        dkllTimesTextField.keyboardType = UIKeyboardType.numberPad
+        dkllTimesTextField.keyboardType = UIKeyboardType.decimalPad
         dkllTimesTextField.layer.cornerRadius = 3
         dkllTimesTextField.layer.borderColor = UIColor.lightGray.cgColor
         dkllTimesTextField.layer.borderWidth = 0.5
