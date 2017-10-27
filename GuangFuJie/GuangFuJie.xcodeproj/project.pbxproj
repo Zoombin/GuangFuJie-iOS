@@ -852,6 +852,8 @@
 		DEC226DE1F136364007D6DBE /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC224381F136362007D6DBE /* libMobClickLibrary.a */; };
 		DEC226FA1F13639A007D6DBE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; };
 		DEC226FB1F13639A007D6DBE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEC365A01FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */; };
+		DEC365A11FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */; };
 		DED05D371F624C4A006741F6 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */; };
 		DED05D381F624C4A006741F6 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */; };
 		DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */; };
@@ -1897,6 +1899,7 @@
 		DEC224391F136362007D6DBE /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		DEC2243A1F136362007D6DBE /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		DEC226EE1F136382007D6DBE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeV2ViewController.swift; sourceTree = "<group>"; };
 		DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
 		DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
 		DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
@@ -2905,6 +2908,7 @@
 				DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */,
 				DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */,
 				DEBA7B511F98351D0022E001 /* RootProjectCalV2ViewController.swift */,
+				DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -4982,6 +4986,7 @@
 				DEB9CA3E1F722FA6007BE2A3 /* NewsInfo.swift in Sources */,
 				DE9131D51F7939B7002C9D98 /* MQBotMenuCellModel.m in Sources */,
 				DE9131CB1F7939B7002C9D98 /* MQTextMessage.m in Sources */,
+				DEC365A01FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */,
 				DEFF5EE81F700E5100F58A04 /* BeeCloud.m in Sources */,
 				DE3954581F1481E500A44740 /* PhotoViewController.swift in Sources */,
 				DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */,
@@ -5116,6 +5121,7 @@
 				DE868ACF1F0DD1B800FF7FD3 /* MJProperty.m in Sources */,
 				DE9132361F7939B7002C9D98 /* MEIQIA_FBSquareFont.m in Sources */,
 				DEB9CA4B1F722FA6007BE2A3 /* QNResultInfo.swift in Sources */,
+				DEC365A11FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */,
 				DE8688961F0DD05900FF7FD3 /* QNUpToken.m in Sources */,
 				DEFF5F291F700E5100F58A04 /* BCSecurityPolicy.m in Sources */,
 				DEB9CA511F722FA6007BE2A3 /* RoofInfo.swift in Sources */,
