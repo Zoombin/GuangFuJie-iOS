@@ -46,11 +46,8 @@ class CashListViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func screenShot() {
         let image = YCPhoneUtils.screenShot(view: self.view)
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveSuccess), nil)
-    }
-    
-    func saveSuccess() {
-        self.showHint("截屏成功")
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        self.showHint("截图成功")
     }
     
     func loadData() {
