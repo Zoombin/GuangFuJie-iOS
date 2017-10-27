@@ -1800,7 +1800,7 @@ extension API {
     }
     
     //现金流
-    func projectcalCashflow(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, loan_rate: String, loan_type: String, wOfPrice: String, firstYearKwElectric: String, onlineType: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalCashflow(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, loan_rate: String, loan_type: String, wOfPrice: String, firstYearKwElectric: String, onlineType: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/cashflow"
         let params = [
             "type": type, //三种类型

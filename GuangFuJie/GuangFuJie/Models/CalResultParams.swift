@@ -25,6 +25,7 @@ class CalResultParams: NSObject {
     var sparetime_electric_price: String?             //余电上网价
     var wOfPrice: String?                            //每瓦投资金额,默认：8
     var firstYearKwElectric: String?                //首年千瓦日发电,默认：4
+    var onlineType: String? //上网方式
     
     var loan_rate: String?
     var loan_type: String?

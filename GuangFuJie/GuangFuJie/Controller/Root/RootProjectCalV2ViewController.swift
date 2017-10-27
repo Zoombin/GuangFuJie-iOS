@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegate {
+class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegate, UITextFieldDelegate {
     let times = PhoneUtils.kScreenWidth / 375
     var leftBtns = NSMutableArray()
     var leftButton1: UIButton!
@@ -61,7 +61,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     var no2Label: UILabel!
     var smokeLabel: UILabel!
     
-    var type = 0 //铺设方式
+    var type = 1 //铺设方式
     
     //收益分析
     var tzjeValueLabel: UILabel!
@@ -79,6 +79,16 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     var ydswjTextField: UITextField!
     
     //现金流向
+    var lxtzjeValueLabel: UILabel!
+    var lxzjrlValueLabel: UILabel!
+    var lxdkjeLabel: UILabel!
+    var lxdkjeYearsLabel: UILabel!
+    var backTypeButton: UIButton!
+    var dkllTextField: UITextField!
+    var dkllTimesTextField: UITextField!
+    var dkllRightLabel: UILabel!
+    
+    var loanType = 1 //还款方式
     
     let leftBtnTitles = ["日照\n计算", "产能\n计算", "收益\n分析", "现金\n流向"]
     override func viewDidLoad() {
@@ -293,6 +303,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentScroll.addSubview(roofSizeLabel)
         
         roofSizeTextField = UITextField.init(frame: CGRect(x: roofSizeLabel.frame.maxX, y: 5 * times, width: 210 * times, height: 34 * times))
+        roofSizeTextField.keyboardType = UIKeyboardType.numberPad
         roofSizeTextField.layer.cornerRadius = 3
         roofSizeTextField.layer.borderColor = UIColor.lightGray.cgColor
         roofSizeTextField.layer.borderWidth = 0.5
@@ -314,6 +325,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentScroll.addSubview(roofTypeLabel)
         
         roofTypeButton = UIButton.init(frame: CGRect(x: roofTypeLabel.frame.maxX, y: roofSizeTextField.frame.maxY + 10 * times, width: 210 * times, height: 34 * times))
+        roofTypeButton.setTitle("平顶", for: UIControlState.normal)
         roofTypeButton.layer.cornerRadius = 3
         roofTypeButton.layer.borderColor = UIColor.lightGray.cgColor
         roofTypeButton.layer.borderWidth = 0.5
@@ -374,6 +386,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentScroll.addSubview(mwtzjeLabel)
         
         mwtzjeTextField = UITextField.init(frame: CGRect(x: mwtzjeLabel.frame.maxX, y: currentY + 5 * times, width: 65 * times, height: labelHeight))
+        mwtzjeTextField.keyboardType = UIKeyboardType.numberPad
         mwtzjeTextField.layer.cornerRadius = 3
         mwtzjeTextField.layer.borderColor = UIColor.lightGray.cgColor
         mwtzjeTextField.layer.borderWidth = 0.5
@@ -416,6 +429,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentScroll.addSubview(snmqwrfdlLabel)
         
         snmqwrfdTextField = UITextField.init(frame: CGRect(x: snmqwrfdlLabel.frame.maxX, y: currentY + 5 * times, width: 65 * times, height: labelHeight))
+        snmqwrfdTextField.keyboardType = UIKeyboardType.numberPad
         snmqwrfdTextField.layer.cornerRadius = 3
         snmqwrfdTextField.layer.borderColor = UIColor.lightGray.cgColor
         snmqwrfdTextField.layer.borderWidth = 0.5
@@ -604,6 +618,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(khsldzjLabel)
         
         khsldzjTextField = UITextField.init(frame: CGRect(x: khsldzjLabel.frame.maxX, y: currentY + 10 * times, width: 180 * times, height: 35 * times))
+        khsldzjTextField.keyboardType = UIKeyboardType.numberPad
         khsldzjTextField.layer.cornerRadius = 3
         khsldzjTextField.layer.borderColor = UIColor.lightGray.cgColor
         khsldzjTextField.layer.borderWidth = 0.5
@@ -626,6 +641,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ywcbLabel)
         
         ywcbTextField = UITextField.init(frame: CGRect(x: ywcbLabel.frame.maxX, y: currentY + 10 * times, width: 224 * times, height: 35 * times))
+        ywcbTextField.keyboardType = UIKeyboardType.numberPad
         ywcbTextField.layer.cornerRadius = 3
         ywcbTextField.layer.borderColor = UIColor.lightGray.cgColor
         ywcbTextField.layer.borderWidth = 0.5
@@ -648,6 +664,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(zjbtLabel)
         
         zjbtTextField = UITextField.init(frame: CGRect(x: ywcbLabel.frame.maxX, y: currentY + 10 * times, width: 215 * times, height: 35 * times))
+        zjbtTextField.keyboardType = UIKeyboardType.numberPad
         zjbtTextField.layer.cornerRadius = 3
         zjbtTextField.layer.borderColor = UIColor.lightGray.cgColor
         zjbtTextField.layer.borderWidth = 0.5
@@ -670,6 +687,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(dkblLabel)
         
         dkblPercentTextField = UITextField.init(frame: CGRect(x: dkblLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
+        dkblPercentTextField.keyboardType = UIKeyboardType.numberPad
         dkblPercentTextField.layer.cornerRadius = 3
         dkblPercentTextField.layer.borderColor = UIColor.lightGray.cgColor
         dkblPercentTextField.layer.borderWidth = 0.5
@@ -685,6 +703,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(dkblMiddleLabel)
         
         dkblYearsTextField = UITextField.init(frame: CGRect(x: dkblMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
+        dkblYearsTextField.keyboardType = UIKeyboardType.numberPad
         dkblYearsTextField.layer.cornerRadius = 3
         dkblYearsTextField.layer.borderColor = UIColor.lightGray.cgColor
         dkblYearsTextField.layer.borderWidth = 0.5
@@ -738,6 +757,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(zydblLabel)
         
         zydblTextField = UITextField.init(frame: CGRect(x: zydblLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
+        zydblTextField.keyboardType = UIKeyboardType.numberPad
         zydblTextField.layer.cornerRadius = 3
         zydblTextField.layer.borderColor = UIColor.lightGray.cgColor
         zydblTextField.layer.borderWidth = 0.5
@@ -760,6 +780,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(zyddjLabel)
         
         zyddjTextField = UITextField.init(frame: CGRect(x: zyddjLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
+        zyddjTextField.keyboardType = UIKeyboardType.numberPad
         zyddjTextField.layer.cornerRadius = 3
         zyddjTextField.layer.borderColor = UIColor.lightGray.cgColor
         zyddjTextField.layer.borderWidth = 0.5
@@ -782,6 +803,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ydbtLabel)
         
         ydbtPriceTextField = UITextField.init(frame: CGRect(x: ydbtLabel.frame.maxX, y: currentY + 10 * times, width: 90 * times, height: 35 * times))
+        ydbtPriceTextField.keyboardType = UIKeyboardType.numberPad
         ydbtPriceTextField.layer.cornerRadius = 3
         ydbtPriceTextField.layer.borderColor = UIColor.lightGray.cgColor
         ydbtPriceTextField.layer.borderWidth = 0.5
@@ -797,6 +819,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ydbtMiddleLabel)
         
         ydbtYearsTextField = UITextField.init(frame: CGRect(x: ydbtMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 90 * times, height: 35 * times))
+        ydbtYearsTextField.keyboardType = UIKeyboardType.numberPad
         ydbtYearsTextField.layer.cornerRadius = 3
         ydbtYearsTextField.layer.borderColor = UIColor.lightGray.cgColor
         ydbtYearsTextField.layer.borderWidth = 0.5
@@ -819,6 +842,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ydswjLabel)
         
         ydswjTextField = UITextField.init(frame: CGRect(x: ydswjLabel.frame.maxX, y: currentY + 10 * times, width: 190 * times, height: 35 * times))
+        ydswjTextField.keyboardType = UIKeyboardType.numberPad
         ydswjTextField.layer.cornerRadius = 3
         ydswjTextField.layer.borderColor = UIColor.lightGray.cgColor
         ydswjTextField.layer.borderWidth = 0.5
@@ -853,7 +877,46 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     }
     
     func calSYButtonClicked() {
-        if (k)
+        if (YCStringUtils.isEmpty(khsldzjTextField.text!)) {
+            self.showHint("可回收流动资金不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(ywcbTextField.text!)) {
+            self.showHint("运维成本不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(zjbtTextField.text!)) {
+            self.showHint("装机补贴不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(dkblPercentTextField.text!)) {
+            self.showHint("贷款比例不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(dkblYearsTextField.text!)) {
+            self.showHint("贷款年数不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(zydblTextField.text!)) {
+            self.showHint("自用电比例不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(zyddjTextField.text!)) {
+            self.showHint("自用电电价不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(ydbtPriceTextField.text!)) {
+            self.showHint("用电补贴价格不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(ydbtYearsTextField.text!)) {
+            self.showHint("用电补贴年数不能为空")
+            return
+        }
+        if (YCStringUtils.isEmpty(ydswjTextField.text!)) {
+            self.showHint("余电上网价不能为空")
+            return
+        }
         
         let tmpParams = CalResultParams()
         tmpParams.address = locationButton.titleLabel?.text!
@@ -866,7 +929,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         tmpParams.annual_maintenance_cost = String(format: "%.2f%", ywcbValue)
         tmpParams.recoverable_liquid_capital = String(format: "%.2f", YCStringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
         tmpParams.installed_subsidy = zjbtTextField.text!
-        tmpParams.loan_ratio = dkblPercentTextField.text!
+        tmpParams.loan_ratio = String(format: "%.2f", NSString.init(string: dkblPercentTextField.text!).floatValue * NSString.init(string: tzjeValueLabel.text!).floatValue / 100)
         tmpParams.years_of_loans = dkblYearsTextField.text!
         tmpParams.occupied_electric_ratio = zydblTextField.text!
         tmpParams.electric_price_perional = zyddjTextField.text!
@@ -958,7 +1021,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         tzjeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         fourthContentScroll.addSubview(tzjeLabel)
         
-        let lxtzjeValueLabel = UILabel.init(frame: CGRect(x: tzjeLabel.frame.maxX, y: 15 * times, width: 224 * times, height: 35 * times))
+        lxtzjeValueLabel = UILabel.init(frame: CGRect(x: tzjeLabel.frame.maxX, y: 15 * times, width: 224 * times, height: 35 * times))
         lxtzjeValueLabel.text = "0.00"
         lxtzjeValueLabel.textAlignment = NSTextAlignment.center
         lxtzjeValueLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
@@ -977,7 +1040,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         zjrlLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         fourthContentScroll.addSubview(zjrlLabel)
         
-        let lxzjrlValueLabel = UILabel.init(frame: CGRect(x: tzjeLabel.frame.maxX, y: currentY + 10 * times, width: 224 * times, height: 35 * times))
+        lxzjrlValueLabel = UILabel.init(frame: CGRect(x: tzjeLabel.frame.maxX, y: currentY + 10 * times, width: 224 * times, height: 35 * times))
         lxzjrlValueLabel.text = "0.00"
         lxzjrlValueLabel.textAlignment = NSTextAlignment.center
         lxzjrlValueLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
@@ -996,23 +1059,23 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         dkjeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         fourthContentScroll.addSubview(dkjeLabel)
         
-        let dkblPercentTextField = UILabel.init(frame: CGRect(x: dkjeLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
-        dkblPercentTextField.textAlignment = NSTextAlignment.center
-        dkblPercentTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
-        fourthContentScroll.addSubview(dkblPercentTextField)
+        lxdkjeLabel = UILabel.init(frame: CGRect(x: dkjeLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
+        lxdkjeLabel.textAlignment = NSTextAlignment.center
+        lxdkjeLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        fourthContentScroll.addSubview(lxdkjeLabel)
         
-        let dkjeMiddleLabel = UILabel.init(frame: CGRect(x: dkblPercentTextField.frame.maxX, y: currentY + 10 * times, width: 30 * times, height: 35 * times))
+        let dkjeMiddleLabel = UILabel.init(frame: CGRect(x: lxdkjeLabel.frame.maxX, y: currentY + 10 * times, width: 30 * times, height: 35 * times))
         dkjeMiddleLabel.text = "元"
         dkjeMiddleLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         dkjeMiddleLabel.textAlignment = NSTextAlignment.center
         fourthContentScroll.addSubview(dkjeMiddleLabel)
         
-        let dkjeYearsTextField = UITextField.init(frame: CGRect(x: dkjeMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
-        dkjeYearsTextField.textAlignment = NSTextAlignment.center
-        dkjeYearsTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
-        fourthContentScroll.addSubview(dkjeYearsTextField)
+        lxdkjeYearsLabel = UILabel.init(frame: CGRect(x: dkjeMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 95 * times, height: 35 * times))
+        lxdkjeYearsLabel.textAlignment = NSTextAlignment.center
+        lxdkjeYearsLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        fourthContentScroll.addSubview(lxdkjeYearsLabel)
         
-        let dkjeRightLabel = UILabel.init(frame: CGRect(x: dkjeYearsTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - dkjeYearsTextField.frame.maxX, height: 35 * times))
+        let dkjeRightLabel = UILabel.init(frame: CGRect(x: lxdkjeYearsLabel.frame.maxX, y: currentY + 10 * times, width: fourthContentScroll.frame.size.width - lxdkjeYearsLabel.frame.maxX, height: 35 * times))
         dkjeRightLabel.text = "年"
         dkjeRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         dkjeRightLabel.textAlignment = NSTextAlignment.center
@@ -1026,12 +1089,15 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         backTypeLabel.textAlignment = NSTextAlignment.center
         fourthContentScroll.addSubview(backTypeLabel)
         
-        let backTypeButton = UIButton.init(frame: CGRect(x: backTypeLabel.frame.maxX , y: currentY + 10 * times, width: 240 * times, height: 35 * times))
+        backTypeButton = UIButton.init(frame: CGRect(x: backTypeLabel.frame.maxX , y: currentY + 10 * times, width: 240 * times, height: 35 * times))
+        backTypeButton.setTitle("等额本息", for: UIControlState.normal)
         backTypeButton.layer.cornerRadius = 3
         backTypeButton.layer.borderColor = UIColor.lightGray.cgColor
         backTypeButton.layer.borderWidth = 0.5
         backTypeButton.layer.masksToBounds = true
+        backTypeButton.setTitleColor(UIColor.black, for: UIControlState.normal)
         backTypeButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        backTypeButton.addTarget(self, action: #selector(self.showLoanTypeAction), for: UIControlEvents.touchUpInside)
         fourthContentScroll.addSubview(backTypeButton)
         
         let darkIcons = UIImageView.init(frame: CGRect(x: backTypeButton.frame.size.width - 20 * times, y: (backTypeButton.frame.size.height - 8 * times) / 2, width: 13 * times, height: 8 * times))
@@ -1050,7 +1116,8 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         llRightView.textAlignment = NSTextAlignment.center
         llRightView.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         
-        let dkllTextField = UITextField.init(frame: CGRect(x: dkllLabel.frame.maxX, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        dkllTextField = UITextField.init(frame: CGRect(x: dkllLabel.frame.maxX, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        dkllTextField.keyboardType = UIKeyboardType.numberPad
         dkllTextField.layer.cornerRadius = 3
         dkllTextField.layer.borderColor = UIColor.lightGray.cgColor
         dkllTextField.layer.borderWidth = 0.5
@@ -1059,6 +1126,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         dkllTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
         dkllTextField.rightViewMode = UITextFieldViewMode.always
         dkllTextField.rightView = llRightView
+        dkllTextField.addTarget(self, action: #selector(self.valueChanged(textField:)), for: UIControlEvents.allEditingEvents)
         fourthContentScroll.addSubview(dkllTextField)
         
         let dkllMiddleLabel = UILabel.init(frame: CGRect(x: dkllTextField.frame.maxX, y: currentY + 10 * times, width: 30 * times, height: 35 * times))
@@ -1072,7 +1140,8 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         timesRightView.textAlignment = NSTextAlignment.center
         timesRightView.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         
-        let dkllTimesTextField = UITextField.init(frame: CGRect(x: dkllMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        dkllTimesTextField = UITextField.init(frame: CGRect(x: dkllMiddleLabel.frame.maxX, y: currentY + 10 * times, width: 75 * times, height: 35 * times))
+        dkllTimesTextField.keyboardType = UIKeyboardType.numberPad
         dkllTimesTextField.layer.cornerRadius = 3
         dkllTimesTextField.layer.borderColor = UIColor.lightGray.cgColor
         dkllTimesTextField.layer.borderWidth = 0.5
@@ -1081,9 +1150,10 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         dkllTimesTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
         dkllTimesTextField.rightViewMode = UITextFieldViewMode.always
         dkllTimesTextField.rightView = timesRightView
+        dkllTimesTextField.addTarget(self, action: #selector(self.valueChanged(textField:)), for: UIControlEvents.allEditingEvents)
         fourthContentScroll.addSubview(dkllTimesTextField)
         
-        let dkllRightLabel = UILabel.init(frame: CGRect(x: dkllTimesTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - dkllTimesTextField.frame.maxX, height: 35 * times))
+        dkllRightLabel = UILabel.init(frame: CGRect(x: dkllTimesTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - dkllTimesTextField.frame.maxX, height: 35 * times))
         dkllRightLabel.text = "= 4.9%"
         dkllRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         dkllRightLabel.textAlignment = NSTextAlignment.center
@@ -1094,15 +1164,83 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         startCalButton.frame = CGRect(x: (fourthContentScroll.frame.size.width - 268 * times) / 2, y: currentY + 30 * times, width: 268 * times, height: 38 * times)
         startCalButton.setTitle("开始计算", for: UIControlState.normal)
         self.setCalBlueButtonCommonSet(btn: startCalButton)
+        startCalButton.addTarget(self, action: #selector(self.calCashButtonClicked), for: UIControlEvents.touchUpInside)
         fourthContentScroll.addSubview(startCalButton)
     }
     
+    func showLoanTypeAction() {
+        let vc = UIAlertController.init(title: "选择还款方式", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let type1Action = UIAlertAction.init(title: "等额本息", style: UIAlertActionStyle.default) { (action) in
+            self.backTypeButton.setTitle("等额本息", for: UIControlState.normal)
+            self.loanType = 1
+        }
+        let type2Action = UIAlertAction.init(title: "等额本金", style: UIAlertActionStyle.default) { (action) in
+            self.backTypeButton.setTitle("等额本金", for: UIControlState.normal)
+            self.loanType = 2
+        }
+        let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        vc.addAction(type1Action)
+        vc.addAction(type2Action)
+        vc.addAction(cancelAction)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func valueChanged(textField: UITextField) {
+        let rate = NSString.init(string: dkllTextField.text!).floatValue * NSString.init(string: dkllTimesTextField.text!).floatValue
+        dkllRightLabel.text = String(format: "= %.2f%%", rate)
+    }
+    
     func inputXMCSValues() {
-//        xjtzjeLabel.text = "投资金额 \(YCStringUtils.getNumber(energyCalInfo!.build_price)) 元"
-//        zjrlLabel.text = "装机容量 \(YCStringUtils.getNumber(energyCalInfo!.build_size)) 千瓦"
-//        dkLabel.text = "贷款 \(dkblTextField.text!)% \(dknxTextField.text!)"
-//        dkllTextField.text = "4.9"
-//        dkbTextField.text = "1.0"
+        let dkbl = NSString.init(string: dkblPercentTextField.text!).floatValue
+        let tzje = NSString.init(string: "\(YCStringUtils.getNumber(energyCalInfo!.build_price))").floatValue
+        
+        lxtzjeValueLabel.text = "\(YCStringUtils.getNumber(energyCalInfo!.build_price))"
+        lxzjrlValueLabel.text = "\(YCStringUtils.getNumber(energyCalInfo!.build_size))"
+        lxdkjeLabel.text = String(format: "%.2f", dkbl * tzje / 100)
+        lxdkjeYearsLabel.text = dkblYearsTextField.text!
+        dkllTextField.text = "4.9"
+        dkllTimesTextField.text = "1.0"
+    }
+    
+    func calCashButtonClicked() {
+        if (dkllTextField.text!.isEmpty) {
+            self.showHint("贷款利率不能为空!")
+            return
+        }
+        if (dkllTimesTextField.text!.isEmpty) {
+            self.showHint("利率倍数不能为空!")
+            return
+        }
+        let tmpParams = CalResultParams()
+        tmpParams.address = locationButton.titleLabel?.text!
+        tmpParams.type = NSNumber.init(value: type)
+        tmpParams.size = roofSizeTextField.text!
+        tmpParams.invest_amount = energyCalInfo!.build_price
+        let ywcbPercent = NSString.init(string: ywcbTextField.text!)
+        let ywcbValue = ywcbPercent.floatValue * energyCalInfo!.build_price!.floatValue
+        
+        tmpParams.annual_maintenance_cost = String(format: "%.2f%", ywcbValue)
+        tmpParams.recoverable_liquid_capital = String(format: "%.2f", YCStringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
+        tmpParams.installed_subsidy = zjbtTextField.text!
+        tmpParams.loan_ratio = String(format: "%.2f", NSString.init(string: dkblPercentTextField.text!).floatValue * NSString.init(string: tzjeValueLabel.text!).floatValue)
+        tmpParams.years_of_loans = lxdkjeYearsLabel.text!
+        tmpParams.occupied_electric_ratio = zydblTextField.text!
+        tmpParams.electric_price_perional = zyddjTextField.text!
+        tmpParams.electricity_subsidy = ydbtPriceTextField.text!
+        tmpParams.electricity_subsidy_year = ydbtYearsTextField.text!
+        tmpParams.sparetime_electric_price = ydswjTextField.text!
+        tmpParams.wOfPrice = mwtzjeTextField.text
+        tmpParams.firstYearKwElectric = snmqwrfdTextField.text!
+        tmpParams.onlineType = leftCheckBox.isSelected == true ? "1" : "2"
+        
+        let rate = NSString.init(string: dkllTextField.text!).floatValue * NSString.init(string: dkllTimesTextField.text!).floatValue
+        tmpParams.loan_rate = "\(rate)"
+        tmpParams.loan_type = "\(loanType)"
+        
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "CashListViewController") as! CashListViewController
+        vc.params = tmpParams
+        self.pushViewController(vc)
     }
 
     override func didReceiveMemoryWarning() {
@@ -1161,43 +1299,10 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
                 return
             }
             hideAllView()
-            self.fourthContentScroll.isHidden = false
+            self.fourthContentView.isHidden = false
             changeStepButtonWithIndex(index: 3)
-//            inputXMCSValues()
-        } else if (fourthContentView.isHidden == false) {
-            
+            inputXMCSValues()
         }
-//        if (bkgXZView.isHidden == false) {
-//            if (projectCalInfo == nil) {
-//                self.showHint("请先计算项目选址数据")
-//                return
-//            }
-//            hideAllView()
-//            self.bkgCNView.isHidden = false
-//            changeStepButtonWithIndex(index: 1)
-//        } else if (bkgCNView.isHidden == false) {
-//            if (energyCalInfo == nil) {
-//                self.showHint("请先计算产能计算数据")
-//                return
-//            }
-//            hideAllView()
-//            self.bkgSYView.isHidden = false
-//            changeStepButtonWithIndex(index: 2)
-//            getSYParams()
-//        } else if (bkgSYView.isHidden == false) {
-//            if (projectCalInfo == nil) {
-//                self.showHint("请先计算项目选址数据")
-//                return
-//            }
-//            if (energyCalInfo == nil) {
-//                self.showHint("请先计算产能计算数据")
-//                return
-//            }
-//            hideAllView()
-//            self.bkgXJLView.isHidden = false
-//            changeStepButtonWithIndex(index: 3)
-//            inputXMCSValues()
-//        }
     }
     
     func resetStepButton() {
