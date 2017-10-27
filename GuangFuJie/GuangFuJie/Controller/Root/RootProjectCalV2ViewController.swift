@@ -130,8 +130,8 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     func initView() {
         self.title = "项目测算"
         self.automaticallyAdjustsScrollViewInsets = true
-        contentScrollView = UIScrollView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight()))
-        contentScrollView.backgroundColor = UIColor.yellow
+        contentScrollView = UIScrollView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight() - 50))
+        contentScrollView.backgroundColor = UIColor.white
         self.view.addSubview(contentScrollView)
         
         initLeftButtons()
@@ -179,10 +179,10 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     
     //MARK: 项目测算
     func initFirstLeftView() {
-        firstContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight()))
+        firstContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: 0, width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: contentScrollView.frame.size.height))
         firstContentView.backgroundColor = UIColor.white
         self.addLeftShadow(view: firstContentView)
-        self.view.addSubview(firstContentView)
+        contentScrollView.addSubview(firstContentView)
         
         firstContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: firstContentView.frame.size.width, height: firstContentView.frame.size.height))
         firstContentView.addSubview(firstContentScroll)
@@ -287,11 +287,11 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     
     //MARK: 产能计算
     func initSecondLeftView() {
-        secondContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight()))
+        secondContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: 0, width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: contentScrollView.frame.size.height))
         secondContentView.backgroundColor = UIColor.white
         secondContentView.isHidden = true
         self.addLeftShadow(view: secondContentView)
-        self.view.addSubview(secondContentView)
+        contentScrollView.addSubview(secondContentView)
         
         secondContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: secondContentView.frame.size.width, height: secondContentView.frame.size.height - 50 * times))
         secondContentView.addSubview(secondContentScroll)
@@ -583,11 +583,11 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     
     //#MARK: 收益分析
     func initThirdLeftView() {
-        thirdContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight()))
+        thirdContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: 0, width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: contentScrollView.frame.size.height))
         thirdContentView.backgroundColor = UIColor.white
         thirdContentView.isHidden = true
         self.addLeftShadow(view: thirdContentView)
-        self.view.addSubview(thirdContentView)
+        contentScrollView.addSubview(thirdContentView)
         
         thirdContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: thirdContentView.frame.size.width, height: thirdContentView.frame.size.height - 50 * times))
         thirdContentView.addSubview(thirdContentScroll)
@@ -1006,11 +1006,11 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     
     //#MARK: 现金流向
     func initFourthLeftView() {
-        fourthContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight()))
+        fourthContentView = UIView.init(frame: CGRect(x: leftButton1.frame.size.width, y: 0, width: PhoneUtils.kScreenWidth - leftButton1.frame.size.width, height: contentScrollView.frame.size.height))
         fourthContentView.backgroundColor = UIColor.white
         fourthContentView.isHidden = true
         self.addLeftShadow(view: fourthContentView)
-        self.view.addSubview(fourthContentView)
+        contentScrollView.addSubview(fourthContentView)
         
         fourthContentScroll = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: fourthContentView.frame.size.width, height: fourthContentView.frame.size.height))
         fourthContentView.addSubview(fourthContentScroll)
