@@ -166,10 +166,6 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     }
     
     func leftButtonClicked(btn: UIButton) {
-        firstContentView.isHidden = true
-        secondContentView.isHidden = true
-        thirdContentView.isHidden = true
-        fourthContentView.isHidden = true
         if (btn.tag == 0) {
             hideAllView()
             self.firstContentView.isHidden = false
