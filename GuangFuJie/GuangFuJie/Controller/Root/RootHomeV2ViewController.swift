@@ -73,7 +73,6 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
         searchTextField.layer.masksToBounds = true
         searchTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 14))
         searchTextField.placeholder = "光伏信息"
-        searchTextField.textAlignment = NSTextAlignment.center
         searchTextField.delegate = self
         searchTextField.leftViewMode = UITextFieldViewMode.always
         searchTextField.tintColor = UIColor.clear
@@ -152,6 +151,9 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
         let moreButton = UIButton.init(type: UIButtonType.custom)
         moreButton.setTitle("更多", for: UIControlState.normal)
         moreButton.frame = CGRect(x: YCPhoneUtils.screenWidth - 45 * times, y: exampleTitle.frame.minY, width: 45 * times, height: 35 * times)
+        moreButton.setTitleColor(Colors.appBlue, for: UIControlState.normal)
+        moreButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 14))
+        moreButton.addTarget(self, action: #selector(self.moreExampleButtonClicked), for: UIControlEvents.touchUpInside)
         contentScroll.addSubview(moreButton)
         currentY = exampleTitle.frame.maxY
         
@@ -354,6 +356,16 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
             //客服
             self.chat()
         }
+    }
+    
+    //#MARK: 更多案例
+    func moreExampleButtonClicked() {
+        //更多案例
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+        vc.type = 2
+        vc.title = "成功案例"
+        self.pushViewController(vc)
     }
     
     //textField delegate method

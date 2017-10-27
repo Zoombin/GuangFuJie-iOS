@@ -258,6 +258,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellResueIdentifier", for: indexPath)
         cell.textLabel?.text = titles[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
         cell.imageView?.image = UIImage(named: imgs[indexPath.row])
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator;
         return cell

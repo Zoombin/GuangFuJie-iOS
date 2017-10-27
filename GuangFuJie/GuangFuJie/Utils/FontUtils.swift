@@ -12,7 +12,7 @@ class FontUtils: NSObject {
     //字体大小的偏移量
     static func getFontSize(size: CGFloat) -> CGFloat {
         if (PhoneUtils.kScreenWidth == 320) {
-            return size - 1
+            return size - 2
         } else if (PhoneUtils.kScreenWidth == 375) {
             return size
         } else {
