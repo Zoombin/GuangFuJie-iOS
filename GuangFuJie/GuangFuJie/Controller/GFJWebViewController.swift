@@ -52,7 +52,7 @@ class GFJWebViewController: BaseViewController {
     
     
     func initWebView(_ url:String) {
-        webView = UIWebView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
+        webView = UIWebView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight()))
         webView.backgroundColor = UIColor.clear
         webView.loadRequest(URLRequest.init(url: URL.init(string: url)! as URL) as URLRequest)
         webView.scalesPageToFit = true
