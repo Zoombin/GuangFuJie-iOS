@@ -18,29 +18,33 @@ class ProductProvideViewController: BaseViewController, UITableViewDelegate, UIT
         loadBrandList()
     }
     
+    let cellIdentifier = "NewsCell"
     func initView() {
         self.title = "产品供求"
         productTableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()))
+        productTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         productTableView.delegate = self
         productTableView.dataSource = self
         self.view.addSubview(productTableView)
+        productTableView.register(BrandCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
     func loadBrandList() {
         self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.brandList(start: 0, pagesize: 10, success: { (count, array) in
+            self.hideHud()
             self.newsArray.removeAllObjects()
             if (array.count > 0) {
-                self.newsArray.addObjects(from: array)
+                self.newsArray.addObjects(from: array as! [Any])
             }
             self.productTableView.reloadData()
         }) { (msg) in
-            
+            self.hideHud()
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return BrandCell.cellHeight()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,13 +53,19 @@ class ProductProvideViewController: BaseViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        let data = self.newsArray.object(at: indexPath.row) as! BrandInfo
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+        vc.title = YCStringUtils.getString(data.name)
+        vc.type = data.type_id
+        self.pushViewController(vc)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "NewsCell"
-        let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! NewsCell
-        cell.setData(model: data)
+        let data = self.newsArray.object(at: indexPath.row) as! BrandInfo
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! BrandCell
+        cell.initCell()
+        cell.setData(brandInfo: data)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }

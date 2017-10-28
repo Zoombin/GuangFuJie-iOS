@@ -10,7 +10,7 @@ import UIKit
 
 class BrandInfo: NSObject {
     var id: NSNumber?
-    var project: String
+    var project: String?
     var name: String?
     var desc: String?
     var image: String?
