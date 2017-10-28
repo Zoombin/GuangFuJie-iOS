@@ -19,18 +19,18 @@ class Constants: NSObject {
     static let bannerImageHeight: CGFloat = 520
     
     //QA
-    static let httpHost = "https://guangfujie.zoombin.com:3002/api/"
-    static let payKey = "4d6af0de-2542-433e-a361-73ef59805d35"
-    static let paySecret = "3f339c0c-4c11-464b-b8bd-8fad7ab3717c"
-    static let isSandBox = true
-    static let isDebug = true
+//    static let httpHost = "https://guangfujie.zoombin.com:3002/api/"
+//    static let payKey = "4d6af0de-2542-433e-a361-73ef59805d35"
+//    static let paySecret = "3f339c0c-4c11-464b-b8bd-8fad7ab3717c"
+//    static let isSandBox = true
+//    static let isDebug = true
     
     //线上
-//    static let httpHost = "https://guangfujie.zoombin.com:8002/api/"
-//    static let payKey = "4d6af0de-2542-433e-a361-73ef59805d35"
-//    static let paySecret = "30e71391-4bca-402b-869e-bc7e118bce6f"
-//    static let isSandBox = false
-//    static let isDebug = false
+    static let httpHost = "https://guangfujie.zoombin.com:8002/api/"
+    static let payKey = "4d6af0de-2542-433e-a361-73ef59805d35"
+    static let paySecret = "30e71391-4bca-402b-869e-bc7e118bce6f"
+    static let isSandBox = false
+    static let isDebug = false
     
     //本地
 //        static let httpHost = "http://localhost:3002/api/"

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UITextFieldDelegate, ProviceCityViewDelegate {
+class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UITextFieldDelegate, ProviceCityViewDelegate, UITableViewDelegate, UITableViewDataSource {
     var contentScroll: UIScrollView!
     
     var pageControl: UIPageControl!
@@ -20,6 +20,26 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     var bannerData = NSMutableArray()
     var exampleData = NSMutableArray()
     
+    var installerArray = NSMutableArray() //业主
+    var yezhuArray = NSMutableArray() //安装商
+    
+    var bottomTableView: UITableView!
+    var currentIndex = 0
+    
+    var headerButton1: UIButton!
+    var headerButton2: UIButton!
+    var headerButton3: UIButton!
+    var headerButton4: UIButton!
+    var headerLine: UIView!
+    
+    let times = YCPhoneUtils.screenWidth / 375
+    
+    
+    let installerCellReuseIdentifier = "installerCellReuseIdentifier" //业主 //TODO: 这里命名是反的
+    let yezhuCellReuseIdentifier = "yezhuCellReuseIdentifier" //安装商
+    let touziCellReuseIdentifier = "touziCellReuseIdentifier" //投资
+    let gongqiuCellReuseIdentifier = "gongqiuCellReuseIdentifier" //供求
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "首页"
@@ -29,10 +49,17 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
         self.view.addSubview(contentScroll)
         
         initView()
+        bottomTableView.register(HInstallerCell.self, forCellReuseIdentifier: installerCellReuseIdentifier)
+        bottomTableView.register(HYeZhuCell.self, forCellReuseIdentifier: yezhuCellReuseIdentifier)
+        bottomTableView.register(HInvestAndOfferCell.self, forCellReuseIdentifier: touziCellReuseIdentifier)
+        bottomTableView.register(HInvestAndOfferCell.self, forCellReuseIdentifier: gongqiuCellReuseIdentifier)
+        
         loadBannerData()
         loadExampleData()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLocation), name: NSNotification.Name(rawValue: "RefreshLocation"), object: nil)
         self.getCurrentLocation()
+        
+        loadInstallerList()
     }
     
     func refreshLocation() {
@@ -56,8 +83,6 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     
     func initView() {
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        
-        let times = YCPhoneUtils.screenWidth / 375
         
         locationButton = UIButton.init(type: UIButtonType.custom)
         locationButton.frame = CGRect(x: 0, y: 0, width: 120 * times, height: 50 * times)
@@ -163,6 +188,40 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
         exampleView.backgroundColor = UIColor.white
         contentScroll.addSubview(exampleView)
         currentY = exampleView.frame.maxY
+        
+        let line4 = UILabel.init(frame: CGRect(x: 0, y: currentY, width: YCPhoneUtils.screenWidth, height: 5 * times))
+        line4.backgroundColor = self.view.backgroundColor
+        contentScroll.addSubview(line4)
+        
+        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: YCPhoneUtils.screenWidth, height: 50 * times))
+        headerView.backgroundColor = UIColor.white
+        
+        let headerTitles = ["业主", "安装商", "投资", "供求"]
+        let headerBtnWidth = headerView.frame.size.width / 4
+        let headerBtnHeight = headerView.frame.size.height
+        
+        for i in 0..<headerTitles.count {
+            let headerButton = UIButton.init(type: UIButtonType.custom)
+            headerButton.frame = CGRect(x: CGFloat(i) * headerBtnWidth, y: 0, width: headerBtnWidth, height: headerBtnHeight)
+            headerButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+            headerButton.setTitle(headerTitles[i], for: UIControlState.normal)
+            headerButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+            headerButton.tag = i
+            headerButton.addTarget(self, action: #selector(self.headerButtonClicked(button:)), for: UIControlEvents.touchUpInside)
+            headerView.addSubview(headerButton)
+        }
+        headerLine = UIView.init(frame: CGRect(x: 0, y: headerBtnHeight - 2, width: headerBtnWidth, height: 2))
+        headerLine.backgroundColor = Colors.appBlue
+        headerView.addSubview(headerLine)
+        
+        bottomTableView = UITableView.init(frame: CGRect(x: 0, y: currentY + 5 * times, width: YCPhoneUtils.screenWidth, height: HInstallerCell.cellHeight() + headerView.frame.size.height))
+        bottomTableView.delegate = self
+        bottomTableView.dataSource = self
+        bottomTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        contentScroll.addSubview(bottomTableView)
+        bottomTableView.backgroundColor = UIColor.white
+        bottomTableView.tableHeaderView = headerView
+        currentY = bottomTableView.frame.maxY
         
         contentScroll.contentSize = CGSize(width: 0, height: currentY + 20 * times)
     }
@@ -374,5 +433,126 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
         self.tabBarController?.selectedIndex = 3
+    }
+    
+    //#MARK: 底部tableview
+    
+    //业主列表
+    func loadInstallerList() {
+        API.sharedInstance.getRoofList(0, pagesize: 1, status: 1, province_id: nil, city_id: nil, min_area_size: nil, max_area_size: nil, type: nil, success: { (userInfos) in
+            self.hideHud()
+            self.installerArray.removeAllObjects()
+            self.installerArray.addObjects(from: userInfos as [AnyObject])
+            self.bottomTableView.reloadData()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
+    //安装商列表
+    func loadYezhuList() {
+        API.sharedInstance.installerSuggest(success: { (array) in
+            self.hideHud()
+            self.yezhuArray.removeAllObjects()
+            self.yezhuArray.addObjects(from: array as [AnyObject])
+            self.bottomTableView.reloadData()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
+    }
+    
+    //投资列表
+    func loadTouziList() {
+        self.bottomTableView.reloadData()
+    }
+    
+    //供求立碑
+    func loadGongqiuList() {
+         self.bottomTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (currentIndex == 0) {
+            return installerArray.count
+        } else if (currentIndex == 1) {
+            return yezhuArray.count
+        } else if (currentIndex == 2) {
+            return 1
+        } else {
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (currentIndex == 0) {
+            return HInstallerCell.cellHeight()
+        } else if (currentIndex == 1) {
+            return HYeZhuCell.cellHeight()
+        } else {
+            return HInvestAndOfferCell.cellHeight()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (currentIndex == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: installerCellReuseIdentifier, for: indexPath as IndexPath) as! HInstallerCell
+            cell.initCell()
+            let userInfo = installerArray[indexPath.row] as! RoofInfo
+            cell.setData(userInfo: userInfo)
+            return cell
+        } else if (currentIndex == 1){
+            let cell = tableView.dequeueReusableCell(withIdentifier: yezhuCellReuseIdentifier, for: indexPath as IndexPath) as! HYeZhuCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none;
+            cell.initCell()
+            let userInfo = yezhuArray[indexPath.row] as! InstallInfo
+            cell.setData(userInfo: userInfo)
+            return cell
+        } else if (currentIndex == 2){
+            let cell = tableView.dequeueReusableCell(withIdentifier: touziCellReuseIdentifier, for: indexPath as IndexPath) as! HInvestAndOfferCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none;
+            cell.initCell()
+            cell.bkgImageView.image = UIImage(named: "ic_touzi_info")
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: gongqiuCellReuseIdentifier, for: indexPath as IndexPath) as! HInvestAndOfferCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none;
+            cell.initCell()
+            cell.bkgImageView.image = UIImage(named: "ic_image_gongqiu")
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        if (currentIndex == 2) {
+            let vc = InvestAddViewController()
+            self.pushViewController(vc)
+        } else if (currentIndex == 3){
+            //跳转到新的供求页
+        }
+    }
+    
+    func headerButtonClicked(button: UIButton) {
+        let width = YCPhoneUtils.screenWidth / 4
+        let height: CGFloat = 2
+        if (button.tag == 0) {
+            currentIndex = 0
+            headerLine.frame = CGRect(x: 0, y: headerLine.frame.origin.y, width: width, height: height)
+            loadInstallerList()
+        } else if (button.tag == 1) {
+            currentIndex = 1
+            loadYezhuList()
+            headerLine.frame = CGRect(x: width, y: headerLine.frame.origin.y, width: width, height: height)
+        } else if (button.tag == 2) {
+            currentIndex = 2
+            loadTouziList()
+            headerLine.frame = CGRect(x: width * 2, y: headerLine.frame.origin.y, width: width, height: height)
+        } else {
+            currentIndex = 3
+            loadGongqiuList()
+            headerLine.frame = CGRect(x: width * 3, y: headerLine.frame.origin.y, width: width, height: height)
+        }
     }
 }

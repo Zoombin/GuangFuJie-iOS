@@ -51,4 +51,13 @@ class InstallInfo: NSObject {
 //    var fullname: String?
     var phone: String?
     
+    var address_detail: String?
+    var area_id: NSNumber?
+    var city_id: NSNumber?
+    var city_name: String?
+    var province_name: String?
+    var is_auth: NSNumber?
+    
+    var company_desc: String?
+    
 }

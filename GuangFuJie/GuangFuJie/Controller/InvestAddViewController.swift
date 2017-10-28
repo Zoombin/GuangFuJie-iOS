@@ -123,6 +123,8 @@ class InvestAddViewController: BaseViewController {
         submitButton.backgroundColor = Colors.appBlue
         submitButton.addTarget(self, action: #selector(self.submitButtonClicked), for: UIControlEvents.touchUpInside)
         contentScroll.addSubview(submitButton)
+        
+        contentScroll.contentSize = CGSize(width: 0, height: submitButton.frame.maxY + 20 * times) 
     }
     
     func addLeftView(title: String, textField: UITextField) {
