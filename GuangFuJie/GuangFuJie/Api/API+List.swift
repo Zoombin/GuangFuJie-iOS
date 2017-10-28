@@ -1863,4 +1863,23 @@ extension API {
         }, failure: failure)
     }
     
+    //创建投资人
+    func investorAdd(_ name : String, phone: String, size: String, type: String, mark: String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "investor/add"
+        let params = [
+            "name" : name,
+            "phone" : phone,
+            "size" : size,
+            "type" : type,
+            "mark" : mark,
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
+        }, failure: failure)
+    }
+    
 }

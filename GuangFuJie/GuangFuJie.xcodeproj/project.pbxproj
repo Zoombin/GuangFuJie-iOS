@@ -166,6 +166,8 @@
 		DE6D91F81F2DBAC4008E0E3A /* RootElectricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */; };
 		DE6D91FA1F2DBAD8008E0E3A /* RootPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */; };
 		DE6D91FC1F2DBAE2008E0E3A /* RootEarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91FB1F2DBAE2008E0E3A /* RootEarnViewController.swift */; };
+		DE7963C51FA4451700C96F80 /* InvestAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7963C41FA4451600C96F80 /* InvestAddViewController.swift */; };
+		DE7963C61FA4451700C96F80 /* InvestAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7963C41FA4451600C96F80 /* InvestAddViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
@@ -358,8 +360,6 @@
 		DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
 		DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
-		DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */; };
-		DE868DFB1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */; };
 		DE868DFD1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */; };
 		DE868DFE1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */; };
 		DE868E001F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */; };
@@ -876,8 +876,6 @@
 		DEE681FA1F1897AC00157560 /* GFAskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681F81F1897AC00157560 /* GFAskCell.swift */; };
 		DEE681FC1F18B2CD00157560 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681FB1F18B2CD00157560 /* MapViewController.swift */; };
 		DEE681FD1F18B2CD00157560 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE681FB1F18B2CD00157560 /* MapViewController.swift */; };
-		DEE682021F18BB9900157560 /* RootProjectCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */; };
-		DEE682031F18BB9900157560 /* RootProjectCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */; };
 		DEE682061F18C40400157560 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682041F18C40400157560 /* LeaseViewController.swift */; };
 		DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE682041F18C40400157560 /* LeaseViewController.swift */; };
 		DEE682081F18C40400157560 /* LeaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE682051F18C40400157560 /* LeaseViewController.xib */; };
@@ -1282,6 +1280,7 @@
 		DE6D91F71F2DBAC4008E0E3A /* RootElectricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootElectricViewController.swift; sourceTree = "<group>"; };
 		DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPayViewController.swift; sourceTree = "<group>"; };
 		DE6D91FB1F2DBAE2008E0E3A /* RootEarnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootEarnViewController.swift; sourceTree = "<group>"; };
+		DE7963C41FA4451600C96F80 /* InvestAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestAddViewController.swift; sourceTree = "<group>"; };
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1468,7 +1467,6 @@
 		DE868DE31F0DE4EF00FF7FD3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootMapViewController.swift; sourceTree = "<group>"; };
-		DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHomeViewController.swift; sourceTree = "<group>"; };
 		DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInsuranceViewController.swift; sourceTree = "<group>"; };
 		DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNewsViewController.swift; sourceTree = "<group>"; };
 		DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootMyViewController.swift; sourceTree = "<group>"; };
@@ -1911,7 +1909,6 @@
 		DEE681F51F1893FF00157560 /* GuangFuAskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuangFuAskViewController.swift; sourceTree = "<group>"; };
 		DEE681F81F1897AC00157560 /* GFAskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFAskCell.swift; sourceTree = "<group>"; };
 		DEE681FB1F18B2CD00157560 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootProjectCalViewController.swift; sourceTree = "<group>"; };
 		DEE682041F18C40400157560 /* LeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaseViewController.swift; sourceTree = "<group>"; };
 		DEE682051F18C40400157560 /* LeaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaseViewController.xib; sourceTree = "<group>"; };
 		DEE6820C1F19C4FD00157560 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -2503,6 +2500,7 @@
 				DE2389E51F8F58B600A9EE89 /* SafeDetailViewController.swift */,
 				DE2389E81F8F5A5000A9EE89 /* MyRoofsViewController.swift */,
 				DE2389EB1F8F5AD200A9EE89 /* MyFavViewController.swift */,
+				DE7963C41FA4451600C96F80 /* InvestAddViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2902,11 +2900,9 @@
 			isa = PBXGroup;
 			children = (
 				DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */,
-				DE868DF91F0DE8E200FF7FD3 /* RootHomeViewController.swift */,
 				DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */,
 				DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */,
 				DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */,
-				DEE682011F18BB9900157560 /* RootProjectCalViewController.swift */,
 				DEBA7B511F98351D0022E001 /* RootProjectCalV2ViewController.swift */,
 				DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */,
 			);
@@ -4582,7 +4578,6 @@
 				DE868ADF1F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
 				DEB9CA061F722FA6007BE2A3 /* BookingStatus.swift in Sources */,
 				DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */,
-				DE868DFA1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DE9131B91F7939B7002C9D98 /* MQBotMenuMessage.m in Sources */,
 				DEB9CA4E1F722FA6007BE2A3 /* RepaymentInfo.swift in Sources */,
 				DEB9C9FC1F722FA6007BE2A3 /* AppModel.swift in Sources */,
@@ -4632,6 +4627,7 @@
 				DE9131C91F7939B7002C9D98 /* MQRichTextMessage.m in Sources */,
 				DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DE3953FB1F1468CB00A44740 /* SDWebImagePrefetcher.m in Sources */,
+				DE7963C51FA4451700C96F80 /* InvestAddViewController.swift in Sources */,
 				DE3AE0C21F69265E00A7A34A /* InsuranceCell.swift in Sources */,
 				DE8688951F0DD05900FF7FD3 /* QNUpToken.m in Sources */,
 				DEC2224C1F13601E007D6DBE /* MJRefreshBackStateFooter.m in Sources */,
@@ -4727,7 +4723,6 @@
 				DEC2223E1F13601E007D6DBE /* MJRefreshFooter.m in Sources */,
 				DE8689F61F0DD0D700FF7FD3 /* QNHijackingDetectWrapper.m in Sources */,
 				DEC2223A1F13601E007D6DBE /* MJRefreshBackFooter.m in Sources */,
-				DEE682021F18BB9900157560 /* RootProjectCalViewController.swift in Sources */,
 				DEE6C9D81F35BECA00AB6031 /* IQBarButtonItem.swift in Sources */,
 				DE9131D91F7939B7002C9D98 /* MQEvaluationResultCellModel.m in Sources */,
 				DE9131811F7939B7002C9D98 /* MQAnimatorPush.m in Sources */,
@@ -5087,6 +5082,7 @@
 				DEFF5F211F700E5100F58A04 /* BCSubscription.m in Sources */,
 				DE9132441F7939B7002C9D98 /* MEIQIA_CafRecordWriter.m in Sources */,
 				DE868E011F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */,
+				DE7963C61FA4451700C96F80 /* InvestAddViewController.swift in Sources */,
 				DE91326C1F7939B7002C9D98 /* MQBotWebViewController.m in Sources */,
 				DE39542E1F1468CB00A44740 /* ZLPhotoPickerCollectionView.m in Sources */,
 				DE3954221F1468CB00A44740 /* ZLPhotoPickerGroup.m in Sources */,
@@ -5400,7 +5396,6 @@
 				DEFF5EEF1F700E5100F58A04 /* BCBaseResp.m in Sources */,
 				DEFF5F3D1F700E5100F58A04 /* BCSandBoxAdapter.m in Sources */,
 				DE9F99AB1F19FD48003CF080 /* SettingsViewController.swift in Sources */,
-				DE868DFB1F0DE8E200FF7FD3 /* RootHomeViewController.swift in Sources */,
 				DE91322E1F7939B7002C9D98 /* MEIQIA_FBBitmapFontView.m in Sources */,
 				DE1F71ED1F62950200B8C2E8 /* InstallerCell.swift in Sources */,
 				DEFF5F391F700E5100F58A04 /* NSString+IsValid.m in Sources */,
@@ -5409,7 +5404,6 @@
 				DE91321C1F7939B7002C9D98 /* MQChatRegexUtil.m in Sources */,
 				DE9132841F7939B7002C9D98 /* MQMessageFormViewController.m in Sources */,
 				DE1F71EE1F62950500B8C2E8 /* GFJRoofListViewController.swift in Sources */,
-				DEE682031F18BB9900157560 /* RootProjectCalViewController.swift in Sources */,
 				DEE681F41F185FDF00157560 /* YeZhuViewController.swift in Sources */,
 				DE02379E1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */,
 				DE868A121F0DD11800FF7FD3 /* NSData+AESCrypt.m in Sources */,
