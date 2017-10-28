@@ -14,6 +14,8 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
     var newsArray = NSMutableArray()
     var key: String?
     var type: NSNumber?
+    var isProduct = false
+    var webSite = ""
     
     @IBOutlet weak var newsListTableView: UITableView!
     
@@ -86,6 +88,11 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
         vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
         vc.title = YCStringUtils.getString(data.title)
         vc.addShareInfoButton(info: shareInfo)
+        if (isProduct) {
+            vc.isProduct = true
+            vc.webSite = webSite
+            
+        }
         self.pushViewController(vc)
     }
     

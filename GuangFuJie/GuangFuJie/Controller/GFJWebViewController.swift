@@ -14,6 +14,8 @@ class GFJWebViewController: BaseViewController {
     var urlTag : Int = -1
     var url : String?
     var shareInfo: ShareInfo?
+    var webSite = ""
+    var isProduct = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +32,7 @@ class GFJWebViewController: BaseViewController {
             return
         }
         shareInfo = info
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.shareNews))
     }
-    
-//    func shareNews() {
-//        self.shareButtonClicked(shareInfo: shareInfo!)
-//    }
   
     func loadData() {
         self.showHud(in: self.view, hint: "正在加载")
@@ -52,12 +49,32 @@ class GFJWebViewController: BaseViewController {
     
     
     func initWebView(_ url:String) {
+        let times = YCPhoneUtils.screenWidth / 375
+        
         webView = UIWebView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight()))
         webView.backgroundColor = UIColor.clear
         webView.loadRequest(URLRequest.init(url: URL.init(string: url)! as URL) as URLRequest)
         webView.scalesPageToFit = true
         webView.isOpaque = false
         self.view.addSubview(webView)
+        
+        if (isProduct && webSite.isEmpty == false) {
+            let webSiteButton = UIButton.init(frame: CGRect(x: (YCPhoneUtils.screenWidth - 320 * times) / 2, y: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight() - 20 * times, width: 320 * times, height: 40 * times))
+            webSiteButton.layer.cornerRadius = webSiteButton.frame.size.height / 2
+            webSiteButton.layer.masksToBounds = true
+            webSiteButton.backgroundColor = Colors.appBlue
+            webSiteButton.setTitle("访问官网", for: UIControlState.normal)
+            webSiteButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+            webSiteButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+            webSiteButton.addTarget(self, action: #selector(self.showMainWebSite), for: UIControlEvents.touchUpInside)
+            self.view.addSubview(webSiteButton)
+        }
+    }
+    
+    func showMainWebSite() {
+        let vc = GFJWebViewController()
+        vc.url = webSite
+        self.pushViewController(vc)
     }
 
     override func didReceiveMemoryWarning() {

@@ -58,6 +58,8 @@ class ProductProvideViewController: BaseViewController, UITableViewDelegate, UIT
         let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
         vc.title = YCStringUtils.getString(data.name)
         vc.type = data.type_id
+        vc.isProduct = true
+        vc.webSite = YCStringUtils.getString(data.website)
         self.pushViewController(vc)
     }
     
