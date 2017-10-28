@@ -8,6 +8,7 @@
 
 import UIKit
 
+//这是安装商
 class HYeZhuCell: UITableViewCell {
 
     var viewCreated = false
@@ -28,16 +29,16 @@ class HYeZhuCell: UITableViewCell {
         viewCreated = true
         
         self.selectionStyle = UITableViewCellSelectionStyle.none
-        self.contentView.backgroundColor = Colors.bkgColor
+        self.contentView.backgroundColor = UIColor.white
         
         let dir : CGFloat = PhoneUtils.kScreenWidth / 40
         let bkgViewWidth = PhoneUtils.kScreenWidth - dir * 2
-        let bkgViewHeight = YeZhuCell.cellHeight() - dir
-        let bkgView = UIView.init(frame: CGRect(x: dir, y: 0, width: bkgViewWidth, height: bkgViewHeight))
+        let bkgViewHeight = HYeZhuCell.cellHeight() - dir
+        let bkgView = UIView.init(frame: CGRect(x: dir, y: dir, width: bkgViewWidth, height: bkgViewHeight))
         bkgView.backgroundColor = UIColor.white
         self.contentView.addSubview(bkgView)
         
-        let topView = UIView.init(frame: CGRect(x: 0, y: 0, width: bkgViewWidth, height: bkgViewHeight / 3))
+        let topView = UIView.init(frame: CGRect(x: 0, y: 0, width: bkgViewWidth, height: bkgViewHeight * 0.4))
         bkgView.addSubview(topView)
         
         let dir2 : CGFloat = PhoneUtils.kScreenWidth / 36
@@ -56,14 +57,25 @@ class HYeZhuCell: UITableViewCell {
         statusLabel.text = "已认证"
         topView.addSubview(statusLabel)
         
+        let times = PhoneUtils.kScreenWidth / 375
+        
         let line1 = UIView.init(frame: CGRect(x: dir2, y: topView.frame.size.height, width: bkgViewWidth - dir2 * 2, height: 0.5))
         line1.backgroundColor = UIColor.lightGray
         bkgView.addSubview(line1)
         
-        let bottomView = UIView.init(frame: CGRect(x: 0, y: (topView.frame).maxY, width: bkgViewWidth, height: bkgViewHeight * 2 / 3))
+        viewMoreButton = UIButton.init(type: UIButtonType.custom)
+        viewMoreButton.frame = CGRect(x: line1.frame.maxX - 62 * times, y: 10 * times, width: 62 * times, height: 27 * times)
+        viewMoreButton.setTitle("查看更多", for: UIControlState.normal)
+        viewMoreButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        viewMoreButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+        viewMoreButton.layer.borderWidth = 0.5
+        viewMoreButton.layer.borderColor = UIColor.lightGray.cgColor
+        topView.addSubview(viewMoreButton)
+        
+        let bottomView = UIView.init(frame: CGRect(x: 0, y: (topView.frame).maxY, width: bkgViewWidth, height: bkgViewHeight * 0.6))
         bkgView.addSubview(bottomView)
         
-        descriptionLabel = YCTopLeftLabel.init(frame: CGRect(x: dir2 * 3, y: bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.45))
+        descriptionLabel = YCTopLeftLabel.init(frame: CGRect(x: dir2 * 3, y: bottomView.frame.size.height * 0.05, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.60))
         descriptionLabel.text = "这里显示的是描述"
         descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         descriptionLabel.numberOfLines = 3
@@ -74,7 +86,7 @@ class HYeZhuCell: UITableViewCell {
         desPoint.image = UIImage(named: "ic_yellow_point")
         bottomView.addSubview(desPoint)
         
-        addressLabel = YCTopLeftLabel.init(frame: CGRect(x: dir2 * 3, y: (descriptionLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.20))
+        addressLabel = YCTopLeftLabel.init(frame: CGRect(x: dir2 * 3, y: (descriptionLabel.frame).maxY, width: bkgViewWidth - dir2 * 5, height: bottomView.frame.size.height * 0.40))
         addressLabel.text = "这里显示的地址"
         addressLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         bottomView.addSubview(addressLabel)
@@ -82,25 +94,6 @@ class HYeZhuCell: UITableViewCell {
         let addressPoint = UIImageView.init(frame: CGRect(x: dir2, y: addressLabel.frame.minY + 2, width: dir2, height: dir2))
         addressPoint.image = UIImage(named: "ic_green_point")
         bottomView.addSubview(addressPoint)
-        
-        let line2 = UIView.init(frame: CGRect(x: dir2, y: (addressLabel.frame).maxY, width: bkgViewWidth - dir2 * 2, height: 0.5))
-        line2.backgroundColor = UIColor.lightGray
-        bottomView.addSubview(line2)
-        
-        tipsLabel = UILabel.init(frame: CGRect(x: dir2, y: (line2.frame).maxY, width: bkgViewWidth * 0.5, height: bottomView.frame.size.height * 0.3))
-        tipsLabel.textColor = UIColor.init(red: 244/255.0, green: 187/255.0, blue: 35/255.0, alpha: 1.0)
-        tipsLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        tipsLabel.text = "正在寻找屋顶"
-        bottomView.addSubview(tipsLabel)
-        
-        viewMoreButton = UIButton.init(type: UIButtonType.custom)
-        viewMoreButton.frame = CGRect(x: (line2.frame).maxX - bkgViewWidth * 0.2, y: (line2.frame).maxY + tipsLabel.frame.size.height * 0.2, width: bkgViewWidth * 0.2, height: tipsLabel.frame.size.height * 0.6)
-        viewMoreButton.setTitle("查看更多", for: UIControlState.normal)
-        viewMoreButton.setTitleColor(UIColor.black, for: UIControlState.normal)
-        viewMoreButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-        viewMoreButton.layer.borderWidth = 0.5
-        viewMoreButton.layer.borderColor = UIColor.black.cgColor
-        bottomView.addSubview(viewMoreButton)
     }
     
     func setData(userInfo: InstallInfo) {
@@ -127,8 +120,6 @@ class HYeZhuCell: UITableViewCell {
             self.statusLabel.text = "未认证"
             self.statusLabel.textColor = Colors.installRedColor
         }
-        self.viewMoreButton.setTitle("点我安装", for: UIControlState.normal)
-        self.viewMoreButton.isUserInteractionEnabled = false
     }
     
     static func cellHeight() -> CGFloat {
@@ -136,7 +127,7 @@ class HYeZhuCell: UITableViewCell {
         if (height < 568) {
             height = 568
         }
-        return height / 3
+        return height / 4
     }
 
 }
