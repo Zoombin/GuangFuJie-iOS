@@ -646,6 +646,10 @@
 		DE9E17E61F16134000B959AA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9E17E51F16134000B959AA /* AVFoundation.framework */; };
 		DE9E17E81F16135800B959AA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9E17E71F16135800B959AA /* MobileCoreServices.framework */; };
 		DE9E17EA1F16136300B959AA /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9E17E91F16136300B959AA /* libicucore.tbd */; };
+		DE9F27E41FA485CD00B5B503 /* BrandInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F27E31FA485CD00B5B503 /* BrandInfo.swift */; };
+		DE9F27E51FA485CD00B5B503 /* BrandInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F27E31FA485CD00B5B503 /* BrandInfo.swift */; };
+		DE9F27F01FA486BF00B5B503 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F27EF1FA486BF00B5B503 /* BrandCell.swift */; };
+		DE9F27F11FA486BF00B5B503 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F27EF1FA486BF00B5B503 /* BrandCell.swift */; };
 		DE9F999F1F19FD3C003CF080 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F999E1F19FD3C003CF080 /* AddNoteViewController.swift */; };
 		DE9F99A01F19FD3C003CF080 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F999E1F19FD3C003CF080 /* AddNoteViewController.swift */; };
 		DE9F99AA1F19FD48003CF080 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39520C1F145D8400A44740 /* LoginViewController.swift */; };
@@ -1765,6 +1769,8 @@
 		DE9E17E51F16134000B959AA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DE9E17E71F16135800B959AA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		DE9E17E91F16136300B959AA /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		DE9F27E31FA485CD00B5B503 /* BrandInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandInfo.swift; sourceTree = "<group>"; };
+		DE9F27EF1FA486BF00B5B503 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
 		DE9F999E1F19FD3C003CF080 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		DEA4FD6D1F8E075D006767E7 /* YCPhoneUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCPhoneUtils.h; path = YCUtils/YCUtils/YCPhoneUtils.h; sourceTree = "<group>"; };
 		DEA4FD6E1F8E075E006767E7 /* YCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCUtils.h; path = YCUtils/YCUtils/YCUtils.h; sourceTree = "<group>"; };
@@ -2457,6 +2463,7 @@
 				DEBD13811FA46FDF00097F56 /* HYeZhuCell.swift */,
 				DEBD13841FA4700400097F56 /* HInstallerCell.swift */,
 				DEBD13871FA4702D00097F56 /* HInvestAndOfferCell.swift */,
+				DE9F27EF1FA486BF00B5B503 /* BrandCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3720,6 +3727,7 @@
 				DEB9C9F71F722FA6007BE2A3 /* RoofMapInfo.swift */,
 				DEB9C9F81F722FA6007BE2A3 /* ShareInfo.swift */,
 				DEB9C9F91F722FA6007BE2A3 /* UserInfo.swift */,
+				DE9F27E31FA485CD00B5B503 /* BrandInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -4712,6 +4720,7 @@
 				DEB9CA241F722FA6007BE2A3 /* GroupOrderInfo.swift in Sources */,
 				DE9131F51F7939B7002C9D98 /* MQChatBaseCell.m in Sources */,
 				DE9132031F7939B7002C9D98 /* MQRichTextViewCell.m in Sources */,
+				DE9F27E41FA485CD00B5B503 /* BrandInfo.swift in Sources */,
 				DEB9CA201F722FA6007BE2A3 /* GetInventerMode.swift in Sources */,
 				DEA4FD841F8E0760006767E7 /* YCTopLeftLabel.m in Sources */,
 				DE8687631F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */,
@@ -4739,6 +4748,7 @@
 				DE91318D1F7939B7002C9D98 /* NSNull+MQSafe.m in Sources */,
 				DEE681F31F185FDF00157560 /* YeZhuViewController.swift in Sources */,
 				DE3954011F1468CB00A44740 /* UIImage+MultiFormat.m in Sources */,
+				DE9F27F01FA486BF00B5B503 /* BrandCell.swift in Sources */,
 				DEE6C9D01F35BECA00AB6031 /* IQUIWindow+Hierarchy.swift in Sources */,
 				DE9131BB1F7939B7002C9D98 /* MQBotMessageFactory.m in Sources */,
 				DE91321F1F7939B7002C9D98 /* MQImageUtil.m in Sources */,
@@ -5308,6 +5318,7 @@
 				DE8689F11F0DD0D700FF7FD3 /* QNRecord.m in Sources */,
 				DE9131B01F7939B7002C9D98 /* MQPreChatFormListViewController.m in Sources */,
 				DE9132261F7939B7002C9D98 /* MQAGEmojiKeyBoardView.m in Sources */,
+				DE9F27F11FA486BF00B5B503 /* BrandCell.swift in Sources */,
 				DE3953F21F1468CB00A44740 /* SDWebImageCompat.m in Sources */,
 				DEB9CA531F722FA6007BE2A3 /* RoofMapInfo.swift in Sources */,
 				DE86877C1F0DCE4400FF7FD3 /* UIProgressView+AFNetworking.m in Sources */,
@@ -5470,6 +5481,7 @@
 				DE3954161F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				DE9131CA1F7939B7002C9D98 /* MQRichTextMessage.m in Sources */,
 				DE3953EE1F1468CB00A44740 /* NSData+ImageContentType.m in Sources */,
+				DE9F27E51FA485CD00B5B503 /* BrandInfo.swift in Sources */,
 				DEC222471F13601E007D6DBE /* MJRefreshAutoStateFooter.m in Sources */,
 				DE1A55201F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */,
 				DE3954591F1481E500A44740 /* PhotoViewController.swift in Sources */,

@@ -532,7 +532,9 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
             let vc = InvestAddViewController()
             self.pushViewController(vc)
         } else if (currentIndex == 3){
-            //跳转到新的供求页
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "ProductProvideViewController")
+            self.pushViewController(vc)
         }
     }
     

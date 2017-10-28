@@ -9,80 +9,33 @@
 import UIKit
 
 class ProductProvideViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-    var pageSize = 10
-    var currentPage = 0
     var newsArray = NSMutableArray()
-    var key: String?
-    var type: NSNumber?
-    
-    @IBOutlet weak var line1: UIView!
-    @IBOutlet weak var line2: UIView!
-    
-    @IBOutlet weak var newsListTableView: UITableView!
+    var productTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        type = 20
         initView()
-        // Do any additional setup after loading the view.
+        loadBrandList()
     }
     
     func initView() {
         self.title = "产品供求"
-        newsListTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
-        getNewsList()
+        productTableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()))
+        productTableView.delegate = self
+        productTableView.dataSource = self
+        self.view.addSubview(productTableView)
     }
     
-    func loadMore() {
-        currentPage = currentPage + 1
-        getNewsList()
-    }
-    
-    func hideAllLine() {
-        line1.isHidden = true
-        line2.isHidden = true
-    }
-    
-    @IBAction func topButtonClicked(_ sender: UIButton) {
-        hideAllLine()
-        if (sender.tag == 0) {
-            type = 20
-            line1.isHidden = false
-        } else if (sender.tag == 1) {
-            type = 19
-            line2.isHidden = false
-        }
-        loadData()
-    }
-    
-    func loadData() {
-        currentPage = 0
-        self.newsListTableView.mj_footer.isHidden = false
+    func loadBrandList() {
         self.showHud(in: self.view, hint: "加载中...")
-        getNewsList()
-    }
-    
-    func getNewsList() {
-        API.sharedInstance.articlesList(currentPage, pagesize: pageSize, key: key, provinceId: nil, cityId: nil, areaId: nil, type: type, success: { (count, array) in
-            if (self.currentPage == 0) {
-                //self.newsTableView.mj_header.endRefreshing()
-                self.hideHud()
-                self.newsArray.removeAllObjects()
-            } else {
-                self.newsListTableView.mj_footer.endRefreshing()
-            }
+        API.sharedInstance.brandList(start: 0, pagesize: 10, success: { (count, array) in
+            self.newsArray.removeAllObjects()
             if (array.count > 0) {
-                self.newsArray.addObjects(from: array as [AnyObject])
+                self.newsArray.addObjects(from: array)
             }
-            if (array.count < self.pageSize) {
-                self.newsListTableView.mj_footer.isHidden = true
-            }
-            self.newsListTableView.reloadData()
+            self.productTableView.reloadData()
         }) { (msg) in
-            self.newsListTableView.mj_footer.endRefreshing()
-            //self.newsTableView.mj_header.endRefreshing()
-            self.hideHud()
-            self.showHint(msg)
+            
         }
     }
     
@@ -96,19 +49,6 @@ class ProductProvideViewController: BaseViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
-        
-        let shareInfo = ShareInfo()
-        shareInfo.shareImg = YCStringUtils.getString(data.image)
-        shareInfo.shareTitle = YCStringUtils.getString("资讯")
-        shareInfo.shareDesc = YCStringUtils.getString(data.title)
-        shareInfo.shareLink = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
-        
-        let vc = GFJWebViewController()
-        vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(data.id!)"
-        vc.title = YCStringUtils.getString(data.title)
-        vc.addShareInfoButton(info: shareInfo)
-        self.pushViewController(vc)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
