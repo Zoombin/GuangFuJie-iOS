@@ -499,6 +499,7 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
         if (currentIndex == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: installerCellReuseIdentifier, for: indexPath as IndexPath) as! HInstallerCell
             cell.initCell()
+            cell.viewMoreButton.addTarget(self, action: #selector(self.moreRoofList), for: UIControlEvents.touchUpInside)
             let userInfo = installerArray[indexPath.row] as! RoofInfo
             cell.setData(userInfo: userInfo)
             return cell
@@ -506,6 +507,7 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
             let cell = tableView.dequeueReusableCell(withIdentifier: yezhuCellReuseIdentifier, for: indexPath as IndexPath) as! HYeZhuCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             cell.initCell()
+            cell.viewMoreButton.addTarget(self, action: #selector(self.moreInstallerList), for: UIControlEvents.touchUpInside)
             let userInfo = yezhuArray[indexPath.row] as! InstallInfo
             cell.setData(userInfo: userInfo)
             return cell
@@ -532,6 +534,18 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
         } else if (currentIndex == 3){
             //跳转到新的供求页
         }
+    }
+    
+    //更多业主
+    func moreRoofList() {
+        let vc = GFJRoofListViewController(nibName: "GFJRoofListViewController", bundle: nil)
+        self.pushViewController(vc)
+    }
+    
+    //更多安装商
+    func moreInstallerList() {
+        let vc = MoreInstallerViewController(nibName: "MoreInstallerViewController", bundle: nil)
+        self.pushViewController(vc)
     }
     
     func headerButtonClicked(button: UIButton) {
