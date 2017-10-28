@@ -58,7 +58,7 @@ class MyDeviceListControllerViewController: BaseViewController, UITableViewDeleg
             }
             return
         }
-        //        self.showHudInView(self.view, hint: "加载中...")
+        self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.getUserDeviceList({ (deviceList) in
             self.hideHud()
             self.devicesArray.removeAllObjects()
