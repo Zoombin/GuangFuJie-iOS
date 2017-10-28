@@ -34,3 +34,6 @@
 [submodule "GuangFuJie/GuangFuJie/Submodules/YCUtils"]
 	path = GuangFuJie/GuangFuJie/Submodules/YCUtils
 	url = https://github.com/ycabc1989/YCUtils.git
+[submodule "GuangFuJie/GuangFuJie/Submodules/FSTextView"]
+	path = GuangFuJie/GuangFuJie/Submodules/FSTextView
+	url = https://github.com/lifution/FSTextView.git

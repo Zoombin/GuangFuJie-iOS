@@ -780,6 +780,8 @@
 		DEB9CAA71F7232B9007BE2A3 /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB9CA971F7232B8007BE2A3 /* UShareUI.framework */; };
 		DEBA7B521F98351D0022E001 /* RootProjectCalV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA7B511F98351D0022E001 /* RootProjectCalV2ViewController.swift */; };
 		DEBA7B531F98351D0022E001 /* RootProjectCalV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA7B511F98351D0022E001 /* RootProjectCalV2ViewController.swift */; };
+		DEBD137F1FA45B7A00097F56 /* FSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBD137E1FA45B7A00097F56 /* FSTextView.m */; };
+		DEBD13801FA45B7A00097F56 /* FSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBD137E1FA45B7A00097F56 /* FSTextView.m */; };
 		DEC221231F131577007D6DBE /* CustomImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC221221F131577007D6DBE /* CustomImages.xcassets */; };
 		DEC221241F131577007D6DBE /* CustomImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC221221F131577007D6DBE /* CustomImages.xcassets */; };
 		DEC221271F13531B007D6DBE /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC221261F13531B007D6DBE /* NewsCell.swift */; };
@@ -1836,6 +1838,8 @@
 		DEB9CA961F7232B8007BE2A3 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
 		DEB9CA971F7232B8007BE2A3 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
 		DEBA7B511F98351D0022E001 /* RootProjectCalV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProjectCalV2ViewController.swift; sourceTree = "<group>"; };
+		DEBD137D1FA45B7A00097F56 /* FSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSTextView.h; path = FSTextView/FSTextView.h; sourceTree = "<group>"; };
+		DEBD137E1FA45B7A00097F56 /* FSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSTextView.m; path = FSTextView/FSTextView.m; sourceTree = "<group>"; };
 		DEC221221F131577007D6DBE /* CustomImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CustomImages.xcassets; sourceTree = "<group>"; };
 		DEC221261F13531B007D6DBE /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		DEC2212C1F135AB7007D6DBE /* GFJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFJWebViewController.swift; sourceTree = "<group>"; };
@@ -2537,6 +2541,7 @@
 		DE86843C1F0DCA8F00FF7FD3 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				DEBD13441FA45B6B00097F56 /* FSTextView */,
 				DEA4FD1E1F8E0745006767E7 /* YCUtils */,
 				DE9F99AC1F19FDC0003CF080 /* MeiqiaSDK */,
 				DE39522A1F1468B400A44740 /* ZLPhotoLib */,
@@ -3758,6 +3763,15 @@
 			path = UMSocialUI;
 			sourceTree = "<group>";
 		};
+		DEBD13441FA45B6B00097F56 /* FSTextView */ = {
+			isa = PBXGroup;
+			children = (
+				DEBD137D1FA45B7A00097F56 /* FSTextView.h */,
+				DEBD137E1FA45B7A00097F56 /* FSTextView.m */,
+			);
+			path = FSTextView;
+			sourceTree = "<group>";
+		};
 		DEC2212F1F13600F007D6DBE /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -4889,6 +4903,7 @@
 				DE39542F1F1468CB00A44740 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				DEE6C9A41F35BAA300AB6031 /* NewsListViewController.swift in Sources */,
 				DEE681ED1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
+				DEBD137F1FA45B7A00097F56 /* FSTextView.m in Sources */,
 				DE2389EC1F8F5AD200A9EE89 /* MyFavViewController.swift in Sources */,
 				DEB9CA0A1F722FA6007BE2A3 /* CalResultParams.swift in Sources */,
 				DE3953EF1F1468CB00A44740 /* SDImageCache.m in Sources */,
@@ -5011,6 +5026,7 @@
 				DEE6C9D31F35BECA00AB6031 /* IQKeyboardManager.swift in Sources */,
 				DEB9CA3F1F722FA6007BE2A3 /* NewsInfo.swift in Sources */,
 				DEE6C9E31F35BECA00AB6031 /* IQKeyboardManagerConstants.swift in Sources */,
+				DEBD13801FA45B7A00097F56 /* FSTextView.m in Sources */,
 				DEB9CA051F722FA6007BE2A3 /* BankInfo.swift in Sources */,
 				DE9131C01F7939B7002C9D98 /* MQEventMessage.m in Sources */,
 				DEE6C9CD1F35BECA00AB6031 /* IQUIView+Hierarchy.swift in Sources */,

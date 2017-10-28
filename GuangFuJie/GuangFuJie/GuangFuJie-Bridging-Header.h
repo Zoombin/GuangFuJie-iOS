@@ -22,6 +22,7 @@
 #import "WXApi.h"
 #import "YCUtils.h"
 //#import "YCButton.h"
+#import "FSTextView.h"
 
 #import "ZLPhotoPickerViewController.h"
 #import "ZLPhotoAssets.h"
