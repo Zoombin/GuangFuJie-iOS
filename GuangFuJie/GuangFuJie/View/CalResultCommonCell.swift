@@ -18,10 +18,10 @@ class CalResultCommonCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        firstLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        secondLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        thirdLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        fourthLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        firstLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        secondLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        thirdLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        fourthLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
         
         let width = PhoneUtils.kScreenWidth / 4
         firstLabel.frame = CGRect(x: 0, y: 0, width: width, height: firstLabel.frame.size.height)

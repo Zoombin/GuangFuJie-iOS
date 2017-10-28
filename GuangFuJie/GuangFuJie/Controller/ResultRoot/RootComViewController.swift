@@ -84,6 +84,8 @@ class RootComViewController: BaseViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         cell?.textLabel?.text = titles[indexPath.row]
         cell?.detailTextLabel?.text = results[indexPath.row] as? String
+        cell?.textLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
         return cell!
     }
     

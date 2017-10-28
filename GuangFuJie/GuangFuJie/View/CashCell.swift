@@ -21,13 +21,13 @@ class CashCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        firstLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        secondLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        thirdLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        fourthLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        fifthLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        sixthLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        seventhLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        firstLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        secondLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        thirdLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        fourthLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        fifthLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        sixthLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        seventhLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
         
         let width = PhoneUtils.kScreenWidth / 7
         firstLabel.frame = CGRect(x: 0, y: 0, width: width, height: firstLabel.frame.size.height)
