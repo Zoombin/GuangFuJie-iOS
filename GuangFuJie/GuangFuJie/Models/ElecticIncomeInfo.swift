@@ -9,8 +9,8 @@
 import UIKit
 
 class ElecticIncomeInfo: NSObject {
-    var year: String?             //第几年
-    var electricYear: String?     //发电每年
-    var income: String?           //收入
-    var cost: String?             //花费
+    var year: NSNumber?             //第几年
+    var electricYear: NSNumber?     //发电每年
+    var income: NSNumber?           //收入
+    var cost: NSNumber?             //花费
 }

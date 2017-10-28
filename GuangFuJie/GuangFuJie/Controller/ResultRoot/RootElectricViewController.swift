@@ -85,10 +85,10 @@ class RootElectricViewController: BaseViewController, UITableViewDelegate, UITab
         let cellIdentifier = "CalResultCommonCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! CalResultCommonCell
         let info = results[indexPath.row] as! ElecticIncomeInfo
-        cell.firstLabel.text = info.year
-        cell.secondLabel.text = info.electricYear
-        cell.thirdLabel.text = info.income
-        cell.fourthLabel.text = info.cost
+        cell.firstLabel.text = String(format: "%.0f", info.year!.floatValue)
+        cell.secondLabel.text = String(format: "%.0f", info.electricYear!.floatValue)
+        cell.thirdLabel.text = String(format: "%.0f", info.cost!.floatValue)
+        cell.fourthLabel.text = String(format: "%.0f", info.income!.floatValue)
         return cell
     }
     

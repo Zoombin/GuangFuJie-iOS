@@ -46,7 +46,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
     var roofSizeTextField: UITextField! //屋顶面积
     var roofTypeButton: UIButton! //安装方式
     var ckqjLabel: UILabel!
-    var zjrlLabel: UILabel!
+    var zjrlTextField: UITextField!
     var mwtzjeTextField: UITextField!
     var mwtzjeLabel: UILabel!
     var tzjeLabel: UILabel!
@@ -400,11 +400,27 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         secondContentScroll.addSubview(ckqjLabel)
         currentY = ckqjLabel.frame.maxY
         
-        zjrlLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: labelWidth, height: labelHeight))
-        zjrlLabel.text = "装机容量：-- 千瓦"
+        let zjrlLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: 70 * times, height: labelHeight))
+        zjrlLabel.text = "装机容量："
         zjrlLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         secondContentScroll.addSubview(zjrlLabel)
-        currentY = zjrlLabel.frame.maxY
+        
+        zjrlTextField = UITextField.init(frame: CGRect(x: zjrlLabel.frame.maxX, y: currentY + 5 * times, width: 65 * times, height: labelHeight))
+        zjrlTextField.keyboardType = UIKeyboardType.decimalPad
+        zjrlTextField.layer.cornerRadius = 3
+        zjrlTextField.layer.borderColor = UIColor.lightGray.cgColor
+        zjrlTextField.layer.borderWidth = 0.5
+        zjrlTextField.layer.masksToBounds = true
+        zjrlTextField.textAlignment = NSTextAlignment.center
+        zjrlTextField.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 12))
+        secondContentScroll.addSubview(zjrlTextField)
+        
+        let zjrlRightLabel = UILabel.init(frame: CGRect(x: zjrlTextField.frame.maxX, y: currentY + 5 * times, width: 40 * times, height: labelHeight))
+        zjrlRightLabel.text = "千瓦"
+        zjrlRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
+        secondContentScroll.addSubview(zjrlRightLabel)
+        zjrlRightLabel.textAlignment = NSTextAlignment.center
+        currentY = zjrlRightLabel.frame.maxY
         
         mwtzjeLabel = UILabel.init(frame: CGRect(x: offSetX, y: currentY + 5 * times, width: 95 * times, height: labelHeight))
         mwtzjeLabel.text = "每瓦投资金额："
@@ -570,7 +586,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
             self.hideHud()
             self.energyCalInfo = info
             self.ckqjLabel.text = "参考倾角：\(YCStringUtils.getNumber(info.sample_angle).doubleValue) 度"
-            self.zjrlLabel.text = "装机容量：\(YCStringUtils.getNumber(info.build_size).doubleValue) 千瓦"
+            self.zjrlTextField.text = "\(YCStringUtils.getNumber(info.build_size).doubleValue)"
             self.mwtzjeTextField.text = "\(YCStringUtils.getNumber(info.wOfPrice).doubleValue)"
             self.tzjeLabel.text = "投资金额：\(YCStringUtils.getNumber(info.build_price).doubleValue) 元"
             self.snfdlyxsLabel.text = "首年发电利用小时：\(YCStringUtils.getNumber(info.electric_firstyear_hours).doubleValue) 小时"
@@ -943,26 +959,32 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
             self.showHint("余电上网价不能为空")
             return
         }
+        if (YCStringUtils.isEmpty(zjrlTextField.text!)) {
+            self.showHint("装机容量不能为空")
+            return
+        }
         
         let tmpParams = CalResultParams()
         tmpParams.address = locationButton.titleLabel?.text!
         tmpParams.type = NSNumber.init(value: type)
+        tmpParams.build_size = zjrlTextField.text!
         tmpParams.size = roofSizeTextField.text!
         tmpParams.invest_amount = energyCalInfo!.build_price
         let ywcbPercent = NSString.init(string: ywcbTextField.text!)
-        let ywcbValue = ywcbPercent.floatValue * energyCalInfo!.build_price!.floatValue
+        let ywcbValue = ywcbPercent.floatValue * energyCalInfo!.build_price!.floatValue / 100
         
         tmpParams.annual_maintenance_cost = String(format: "%.2f%", ywcbValue)
         tmpParams.recoverable_liquid_capital = String(format: "%.2f", YCStringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
         tmpParams.installed_subsidy = zjbtTextField.text!
-        tmpParams.loan_ratio = String(format: "%.2f", NSString.init(string: dkblPercentTextField.text!).floatValue * NSString.init(string: tzjeValueLabel.text!).floatValue / 100)
+        tmpParams.loan_ratio = String(format: "%.2f", NSString.init(string: dkblPercentTextField.text!).floatValue / 100)
+        tmpParams.loan_value = String(format: "%.2f", NSString.init(string: dkblPercentTextField.text!).floatValue * NSString.init(string: tzjeValueLabel.text!).floatValue / 100)
         tmpParams.years_of_loans = dkblYearsTextField.text!
         tmpParams.occupied_electric_ratio = zydblTextField.text!
         tmpParams.electric_price_perional = zyddjTextField.text!
         tmpParams.electricity_subsidy = ydbtPriceTextField.text!
         tmpParams.electricity_subsidy_year = ydbtYearsTextField.text!
         tmpParams.sparetime_electric_price = ydswjTextField.text!
-        tmpParams.wOfPrice = mwtzjeLabel.text
+        tmpParams.wOfPrice = mwtzjeTextField.text
         tmpParams.firstYearKwElectric = snmqwrfdTextField.text!
         
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
@@ -1221,7 +1243,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         let tzje = NSString.init(string: "\(YCStringUtils.getNumber(energyCalInfo!.build_price))").floatValue
         
         lxtzjeValueLabel.text = "\(YCStringUtils.getNumber(energyCalInfo!.build_price))"
-        lxzjrlValueLabel.text = "\(YCStringUtils.getNumber(energyCalInfo!.build_size))"
+        lxzjrlValueLabel.text = "\(YCStringUtils.getString(zjrlTextField.text!))"
         lxdkjeLabel.text = String(format: "%.2f", dkbl * tzje / 100)
         lxdkjeYearsLabel.text = dkblYearsTextField.text!
         dkllTextField.text = "4.9"
@@ -1237,9 +1259,14 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
             self.showHint("利率倍数不能为空!")
             return
         }
+        if (zjrlTextField.text!.isEmpty) {
+            self.showHint("装机容量不能为空!")
+            return
+        }
         let tmpParams = CalResultParams()
         tmpParams.address = locationButton.titleLabel?.text!
         tmpParams.type = NSNumber.init(value: type)
+        tmpParams.build_size = zjrlTextField.text!
         tmpParams.size = roofSizeTextField.text!
         tmpParams.invest_amount = energyCalInfo!.build_price
         let ywcbPercent = NSString.init(string: ywcbTextField.text!)
@@ -1248,7 +1275,8 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         tmpParams.annual_maintenance_cost = String(format: "%.2f%", ywcbValue)
         tmpParams.recoverable_liquid_capital = String(format: "%.2f", YCStringUtils.getNumber(energyCalInfo!.build_price).floatValue * 0.05)
         tmpParams.installed_subsidy = zjbtTextField.text!
-        tmpParams.loan_ratio = String(format: "%.2f", NSString.init(string: dkblPercentTextField.text!).floatValue * NSString.init(string: tzjeValueLabel.text!).floatValue)
+        tmpParams.loan_ratio = String(format: "%.2f", NSString.init(string: dkblPercentTextField.text!).floatValue / 100)
+        tmpParams.loan_value = String(format: "%.2f", NSString.init(string: dkblPercentTextField.text!).floatValue * NSString.init(string: tzjeValueLabel.text!).floatValue / 100)
         tmpParams.years_of_loans = lxdkjeYearsLabel.text!
         tmpParams.occupied_electric_ratio = zydblTextField.text!
         tmpParams.electric_price_perional = zyddjTextField.text!

@@ -39,7 +39,7 @@ class RootPayViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     func loadData() {
         self.showHud(in: self.view, hint: "加载中...")
-        let investAmount = NSString.init(string: params.loan_ratio!).floatValue * params.invest_amount!.floatValue / 100
+        let investAmount = NSString.init(string: params.loan_value!).floatValue
         if (investAmount == 0) {
             self.hideHud()
             return
@@ -89,10 +89,10 @@ class RootPayViewController: BaseViewController, UITableViewDelegate, UITableVie
         let cellIdentifier = "CalResultCommonCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! CalResultCommonCell
         let info = results[indexPath.row] as! RepaymentInfo
-        cell.firstLabel.text = info.month
-        cell.secondLabel.text = info.monthPay
-        cell.thirdLabel.text = info.total_money
-        cell.fourthLabel.text = info.interest
+        cell.firstLabel.text = String(format: "%.0f", info.month!.floatValue)
+        cell.secondLabel.text = String(format: "%.0f", info.monthPay!.floatValue)
+        cell.thirdLabel.text = String(format: "%.0f", info.interest!.floatValue)
+        cell.fourthLabel.text = String(format: "%.0f", info.total_money!.floatValue)
         return cell
     }
     

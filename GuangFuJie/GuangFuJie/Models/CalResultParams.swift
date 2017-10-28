@@ -12,11 +12,13 @@ class CalResultParams: NSObject {
     var address: String? //地址
     var type: NSNumber?                     //1,2,3 三种类型
     var size: String?                       //面积
+    var build_size: String?                 //装机容量
     var invest_amount: NSNumber?            //投资金额
     var recoverable_liquid_capital: String? //可回收流动资金
     var annual_maintenance_cost: String?    //年运维成本
     var installed_subsidy: String?        //装机补贴
     var loan_ratio: String?                 //贷款比例
+    var loan_value: String?                 //贷款金额
     var years_of_loans: String?             //贷款年数
     var occupied_electric_ratio: String?    //自用电比例
     var electric_price_perional: String?     //自用电电价
