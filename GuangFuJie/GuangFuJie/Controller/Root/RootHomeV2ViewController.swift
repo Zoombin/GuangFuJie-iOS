@@ -55,6 +55,8 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     }
     
     func initView() {
+        self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
         let times = YCPhoneUtils.screenWidth / 375
         
         locationButton = UIButton.init(type: UIButtonType.custom)
