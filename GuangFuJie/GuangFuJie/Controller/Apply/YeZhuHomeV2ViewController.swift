@@ -26,8 +26,8 @@ class YeZhuHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
     var contentScrollView: UIScrollView!
     var headerView: UIView!
     
-    let titles = ["本地市场　", "体验店　", "光伏政策　", "光伏保险　", "光伏贷款　", "供电局　", "地面推广　", "推广支持　", "本地安装商", "本地业主　", "投资收益　", "实战模式　", "加盟支持　", "安装运维　", "产品供求　", "客服　　　"]
-    let images = ["ic_menu_bdsc", "ic_menu_tyd", "ic_menu_gfzc", "ic_menu_gfbx", "ic_menu_gfdk", "ic_menu_gdj", "ic_menu_dmtg", "ic_menu_tgzc", "ic_menu_bdazs", "ic_menu_bdyz", "ic_menu_tzsy", "ic_menu_szms", "ic_install_jmzc", "ic_menu_azyw", "ic_menu_cpgq", "ic_menu_kf"]
+    let titles = ["光伏政策　", "光伏保险　", "光伏贷款　", "供电局　", "安装运维　", "实战模式　", "产品供求　", "客服　　　"]
+    let images = ["ic_menu_gfzc", "ic_menu_gfbx", "ic_menu_gfdk", "ic_menu_gdj", "ic_menu_azyw", "ic_menu_szms", "ic_menu_cpgq", "ic_menu_kf"]
     
     let times = YCPhoneUtils.screenWidth / 375
     var startY: CGFloat = 0
@@ -41,6 +41,12 @@ class YeZhuHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
         initBannerImageView()
         
         loadBannerData()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "业主列表", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.yezhuList))
+    }
+    
+    func yezhuList() {
+        let vc = GFJRoofListViewController(nibName: "GFJRoofListViewController", bundle: nil)
+        self.pushViewController(vc)
     }
     
     func initView() {
