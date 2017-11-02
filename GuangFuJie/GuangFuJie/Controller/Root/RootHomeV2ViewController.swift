@@ -345,17 +345,17 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     //#MARK: 跳转到role的首页
     func roleHomeButtonClicked(sender: UIButton) {
         if (sender.tag == 0) {
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "JoinUsViewController"))
+            let vc = JiaMengHomeV2ViewController()
+            self.pushViewController(vc)
         } else if (sender.tag == 1) {
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "InstallerHomeViewController"))
+            let vc = AnZhuangHomeV2ViewController()
+            self.pushViewController(vc)
         } else if (sender.tag == 2) {
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "DiTuiHomeViewController"))
+            let vc = DiTuiHomeV2ViewController()
+            self.pushViewController(vc)
         } else if (sender.tag == 3) {
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "YeZhuViewController"))
+            let vc = YeZhuHomeV2ViewController()
+            self.pushViewController(vc)
         }
     }
     

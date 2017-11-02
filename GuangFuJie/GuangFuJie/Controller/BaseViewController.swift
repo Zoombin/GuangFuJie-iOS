@@ -135,6 +135,30 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
 //        }
     }
     
+    func applyYeZhu() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "YeZhuApplyViewController")
+        self.pushViewController(vc)
+    }
+    
+    func applyJiaMeng() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "JoinUsApplyViewController")
+        self.pushViewController(vc)
+    }
+    
+    func applyAnZhuang() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "InstallerApplyViewController")
+        self.pushViewController(vc)
+    }
+    
+    func applyDiTui() {
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DituiApplyViewController")
+        self.pushViewController(vc)
+    }
+    
     func pushViewController(_ to : UIViewController, animation: Bool? = true) {
         to.hidesBottomBarWhenPushed = true
         let image = UIImage(named: "ic_back")

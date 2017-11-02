@@ -168,6 +168,14 @@
 		DE6D91FC1F2DBAE2008E0E3A /* RootEarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D91FB1F2DBAE2008E0E3A /* RootEarnViewController.swift */; };
 		DE7963C51FA4451700C96F80 /* InvestAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7963C41FA4451600C96F80 /* InvestAddViewController.swift */; };
 		DE7963C61FA4451700C96F80 /* InvestAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7963C41FA4451600C96F80 /* InvestAddViewController.swift */; };
+		DE805C4A1FAABF1B0061DB78 /* JiaMengHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE805C491FAABF1B0061DB78 /* JiaMengHomeV2ViewController.swift */; };
+		DE805C4B1FAABF1B0061DB78 /* JiaMengHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE805C491FAABF1B0061DB78 /* JiaMengHomeV2ViewController.swift */; };
+		DE805C4D1FAABF2C0061DB78 /* AnZhuangHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE805C4C1FAABF2C0061DB78 /* AnZhuangHomeV2ViewController.swift */; };
+		DE805C4E1FAABF2C0061DB78 /* AnZhuangHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE805C4C1FAABF2C0061DB78 /* AnZhuangHomeV2ViewController.swift */; };
+		DE805C501FAABF380061DB78 /* DiTuiHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE805C4F1FAABF380061DB78 /* DiTuiHomeV2ViewController.swift */; };
+		DE805C511FAABF380061DB78 /* DiTuiHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE805C4F1FAABF380061DB78 /* DiTuiHomeV2ViewController.swift */; };
+		DE805C531FAABF470061DB78 /* YeZhuHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE805C521FAABF460061DB78 /* YeZhuHomeV2ViewController.swift */; };
+		DE805C541FAABF470061DB78 /* YeZhuHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE805C521FAABF460061DB78 /* YeZhuHomeV2ViewController.swift */; };
 		DE8683E11F0DC92B00FF7FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */; };
 		DE8683E61F0DC92B00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
 		DE8683E81F0DC92B00FF7FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E71F0DC92B00FF7FD3 /* Assets.xcassets */; };
@@ -1293,6 +1301,10 @@
 		DE6D91F91F2DBAD7008E0E3A /* RootPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPayViewController.swift; sourceTree = "<group>"; };
 		DE6D91FB1F2DBAE2008E0E3A /* RootEarnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootEarnViewController.swift; sourceTree = "<group>"; };
 		DE7963C41FA4451600C96F80 /* InvestAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestAddViewController.swift; sourceTree = "<group>"; };
+		DE805C491FAABF1B0061DB78 /* JiaMengHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiaMengHomeV2ViewController.swift; sourceTree = "<group>"; };
+		DE805C4C1FAABF2C0061DB78 /* AnZhuangHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnZhuangHomeV2ViewController.swift; sourceTree = "<group>"; };
+		DE805C4F1FAABF380061DB78 /* DiTuiHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiTuiHomeV2ViewController.swift; sourceTree = "<group>"; };
+		DE805C521FAABF460061DB78 /* YeZhuHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeZhuHomeV2ViewController.swift; sourceTree = "<group>"; };
 		DE8683DD1F0DC92B00FF7FD3 /* GuangFuJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFuJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8683E01F0DC92B00FF7FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8683E51F0DC92B00FF7FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -2387,6 +2399,17 @@
 			path = ResultRoot;
 			sourceTree = "<group>";
 		};
+		DE805C3F1FAABEB60061DB78 /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				DE805C491FAABF1B0061DB78 /* JiaMengHomeV2ViewController.swift */,
+				DE805C4C1FAABF2C0061DB78 /* AnZhuangHomeV2ViewController.swift */,
+				DE805C4F1FAABF380061DB78 /* DiTuiHomeV2ViewController.swift */,
+				DE805C521FAABF460061DB78 /* YeZhuHomeV2ViewController.swift */,
+			);
+			path = Apply;
+			sourceTree = "<group>";
+		};
 		DE8683D41F0DC92B00FF7FD3 = {
 			isa = PBXGroup;
 			children = (
@@ -2471,6 +2494,7 @@
 		DE8684391F0DCA8F00FF7FD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE805C3F1FAABEB60061DB78 /* Apply */,
 				DE6D91EB1F2DBA7A008E0E3A /* ResultRoot */,
 				DE868DF11F0DE66400FF7FD3 /* Root */,
 				DE9F999E1F19FD3C003CF080 /* AddNoteViewController.swift */,
@@ -4566,6 +4590,7 @@
 				DEFF5F061F700E5100F58A04 /* BCQueryBillsCountResp.m in Sources */,
 				DEBD13851FA4700400097F56 /* HInstallerCell.swift in Sources */,
 				DEB9CA4C1F722FA6007BE2A3 /* QuestionInfo.swift in Sources */,
+				DE805C4D1FAABF2C0061DB78 /* AnZhuangHomeV2ViewController.swift in Sources */,
 				DEC222581F13601E007D6DBE /* NSBundle+MJRefresh.m in Sources */,
 				DE868E001F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */,
 				DEB9CA341F722FA6007BE2A3 /* InsuranceType.swift in Sources */,
@@ -4635,6 +4660,7 @@
 				DEFF5F2E1F700E5100F58A04 /* BCURLSessionManager.m in Sources */,
 				DEB9CA2E1F722FA6007BE2A3 /* InstallInfo.swift in Sources */,
 				DE6D91F61F2DBAAA008E0E3A /* RootComViewController.swift in Sources */,
+				DE805C501FAABF380061DB78 /* DiTuiHomeV2ViewController.swift in Sources */,
 				DEFF5F001F700E5100F58A04 /* BCQueryBillsReq.m in Sources */,
 				DE3954351F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */,
 				DEB9CA2A1F722FA6007BE2A3 /* IncomeCalParams.swift in Sources */,
@@ -4773,6 +4799,7 @@
 				DE9131A11F7939B7002C9D98 /* MQChatViewStyleBlue.m in Sources */,
 				DED352A01F63EDA100BA1B52 /* ExperienceShopViewController.swift in Sources */,
 				DE86887B1F0DD05900FF7FD3 /* QNPHAssetFile.m in Sources */,
+				DE805C4A1FAABF1B0061DB78 /* JiaMengHomeV2ViewController.swift in Sources */,
 				DE91324B1F7939B7002C9D98 /* amrFileCodec.mm in Sources */,
 				DEE6C9DC1F35BECA00AB6031 /* IQTitleBarButtonItem.swift in Sources */,
 				DE91319B1F7939B7002C9D98 /* MQChatViewConfig.m in Sources */,
@@ -4935,6 +4962,7 @@
 				DE8689EA1F0DD0D700FF7FD3 /* QNDomain.m in Sources */,
 				DE9F999F1F19FD3C003CF080 /* AddNoteViewController.swift in Sources */,
 				DEC222421F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
+				DE805C531FAABF470061DB78 /* YeZhuHomeV2ViewController.swift in Sources */,
 				DE1F71D91F62762600B8C2E8 /* InstallerDetailOldViewController.swift in Sources */,
 				DE868A001F0DD0D700FF7FD3 /* QNRefresher.m in Sources */,
 				DE2389D11F8F4CFF00A9EE89 /* DeviceCell.swift in Sources */,
@@ -5075,6 +5103,7 @@
 				DE9131B21F7939B7002C9D98 /* MQPreChatFormViewModel.m in Sources */,
 				DE9131821F7939B7002C9D98 /* MQAnimatorPush.m in Sources */,
 				DEB9CA4F1F722FA6007BE2A3 /* RepaymentInfo.swift in Sources */,
+				DE805C541FAABF470061DB78 /* YeZhuHomeV2ViewController.swift in Sources */,
 				DE9132341F7939B7002C9D98 /* MEIQIA_FBLCDFontView.m in Sources */,
 				DEE6C9C91F35BEC900AB6031 /* IQUIScrollView+Additions.swift in Sources */,
 				DEFF5F0F1F700E5100F58A04 /* BCQueryRefundsResp.m in Sources */,
@@ -5092,6 +5121,7 @@
 				DEB9CA451F722FA6007BE2A3 /* ProjectcalInfo.swift in Sources */,
 				DEE681EE1F185D2000157560 /* InstallerHomeViewController.swift in Sources */,
 				DE9131A01F7939B7002C9D98 /* MQChatViewStyle.m in Sources */,
+				DE805C511FAABF380061DB78 /* DiTuiHomeV2ViewController.swift in Sources */,
 				DEA4FD8A1F8E076D006767E7 /* NSData+AESCrypt.m in Sources */,
 				DE9132641F7939B7002C9D98 /* MQInputToolView.m in Sources */,
 				DE868A091F0DD0D700FF7FD3 /* QNIP.m in Sources */,
@@ -5129,6 +5159,7 @@
 				DE3954221F1468CB00A44740 /* ZLPhotoPickerGroup.m in Sources */,
 				DE91321A1F7939B7002C9D98 /* MQChatFileUtil.m in Sources */,
 				DEE6C9C71F35BEC900AB6031 /* IQNSArray+Sort.swift in Sources */,
+				DE805C4B1FAABF1B0061DB78 /* JiaMengHomeV2ViewController.swift in Sources */,
 				DE9131961F7939B7002C9D98 /* UIViewController+MQHieriachy.m in Sources */,
 				DE9F99A01F19FD3C003CF080 /* AddNoteViewController.swift in Sources */,
 				DEFF5F111F700E5100F58A04 /* BCQueryRefundsCountReq.m in Sources */,
@@ -5336,6 +5367,7 @@
 				DE3954561F1480E800A44740 /* Dimens.swift in Sources */,
 				DEB9CA1F1F722FA6007BE2A3 /* FranchiseeInfo.swift in Sources */,
 				DE3953F41F1468CB00A44740 /* SDWebImageDecoder.m in Sources */,
+				DE805C4E1FAABF2C0061DB78 /* AnZhuangHomeV2ViewController.swift in Sources */,
 				DEE6C9D91F35BECA00AB6031 /* IQBarButtonItem.swift in Sources */,
 				DEA4FD8F1F8E0D1E006767E7 /* YCLineUtils.m in Sources */,
 				DE91321E1F7939B7002C9D98 /* MQDateFormatterUtil.m in Sources */,

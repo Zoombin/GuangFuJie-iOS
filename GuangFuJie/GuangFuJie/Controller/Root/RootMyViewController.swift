@@ -375,30 +375,6 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             applyJiaMeng()
         }
     }
-    
-    func applyYeZhu() {
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "YeZhuApplyViewController")
-        self.pushViewController(vc)
-    }
-    
-    func applyJiaMeng() {
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "JoinUsApplyViewController")
-        self.pushViewController(vc)
-    }
-    
-    func applyAnZhuang() {
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "InstallerApplyViewController")
-        self.pushViewController(vc)
-    }
-    
-    func applyDiTui() {
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "DituiApplyViewController")
-        self.pushViewController(vc)
-    }
 
     func resetRolesBtn() {
         dituiButton.isHidden = true
