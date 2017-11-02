@@ -11,8 +11,8 @@ import UIKit
 class RootMyViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     var myTableView: UITableView!
-    var titles = ["分享光伏街", "技术支持", "关于我们", "系统设置"]
-    var imgs = ["ic_my_shareapp", "ic_my_support", "ic_my_about", "ic_my_settings"]
+    var titles = ["分享光伏街", "关于我们", "系统设置"]
+    var imgs = ["ic_my_shareapp", "ic_my_about", "ic_my_settings"]
     let times = PhoneUtils.kScreenWidth / 375
     
     var roofCountLabel: UILabel!
@@ -270,18 +270,12 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             //分享光伏街
             shareApp()
         } else if (indexPath.row == 1) {
-            //技术支持
-            let vc = GFJWebViewController()
-            vc.url = "http://www.pvsr.cn"
-            vc.title = "技术支持"
-            self.pushViewController(vc)
-        } else if (indexPath.row == 2) {
             //关于我们
             let vc = GFJWebViewController()
             vc.title = "关于我们"
             vc.urlTag = 0
             self.pushViewController(vc)
-        } else if (indexPath.row == 3) {
+        } else if (indexPath.row == 2) {
             //设置
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "SettingsViewController")
