@@ -8,10 +8,15 @@
 
 import UIKit
 
-class AnZhuangHomeV2ViewController: BaseViewController {
+class AnZhuangHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
     var loginButton: UIButton!
     var userNameLabel: UILabel!
     var statusButton: UIButton!
+    
+    var pageControl: UIPageControl!
+    var bannerScrollView: UIScrollView!
+    
+    var bannerData = NSMutableArray()
     
     var dituiButton: UIButton!
     var yezhuButton: UIButton!
@@ -19,12 +24,23 @@ class AnZhuangHomeV2ViewController: BaseViewController {
     var jiamengButton: UIButton!
     
     var contentScrollView: UIScrollView!
+    var headerView: UIView!
+    
+    let titles = ["本地市场　", "体验店　", "光伏政策　", "光伏保险　", "光伏贷款　", "供电局　", "地面推广　", "推广支持　", "本地安装商", "本地业主　", "投资收益　", "实战模式　", "加盟支持　", "安装运维　", "产品供求　", "客服　　　"]
+    let images = ["ic_menu_bdsc", "ic_menu_tyd", "ic_menu_gfzc", "ic_menu_gfbx", "ic_menu_gfdk", "ic_menu_gdj", "ic_menu_dmtg", "ic_menu_tgzc", "ic_menu_bdazs", "ic_menu_bdyz", "ic_menu_tzsy", "ic_menu_szms", "ic_install_jmzc", "ic_menu_azyw", "ic_menu_cpgq", "ic_menu_kf"]
     
     let times = YCPhoneUtils.screenWidth / 375
+    var startY: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "安装商"
         initView()
         addHeaderView()
+        addMenus()
+        initBannerImageView()
+        
+        loadBannerData()
     }
     
     func initView() {
@@ -33,7 +49,7 @@ class AnZhuangHomeV2ViewController: BaseViewController {
     }
     
     func addHeaderView() {
-        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 163 * times))
+        headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 163 * times))
         headerView.backgroundColor = self.view.backgroundColor
         contentScrollView.addSubview(headerView)
         
@@ -91,6 +107,42 @@ class AnZhuangHomeV2ViewController: BaseViewController {
         statusButton.backgroundColor = Colors.applyGreen
         statusButton.isHidden = true
         topView.addSubview(statusButton)
+    }
+    
+    func addMenus() {
+        startY = headerView.frame.maxY + 5 * times
+        let btnWidth = YCPhoneUtils.screenWidth / 2
+        let btnHeight = 50 * times
+        var index = 0
+        var line = 0
+        for i in 0..<titles.count {
+            if (i % 2 == 0 && i != 0) {
+                line += 1
+                index = 0
+            }
+            let menuButton = UIButton.init(type: UIButtonType.custom)
+            menuButton.frame = CGRect(x: CGFloat(index) * btnWidth, y: startY + CGFloat(line) * btnHeight, width: btnWidth, height: btnHeight)
+            menuButton.setImage(UIImage(named: images[i]), for: UIControlState.normal)
+            menuButton.setTitle(titles[i], for: UIControlState.normal)
+            menuButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+            menuButton.backgroundColor = UIColor.white
+            menuButton.layer.borderColor = Colors.bkgColor.cgColor
+            menuButton.layer.borderWidth = 0.5
+            menuButton.tag = i
+            menuButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+            menuButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+            menuButton.contentEdgeInsets = UIEdgeInsetsMake(0, 40 * times, 0, 0)
+            menuButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10 * times, 0, 0)
+            menuButton.addTarget(self, action: #selector(self.menuButtonClicked(button:)), for: UIControlEvents.touchUpInside)
+            contentScrollView.addSubview(menuButton)
+            index += 1
+        }
+        startY = startY + CGFloat(line + 1) * btnHeight
+    }
+    
+    func menuButtonClicked(button: UIButton) {
+        let title = titles[button.tag]
+        self.goToPageByTitle(title: title)
     }
     
     func statusButtonClicked() {
@@ -221,5 +273,76 @@ class AnZhuangHomeV2ViewController: BaseViewController {
             dituiButton.frame = CGRect(x: dituiButton.frame.minX, y: yezhuButton.frame.maxY, width: dituiButton.frame.width, height: dituiButton.frame.height)
         }
     }
+    
+    func loadBannerData() {
+        API.sharedInstance.articlesList(0, pagesize: 0, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 10, success: { (count, array) in
+            if (array.count > 0) {
+                self.bannerData.addObjects(from: array as! [Any])
+                self.initBannerImageView()
+            }
+        }) { (msg) in
+            
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = PhoneUtils.kScreenWidth
+        let page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
+        pageControl.currentPage = Int(page)
+    }
+    
+    //#MARK: 刷新banner数据
+    func initBannerImageView() {
+        bannerScrollView = UIScrollView.init(frame: CGRect(x: 0, y: startY + 5 * times, width: YCPhoneUtils.screenWidth, height: 145 * times))
+        bannerScrollView.backgroundColor = UIColor.white
+        bannerScrollView.delegate = self
+        bannerScrollView.isPagingEnabled = true
+        contentScrollView.addSubview(bannerScrollView)
+        
+        pageControl = UIPageControl.init(frame: CGRect(x: 0, y: bannerScrollView.frame.maxY - 20 * times, width: YCPhoneUtils.screenWidth, height: 20 * times))
+        pageControl.backgroundColor = UIColor.clear
+        contentScrollView.addSubview(pageControl)
+        
+        for i in 0..<bannerData.count {
+            let info = bannerData[i] as! ArticleInfo
+            let imageView = UIImageView.init(frame: CGRect(x: CGFloat(i) * PhoneUtils.kScreenWidth, y: 0, width: PhoneUtils.kScreenWidth, height: bannerScrollView.frame.size.height))
+            imageView.setImageWith(URL.init(string: YCStringUtils.getString(info.image))!)
+            imageView.tag = i
+            imageView.isUserInteractionEnabled = true
+            bannerScrollView.addSubview(imageView)
+            
+            let gesture = UITapGestureRecognizer()
+            gesture.addTarget(self, action: #selector(self.bannerClicked(gesture:)))
+            imageView.addGestureRecognizer(gesture)
+            
+        }
+        pageControl.numberOfPages = bannerData.count
+        bannerScrollView.contentSize = CGSize(width: PhoneUtils.kScreenWidth * CGFloat(bannerData.count), height: 0)
+        
+        contentScrollView.contentSize = CGSize(width: 0, height: bannerScrollView.frame.maxY + 5 * times)
+    }
+    
+    //#MARK: banner点击
+    func bannerClicked(gesture: UITapGestureRecognizer) {
+        let index = gesture.view?.tag
+        if (index == 0) {
+            self.tabBarController?.selectedIndex = 3
+        } else if (index == 1) {
+            self.tabBarController?.selectedIndex = 2
+        } else if (index == 2) {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
+        }
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
