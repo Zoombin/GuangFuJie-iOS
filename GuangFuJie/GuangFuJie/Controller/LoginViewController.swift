@@ -17,8 +17,19 @@ class LoginViewController: BaseViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         self.title = "登录"
         // Do any additional setup after loading the view.
+        addLoginHeaderView()
     }
 
+    func addLoginHeaderView() {
+        let times = YCPhoneUtils.screenWidth / 375
+        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: YCPhoneUtils.screenWidth, height: 200 * times))
+        let logoImage = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 58 * times, height: 85 * times))
+        logoImage.image = UIImage(named: "ic_plogo")
+        logoImage.center = headerView.center
+        headerView.addSubview(logoImage)
+        loginTableView.tableHeaderView = headerView
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
