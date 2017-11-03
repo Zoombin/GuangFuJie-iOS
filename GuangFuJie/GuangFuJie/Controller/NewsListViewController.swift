@@ -16,8 +16,8 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
     var type: NSNumber?
     var isProduct = false
     var webSite = ""
-    
-    @IBOutlet weak var newsListTableView: UITableView!
+    let cellReuseIdentifier = "cellReuseIdentifier"
+    var newsListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,14 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     func initView() {
+        newsListTableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()), style: UITableViewStyle.plain)
+        newsListTableView.delegate = self
+        newsListTableView.dataSource = self
+        newsListTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.view.addSubview(newsListTableView)
+        
         newsListTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
+        newsListTableView.register(NewsV2Cell.self, forCellReuseIdentifier: cellReuseIdentifier)
         getNewsList()
     }
     
@@ -96,10 +103,13 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
         self.pushViewController(vc)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return NewsV2Cell.cellHeight()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "NewsCell"
         let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! NewsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! NewsV2Cell
         cell.setData(model: data)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
