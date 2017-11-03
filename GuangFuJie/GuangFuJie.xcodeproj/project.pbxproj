@@ -874,6 +874,8 @@
 		DEC226FB1F13639A007D6DBE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEC365A01FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */; };
 		DEC365A11FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */; };
+		DEC775B41FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */; };
+		DEC775B51FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */; };
 		DED05D371F624C4A006741F6 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */; };
 		DED05D381F624C4A006741F6 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */; };
 		DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */; };
@@ -1929,6 +1931,7 @@
 		DEC2243A1F136362007D6DBE /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		DEC226EE1F136382007D6DBE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeV2ViewController.swift; sourceTree = "<group>"; };
+		DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsV2Cell.swift; sourceTree = "<group>"; };
 		DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
 		DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
 		DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
@@ -2487,6 +2490,7 @@
 				DEBD13841FA4700400097F56 /* HInstallerCell.swift */,
 				DEBD13871FA4702D00097F56 /* HInvestAndOfferCell.swift */,
 				DE9F27EF1FA486BF00B5B503 /* BrandCell.swift */,
+				DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4587,6 +4591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC775B41FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */,
 				DEFF5F061F700E5100F58A04 /* BCQueryBillsCountResp.m in Sources */,
 				DEBD13851FA4700400097F56 /* HInstallerCell.swift in Sources */,
 				DEB9CA4C1F722FA6007BE2A3 /* QuestionInfo.swift in Sources */,
@@ -5419,6 +5424,7 @@
 				DEFF5F371F700E5100F58A04 /* NSDictionary+Utils.m in Sources */,
 				DEB9CA251F722FA6007BE2A3 /* GroupOrderInfo.swift in Sources */,
 				DE86876E1F0DCE4400FF7FD3 /* AFURLSessionManager.m in Sources */,
+				DEC775B51FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */,
 				DE8688941F0DD05900FF7FD3 /* QNUploadOption.m in Sources */,
 				DE86887E1F0DD05900FF7FD3 /* QNPHAssetResource.m in Sources */,
 				DE86848A1F0DCAFF00FF7FD3 /* API.swift in Sources */,
