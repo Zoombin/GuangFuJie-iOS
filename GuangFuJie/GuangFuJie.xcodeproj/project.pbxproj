@@ -876,6 +876,8 @@
 		DEC365A11FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */; };
 		DEC775B41FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */; };
 		DEC775B51FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */; };
+		DEC8EABB1FB030D2006A0EC2 /* SearchNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */; };
+		DEC8EABC1FB030D2006A0EC2 /* SearchNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */; };
 		DED05D371F624C4A006741F6 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */; };
 		DED05D381F624C4A006741F6 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */; };
 		DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */; };
@@ -1932,6 +1934,7 @@
 		DEC226EE1F136382007D6DBE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeV2ViewController.swift; sourceTree = "<group>"; };
 		DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsV2Cell.swift; sourceTree = "<group>"; };
+		DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsViewController.swift; sourceTree = "<group>"; };
 		DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
 		DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
 		DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
@@ -2498,6 +2501,7 @@
 		DE8684391F0DCA8F00FF7FD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DEC8EAB01FB0308F006A0EC2 /* News */,
 				DE805C3F1FAABEB60061DB78 /* Apply */,
 				DE6D91EB1F2DBA7A008E0E3A /* ResultRoot */,
 				DE868DF11F0DE66400FF7FD3 /* Root */,
@@ -3988,6 +3992,14 @@
 			path = IQKeyboardManager;
 			sourceTree = "<group>";
 		};
+		DEC8EAB01FB0308F006A0EC2 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		DEE6C9AF1F35BEC900AB6031 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -4793,6 +4805,7 @@
 				DEC2223A1F13601E007D6DBE /* MJRefreshBackFooter.m in Sources */,
 				DEE6C9D81F35BECA00AB6031 /* IQBarButtonItem.swift in Sources */,
 				DE9131D91F7939B7002C9D98 /* MQEvaluationResultCellModel.m in Sources */,
+				DEC8EABB1FB030D2006A0EC2 /* SearchNewsViewController.swift in Sources */,
 				DE9131811F7939B7002C9D98 /* MQAnimatorPush.m in Sources */,
 				DE8689051F0DD07300FF7FD3 /* MBProgressHUD.m in Sources */,
 				DE9131BD1F7939B7002C9D98 /* MQBotRichTextMessage.m in Sources */,
@@ -5264,6 +5277,7 @@
 				DED05D491F624CBA006741F6 /* YeZhuCell.swift in Sources */,
 				DEC222511F13601E007D6DBE /* MJRefreshNormalHeader.m in Sources */,
 				DE8687641F0DCE4400FF7FD3 /* AFHTTPSessionManager.m in Sources */,
+				DEC8EABC1FB030D2006A0EC2 /* SearchNewsViewController.swift in Sources */,
 				DE91318C1F7939B7002C9D98 /* NSError+MQConvenient.m in Sources */,
 				DEB9CA311F722FA6007BE2A3 /* InsuranceDetail.swift in Sources */,
 				DE9131861F7939B7002C9D98 /* MQTransitioningAnimation.m in Sources */,

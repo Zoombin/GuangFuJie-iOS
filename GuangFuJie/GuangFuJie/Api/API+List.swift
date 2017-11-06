@@ -1410,7 +1410,7 @@ extension API {
             params["areaId"] = areaId
         }
         params["start"] = String(start)
-        params["pageisze"] = String(pagesize)
+        params["pagesize"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
@@ -1509,8 +1509,8 @@ extension API {
         if (type != nil) {
             params["type"] = type
         }
-        params["start"] = String(start)
-        params["pageisze"] = String(pagesize)
+        params["start"] = NSNumber.init(value: start)
+        params["pagesize"] = NSNumber.init(value: pagesize)
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
@@ -1545,7 +1545,7 @@ extension API {
         params["_o"] = 1
         params["userId"] = getUserId()
         params["start"] = String(start)
-        params["pageisze"] = String(pagesize)
+        params["pagesize"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in

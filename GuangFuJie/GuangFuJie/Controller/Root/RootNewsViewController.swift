@@ -23,6 +23,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     var currentPage = 0
     var type = 16
     
+    var cellReuseIdentifier = "cellReuseIdentifier"
     var provinceId: NSNumber?
     
     override func viewDidLoad() {
@@ -32,6 +33,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         //newsTableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(self.loadData))
         newsTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
+        newsTableView.register(NewsV2Cell.self, forCellReuseIdentifier: cellReuseIdentifier)
         
         getNewsList()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLocation), name: NSNotification.Name(rawValue: "RefreshLocation"), object: nil)
@@ -94,17 +96,17 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        self.searchButtonClicked()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+        let vc = SearchNewsViewController()
+        self.pushViewController(vc)
     }
     
     @IBAction func searchButtonClicked() {
-        if (YCStringUtils.isEmpty(searchBar.text!)) {
-            self.showHint("请输入搜索内容!")
-            return
-        }
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-        vc.key = searchBar.text;
+        let vc = SearchNewsViewController()
         self.pushViewController(vc)
     }
     
@@ -146,6 +148,7 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     }
 
@@ -156,6 +159,10 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.newsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return NewsV2Cell.cellHeight()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -176,9 +183,8 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "NewsCell"
         let data = self.newsArray.object(at: indexPath.row) as! ArticleInfo
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! NewsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! NewsV2Cell
         cell.setData(model: data)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell

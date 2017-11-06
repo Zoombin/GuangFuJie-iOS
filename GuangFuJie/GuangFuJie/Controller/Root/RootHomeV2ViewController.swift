@@ -260,7 +260,7 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     }
     
     func loadBannerData() {
-        API.sharedInstance.articlesList(0, pagesize: 0, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 10, success: { (count, array) in
+        API.sharedInstance.articlesList(0, pagesize: 10, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 10, success: { (count, array) in
             if (array.count > 0) {
                 self.bannerData.addObjects(from: array as! [Any])
                 self.initBannerImageView()
@@ -271,7 +271,7 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     }
     
     func loadExampleData() {
-        API.sharedInstance.articlesList(0, pagesize: 0, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 2, success: { (count, array) in
+        API.sharedInstance.articlesList(0, pagesize: 10, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 2, success: { (count, array) in
             if (array.count > 0) {
                 self.exampleData.addObjects(from: array as! [Any])
                 self.refreshExampleButtons()
