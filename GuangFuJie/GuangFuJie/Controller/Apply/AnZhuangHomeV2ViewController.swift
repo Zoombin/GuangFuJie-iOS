@@ -281,7 +281,7 @@ class AnZhuangHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     func loadBannerData() {
-        API.sharedInstance.articlesList(0, pagesize: 0, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 10, success: { (count, array) in
+        API.sharedInstance.articlesList(0, pagesize: 3, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 10, success: { (count, array) in
             if (array.count > 0) {
                 self.bannerData.addObjects(from: array as! [Any])
                 self.initBannerImageView()
