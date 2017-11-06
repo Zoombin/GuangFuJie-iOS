@@ -1587,7 +1587,7 @@ extension API {
     }
     
     //产能计算
-    func projectcalEnergycal(type: NSInteger, size: String, lat: NSNumber, lng: NSNumber, wOfPrice: String, firstYearKwElectric: String, success: ((_ commonModel: EnergycalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalEnergycal(type: NSInteger, size: String, lat: NSNumber, lng: NSNumber, wOfPrice: String, firstYearKwElectric: String, buildSize: String, success: ((_ commonModel: EnergycalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/energycal";
         let params = [
             "type": String(type),
@@ -1596,6 +1596,7 @@ extension API {
             "lng": lng,
             "wOfPrice": wOfPrice, //每瓦投资金额                  默认：8
             "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电     默认：4
+            "buildSize": buildSize,
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
@@ -1607,7 +1608,7 @@ extension API {
     }
     
     //收益综合报告
-    func projectcalIncomecal(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, wOfPrice: String, firstYearKwElectric: String, success: ((_ commonModel: IncomecalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalIncomecal(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, wOfPrice: String, firstYearKwElectric: String, build_size: String, success: ((_ commonModel: IncomecalInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/incomecal";
         let params = [
             "type": type, //三种类型
@@ -1625,6 +1626,7 @@ extension API {
             "sparetime_electric_price": sparetime_electric_price, //余电上网价
             "wOfPrice": wOfPrice, //每瓦投资金额                  默认：8
             "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电     默认：4
+            "buildSize": build_size, //装机容量
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
@@ -1636,7 +1638,7 @@ extension API {
     }
     
     //收益计算-发电收益
-    func projectcalElecticincomelist(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, wOfPrice: String, firstYearKwElectric: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalElecticincomelist(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, wOfPrice: String, firstYearKwElectric: String, build_size: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/electicincomelist";
         let params = [
             "type": type, //三种类型
@@ -1654,6 +1656,7 @@ extension API {
             "sparetime_electric_price": sparetime_electric_price, //余电上网价
             "wOfPrice": wOfPrice, //每瓦投资金额                  默认：8
             "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电     默认：4
+            "buildSize": build_size,
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
@@ -1665,7 +1668,7 @@ extension API {
     }
     
     //收益计算-产能计算
-    func projectcalEnergycal(type: NSNumber, size: NSNumber, annual_maintenance_cost: NSNumber, lat: NSNumber, lng: NSNumber, wOfPrice: NSNumber, firstYearKwElectric: NSNumber, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalEnergycal(type: NSNumber, size: NSNumber, annual_maintenance_cost: NSNumber, lat: NSNumber, lng: NSNumber, wOfPrice: NSNumber, firstYearKwElectric: NSNumber, build_size: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/energycal";
         let params = [
             "type": type,
@@ -1675,6 +1678,7 @@ extension API {
             "lng": lng,
             "wOfPrice": wOfPrice, //每瓦投资金额                  默认：8
             "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电     默认：4
+            "buildSize": build_size,
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
@@ -1686,11 +1690,12 @@ extension API {
     }
     
     // 收益计算-还款额度
-    func projectcalRepaymentList(invest_amount: NSNumber, invest_year: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalRepaymentList(invest_amount: NSNumber, invest_year: String, build_size: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/repaymentlist";
         let params = [
             "invest_amount": invest_amount, //贷款金额 （前面的界面投资金额乘以贷款百分比）
             "invest_year": invest_year, //贷款年限
+            "buildSize": build_size,
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
@@ -1702,7 +1707,7 @@ extension API {
     }
     
     //收益计算-净收益
-    func projectcalNetprofit(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, wOfPrice: String, firstYearKwElectric: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalNetprofit(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, wOfPrice: String, firstYearKwElectric: String, build_size: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/netprofit";
         let params = [
             "type": type, //三种类型
@@ -1720,6 +1725,7 @@ extension API {
             "sparetime_electric_price": sparetime_electric_price, //余电上网价
             "wOfPrice": wOfPrice, //每瓦投资金额                  默认：8
             "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电     默认：4
+            "buildSize": build_size,
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)
@@ -1800,7 +1806,7 @@ extension API {
     }
     
     //现金流
-    func projectcalCashflow(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, loan_rate: String, loan_type: String, wOfPrice: String, firstYearKwElectric: String, onlineType: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func projectcalCashflow(type: NSNumber, size: String, invest_amount: NSNumber, recoverable_liquid_capital: String, annual_maintenance_cost: String, installed_subsidy: String, loan_ratio: String, years_of_loans: String, occupied_electric_ratio: String, electric_price_perional: String, electricity_subsidy : String, electricity_subsidy_year: String, sparetime_electric_price: String, loan_rate: String, loan_type: String, wOfPrice: String, firstYearKwElectric: String, onlineType: String, build_size: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "projectcal/cashflow"
         let params = [
             "type": type, //三种类型
@@ -1821,6 +1827,7 @@ extension API {
             "wOfPrice": wOfPrice, //每瓦投资金额 默认：8
             "firstYearKwElectric": firstYearKwElectric, //首年千瓦日发电 默认：4
             "onlineType": onlineType, //现金流
+            "buildSize": build_size,
             "_o" : 1
             ] as [String : Any]
         let jsonStr = self.dataToJsonString(params as AnyObject)

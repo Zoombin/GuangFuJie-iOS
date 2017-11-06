@@ -44,7 +44,7 @@ class RootPayViewController: BaseViewController, UITableViewDelegate, UITableVie
             self.hideHud()
             return
         }
-        API.sharedInstance.projectcalRepaymentList(invest_amount: NSNumber.init(value: investAmount), invest_year: params.years_of_loans!, success: { (count, array) in
+        API.sharedInstance.projectcalRepaymentList(invest_amount: NSNumber.init(value: investAmount), invest_year: params.years_of_loans!, build_size: YCStringUtils.getString(params.build_size), success: { (count, array) in
             self.hideHud()
             self.results.addObjects(from: array as! [Any])
             self.resultTableView.reloadData()
