@@ -878,6 +878,8 @@
 		DEC775B51FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */; };
 		DEC8EABB1FB030D2006A0EC2 /* SearchNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */; };
 		DEC8EABC1FB030D2006A0EC2 /* SearchNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */; };
+		DEC8EABE1FB0566C006A0EC2 /* RootMapV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABD1FB0566C006A0EC2 /* RootMapV2ViewController.swift */; };
+		DEC8EABF1FB0566C006A0EC2 /* RootMapV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABD1FB0566C006A0EC2 /* RootMapV2ViewController.swift */; };
 		DED05D371F624C4A006741F6 /* MoreInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */; };
 		DED05D381F624C4A006741F6 /* MoreInstallerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */; };
 		DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */; };
@@ -1935,6 +1937,7 @@
 		DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeV2ViewController.swift; sourceTree = "<group>"; };
 		DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsV2Cell.swift; sourceTree = "<group>"; };
 		DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsViewController.swift; sourceTree = "<group>"; };
+		DEC8EABD1FB0566C006A0EC2 /* RootMapV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMapV2ViewController.swift; sourceTree = "<group>"; };
 		DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
 		DED05D361F624C4A006741F6 /* MoreInstallerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInstallerViewController.xib; sourceTree = "<group>"; };
 		DED05D421F624C88006741F6 /* NearByInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByInstallerViewController.swift; sourceTree = "<group>"; };
@@ -2961,6 +2964,7 @@
 				DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */,
 				DEBA7B511F98351D0022E001 /* RootProjectCalV2ViewController.swift */,
 				DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */,
+				DEC8EABD1FB0566C006A0EC2 /* RootMapV2ViewController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -4668,6 +4672,7 @@
 				DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */,
 				DE9131DB1F7939B7002C9D98 /* MQEventCellModel.m in Sources */,
 				DE9131891F7939B7002C9D98 /* NSArray+MQFunctional.m in Sources */,
+				DEC8EABE1FB0566C006A0EC2 /* RootMapV2ViewController.swift in Sources */,
 				DE9131DD1F7939B7002C9D98 /* MQFileDownloadCellModel.m in Sources */,
 				DEB9CA041F722FA6007BE2A3 /* BankInfo.swift in Sources */,
 				DEE682211F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
@@ -5306,6 +5311,7 @@
 				DEC222591F13601E007D6DBE /* NSBundle+MJRefresh.m in Sources */,
 				DEE6C9DD1F35BECA00AB6031 /* IQTitleBarButtonItem.swift in Sources */,
 				DEE6C9A51F35BAA300AB6031 /* NewsListViewController.swift in Sources */,
+				DEC8EABF1FB0566C006A0EC2 /* RootMapV2ViewController.swift in Sources */,
 				DE2389C31F8F4CA800A9EE89 /* MyDeviceListControllerViewController.swift in Sources */,
 				DE86887C1F0DD05900FF7FD3 /* QNPHAssetFile.m in Sources */,
 				DE8689E91F0DD0D700FF7FD3 /* QNDnsManager.m in Sources */,
