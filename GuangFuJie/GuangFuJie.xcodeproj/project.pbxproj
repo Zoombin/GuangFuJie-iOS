@@ -366,8 +366,6 @@
 		DE868DE71F0DE63200FF7FD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */; };
 		DE868DE81F0DE63200FF7FD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */; };
 		DE868DF51F0DE68A00FF7FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8683E41F0DC92B00FF7FD3 /* Main.storyboard */; };
-		DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
-		DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */; };
 		DE868DFD1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */; };
 		DE868DFE1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */; };
 		DE868E001F0DEAFF00FF7FD3 /* RootNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */; };
@@ -1496,7 +1494,6 @@
 		DE868DE11F0DE4DF00FF7FD3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DE868DE31F0DE4EF00FF7FD3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		DE868DE61F0DE63200FF7FD3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootMapViewController.swift; sourceTree = "<group>"; };
 		DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInsuranceViewController.swift; sourceTree = "<group>"; };
 		DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNewsViewController.swift; sourceTree = "<group>"; };
 		DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootMyViewController.swift; sourceTree = "<group>"; };
@@ -2958,7 +2955,6 @@
 		DE868DF11F0DE66400FF7FD3 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				DE868DF61F0DE8D400FF7FD3 /* RootMapViewController.swift */,
 				DE868DFC1F0DEAEC00FF7FD3 /* RootInsuranceViewController.swift */,
 				DE868DFF1F0DEAFF00FF7FD3 /* RootNewsViewController.swift */,
 				DE868E021F0DEB0900FF7FD3 /* RootMyViewController.swift */,
@@ -4708,7 +4704,6 @@
 				DE868ACE1F0DD1B800FF7FD3 /* MJProperty.m in Sources */,
 				DEFF5F121F700E5100F58A04 /* BCQueryRefundsCountResp.m in Sources */,
 				DE9131C91F7939B7002C9D98 /* MQRichTextMessage.m in Sources */,
-				DE868DF71F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DE3953FB1F1468CB00A44740 /* SDWebImagePrefetcher.m in Sources */,
 				DE7963C51FA4451700C96F80 /* InvestAddViewController.swift in Sources */,
 				DE3AE0C21F69265E00A7A34A /* InsuranceCell.swift in Sources */,
@@ -5254,7 +5249,6 @@
 				DEC2225D1F13601E007D6DBE /* UIScrollView+MJRefresh.m in Sources */,
 				DE9131AC1F7939B7002C9D98 /* MQChatViewTableDataSource.m in Sources */,
 				DE2389E71F8F58B600A9EE89 /* SafeDetailViewController.swift in Sources */,
-				DE868DF81F0DE8D400FF7FD3 /* RootMapViewController.swift in Sources */,
 				DEE6C9E11F35BECA00AB6031 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				DE91324A1F7939B7002C9D98 /* MEIQIA_TTTAttributedLabel.m in Sources */,
 				DE3954241F1468CB00A44740 /* UIViewController+Alert.m in Sources */,

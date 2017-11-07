@@ -421,13 +421,11 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     
     //#MARK: 更多案例
     func moreExampleButtonClicked() {
-//        //更多案例
-//        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-//        vc.type = 2
-//        vc.title = "成功案例"
-//        self.pushViewController(vc)
-        let vc = RootMapV2ViewController()
+        //更多案例
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+        vc.type = 2
+        vc.title = "成功案例"
         self.pushViewController(vc)
     }
     

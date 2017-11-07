@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSearchDelegate {
+class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSearchDelegate, UITableViewDelegate, UITableViewDataSource {
 
     var currentIndex = 0
     var topView: UIView!
@@ -33,12 +33,118 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
     
     var isLoading = false
     
+    var applyInstallButton: UIButton!
+    
+    var pguButton: UIButton!
+    
+    var chuzuButton: UIButton!
+    
+    var cesuanButton: UIButton!
+    
+    var installerArray = NSMutableArray()
+    var headerView: UIView!
+    var installerTableView: UITableView!
+    let cellReuseIdentifier = "cellReuseIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "地图"
         initTopView()
         initMapView()
+        initTableView()
+    }
+    
+    func closeButtonClicked() {
+        headerView.isHidden = true
+        installerTableView.isHidden = true
+    }
+    
+    func initTableView() {
+        headerView = UIView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight() + 200 * times, width: YCPhoneUtils.screenWidth, height: 50 * times))
+        headerView.backgroundColor = UIColor.white
+        headerView.isHidden = true
+        let titleLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: YCPhoneUtils.screenWidth, height: headerView.frame.size.height))
+        titleLabel.textAlignment = NSTextAlignment.center
+        titleLabel.text = "附近安装商"
+        headerView.addSubview(titleLabel)
+        
+        let closeButton = UIButton.init(type: UIButtonType.custom)
+        closeButton.frame = CGRect(x: YCPhoneUtils.screenWidth - headerView.frame.size.height, y: 0, width: headerView.frame.size.height, height: headerView.frame.size.height)
+        closeButton.setTitle("X", for: UIControlState.normal)
+        closeButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        closeButton.addTarget(self, action: #selector(closeButtonClicked), for: UIControlEvents.touchUpInside)
+        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 17))
+        headerView.addSubview(closeButton)
+        self.view.addSubview(headerView)
+        
+        installerTableView = UITableView.init(frame: CGRect(x: 0, y: headerView.frame.maxY, width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - headerView.frame.maxY - 50))
+        installerTableView.delegate = self
+        installerTableView.dataSource = self
+        installerTableView.isHidden = true
+        self.view.addSubview(installerTableView)
+        
+        installerTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+    }
+    
+    func getCityByLatLng(lat: NSNumber, lng: NSNumber) {
+        API.sharedInstance.getCityFromLatlng(lat: lat, lng: lng, success: { (location) in
+            self.getInsallerBYId(provinceId: YCStringUtils.getNumber(location.province_id), cityId: YCStringUtils.getNumber(location.city_id), areaId: YCStringUtils.getNumber(location.area_id))
+        }) { (msg) in
+            self.showHint(msg)
+        }
+    }
+    
+    func getInsallerBYId(provinceId: NSNumber, cityId: NSNumber, areaId: NSNumber) {
+        if (searchType == "province") {
+            self.searchNearByInstaller(provinceId: provinceId, cityId: nil, areaId: nil)
+        } else if (searchType == "city") {
+            self.searchNearByInstaller(provinceId: nil, cityId: cityId, areaId: nil)
+        } else {
+            self.searchNearByInstaller(provinceId: nil, cityId: cityId, areaId: nil)
+        }
+    }
+    
+    func searchNearByInstaller(provinceId: NSNumber? = nil, cityId: NSNumber? = nil, areaId: NSNumber? = nil) {
+        API.sharedInstance.getNearInstallerV2(provinceId, city_id: cityId, area_id: areaId, success: { (array) in
+            self.installerArray.removeAllObjects()
+            if (array.count > 0) {
+                self.headerView.isHidden = false
+                self.installerTableView.isHidden = false
+                self.installerArray.addObjects(from: array as! [Any])
+            }
+            self.installerTableView.reloadData()
+        }) { (msg) in
+            self.showHint(msg)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80 * times
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return installerArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        let info = installerArray[indexPath.row] as! InstallInfo
+        cell.textLabel?.text = YCStringUtils.getString(info.company_name)
+        cell.textLabel?.textColor = UIColor.black
+        cell.detailTextLabel?.text = YCStringUtils.getString(info.province_name) + YCStringUtils.getString(info.city_name) + YCStringUtils.getString(info.address_detail)
+        cell.detailTextLabel?.textColor = UIColor.black
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let info = installerArray[indexPath.row] as! InstallInfo
+        let vc = InstallerDetailOldViewController.init(nibName: "InstallerDetailOldViewController", bundle: nil)
+        vc.installer_id = YCStringUtils.getNumber(info.id)
+        self.pushViewController(vc)
     }
     
     func initTopView() {
@@ -86,6 +192,18 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         currentIndex = button.tag
         type = button.tag
         
+        applyInstallButton.isHidden = true
+        pguButton.isHidden = true
+        chuzuButton.isHidden = true
+        cesuanButton.isHidden = true
+        if (currentIndex == 1) {
+            applyInstallButton.isHidden = false
+        } else if (currentIndex == 2) {
+            pguButton.isHidden = false
+            chuzuButton.isHidden = false
+            cesuanButton.isHidden = false
+        }
+        
         let bottomLayer = button.layer.sublayers![2]
         bottomLayer.backgroundColor = Colors.appBlue.cgColor
 
@@ -122,7 +240,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
     
     //#MARK: initMapView
     func initMapView() {
-        mapView = BMKMapView.init(frame: CGRect(x: 0, y: topView.frame.maxY, width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - topView.frame.maxY))
+        mapView = BMKMapView.init(frame: CGRect(x: 0, y: topView.frame.maxY, width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - topView.frame.maxY - 50))
         mapView.delegate = self
         mapView.showsUserLocation = true
         self.view.addSubview(mapView)
@@ -160,25 +278,52 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         reduceButton.addTarget(self, action: #selector(self.reduceButtonClicked), for: UIControlEvents.touchUpInside)
         mapView.addSubview(reduceButton)
         
-        let applyInstallButton = UIButton.init(type: UIButtonType.custom)
+        applyInstallButton = UIButton.init(type: UIButtonType.custom)
         applyInstallButton.frame = CGRect(x: YCPhoneUtils.screenWidth - 66 * times, y: 10 * times, width: 56 * times, height: 56 * times)
         applyInstallButton.setBackgroundImage(UIImage(named: "ic_map_function_installapply"), for: UIControlState.normal)
+        applyInstallButton.addTarget(self, action: #selector(applyInstallerButtonClicked), for: UIControlEvents.touchUpInside)
         mapView.addSubview(applyInstallButton)
         
-        let pguButton = UIButton.init(type: UIButtonType.custom)
+        pguButton = UIButton.init(type: UIButtonType.custom)
         pguButton.frame = CGRect(x: YCPhoneUtils.screenWidth - 66 * times, y: 10 * times, width: 56 * times, height: 56 * times)
-        pguButton.setBackgroundImage(UIImage(named: "ic_map_function_installapply"), for: UIControlState.normal)
+        pguButton.setBackgroundImage(UIImage(named: "ic_map_function_pg"), for: UIControlState.normal)
+        pguButton.addTarget(self, action: #selector(mapCalButtonClicked), for: UIControlEvents.touchUpInside)
         mapView.addSubview(pguButton)
         
-        let chuzuButton = UIButton.init(type: UIButtonType.custom)
-        chuzuButton.frame = CGRect(x: YCPhoneUtils.screenWidth - 66 * times, y: 10 * times, width: 56 * times, height: 56 * times)
-        chuzuButton.setBackgroundImage(UIImage(named: "ic_map_function_installapply"), for: UIControlState.normal)
+        chuzuButton = UIButton.init(type: UIButtonType.custom)
+        chuzuButton.frame = CGRect(x: YCPhoneUtils.screenWidth - 66 * times, y: pguButton.frame.maxY + 10 * times, width: 56 * times, height: 56 * times)
+        chuzuButton.setBackgroundImage(UIImage(named: "ic_map_fuction_cz"), for: UIControlState.normal)
+        chuzuButton.addTarget(self, action: #selector(leaseButtonClicked), for: UIControlEvents.touchUpInside)
         mapView.addSubview(chuzuButton)
         
-        let cesuanButton = UIButton.init(type: UIButtonType.custom)
-        cesuanButton.frame = CGRect(x: YCPhoneUtils.screenWidth - 66 * times, y: 10 * times, width: 56 * times, height: 56 * times)
-        cesuanButton.setBackgroundImage(UIImage(named: "ic_map_function_installapply"), for: UIControlState.normal)
+        cesuanButton = UIButton.init(type: UIButtonType.custom)
+        cesuanButton.frame = CGRect(x: YCPhoneUtils.screenWidth - 66 * times, y: chuzuButton.frame.maxY + 10 * times, width: 56 * times, height: 56 * times)
+        cesuanButton.setBackgroundImage(UIImage(named: "ic_map_function_cs"), for: UIControlState.normal)
+        cesuanButton.addTarget(self, action: #selector(cesuanButtonClicked), for: UIControlEvents.touchUpInside)
         mapView.addSubview(cesuanButton)
+        
+        applyInstallButton.isHidden = true
+        pguButton.isHidden = true
+        chuzuButton.isHidden = true
+        cesuanButton.isHidden = true
+    }
+    
+    func applyInstallerButtonClicked() {
+        if (UserDefaultManager.isLogin() == false) {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "LoginViewController"))
+            return
+        }
+        let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity)
+        if (role != 1) {
+            //安装商
+            let vc = AnZhuangHomeV2ViewController()
+            self.pushViewController(vc)
+        }
+    }
+    
+    func cesuanButtonClicked() {
+        self.tabBarController?.selectedIndex = 2
     }
     
     func addButtonClicked() {
@@ -290,7 +435,11 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
             annotationView!.animatesDrop = false
             // 设置是否可以拖拽
             //            annotationView!.isDraggable = false
+            let gesture = UITapGestureRecognizer.init(target: self, action: #selector(annotationViewClicked(gesture:)))
+            annotationView?.isUserInteractionEnabled = true
+            annotationView?.addGestureRecognizer(gesture)
         }
+        
         let imageNameVio = "ic_mark_violet"
         let imageNameRed = "ic_map_redpoint"
         let imageNameOrange = "ic_map_orangepoint"
@@ -309,6 +458,15 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         
         annotationView?.annotation = annotation
         return annotationView
+    }
+    
+    func annotationViewClicked(gesture: UITapGestureRecognizer) {
+        let annotationView = gesture.view as! BMKAnnotationView
+        if (currentIndex == 1) {
+            let lat = annotationView.annotation.coordinate.latitude
+            let lng = annotationView.annotation.coordinate.longitude
+            self.getCityByLatLng(lat: NSNumber.init(value: lat), lng: NSNumber.init(value: lng))
+        }
     }
     
     // MARK: - BMKMapViewDelegate
@@ -357,7 +515,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         print("didStopLocatingUser")
     }
     
-    //微信地图计算
+    //地图计算
     func mapCalButtonClicked() {
         let vc = MapViewController()
         self.pushViewController(vc)

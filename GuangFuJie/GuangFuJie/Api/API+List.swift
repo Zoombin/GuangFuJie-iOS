@@ -447,6 +447,30 @@ extension API {
             }, failure: failure)
     }
     
+    
+    /// 安装商详情V2
+    ///
+    /// - Parameters:
+    ///   - installer_id:
+    ///   - success:
+    ///   - failure:
+    func installerDetailV2(_ installer_id : NSNumber, success: ((_ installerDetail: InstallInfo) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/getInstallersDetails"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["installer_id"] = installer_id
+        if (UserDefaultManager.isLogin()) {
+            params["user_id"] = getUserId()
+        }
+        
+        let jsonStr = self.dataToJsonString(params)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let installerDetail = InstallInfo.mj_object(withKeyValues: data)
+            success?(installerDetail!)
+        }, failure: failure)
+    }
+    
     /**
      我的安装商
      
@@ -1024,15 +1048,51 @@ extension API {
     }
     
     
+    /// 安装商列表v2
+    ///
+    /// - Parameters:
+    ///   - province_id:
+    ///   - city_id:
+    ///   - start:
+    ///   - pagesize:
+    ///   - is_auth:
+    ///   - success:
+    ///   - failure:
+    func installerListV2(_ province_id : NSNumber? = nil, city_id : NSNumber? = nil, start: NSNumber, pagesize: NSNumber, is_auth: NSNumber, success: ((_ installerList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "installer/list"
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        if (province_id != nil) {
+            params["provinceId"] = province_id
+        }
+        if (city_id != nil) {
+            params["cityId"] = city_id
+        }
+        params["start"] = start
+        params["pagesize"] = pagesize
+        params["is_auth"] = String(format: "%@", is_auth)
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InstallInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(array!)
+        }, failure: failure)
+    }
+    
     //附近安装商
     func getNearInstallerV2(_ province_id : NSNumber? = nil, city_id : NSNumber? = nil, area_id : NSNumber? = nil, success: ((_ installerList: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "installer/getInstallersById"
-        let params = [
-            "province_id" : province_id,
-            "city_id" : city_id,
-            "area_id" : area_id,
-            "_o" : 1
-        ]
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        if (province_id != nil) {
+            params["province_id"] = province_id
+        }
+        if (city_id != nil) {
+            params["city_id"] = city_id
+        }
+        if (area_id != nil) {
+            params["area_id"] = area_id
+        }
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in

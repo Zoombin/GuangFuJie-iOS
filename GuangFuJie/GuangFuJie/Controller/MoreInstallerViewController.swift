@@ -10,7 +10,6 @@ import UIKit
 
 class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, ProviceCityViewDelegate {
     @IBOutlet weak var yezhuTableView : UITableView!
-    @IBOutlet weak var countLabel : UILabel!
     @IBOutlet weak var checkmarkButton : UIButton!
     @IBOutlet weak var locationButton : UIButton!
     
@@ -58,7 +57,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func loadMore() {
-        let is_auth = checkmarkButton.isSelected ? 3 : 2
+        let is_auth = checkmarkButton.isSelected ? 0 : 1
         currentPage = currentPage + 1
         var province_id = NSNumber.init(value: 0)
         var city_id = NSNumber.init(value: 0)
@@ -68,12 +67,12 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         if (cityInfo != nil) {
             city_id = cityInfo.city_id!
         }
-        API.sharedInstance.userlist(currentPage, pagesize: 10, type: 2, province_id: province_id, city_id: city_id, is_suggest: nil, is_auth: is_auth as NSNumber?, success: { (totalCount, userInfos) in
-            self.yezhuTableView.mj_footer.endRefreshing()
-            if (userInfos.count > 0) {
-                self.yezhuArray.addObjects(from: userInfos as [AnyObject])
+        API.sharedInstance.installerListV2(province_id, city_id: city_id, start: currentPage as NSNumber, pagesize: 10, is_auth: is_auth as NSNumber, success: { (array) in
+            self.yezhuTableView.mj_header.endRefreshing()
+            if (array.count > 0) {
+                self.yezhuArray.addObjects(from: array as [AnyObject])
             }
-            if (userInfos.count < 10) {
+            if (array.count < 10) {
                 self.yezhuTableView.mj_footer.isHidden = true
             }
             self.yezhuTableView.reloadData()
@@ -85,7 +84,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
     
     func loadUserList() {
         currentPage = 0
-        let is_auth = checkmarkButton.isSelected ? 3 : 2
+        let is_auth = checkmarkButton.isSelected ? 0 : 1
         self.yezhuTableView.mj_footer.isHidden = false
         self.showHud(in: self.view, hint: "加载中...")
         var province_id = NSNumber.init(value: 0)
@@ -96,17 +95,16 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         if (cityInfo != nil) {
             city_id = cityInfo.city_id!
         }
-        API.sharedInstance.userlist(0, pagesize: 10, type: 2, province_id: province_id, city_id: city_id, is_suggest: nil, is_auth: is_auth as NSNumber?, success: { (totalCount, userInfos) in
-            self.yezhuTableView.mj_header.endRefreshing()
+        API.sharedInstance.installerListV2(province_id, city_id: city_id, start: 0, pagesize: 10, is_auth: is_auth as NSNumber, success: { (array) in
             self.hideHud()
+            self.yezhuTableView.mj_header.endRefreshing()
             self.yezhuArray.removeAllObjects()
-            if (userInfos.count > 0) {
-                self.yezhuArray.addObjects(from: userInfos as [AnyObject])
+            if (array.count > 0) {
+                self.yezhuArray.addObjects(from: array as [AnyObject])
             }
-            if (userInfos.count < 10) {
+            if (array.count < 10) {
                 self.yezhuTableView.mj_footer.isHidden = true
             }
-            self.countLabel.text = "\(totalCount)家安装商为您服务"
             self.yezhuTableView.reloadData()
         }) { (msg) in
             self.hideHud()
@@ -149,19 +147,19 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
             cell.avatarImageView.setImageWith(URL.init(string: userInfo.logo!)! as URL, placeholderImage: UIImage(named: "ic_avatar_yezhu"))
         }
         cell.nameLabel.text = userInfo.company_name
-        cell.descriptionLabel.text = userInfo.company_intro
+        cell.descriptionLabel.text = userInfo.company_desc
         var location = ""
-        if ((userInfo.province_label) != nil) {
-            location = location + userInfo.province_label!
+        if ((userInfo.province_name) != nil) {
+            location = location + userInfo.province_name!
         }
-        if ((userInfo.city_label) != nil) {
-            location = location + userInfo.city_label!
+        if ((userInfo.city_name) != nil) {
+            location = location + userInfo.city_name!
         }
-        if ((userInfo.address) != nil) {
-            location = location + userInfo.address!
+        if ((userInfo.address_detail) != nil) {
+            location = location + userInfo.address_detail!
         }
         cell.addressLabel.text = location
-        if (userInfo.is_installer == 2) {
+        if (userInfo.is_auth == 1) {
             cell.statusLabel.text = "已认证"
             cell.statusLabel.textColor = Colors.installColor
         } else {
@@ -180,7 +178,7 @@ class MoreInstallerViewController: BaseViewController, UITableViewDelegate, UITa
         }
         let userInfo = yezhuArray[indexPath.row] as! InstallInfo
         let vc = InstallerDetailOldViewController(nibName: "InstallerDetailOldViewController", bundle: nil)
-        vc.installer_id = userInfo.user_id!
+        vc.installer_id = userInfo.id!
         self.pushViewController(vc)
     }
 }

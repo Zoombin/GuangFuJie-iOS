@@ -11,6 +11,7 @@ import UIKit
 class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate {
     
     var nickNameLabel : UILabel!
+    var zhucezibenLabel: UILabel!
     var phoneLabel : UILabel!
     var sizeLabel : UILabel!
     
@@ -108,13 +109,13 @@ class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate 
         phoneLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         scrollView.addSubview(phoneLabel)
         
-        let titleSizeLabel = UILabel.init(frame: CGRect(x: 0, y: nickNameLabel.frame.maxY, width: labelWidth, height: labelHeight))
-        titleSizeLabel.text = "公司规模"
-        titleSizeLabel.layer.borderColor = UIColor.lightGray.cgColor
-        titleSizeLabel.layer.borderWidth = 0.5
-        titleSizeLabel.textAlignment = NSTextAlignment.center
-        titleSizeLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        scrollView.addSubview(titleSizeLabel)
+        zhucezibenLabel = UILabel.init(frame: CGRect(x: 0, y: nickNameLabel.frame.maxY, width: labelWidth, height: labelHeight))
+        zhucezibenLabel.text = ""
+        zhucezibenLabel.layer.borderColor = UIColor.lightGray.cgColor
+        zhucezibenLabel.layer.borderWidth = 0.5
+        zhucezibenLabel.textAlignment = NSTextAlignment.center
+        zhucezibenLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+        scrollView.addSubview(zhucezibenLabel)
         
         sizeLabel = UILabel.init(frame: CGRect(x: labelWidth, y: nickNameLabel.frame.maxY, width: labelWidth, height: labelHeight))
         sizeLabel.text = ""
@@ -125,7 +126,7 @@ class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate 
         scrollView.addSubview(sizeLabel)
         
         addressButton = UIButton.init(type: UIButtonType.custom)
-        addressButton.frame = CGRect(x:0, y:titleSizeLabel.frame.maxY, width: PhoneUtils.kScreenWidth, height: labelHeight)
+        addressButton.frame = CGRect(x:0, y:zhucezibenLabel.frame.maxY, width: PhoneUtils.kScreenWidth, height: labelHeight)
         addressButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
         addressButton.setTitleColor(UIColor.black, for: UIControlState.normal)
         addressButton.setImage(UIImage(named: "roof_location"), for: UIControlState.normal)
@@ -158,6 +159,11 @@ class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate 
     }
     
     func favButtonClicked() {
+        if (UserDefaultManager.isLogin() == false) {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "LoginViewController"))
+            return
+        }
         self.showHud(in: self.view, hint: "加载中")
         API.sharedInstance.favInstaller(installer_id, { (model) in
             self.hideHud()
@@ -170,6 +176,11 @@ class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate 
     }
     
     func cancelFavButtonClicked() {
+        if (UserDefaultManager.isLogin() == false) {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "LoginViewController"))
+            return
+        }
         self.showHud(in: self.view, hint: "加载中")
         API.sharedInstance.unFavInstaller(installer_id, { (model) in
             self.hideHud()
@@ -183,7 +194,7 @@ class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate 
     
     func loadData() {
         self.showHud(in: self.view, hint: "加载中")
-        API.sharedInstance.installerDetail(installer_id, success: { (installerDetail) in
+        API.sharedInstance.installerDetailV2(installer_id, success: { (installerDetail) in
                 self.hideHud()
                 self.setData(installerDetail)
                 self.addFavButton(isFav: installerDetail.is_favor!.boolValue)
@@ -202,50 +213,53 @@ class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate 
         self.title = name
         
         var nickName = ""
-        if (installerDetail.fullname != nil) {
-            nickName = installerDetail.fullname!
+        if (installerDetail.company_name != nil) {
+            nickName = installerDetail.company_name!
         }
         nickNameLabel.text = nickName
 
-        var size = ""
+        var ziben = "注册资本："
+        if (YCStringUtils.getNumber(installerDetail.capital).intValue != 0) {
+            ziben = ziben + "\(installerDetail.capital!)" + "万元"
+        } else {
+            ziben = ziben + "未填写"
+        }
+        zhucezibenLabel.text = ziben
+        
+        var size = "公司规模："
         if (installerDetail.company_size != nil) {
-            size = size + installerDetail.company_size! + "人"
+            size = size + "\(installerDetail.company_size!)" + "人"
         } else {
             size = size + "未填写"
         }
         sizeLabel.text = size
 
-        var phone = ""
-        if (installerDetail.contact_info != nil) {
-            phone = phone + installerDetail.contact_info!
+        var phone = "联系方式："
+        if (installerDetail.phone != nil) {
+            phone = phone + installerDetail.phone!
         } else {
             phone = phone + "未填写"
         }
         phoneLabel.text = phone
 
         var location = ""
-        if ((installerDetail.province_label) != nil) {
-            location = location + installerDetail.province_label!
+        if ((installerDetail.province_name) != nil) {
+            location = location + installerDetail.province_name!
         }
-        if ((installerDetail.city_label) != nil) {
-            location = location + installerDetail.city_label!
+        if ((installerDetail.city_name) != nil) {
+            location = location + installerDetail.city_name!
         }
-        if ((installerDetail.address) != nil) {
-            location = location + installerDetail.address!
+        if ((installerDetail.address_detail) != nil) {
+            location = location + installerDetail.address_detail!
         }
         addressButton.setTitle(location, for: UIControlState.normal)
         
-        if (installerDetail.is_installer == 2) {
+        if (installerDetail.is_auth == 1) {
             tipsLabel.text = "已认证"
             tipsLabel.textColor = Colors.installColor
         } else {
-            if (UserDefaultManager.getUser()!.user_id!.intValue == installerDetail.user_id!.intValue) {
-                noticeButton.isHidden = false
-                tipsLabel.isHidden = true
-            } else {
-                tipsLabel.text = "未认证"
-                tipsLabel.textColor = Colors.installRedColor
-            }
+            tipsLabel.text = "未认证"
+            tipsLabel.textColor = Colors.installRedColor
         }
 
         if (installerDetail.logo != nil) {
@@ -255,8 +269,8 @@ class InstallerDetailOldViewController: BaseViewController, UIAlertViewDelegate 
         }
         
         var intro = ""
-        if (installerDetail.company_intro != nil) {
-           intro = installerDetail.company_intro!
+        if (installerDetail.company_desc != nil) {
+           intro = installerDetail.company_desc!
         }
         introLabel.text = intro
         let originHeight = introLabel.frame.size.height

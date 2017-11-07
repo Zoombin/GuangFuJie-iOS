@@ -39,7 +39,7 @@ class InstallInfo: NSObject {
     var companyName: String? //公司名
     var corporation: String?    //法人
     var establishDate: String?   //成立时间
-    var capital: String?     //注册资本
+    var capital: NSNumber?     //注册资本
     var email: String?
     var scope: String?  //经营范围
     var website: String?   //网址
@@ -59,5 +59,5 @@ class InstallInfo: NSObject {
     var is_auth: NSNumber?
     
     var company_desc: String?
-    
+    var linkman: String?
 }
