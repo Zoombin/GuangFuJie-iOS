@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSearchDelegate, UITableViewDelegate, UITableViewDataSource {
+class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSearchDelegate, UITableViewDelegate, UITableViewDataSource, PaoPaoViewDelegate {
 
     var currentIndex = 0
     var topView: UIView!
@@ -48,6 +48,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         self.title = "地图"
         initTopView()
@@ -134,7 +135,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         let info = installerArray[indexPath.row] as! InstallInfo
         cell.textLabel?.text = YCStringUtils.getString(info.company_name)
         cell.textLabel?.textColor = UIColor.black
-        cell.detailTextLabel?.text = YCStringUtils.getString(info.province_name) + YCStringUtils.getString(info.city_name) + YCStringUtils.getString(info.address_detail)
+        cell.detailTextLabel?.text = "地址:" + YCStringUtils.getString(info.province_name) + YCStringUtils.getString(info.city_name) + YCStringUtils.getString(info.address_detail)
         cell.detailTextLabel?.textColor = UIColor.black
         return cell
     }
@@ -157,6 +158,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         let btnWidth = YCPhoneUtils.screenWidth / 4
         for i in 0..<titles.count {
             let btn = UIButton.init(type: UIButtonType.custom)
+            btn.titleEdgeInsets = UIEdgeInsetsMake(0, 3 * times, 0, 0)
             btn.frame = CGRect(x: CGFloat(i) * btnWidth, y: 0, width: btnWidth, height: topView.frame.size.height)
             btn.setTitle(titles[i], for: UIControlState.normal)
             btn.setTitleColor(UIColor.black, for: UIControlState.normal)
@@ -317,8 +319,8 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         let role = YCStringUtils.getNumber(UserDefaultManager.getUser()!.identity)
         if (role != 1) {
             //安装商
-            let vc = AnZhuangHomeV2ViewController()
-            self.pushViewController(vc)
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "InstallerApplyViewController"))
         }
     }
     
@@ -435,10 +437,17 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
             annotationView!.animatesDrop = false
             // 设置是否可以拖拽
             //            annotationView!.isDraggable = false
-            let gesture = UITapGestureRecognizer.init(target: self, action: #selector(annotationViewClicked(gesture:)))
-            annotationView?.isUserInteractionEnabled = true
-            annotationView?.addGestureRecognizer(gesture)
         }
+        let paopaoView = PaoPaoView.init(frame: CGRect(x: 0, y: 0, width: 120, height: 50))
+        paopaoView.initView()
+        paopaoView.cor = annotation.coordinate
+        paopaoView.titleLabel.text = YCStringUtils.getString(annotation.title!())
+        paopaoView.describeLabel.text = YCStringUtils.getString(annotation.subtitle!())
+        paopaoView.delegate = self
+        
+        let bmkView = BMKActionPaopaoView.init(customView: paopaoView)
+        bmkView?.isUserInteractionEnabled = true
+        annotationView?.paopaoView = bmkView
         
         let imageNameVio = "ic_mark_violet"
         let imageNameRed = "ic_map_redpoint"
@@ -455,18 +464,15 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
             annotationView?.image = UIImage(named: imageNameRed)
         }
         
-        
         annotationView?.annotation = annotation
         return annotationView
     }
     
-    func annotationViewClicked(gesture: UITapGestureRecognizer) {
-        let annotationView = gesture.view as! BMKAnnotationView
-        if (currentIndex == 1) {
-            let lat = annotationView.annotation.coordinate.latitude
-            let lng = annotationView.annotation.coordinate.longitude
-            self.getCityByLatLng(lat: NSNumber.init(value: lat), lng: NSNumber.init(value: lng))
+    func paopaoViewClick(cor: CLLocationCoordinate2D) {
+        if (currentIndex != 1) {
+            return
         }
+        self.getCityByLatLng(lat: NSNumber.init(value: cor.latitude), lng: NSNumber.init(value: cor.longitude))
     }
     
     // MARK: - BMKMapViewDelegate

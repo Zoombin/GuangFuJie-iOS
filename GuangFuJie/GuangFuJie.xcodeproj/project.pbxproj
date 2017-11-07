@@ -376,6 +376,8 @@
 		DE868E081F0E2CC600FF7FD3 /* ImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE868E061F0E2CC600FF7FD3 /* ImageTitleButton.m */; };
 		DE868E0A1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868E091F0E2D4F00FF7FD3 /* FontUtils.swift */; };
 		DE868E0B1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE868E091F0E2D4F00FF7FD3 /* FontUtils.swift */; };
+		DE8BE7191FB14EBA000AD02B /* PaoPaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8BE7181FB14EBA000AD02B /* PaoPaoView.swift */; };
+		DE8BE71A1FB14EBA000AD02B /* PaoPaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8BE7181FB14EBA000AD02B /* PaoPaoView.swift */; };
 		DE91317F1F7939B7002C9D98 /* MeiQiaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9130371F7939B6002C9D98 /* MeiQiaSDK.framework */; };
 		DE9131801F7939B7002C9D98 /* MeiQiaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9130371F7939B6002C9D98 /* MeiQiaSDK.framework */; };
 		DE9131811F7939B7002C9D98 /* MQAnimatorPush.m in Sources */ = {isa = PBXBuildFile; fileRef = DE91303B1F7939B6002C9D98 /* MQAnimatorPush.m */; };
@@ -1500,6 +1502,7 @@
 		DE868E051F0E2CC600FF7FD3 /* ImageTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTitleButton.h; sourceTree = "<group>"; };
 		DE868E061F0E2CC600FF7FD3 /* ImageTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTitleButton.m; sourceTree = "<group>"; };
 		DE868E091F0E2D4F00FF7FD3 /* FontUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
+		DE8BE7181FB14EBA000AD02B /* PaoPaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaoPaoView.swift; sourceTree = "<group>"; };
 		DE9130371F7939B6002C9D98 /* MeiQiaSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MeiQiaSDK.framework; path = "Meiqia-SDK-files/MeiQiaSDK.framework"; sourceTree = "<group>"; };
 		DE91303A1F7939B6002C9D98 /* MQAnimatorPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQAnimatorPush.h; sourceTree = "<group>"; };
 		DE91303B1F7939B6002C9D98 /* MQAnimatorPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQAnimatorPush.m; sourceTree = "<group>"; };
@@ -2494,6 +2497,7 @@
 				DEBD13871FA4702D00097F56 /* HInvestAndOfferCell.swift */,
 				DE9F27EF1FA486BF00B5B503 /* BrandCell.swift */,
 				DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */,
+				DE8BE7181FB14EBA000AD02B /* PaoPaoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4673,6 +4677,7 @@
 				DEB9CA041F722FA6007BE2A3 /* BankInfo.swift in Sources */,
 				DEE682211F19E5C300157560 /* YeZhuApplyViewController.swift in Sources */,
 				DEE6C9CA1F35BECA00AB6031 /* IQUITextFieldView+Additions.swift in Sources */,
+				DE8BE7191FB14EBA000AD02B /* PaoPaoView.swift in Sources */,
 				DEC226C11F136363007D6DBE /* SMenuButton.m in Sources */,
 				DEE6821B1F19E35D00157560 /* InstallerApplyViewController.swift in Sources */,
 				DEFF5F2E1F700E5100F58A04 /* BCURLSessionManager.m in Sources */,
@@ -5199,6 +5204,7 @@
 				DE39540C1F1468CB00A44740 /* UIView+ZLExtension.m in Sources */,
 				DEB9CA0D1F722FA6007BE2A3 /* CashInfo.swift in Sources */,
 				DEB9CA411F722FA6007BE2A3 /* NoteInfo.swift in Sources */,
+				DE8BE71A1FB14EBA000AD02B /* PaoPaoView.swift in Sources */,
 				DEFF5F351F700E5100F58A04 /* BeeCloud+Utils.m in Sources */,
 				DEB9CA2B1F722FA6007BE2A3 /* IncomeCalParams.swift in Sources */,
 				DE91319E1F7939B7002C9D98 /* MQChatViewManager.m in Sources */,

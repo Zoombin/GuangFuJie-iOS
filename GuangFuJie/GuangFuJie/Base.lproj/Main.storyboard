@@ -3672,11 +3672,11 @@
             </objects>
             <point key="canvasLocation" x="-2196" y="-231.63418290854574"/>
         </scene>
-        <!--屋顶地图-->
+        <!--地图-->
         <scene sceneID="JsH-yZ-0cd">
             <objects>
                 <navigationController id="KWr-Sl-spE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="屋顶地图" image="ic_tab_map" selectedImage="ic_tab_map_hl" id="7qg-2m-RN3"/>
+                    <tabBarItem key="tabBarItem" title="地图" image="ic_tab_map" selectedImage="ic_tab_map_hl" id="7qg-2m-RN3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gwd-ug-xXm">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
