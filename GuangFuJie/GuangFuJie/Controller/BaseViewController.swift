@@ -189,10 +189,22 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         self.present(actionSheet, animated: true, completion: nil)
     }
     
+    func contactUs() {
+        UIApplication.shared.openURL(URL.init(string: "tel:4006229666")!)
+    }
+    
     func chat() {
         let chatViewManager = MQChatViewManager()
         chatViewManager.chatViewStyle.statusBarStyle = UIStatusBarStyle.lightContent
         chatViewManager.chatViewStyle.navBarColor = Colors.appBlue
+        chatViewManager.chatViewStyle.navBarTintColor = UIColor.white
+        let button = UIButton.init(type: UIButtonType.custom)
+        button.frame = CGRect(x: 0, y: 0, width: 60, height: 44)
+        button.setTitleColor(UIColor.white, for: UIControlState.normal)
+        button.setTitle("客服电话", for: UIControlState.normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
+        button.addTarget(self, action: #selector(self.contactUs), for: UIControlEvents.touchUpInside)
+        chatViewManager.chatViewStyle.navBarRightButton = button
         chatViewManager.chatViewStyle.navTitleColor = UIColor.white
         chatViewManager.chatViewStyle.navBackButtonImage = UIImage(named: "ic_back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         chatViewManager.pushMQChatViewController(in: self)
