@@ -13,6 +13,8 @@
 		DE0237A71F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
 		DE08ECEB1FB5901C00E57602 /* GFQuestionHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */; };
 		DE08ECEC1FB5901C00E57602 /* GFQuestionHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */; };
+		DE08ECEE1FB5A9DE00E57602 /* InsuranceGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECED1FB5A9DE00E57602 /* InsuranceGuideViewController.swift */; };
+		DE08ECEF1FB5A9DE00E57602 /* InsuranceGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECED1FB5A9DE00E57602 /* InsuranceGuideViewController.swift */; };
 		DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
 		DE1A55141F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
 		DE1A551F1F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */; };
@@ -1185,6 +1187,7 @@
 		DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultCommonCell.swift; sourceTree = "<group>"; };
 		DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashListViewController.swift; sourceTree = "<group>"; };
 		DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFQuestionHomeViewController.swift; sourceTree = "<group>"; };
+		DE08ECED1FB5A9DE00E57602 /* InsuranceGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceGuideViewController.swift; sourceTree = "<group>"; };
 		DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddViewController.swift; sourceTree = "<group>"; };
 		DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListViewController.swift; sourceTree = "<group>"; };
 		DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailOldViewController.swift; sourceTree = "<group>"; };
@@ -2572,6 +2575,7 @@
 				DE2389E81F8F5A5000A9EE89 /* MyRoofsViewController.swift */,
 				DE2389EB1F8F5AD200A9EE89 /* MyFavViewController.swift */,
 				DE7963C41FA4451600C96F80 /* InvestAddViewController.swift */,
+				DE08ECED1FB5A9DE00E57602 /* InsuranceGuideViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4925,6 +4929,7 @@
 				DEFF5F261F700E5100F58A04 /* BCNetworkReachabilityManager.m in Sources */,
 				DE91327F1F7939B7002C9D98 /* MQMessageFormViewStyleGreen.m in Sources */,
 				DEB9CA4A1F722FA6007BE2A3 /* QNResultInfo.swift in Sources */,
+				DE08ECEE1FB5A9DE00E57602 /* InsuranceGuideViewController.swift in Sources */,
 				DE9131971F7939B7002C9D98 /* UIViewController+MQOrientationFix.m in Sources */,
 				DE2389E61F8F58B600A9EE89 /* SafeDetailViewController.swift in Sources */,
 				DEC2224E1F13601E007D6DBE /* MJRefreshGifHeader.m in Sources */,
@@ -5415,6 +5420,7 @@
 				DEA4FD8B1F8E076D006767E7 /* NSString+AESCrypt.m in Sources */,
 				DE9131D61F7939B7002C9D98 /* MQBotMenuCellModel.m in Sources */,
 				DEFF5F011F700E5100F58A04 /* BCQueryBillsReq.m in Sources */,
+				DE08ECEF1FB5A9DE00E57602 /* InsuranceGuideViewController.swift in Sources */,
 				DE8689E51F0DD0D700FF7FD3 /* QNAssessment.m in Sources */,
 				DE8688881F0DD05900FF7FD3 /* QNUserAgent.m in Sources */,
 				DE91324E1F7939B7002C9D98 /* wav.mm in Sources */,
