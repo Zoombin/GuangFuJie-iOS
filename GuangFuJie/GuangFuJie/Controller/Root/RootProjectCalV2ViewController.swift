@@ -977,7 +977,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         let tmpParams = CalResultParams()
         tmpParams.address = locationButton.titleLabel?.text!
         tmpParams.type = NSNumber.init(value: type)
-        tmpParams.build_size = zjrlTextField.text!
+        tmpParams.build_size = "\(YCStringUtils.getNumber(energyCalInfo!.build_size))"
         tmpParams.size = roofSizeTextField.text!
         tmpParams.invest_amount = energyCalInfo!.build_price
         let ywcbPercent = NSString.init(string: ywcbTextField.text!)
@@ -1260,7 +1260,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         let tzje = NSString.init(string: "\(YCStringUtils.getNumber(energyCalInfo!.build_price))").floatValue
         
         lxtzjeValueLabel.text = "\(YCStringUtils.getNumber(energyCalInfo!.build_price))"
-        lxzjrlValueLabel.text = "\(YCStringUtils.getString(zjrlTextField.text!))"
+        lxzjrlValueLabel.text = "\(YCStringUtils.getNumber(energyCalInfo!.build_size))"
         lxdkjeLabel.text = String(format: "%.2f", dkbl * tzje / 100)
         lxdkjeYearsLabel.text = "\(NSString.init(string: dkblYearsTextField.text!).integerValue)"
         dkllTextField.text = "4.9"
@@ -1283,7 +1283,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         let tmpParams = CalResultParams()
         tmpParams.address = locationButton.titleLabel?.text!
         tmpParams.type = NSNumber.init(value: type)
-        tmpParams.build_size = zjrlTextField.text!
+        tmpParams.build_size = "\(YCStringUtils.getNumber(energyCalInfo!.build_size))"
         tmpParams.size = roofSizeTextField.text!
         tmpParams.invest_amount = energyCalInfo!.build_price
         let ywcbPercent = NSString.init(string: ywcbTextField.text!)
