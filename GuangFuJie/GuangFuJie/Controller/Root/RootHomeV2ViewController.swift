@@ -395,8 +395,10 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
             self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
         } else if (sender.tag == 4) {
             //光伏问答
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "GuangFuAskViewController"))
+            let vc = GFQuestionHomeViewController()
+            self.pushViewController(vc)
+//            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+//            self.pushViewController(sb.instantiateViewController(withIdentifier: "GuangFuAskViewController"))
         } else if (sender.tag == 5) {
             //公司介绍
             API.sharedInstance.articlesList(0, pagesize: 1, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 8, success: { (count, array) in

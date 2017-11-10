@@ -11,6 +11,8 @@
 		DE02379E1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */; };
 		DE0237A61F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
 		DE0237A71F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
+		DE08ECEB1FB5901C00E57602 /* GFQuestionHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */; };
+		DE08ECEC1FB5901C00E57602 /* GFQuestionHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */; };
 		DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
 		DE1A55141F63B51E00939E60 /* QuestionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */; };
 		DE1A551F1F63BE0300939E60 /* MyQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */; };
@@ -1182,6 +1184,7 @@
 /* Begin PBXFileReference section */
 		DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultCommonCell.swift; sourceTree = "<group>"; };
 		DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashListViewController.swift; sourceTree = "<group>"; };
+		DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFQuestionHomeViewController.swift; sourceTree = "<group>"; };
 		DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddViewController.swift; sourceTree = "<group>"; };
 		DE1A551E1F63BE0300939E60 /* MyQuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListViewController.swift; sourceTree = "<group>"; };
 		DE1F71D71F62762600B8C2E8 /* InstallerDetailOldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallerDetailOldViewController.swift; sourceTree = "<group>"; };
@@ -2172,6 +2175,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE08ECE01FB58FCA00E57602 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
 		DE39522A1F1468B400A44740 /* ZLPhotoLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -2505,6 +2516,7 @@
 		DE8684391F0DCA8F00FF7FD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE08ECE01FB58FCA00E57602 /* Question */,
 				DEC8EAB01FB0308F006A0EC2 /* News */,
 				DE805C3F1FAABEB60061DB78 /* Apply */,
 				DE6D91EB1F2DBA7A008E0E3A /* ResultRoot */,
@@ -4922,6 +4934,7 @@
 				DE868AD81F0DD1B800FF7FD3 /* NSObject+MJKeyValue.m in Sources */,
 				DE91325F1F7939B7002C9D98 /* MQTabInputContentView.m in Sources */,
 				DE2389E31F8F588900A9EE89 /* SafeCell.swift in Sources */,
+				DE08ECEB1FB5901C00E57602 /* GFQuestionHomeViewController.swift in Sources */,
 				DE3954401F147F1700A44740 /* JoinUsViewController.swift in Sources */,
 				DE9132731F7939B7002C9D98 /* MQMessageFormInputModel.m in Sources */,
 				DE8688771F0DD05900FF7FD3 /* QNEtag.m in Sources */,
@@ -5339,6 +5352,7 @@
 				DE1A55141F63B51E00939E60 /* QuestionAddViewController.swift in Sources */,
 				DE39541C1F1468CB00A44740 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				DE9132121F7939B7002C9D98 /* MQChatAudioPlayer.m in Sources */,
+				DE08ECEC1FB5901C00E57602 /* GFQuestionHomeViewController.swift in Sources */,
 				DE9131DC1F7939B7002C9D98 /* MQEventCellModel.m in Sources */,
 				DE868E0B1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
 				DEC222411F13601E007D6DBE /* MJRefreshHeader.m in Sources */,
