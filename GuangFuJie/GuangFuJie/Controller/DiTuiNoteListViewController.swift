@@ -9,7 +9,9 @@
 import UIKit
 
 class DiTuiNoteListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-     @IBOutlet weak var noteListTableView: UITableView!
+    var noteListTableView: UITableView!
+    let cellIdentifier = "NoteCell"
+    var noteList = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +20,31 @@ class DiTuiNoteListViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func initView() {
-        self.title = "地推笔记"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "+", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.addNote))
+        self.title = "推广笔记"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "添加笔记", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.addNote))
+        
+        noteListTableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()))
+        noteListTableView.delegate = self
+        noteListTableView.dataSource = self
+        noteListTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.view.addSubview(noteListTableView)
+        
+        noteListTableView.register(NoteCell.self, forCellReuseIdentifier: cellIdentifier)
+        loadNoteList()
+    }
+    
+    func loadNoteList() {
+        self.showHud(in: self.view, hint: "加载中...")
+        API.sharedInstance.noteList(0, pagesize: 20, success: { (count, array) in
+            self.hideHud()
+            if (array.count > 0) {
+                self.noteList.addObjects(from: array as! [Any])
+            }
+            self.noteListTableView.reloadData()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
+        }
     }
     
     func addNote() {
@@ -27,29 +52,18 @@ class DiTuiNoteListViewController: BaseViewController, UITableViewDelegate, UITa
         self.pushViewController(sb.instantiateViewController(withIdentifier: "AddNoteViewController"))
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return noteList.count
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: 1))
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 1
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return NoteCell.cellHeight()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "NoteCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! NoteCell
+        let noteInfo = noteList[indexPath.row] as! NoteInfo
+        cell.setData(note: noteInfo)
         return cell
     }
     

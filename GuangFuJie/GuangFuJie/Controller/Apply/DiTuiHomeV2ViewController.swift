@@ -42,6 +42,22 @@ class DiTuiHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
         initBannerImageView()
         
         loadBannerData()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "地推笔记", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.noteList))
+    }
+    
+    func noteList() {
+        if (!UserDefaultManager.isLogin()) {
+            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+            self.pushViewController(sb.instantiateViewController(withIdentifier: "LoginViewController"))
+            return
+        }
+        if (UserDefaultManager.getUser()!.identity!.intValue != 3) {
+            self.showHint("您不是地面推广身份")
+            return
+        }
+        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+        self.pushViewController(sb.instantiateViewController(withIdentifier: "DiTuiNoteListViewController"))
     }
     
     func initView() {

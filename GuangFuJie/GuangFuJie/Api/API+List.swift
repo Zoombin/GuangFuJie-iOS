@@ -1600,10 +1600,10 @@ extension API {
     
     //地推笔记列表
     func noteList(_ start : NSInteger, pagesize : NSInteger, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
-        let url = Constants.httpHost + "articles/list"
+        let url = Constants.httpHost + "ground/notelist"
         let params = NSMutableDictionary()
         params["_o"] = 1
-        params["userId"] = getUserId()
+        params["groundId"] = ""
         params["start"] = String(start)
         params["pagesize"] = String(pagesize)
         let jsonStr = self.dataToJsonString(params)

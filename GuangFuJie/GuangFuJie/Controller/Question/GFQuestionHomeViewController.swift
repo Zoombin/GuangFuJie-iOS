@@ -12,6 +12,7 @@ class GFQuestionHomeViewController: BaseViewController {
     let times = YCPhoneUtils.screenWidth / 375
     var hotSearchLabel: UILabel!
     let hotWords = ["热门问题", "如何安装", "如何保养", "投资回报", "国家政策", "拆迁补偿", "光伏养老"]
+    var hotWordsScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
