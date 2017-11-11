@@ -20,6 +20,7 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
     var nameTextField : UITextField!
     var phoneTextField : UITextField!
     var idTextField : UITextField!
+    var nibianqiTextField: UITextField!
     var addressTextField : UITextField!
     
     var imgUrls = ""
@@ -107,6 +108,7 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
         buyBottomView.addSubview(buyNowButton)
         
         scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - 64))
+        scrollView.backgroundColor = UIColor.white
         self.view.addSubview(scrollView)
         
         let nameLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet, width: labelWidth - offSet * 2, height: labelHeight))
@@ -143,12 +145,23 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
         idTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         scrollView.addSubview(idTextField)
         
-        let addressLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet + idLabel.frame.maxY, width: labelWidth - offSet * 2, height: labelHeight))
+        let nibianqiLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet + idLabel.frame.maxY, width: labelWidth - offSet * 2, height: labelHeight))
+        nibianqiLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+        nibianqiLabel.text = "逆变器型号"
+        scrollView.addSubview(nibianqiLabel)
+        
+        nibianqiTextField = UITextField.init(frame: CGRect(x: labelWidth + offSet, y: offSet + idLabel.frame.maxY, width: textFieldWidth - offSet * 2, height: labelHeight))
+        nibianqiTextField.layer.borderColor = UIColor.black.cgColor
+        nibianqiTextField.layer.borderWidth = 1
+        nibianqiTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+        scrollView.addSubview(nibianqiTextField)
+        
+        let addressLabel = UILabel.init(frame: CGRect(x: offSet, y: offSet + nibianqiLabel.frame.maxY, width: labelWidth - offSet * 2, height: labelHeight))
         addressLabel.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
         addressLabel.text = "电站地址"
         scrollView.addSubview(addressLabel)
         
-        addressTextField = UITextField.init(frame: CGRect(x: labelWidth + offSet, y: offSet + idLabel.frame.maxY, width: textFieldWidth - offSet * 2, height: labelHeight))
+        addressTextField = UITextField.init(frame: CGRect(x: labelWidth + offSet, y: offSet + nibianqiLabel.frame.maxY, width: textFieldWidth - offSet * 2, height: labelHeight))
         addressTextField.layer.borderColor = UIColor.black.cgColor
         addressTextField.layer.borderWidth = 1
         addressTextField.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
@@ -319,6 +332,10 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
             self.showHint("请输入电站地址")
             return
         }
+        if (nibianqiTextField.text!.isEmpty) {
+            self.showHint("请输入逆变器型号")
+            return
+        }
         if (img1.isEmpty && img2.isEmpty && img3.isEmpty) {
             self.showHint("请上传合同")
             return
@@ -336,7 +353,7 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
         let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
         
         self.showHud(in: self.view, hint: "提交中...")
-        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: price, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, salesType: salesType!, image: imgUrls, address: address, longitude: lng, latitude: lat, is_nearsea: is_nearsea, success: { (commonModel) in
+        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: price, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, salesType: salesType!, image: imgUrls, address: address, longitude: lng, latitude: lat, is_nearsea: is_nearsea, inverternum: nibianqiTextField.text!, success: { (commonModel) in
                 self.hideHud()
                 self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(format: "%.0f", self.totalprice.floatValue * 100), type: commonModel.type!)
             }) { (msg) in
