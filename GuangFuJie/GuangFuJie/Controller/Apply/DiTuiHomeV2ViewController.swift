@@ -81,7 +81,7 @@ class DiTuiHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
         }
         
         let avatarImage = UIImageView.init(frame: CGRect(x: 10 * times, y: (163 - 74) / 2 * times, width: 74 * times, height: 74 * times))
-        avatarImage.image = UIImage(named: "ic_avatar")
+        avatarImage.image = UIImage(named: "ic_avstart_expand")
         topView.addSubview(avatarImage)
         
         userNameLabel = UILabel.init(frame: CGRect(x: avatarImage.frame.maxX + 10 * times, y: 57 * times, width: 100 * times, height: 27 * times))

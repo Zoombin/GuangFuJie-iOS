@@ -71,7 +71,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             let vc = RootMapV2ViewController()
             self.pushViewController(vc)
         } else if (title == "地面推广") {
-            let vc = DiTuiHomeViewController()
+            let vc = DiTuiHomeV2ViewController()
             self.pushViewController(vc)
         } else if (title == "推广支持") {
             API.sharedInstance.articlesList(0, pagesize: 1, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 25, success: { (count, array) in
