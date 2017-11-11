@@ -9,6 +9,7 @@
 import UIKit
 
 class RootMyViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+    var avatarImage: UIImageView!
     
     var myTableView: UITableView!
     var titles = ["分享光伏街", "关于我们", "系统设置"]
@@ -70,7 +71,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             }
         }
         
-        let avatarImage = UIImageView.init(frame: CGRect(x: 10 * times, y: (163 - 74) / 2 * times, width: 74 * times, height: 74 * times))
+        avatarImage = UIImageView.init(frame: CGRect(x: 10 * times, y: (163 - 74) / 2 * times, width: 74 * times, height: 74 * times))
         avatarImage.image = UIImage(named: "ic_avatar")
         topView.addSubview(avatarImage)
         
@@ -198,15 +199,19 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
                 statusButton.setTitle("申请成为地推", for: UIControlState.normal)
             } else if (role == 3) {
                 //地推
+                avatarImage.image = UIImage(named: "ic_avstart_expand")
                 statusButton.setTitle("申请成为业主", for: UIControlState.normal)
             } else if (role == 4) {
                 //业主
+                avatarImage.image = UIImage(named: "ic_avstart_lord")
                 statusButton.setTitle("申请成为安装商", for: UIControlState.normal)
             } else if (role == 1) {
                 //安装商
+                avatarImage.image = UIImage(named: "ic_avstart_install")
                 statusButton.setTitle("申请成为加盟商", for: UIControlState.normal)
             } else if (role == 2) {
                 //加盟商
+                avatarImage.image = UIImage(named: "ic_avstart_joingf")
                 statusButton.isHidden = true
                 userNameLabel.frame = CGRect(x: userNameLabel.frame.origin.x, y: (163 * times - userNameLabel.frame.size.height) / 2, width: userNameLabel.frame.size.width, height: userNameLabel.frame.size.height)
             }
