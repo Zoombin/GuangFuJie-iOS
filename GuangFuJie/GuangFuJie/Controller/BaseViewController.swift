@@ -49,7 +49,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         newTitle = newTitle.replacingOccurrences(of: "　", with: "") as NSString
         title = newTitle as String
         if (title == "本地市场") {
-            self.tabBarController?.selectedIndex = 1
+            let vc = RootMapV2ViewController()
+            self.pushViewController(vc)
         } else if (title == "体验店") {
             //体验店
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
@@ -57,27 +58,33 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             self.pushViewController(vc)
         } else if (title == "光伏政策") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-            vc.title = title
-            vc.type = 16
+            let vc = sb.instantiateViewController(withIdentifier: "RootNewsViewController")
             self.pushViewController(vc)
         } else if (title == "光伏保险") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
         } else if (title == "光伏贷款") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
-            vc.title = title
-            vc.type = 18
+            let vc = sb.instantiateViewController(withIdentifier: "RootNewsViewController")
             self.pushViewController(vc)
         } else if (title == "供电局") {
-            self.tabBarController?.selectedIndex = 1
+            let vc = RootMapV2ViewController()
+            self.pushViewController(vc)
         } else if (title == "地面推广") {
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "DiTuiHomeViewController")
+            let vc = DiTuiHomeViewController()
             self.pushViewController(vc)
         } else if (title == "推广支持") {
-            self.showHint("功能暂未开放")
+            API.sharedInstance.articlesList(0, pagesize: 1, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 25, success: { (count, array) in
+                if (array.count >= 1) {
+                    let article = array[0] as! ArticleInfo
+                    let vc = GFJWebViewController()
+                    vc.title = title
+                    vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(article.id!)"
+                    self.pushViewController(vc)
+                }
+            }) { (msg) in
+                self.showHint(msg)
+            }
         } else if (title == "本地安装商") {
             //更多安装商
             let vc = MoreInstallerViewController(nibName: "MoreInstallerViewController", bundle: nil)
@@ -93,9 +100,29 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             vc.type = 11
             self.pushViewController(vc)
         } else if (title == "实战模式") {
-            self.showHint("功能暂未开放")
+            API.sharedInstance.articlesList(0, pagesize: 1, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 26, success: { (count, array) in
+                if (array.count >= 1) {
+                    let article = array[0] as! ArticleInfo
+                    let vc = GFJWebViewController()
+                    vc.title = title
+                    vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(article.id!)"
+                    self.pushViewController(vc)
+                }
+            }) { (msg) in
+                self.showHint(msg)
+            }
         } else if (title == "加盟支持") {
-            self.showHint("功能暂未开放")
+            API.sharedInstance.articlesList(0, pagesize: 1, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 24, success: { (count, array) in
+                if (array.count >= 1) {
+                    let article = array[0] as! ArticleInfo
+                    let vc = GFJWebViewController()
+                    vc.title = title
+                    vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(article.id!)"
+                    self.pushViewController(vc)
+                }
+            }) { (msg) in
+                self.showHint(msg)
+            }
         } else if (title == "安装运维") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController

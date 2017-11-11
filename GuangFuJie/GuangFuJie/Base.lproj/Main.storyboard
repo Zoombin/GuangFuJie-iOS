@@ -2278,7 +2278,7 @@
         <!--资讯-->
         <scene sceneID="Xyy-0A-K1O">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ULy-sg-gbR" userLabel="资讯" customClass="RootNewsViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootNewsViewController" automaticallyAdjustsScrollViewInsets="NO" id="ULy-sg-gbR" userLabel="资讯" customClass="RootNewsViewController" customModule="GaoDeGuangFu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g6y-vB-u0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="bb2-DF-OvT"/>
