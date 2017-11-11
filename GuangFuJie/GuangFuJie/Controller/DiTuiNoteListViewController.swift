@@ -21,7 +21,7 @@ class DiTuiNoteListViewController: BaseViewController, UITableViewDelegate, UITa
     
     func initView() {
         self.title = "推广笔记"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "添加笔记", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.addNote))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "添加", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.addNote))
         
         noteListTableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()))
         noteListTableView.delegate = self
@@ -29,6 +29,7 @@ class DiTuiNoteListViewController: BaseViewController, UITableViewDelegate, UITa
         noteListTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.view.addSubview(noteListTableView)
         
+        noteListTableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(self.loadNoteList))
         noteListTableView.register(NoteCell.self, forCellReuseIdentifier: cellIdentifier)
         loadNoteList()
     }
@@ -36,12 +37,15 @@ class DiTuiNoteListViewController: BaseViewController, UITableViewDelegate, UITa
     func loadNoteList() {
         self.showHud(in: self.view, hint: "加载中...")
         API.sharedInstance.noteList(0, pagesize: 20, success: { (count, array) in
+            self.noteListTableView.mj_header.endRefreshing()
             self.hideHud()
+            self.noteList.removeAllObjects()
             if (array.count > 0) {
                 self.noteList.addObjects(from: array as! [Any])
             }
             self.noteListTableView.reloadData()
         }) { (msg) in
+            self.noteListTableView.mj_header.endRefreshing()
             self.hideHud()
             self.showHint(msg)
         }

@@ -1581,7 +1581,7 @@ extension API {
     
     //添加地推笔记
     func groundAddnote(_ title: String, phone: String, address: String, msg: String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
-        let url = Constants.httpHost + "booking/add";
+        let url = Constants.httpHost + "ground/addnote";
         let params = [
             "userId" : getUserId(), // 用户id
             "title": title,
