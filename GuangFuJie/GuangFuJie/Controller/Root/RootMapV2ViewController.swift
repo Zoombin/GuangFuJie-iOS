@@ -79,7 +79,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         headerView.addSubview(closeButton)
         self.view.addSubview(headerView)
         
-        installerTableView = UITableView.init(frame: CGRect(x: 0, y: headerView.frame.maxY, width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - headerView.frame.maxY - 50))
+        installerTableView = UITableView.init(frame: CGRect(x: 0, y: headerView.frame.maxY, width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - headerView.frame.maxY - self.getTabBarHeight()))
         installerTableView.delegate = self
         installerTableView.dataSource = self
         installerTableView.isHidden = true
@@ -242,7 +242,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
     
     //#MARK: initMapView
     func initMapView() {
-        mapView = BMKMapView.init(frame: CGRect(x: 0, y: topView.frame.maxY, width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - topView.frame.maxY - 50))
+        mapView = BMKMapView.init(frame: CGRect(x: 0, y: topView.frame.maxY, width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - topView.frame.maxY - self.getTabBarHeight()))
         mapView.delegate = self
         mapView.showsUserLocation = true
         self.view.addSubview(mapView)

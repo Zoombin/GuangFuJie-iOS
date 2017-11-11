@@ -404,6 +404,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         return rectOfStatusbar.size.height + rectOfNavigationbar!.size.height
     }
     
+    func getTabBarHeight() -> CGFloat {
+        let tabHeight = self.tabBarController?.tabBar.frame.size.height
+        if (self.hidesBottomBarWhenPushed == false) {
+            return tabHeight!
+        } else {
+            return 0
+        }
+    }
+    
     func getTextField(views: [UIView]) -> UITextField {
         for i in 0..<views.count {
             let view = views[i]
