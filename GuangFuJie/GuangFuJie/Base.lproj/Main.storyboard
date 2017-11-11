@@ -2492,6 +2492,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="84u-kq-XZk"/>
                     <connections>
+                        <outlet property="firstButton" destination="pOC-vr-HPz" id="T6X-9T-7h2"/>
+                        <outlet property="fourthButton" destination="m9Z-Mr-ky0" id="TST-tQ-kSo"/>
                         <outlet property="line1" destination="Xw0-Fs-U2O" id="hZl-Fu-j16"/>
                         <outlet property="line2" destination="1CO-Ax-RDk" id="DF6-4R-hie"/>
                         <outlet property="line3" destination="bKl-yq-EPu" id="Cav-iu-vHU"/>
@@ -2499,6 +2501,8 @@
                         <outlet property="locationButton" destination="10Q-85-baI" id="yyR-Yk-iZ2"/>
                         <outlet property="newsTableView" destination="dDG-O6-mIY" id="YqP-Ly-0ce"/>
                         <outlet property="searchBar" destination="KNk-Hd-JLB" id="vGr-Gg-EQA"/>
+                        <outlet property="secondButton" destination="euU-NM-jbw" id="ZFt-Nr-80T"/>
+                        <outlet property="thirdButton" destination="zHg-qZ-Dcp" id="x9T-Vi-PSV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xE-C2-sjC" userLabel="First Responder" sceneMemberID="firstResponder"/>

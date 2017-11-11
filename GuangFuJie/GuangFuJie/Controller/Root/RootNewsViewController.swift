@@ -19,6 +19,13 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var line3: UIView!
     @IBOutlet weak var line4: UIView!
     
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var thirdButton: UIButton!
+    @IBOutlet weak var fourthButton: UIButton!
+    
+    var index = 0
+    
     var pageSize = 10
     var currentPage = 0
     var type = 16
@@ -35,9 +42,18 @@ class RootNewsViewController: BaseViewController, UITableViewDelegate, UITableVi
         newsTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
         newsTableView.register(NewsV2Cell.self, forCellReuseIdentifier: cellReuseIdentifier)
         
-        getNewsList()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLocation), name: NSNotification.Name(rawValue: "RefreshLocation"), object: nil)
         self.getCurrentLocation()
+        
+        if (index == 0) {
+            self.topButtonClicked(firstButton)
+        } else if (index == 1) {
+            self.topButtonClicked(secondButton)
+        } else if (index == 2) {
+            self.topButtonClicked(thirdButton)
+        } else if (index == 3) {
+            self.topButtonClicked(fourthButton)
+        }
     }
     
     func refreshLocation() {

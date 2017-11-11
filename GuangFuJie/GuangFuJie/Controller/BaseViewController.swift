@@ -65,7 +65,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
         } else if (title == "光伏贷款") {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "RootNewsViewController")
+            let vc = sb.instantiateViewController(withIdentifier: "RootNewsViewController") as! RootNewsViewController
+            vc.index = 3
             self.pushViewController(vc)
         } else if (title == "供电局") {
             let vc = RootMapV2ViewController()
