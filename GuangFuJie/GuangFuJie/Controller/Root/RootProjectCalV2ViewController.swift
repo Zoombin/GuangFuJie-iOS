@@ -1276,10 +1276,6 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
             self.showHint("利率倍数不能为空!")
             return
         }
-        if (zjrlTextField.text!.isEmpty) {
-            self.showHint("装机容量不能为空!")
-            return
-        }
         let tmpParams = CalResultParams()
         tmpParams.address = locationButton.titleLabel?.text!
         tmpParams.type = NSNumber.init(value: type)

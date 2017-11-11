@@ -16,6 +16,7 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     var menuView: UIView!
     var exampleView: UIView!
     var locationButton: UIButton!
+    var searchTextField: UITextField!
     
     var bannerData = NSMutableArray()
     var exampleData = NSMutableArray()
@@ -64,13 +65,22 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     
     func refreshLocation() {
         if (UserDefaultManager.getLocation() != nil) {
+//            120 * times
             let location = UserDefaultManager.getLocation()
-            locationButton.setTitle("\(YCStringUtils.getString(location!.city_name))\(YCStringUtils.getString(location!.area_name))", for: UIControlState.normal)
+            let locationString = "\(YCStringUtils.getString(location!.city_name))\(YCStringUtils.getString(location!.area_name))"
+            let strWidth = YCFrameUtil.getLabWidth(locationString, font: locationButton.titleLabel?.font, height: locationButton.frame.size.height)
+            locationButton.frame = CGRect(x: locationButton.frame.origin.x, y: locationButton.frame.origin.y, width: strWidth + 30 * times, height: locationButton.frame.size.height)
+            locationButton.setTitle(locationString, for: UIControlState.normal)
+            searchTextField.frame = CGRect(x: locationButton.frame.maxX + 10 * times, y: searchTextField.frame.minY, width: 240 * times - (strWidth + 30 * times - 120 * times), height: searchTextField.frame.size.height)
         }
     }
     
     func proviceAndCity(_ provice: ProvinceModel, city: CityModel, area: AreaModel) {
-        locationButton.setTitle("\(YCStringUtils.getString(city.name))\(YCStringUtils.getString(area.name))", for: UIControlState.normal)
+        let locationString = "\(YCStringUtils.getString(city.name))\(YCStringUtils.getString(area.name))"
+        let strWidth = YCFrameUtil.getLabWidth(locationString, font: locationButton.titleLabel?.font, height: locationButton.frame.size.height)
+        locationButton.frame = CGRect(x: locationButton.frame.origin.x, y: locationButton.frame.origin.y, width: strWidth + 30 * times, height: locationButton.frame.size.height)
+        locationButton.setTitle(locationString, for: UIControlState.normal)
+        searchTextField.frame = CGRect(x: locationButton.frame.maxX + 10 * times, y: searchTextField.frame.minY, width: 240 * times - (strWidth + 30 * times - 120 * times), height: searchTextField.frame.size.height)
     }
     
     func locationSetting() {
@@ -94,7 +104,7 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
         locationButton.addTarget(self, action: #selector(self.locationSetting), for: UIControlEvents.touchUpInside)
         contentScroll.addSubview(locationButton)
         
-        let searchTextField = UITextField.init(frame: CGRect(x: locationButton.frame.maxX + 10 * times, y: 10 * times, width: 240 * times, height: 28 * times))
+        searchTextField = UITextField.init(frame: CGRect(x: locationButton.frame.maxX + 10 * times, y: 10 * times, width: 240 * times, height: 28 * times))
         searchTextField.backgroundColor = self.view.backgroundColor
         searchTextField.layer.cornerRadius = searchTextField.frame.size.height / 2
         searchTextField.layer.masksToBounds = true
