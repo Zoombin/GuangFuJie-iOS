@@ -904,7 +904,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         thirdContentScroll.addSubview(ydswjTextField)
         
         let ydswjRightLabel = UILabel.init(frame: CGRect(x: ydswjTextField.frame.maxX, y: currentY + 10 * times, width: thirdContentScroll.frame.size.width - ydswjTextField.frame.maxX, height: 35 * times))
-        ydswjRightLabel.text = "元/瓦"
+        ydswjRightLabel.text = "元/度"
         ydswjRightLabel.textAlignment = NSTextAlignment.center
         ydswjRightLabel.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 13))
         thirdContentScroll.addSubview(ydswjRightLabel)
