@@ -45,6 +45,10 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
     var headerView: UIView!
     var installerTableView: UITableView!
     let cellReuseIdentifier = "cellReuseIdentifier"
+    var firstButton: UIButton!
+    var secondButton: UIButton!
+    var thirdButton: UIButton!
+    var fourthButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +58,16 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
         initTopView()
         initMapView()
         initTableView()
+        
+        if (type == 0) {
+            self.topButtonClicked(button: firstButton)
+        } else if (type == 1) {
+            self.topButtonClicked(button: secondButton)
+        } else if (type == 2) {
+            self.topButtonClicked(button: thirdButton)
+        } else if (type == 3) {
+            self.topButtonClicked(button: fourthButton)
+        }
     }
     
     func closeButtonClicked() {
@@ -164,12 +178,16 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
             btn.setTitleColor(UIColor.black, for: UIControlState.normal)
             btn.titleLabel?.font = UIFont.systemFont(ofSize: YCPhoneUtils.getNewFontSize(fontSize: 15))
             btn.setImage(UIImage(named: imgs[i]), for: UIControlState.normal)
-            self.addBottomLine(view: btn, color: i == 0 ? Colors.appBlue : UIColor.white)
+            self.addBottomLine(view: btn, color: UIColor.white)
             btn.tag = i
             btn.addTarget(self, action: #selector(self.topButtonClicked(button:)), for: UIControlEvents.touchUpInside)
             topView.addSubview(btn)
             btns.add(btn)
         }
+        firstButton = btns[0] as! UIButton
+        secondButton = btns[1] as! UIButton
+        thirdButton = btns[2] as! UIButton
+        fourthButton = btns[3] as! UIButton
     }
     
     func addBottomLine(view: UIView, color: UIColor) {
@@ -184,7 +202,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
     func resetAllBottomColors() {
         for i in 0..<btns.count {
             let btn = btns[i] as! UIButton
-            let layer = btn.layer.sublayers![2]
+            let layer = btn.layer.sublayers!.last!
             layer.backgroundColor = UIColor.white.cgColor
         }
     }
@@ -206,7 +224,7 @@ class RootMapV2ViewController: BaseViewController, BMKMapViewDelegate, BMKPoiSea
             cesuanButton.isHidden = false
         }
         
-        let bottomLayer = button.layer.sublayers![2]
+        let bottomLayer = button.layer.sublayers!.last!
         bottomLayer.backgroundColor = Colors.appBlue.cgColor
 
         loadData()

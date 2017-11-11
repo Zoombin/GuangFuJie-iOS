@@ -50,6 +50,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
         title = newTitle as String
         if (title == "本地市场") {
             let vc = RootMapV2ViewController()
+            vc.type = 2
             self.pushViewController(vc)
         } else if (title == "体验店") {
             //体验店
@@ -70,6 +71,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             self.pushViewController(vc)
         } else if (title == "供电局") {
             let vc = RootMapV2ViewController()
+            vc.type = 3
             self.pushViewController(vc)
         } else if (title == "地面推广") {
             let vc = DiTuiHomeV2ViewController()
