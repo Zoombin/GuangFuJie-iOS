@@ -876,6 +876,14 @@
 		DEC226DE1F136364007D6DBE /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC224381F136362007D6DBE /* libMobClickLibrary.a */; };
 		DEC226FA1F13639A007D6DBE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; };
 		DEC226FB1F13639A007D6DBE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEC226F51F136383007D6DBE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEC32A711FB8955200315FB0 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC32A701FB8955200315FB0 /* QuestionCell.swift */; };
+		DEC32A721FB8955200315FB0 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC32A701FB8955200315FB0 /* QuestionCell.swift */; };
+		DEC32A7D1FB89E3F00315FB0 /* QuestionSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC32A7C1FB89E3F00315FB0 /* QuestionSearchViewController.swift */; };
+		DEC32A7E1FB89E3F00315FB0 /* QuestionSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC32A7C1FB89E3F00315FB0 /* QuestionSearchViewController.swift */; };
+		DEC32A801FB89E5B00315FB0 /* GJQuestionMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC32A7F1FB89E5B00315FB0 /* GJQuestionMyViewController.swift */; };
+		DEC32A811FB89E5B00315FB0 /* GJQuestionMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC32A7F1FB89E5B00315FB0 /* GJQuestionMyViewController.swift */; };
+		DEC32A831FB89F2800315FB0 /* QestionAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC32A821FB89F2800315FB0 /* QestionAllViewController.swift */; };
+		DEC32A841FB89F2800315FB0 /* QestionAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC32A821FB89F2800315FB0 /* QestionAllViewController.swift */; };
 		DEC365A01FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */; };
 		DEC365A11FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */; };
 		DEC775B41FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */; };
@@ -1940,6 +1948,10 @@
 		DEC224391F136362007D6DBE /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		DEC2243A1F136362007D6DBE /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		DEC226EE1F136382007D6DBE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		DEC32A701FB8955200315FB0 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		DEC32A7C1FB89E3F00315FB0 /* QuestionSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSearchViewController.swift; sourceTree = "<group>"; };
+		DEC32A7F1FB89E5B00315FB0 /* GJQuestionMyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GJQuestionMyViewController.swift; sourceTree = "<group>"; };
+		DEC32A821FB89F2800315FB0 /* QestionAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QestionAllViewController.swift; sourceTree = "<group>"; };
 		DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeV2ViewController.swift; sourceTree = "<group>"; };
 		DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsV2Cell.swift; sourceTree = "<group>"; };
 		DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsViewController.swift; sourceTree = "<group>"; };
@@ -2182,6 +2194,9 @@
 			isa = PBXGroup;
 			children = (
 				DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */,
+				DEC32A7C1FB89E3F00315FB0 /* QuestionSearchViewController.swift */,
+				DEC32A7F1FB89E5B00315FB0 /* GJQuestionMyViewController.swift */,
+				DEC32A821FB89F2800315FB0 /* QestionAllViewController.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -2512,6 +2527,7 @@
 				DE9F27EF1FA486BF00B5B503 /* BrandCell.swift */,
 				DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */,
 				DE8BE7181FB14EBA000AD02B /* PaoPaoView.swift */,
+				DEC32A701FB8955200315FB0 /* QuestionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4672,6 +4688,7 @@
 				DE9131AB1F7939B7002C9D98 /* MQChatViewTableDataSource.m in Sources */,
 				DE6D91F81F2DBAC4008E0E3A /* RootElectricViewController.swift in Sources */,
 				DE3954521F14802200A44740 /* PublishMediaView.swift in Sources */,
+				DEC32A711FB8955200315FB0 /* QuestionCell.swift in Sources */,
 				DE868ADF1F0DD20A00FF7FD3 /* UserDefaultManager.swift in Sources */,
 				DEB9CA061F722FA6007BE2A3 /* BookingStatus.swift in Sources */,
 				DE1A55131F63B51E00939E60 /* QuestionAddViewController.swift in Sources */,
@@ -4774,6 +4791,7 @@
 				DE3954231F1468CB00A44740 /* UIViewController+Alert.m in Sources */,
 				DE868AD21F0DD1B800FF7FD3 /* MJPropertyType.m in Sources */,
 				DE8689F81F0DD0D700FF7FD3 /* QNHosts.m in Sources */,
+				DEC32A831FB89F2800315FB0 /* QestionAllViewController.swift in Sources */,
 				DEFF5F341F700E5100F58A04 /* BeeCloud+Utils.m in Sources */,
 				DE39540D1F1468CB00A44740 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
 				DE3954131F1468CB00A44740 /* ZLPhotoPickerBrowserViewController.m in Sources */,
@@ -4884,6 +4902,7 @@
 				DE91318B1F7939B7002C9D98 /* NSError+MQConvenient.m in Sources */,
 				DE9131E11F7939B7002C9D98 /* MQMessageDateCellModel.m in Sources */,
 				DE868ACC1F0DD1B800FF7FD3 /* MJFoundation.m in Sources */,
+				DEC32A7D1FB89E3F00315FB0 /* QuestionSearchViewController.swift in Sources */,
 				DEB9CA161F722FA6007BE2A3 /* DeviceListInfo.swift in Sources */,
 				DE8689F01F0DD0D700FF7FD3 /* QNRecord.m in Sources */,
 				DE91328D1F7939B7002C9D98 /* MQMessageFormImageView.m in Sources */,
@@ -4891,6 +4910,7 @@
 				DEE6C9C81F35BEC900AB6031 /* IQUIScrollView+Additions.swift in Sources */,
 				DE9132671F7939B7002C9D98 /* MQRecordView.m in Sources */,
 				DE9131D31F7939B7002C9D98 /* MQBotMenuAnswerCellModel.m in Sources */,
+				DEC32A801FB89E5B00315FB0 /* GJQuestionMyViewController.swift in Sources */,
 				DE3953F11F1468CB00A44740 /* SDWebImageCompat.m in Sources */,
 				DEB9CA221F722FA6007BE2A3 /* GroupInfo.swift in Sources */,
 				DE9132311F7939B7002C9D98 /* MEIQIA_FBLCDFont.m in Sources */,
@@ -5206,6 +5226,7 @@
 				DEFF5F111F700E5100F58A04 /* BCQueryRefundsCountReq.m in Sources */,
 				DE86876C1F0DCE4400FF7FD3 /* AFURLResponseSerialization.m in Sources */,
 				DEFF5EF11F700E5100F58A04 /* BCPayReq.m in Sources */,
+				DEC32A841FB89F2800315FB0 /* QestionAllViewController.swift in Sources */,
 				DEFF5F2B1F700E5100F58A04 /* BCURLRequestSerialization.m in Sources */,
 				DE9131F41F7939B7002C9D98 /* MQBotWebViewBubbleAnswerCell.m in Sources */,
 				DEFF5F2F1F700E5100F58A04 /* BCURLSessionManager.m in Sources */,
@@ -5392,6 +5413,7 @@
 				DE9131FE1F7939B7002C9D98 /* MQFileDownloadCell.m in Sources */,
 				DE8689F11F0DD0D700FF7FD3 /* QNRecord.m in Sources */,
 				DE9131B01F7939B7002C9D98 /* MQPreChatFormListViewController.m in Sources */,
+				DEC32A811FB89E5B00315FB0 /* GJQuestionMyViewController.swift in Sources */,
 				DE9132261F7939B7002C9D98 /* MQAGEmojiKeyBoardView.m in Sources */,
 				DE9F27F11FA486BF00B5B503 /* BrandCell.swift in Sources */,
 				DE3953F21F1468CB00A44740 /* SDWebImageCompat.m in Sources */,
@@ -5445,6 +5467,7 @@
 				DEC222451F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
 				DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */,
+				DEC32A721FB8955200315FB0 /* QuestionCell.swift in Sources */,
 				DE9132561F7939B7002C9D98 /* MQEvaluationView.m in Sources */,
 				DEA4FD861F8E0765006767E7 /* YCPhoneUtils.swift in Sources */,
 				DEC222431F13601E007D6DBE /* MJRefreshAutoGifFooter.m in Sources */,
@@ -5505,6 +5528,7 @@
 				DE9132241F7939B7002C9D98 /* MQWindowUtil.m in Sources */,
 				DE9132621F7939B7002C9D98 /* MQInputToolBar.m in Sources */,
 				DE3954001F1468CB00A44740 /* UIImage+GIF.m in Sources */,
+				DEC32A7E1FB89E3F00315FB0 /* QuestionSearchViewController.swift in Sources */,
 				DED05D441F624C8B006741F6 /* NearByInstallerViewController.swift in Sources */,
 				DE86876A1F0DCE4400FF7FD3 /* AFURLRequestSerialization.m in Sources */,
 				DE868ADB1F0DD1B800FF7FD3 /* NSObject+MJProperty.m in Sources */,

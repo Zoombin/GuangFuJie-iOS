@@ -19,7 +19,7 @@ class GuangFuAskViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func loadQuestionList() {
-        API.sharedInstance.qaList(start: 0, pagesize: 10, success: { (count, array) in
+        API.sharedInstance.qaList(start: 0, pagesize: 10, isMy: false, success: { (count, array) in
             self.qaList.addObjects(from: array as! [Any])
             self.anTableView.reloadData()
         }) { (msg) in

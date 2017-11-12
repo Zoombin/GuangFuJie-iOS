@@ -1916,13 +1916,22 @@ extension API {
     }
     
     //问题列表
-    func qaList(start: NSInteger, pagesize: NSInteger, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+    func qaList(start: NSInteger, pagesize: NSInteger, isMy: Bool, type: String? = nil, key: String? = nil, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
         let url = Constants.httpHost + "userask/list";
-        let params = [
-            "start": String(start),
-            "pagesize": String(pagesize),
-            "_o" : 1
-            ] as [String : Any]
+        let params = NSMutableDictionary()
+        params["_o"] = 1
+        params["start"] =  String(start)
+        params["pagesize"] = String(pagesize)
+        if (isMy == true) {
+            params["userId"] = getUserId()
+        }
+        if (type != nil) {
+            params["type"] = type
+        }
+        if (key != nil) {
+            params["key"] = key
+        }
+        
         let jsonStr = self.dataToJsonString(params as AnyObject)
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in

@@ -15,6 +15,12 @@ class QuestionAddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "我的提问", style: UIBarButtonItemStyle.plain, target: self, action: #selector(myQAList))
+    }
+    
+    func myQAList() {
+        let vc = GJQuestionMyViewController()
+        self.pushViewController(vc)
     }
     
     func initView() {

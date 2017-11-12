@@ -23,8 +23,7 @@ class Colors: NSObject {
     static let lightBlue : UIColor = UIColor.init(red: 232/255.0, green: 244/255.0, blue: 253/255.0, alpha: 1.0)
     static let lightYellow : UIColor = UIColor.init(red: 253/255.0, green: 249/255.0, blue: 232/255.0, alpha: 1.0)
     
-    static let answerGreen : UIColor = UIColor.init(red: 125/255.0, green: 191/255.0, blue: 125/255.0, alpha: 1.0)
-    
+    static let answerGreen : UIColor = UIColor.init(hexString: "8ec68e")
     static let applyGreen : UIColor = UIColor.init(red: 0/255.0, green: 170/255.0, blue: 0/255.0, alpha: 1.0)
     static let sperateLine: UIColor = UIColor.init(red: 220/255.0, green: 220/255.0, blue: 220/255.0, alpha: 1.0)
     

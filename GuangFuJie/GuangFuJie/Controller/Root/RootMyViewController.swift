@@ -216,6 +216,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
                 userNameLabel.frame = CGRect(x: userNameLabel.frame.origin.x, y: (163 * times - userNameLabel.frame.size.height) / 2, width: userNameLabel.frame.size.width, height: userNameLabel.frame.size.height)
             }
         } else {
+            avatarImage.image = UIImage(named: "ic_avatar")
             loginButton.isHidden = false
             userNameLabel.text = ""
             userNameLabel.isHidden = true
