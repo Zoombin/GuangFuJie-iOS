@@ -41,6 +41,6 @@ class Constants: NSObject {
     
     static let osType = 1 //ios
     static let aeskey = "e41cd1f755f211e6b56b00ff8821fdcf"
-    static let baiduMapKey = "5d2ruFYdM3hPzWvFIS4Gb3eutcIYaef8"
+    static let baiduMapKey = "1N3VglUdoZg2Qz7G9xpK3kGcqpYtsAVh"
     
 }

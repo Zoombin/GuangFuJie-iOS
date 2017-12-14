@@ -4465,7 +4465,7 @@
 				TargetAttributes = {
 					DE8683DC1F0DC92B00FF7FD3 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 2S362SNNP3;
+						DevelopmentTeam = FRZ4R4Y8NS;
 						ProvisioningStyle = Automatic;
 					};
 					DE8684221F0DC9DE00FF7FD3 = {
@@ -5757,7 +5757,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2S362SNNP3;
+				DEVELOPMENT_TEAM = FRZ4R4Y8NS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5794,7 +5794,7 @@
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial/SocialLibraries/WeChat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.GuangFuJie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ytx.guangfujie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -5806,7 +5806,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2S362SNNP3;
+				DEVELOPMENT_TEAM = FRZ4R4Y8NS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5843,7 +5843,7 @@
 					"$(PROJECT_DIR)/GuangFuJie/Library/UMSocial/SocialLibraries/WeChat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zoombin.GuangFuJie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ytx.guangfujie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuangFuJie/GuangFuJie-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

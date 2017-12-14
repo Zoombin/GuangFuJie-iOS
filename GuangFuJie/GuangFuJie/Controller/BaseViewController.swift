@@ -208,7 +208,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, BeeClou
             self.pay(billno, title: title, totalFee: totalFee, type: type, channel: PayChannel.aliApp)
         }
         let actionButtonWX = UIAlertAction.init(title: "微信", style: UIAlertActionStyle.default) { (action) in
-            self.pay(billno, title: title, totalFee: totalFee, type: type, channel: PayChannel.wxApp)
+//            self.pay(billno, title: title, totalFee: totalFee, type: type, channel: PayChannel.wxApp)
+            self.showHint("暂不支持微信支付")
         }
         let actionButtonCancel = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel) { (action) in
             //do nothing
