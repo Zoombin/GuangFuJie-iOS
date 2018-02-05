@@ -151,7 +151,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     func initView() {
         self.automaticallyAdjustsScrollViewInsets = false
-        myTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight), style: UITableViewStyle.grouped)
+        myTableView = UITableView.init(frame: CGRect(x: 0, y: navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - navigationBarAndStatusBarHeight()), style: UITableViewStyle.grouped)
         myTableView.delegate = self
         myTableView.dataSource = self
         self.view.addSubview(myTableView)

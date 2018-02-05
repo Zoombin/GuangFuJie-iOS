@@ -541,7 +541,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func addYearsView() {
-        var yearsArray = ["一年", "二年", "三年", "四年", "五年", "六年", "七年", "八年", "九年", "十年"]
+        var yearsArray = ["一年"]
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         if (yearsView == nil) {
@@ -622,10 +622,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func yearsButtonClicked(_ button: UIButton) {
-        var count = 10
-        if (seaSwitch.isOn) {
-            count = 1
-        }
+        let count = 1
         for i in 0..<count {
             let button = yearsView.viewWithTag(i + YEAR_BUTTON_TAG)
             button!.layer.borderColor = UIColor.black.cgColor
