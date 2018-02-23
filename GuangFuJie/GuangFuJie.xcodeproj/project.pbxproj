@@ -888,6 +888,10 @@
 		DEC365A11FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */; };
 		DEC775B41FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */; };
 		DEC775B51FAC7A9400ECEAA3 /* NewsV2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */; };
+		DEC7F7AF203FC0EA00E5A82E /* InsuranceTypeV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7F7AE203FC0EA00E5A82E /* InsuranceTypeV2.swift */; };
+		DEC7F7B0203FC0EA00E5A82E /* InsuranceTypeV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7F7AE203FC0EA00E5A82E /* InsuranceTypeV2.swift */; };
+		DEC7F7BB203FC18B00E5A82E /* InsuranceItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7F7BA203FC18B00E5A82E /* InsuranceItemInfo.swift */; };
+		DEC7F7BC203FC18B00E5A82E /* InsuranceItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7F7BA203FC18B00E5A82E /* InsuranceItemInfo.swift */; };
 		DEC8EABB1FB030D2006A0EC2 /* SearchNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */; };
 		DEC8EABC1FB030D2006A0EC2 /* SearchNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */; };
 		DEC8EABE1FB0566C006A0EC2 /* RootMapV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8EABD1FB0566C006A0EC2 /* RootMapV2ViewController.swift */; };
@@ -1954,6 +1958,8 @@
 		DEC32A821FB89F2800315FB0 /* QestionAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QestionAllViewController.swift; sourceTree = "<group>"; };
 		DEC3659F1FA2DEEF00B5A719 /* RootHomeV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeV2ViewController.swift; sourceTree = "<group>"; };
 		DEC775B31FAC7A9400ECEAA3 /* NewsV2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsV2Cell.swift; sourceTree = "<group>"; };
+		DEC7F7AE203FC0EA00E5A82E /* InsuranceTypeV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceTypeV2.swift; sourceTree = "<group>"; };
+		DEC7F7BA203FC18B00E5A82E /* InsuranceItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceItemInfo.swift; sourceTree = "<group>"; };
 		DEC8EABA1FB030D2006A0EC2 /* SearchNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsViewController.swift; sourceTree = "<group>"; };
 		DEC8EABD1FB0566C006A0EC2 /* RootMapV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMapV2ViewController.swift; sourceTree = "<group>"; };
 		DED05D351F624C4A006741F6 /* MoreInstallerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInstallerViewController.swift; sourceTree = "<group>"; };
@@ -3796,6 +3802,8 @@
 				DEB9C9F81F722FA6007BE2A3 /* ShareInfo.swift */,
 				DEB9C9F91F722FA6007BE2A3 /* UserInfo.swift */,
 				DE9F27E31FA485CD00B5B503 /* BrandInfo.swift */,
+				DEC7F7AE203FC0EA00E5A82E /* InsuranceTypeV2.swift */,
+				DEC7F7BA203FC18B00E5A82E /* InsuranceItemInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -5039,6 +5047,7 @@
 				DE868ADA1F0DD1B800FF7FD3 /* NSObject+MJProperty.m in Sources */,
 				DE9131EB1F7939B7002C9D98 /* MQWebViewBubbleCellModel.m in Sources */,
 				DE3953FF1F1468CB00A44740 /* UIImage+GIF.m in Sources */,
+				DEC7F7AF203FC0EA00E5A82E /* InsuranceTypeV2.swift in Sources */,
 				DE8687651F0DCE4400FF7FD3 /* AFNetworkReachabilityManager.m in Sources */,
 				DE9132631F7939B7002C9D98 /* MQInputToolView.m in Sources */,
 				DEFF5F081F700E5100F58A04 /* BCQueryRefundByIdReq.m in Sources */,
@@ -5075,6 +5084,7 @@
 				DEB9CA0E1F722FA6007BE2A3 /* CityModel.swift in Sources */,
 				DE3954271F1468CB00A44740 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DEE6C9E41F35BECA00AB6031 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				DEC7F7BB203FC18B00E5A82E /* InsuranceItemInfo.swift in Sources */,
 				DE9132791F7939B7002C9D98 /* MQMessageFormViewStyle.m in Sources */,
 				DE91321D1F7939B7002C9D98 /* MQDateFormatterUtil.m in Sources */,
 				DED05D431F624C88006741F6 /* NearByInstallerViewController.swift in Sources */,
@@ -5409,6 +5419,7 @@
 				DE9131AE1F7939B7002C9D98 /* MQPreChatCells.m in Sources */,
 				DE868ACD1F0DD1B800FF7FD3 /* MJFoundation.m in Sources */,
 				DE9131E81F7939B7002C9D98 /* MQTipsCellModel.m in Sources */,
+				DEC7F7BC203FC18B00E5A82E /* InsuranceItemInfo.swift in Sources */,
 				DE91327E1F7939B7002C9D98 /* MQMessageFormViewStyleDark.m in Sources */,
 				DE9131FE1F7939B7002C9D98 /* MQFileDownloadCell.m in Sources */,
 				DE8689F11F0DD0D700FF7FD3 /* QNRecord.m in Sources */,
@@ -5427,6 +5438,7 @@
 				DE91320A1F7939B7002C9D98 /* MQVoiceMessageCell.m in Sources */,
 				DE3954341F1468CB00A44740 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				DEB9CA011F722FA6007BE2A3 /* ArticleInfo.swift in Sources */,
+				DEC7F7B0203FC0EA00E5A82E /* InsuranceTypeV2.swift in Sources */,
 				DE91328A1F7939B7002C9D98 /* MQMessageFormInputView.m in Sources */,
 				DE91322A1F7939B7002C9D98 /* MEIQIA_CustomIOSAlertView.m in Sources */,
 				DE3954181F1468CB00A44740 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,

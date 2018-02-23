@@ -25,24 +25,11 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     let offSetX : CGFloat = 8
     let offSetY : CGFloat = 5
     let labelHeight = PhoneUtils.kScreenHeight / 9
-    var insureModel : InsuranceType?
-    
-//    var baoe1Label : UILabel!
-//    var baoe2Label : UILabel!
-//    var baoe3Label : UILabel!
-//    var baoe4Label : UILabel!
-//    var baoe5Label : UILabel!
-//
-//    var baof1Label : UILabel!
-//    var baof2Label : UILabel!
-//    var baof3Label : UILabel!
-//    var baof4Label : UILabel!
-//    var baof5Label : UILabel!
-    
+    var insureModel : InsuranceTypeV2?
+    var insureItemModel : InsuranceItemInfo?
     
     var typeView : UIView!
     var yearsView : UIView!
-    var salesTypeView : UIView!
     
     var years = 0
     var currentSaleTypeIndex = -1
@@ -281,86 +268,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         sectionView2.addSubview(tips2Label)
         
         maxY = sectionView1.frame.maxY + offSetY
-        
-//        //保障金额
-//        let sectionView4 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 240 * times))
-//        sectionView4.backgroundColor = UIColor.white
-//        scrollView.addSubview(sectionView4)
-//
-//        let titleLabel3 = UIButton.init(frame: CGRect(x: offSetX, y: 0, width: 100, height: 30 * times))
-//        titleLabel3.setTitle("保障金额", for: UIControlState.normal)
-//        titleLabel3.setImage(UIImage(named: "ic_safe_bzje"), for: UIControlState.normal)
-//        titleLabel3.setTitleColor(UIColor.black, for: UIControlState.normal)
-//        titleLabel3.titleEdgeInsets = UIEdgeInsetsMake(0, dir, 0, 0)
-//        titleLabel3.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-//        titleLabel3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
-//        sectionView4.addSubview(titleLabel3)
-//
-//        let titleWidth = (PhoneUtils.kScreenWidth - 2 * offSetX) / 3
-//        let titleHeight = ((240 - 30) * times - 2 * offSetY) / 6
-//        let titles = ["险种", "保额", "保费/年", "光伏发电设备", "", "", "第三者责任", "", "", "", "", "","", "", "","盗抢险","",""]
-//        var tline = 0
-//        var tindex = 0
-//        for i in 0..<titles.count {
-//            if (i != 0 && i%3 == 0) {
-//                tline += 1
-//                tindex = 0
-//            }
-//            var tmpHeight = titleHeight
-//            if (i == 6) {
-//                tmpHeight = 3 * titleHeight
-//            }
-//
-//            let label = UILabel.init(frame: CGRect(x:offSetX + CGFloat(tindex) * titleWidth, y: titleLabel3.frame.maxY + CGFloat(tline) * titleHeight, width: titleWidth, height: tmpHeight))
-//            label.text = titles[i]
-//            label.textAlignment = NSTextAlignment.center
-//            label.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-//            label.layer.borderColor = UIColor.lightGray.cgColor
-//            label.layer.borderWidth = 0.5
-//            sectionView4.addSubview(label)
-//            if (i == 9 || i == 12) {
-//                label.isHidden = true
-//            }
-//            if (i == 0 || i == 1 || i == 2) {
-//                label.textColor = UIColor.white
-//                label.backgroundColor = Colors.appBlue
-//            }
-//            if (i == 4) {
-//                baoe1Label = label
-//            }
-//            if (i == 7) {
-//                baoe2Label = label
-//            }
-//            if (i == 10) {
-//                baoe3Label = label
-//            }
-//            if (i == 13) {
-//                baoe4Label = label
-//            }
-//            if (i == 16) {
-//                baoe5Label = label
-//            }
-//
-//            if (i == 5) {
-//                baof1Label = label
-//            }
-//            if (i == 8) {
-//                baof2Label = label
-//            }
-//            if (i == 11) {
-//                baof3Label = label
-//            }
-//            if (i == 14) {
-//                baof4Label = label
-//            }
-//            if (i == 17) {
-//                baof5Label = label
-//            }
-//            tindex += 1
-//        }
-//
-//        maxY = sectionView4.frame.maxY + offSetY
-//
+    
         let sectionView6 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 45 * times))
         sectionView6.backgroundColor = UIColor.white
         scrollView.addSubview(sectionView6)
@@ -410,32 +318,31 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         yearsLabel.text = "投保\(years)年"
     
         reSizePrice()
-        if (insureModel != nil) {
-            refreshBaoeBaofei()
-        }
+        
+        insureItemModel = nil
+        salesTypeLabel.text = "请选择套餐类型"
+        priceLabel.text = "￥:0"
     }
     
     func loadInsuranceInfo() {
         self.showHud(in: self.view, hint: "加载中...")
-        API.sharedInstance.insuranceType({ (typeList, totalCount) in
-                self.hideHud()
-//                self.totalLabel.text = "累计投保:" + String(totalCount) + "份"
-                self.types.addObjects(from: typeList as [AnyObject])
-                self.addTypeView()
-                self.addSalesView()
-                self.addYearsView()
-            }) { (msg) in
-                self.hideHud()
-                self.showHint(msg)
+        API.sharedInstance.insuranceTypeV2List(success: { (count, typeList) in
+            self.hideHud()
+            self.types.addObjects(from: typeList as [AnyObject])
+            self.addTypeView()
+            self.addYearsView()
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
         }
     }
     
     //MediaDaletege
-    func onBgClick(_ tag : Int){
+    func onBgClick(_ tag : Int) {
         self.showPhotos(selectorImg, index: tag, isLocal: false)
     }
     
-    func onDeleteClick(_ type:Int,tag : Int){
+    func onDeleteClick(_ type:Int,tag : Int) {
         if(0 == type){
             selectorImg.removeObject(at: tag)
         }
@@ -528,9 +435,6 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         }
         if (yearsView != nil) {
             yearsView.removeFromSuperview()
-        }
-        if (salesTypeView != nil) {
-            salesTypeView.removeFromSuperview()
         }
     }
     
@@ -639,15 +543,34 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
     
     func showSalesTypeView() {
-        if (salesTypeView != nil) {
-            salesTypeView.isHidden = false
-        } else {
+        if (insureModel == nil) {
             self.showHint("请先选择电站大小")
+        } else {
+            self.showHud(in: self.view, hint: "加载中...")
+            API.sharedInstance.insuranceItemList(typeId: YCStringUtils.getNumber(insureModel?.id), isNearSea: seaSwitch.isOn ? "1" : "0", success: { (count, array) in
+                self.hideHud()
+                self.showSalesActionSheet(array: array)
+            }, failure: { (msg) in
+                self.hideHud()
+                self.showHint(msg)
+            })
         }
     }
     
-    func closeSaleTypeView() {
-        salesTypeView.isHidden = true
+    func showSalesActionSheet(array: NSArray) {
+        let actionSheet = UIAlertController.init(title: "请选择套餐类型", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        for i in 0..<array.count {
+            let itemInfo = array[i] as! InsuranceItemInfo
+            let itemAction = UIAlertAction.init(title: YCStringUtils.getString(itemInfo.itemTitle), style: UIAlertActionStyle.default, handler: { (action) in
+                self.insureItemModel = itemInfo
+                self.salesTypeLabel.text = YCStringUtils.getString(itemInfo.itemTitle)
+                self.reSizePrice()
+            })
+            actionSheet.addAction(itemAction)
+        }
+        let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        actionSheet.addAction(cancelAction)
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     func addTypeView() {
@@ -695,7 +618,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
                 index = 0
                 line += 1
             }
-            let insureType = types[i] as! InsuranceType
+            let insureType = types[i] as! InsuranceTypeV2
             let button = UIButton.init(type: UIButtonType.custom)
             button.frame = CGRect(x: dir + index * dir + width * index, y: (line + 1) * dir + height * line, width: width, height: height)
             button.setTitle(YCStringUtils.getString(insureType.label), for: UIControlState.normal)
@@ -717,77 +640,6 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         }
     }
     
-    func addSalesView() {
-        let salesTypes = insureModel?.saleTypes
-        if (salesTypes == nil) {
-            return
-        }
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        if (salesTypeView == nil) {
-            salesTypeView = UIView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight))
-            salesTypeView.backgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.2)
-            salesTypeView.isHidden = true
-            appDelegate.window?.addSubview(salesTypeView)
-        }
-        
-        if(salesTypeView.subviews.count>0){
-            for view in salesTypeView.subviews {
-                view.removeFromSuperview()
-            }
-        }
-        
-        let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self.closeSaleTypeView))
-        salesTypeView.isUserInteractionEnabled = true
-        salesTypeView.addGestureRecognizer(gesture)
-        
-        let totalLine: CGFloat = CGFloat(salesTypes!.count)
-        let dir: CGFloat = 5
-        let width = (PhoneUtils.kScreenWidth - dir * 2)
-        let height = PhoneUtils.kScreenHeight / 15
-        let bkgViewHeight = (totalLine * height) + (totalLine + 1) * dir
-        
-        let bkgView = UIView.init(frame: CGRect(x: 0, y: PhoneUtils.kScreenHeight - bkgViewHeight - 50, width: PhoneUtils.kScreenWidth, height: bkgViewHeight))
-        bkgView.backgroundColor = UIColor.white
-        salesTypeView.addSubview(bkgView)
-        
-        let closeBottomView = UIView.init(frame: CGRect(x: 0, y: bkgView.frame.maxY, width: PhoneUtils.kScreenWidth, height: 50))
-        closeBottomView.backgroundColor = UIColor.white
-        salesTypeView.addSubview(closeBottomView)
-        
-        let buttonWidth = PhoneUtils.kScreenWidth - 5 * 2
-        let buttonHeight = closeBottomView.frame.size.height - 5 * 2
-        
-        let cancelButton = GFJBottomButton.init(type: UIButtonType.custom)
-        cancelButton.frame = CGRect(x: 5, y: 5, width: buttonWidth, height: buttonHeight)
-        cancelButton.setTitle("取消", for: UIControlState.normal)
-        cancelButton.backgroundColor = Colors.appBlue
-        cancelButton.setTitleColor(UIColor.white, for: UIControlState.normal)
-        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizelarge2)
-        cancelButton.addTarget(self, action: #selector(self.closeTypeView), for: UIControlEvents.touchUpInside)
-        closeBottomView.addSubview(cancelButton)
-        
-        for i in 0..<salesTypes!.count {
-            let salesType = salesTypes![i] as! NSDictionary
-            let button = UIButton.init(type: UIButtonType.custom)
-            button.frame = CGRect(x: dir, y: (CGFloat(i) + 1) * dir + height * CGFloat(i), width: width, height: height)
-            button.setTitle(YCStringUtils.getString(salesType["typeName"] as? String), for: UIControlState.normal)
-            button.layer.borderColor = UIColor.black.cgColor
-            button.layer.borderWidth = 1
-            button.setTitleColor(UIColor.black, for: UIControlState.normal)
-            button.backgroundColor = UIColor.white
-            button.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-            button.tag = i + SALES_BUTTON_TAG
-            if (i == currentSaleTypeIndex) {
-                button.layer.borderColor = Colors.appBlue.cgColor
-                button.layer.borderWidth = 1
-            }
-            button.addTarget(self, action: #selector(self.salesButtonClicked(_:)), for: UIControlEvents.touchUpInside)
-            bkgView.addSubview(button)
-        }
-    }
-    
     func closeTypeView() {
         typeView.isHidden = true
     }
@@ -800,20 +652,10 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         if (insureModel == nil) {
             return
         }
-        if (insureModel?.saleTypes == nil) {
+        if (insureItemModel == nil) {
             return
         }
-        if (currentSaleTypeIndex == -1) {
-            return
-        }
-        let salesType = insureModel!.saleTypes![currentSaleTypeIndex] as! NSDictionary
-        var currentPrice = salesType["typePrice"] as! NSNumber
-        if (seaSwitch.isOn) {
-            if (salesType["typePriceSea"] != nil) {
-                currentPrice = salesType["typePriceSea"] as! NSNumber
-            }
-        }
-        priceLabel.text = String(format: "￥:%.2f元", currentPrice.floatValue * Float(years))
+        priceLabel.text = String(format: "¥:%.2f元", insureItemModel!.price!.floatValue)
     }
 
     func viewButtonClicked(_ sender : UIButton) {
@@ -837,24 +679,6 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         }
     }
     
-    func salesButtonClicked(_ sender : UIButton) {
-        for i in 0..<insureModel!.saleTypes!.count {
-            let button = salesTypeView.viewWithTag(i + SALES_BUTTON_TAG)
-            button!.layer.borderColor = UIColor.black.cgColor
-            button!.layer.borderWidth = 1
-        }
-        sender.layer.borderColor = Colors.appBlue.cgColor
-        sender.layer.borderWidth = 1
-        
-        closeSaleTypeView()        
-        currentSaleTypeIndex = sender.tag - SALES_BUTTON_TAG
-        
-        let salesType = insureModel!.saleTypes![currentSaleTypeIndex] as! NSDictionary
-        salesTypeLabel.text = salesType["typeName"] as? String
-        
-        reSizePrice()
-    }
-    
     func buttonClicked(_ sender : UIButton) {
         closeTypeView()
         for i in 0..<types.count {
@@ -865,9 +689,12 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         sender.layer.borderColor = Colors.appBlue.cgColor
         sender.layer.borderWidth = 1
         
-        let insureType = types[sender.tag - BUTTON_TAG] as! InsuranceType
+        let insureType = types[sender.tag - BUTTON_TAG] as! InsuranceTypeV2
         insureModel = insureType
-        addSalesView()
+        
+        insureItemModel = nil
+        salesTypeLabel.text = "请选择套餐类型"
+        priceLabel.text = "￥:0"
         
         refreshBaoeBaofei()
     }
@@ -875,27 +702,6 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     func refreshBaoeBaofei() {
         guigeLabel.text = YCStringUtils.getString(insureModel!.label)
         reSizePrice()
-        
-//        baoe1Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_device))
-//        baoe2Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_two))
-//        baoe3Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_five))
-//        baoe4Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_ten))
-//        baoe5Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_steal))
-//
-//        baof1Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_device))
-//        baof2Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_two))
-//        baof3Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_five))
-//        baof4Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_ten))
-//        baof5Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_steal))
-//
-//        if (seaSwitch.isOn) {
-//            baof1Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_device_sea))
-//            baof5Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_steal_sea))
-//
-//            baof2Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_two_sea))
-//            baof3Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_five_sea))
-//            baof4Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_ten_sea))
-//        }
     }
     
     func buyNow() {
@@ -907,27 +713,16 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
             self.showHint("请选择电站大小")
             return
         }
-        if (currentSaleTypeIndex == -1) {
+        if (insureItemModel == nil) {
             self.showHint("请选择套餐类型")
             return
         }
-        let salesType = insureModel!.saleTypes![currentSaleTypeIndex] as! NSDictionary
-        
-        var currentPrice = salesType["typePrice"] as! NSNumber
-        if (seaSwitch.isOn) {
-            if (salesType["typePriceSea"] != nil) {
-                currentPrice = salesType["typePriceSea"] as! NSNumber
-            }
-        }
-        let price = String(format: "%.2f", currentPrice.floatValue * Float(years))
         let vc = ApplyForOrderViewController()
-        vc.insuranceType = insureModel
-        vc.salesType = salesType["typeId"] as! NSNumber
+        vc.insuranceTypeV2 = insureModel
         vc.years = "\(years)"
-        vc.is_nearsea = seaSwitch.isOn ? "1" : "0"
-        vc.totalprice = NSNumber(value: NSString(string: price).floatValue)
-        vc.price = currentPrice
+        vc.insuranceItemInfo = insureItemModel
         vc.selectedImgs = selectorImg
+        vc.is_nearsea = seaSwitch.isOn ? "1" : "0"
         self.pushViewController(vc)
     }
     

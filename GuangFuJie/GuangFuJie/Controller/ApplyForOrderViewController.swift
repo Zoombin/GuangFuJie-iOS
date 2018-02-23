@@ -43,6 +43,10 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
     var hasLocated = false
     var is_nearsea = "0"
     
+    //类型和套餐内容
+    var insuranceTypeV2: InsuranceTypeV2!
+    var insuranceItemInfo: InsuranceItemInfo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "申请购买"
@@ -340,25 +344,25 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
             self.showHint("请上传合同")
             return
         }
-        var imgUrls = ""
+        var htImgUrls = ""
         if (!img1.isEmpty) {
-            imgUrls = imgUrls + img1
+            htImgUrls = htImgUrls + img1
         }
         if (!img2.isEmpty) {
-            imgUrls = imgUrls + "," + img2
+            htImgUrls = htImgUrls + "," + img2
         }
         if (!img3.isEmpty) {
-            imgUrls = imgUrls + "," + img3
+            htImgUrls = htImgUrls + "," + img3
         }
         let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
         
         self.showHud(in: self.view, hint: "提交中...")
-        API.sharedInstance.insuranceAdd(insuranceType.company_id!, type_id: insuranceType.id!, years: years, price: price, beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: imgUrls, salesType: salesType!, image: imgUrls, address: address, longitude: lng, latitude: lat, is_nearsea: is_nearsea, inverternum: nibianqiTextField.text!, success: { (commonModel) in
-                self.hideHud()
-                self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(format: "%.0f", self.totalprice.floatValue * 100), type: commonModel.type!)
-            }) { (msg) in
-                self.hideHud()
-                self.showHint(msg)
+        API.sharedInstance.insuranceAddV2(itemId: YCStringUtils.getNumber(insuranceItemInfo.id), price: YCStringUtils.getNumber(insuranceItemInfo.price), beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: htImgUrls, image: imgUrls, address: address, longitude: lng, latitude: lat, is_nearsea: is_nearsea, inverternum: nibianqiTextField.text!, success: { (commonModel) in
+            self.hideHud()
+            self.selectPayType(commonModel.order_sn!, title: title, totalFee: String(format: "%.0f", self.totalprice.floatValue * 100), type: commonModel.type!)
+        }) { (msg) in
+            self.hideHud()
+            self.showHint(msg)
         }
     }
     

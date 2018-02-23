@@ -826,7 +826,6 @@ extension API {
         let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
             let array = InsuranceType.mj_objectArray(withKeyValuesArray: data!["inscure"]!)
-//                .mj_objectArray(datawithKeyValuesArray:data!["inscure"] as! AnyObject)
             let count = data!["totalCount"] as! NSNumber
             success?(array!, count)
             }, failure: failure)
@@ -1972,6 +1971,64 @@ extension API {
         self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
             let array = BrandInfo.mj_objectArray(withKeyValuesArray: data)
             success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //电站大小类型
+    func insuranceTypeV2List(success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "insurancev2/type";
+        let params = [
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InsuranceTypeV2.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //获取具体套餐列表
+    func insuranceItemList(typeId: NSNumber, isNearSea: String, success: ((_ totalCount : NSNumber, _ userInfos: NSArray) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "insurancev2/itemlist";
+        let params = [
+            "_o" : 1,
+            "typeId": "\(typeId)",
+            "isNearSea": isNearSea,
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.get(url, params: newParams as AnyObject?, success: { (totalCount, msg, data) in
+            let array = InsuranceItemInfo.mj_objectArray(withKeyValuesArray: data)
+            success?(totalCount!, array!)
+        }, failure: failure)
+    }
+    
+    //创建保险V2接口
+    func insuranceAddV2(itemId: NSNumber, price : NSNumber, beneficiary_name : String, beneficiary_phone : String, beneficiary_id_no : String, station_address : String, client_contract_img : String, image: String, address: String, longitude: String, latitude: String, is_nearsea: String, inverternum: String, success: ((_ commonModel: CommonModel) -> Void)?, failure: ((_ msg: String?) -> Void)?) {
+        let url = Constants.httpHost + "insurancev2/add";
+        let params = [
+            "userId": getUserId(),                       //用户id
+            "itemId": itemId,                            //套餐ID
+            "price": price,                              //保险的价格
+            "beneficiaryName": beneficiary_name,         //受益人姓名
+            "beneficiaryPhone": beneficiary_phone,       //受益人电话
+            "beneficiaryIdNo": beneficiary_id_no,        //受益人身份证
+            "stationAddress": station_address,           //电站地址
+            "clientContractImg": client_contract_img,    //并网合同图片
+            "address": address,                          //用户当前地址
+            "longitude": longitude,                      //经纬度
+            "latitude": latitude,                        //经纬度
+            "image": image,                              //设备图片
+            "isNearSea": is_nearsea,                     //是否沿海
+            "inverternum": inverternum,                  //逆变器号码
+            "_o" : 1
+            ] as [String : Any]
+        let jsonStr = self.dataToJsonString(params as AnyObject)
+        let newParams = ["edata" : jsonStr.aes256Encrypt(withKey: Constants.aeskey)]
+        self.post(url, params: newParams as AnyObject?, success: { (data) in
+            let commonModel = CommonModel.mj_object(withKeyValues: data)
+            success?(commonModel!)
         }, failure: failure)
     }
 }
