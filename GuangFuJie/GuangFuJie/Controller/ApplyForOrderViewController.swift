@@ -12,9 +12,7 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
     var locService : BMKLocationService!
     var geocodeSearch: BMKGeoCodeSearch!
     
-    var insuranceType : InsuranceType!
     var years : String!
-    var salesType : NSNumber!
     
     var scrollView : UIScrollView!
     var nameTextField : UITextField!
@@ -354,7 +352,8 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
         if (!img3.isEmpty) {
             htImgUrls = htImgUrls + "," + img3
         }
-        let title = "保险类型:" + self.insuranceType.size! + " " + years + "年";
+        let title = "保险类型:" + self.insuranceTypeV2.label! + self.insuranceItemInfo.itemTitle! + "" + years + "年"
+        self.totalprice = YCStringUtils.getNumber(self.insuranceItemInfo.price)
         
         self.showHud(in: self.view, hint: "提交中...")
         API.sharedInstance.insuranceAddV2(itemId: YCStringUtils.getNumber(insuranceItemInfo.id), price: YCStringUtils.getNumber(insuranceItemInfo.price), beneficiary_name: nameTextField.text!, beneficiary_phone: phoneTextField.text!, beneficiary_id_no: idTextField.text!, station_address: addressTextField.text!, client_contract_img: htImgUrls, image: imgUrls, address: address, longitude: lng, latitude: lat, is_nearsea: is_nearsea, inverternum: nibianqiTextField.text!, success: { (commonModel) in
