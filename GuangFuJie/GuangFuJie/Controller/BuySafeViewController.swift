@@ -27,17 +27,17 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     let labelHeight = PhoneUtils.kScreenHeight / 9
     var insureModel : InsuranceType?
     
-    var baoe1Label : UILabel!
-    var baoe2Label : UILabel!
-    var baoe3Label : UILabel!
-    var baoe4Label : UILabel!
-    var baoe5Label : UILabel!
-    
-    var baof1Label : UILabel!
-    var baof2Label : UILabel!
-    var baof3Label : UILabel!
-    var baof4Label : UILabel!
-    var baof5Label : UILabel!
+//    var baoe1Label : UILabel!
+//    var baoe2Label : UILabel!
+//    var baoe3Label : UILabel!
+//    var baoe4Label : UILabel!
+//    var baoe5Label : UILabel!
+//
+//    var baof1Label : UILabel!
+//    var baof2Label : UILabel!
+//    var baof3Label : UILabel!
+//    var baof4Label : UILabel!
+//    var baof5Label : UILabel!
     
     
     var typeView : UIView!
@@ -282,85 +282,85 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         
         maxY = sectionView1.frame.maxY + offSetY
         
-        //保障金额
-        let sectionView4 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 240 * times))
-        sectionView4.backgroundColor = UIColor.white
-        scrollView.addSubview(sectionView4)
-        
-        let titleLabel3 = UIButton.init(frame: CGRect(x: offSetX, y: 0, width: 100, height: 30 * times))
-        titleLabel3.setTitle("保障金额", for: UIControlState.normal)
-        titleLabel3.setImage(UIImage(named: "ic_safe_bzje"), for: UIControlState.normal)
-        titleLabel3.setTitleColor(UIColor.black, for: UIControlState.normal)
-        titleLabel3.titleEdgeInsets = UIEdgeInsetsMake(0, dir, 0, 0)
-        titleLabel3.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
-        titleLabel3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
-        sectionView4.addSubview(titleLabel3)
-        
-        let titleWidth = (PhoneUtils.kScreenWidth - 2 * offSetX) / 3
-        let titleHeight = ((240 - 30) * times - 2 * offSetY) / 6
-        let titles = ["险种", "保额", "保费/年", "光伏发电设备", "", "", "第三者责任", "", "", "", "", "","", "", "","盗抢险","",""]
-        var tline = 0
-        var tindex = 0
-        for i in 0..<titles.count {
-            if (i != 0 && i%3 == 0) {
-                tline += 1
-                tindex = 0
-            }
-            var tmpHeight = titleHeight
-            if (i == 6) {
-                tmpHeight = 3 * titleHeight
-            }
-       
-            let label = UILabel.init(frame: CGRect(x:offSetX + CGFloat(tindex) * titleWidth, y: titleLabel3.frame.maxY + CGFloat(tline) * titleHeight, width: titleWidth, height: tmpHeight))
-            label.text = titles[i]
-            label.textAlignment = NSTextAlignment.center
-            label.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
-            label.layer.borderColor = UIColor.lightGray.cgColor
-            label.layer.borderWidth = 0.5
-            sectionView4.addSubview(label)
-            if (i == 9 || i == 12) {
-                label.isHidden = true
-            }
-            if (i == 0 || i == 1 || i == 2) {
-                label.textColor = UIColor.white
-                label.backgroundColor = Colors.appBlue
-            }
-            if (i == 4) {
-                baoe1Label = label
-            }
-            if (i == 7) {
-                baoe2Label = label
-            }
-            if (i == 10) {
-                baoe3Label = label
-            }
-            if (i == 13) {
-                baoe4Label = label
-            }
-            if (i == 16) {
-                baoe5Label = label
-            }
-            
-            if (i == 5) {
-                baof1Label = label
-            }
-            if (i == 8) {
-                baof2Label = label
-            }
-            if (i == 11) {
-                baof3Label = label
-            }
-            if (i == 14) {
-                baof4Label = label
-            }
-            if (i == 17) {
-                baof5Label = label
-            }
-            tindex += 1
-        }
-        
-        maxY = sectionView4.frame.maxY + offSetY
-        
+//        //保障金额
+//        let sectionView4 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 240 * times))
+//        sectionView4.backgroundColor = UIColor.white
+//        scrollView.addSubview(sectionView4)
+//
+//        let titleLabel3 = UIButton.init(frame: CGRect(x: offSetX, y: 0, width: 100, height: 30 * times))
+//        titleLabel3.setTitle("保障金额", for: UIControlState.normal)
+//        titleLabel3.setImage(UIImage(named: "ic_safe_bzje"), for: UIControlState.normal)
+//        titleLabel3.setTitleColor(UIColor.black, for: UIControlState.normal)
+//        titleLabel3.titleEdgeInsets = UIEdgeInsetsMake(0, dir, 0, 0)
+//        titleLabel3.titleLabel?.font = UIFont.systemFont(ofSize: Dimens.fontSizeComm)
+//        titleLabel3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+//        sectionView4.addSubview(titleLabel3)
+//
+//        let titleWidth = (PhoneUtils.kScreenWidth - 2 * offSetX) / 3
+//        let titleHeight = ((240 - 30) * times - 2 * offSetY) / 6
+//        let titles = ["险种", "保额", "保费/年", "光伏发电设备", "", "", "第三者责任", "", "", "", "", "","", "", "","盗抢险","",""]
+//        var tline = 0
+//        var tindex = 0
+//        for i in 0..<titles.count {
+//            if (i != 0 && i%3 == 0) {
+//                tline += 1
+//                tindex = 0
+//            }
+//            var tmpHeight = titleHeight
+//            if (i == 6) {
+//                tmpHeight = 3 * titleHeight
+//            }
+//
+//            let label = UILabel.init(frame: CGRect(x:offSetX + CGFloat(tindex) * titleWidth, y: titleLabel3.frame.maxY + CGFloat(tline) * titleHeight, width: titleWidth, height: tmpHeight))
+//            label.text = titles[i]
+//            label.textAlignment = NSTextAlignment.center
+//            label.font = UIFont.systemFont(ofSize: Dimens.fontSizeSmall)
+//            label.layer.borderColor = UIColor.lightGray.cgColor
+//            label.layer.borderWidth = 0.5
+//            sectionView4.addSubview(label)
+//            if (i == 9 || i == 12) {
+//                label.isHidden = true
+//            }
+//            if (i == 0 || i == 1 || i == 2) {
+//                label.textColor = UIColor.white
+//                label.backgroundColor = Colors.appBlue
+//            }
+//            if (i == 4) {
+//                baoe1Label = label
+//            }
+//            if (i == 7) {
+//                baoe2Label = label
+//            }
+//            if (i == 10) {
+//                baoe3Label = label
+//            }
+//            if (i == 13) {
+//                baoe4Label = label
+//            }
+//            if (i == 16) {
+//                baoe5Label = label
+//            }
+//
+//            if (i == 5) {
+//                baof1Label = label
+//            }
+//            if (i == 8) {
+//                baof2Label = label
+//            }
+//            if (i == 11) {
+//                baof3Label = label
+//            }
+//            if (i == 14) {
+//                baof4Label = label
+//            }
+//            if (i == 17) {
+//                baof5Label = label
+//            }
+//            tindex += 1
+//        }
+//
+//        maxY = sectionView4.frame.maxY + offSetY
+//
         let sectionView6 = UIView.init(frame: CGRect(x: 0, y: maxY, width: PhoneUtils.kScreenWidth, height: 45 * times))
         sectionView6.backgroundColor = UIColor.white
         scrollView.addSubview(sectionView6)
@@ -876,26 +876,26 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
         guigeLabel.text = YCStringUtils.getString(insureModel!.label)
         reSizePrice()
         
-        baoe1Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_device))
-        baoe2Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_two))
-        baoe3Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_five))
-        baoe4Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_ten))
-        baoe5Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_steal))
-        
-        baof1Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_device))
-        baof2Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_two))
-        baof3Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_five))
-        baof4Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_ten))
-        baof5Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_steal))
-        
-        if (seaSwitch.isOn) {
-            baof1Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_device_sea))
-            baof5Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_steal_sea))
-            
-            baof2Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_two_sea))
-            baof3Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_five_sea))
-            baof4Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_ten_sea))
-        }
+//        baoe1Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_device))
+//        baoe2Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_two))
+//        baoe3Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_five))
+//        baoe4Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_third_ten))
+//        baoe5Label.text = String(format: "%@万", YCStringUtils.getString(insureModel!.protect_steal))
+//
+//        baof1Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_device))
+//        baof2Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_two))
+//        baof3Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_five))
+//        baof4Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_ten))
+//        baof5Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_steal))
+//
+//        if (seaSwitch.isOn) {
+//            baof1Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_device_sea))
+//            baof5Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_steal_sea))
+//
+//            baof2Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_two_sea))
+//            baof3Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_five_sea))
+//            baof4Label.text = String(format: "%@元", YCStringUtils.getString(insureModel!.price_third_ten_sea))
+//        }
     }
     
     func buyNow() {
