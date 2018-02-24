@@ -352,7 +352,7 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
         if (!img3.isEmpty) {
             htImgUrls = htImgUrls + "," + img3
         }
-        let title = "保险类型:" + self.insuranceTypeV2.label! + self.insuranceItemInfo.itemTitle! + "" + years + "年"
+        let title = "光伏保险套餐\(YCStringUtils.getNumber(self.insuranceItemInfo.id))"
         self.totalprice = YCStringUtils.getNumber(self.insuranceItemInfo.price)
         
         self.showHud(in: self.view, hint: "提交中...")
