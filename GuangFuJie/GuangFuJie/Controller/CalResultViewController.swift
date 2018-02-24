@@ -87,7 +87,7 @@ class CalResultViewController: BaseViewController {
         submitButton.addTarget(self, action: #selector(self.submitButtonClicked), for: UIControlEvents.touchUpInside)
         submitBottomView.addSubview(submitButton)
 
-        let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - submitBottomView.frame.size.height - 64))
+        let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - submitBottomView.frame.size.height - self.navigationBarAndStatusBarHeight()))
         scrollView.backgroundColor = Colors.bkgColor
         self.view.addSubview(scrollView)
         

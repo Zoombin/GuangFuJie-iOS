@@ -50,7 +50,7 @@ class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITabl
     }
     
     func initSizeView() {
-        sizeView = UIView.init(frame: CGRect(x: 0, y: installTableView.frame.origin.y, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50 - 64))
+        sizeView = UIView.init(frame: CGRect(x: 0, y: installTableView.frame.origin.y, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50 - self.navigationBarAndStatusBarHeight()))
         sizeView.backgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5)
         sizeView.isHidden = true
         self.view.addSubview(sizeView)
@@ -154,7 +154,7 @@ class GFJRoofListViewController: BaseViewController, UITableViewDelegate, UITabl
     }
     
     func initTypeView() {
-        typeView = UIView.init(frame: CGRect(x: 0, y: installTableView.frame.origin.y, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50 - 64))
+        typeView = UIView.init(frame: CGRect(x: 0, y: installTableView.frame.origin.y, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 50 - self.navigationBarAndStatusBarHeight()))
         typeView.backgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5)
         typeView.isHidden = true
         self.view.addSubview(typeView)

@@ -41,14 +41,14 @@ class ProviceCityViewController: BaseViewController, UITableViewDelegate, UITabl
         self.view.addSubview(tableView1)
         tableView1.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier1)
         
-        tableView2 = UITableView.init(frame: CGRect(x: PhoneUtils.kScreenWidth / 3, y: 64, width: PhoneUtils.kScreenWidth / 3, height: PhoneUtils.kScreenHeight - 64), style: UITableViewStyle.plain)
+        tableView2 = UITableView.init(frame: CGRect(x: PhoneUtils.kScreenWidth / 3, y: 64, width: PhoneUtils.kScreenWidth / 3, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight()), style: UITableViewStyle.plain)
         tableView2.delegate = self
         tableView2.dataSource = self
         tableView2.showsVerticalScrollIndicator = false
         self.view.addSubview(tableView2)
         tableView2.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier2)
         
-        tableView3 = UITableView.init(frame: CGRect(x: PhoneUtils.kScreenWidth * 2 / 3, y: 64, width: PhoneUtils.kScreenWidth / 3, height: PhoneUtils.kScreenHeight - 64), style: UITableViewStyle.plain)
+        tableView3 = UITableView.init(frame: CGRect(x: PhoneUtils.kScreenWidth * 2 / 3, y: 64, width: PhoneUtils.kScreenWidth / 3, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight()), style: UITableViewStyle.plain)
         tableView3.delegate = self
         tableView3.dataSource = self
         tableView3.showsVerticalScrollIndicator = false

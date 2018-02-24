@@ -85,7 +85,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func initTopView() {
-        let topView = UIView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: topButtonHeight))
+        let topView = UIView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: topButtonHeight))
         topView.backgroundColor = UIColor.lightGray
         self.view.addSubview(topView)
         
@@ -141,7 +141,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     
     //MARK: 发电量
     func initElectricView() {
-        electricView = UIView.init(frame: CGRect(x: 0, y: 64 + topButtonHeight, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topButtonHeight))
+        electricView = UIView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight() + topButtonHeight, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight() - topButtonHeight))
         electricView.backgroundColor = Colors.bkgColor
         self.view.addSubview(electricView)
         
@@ -265,7 +265,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             return
         }
         self.showHud(in: self.view, hint: "加载中...")
-        API.sharedInstance.getEnergyStatistic(device_id, year: "2016", success: { (powerGraphInfos) in
+        API.sharedInstance.getEnergyStatistic(device_id, year: "2017", success: { (powerGraphInfos) in
             self.hideHud()
             self.infoArray.addObjects(from: powerGraphInfos as [AnyObject])
             self.initLineBarChart()
@@ -313,7 +313,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             xValues.append(xValue)
         }
         
-        let dataSet: LineChartDataSet = LineChartDataSet(values: entries, label: "2016年发电量走势(单位:kw)")
+        let dataSet: LineChartDataSet = LineChartDataSet(values: entries, label: "2017年发电量走势(单位:kw)")
         
         let offSetY : CGFloat = 0
         
@@ -350,7 +350,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
             xValues.append(xValue)
         }
         
-        let dataSet: BarChartDataSet = BarChartDataSet(values: entries, label: "2016年发电量走势(单位:kw)")
+        let dataSet: BarChartDataSet = BarChartDataSet(values: entries, label: "2017年发电量走势(单位:kw)")
         
         let offSetY : CGFloat = 0
         
@@ -368,7 +368,7 @@ class DeviceDetailViewController: BaseViewController, UIAlertViewDelegate {
     }
     
     func initPicView() {
-        picView = UIView.init(frame: CGRect(x: 0, y: 64 + topButtonHeight, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topButtonHeight))
+        picView = UIView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight() + topButtonHeight, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight() - topButtonHeight))
         picView.isHidden = true
         self.view.addSubview(picView)
     }

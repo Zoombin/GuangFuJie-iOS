@@ -141,7 +141,7 @@ class RoofPriceViewController: BaseViewController, ProviceCityViewDelegate, UITa
         calButton.addTarget(self, action: #selector(self.calacuteNow), for: UIControlEvents.touchUpInside)
         calBottomView.addSubview(calButton)
         
-        tableView = UITableView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - calBottomView.frame.size.height - 64), style: UITableViewStyle.grouped)
+        tableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - calBottomView.frame.size.height - self.navigationBarAndStatusBarHeight()), style: UITableViewStyle.grouped)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)

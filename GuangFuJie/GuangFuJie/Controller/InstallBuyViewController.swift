@@ -162,7 +162,7 @@ class InstallBuyViewController: BaseViewController {
             offSetY = buyBottomView.frame.size.height - 100
         }
         
-        scrollView = UITableView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - offSetY - 64 - 50), style: UITableViewStyle.grouped)
+        scrollView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - offSetY - self.navigationBarAndStatusBarHeight() - 50), style: UITableViewStyle.grouped)
         scrollView.backgroundColor = UIColor.clear
         self.view.addSubview(scrollView)
 

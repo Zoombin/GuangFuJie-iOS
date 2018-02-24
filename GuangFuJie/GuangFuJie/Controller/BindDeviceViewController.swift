@@ -28,7 +28,7 @@ class BindDeviceViewController: BaseViewController {
     }
     
     func initView() {
-        let topView = UIView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight / 12))
+        let topView = UIView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight / 12))
         self.view.addSubview(topView)
         
         let buttonWidth = PhoneUtils.kScreenWidth / 4
@@ -66,7 +66,7 @@ class BindDeviceViewController: BaseViewController {
         khsyButton.frame = CGRect(x: buttonWidth * 3, y: 0, width: buttonWidth, height: buttonHeight)
         topView.addSubview(khsyButton)
         
-        deviceView = UIView.init(frame: CGRect(x: 0, y: 64 + topView.frame.size.height, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topView.frame.size.height))
+        deviceView = UIView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight() + topView.frame.size.height, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight() - topView.frame.size.height))
         deviceView.backgroundColor = Colors.bkgColor
         self.view.addSubview(deviceView)
         

@@ -85,7 +85,7 @@ class MyDeviceListControllerViewController: BaseViewController, UITableViewDeleg
     //MARK: 业主
     let deviceCellReuseIdentifier = "deviceCellReuseIdentifier"
     func initDeviceList() {
-        deviceTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64), style: UITableViewStyle.plain)
+        deviceTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight()), style: UITableViewStyle.plain)
         deviceTableView.delegate = self
         deviceTableView.dataSource = self
         deviceTableView.backgroundColor = Colors.bkgColor

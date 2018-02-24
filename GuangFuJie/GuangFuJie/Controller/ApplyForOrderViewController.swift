@@ -109,7 +109,7 @@ class ApplyForOrderViewController: BaseViewController, BMKGeoCodeSearchDelegate 
         buyNowButton.addTarget(self, action: #selector(self.submitOrder), for: UIControlEvents.touchUpInside)
         buyBottomView.addSubview(buyNowButton)
         
-        scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - 64))
+        scrollView = UIScrollView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - buyBottomView.frame.size.height - self.navigationBarAndStatusBarHeight()))
         scrollView.backgroundColor = UIColor.white
         self.view.addSubview(scrollView)
         

@@ -39,7 +39,7 @@ class MyFavViewController: BaseViewController, UITableViewDelegate, UITableViewD
     func initView() {
         initTopView()
         
-        tableView = UITableView.init(frame: CGRect(x: 0, y: 64 + topButtonHeight + dir, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - 64 - topButtonHeight - dir), style: UITableViewStyle.plain)
+        tableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight() + topButtonHeight + dir, width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight() - topButtonHeight - dir), style: UITableViewStyle.plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = Colors.bkgColor
