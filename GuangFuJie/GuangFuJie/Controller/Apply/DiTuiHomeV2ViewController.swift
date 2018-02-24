@@ -61,6 +61,7 @@ class DiTuiHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     func initView() {
+        self.automaticallyAdjustsScrollViewInsets = false
         contentScrollView = UIScrollView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()))
         self.view.addSubview(contentScrollView)
     }

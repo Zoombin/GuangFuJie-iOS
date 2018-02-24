@@ -26,6 +26,7 @@ class NewsListViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     func initView() {
+        self.automaticallyAdjustsScrollViewInsets = false
         newsListTableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()), style: UITableViewStyle.plain)
         newsListTableView.delegate = self
         newsListTableView.dataSource = self

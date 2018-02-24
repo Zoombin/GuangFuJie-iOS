@@ -49,6 +49,7 @@ class GFJWebViewController: BaseViewController {
     
     
     func initWebView(_ url:String) {
+        self.automaticallyAdjustsScrollViewInsets = false
         let times = YCPhoneUtils.screenWidth / 375
         
         webView = UIWebView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: PhoneUtils.kScreenHeight - self.navigationBarAndStatusBarHeight()))

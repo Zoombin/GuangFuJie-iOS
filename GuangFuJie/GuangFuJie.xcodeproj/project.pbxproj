@@ -11,6 +11,10 @@
 		DE02379E1F6F3277008BE3C5 /* CalResultCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */; };
 		DE0237A61F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
 		DE0237A71F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */; };
+		DE0671F42041611500B59613 /* YCImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0671F22041611400B59613 /* YCImageTitleButton.m */; };
+		DE0671F52041611500B59613 /* YCImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0671F22041611400B59613 /* YCImageTitleButton.m */; };
+		DE0671F82041612300B59613 /* YCColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0671F72041612300B59613 /* YCColorUtils.m */; };
+		DE0671F92041612300B59613 /* YCColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0671F72041612300B59613 /* YCColorUtils.m */; };
 		DE08ECEB1FB5901C00E57602 /* GFQuestionHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */; };
 		DE08ECEC1FB5901C00E57602 /* GFQuestionHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */; };
 		DE08ECEE1FB5A9DE00E57602 /* InsuranceGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08ECED1FB5A9DE00E57602 /* InsuranceGuideViewController.swift */; };
@@ -1198,6 +1202,10 @@
 /* Begin PBXFileReference section */
 		DE02379C1F6F3277008BE3C5 /* CalResultCommonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalResultCommonCell.swift; sourceTree = "<group>"; };
 		DE0237A51F6FD2ED008BE3C5 /* CashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashListViewController.swift; sourceTree = "<group>"; };
+		DE0671F22041611400B59613 /* YCImageTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCImageTitleButton.m; sourceTree = "<group>"; };
+		DE0671F32041611400B59613 /* YCImageTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCImageTitleButton.h; sourceTree = "<group>"; };
+		DE0671F62041612300B59613 /* YCColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCColorUtils.h; path = YCUtils/YCUtils/YCColorUtils.h; sourceTree = "<group>"; };
+		DE0671F72041612300B59613 /* YCColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YCColorUtils.m; path = YCUtils/YCUtils/YCColorUtils.m; sourceTree = "<group>"; };
 		DE08ECEA1FB5901B00E57602 /* GFQuestionHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFQuestionHomeViewController.swift; sourceTree = "<group>"; };
 		DE08ECED1FB5A9DE00E57602 /* InsuranceGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceGuideViewController.swift; sourceTree = "<group>"; };
 		DE1A55121F63B51E00939E60 /* QuestionAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddViewController.swift; sourceTree = "<group>"; };
@@ -3719,6 +3727,8 @@
 				DEA4FD7D1F8E075F006767E7 /* YCStringUtils.h */,
 				DEA4FD721F8E075E006767E7 /* YCStringUtils.m */,
 				DEA4FD6E1F8E075E006767E7 /* YCUtils.h */,
+				DE0671F62041612300B59613 /* YCColorUtils.h */,
+				DE0671F72041612300B59613 /* YCColorUtils.m */,
 				DEA4FD8C1F8E0D1E006767E7 /* YCLineUtils.h */,
 				DEA4FD8D1F8E0D1E006767E7 /* YCLineUtils.m */,
 			);
@@ -3738,6 +3748,8 @@
 		DEA4FD731F8E075F006767E7 /* ThirdSDK */ = {
 			isa = PBXGroup;
 			children = (
+				DE0671F32041611400B59613 /* YCImageTitleButton.h */,
+				DE0671F22041611400B59613 /* YCImageTitleButton.m */,
 				DEA4FD741F8E075F006767E7 /* NSData+AESCrypt.h */,
 				DEA4FD751F8E075F006767E7 /* NSData+AESCrypt.m */,
 				DEA4FD761F8E075F006767E7 /* NSString+AESCrypt.h */,
@@ -5076,6 +5088,7 @@
 				DEE6C9DE1F35BECA00AB6031 /* IQToolbar.swift in Sources */,
 				DE0237A61F6FD2ED008BE3C5 /* CashListViewController.swift in Sources */,
 				DE868E0A1F0E2D4F00FF7FD3 /* FontUtils.swift in Sources */,
+				DE0671F82041612300B59613 /* YCColorUtils.m in Sources */,
 				DEFF5F2C1F700E5100F58A04 /* BCURLResponseSerialization.m in Sources */,
 				DEA4FD801F8E075F006767E7 /* YCStringUtils.m in Sources */,
 				DEB9CA101F722FA6007BE2A3 /* CommonInfo.swift in Sources */,
@@ -5118,6 +5131,7 @@
 				DEFF5F221F700E5100F58A04 /* BCSubscriptionQuery.m in Sources */,
 				DEB9CA3E1F722FA6007BE2A3 /* NewsInfo.swift in Sources */,
 				DE9131D51F7939B7002C9D98 /* MQBotMenuCellModel.m in Sources */,
+				DE0671F42041611500B59613 /* YCImageTitleButton.m in Sources */,
 				DE9131CB1F7939B7002C9D98 /* MQTextMessage.m in Sources */,
 				DEC365A01FA2DEEF00B5A719 /* RootHomeV2ViewController.swift in Sources */,
 				DEFF5EE81F700E5100F58A04 /* BeeCloud.m in Sources */,
@@ -5213,6 +5227,7 @@
 				DE9132721F7939B7002C9D98 /* MQServiceToViewInterface.m in Sources */,
 				DE8688901F0DD05900FF7FD3 /* QNResumeUpload.m in Sources */,
 				DEFF5F331F700E5100F58A04 /* BCPayUtil.m in Sources */,
+				DE0671F92041612300B59613 /* YCColorUtils.m in Sources */,
 				DE8688841F0DD05900FF7FD3 /* QNResponseInfo.m in Sources */,
 				DE3954361F1468CB00A44740 /* ZLPhotoPickerImageView.m in Sources */,
 				DE9132701F7939B7002C9D98 /* MQWebViewController.m in Sources */,
@@ -5478,6 +5493,7 @@
 				DE9132521F7939B7002C9D98 /* MQKeyboardController.m in Sources */,
 				DEC222451F13601E007D6DBE /* MJRefreshAutoNormalFooter.m in Sources */,
 				DE39541E1F1468CB00A44740 /* ZLPhotoAssets.m in Sources */,
+				DE0671F52041611500B59613 /* YCImageTitleButton.m in Sources */,
 				DEE682071F18C40400157560 /* LeaseViewController.swift in Sources */,
 				DEC32A721FB8955200315FB0 /* QuestionCell.swift in Sources */,
 				DE9132561F7939B7002C9D98 /* MQEvaluationView.m in Sources */,

@@ -132,7 +132,7 @@ class RootProjectCalV2ViewController: BaseViewController, ProviceCityViewDelegat
         self.navigationController?.tabBarItem.selectedImage = self.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         self.title = "项目测算"
-        self.automaticallyAdjustsScrollViewInsets = true
+        self.automaticallyAdjustsScrollViewInsets = false
         contentScrollView = UIScrollView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: PhoneUtils.kScreenWidth, height: self.view.frame.size.height - self.navigationBarAndStatusBarHeight() - 50))
         contentScrollView.backgroundColor = UIColor.white
         self.view.addSubview(contentScrollView)

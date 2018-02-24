@@ -44,6 +44,7 @@ class QestionAllViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func initView() {
+        self.automaticallyAdjustsScrollViewInsets = false
         questionTableView = UITableView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()))
         questionTableView.delegate = self
         questionTableView.dataSource = self

@@ -45,7 +45,7 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
         super.viewDidLoad()
         self.title = "首页"
         
-        contentScroll = UIScrollView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight()))
+        contentScroll = UIScrollView.init(frame: CGRect(x: 0, y: self.navigationBarAndStatusBarHeight(), width: YCPhoneUtils.screenWidth, height: YCPhoneUtils.screenHeight - self.navigationBarAndStatusBarHeight() - 50))
         contentScroll.backgroundColor = UIColor.white
         self.view.addSubview(contentScroll)
         
