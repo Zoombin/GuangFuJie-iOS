@@ -306,7 +306,7 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     func switchValueChanged() {
         if (seaSwitch.isOn) {
             //打开了
-            let alertView = UIAlertController.init(title: "提示", message: "以下城市是沿海城市:海南省全省浙江省（舟山、台州、温州）福建省（宁德、福清、莆田、泉州、漳州）广东省（潮州、汕头、揭阳、汕尾、惠州、珠海、阳江、江门、茂名、湛江）江苏（盐城）广西（北部湾、钦州、防城港）。保费将根据地区发生变化，请正确选择您的地区，错误地区将导致保单不生效！", preferredStyle: UIAlertControllerStyle.alert)
+            let alertView = UIAlertController.init(title: "提示", message: "以下城市是沿海城市:海南省全省浙江省全省 福建省（宁德、福清、莆田、泉州、漳州）广东省（潮州、汕头、揭阳、汕尾、惠州、珠海、阳江、江门、茂名、湛江）江苏（盐城）广西（北部湾、钦州、防城港）。保费将根据地区发生变化，请正确选择您的地区，错误地区将导致保单不生效！", preferredStyle: UIAlertControllerStyle.alert)
             let actionSure = UIAlertAction.init(title: "我知道了", style: UIAlertActionStyle.default, handler: nil)
             alertView.addAction(actionSure)
             self.present(alertView, animated: true, completion: nil)
