@@ -659,11 +659,13 @@ class BuySafeViewController: BaseViewController, UITextFieldDelegate, UIAlertVie
     }
 
     func viewButtonClicked(_ sender : UIButton) {
-        let vc = PhotoViewController()
+        let vc = GFJWebViewController()
         if (sender.tag == 1) {
-            vc.type = 1
+            vc.title = "保险条款"
+            vc.url = "http://ob4e8ww8r.bkt.clouddn.com/gfj_insurance_rules.pdf"
         } else {
-            vc.type = 3
+            vc.title = "保险范本"
+            vc.url = "http://ob4e8ww8r.bkt.clouddn.com/gfj_insurance_sample.jpeg"
         }
         self.pushViewController(vc)
     }
