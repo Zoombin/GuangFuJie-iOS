@@ -27,8 +27,8 @@ class JiaMengHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
     var contentScrollView: UIScrollView!
     var headerView: UIView!
     
-    let titles = ["本地市场　", "体验店　", "光伏政策　", "光伏保险　", "光伏贷款　", "供电局　", "地面推广　", "推广支持　", "本地安装商", "本地业主　", "投资收益　", "实战模式　", "加盟支持　", "安装运维　", "产品供求　", "客服　　　"]
-    let images = ["ic_menu_bdsc", "ic_menu_tyd", "ic_menu_gfzc", "ic_menu_gfbx", "ic_menu_gfdk", "ic_menu_gdj", "ic_menu_dmtg", "ic_menu_tgzc", "ic_menu_bdazs", "ic_menu_bdyz", "ic_menu_tzsy", "ic_menu_szms", "ic_install_jmzc", "ic_menu_azyw", "ic_menu_cpgq", "ic_menu_kf"]
+    let titles = ["本地市场　", "体验店　", "光伏政策　", "光伏贷款　", "供电局　", "地面推广　", "推广支持　", "本地安装商", "本地业主　", "投资收益　", "实战模式　", "加盟支持　", "安装运维　", "产品供求　", "客服　　　"]
+    let images = ["ic_menu_bdsc", "ic_menu_tyd", "ic_menu_gfzc", "ic_menu_gfdk", "ic_menu_gdj", "ic_menu_dmtg", "ic_menu_tgzc", "ic_menu_bdazs", "ic_menu_bdyz", "ic_menu_tzsy", "ic_menu_szms", "ic_install_jmzc", "ic_menu_azyw", "ic_menu_cpgq", "ic_menu_kf"]
     
     let times = YCPhoneUtils.screenWidth / 375
     var startY: CGFloat = 0
@@ -332,12 +332,15 @@ class JiaMengHomeV2ViewController: BaseViewController, UIScrollViewDelegate {
     func bannerClicked(gesture: UITapGestureRecognizer) {
         let index = gesture.view?.tag
         if (index == 0) {
-            self.tabBarController?.selectedIndex = 3
+            let article = bannerData[index!] as! ArticleInfo
+            let vc = GFJWebViewController()
+            vc.title = "公告"
+            vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(article.id!)"
+            self.pushViewController(vc)
         } else if (index == 1) {
-            self.tabBarController?.selectedIndex = 2
+            self.tabBarController?.selectedIndex = 3
         } else if (index == 2) {
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
+            self.tabBarController?.selectedIndex = 2
         }
     }
     

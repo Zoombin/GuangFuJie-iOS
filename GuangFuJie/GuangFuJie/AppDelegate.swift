@@ -58,13 +58,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate, UIAle
             }
         }
         
-        if (UserDefaultManager.showGuide()) {
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "GuideViewController")
-            self.window?.rootViewController = vc
-        } else {
-            initMain()
-        }
+        //TODO: 引导图有保险
+        initMain()
+//        if (UserDefaultManager.showGuide()) {
+//            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "GuideViewController")
+//            self.window?.rootViewController = vc
+//        } else {
+//            initMain()
+//        }
     }
     
     func refreshUserInfo() {

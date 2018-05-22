@@ -17,7 +17,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     let times = PhoneUtils.kScreenWidth / 375
     
     var roofCountLabel: UILabel!
-    var insuranceCountLabel: UILabel!
+//    var insuranceCountLabel: UILabel!
     var deviceCountLabel: UILabel!
     var favCountLabel: UILabel!
     
@@ -103,9 +103,9 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         bottomView.backgroundColor = UIColor.white
         headerView.addSubview(bottomView)
         
-        let labelWidth = CGFloat(NSNumber.init(value: Float(PhoneUtils.kScreenWidth / 4)).intValue)
+        let labelWidth = CGFloat(NSNumber.init(value: Float(PhoneUtils.kScreenWidth / 3)).intValue)
         let labelHeight = 70 * times
-        let btnTitles = ["0\n屋顶", "0\n保险", "0\n设备", "0\n收藏"]
+        let btnTitles = ["0\n屋顶", "0\n设备", "0\n收藏"]
         for i in 0..<btnTitles.count {
             let label = UILabel.init(frame: CGRect(x: labelWidth * CGFloat(i), y: 0, width: labelWidth, height: labelHeight))
             label.text = btnTitles[i]
@@ -126,8 +126,6 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             if (i == 0) {
                roofCountLabel = label
             } else if (i == 1) {
-               insuranceCountLabel = label
-            } else if (i == 2) {
                deviceCountLabel = label
             } else {
                favCountLabel = label
@@ -229,7 +227,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         if (UserDefaultManager.isLogin()) {
             API.sharedInstance.userAllCount(success: { (model) in
                 self.roofCountLabel.text = "\(model.roofCount!)\n屋顶"
-                self.insuranceCountLabel.text = "\(model.insuranceCount!)\n保险"
+//                self.insuranceCountLabel.text = "\(model.insuranceCount!)\n保险"
                 self.deviceCountLabel.text = "\(model.deviceCount!)\n设备"
                 self.favCountLabel.text = "\(model.favorCount!)\n收藏"
                 self.changeAllLabelColor()
@@ -238,7 +236,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
             }
         } else {
             roofCountLabel.text = "0\n屋顶"
-            insuranceCountLabel.text = "0\n保险"
+//            insuranceCountLabel.text = "0\n保险"
             deviceCountLabel.text = "0\n设备"
             favCountLabel.text = "0\n收藏"
             self.changeAllLabelColor()
@@ -247,7 +245,7 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     func changeAllLabelColor() {
         self.changeLabelColor(label: roofCountLabel)
-        self.changeLabelColor(label: insuranceCountLabel)
+//        self.changeLabelColor(label: insuranceCountLabel)
         self.changeLabelColor(label: deviceCountLabel)
         self.changeLabelColor(label: favCountLabel)
     }
@@ -332,9 +330,11 @@ class RootMyViewController: BaseViewController, UITableViewDataSource, UITableVi
         }
         if (gesutre.view?.tag == 0) {
             showRoofList()
-        } else if (gesutre.view?.tag == 1) {
-            showInsuranceList()
-        } else if (gesutre.view?.tag == 2) {
+        }
+//        else if (gesutre.view?.tag == 1) {
+//            showInsuranceList()
+//        }
+        else if (gesutre.view?.tag == 1) {
             showDeviceList()
         } else {
             showFavList()

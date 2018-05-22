@@ -51,11 +51,6 @@ class RootInsuranceViewController: BaseViewController, UITableViewDelegate, UITa
         if (index == 0) {
             let vc = InsuranceGuideViewController()
             self.pushViewController(vc)
-//            let vc = GFJWebViewController()
-//            vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(276)"
-//            vc.title = "光伏保险"
-//            self.pushViewController(vc)
-
         } else if (index == 1) {
             let sb = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController

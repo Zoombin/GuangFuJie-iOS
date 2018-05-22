@@ -237,8 +237,8 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     }
     
     func loadMenusView() {
-        let icons = ["ic_home_menu1", "ic_home_menu2", "ic_home_menu3", "ic_home_menu4", "ic_home_menu5", "ic_home_menu6", "ic_home_menu7", "ic_home_menu8"]
-        let names = ["体验店", "政策咨询", "安装运维", "光伏保险", "光伏问答", "公司介绍", "活动通告", "客服"]
+        let icons = ["ic_home_menu1", "ic_home_menu2", "ic_home_menu3", "ic_home_menu5", "ic_home_menu6", "ic_home_menu7", "ic_home_menu8"]
+        let names = ["体验店", "政策咨询", "安装运维", "光伏问答", "公司介绍", "活动通告", "客服"]
         
         let btnWidth = PhoneUtils.kScreenWidth / 4
         let btnHeight = menuView.frame.size.height / 2
@@ -373,12 +373,15 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
     func bannerClicked(gesture: UITapGestureRecognizer) {
         let index = gesture.view?.tag
         if (index == 0) {
-            self.tabBarController?.selectedIndex = 3
+            let article = bannerData[index!] as! ArticleInfo
+            let vc = GFJWebViewController()
+            vc.title = "公告"
+            vc.url = Constants.httpHost.replacingOccurrences(of: "/api/", with: "") + "/articles/\(article.id!)"
+                    self.pushViewController(vc)
         } else if (index == 1) {
-            self.tabBarController?.selectedIndex = 2
+            self.tabBarController?.selectedIndex = 3
         } else if (index == 2) {
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
+            self.tabBarController?.selectedIndex = 2
         }
     }
     
@@ -401,14 +404,12 @@ class RootHomeV2ViewController: BaseViewController, UIScrollViewDelegate, UIText
             self.pushViewController(vc)
         } else if (sender.tag == 3) {
             //光伏保险
-            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-            self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
+//            let sb = UIStoryboard.init(name: "Main", bundle: nil)
+//            self.pushViewController(sb.instantiateViewController(withIdentifier: "RootInsuranceViewController"))
         } else if (sender.tag == 4) {
             //光伏问答
             let vc = GFQuestionHomeViewController()
             self.pushViewController(vc)
-//            let sb = UIStoryboard.init(name: "Main", bundle: nil)
-//            self.pushViewController(sb.instantiateViewController(withIdentifier: "GuangFuAskViewController"))
         } else if (sender.tag == 5) {
             //公司介绍
             API.sharedInstance.articlesList(0, pagesize: 1, key: nil, provinceId: nil, cityId: nil, areaId: nil, type: 8, success: { (count, array) in
